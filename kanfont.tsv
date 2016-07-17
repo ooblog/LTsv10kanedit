@@ -1,0 +1,25 @@
+[L:Tsv|
+code	UTF-8
+enter	LF
+tab	8
+program	kanfont
+LTsvver	20160517T141820
+modify	20160704M025415
+|L:Tsv]
+
+[kanfont|
+find_alpha	σ
+find_dic	代
+find_char	ぱ
+svg_name	kanfont.svg
+font_name	kantray5x5comic
+font_widths	1024	624	824
+font_grid	50
+font_gridinner	1
+gridimage	kanfont_grid25_198.png
+|kanfont]
+
+
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE

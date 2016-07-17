@@ -87,3 +87,21 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
+# git push github:ooblog/LTsv10kanedit.git master
+# git push github:ooblog/LTsv10kanedit.git 20160716S001619
+# git log
+# git ls-files
+# git commit -a -m ""
+# git branch
+# git checkout master
+# git merge 20160716S001619
+# git branch -d 20160716S001619
+# git push github:ooblog/LTsv10kanedit.git :20160716S001619
+LTsv/testfile/
+kanfont.svg
+kanpickle.bin
+kanzip.tsv
+kanzip/
+kanmap/
