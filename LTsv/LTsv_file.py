@@ -482,7 +482,7 @@ def LTsv_dict2label(LTsv_dict):
     return LTsv_line.rstrip('\t')
 
 def LTsv_file_ver():
-    return "20160716S001619"
+    return "20160718M003911"
 
 if __name__=="__main__":
     from LTsv_printf import *
@@ -575,4 +575,4 @@ if __name__=="__main__":
 
 # Copyright (c) 2016 ooblog
 # License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE

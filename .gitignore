@@ -90,15 +90,15 @@ ENV/
 
 
 # git push github:ooblog/LTsv10kanedit.git master
-# git push github:ooblog/LTsv10kanedit.git 20160716S001619
+# git push github:ooblog/LTsv10kanedit.git 20160718M003911
 # git log
 # git ls-files
 # git commit -a -m ""
 # git branch
 # git checkout master
-# git merge 20160716S001619
-# git branch -d 20160716S001619
-# git push github:ooblog/LTsv10kanedit.git :20160716S001619
+# git merge 20160718M003911
+# git branch -d 20160718M003911
+# git push github:ooblog/LTsv10kanedit.git :20160718M003911
 LTsv/testfile/
 kanfont.svg
 kanpickle.bin

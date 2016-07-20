@@ -1,11 +1,11 @@
-「LTsv9kantray(tsvtool9)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kantray」のPythonによる実装です。
-version(branch) 20160716S001619
+「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kantray」のPythonによる実装です。
+version(branch) 20160718M003911
 
 目次
 
  ０-0． ライセンス及びソフトの使用の補足ガイドライン
  ０-1． インストール＆アンインストール方法・その他セットアップ方法
- ０-2． バージョン「20160423S022604(それ以前も含む)」から「20160716S001619」への変更にあたる注意点など。
+ ０-2． バージョン「LTsv9kantray(tsvtool9)」から「「LTsv10kanedit(tsvtool10)」への変更予定など。
  ０-3． その他現在わかっている不具合や今後の課題。
  １-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
  １-0b．「L:Tsv」ファイルの構造。
@@ -54,20 +54,18 @@ version(branch) 20160716S001619
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)」も参考)。
 
 
-０-2． バージョン「20160423S022604(それ以前も含む)」から「20160716S001619」への変更にあたる注意点など。
+０-2．バージョン「LTsv9kantray(tsvtool9)」から「LTsv10kanedit(tsvtool10)」への変更予定など。
 
  開発環が「Python2.7.3(PuppyLinux571JP)およびPython3.4.3(Wine1.7.18)」から「Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)」に移行。
- 「LTsv_window_new()」の「event_z」でウィンドウサイズ変更に対応。
- 「LTsv_window_new()」に「event_k」「event_y」追加でキーボード入力の感知。
- 「LTsv_subprocess()」を「LTsv_gui.py」から「LTsv_printf.py」に移動。
+ 「kanedit」の新しい鍵盤に移行するため「kantray」用に書いたコードのほとんどを整理整頓の予定。
 
 
 ０-3． その他現在わかっている不具合や今後の課題。
 
- Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で動作を確認しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
- フォント「kantray5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。
- マウスホイールの取得は保留。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- [kantray5x5comic.svg]を[kantray5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
+ Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
+ フォント「kantray5x5」「kantray5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。
+ マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
+ [kantray5x5.svg][kantray5x5comic.svg]を[kantray5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
  [kanchar.tsv]に異体字を移管して[kanmap.tsv]を圧縮していく作業は当分続く。現在人名に使える漢字の異体字の字引入力中心に作業中。
  通知タスクトレイ(Notify)が使えない環境にも対応するためテキストエディタ「kanedit」も現在制作中。漢直キーボード「LTsv_keyboard_new()」を置き換える予定。
  「L:Tsv」をgit-subtree化できるように「kantray」の内容はなるだけ[kantray.txt]に移動したい(ドキュメント未整理の部分あり)。
@@ -85,7 +83,7 @@ version(branch) 20160716S001619
 
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理を加えたり、Python2,3のprint関数のバージョン違いを吸収させたりと、
  LTSVパーサに雑多な拡張を重ねていったモジュール群が今の「L:Tsv」です。
- 「LTsv9kantray(tsvtool9)」では漢直キーボードをGUIの部品として扱えるようになりました。
+ 「LTsv10kanedit(tsvtool10)」では漢直キーボードをGUIの部品として扱えるようになりました。
 
 
 １-0b．「L:Tsv」ファイルの構造。
@@ -164,7 +162,7 @@ version(branch) 20160716S001619
   データ破損を補完する機能はないので注意。
 
  LTsv_printf_ver()
-   [LTsv_printf.py]のバージョン表示(20160716S001619)。
+   [LTsv_printf.py]のバージョン表示(20160718M003911)。
 
  LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)
   ターミナルにコマンドを送る。実行結果も取得できる。
@@ -174,7 +172,7 @@ version(branch) 20160716S001619
 １-2． [LTsv_file.py]の関数一覧
 
  「L;Tsv」ファイルの基本的な読み書きモジュールです。
- ・「LTsv9kantray(tsvtool9)」の本編です。主に「L:Tsv」の読み書きです。
+ ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。
  ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。
  ・単体風テストでは[testfile]フォルダに[testfile.tsv]と[testfile.txt]を作成して関数群の挙動確認ができます。
  ・modify項目で「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールも必要。
@@ -350,14 +348,14 @@ version(branch) 20160716S001619
   Pythonの辞書「{"label":data,"label":data,…}」をラベル有りLTSV「label:data	label:data	…」に。dataは文字列化。
 
  LTsv_file_ver()
-  [LTsv_file.py]のバージョン表示(20160716S001619)。
+  [LTsv_file.py]のバージョン表示(20160718M003911)。
 
 
 １-3a．[LTsv_time.py]の関数一覧
 
  日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・20160716S001619形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
+ ・20160718M003911形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -394,7 +392,7 @@ version(branch) 20160716S001619
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)
-  「LTsv_time_ver()」などの「20160716S001619」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの「20160718M003911」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimenow(overhour=None,diffminute=None)
@@ -1268,9 +1266,6 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  Ａ．GitHubで公開する際にメンテ放棄してるサンプルは削除しないとリポジトリが肥大化すると思ったので。あと[reamde.txt]が長かったので分割。
      今後「kanedit」「kanfast」「LTsv_sound.py」を追加予定なのでサンプルの多様性は回復するかと。
 
- Ｑ．「sensortray」「DNS8888」を「LTsv9kantray」の「LTsv」で動かそうとするとエラーになります。
- Ａ．「LTsv_file_ver()」で想定しているバージョン(ブランチ)が違うと実装している関数が事なる場合があります。
-
 
 ３-1． 「L:Tsv」のＦＡＱ
 
@@ -1295,12 +1290,13 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
 
  更新情報はGitHubやブログを確認してください。
 
-  ooblog/LTsv9kantray(GitHub)
-  https://github.com/ooblog/LTsv9kantray
+  ooblog/LTsv10kanedit(GitHub)
+  https://github.com/ooblog/LTsv10kanedit
 
  [kantray] - 大風呂ダ敷
   http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
 
+
 # Copyright (c) 2016 ooblog
 # License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE

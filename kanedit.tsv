@@ -3,8 +3,8 @@ code	UTF-8
 enter	LF
 tab	8
 program	kantray
-LTsvver	20160716S001619
-modify	20160717U023939
+LTsvver	20160718M003911
+modify	20160721R010036
 |L:Tsv]
 
 [tinykbd|
@@ -17,7 +17,7 @@ kbd_colors	font:#000000	bg:#CFE6CF	mark:#F04E7F
 dic_mapname		kanmap.tsv
 dic_charname	kanchar.tsv
 glyph_picklename	kanpickle.bin
-find_NXalpha	イ
+find_NXalpha	σ
 find_dic	名
 |tinykbd]
 
@@ -27,7 +27,7 @@ kbd_inputkey	1
 edit_colors	font:#000000	bg:#FFF3F5	mark:#F04E7F
 memo_colors	font:#000000	bg:#FFFFFF	mark:#F04E7F
 font_size	10
-eval_entry	フォントグリフなどはカイハツチュウのモノです。
+eval_entry	フォントグリフなどはカイハツチュウのモノです
 eval_now	年-月-日(週曜)時:分:秒
 eval_branch	@000y@0m@0dm@wdec@0h@0n@0s
 eval_overhour	30

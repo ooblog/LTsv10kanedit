@@ -18,7 +18,7 @@ kanfont_ltsv,kanfont_config="",""
 kanfont_chartype=["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","幅"]
 kanfont_chartype_label,kanfont_chartype_entry=[None]*len(kanfont_chartype),[None]*len(kanfont_chartype)
 kanfont_dicname,kanfont_mapname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths="kanchar.tsv","kanmap.tsv","kanfont.svg","kantray5x5comic","1024,624"
-kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage=25,0,"/mnt/sdb1/github/LTsv9kantray/kanfont_grid25_199.png"
+kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage=25,0,"kanfont_grid25_199.png"
 kanfont_char,kanfont_setchar,kanfont_kanline,kanfont_path,kanfont_glyphnote,kanfont_half="□","","","","",1024
 kanfont_dic,kanfont_alpha="名","α"
 kanfont_getkbdstr,kanfont_cursorLCR="MouseL:0\tMouseC:0\tMouseR:0",""
@@ -518,5 +518,5 @@ print("")
 
 # Copyright (c) 2016 ooblog
 # License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
 
