@@ -701,6 +701,36 @@ def LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
+def LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
+    global LTsv_widgetLTSV
+    LTsv_radioPAGENAME=LTsv_widget_newUUID(False)
+    LTsv_radioPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_radioPAGENAME)
+    radio_k=LTsv_readlinerest(LTsv_radioPAGE,"widgetkind")
+    radio_o=None if radio_k != "radio" else LTsv_widgetOBJ[LTsv_readlinerest(LTsv_radioPAGE,"widgetobj")]
+    LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
+    window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    LTsv_widgetPAGENAME=LTsv_widget_newUUID(widget_n); LTsv_widgetPAGE=""
+    LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_k="radio",widget_t=widget_t,widget_f=widget_f,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h)
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        widget_o=LTsv_libgtk.gtk_radio_button_new_with_label_from_widget(radio_o,widget_t.encode("utf-8","xmlcharrefreplace"))
+        window_c=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetcontainer")]
+        LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f,True)
+        widget_cbk=LTsv_CALLBACLTYPE(event_b) if event_b != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+        LTsv_libobj.g_signal_connect_data(widget_o,"clicked".encode("utf-8"),widget_cbk,2,0,0)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,event_b=widget_cbk)
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        widget_v=Tk.StringVar()
+        widget_v.set(widget_t)
+        if radio_k != "radio":
+            widget_b=Tk.IntVar(); widget_b.set(0)
+        else:
+            widget_b=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_radioPAGE,"widgetbooleanvar")]; widget_b.set(widget_b.get()+1)
+        widget_o=Tk.Radiobutton(window_o,textvariable=widget_v,variable=widget_b,value=widget_b.get(),command=event_b,font=LTsv_fonttuple(widget_f))
+        widget_o.place(x=widget_x,y=widget_y,width=widget_w,height=widget_h)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,widget_v=widget_v,widget_b=widget_b,event_b=event_b)
+    LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
+    return LTsv_widgetPAGENAME
+
 def LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
