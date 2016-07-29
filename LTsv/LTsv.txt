@@ -994,9 +994,15 @@ version(branch) 20160718M003911
  LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)
   GUIオブジェクト「button」を作成。ボタンを押すとイベント。
 
- LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
+ LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
   GUIオブジェクト「check」を作成。チェックマークをONOFFするとイベント。
-  「LTsv_widget_setnumber()」「LTsv_widget_getnumber()」でチェックマークのONOFFだが、使用する値は論理値ではなく数値で0か1。
+  「LTsv_widget_getnumber()」でチェック状態の取得。「LTsv_widget_setnumber()」でチェックマークのONOFF。使用する値は論理値ではなく数値で0か1。
+
+ LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
+  GUIオブジェクト「radio」を作成。選択肢を変更すると(「GTK2」の場合変更しなくても)イベント。「GTK2」の場合消灯・点灯で２回イベントが発生するので注意。
+  連続して「LTsv_radio_new()」を呼び出す事で自動的にラジオボタングループとして連携する。
+  「LTsv_widget_getnumber()」で選択肢の取得。「LTsv_widget_setnumber()」で選択肢の変更。同じラジオボタングループならどのラジオボタンでも指定できる。
+  「Tkinter」の場合「LTsv_widget_setnumber()」でラジオボタングループの個数を越える値も通るので注意。
 
  LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None)
   オブジェクト「clipboard」を作成。クリップボードを用いたテキスト入力補助。

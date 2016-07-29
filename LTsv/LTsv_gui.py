@@ -381,9 +381,12 @@ def LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0):
     if widget_k == "check":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_toggle_button_set_active(widget_o,ctypes.c_int(min(max(int(float(widget_s)),0),1)))
         if LTsv_GUI == LTsv_GUI_Tkinter:  LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].set(True if int(float(widget_s)) !=0 else False)
-#    if widget_k == "radio":
-#        if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_toggle_button_set_active(widget_o,ctypes.c_int(int(float(widget_s))))
-#        if LTsv_GUI == LTsv_GUI_Tkinter:  LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].set(widget_s)
+    if widget_k == "radio":
+        if LTsv_GUI == LTsv_GUI_GTK2:
+            radio_group=LTsv_libgtk.gtk_radio_button_get_group(widget_o)
+            radio_len=LTsv_libgtk.g_slist_length(radio_group); widget_s=min(max(int(float(widget_s)),0),radio_len-1)
+            LTsv_libgtk.gtk_toggle_button_set_active(LTsv_libgtk.g_slist_nth_data(radio_group,radio_len-widget_s-1),ctypes.c_int(1))
+        if LTsv_GUI == LTsv_GUI_Tkinter:  LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].set(widget_s)
     if widget_k == "entry":
         LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="{0}".format(widget_s))
     if widget_k == "edit":
@@ -695,7 +698,7 @@ def LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTs
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
-def LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
+def LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
     window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
@@ -719,7 +722,7 @@ def LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
-def LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="Tsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
+def LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None):
     global LTsv_widgetLTSV
     LTsv_radioPAGENAME=LTsv_widget_newUUID(False)
     LTsv_radioPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_radioPAGENAME)
