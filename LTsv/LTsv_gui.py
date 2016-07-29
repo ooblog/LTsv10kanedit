@@ -270,6 +270,10 @@ def LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t=""):
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_label_set_text(LTsv_libgtk.gtk_bin_get_child(widget_o),widget_t.encode("utf-8","xmlcharrefreplace"))
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_v=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetstringvar")]; widget_v.set(widget_t)
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
+    if widget_k == "radio":
+        if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_label_set_text(LTsv_libgtk.gtk_bin_get_child(widget_o),widget_t.encode("utf-8","xmlcharrefreplace"))
+        if LTsv_GUI == LTsv_GUI_Tkinter:  widget_v=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetstringvar")]; widget_v.set(widget_t)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
     if widget_k == "clipboard":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_clipboard_set_text(widget_o,widget_t.encode("utf-8","xmlcharrefreplace"),-1)
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_o.clipboard_append(widget_t)
@@ -339,6 +343,9 @@ def LTsv_widget_gettext(LTsv_widgetPAGENAME):
     if widget_k == "check":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_label_get_text(LTsv_libgtk.gtk_bin_get_child(widget_o))).value.decode("utf-8")
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.cget("text")
+    if widget_k == "radio":
+        if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_label_get_text(LTsv_libgtk.gtk_bin_get_child(widget_o))).value.decode("utf-8")
+        if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.cget("text")
     if widget_k == "clipboard":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_clipboard_wait_for_text(widget_o)).value.decode("utf-8")
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.clipboard_get()
@@ -374,6 +381,9 @@ def LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0):
     if widget_k == "check":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_toggle_button_set_active(widget_o,ctypes.c_int(min(max(int(float(widget_s)),0),1)))
         if LTsv_GUI == LTsv_GUI_Tkinter:  LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].set(True if int(float(widget_s)) !=0 else False)
+#    if widget_k == "radio":
+#        if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_toggle_button_set_active(widget_o,ctypes.c_int(int(float(widget_s))))
+#        if LTsv_GUI == LTsv_GUI_Tkinter:  LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].set(widget_s)
     if widget_k == "entry":
         LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="{0}".format(widget_s))
     if widget_k == "edit":
@@ -397,6 +407,14 @@ def LTsv_widget_getnumber(LTsv_widgetPAGENAME):
     if widget_k == "check":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_s=ctypes.c_int(LTsv_libgtk.gtk_toggle_button_get_active(widget_o)).value
         if LTsv_GUI == LTsv_GUI_Tkinter:   widget_s=1 if LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].get() == True else 0
+    if widget_k == "radio":
+        if LTsv_GUI == LTsv_GUI_GTK2:
+            radio_group=LTsv_libgtk.gtk_radio_button_get_group(widget_o)
+            radio_len=LTsv_libgtk.g_slist_length(radio_group); widget_s=radio_len
+            for radio_count in range(radio_len):
+                if ctypes.c_int(LTsv_libgtk.gtk_toggle_button_get_active(LTsv_libgtk.g_slist_nth_data(radio_group,radio_count))).value:
+                    widget_s=radio_len-radio_count-1
+        if LTsv_GUI == LTsv_GUI_Tkinter:   widget_s=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetbooleanvar")].get()
     if widget_k == "entry":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_entry_get_text(widget_o)).value.decode("utf-8")
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.get()
@@ -1941,8 +1959,18 @@ def debug_edit_clip(window_objvoid=None,window_objptr=None):
     LTsv_libc_printf("edit_clip={0}".format(edit_clip))
     LTsv_widget_settext(debug_clipboard,widget_t=edit_clip)
 
-def debug_checkbutton(window_objvoid=None,window_objptr=None):
-    print(LTsv_widget_gettext(debug_check),LTsv_widget_getnumber(debug_check))
+debug_check=[""]*3
+def debug_checkbutton_shell(checkNumber):
+    def debug_checkbutton_kernel(window_objvoid=None,window_objptr=None):
+        LTsv_widget_settext(debug_edit,widget_t="{0}:{1}\n".format(LTsv_widget_gettext(debug_check[checkNumber]),LTsv_widget_getnumber(debug_check[checkNumber])))
+    return debug_checkbutton_kernel
+
+debug_radio=[""]*3
+def debug_radiobutton_shell(radioNumber):
+    def debug_radiobutton_kernel(window_objvoid=None,window_objptr=None):
+#        LTsv_libc_printf("{0}".format(LTsv_widget_gettext(debug_radio[radioNumber])))
+        LTsv_widget_settext(debug_edit,widget_t="{0}:{1}\n".format(LTsv_widget_gettext(debug_radio[radioNumber]),LTsv_widget_getnumber(debug_radio[radioNumber])))
+    return debug_radiobutton_kernel
 
 
 if __name__=="__main__":
@@ -2009,7 +2037,10 @@ if __name__=="__main__":
         debug_edit=LTsv_edit_new(debug_keysetup_window,widget_t="",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*4,widget_w=debug_keyspin_W*2,widget_h=debug_keyspin_H*4,widget_f=debug_font_entry)
         debug_clipboard=LTsv_clipboard_new(debug_keysetup_window)
         debug_clipbutton=LTsv_button_new(debug_keysetup_window,widget_t="clip",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*5,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_edit_clip)
-        debug_check=LTsv_check_new(debug_keysetup_window,widget_t="check",widget_x=debug_keysetup_W-debug_keyspin_W*2,widget_y=debug_keysetup_H-debug_keyspin_H*1,widget_w=debug_keyspin_W*2,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_checkbutton)
+        for count,label in enumerate(["Acheck","Bcheck","Ccheck"]):
+            debug_check[count]=LTsv_check_new(debug_keysetup_window,widget_t=label,widget_x=debug_keysetup_W-debug_keyspin_W*(3-count),widget_y=debug_keysetup_H-debug_keyspin_H*1,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_checkbutton_shell(count))
+        for count,label in enumerate(["Aradio","Bradio","Cradio"]):
+            debug_radio[count]=LTsv_radio_new(debug_keysetup_window,widget_t=label,widget_x=debug_keysetup_W-debug_keyspin_W*(3-count),widget_y=debug_keysetup_H-debug_keyspin_H*2,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_radiobutton_shell(count))
         if LTsv_GUI == LTsv_GUI_GTK2:
             debug_keysetup_combobox=LTsv_combobox_new(debug_keysetup_window,widget_x=debug_combobox_X,widget_y=debug_combobox_Y,widget_w=debug_combobox_W,widget_h=debug_combobox_H,widget_f=debug_font_entry,event_b=debug_color_combo)
             #/usr/share/X11/rgb.txt
