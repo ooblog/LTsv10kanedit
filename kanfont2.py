@@ -24,13 +24,17 @@ kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(tinykbd_dictype)+1),[Non
 def kanfont_codespin_shell(window_objvoid=None,window_objptr=None):
     if LTsv_widget_getnumber(kanfont_code_scale) != LTsv_widget_getnumber(kanfont_code_spin):
         LTsv_widget_setnumber(kanfont_code_scale,LTsv_widget_getnumber(kanfont_code_spin))
+        kanfont_code()
     return
 
 def kanfont_codescale_shell(window_objvoid=None,window_objptr=None):
     if LTsv_widget_getnumber(kanfont_code_spin) != LTsv_widget_getnumber(kanfont_code_scale):
         LTsv_widget_setnumber(kanfont_code_spin,LTsv_widget_getnumber(kanfont_code_scale))
-        LTsv_widget_settext(kanfont_code_label,hex(LTsv_widget_getnumber(kanfont_code_scale)))
+        kanfont_code()
     return
+
+def kanfont_code():
+    LTsv_widget_settext(kanfont_code_label,hex(LTsv_widget_getnumber(kanfont_code_scale)).replace("0x","U+"))
 
 def kanfont_configload():
     global kanfont_ltsv,kanfont_config
@@ -51,9 +55,9 @@ if len(LTsv_GUI) > 0:
     kanfont_H=kanfont_canvas_WH+kanfont_label_WH*2; kanfont_scale_H=kanfont_H-kanfont_scale_WH-kanfont_label_WH-kanfont_label_WH; kanfont_scale_X,kanfont_scale_Y=0,kanfont_scale_WH
     kanfont_window=LTsv_window_new(widget_t="kanfont",event_b=LTsv_window_exit,widget_w=kanfont_W,widget_h=kanfont_H)
 #    kanfont_char_entry=LTsv_entry_new(kanfont_window,widget_t="",widget_x=0,widget_y=0,widget_w=kanfont_scale_WH,widget_h=kanfont_scale_WH,widget_f=kanfont_font_scale,event_b=None)
-    kanfont_code_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_scale_X,widget_y=kanfont_scale_Y,widget_w=kanfont_scale_W,widget_h=kanfont_scale_H,widget_s=1,widget_e=kanfont_max,widget_a=1,event_b=None)
-    kanfont_code_spin=LTsv_spin_new(kanfont_window,widget_x=0,widget_y=kanfont_scale_Y+kanfont_scale_H,widget_w=kanfont_scale_WH,widget_h=kanfont_label_WH,widget_s=1,widget_e=kanfont_max,widget_a=1,widget_f=kanfont_font_entry,event_b=None)
-    kanfont_code_label=LTsv_label_new(kanfont_window,widget_t="0xf080",widget_x=0,widget_y=kanfont_scale_Y+kanfont_scale_H+kanfont_label_WH,widget_w=kanfont_scale_WH,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
+    kanfont_code_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_scale_X,widget_y=kanfont_scale_Y,widget_w=kanfont_scale_W,widget_h=kanfont_scale_H,widget_s=1,widget_e=kanfont_max,widget_a=1,event_b=kanfont_codescale_shell)
+    kanfont_code_spin=LTsv_spin_new(kanfont_window,widget_x=0,widget_y=kanfont_scale_Y+kanfont_scale_H,widget_w=kanfont_scale_WH,widget_h=kanfont_label_WH,widget_s=1,widget_e=kanfont_max,widget_a=1,widget_f=kanfont_font_entry,event_b=kanfont_codespin_shell)
+    kanfont_code_label=LTsv_label_new(kanfont_window,widget_t="U+f080",widget_x=0,widget_y=kanfont_scale_Y+kanfont_scale_H+kanfont_label_WH,widget_w=kanfont_scale_WH,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
     kanfont_glyph_canvas=LTsv_canvas_new(kanfont_window,widget_x=kanfont_canvas_X,widget_y=0,widget_w=kanfont_canvas_WH,widget_h=kanfont_canvas_WH)
     kanfont_gridimageOBJ=LTsv_draw_picture_load(kanfont_gridimage)
     kanfont_path_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH,widget_w=kanfont_canvas_WH-kanfont_entry_W*4//8,widget_h=kanfont_label_WH*2,widget_s=0,widget_e=9,widget_a=1)

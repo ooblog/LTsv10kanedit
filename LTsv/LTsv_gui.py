@@ -1855,18 +1855,18 @@ def debug_canvas(window_objvoid=None,window_objptr=None):
     LTsv_drawtk_delete("white")
     LTsv_drawtk_font(debug_font_entry)
     LTsv_drawtk_color("#fffff0"); LTsv_drawtk_polygonfill(0,0,debug_canvas_W,0,debug_canvas_W,debug_canvas_H,0,debug_canvas_H)
-    LTsv_drawtk_color("white"); LTsv_drawtk_polygonfill(debug_kanzip_icon_X+0,debug_kanzip_icon_Y+0,debug_kanzip_icon_X+debug_kanzip_icon_WH,debug_kanzip_icon_Y+0,debug_kanzip_icon_X+debug_kanzip_icon_WH,debug_kanzip_icon_Y+debug_kanzip_icon_WH,debug_kanzip_icon_X+0,debug_kanzip_icon_Y+debug_kanzip_icon_WH)
-    LTsv_drawtk_color("green")
-    if sys.version_info.major == 2:
-        LTsv_drawtk_color("green")
-        LTsv_drawtk_glyph("{0}".format(unichr(61615)),draw_x=debug_kanzip_icon_X,draw_y=debug_kanzip_icon_Y,draw_f=debug_kanzip_icon_WH)
-        LTsv_drawtk_color("IndianRed")
-        LTsv_drawtk_glyph("{0}".format(unichr(12306)),draw_x=(debug_kanzip_icon_X+debug_kanzip_icon_WH//2),draw_y=(debug_kanzip_icon_Y+debug_kanzip_icon_WH//2),draw_f=debug_kanzip_icon_WH//2)
-    if sys.version_info.major == 3:
-        LTsv_drawtk_color("green")
-        LTsv_drawtk_glyph("{0}".format(chr(61615)),draw_x=debug_kanzip_icon_X,draw_y=debug_kanzip_icon_Y,draw_f=debug_kanzip_icon_WH)
-        LTsv_drawtk_color("IndianRed")
-        LTsv_drawtk_glyph("{0}".format(chr(12306)),draw_x=(debug_kanzip_icon_X+debug_kanzip_icon_WH//2),draw_y=(debug_kanzip_icon_Y+debug_kanzip_icon_WH//2),draw_f=debug_kanzip_icon_WH//2)
+#    LTsv_drawtk_color("white"); LTsv_drawtk_polygonfill(debug_kanzip_icon_X+0,debug_kanzip_icon_Y+0,debug_kanzip_icon_X+debug_kanzip_icon_WH,debug_kanzip_icon_Y+0,debug_kanzip_icon_X+debug_kanzip_icon_WH,debug_kanzip_icon_Y+debug_kanzip_icon_WH,debug_kanzip_icon_X+0,debug_kanzip_icon_Y+debug_kanzip_icon_WH)
+#    LTsv_drawtk_color("green")
+#    if sys.version_info.major == 2:
+#        LTsv_drawtk_color("green")
+#        LTsv_drawtk_glyph("{0}".format(unichr(61615)),draw_x=debug_kanzip_icon_X,draw_y=debug_kanzip_icon_Y,draw_f=debug_kanzip_icon_WH)
+#        LTsv_drawtk_color("IndianRed")
+#        LTsv_drawtk_glyph("{0}".format(unichr(12306)),draw_x=(debug_kanzip_icon_X+debug_kanzip_icon_WH//2),draw_y=(debug_kanzip_icon_Y+debug_kanzip_icon_WH//2),draw_f=debug_kanzip_icon_WH//2)
+#    if sys.version_info.major == 3:
+#        LTsv_drawtk_color("green")
+#        LTsv_drawtk_glyph("{0}".format(chr(61615)),draw_x=debug_kanzip_icon_X,draw_y=debug_kanzip_icon_Y,draw_f=debug_kanzip_icon_WH)
+#        LTsv_drawtk_color("IndianRed")
+#        LTsv_drawtk_glyph("{0}".format(chr(12306)),draw_x=(debug_kanzip_icon_X+debug_kanzip_icon_WH//2),draw_y=(debug_kanzip_icon_Y+debug_kanzip_icon_WH//2),draw_f=debug_kanzip_icon_WH//2)
     mouse_x,mouse_y=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
     LTsv_drawtk_color(debug_scaleRGB); LTsv_drawtk_text("mouseX,Y\n[{0},{1}]".format(mouse_x,mouse_y),draw_x=mouse_x,draw_y=mouse_y)
     LTsv_putdaytimenow(); LTsv_checkFPS()
@@ -1898,8 +1898,9 @@ def debug_canvas(window_objvoid=None,window_objptr=None):
     LTsv_drawtk_text("getkbdkanas:{0}".format(LTsv_getkbdkanas()),draw_x=txt_x,draw_y=txt_y+debug_label_WH*3)
     LTsv_drawtk_color(debug_scaleRGB)
     LTsv_drawtk_polygon(*tuple(debug_polygonpointlist))
-    if LTsv9_logoOBJ:
-        LTsv_drawtk_picture(LTsv9_logoPATH,debug_kanzip_icon_X-LTsv_global_pictureW(LTsv9_logoPATH),debug_canvas_H-LTsv_global_pictureH(LTsv9_logoPATH))
+    if LTsv10_logoOBJ:
+#        LTsv_drawtk_picture(LTsv10_logoPATH,debug_kanzip_icon_X-LTsv_global_pictureW(LTsv10_logoPATH),debug_canvas_H-LTsv_global_pictureH(LTsv10_logoPATH))
+        LTsv_drawtk_picture(LTsv10_logoPATH,debug_arc_W+LTsv_global_pictureW(LTsv10_logoPATH),debug_joypad_Y-LTsv_global_pictureH(LTsv10_logoPATH)//2)
     LTsv_drawtk_queue()
     LTsv_window_after(debug_keysetup_window,event_b=debug_canvas,event_i="debug_canvas",event_w=50)
 
@@ -2013,9 +2014,9 @@ if __name__=="__main__":
             LTsv_drawtk_selcanvas,LTsv_drawtk_color,LTsv_drawtk_font,LTsv_drawtk_text,LTsv_drawtk_picture=LTsv_drawTkinter_selcanvas,LTsv_drawTkinter_color,LTsv_drawTkinter_font,LTsv_drawTkinter_text,LTsv_drawTkinter_picture
             LTsv_drawtk_polygon,LTsv_drawtk_polygonfill,LTsv_drawtk_squares,LTsv_drawtk_circles,LTsv_drawtk_arc=LTsv_drawTkinter_polygon,LTsv_drawTkinter_polygonfill,LTsv_drawTkinter_squares,LTsv_drawTkinter_circles,LTsv_drawTkinter_arc
             LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
-        LTsv9_logoPATH="../icon_cap/LTsv9_logo.png"; LTsv9_logoOBJ=LTsv_draw_picture_load(LTsv9_logoPATH)
+        LTsv10_logoPATH="../icon_cap/LTsv10_logo.png"; LTsv10_logoOBJ=LTsv_draw_picture_load(LTsv10_logoPATH)
         debug_polygonpointlist=[556, 12, 566, 31, 583, 33, 574, 47, 581, 63, 561, 55, 537, 60, 547, 42, 529, 32, 552, 28]
-        debug_kanzip_icon_WH=48; debug_kanzip_icon_X,debug_kanzip_icon_Y=debug_canvas_W-debug_kanzip_icon_WH-2,debug_canvas_H-debug_kanzip_icon_WH-2
+#        debug_kanzip_icon_WH=48; debug_kanzip_icon_X,debug_kanzip_icon_Y=debug_canvas_W-debug_kanzip_icon_WH-2,debug_canvas_H-debug_kanzip_icon_WH-2
         debug_keysetup_scaleR=LTsv_scale_new(debug_keysetup_window,widget_x=debug_scale_X+debug_scale_W*0//3,widget_y=debug_scale_Y,widget_w=debug_scale_W//3,widget_h=debug_scale_H,widget_s=0,widget_e=255,widget_a=1,event_b=debug_color_scale)
         debug_keysetup_scaleG=LTsv_scale_new(debug_keysetup_window,widget_x=debug_scale_X+debug_scale_W*1//3,widget_y=debug_scale_Y,widget_w=debug_scale_W//3,widget_h=debug_scale_H,widget_s=0,widget_e=255,widget_a=1,event_b=debug_color_scale)
         debug_keysetup_scaleB=LTsv_scale_new(debug_keysetup_window,widget_x=debug_scale_X+debug_scale_W*2//3,widget_y=debug_scale_Y,widget_w=debug_scale_W//3,widget_h=debug_scale_H,widget_s=0,widget_e=255,widget_a=1,event_b=debug_color_scale)
