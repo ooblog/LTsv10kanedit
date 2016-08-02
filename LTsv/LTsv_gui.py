@@ -10,10 +10,6 @@ import struct
 import uuid
 import datetime
 import math
-try:
-   import cPickle as pickle
-except:
-   import pickle
 from LTsv_file    import *
 from LTsv_printf import *
 try:
@@ -1137,7 +1133,7 @@ def LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG"):
     LTsv_GTKcanvas_gccolor=LTsv_GDKCOLOR()
     LTsv_GTKfont_gccolor=LTsv_GDKCOLOR()
     LTsv_GTKcanvas_font=""
-    LTsv_drawGTK_color()
+    LTsv_drawGTK_color("")
 
 LTsv_TkintercanvasPAGE,LTsv_Tkintercanvas_o,LTsv_Tkintercanvas_color,LTsv_Tkintercanvas_TAG,LTsv_Tkintercanvas_font=None,None,None,None,None
 LTsv_TkintercanvasW,LTsv_TkintercanvasH,LTsv_Tkinterfont_color=None,None,None
@@ -1150,17 +1146,19 @@ def LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG"):
     LTsv_Tkintercanvas_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_TkintercanvasPAGE,"widgetobj")]
     LTsv_Tkintercanvas_TAG=draw_g
     LTsv_Tkintercanvas_font=""
-    LTsv_drawTkinter_color()
+    LTsv_drawTkinter_color("")
 
 def LTsv_drawGTK_delete(draw_c="white"):
-    global LTsv_GTKcanvasW,LTsv_GTKcanvasH,LTsv_GTKfont_gccolor
-    LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKfont_gccolor))
-    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
+#    global LTsv_GTKcanvasW,LTsv_GTKcanvasH,LTsv_GTKfont_gccolor
+#    LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKfont_gccolor))
+#    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
+    LTsv_drawGTK_color(draw_c)
     LTsv_libgdk.gdk_draw_rectangle(LTsv_GTKcanvas_m,LTsv_GTKcanvas_g,True,0,0,LTsv_GTKcanvasW,LTsv_GTKcanvasH)
 
 def LTsv_drawTkinter_delete(draw_c="white"):
-    global LTsv_Tkinterfont_color,LTsv_Tkintercanvas_o
-    LTsv_Tkinterfont_color=draw_c
+#    global LTsv_Tkinterfont_color,LTsv_Tkintercanvas_o
+#    LTsv_Tkinterfont_color=draw_c
+    LTsv_drawTkinter_color(draw_c)
     LTsv_Tkintercanvas_o.delete(LTsv_Tkintercanvas_TAG)
 
 def LTsv_drawGTK_color(draw_c=""):
@@ -1178,6 +1176,12 @@ def LTsv_drawGTK_bgcolor(draw_c=""):
 def LTsv_drawTkinter_bgcolor(draw_c=""):
     global LTsv_Tkinterfont_color
     LTsv_Tkinterfont_color=draw_c
+
+def LTsv_drawGTK_gcfcolor():
+    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
+
+def LTsv_drawGTK_gcbcolor():
+    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
 
 def LTsv_drawGTK_polygon(*draw_xy):
     draw_xylen=len(draw_xy)//2; gdkpointsArrayType=LTsv_GDKPOINT*draw_xylen; gdkpointsArray=gdkpointsArrayType()
@@ -1295,176 +1299,6 @@ def LTsv_clockwise(*draw_xy):
             PCQ=(xyloop[Px]-xyloop[Cx])*(xyloop[Qy]-xyloop[Cy])-(xyloop[Py]-xyloop[Cy])*(xyloop[Qx]-xyloop[Cx])
             clockwise=clockwise+1 if PCQ < 0 else clockwise-1 if PCQ > 0 else clockwise
     return clockwise
-
-LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
-LTsv_glyph_kandic=""
-def LTsv_glyphdicload(dicname="kanchar.tsv"):
-    global LTsv_glyph_kandic
-    LTsv_glyph_kandic=LTsv_loadfile(dicname) if os.path.isfile(dicname) else LTsv_keyboard_dic()
-
-def LTsv_glyphOBJpickle(filename="kanpickle.bin"):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    glyphOBJpickle=(LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ)
-    with open(filename,mode='wb') as pickle_fobj:
-        pickle.dump(glyphOBJpickle,pickle_fobj,protocol=2)
-
-def LTsv_glyphOBJunpickle(filename="kanpickle.bin"):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    if os.path.isfile(filename):
-        with open(filename,mode='rb') as pickle_fobj:
-            glyphOBJpickle=pickle.load(pickle_fobj)
-        LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ=glyphOBJpickle
-
-def LTsv_glyphdicread(dictext):
-    global LTsv_glyph_kandic
-    LTsv_glyph_kandic=dictext
-
-def LTsv_glyphpath(glyphcode):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    global LTsv_glyph_kandic
-    LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
-    LTsv_glyph_path,LTsv_glyph_wide=LTsv_pickdatalabel(LTsv_glyph_kanline,"活"),LTsv_pickdatalabel(LTsv_glyph_kanline,"幅")
-    LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
-    LTsv_glyphnote,LTsv_glyphclock=[],[]
-    for LTsv_glyphline in LTsv_glyph_pathZ:
-        LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
-        for LTsv_glyphpoint in LTsv_glyphdata:
-            if LTsv_glyphpoint.count(',') != 1: continue;
-            LTsv_glyphpoints=LTsv_glyphpoint.strip(' ').split(',')
-            LTsv_glyphpointlist+=[int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0]
-            LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
-        LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
-    LTsv_kanglyphOBJ[glyphcode]=LTsv_glyphnote
-    LTsv_kanclockOBJ[glyphcode]=LTsv_glyphclock
-    LTsv_kanwideOBJ[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
-
-def LTsv_glyphpath_outer(glyphcode):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    global LTsv_glyph_kandic
-    LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
-    LTsv_glyph_path,LTsv_glyph_wide=LTsv_pickdatalabel(LTsv_glyph_kanline,"活"),LTsv_pickdatalabel(LTsv_glyph_kanline,"幅")
-    LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
-    LTsv_glyphnote,LTsv_glyphclock=[],[]
-    for LTsv_glyphline in LTsv_glyph_pathZ:
-        LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
-        for LTsv_glyphpoint in LTsv_glyphdata:
-            if LTsv_glyphpoint.count(',') != 1: continue;
-            LTsv_glyphpoints=LTsv_glyphpoint.strip(' ').split(',')
-#            LTsv_glyphpointlist+=[int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0]
-#            LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
-            LTsv_glyphpoint98=int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0
-            LTsv_glyphpoint98=LTsv_glyphpoint98 if LTsv_glyphpoint98 % 100 != 98 else LTsv_glyphpoint98+2
-            LTsv_glyphpointlist+=[LTsv_glyphpoint98]
-            LTsv_glyphpoint98=int(LTsv_glyphpoints[1]) if LTsv_glyphpoints[1].isdigit() else 0
-            LTsv_glyphpoint98=LTsv_glyphpoint98 if LTsv_glyphpoint98 % 100 != 2 else LTsv_glyphpoint98-2
-            LTsv_glyphpointlist+=[LTsv_PSchar_ZW-LTsv_glyphpoint98]
-        LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
-    LTsv_kanglyphOBJ[glyphcode]=LTsv_glyphnote
-    LTsv_kanclockOBJ[glyphcode]=LTsv_glyphclock
-    LTsv_kanwideOBJ[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
-
-def LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    draw_xf,draw_yf=draw_x,draw_y
-    for glyphcode in draw_t:
-        if glyphcode == '\n':
-            if draw_LF:
-                glyphcode=""
-            else:
-                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
-                continue
-        if glyphcode == '\t':
-            if draw_HT:
-                glyphcode=""
-        if glyphcode == ' ':
-            if draw_SP:
-                glyphcode=""
-        if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath_outer(glyphcode)
-        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
-        for LTsv_glyphpointlist in LTsv_glyphnote:
-            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-            LTsv_drawGTK_polygon(*tuple(LTsv_glyphpointresize))
-        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
-
-def LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    draw_xf,draw_yf=draw_x,draw_y
-    for glyphcode in draw_t:
-        if glyphcode == '\n':
-            if draw_LF:
-                glyphcode=""
-            else:
-                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
-                continue
-        if glyphcode == '\t':
-            if draw_HT:
-                glyphcode=""
-        if glyphcode == ' ':
-            if draw_SP:
-                glyphcode=""
-        if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath(glyphcode)
-        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
-        for LTsv_glyphpointlist in LTsv_glyphnote:
-            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-            LTsv_drawTkinter_polygon(*tuple(LTsv_glyphpointresize))
-        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
-
-def LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    draw_xf,draw_yf=draw_x,draw_y
-    for glyphcode in draw_t:
-        if glyphcode == '\n':
-            if draw_LF:
-                glyphcode=""
-            else:
-                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
-                continue
-        if glyphcode == '\t':
-            if draw_HT:
-                glyphcode=""
-        if glyphcode == ' ':
-            if draw_SP:
-                glyphcode=""
-        if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath_outer(glyphcode)
-        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
-        for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-            if LTsv_kanclockOBJ[glyphcode][LTsv_glyphpointlist_count] > 0:
-                LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
-            else:
-                LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
-            LTsv_drawGTK_polygonfill(*tuple(LTsv_glyphpointresize))
-        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
-
-def LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-    draw_xf,draw_yf=draw_x,draw_y
-    for glyphcode in draw_t:
-        if glyphcode == '\n':
-            if draw_LF:
-                glyphcode=""
-            else:
-                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
-                continue
-        if glyphcode == '\t':
-            if draw_HT:
-                glyphcode=""
-        if glyphcode == ' ':
-            if draw_SP:
-                glyphcode=""
-        if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath(glyphcode)
-        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
-        for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-            if LTsv_kanclockOBJ[glyphcode][LTsv_glyphpointlist_count] > 0:
-                LTsv_drawTkinter_polygonfill(*tuple(LTsv_glyphpointresize))
-            else:
-                LTsv_drawTkinter_fontfill(*tuple(LTsv_glyphpointresize))
-        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
 def LTsv_drawGTK_queue():
     global LTsv_GTKcanvas_o
@@ -1990,7 +1824,7 @@ if __name__=="__main__":
         from LTsv_calc   import *
         from LTsv_kbd    import *
         LTsv_kbdinit("./LTsv_kbd.tsv",LTsv_initmouse=False)
-        LTsv_glyphdicload()
+#        LTsv_glyphdicload()
         LTsv_joymax=LTsv_joyinit()
         debug_fontname="kantray5x5comic"
         debug_fontsize_entry=10; debug_font_entry="{0},{1}".format(debug_fontname,debug_fontsize_entry); debug_label_WH=debug_fontsize_entry*2
@@ -2009,11 +1843,13 @@ if __name__=="__main__":
         if LTsv_GUI == LTsv_GUI_GTK2:
             LTsv_drawtk_selcanvas,LTsv_drawtk_color,LTsv_drawtk_font,LTsv_drawtk_text,LTsv_drawtk_picture=LTsv_drawGTK_selcanvas,LTsv_drawGTK_color,LTsv_drawGTK_font,LTsv_drawGTK_text,LTsv_drawGTK_picture
             LTsv_drawtk_polygon,LTsv_drawtk_polygonfill,LTsv_drawtk_squares,LTsv_drawtk_circles,LTsv_drawtk_arc=LTsv_drawGTK_polygon,LTsv_drawGTK_polygonfill,LTsv_drawGTK_squares,LTsv_drawGTK_circles,LTsv_drawGTK_arc
-            LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill,LTsv_drawGTK_delete,LTsv_drawGTK_queue
+            LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_delete,LTsv_drawGTK_queue
+#            LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill,LTsv_drawGTK_delete,LTsv_drawGTK_queue
         if LTsv_GUI == LTsv_GUI_Tkinter:
             LTsv_drawtk_selcanvas,LTsv_drawtk_color,LTsv_drawtk_font,LTsv_drawtk_text,LTsv_drawtk_picture=LTsv_drawTkinter_selcanvas,LTsv_drawTkinter_color,LTsv_drawTkinter_font,LTsv_drawTkinter_text,LTsv_drawTkinter_picture
             LTsv_drawtk_polygon,LTsv_drawtk_polygonfill,LTsv_drawtk_squares,LTsv_drawtk_circles,LTsv_drawtk_arc=LTsv_drawTkinter_polygon,LTsv_drawTkinter_polygonfill,LTsv_drawTkinter_squares,LTsv_drawTkinter_circles,LTsv_drawTkinter_arc
-            LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
+            LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
+#            LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
         LTsv10_logoPATH="../icon_cap/LTsv10_logo.png"; LTsv10_logoOBJ=LTsv_draw_picture_load(LTsv10_logoPATH)
         debug_polygonpointlist=[556, 12, 566, 31, 583, 33, 574, 47, 581, 63, 561, 55, 537, 60, 547, 42, 529, 32, 552, 28]
 #        debug_kanzip_icon_WH=48; debug_kanzip_icon_X,debug_kanzip_icon_Y=debug_canvas_W-debug_kanzip_icon_WH-2,debug_canvas_H-debug_kanzip_icon_WH-2

@@ -1,4 +1,4 @@
-「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kantray」のPythonによる実装です。
+「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 version(branch) 20160718M003911
 
 目次
@@ -20,8 +20,8 @@ version(branch) 20160718M003911
  １-6a．[LTsv_kbd.py]の関数一覧
  １-6b．[LTsv_kbd.tsv]のタグ解説
  １-7a．[LTsv_gui.py]の関数一覧
- １-7b．「kantray」の「貼付モード(マウス)」や「kanfont」などで用いられる「keyboard」GUIの操作方法。
- ２-0． 「L:Tsv」のサンプルアプリケーション。
+ １-8a．[LTsv_glyph.py]の関数一覧
+ ２-0． 「L:Tsv」を用いるアプリケーションの作り方。
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
  ４．   作者について、例えば連絡先。
@@ -67,8 +67,8 @@ version(branch) 20160718M003911
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  [kantray5x5.svg][kantray5x5comic.svg]を[kantray5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
  [kanchar.tsv]に異体字を移管して[kanmap.tsv]を圧縮していく作業は当分続く。現在人名に使える漢字の異体字の字引入力中心に作業中。
- 通知タスクトレイ(Notify)が使えない環境にも対応するためテキストエディタ「kanedit」も現在制作中。漢直キーボード「LTsv_keyboard_new()」を置き換える予定。
- 「L:Tsv」をgit-subtree化できるように「kantray」の内容はなるだけ[kantray.txt]に移動したい(ドキュメント未整理の部分あり)。
+ 通知タスクトレイ(Notify)が使えない環境にも対応するためテキストエディタ「kanedit」も現在制作中。
+ 「kantray」で使ってた漢直キーボード「LTsv_keyboard_new()」を廃止して「kanedit」の漢直キーボードに置き換える予定。
 
 
 １-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
@@ -815,7 +815,7 @@ version(branch) 20160718M003911
 １-7a．[LTsv_gui.py]の関数一覧
 
  ウィンドウなどGUIを設置するモジュールです。
- ・環境次第では「Tkinter」と「GTK2」が選べるはずですがPuppyLinux571JPではGTK2一択です。
+ ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。
  ・「LTsv_window_main()」を呼び出した後はGUIのイベント(「LTsv_window_after()」の様なタイマー系含む)が発生するまでPythonスクリプトが停止するので注意。
  ・「LTsv_」を付加してないローカル変数が多々あるので変数名の衝突が心配。
  ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。
@@ -1076,6 +1076,10 @@ version(branch) 20160718M003911
   「LTsv_drawGTK_delete()」の図形消去に使う色指定。
   「canvas」内のフォントグリフ穴空けの色も指定。
 
+ LTsv_drawGTK_gcfcolor(); LTsv_drawGTK_gcbcolor():
+  後述の「LTsv_drawGTK_glyphfill()」で呼び出す内部関数。
+  「LTsv_drawGTK_color()」「LTsv_drawGTK_bgcolor()」とほぼ同じ。色指定を省略。
+
  LTsv_drawGTK_polygon(*draw_xy); LTsv_drawTkinter_polygon(*draw_xy)
   「canvas」にポリゴンの描画(ワイヤフレーム)。座標は(x,y,x,y…)とX座標とY座標が交互に来るタプル。
 
@@ -1124,38 +1128,6 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  LTsv_clockwise(*draw_xy)
   ポリゴンが時計回りなら正数、反時計回りなら負数、判定できない場合0のカウントを返す。
   時計回りの判定は簡易的(角度のみ面積無視)なので８の字にねじった形状や十字手裏剣のような凹みのある形状を扱う場合注意。
-
- LTsv_glyphdicload(dicname="kanchar.tsv"):
-  単漢字辞書ファイル「kanchar.tsv」を読み込む。
-  ファイルが見つからない場合「LTsv_keyboard_dic()」から読み込む。
-
- LTsv_glyphOBJpickle(filename="kanpickle.bin"):
-  フォント座標(パス回転方向とフォント幅含む)をpickle化してファイルに保存。
-
- LTsv_glyphOBJunpickle(filename="kanpickle.bin"):
-  pickle化してファイルに保存したフォント座標(パス回転方向とフォント幅含む)を読み込む。
-
- LTsv_glyphdicread(dictext):
-  単漢字辞書のテキストデータを読み込む。
-
- LTsv_glyphpath(glyphcode):
-  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。
-  通常は後述の「kanfont_drawTkinter_glyph()」から自動呼び出し。
-
- LTsv_glyphpath_outer(glyphcode):
-  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。「GTK2」の場合１ドット未満の図形が消えるのでフォントを太らせる。
-  正確には「kanfont」で作成する「kantray5x5」フォント座標の末尾が98の座標を繰り上げる。
-  通常は後述の「kanfont_drawGTK_glyph()」から自動呼び出し。
-
- LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
-  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
-
- LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
-  反時計周りのパスは「LTsv_drawGTK_delete()」「LTsv_drawTkinter_delete()」で初期化に使う色。初期値は「white」。
-  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
-  draw_LFで改行を「&#61649;(0xf0d1)」で可視化、draw_HTでタブを「&#61632;(0xf0c0)」を用いて可視化、draw_SPでスペースを「&#61644;(0xf080)」を用いて可視化。
 
  LTsv_drawGTK_queue(); LTsv_drawTkinter_queue()
   「GTK2」で「canvas」の更新を「X window」に通知する。OS(厳密にはX)に描画更新を通知しないと描画が即時反映されません。
@@ -1230,47 +1202,78 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  debug_checkbutton(window_objvoid=None,window_objptr=None)
   単体風テスト専用。チェックボタン「check」の動作確認。
 
+１-8a．[LTsv_glyph.py]の関数一覧
 
-１-7b．「kantray」の「貼付モード(マウス)」や「kanfont」などで用いられる「keyboard」GUIの操作方法。
+ 「canvas」上でフォントグリフを描画するモジュールです。
+ ・環境次第では「Tkinter」と「GTK2」が選べるはずですがTahrpup6.0.5(PuppyLinux)ではGTK2一択です。
+ ・「LTsv_window_main()」を呼び出した後はGUIのイベント(「LTsv_window_after()」の様なタイマー系含む)が発生するまでPythonスクリプトが停止するので注意。
+ ・「LTsv_」を付加してないローカル変数が多々あるので変数名の衝突が心配。
+ ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。
+ ・通知タスクトレイ(Notify)関連は「Tkinter」で使えないので注意。他にも「Tkinter」で動かない命令はいくつか。
+ ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
+ ・単体風テストではGUIはもちろん、キーボードやジョイスティック(ゲームPAD)、日時フォーマットや電卓フォーマットなどの挙動確認もできます。
 
- 鍵盤のフリック操作(フリックもスワイプもマウス的にはドラッグ操作です)
+ LTsv_glyphdicload(dicname="kanchar.tsv"):
+  単漢字辞書ファイル「kanchar.tsv」を読み込む。
+  ファイルが見つからない場合「LTsv_keyboard_dic()」から読み込む。
 
-  mouseL(１ボタン)タップ(Tap)          鍵盤の上でタップした場合「kantray」の入力欄に文字入力(「kanfont」の場合検索欄に文字代入)。
-                                       画面左端でタップした場合NFER鍵盤(青)の選択。右端タップでXFER鍵盤(緑)の切替。
-  mouseL(１ボタン)フリック(Flick)      画面右下(橙)からフリックするとα鍵盤や辞書項目などの選択。
-                                       画面左下(橙)の辞書項目名からフリックすると字引入力。一時的に字引鍵盤に変化します。
-  mouseL(１ボタン)スワイプ(Swipe)      画面左右の端(青・緑)からスワイプすると鍵盤の選択。左下の空白は最後に選択したα鍵盤。
+ LTsv_glyphOBJpickle(filename="kanpickle.bin"):
+  フォント座標(パス回転方向とフォント幅含む)をpickle化してファイルに保存。
+
+ LTsv_glyphOBJunpickle(filename="kanpickle.bin"):
+  pickle化してファイルに保存したフォント座標(パス回転方向とフォント幅含む)を読み込む。
+
+ LTsv_glyphdicread(dictext):
+  単漢字辞書のテキストデータを読み込む。
+
+ LTsv_glyphpath(glyphcode):
+  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。
+  通常は後述の「kanfont_drawTkinter_glyph()」から自動呼び出し。
+
+ LTsv_glyphpath_outer(glyphcode):
+  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。「GTK2」の場合１ドット未満の図形が消えるのでフォントを太らせる。
+  正確には「kanfont」で作成する「kantray5x5」フォント座標の末尾が98の座標を繰り上げる。
+  通常は後述の「kanfont_drawGTK_glyph()」から自動呼び出し。
+
+ LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
+  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
+
+ LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
+  反時計周りのパスは「LTsv_drawGTK_delete()」「LTsv_drawTkinter_delete()」で初期化に使う色。初期値は「white」。
+  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
+  draw_LFで改行を「&#61649;(0xf0d1)」で可視化、draw_HTでタブを「&#61632;(0xf0c0)」を用いて可視化、draw_SPでスペースを「&#61644;(0xf080)」を用いて可視化。
 
 
-２-0． 「L:Tsv」のサンプルアプリケーション。
+２-0． 「L:Tsv」を用いるアプリケーションの作り方。
 
- 「L:Tsv」でどのようなアプリが作れるのかの具体例として「kantray」「kanfont」「kanzip」を同梱しています。
- 漢直キーボード「keyboard」GUIが「kantray」以外のアプリでも使えるというデモにもなります。
+ 「L:Tsv」でどのようなアプリが作れるのかの想定として「LTsv10kanedit(tsvtool10)」にて「kanedit」「kanfont」「kanzip」を制作中です。
+ その他のアプリでも「/LTsv」フォルダの同梱と「sys.path.append("LTsv")」の一行追加で簡単に「L:Tsv」モジュールを扱えるようになる予定です。
  各アプリの概要は[README.md]を参考。
- 各アプリの操作方法は[kantray.txt]を参考。
 
 
 ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
 
- Ｑ．[kantray.py]をダブルクリックしても起動しない。
+ Ｑ．[kanfont.py]などをダブルクリックしても起動しない。
  Ａ．Linuxの場合パーミッションで実行が許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。
      Wineで[python-*.msi]が動かないって話なら[wine_sh/python3install.sh]を参考。「msiexec /i python-3.4.3.msi」の様なコマンドが必要。
 
       Welcome to Python.org
       https://www.python.org/
 
- Ｑ．Pythonはもう3.5系出てますよね？
- Ａ．[python-3.5.1.exe]が[wine-portable-1.7.18-1-p4.tar.gz]で動作しなかったのでどうしようも。
-     「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。
-
- Ｑ．[LTsv_gui.py]をダブルクリックしても起動しない。[kantray.py][kanfont.py][kanzip.py]とかは起動する。
+ Ｑ．[LTsv_gui.py]をダブルクリックしても起動しない。[kanedit.py][kanfont.py][kanzip.py]とかは起動する。
  Ａ．LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
      回避するには「if __name__=="__main__":」以下の「print」「LTsv_libc_printf」を含む行をコメントアウトするか、
      ターミナルから「# ./LTsv_gui.py」とコマンド起動してみてください。「Geany」でF5でも起動できるはずです。
 
- Ｑ．バージョン「20160224W182907」にあった「omake」フォルダなぜ消したし。
- Ａ．GitHubで公開する際にメンテ放棄してるサンプルは削除しないとリポジトリが肥大化すると思ったので。あと[reamde.txt]が長かったので分割。
-     今後「kanedit」「kanfast」「LTsv_sound.py」を追加予定なのでサンプルの多様性は回復するかと。
+ Ｑ．[kanedit.py]が未完成だ。
+ Ａ．[kanedit.py]も[kanfont.py]が未完成です。
+   とりあえず動く漢直が必要な場合旧式の「LTsv9kantray(tsvtool9)」の[kantray.py]を用いてください。
+
+ Ｑ．Pythonはもう3.5系出てますよね？
+ Ａ．[python-3.5.1.exe]が[wine-portable-1.7.18-1-p4.tar.gz]で動作しなかったのでどうしようも。
+     「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。
 
 
 ３-1． 「L:Tsv」のＦＡＱ
@@ -1280,16 +1283,11 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
 
  Ｑ．GUI方面とかクラス使った方が簡潔になるんじゃないですか？
  Ａ．以前はHSP版(tsvtool6)やBaCon版(tsvtool7)を作ってたので資産流用です。
-     逆に言うとクラスとかタプルとか存在しない言語でも「L:Tsv」を使うことで代用できるみたいな。
+     逆に言うとクラスとかタプルとか存在しない言語にも「L:Tsv」を移植しやすいということ。
 
- Ｑ．「LTsv_drawtk_polygon」といった関数が見つかりません。
- Ａ．描画命令高速化のため「LTsv_drawtk_polygon=LTsv_drawGTK_polygon」のように、変数に関数を代入してます。
-     「GTK2」「Tkinter」の判定を関数に内蔵すると、ループの中にif文という構造になるので描画が遅くなります。
-     PythonはC言語で言う所の関数ポインタを使わなくとも関数オブジェクトとして変数に代入できるので、if文を1回にする事が可能になります。
-
- Ｑ．「kanfont_drawGTK_glyph」でGUIのフォントを変更するにはどうすればいいですか。
- Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等には使えません。
-     GUIで表示する場合は付属の「kantray5x5comic.woff」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
+ Ｑ．ボタンなどのGUIにフォント「kantray5x5comic」を用いるにはどうすればいいですか。
+ Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接は使えません。
+     GUIで表示する場合は付属の「kanfont.svg」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
 
 
 ４．   作者について、例えば連絡先。

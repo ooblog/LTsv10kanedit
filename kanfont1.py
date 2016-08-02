@@ -5,13 +5,14 @@ import sys
 import os
 os.chdir(sys.path[0])
 sys.path.append("LTsv")
-from LTsv_printf import *
-from LTsv_file   import *
-#from LTsv_time   import *
-#from LTsv_calc   import *
-#from LTsv_joy    import *
-from LTsv_kbd    import *
-from LTsv_gui    import *
+from LTsv_printf  import *
+from LTsv_file    import *
+#from LTsv_time    import *
+#from LTsv_calc    import *
+#from LTsv_joy     import *
+from LTsv_kbd     import *
+from LTsv_gui     import *
+from LTsv_glyph  import *
 
 
 kanfont_ltsv,kanfont_config="",""

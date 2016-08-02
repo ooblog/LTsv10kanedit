@@ -5,13 +5,14 @@ import sys
 import os
 os.chdir(sys.path[0])
 sys.path.append("LTsv")
-from LTsv_printf import *
-from LTsv_file   import *
-#from LTsv_time   import *
-#from LTsv_calc   import *
-#from LTsv_joy    import *
-from LTsv_kbd    import *
-from LTsv_gui    import *
+from LTsv_printf  import *
+from LTsv_file    import *
+#from LTsv_time    import *
+#from LTsv_calc    import *
+#from LTsv_joy     import *
+from LTsv_kbd     import *
+from LTsv_gui     import *
+from LTsv_glyph  import *
 
 tinykbd_dictype=    ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","幅"]
 PSfont_ZW,PSfont_CW,PSchar_ZW,PSchar_CW=1024,624,1000,600

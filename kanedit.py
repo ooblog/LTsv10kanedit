@@ -6,13 +6,14 @@ import os
 os.chdir(sys.path[0])
 sys.path.append("LTsv")
 import copy
-from LTsv_printf import *
-from LTsv_file   import *
-from LTsv_time   import *
-from LTsv_calc   import *
-#from LTsv_joy    import *
-from LTsv_kbd    import *
-from LTsv_gui    import *
+from LTsv_printf  import *
+from LTsv_file    import *
+from LTsv_time    import *
+from LTsv_calc    import *
+#from LTsv_joy     import *
+from LTsv_kbd     import *
+from LTsv_gui     import *
+from LTsv_glyph  import *
 
 tinykbd_fontsize,tinykbd_fontspace,tinykbd_fonthalf=5,6,3
 tinykbd_menusize,tinykbd_menuspace,tinykbd_menuhalf=10,12,6
