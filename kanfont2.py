@@ -75,6 +75,9 @@ if len(LTsv_GUI) > 0:
         kanfont_dictype_label[dictype_cnt]=LTsv_radio_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_label_WH,widget_w=kanfont_label_WH*2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
     dictype_cnt,dictype_split=len(tinykbd_dictype),"code"
     kanfont_dictype_label[dictype_cnt]=LTsv_radio_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_scale_X,widget_y=0,widget_w=kanfont_scale_W,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
+    kanfont_dic_button=LTsv_button_new(kanfont_window,widget_t=kanfont_dicname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*3,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
+    kanfont_map_button=LTsv_button_new(kanfont_window,widget_t=kanfont_mapname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*2,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
+    kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t=kanfont_svgname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*1,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
     LTsv_widget_showhide(kanfont_window,True)
     if LTsv_GUI == LTsv_GUI_GTK2:
         LTsv_drawtk_selcanvas,LTsv_drawtk_font,LTsv_drawtk_color,LTsv_drawtk_text,LTsv_drawtk_picture=LTsv_drawGTK_selcanvas,LTsv_drawGTK_font,LTsv_drawGTK_color,LTsv_drawGTK_text,LTsv_drawGTK_picture

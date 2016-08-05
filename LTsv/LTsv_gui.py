@@ -1148,18 +1148,21 @@ def LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG"):
     LTsv_Tkintercanvas_font=""
     LTsv_drawTkinter_color("")
 
+def LTsv_draw_selcanvas_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_selcanvas
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_selcanvas
+
 def LTsv_drawGTK_delete(draw_c="white"):
-#    global LTsv_GTKcanvasW,LTsv_GTKcanvasH,LTsv_GTKfont_gccolor
-#    LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKfont_gccolor))
-#    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
     LTsv_drawGTK_color(draw_c)
     LTsv_libgdk.gdk_draw_rectangle(LTsv_GTKcanvas_m,LTsv_GTKcanvas_g,True,0,0,LTsv_GTKcanvasW,LTsv_GTKcanvasH)
 
 def LTsv_drawTkinter_delete(draw_c="white"):
-#    global LTsv_Tkinterfont_color,LTsv_Tkintercanvas_o
-#    LTsv_Tkinterfont_color=draw_c
     LTsv_drawTkinter_color(draw_c)
     LTsv_Tkintercanvas_o.delete(LTsv_Tkintercanvas_TAG)
+
+def LTsv_draw_delete_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_delete
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_delete
 
 def LTsv_drawGTK_color(draw_c=""):
     LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKcanvas_gccolor))
@@ -1306,6 +1309,10 @@ def LTsv_drawGTK_queue():
 
 def LTsv_drawTkinter_queue():
     pass
+
+def LTsv_draw_queue_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_queue
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_queue
 
 def LTsv_keyboard_size(keyboard_fontsize=12):
     keyboard_fontKP=3; keyboard_buttonsize=keyboard_fontKP+keyboard_fontsize+keyboard_fontKP

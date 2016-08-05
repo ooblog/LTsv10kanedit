@@ -183,9 +183,35 @@ def LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_
                 LTsv_drawTkinter_fontfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
+def LTsv_kbddraw():
+    pass
+
+def debug_milklid_draw():
+    LTsv_draw_selcanvas(debug_reversi_canvas)
+    LTsv_draw_delete("#90EE90")
+    LTsv_draw_queue()
+
+#ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ０１２３４５６７８９＋／＝
+#＿ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ０１２３４５６７８９．
+
 if __name__=="__main__":
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
+    LTsv_GUI=LTsv_guiinit()
+    if len(LTsv_GUI) > 0:
+        debug_kbd_size=1
+        debug_kbdH=6*4*debug_kbd_size
+        debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
+        debug_reversi_X,debug_reversi_Y,debug_reversi_W,debug_reversi_H=debug_milklid_W*2,debug_milklid_H*2,debug_milklid_W*(2+8+2),debug_milklid_H*(2+8+2)
+        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=LTsv_window_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H,event_z=None)
+        debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
+         event_p=None,event_r=None,event_m=None,event_w=50)
+        LTsv_widget_showhide(debug_reversi_window,True)
+        LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI)
+        debug_milklid_draw()
+        LTsv_window_main(debug_reversi_window)
+    else:
+        LTsv_libc_printf("GUIの設定に失敗しました。")
     print("")
     print("__main__",LTsv_file_ver())
 
