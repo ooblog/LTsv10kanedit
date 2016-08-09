@@ -100,8 +100,9 @@ ENV/
 # git branch -d 20160718M003911
 # git push github:ooblog/LTsv10kanedit.git :20160718M003911
 LTsv/testfile/
-kanfont.svg
+LTsv/kanpickle.bin
 kanpickle.bin
+kanfont.svg
 kanzip.tsv
 kanzip/
 kanmap/

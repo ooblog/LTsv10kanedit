@@ -30,10 +30,10 @@ tinykbd_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","地",
 tinykbd_alphatype= ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
 tinykbd_alphatypeN=["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
 tinykbd_alphatypeX=["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω","●","▲","■"]
+tinykbd_dictype=    ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","幅"]
 tinykbd_irohaalpha=tinykbd_irohatype+tinykbd_alphatype
 tinykbd_irohaalphaN=tinykbd_irohatypeN+tinykbd_alphatypeN
 tinykbd_irohaalphaX=tinykbd_irohatypeX+tinykbd_alphatypeX
-tinykbd_dictype=    ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","幅"]
 tinykbd_map,tinykbd_char,tinykbd_pickle,tinykbd_word,tinykbd_zip="","","","",""
 tinykbd_kanmapN,tinykbd_kanmapX,tinykbd_kanmapD={},{},{}
 tinykbd_fontcolor,tinykbd_bgcolor,tinykbd_markcolor="black","#CFE6CF","red"
@@ -73,17 +73,17 @@ kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor="black","white","red"
 
 
 def kanedit_redraw():
-    LTsv_drawtk_selcanvas(kanedit_canvas); LTsv_drawtk_delete(kanedit_bgcolor)
+    LTsv_draw_selcanvas(kanedit_canvas); LTsv_draw_delete(kanedit_bgcolor)
     kanedit_editdraw(5,5)
     kanedit_memodraw(0,kanedit_H-tinykbd_fontsize)
     kanedit_kbddraw(kanedit_W-tinykbd_W,kanedit_H-tinykbd_H)
     if kanedit_inputkey:
         LTsv_widget_settext(kanedit_window,widget_t="kanedit:{0}".format(kanedit_getkbdnames.replace('\t',' ')))
-    LTsv_drawtk_queue()
+    LTsv_draw_queue()
 
 def kanedit_editdraw(edit_x,edit_y):
-    LTsv_drawtk_color(kanedit_bgcolor); LTsv_drawtk_polygonfill(0,0,kanedit_W,0,kanedit_W,kanedit_H,0,kanedit_H)
-    LTsv_drawtk_color(kanedit_fontcolor);
+    LTsv_draw_color(kanedit_bgcolor); LTsv_draw_polygonfill(0,0,kanedit_W,0,kanedit_W,kanedit_H,0,kanedit_H)
+    LTsv_draw_color(kanedit_fontcolor);
     textline_y=edit_y
     for kanedit_textline in kanedit_textvalue.split('\n'):
         kanedit_textline+='\n'
@@ -95,15 +95,15 @@ def kanedit_editdraw(edit_x,edit_y):
 def kanedit_memodraw(memo_x,memo_y):
     global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
     global kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor
-    LTsv_drawtk_bgcolor(kanmemo_bgcolor); LTsv_drawtk_color(kanmemo_bgcolor); 
-    LTsv_drawtk_polygonfill(memo_x,memo_y,kanedit_W-tinykbd_W,memo_y,kanedit_W-tinykbd_W,kanedit_H,memo_x,kanedit_H)
-    LTsv_drawtk_color(kanmemo_fontcolor); LTsv_drawtk_glyphfill(kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=tinykbd_fontsize,draw_w=1,draw_h=1,draw_LF=True,draw_HT=True,draw_SP=True)
+    LTsv_draw_bgcolor(kanmemo_bgcolor); LTsv_draw_color(kanmemo_bgcolor); 
+    LTsv_draw_polygonfill(memo_x,memo_y,kanedit_W-tinykbd_W,memo_y,kanedit_W-tinykbd_W,kanedit_H,memo_x,kanedit_H)
+    LTsv_draw_color(kanmemo_fontcolor); LTsv_drawtk_glyphfill(kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=tinykbd_fontsize,draw_w=1,draw_h=1,draw_LF=True,draw_HT=True,draw_SP=True)
 
 def kanedit_kbddraw(kbd_x,kbd_y):
     keyboard_kanmapN,keyboard_kanmapX,keyboard_dicinput=LTsv_keyboard_map()
-    LTsv_drawtk_bgcolor(tinykbd_bgcolor)
-    LTsv_drawtk_color(tinykbd_bgcolor); LTsv_drawtk_polygonfill(kbd_x,kbd_y,kbd_x+tinykbd_W,kbd_y,kbd_x+tinykbd_W,kbd_y+tinykbd_H,kbd_x,kbd_y+tinykbd_H)
-    LTsv_drawtk_color(tinykbd_fontcolor)
+    LTsv_draw_bgcolor(tinykbd_bgcolor)
+    LTsv_draw_color(tinykbd_bgcolor); LTsv_draw_polygonfill(kbd_x,kbd_y,kbd_x+tinykbd_W,kbd_y,kbd_x+tinykbd_W,kbd_y+tinykbd_H,kbd_x,kbd_y+tinykbd_H)
+    LTsv_draw_color(tinykbd_fontcolor)
     for kbd_xy in range(tinykbd_irohamax):
         LTsv_drawtk_glyphfill(tinykbd_fontchar[kbd_xy],draw_x=kbd_x+tinykbd_fontX[kbd_xy],draw_y=kbd_y+tinykbd_fontY[kbd_xy],draw_f=tinykbd_fontsize)
     for kbd_xy in range(tinykbd_irohamax,tinykbd_None):
@@ -390,16 +390,6 @@ LTsv_GUI=LTsv_guiinit()
 #kantray_max=0x2ffff if LTsv_GUI != "Tkinter" else 0xffff :「kanedit」non limit!
 if len(LTsv_GUI) > 0:
     LTsv_kbdinit(LTsv_initmouse=True)
-    if LTsv_GUI == LTsv_GUI_GTK2:
-        LTsv_drawtk_selcanvas,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_selcanvas,LTsv_drawGTK_delete,LTsv_drawGTK_queue
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_color,LTsv_drawtk_bgcolor=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill,LTsv_drawGTK_color,LTsv_drawGTK_bgcolor
-        LTsv_drawtk_polygonfill,LTsv_drawtk_picture=LTsv_drawGTK_polygonfill,LTsv_drawGTK_picture
-        LTsv_drawtk_font,LTsv_drawtk_text=LTsv_drawGTK_font,LTsv_drawGTK_text
-    if LTsv_GUI == LTsv_GUI_Tkinter:
-        LTsv_drawtk_selcanvas,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_selcanvas,LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_color,LTsv_drawtk_bgcolor=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_drawTkinter_color,LTsv_drawTkinter_bgcolor
-        LTsv_drawtk_polygonfill,LTsv_drawtk_picture=LTsv_drawTkinter_polygonfill,LTsv_drawTkinter_picture
-        LTsv_drawtk_font,LTsv_drawtk_text=LTsv_drawTkinter_font,LTsv_drawTkinter_text
     kanedit_window=LTsv_window_new(widget_t="kanedit",event_b=kanedit_exit_configsave,widget_w=kanedit_W,widget_h=kanedit_H,event_z=kanedit_resize,event_k=kanedit_keypress,event_y=kanedit_keyrelease)
     kanedit_configload()
     LTsv_window_resize(kanedit_window,kanedit_W,kanedit_H)
@@ -407,6 +397,16 @@ if len(LTsv_GUI) > 0:
      event_p=kanedit_mousepress,event_r=kanedit_mouserelease,event_m=kanedit_mousemotion,event_w=50)
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)
     LTsv_widget_showhide(kanedit_window,True)
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill
+    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
+    LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
+    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
+    LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
+    LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
+    LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanedit_resize()
     kanedit_redraw()
     LTsv_window_main(kanedit_window)
