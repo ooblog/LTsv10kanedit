@@ -266,6 +266,14 @@ def debug_milklid_draw():
     LTsv_draw_polygon(debug_milklidX[11],debug_milklidY[11],debug_milklidX[19],debug_milklidY[19],debug_milklidX[99],debug_milklidY[99],debug_milklidX[91],debug_milklidY[91])
     LTsv_draw_polygon(debug_milklidX[33],debug_milklidY[33],debug_milklidX[37],debug_milklidY[37],debug_milklidX[77],debug_milklidY[77],debug_milklidX[73],debug_milklidY[73])
     LTsv_draw_squaresfill(6,debug_milklidX[33],debug_milklidY[33],debug_milklidX[37],debug_milklidY[37],debug_milklidX[77],debug_milklidY[77],debug_milklidX[73],debug_milklidY[73])
+    milklidcount=0
+    for xy in debug_reversi_range:
+        milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[0] else milklidcount
+    LTsv_draw_color(debug_milklid_colordic["black"]); LTsv_draw_text(draw_t="●\n{0:02}".format(milklidcount),draw_x=debug_milklidX[20]-debug_milklid_W*1,draw_y=debug_milklidY[20])
+    milklidcount=0
+    for xy in debug_reversi_range:
+        milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[1] else milklidcount
+    LTsv_draw_color(debug_milklid_colordic["black"]); LTsv_draw_text(draw_t="○\n{0:02}".format(milklidcount),draw_x=debug_milklidX[29]+debug_milklid_W*1,draw_y=debug_milklidY[29])
     LTsv_draw_queue()
 
 def debug_milkAI_reset():
@@ -297,9 +305,13 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     debug_milkMAP_reset()
     for entrylen,entryxy in enumerate(reversi_entry):
         if entryxy in debug_reversi_key and entryxy != debug_reversi_key[0]:
-#            debug_milkMAP[debug_reversi_key.index(entryxy)]=debug_milklidBW
             debug_milklid_turn(debug_reversi_key.index(entryxy),debug_milklidBW)
             debug_milklidBW=debug_milklidBWswitch[debug_milklidBW]
+            milkcounttotal=0
+            for xy in debug_reversi_range:
+                milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
+            if milkcounttotal == 0:
+                debug_milklidBW=debug_milklidBWswitch[debug_milklidBW]
         else:
             reversi_entry=reversi_entry[:entrylen]
             break
@@ -354,10 +366,10 @@ if __name__=="__main__":
         debug_milklidBW=debug_milklidBWswitch[0]
         debug_reversi_range=[y*10+x for y in range(1,9) for x in range(1,9)]
         debug_milklid_colorkey=["green","black","white","back","line","nexr"]
-        debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F3F3F3","line":"#4D4D4D","next":"#C0D2FF"}
+        debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F3F3F3","line":"#0D8495","next":"#FFC0F0"}
         debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=LTsv_window_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2,event_z=None)
-        debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=0,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
-        debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=debug_reversi_W-debug_milklid_W*3,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
+        debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
+        debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
         debug_reversi_button=LTsv_button_new(debug_reversi_window,widget_t="Auto",widget_x=debug_reversi_W-debug_milklid_W*2,widget_y=debug_reversi_H,widget_w=debug_milklid_W*2,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_Auto)
         debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
          event_p=debug_mousepress,event_m=debug_mousemotion,event_r=debug_mouserelease,event_w=50)
