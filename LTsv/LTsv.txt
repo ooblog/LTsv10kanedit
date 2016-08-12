@@ -1211,13 +1211,9 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
 １-8a．[LTsv_glyph.py]の関数一覧
 
  「canvas」上でフォントグリフを描画するモジュールです。
- ・環境次第では「Tkinter」と「GTK2」が選べるはずですがTahrpup6.0.5(PuppyLinux)ではGTK2一択です。
- ・「LTsv_window_main()」を呼び出した後はGUIのイベント(「LTsv_window_after()」の様なタイマー系含む)が発生するまでPythonスクリプトが停止するので注意。
- ・「LTsv_」を付加してないローカル変数が多々あるので変数名の衝突が心配。
- ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。
- ・通知タスクトレイ(Notify)関連は「Tkinter」で使えないので注意。他にも「Tkinter」で動かない命令はいくつか。
- ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
- ・単体風テストではGUIはもちろん、キーボードやジョイスティック(ゲームPAD)、日時フォーマットや電卓フォーマットなどの挙動確認もできます。
+ ・「LTsv_draw_font_shell()」「LTsv_draw_text_shell()」との違いはフォントを用いずにグリフを描画することです。
+ ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8を扱います。
+ ・単体風テストとして漢直キーボードでリバーシを操作するデモを作成中。
 
  LTsv_glyphdicload(dicname="kanchar.tsv"):
   単漢字辞書ファイル「kanchar.tsv」を読み込む。

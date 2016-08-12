@@ -233,12 +233,22 @@ def debug_milklid_check(xy,bw):
     milkcount,milkcountall=0,0
     if debug_milkMAP[xy] == 0:
         for v in debug_milklidV:
-            oxy=xy+v
+            milkcount=0; oxy=xy+v
             while debug_milkMAP[oxy] == debug_milklidBWswitch[bw]:
                 milkcount+=1; oxy+=v
             if debug_milkMAP[oxy] == bw:
                 milkcountall+=milkcount
     return milkcountall
+
+def debug_milklid_turn(xy,bw):
+    for v in debug_milklidV:
+        milklist=[]; oxy=xy+v
+        while debug_milkMAP[oxy] == debug_milklidBWswitch[bw]:
+            milklist.append(oxy); oxy+=v
+        if debug_milkMAP[oxy] == bw:
+            for t in milklist:
+                debug_milkMAP[t]=bw
+    debug_milkMAP[xy]=bw
 
 def debug_milklid_draw():
     LTsv_draw_selcanvas(debug_reversi_canvas)
@@ -247,7 +257,7 @@ def debug_milklid_draw():
     LTsv_draw_color(debug_milklid_colordic["green"]); LTsv_draw_polygonfill(debug_milklidX[11],debug_milklidY[11],debug_milklidX[19],debug_milklidY[19],debug_milklidX[99],debug_milklidY[99],debug_milklidX[91],debug_milklidY[91])
     LTsv_draw_font(debug_milkfont)
     for xy in debug_reversi_range:
-        if debug_milklid_check(xy,1) > 0:
+        if debug_milklid_check(xy,debug_milklidBW) > 0:
             LTsv_draw_color(debug_milklid_colordic["next"])
         else:
             LTsv_draw_color(debug_milklid_colordic[debug_milklid_colorkey[debug_milkMAP[xy]]])
@@ -287,7 +297,8 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     debug_milkMAP_reset()
     for entrylen,entryxy in enumerate(reversi_entry):
         if entryxy in debug_reversi_key and entryxy != debug_reversi_key[0]:
-            debug_milkMAP[debug_reversi_key.index(entryxy)]=debug_milklidBW
+#            debug_milkMAP[debug_reversi_key.index(entryxy)]=debug_milklidBW
+            debug_milklid_turn(debug_reversi_key.index(entryxy),debug_milklidBW)
             debug_milklidBW=debug_milklidBWswitch[debug_milklidBW]
         else:
             reversi_entry=reversi_entry[:entrylen]
