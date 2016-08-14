@@ -217,7 +217,7 @@ def LTsv_kbddraw():
 def debug_mousepress(window_objvoid=None,window_objptr=None):
     keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(),0),debug_reversi_H)
     if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
-        for xy in debug_reversi_range:
+        for xy in debug_milklid_range:
             if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
                 debug_milkAI_add(debug_reversi_key[xy])
     else:
@@ -256,34 +256,53 @@ def debug_milkAI_BS(window_objvoid=None,window_objptr=None):
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
     debug_milkAI_entry()
 
+def debug_milkAI_reset():
+    global debug_milkAI,debug_milkMAP,debug_milklidBW,debug_milklidBWwait
+    debug_milkAI=list(range(debug_milklidLen)); random.shuffle(debug_milkAI)
+    for xy in [11,18,81,88]: debug_milkAI[xy]+=900;
+    for xy in [13,16,31,38,61,68,83,86]: debug_milkAI[xy]+=800;
+    for xy in [33,36,63,66]: debug_milkAI[xy]+=700;
+    for xy in [34,35,43,46,53,56,64,65]: debug_milkAI[xy]+=600;
+    for xy in [14,15,41,48,51,58,84,85]: debug_milkAI[xy]+=500;
+    for xy in [23,26,32,37,62,67,73,76]: debug_milkAI[xy]+=400;
+    for xy in [24,25,42,47,52,57,74,75]: debug_milkAI[xy]+=300;
+    for xy in [12,17,21,28,71,78,82,87]: debug_milkAI[xy]+=200;
+    for xy in [22,27,72,77]: debug_milkAI[xy]+=100;
+
 def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
-    global debug_milkAI,debug_milkMAP,debug_milklidBW
+    global debug_milkAI,debug_milkMAP,debug_milklidBW,debug_milklidBWwait
     reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
     reversi_entry=reversi_entry[:60]
     if len(reversi_entry) == 0:
-        debug_milkAI=list(range(debug_milklidLen)); random.shuffle(debug_milkAI)
-        for xy in [11,18,81,88]: debug_milkAI[xy]+=900;
-        for xy in [13,16,31,38,61,68,83,86]: debug_milkAI[xy]+=800;
-        for xy in [33,36,63,66]: debug_milkAI[xy]+=700;
-        for xy in [34,35,43,46,53,56,64,65]: debug_milkAI[xy]+=600;
-        for xy in [14,15,41,48,51,58,84,85]: debug_milkAI[xy]+=500;
-        for xy in [23,26,32,37,62,67,73,76]: debug_milkAI[xy]+=400;
-        for xy in [24,25,42,47,52,57,74,75]: debug_milkAI[xy]+=300;
-        for xy in [12,17,21,28,71,78,82,87]: debug_milkAI[xy]+=200;
-        for xy in [22,27,72,77]: debug_milkAI[xy]+=100;
+        debug_milkAI_reset()
     debug_milkMAP=[0 for xy in range(debug_milklidLen)]
     for xy in [45,54]: debug_milkMAP[xy]=debug_milklidBWswitch[0];
     for xy in [44,55]: debug_milkMAP[xy]=debug_milklidBWswitch[1];
     debug_milklidBW=debug_milklidBWswitch[0]
+    for bw in range(2):
+        debug_milklidBWwait[debug_milklidBWswitch[bw]]=1 if debug_milklidBWswitch[bw] == debug_milklidBW else 0
     for entrylen,entryxy in enumerate(reversi_entry):
-        if entryxy in debug_reversi_key and entryxy != debug_reversi_key[0]:
+        if entryxy in debug_reversi_key:
+            if debug_milklid_check(debug_reversi_key.index(entryxy),debug_milklidBW) == 0:
+                reversi_entry=reversi_entry[:entrylen]
+                break
             debug_milklid_turn(debug_reversi_key.index(entryxy),debug_milklidBW)
             debug_milklidBW=debug_milklidBWswitch[debug_milklidBW]
             milkcounttotal=0
-            for xy in debug_reversi_range:
+            for xy in debug_milklid_range:
                 milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
             if milkcounttotal == 0:
                 debug_milklidBW=debug_milklidBWswitch[debug_milklidBW]
+                for bw in range(2):
+                    debug_milklidBWwait[debug_milklidBWswitch[bw]]=1 if debug_milklidBWswitch[bw] == debug_milklidBW else 2
+                milkcounttotal=0
+                for xy in debug_milklid_range:
+                    milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
+                if milkcounttotal == 0:
+                    debug_milklidBWwait[debug_milklidBW],debug_milklidBWwait[debug_milklidBWswitch[debug_milklidBW]]=3,4
+            else:
+                for bw in range(2):
+                    debug_milklidBWwait[debug_milklidBWswitch[bw]]=1 if debug_milklidBWswitch[bw] == debug_milklidBW else 0
         else:
             reversi_entry=reversi_entry[:entrylen]
             break
@@ -293,7 +312,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     LTsv_draw_color(debug_milklid_colordic["back"]); LTsv_draw_polygonfill(0,0,debug_reversi_W,0,debug_reversi_W,debug_reversi_H,0,debug_reversi_H)
     LTsv_draw_color(debug_milklid_colordic["green"]); LTsv_draw_polygonfill(debug_milklidX[11],debug_milklidY[11],debug_milklidX[19],debug_milklidY[19],debug_milklidX[99],debug_milklidY[99],debug_milklidX[91],debug_milklidY[91])
     LTsv_draw_font(debug_milkfont)
-    for xy in debug_reversi_range:
+    for xy in debug_milklid_range:
         if debug_milklid_check(xy,debug_milklidBW) > 0:
             LTsv_draw_color(debug_milklid_colordic["next"])
         else:
@@ -303,19 +322,16 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     LTsv_draw_polygon(debug_milklidX[11],debug_milklidY[11],debug_milklidX[19],debug_milklidY[19],debug_milklidX[99],debug_milklidY[99],debug_milklidX[91],debug_milklidY[91])
     LTsv_draw_polygon(debug_milklidX[33],debug_milklidY[33],debug_milklidX[37],debug_milklidY[37],debug_milklidX[77],debug_milklidY[77],debug_milklidX[73],debug_milklidY[73])
     LTsv_draw_squaresfill(6,debug_milklidX[33],debug_milklidY[33],debug_milklidX[37],debug_milklidY[37],debug_milklidX[77],debug_milklidY[77],debug_milklidX[73],debug_milklidY[73])
-    milklidcount=0
-    for xy in debug_reversi_range:
-        milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[0] else milklidcount
-    LTsv_draw_color(debug_milklid_colordic["black"]); LTsv_draw_text(draw_t="●\n{0:02}".format(milklidcount),draw_x=debug_milklidX[20]-debug_milklid_W*1,draw_y=debug_milklidY[20])
-    milklidcount=0
-    for xy in debug_reversi_range:
-        milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[1] else milklidcount
-    LTsv_draw_color(debug_milklid_colordic["black"]); LTsv_draw_text(draw_t="○\n{0:02}".format(milklidcount),draw_x=debug_milklidX[29]+debug_milklid_W*1,draw_y=debug_milklidY[29])
+    for bw in range(2):
+        milklidcount=0
+        for xy in debug_milklid_range:
+            milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[bw] else milklidcount
+        LTsv_draw_text(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20])
     LTsv_draw_queue()
 
 def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
     milklist=[0]
-    for xy in debug_reversi_range:
+    for xy in debug_milklid_range:
         if debug_milklid_check(xy,debug_milklidBW) > 0:
             milklist.append(xy)
     milkAIdic={}
@@ -327,7 +343,7 @@ def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
 def debug_milkAI_add(addentry):
     reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
     milkcounttotal=0
-    for xy in debug_reversi_range:
+    for xy in debug_milklid_range:
         milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
     if milkcounttotal > 0:
         if addentry in debug_reversi_key and addentry != debug_reversi_key[0]:
@@ -369,12 +385,17 @@ if __name__=="__main__":
         debug_milklidV=[+1,+9,+10,+11,-1,-9,-10,-11]
         debug_milklidBWswitch=[1,2,1]
         debug_milklidBW=debug_milklidBWswitch[0]
-        debug_reversi_range=[y*10+x for y in range(1,9) for x in range(1,9)]
+        debug_milklidBWstone=["","●","○"]
+        debug_milklidBWstatusX=[0,debug_milklidX[20]-debug_milklid_W,debug_milklidX[29]+debug_milklid_W]
+        debug_milklidBWwait=[0,0,0]
+        debug_milklidBWwaitname=["　\n　\n　\n　","Ｔ\nＵ\nＲ\nＮ","Ｐ\nＡ\nＳ\nＳ","Ｗ\nＩ\nＮ\n　","Ｌ\nＯ\nＳ\nＥ"]
+        debug_milklid_range=[y*10+x for y in range(1,9) for x in range(1,9)]
         debug_milklid_colorkey=["green","black","white","back","line","nexr"]
-        debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F3F3F3","line":"#0D8495","next":"#FFC0F0"}
+        debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F1F1F1","line":"#00918F","next":"#FFD7F3"}
         debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=LTsv_window_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2,event_z=None)
         debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
         debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
+#        debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="０Ｓ．ｈｇ３Ｖ８ｅＵＭＴａＦＬｆｏｘｍｕｗｖＤＥＧｊ５ｂ４ＸＣＷＮｐＫｉｄｃ７Ｙ６ＲＺＱｑＢＡｙｚｎｔｒＰＪＩｌｓｋＯＨ",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
         debug_reversi_button=LTsv_button_new(debug_reversi_window,widget_t="Auto",widget_x=debug_reversi_W-debug_milklid_W*2,widget_y=debug_reversi_H,widget_w=debug_milklid_W*2,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_Auto)
         debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
          event_p=debug_mousepress,event_m=debug_mousemotion,event_r=debug_mouserelease,event_w=50)
@@ -385,7 +406,7 @@ if __name__=="__main__":
         LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-        debug_milkAI_entry()
+        debug_milkAI_reset(); debug_milkAI_entry()
         LTsv_window_main(debug_reversi_window)
     else:
         LTsv_libc_printf("GUIの設定に失敗しました。")
