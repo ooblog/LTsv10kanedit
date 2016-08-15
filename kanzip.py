@@ -97,18 +97,16 @@ def kanzip_fileexist(window_objvoid=None,window_objptr=None):
         LTsv_widget_settext(kanzip_window,widget_t="kanzip")
 
 def kanzip_buzyicon(kanzip_ken,kanzip_buzy):
-    LTsv_drawtk_selcanvas(kanzip_DLprogres[kanzip_ken])
-#    LTsv_draw_delete(kanzip_DLprogres[kanzip_ken])
-    LTsv_drawtk_delete("white")
+    LTsv_draw_selcanvas(kanzip_DLprogres[kanzip_ken])
+    LTsv_draw_delete("white")
     if kanzip_buzy:
-        LTsv_drawtk_color(draw_c="gray"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
+        LTsv_draw_color(draw_c="gray"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
     else:
         for ken in range(kanzip_prefectureMAX+1):
             LTsv_widget_disableenable(kanzip_DLbutton[ken],False)
-        LTsv_drawtk_color(draw_c="gray"); LTsv_drawtk_glyphfill(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
-        LTsv_drawtk_color(draw_c="black"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
-#    LTsv_draw_queue(kanzip_DLprogres[kanzip_ken])
-    LTsv_drawtk_queue()
+        LTsv_draw_color(draw_c="gray"); LTsv_drawtk_glyphfill(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
+        LTsv_draw_color(draw_c="black"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
+    LTsv_draw_queue()
     LTsv_widget_showhide(kanzip_DLprogres[kanzip_ken],True)
 
 def kanzip_DL_report(kanzip_DL_cnt=None,kanzip_DL_size=None,kanzip_DL_total=None):
@@ -180,11 +178,15 @@ if len(LTsv_GUI) > 0:
     LTsv_kbdinit()
     LTsv_glyphdicload("kanchar.tsv")
     if LTsv_GUI == LTsv_GUI_GTK2:
-        LTsv_drawtk_selcanvas,LTsv_drawtk_color,LTsv_drawtk_polygon,LTsv_drawtk_polygonfill=LTsv_drawGTK_selcanvas,LTsv_drawGTK_color,LTsv_drawGTK_polygon,LTsv_drawGTK_polygonfill
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill,LTsv_drawGTK_delete,LTsv_drawGTK_queue
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        LTsv_drawtk_selcanvas,LTsv_drawtk_color,LTsv_drawtk_polygon,LTsv_drawtk_polygonfill=LTsv_drawTkinter_selcanvas,LTsv_drawTkinter_color,LTsv_drawTkinter_polygon,LTsv_drawTkinter_polygonfill
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill
+    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
+    LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
+    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
+    LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
+    LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
+    LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanzip_window=LTsv_window_new(widget_t="kanzip",event_b=LTsv_window_exit,widget_w=kanzip_window_W,widget_h=kanzip_window_H)
     if not os.path.isdir(kanzip_workdir): os.mkdir(kanzip_workdir)
     for ken in range(kanzip_prefectureMAX):
