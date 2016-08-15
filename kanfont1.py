@@ -397,7 +397,7 @@ def kanfont_canvas_leave(callback_void=None,callback_ptr=None):
 def kanfont_5x5draw():
     LTsv_drawtk_selcanvas(kanfont_5x5)
     LTsv_drawtk_delete("white"); LTsv_drawtk_color("black")
-    LTsv_glyphdicread(kantray_kanchar); LTsv_drawtk_glyphpath(kanfont_char)
+    LTsv9_glyphdicread(kantray_kanchar); LTsv_drawtk_glyphpath(kanfont_char)
     LTsv_drawtk_glyphfill(kanfont_char,draw_x=5,draw_y=5,draw_f=5,draw_w=1,draw_h=1)
     LTsv_drawtk_glyphfill(kanfont_char,draw_x=10,draw_y=10,draw_f=10,draw_w=1,draw_h=1)
     LTsv_drawtk_glyphfill(kanfont_char,draw_x=20,draw_y=20,draw_f=20,draw_w=1,draw_h=1)
@@ -484,13 +484,13 @@ if len(LTsv_GUI) > 0:
         LTsv_drawtk_squares,LTsv_drawtk_squaresfill,LTsv_drawtk_circles,LTsv_drawtk_circlesfill=LTsv_drawGTK_squares,LTsv_drawGTK_squaresfill,LTsv_drawGTK_circles,LTsv_drawGTK_circlesfill
         LTsv_drawtk_polygon,LTsv_drawtk_polygonfill=LTsv_drawGTK_polygon,LTsv_drawGTK_polygonfill
         LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawGTK_delete,LTsv_drawGTK_queue
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_glyphpath=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill,LTsv_glyphpath_outer
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_glyphpath=LTsv9_drawGTK_glyph,LTsv9_drawGTK_glyphfill,LTsv9_glyphpath_outer
     if LTsv_GUI == LTsv_GUI_Tkinter:
         LTsv_drawtk_selcanvas,LTsv_drawtk_font,LTsv_drawtk_color,LTsv_drawtk_text,LTsv_drawtk_picture=LTsv_drawTkinter_selcanvas,LTsv_drawTkinter_font,LTsv_drawTkinter_color,LTsv_drawTkinter_text,LTsv_drawTkinter_picture
         LTsv_drawtk_squares,LTsv_drawtk_squaresfill,LTsv_drawtk_circles,LTsv_drawtk_circlesfill=LTsv_drawTkinter_squares,LTsv_drawTkinter_squaresfill,LTsv_drawTkinter_circles,LTsv_drawTkinter_circlesfill
         LTsv_drawtk_polygon,LTsv_drawtk_polygonfill=LTsv_drawTkinter_polygon,LTsv_drawTkinter_polygonfill
         LTsv_drawtk_delete,LTsv_drawtk_queue=LTsv_drawTkinter_delete,LTsv_drawTkinter_queue
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_glyphpath=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill,LTsv_glyphpath
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill,LTsv_drawtk_glyphpath=LTsv9_drawTkinter_glyph,LTsv9_drawTkinter_glyphfill,LTsv9_glyphpath
     kanfont_5x5=LTsv_canvas_new(kanfont_window,widget_x=kanfont_entry_X-kanfont_label_WH//2,widget_y=(len(kanfont_chartype)-1)*kanfont_label_WH,widget_w=kanfont_entry_W//8,widget_h=kanfont_entry_W//8)
     kanfont_path_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_entry_X+kanfont_entry_W//8,widget_y=(len(kanfont_chartype)-1)*kanfont_label_WH,widget_w=kanfont_entry_W*4//8,widget_h=kanfont_label_WH*2,widget_s=0,widget_e=9,widget_a=1)
     kanfont_grid_label=LTsv_label_new(kanfont_window,widget_t="grid",widget_x=kanfont_entry_X+kanfont_entry_W*5//8,widget_y=(len(kanfont_chartype)-1)*kanfont_label_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)

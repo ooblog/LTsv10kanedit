@@ -350,7 +350,7 @@ def kanedit_configload():
     tinykbd_fontchar[tinykbd_SandS]=tinykbd_fontchar[tinykbd_SandS] if tinykbd_fontchar[tinykbd_SandS] in tinykbd_dictype else tinykbd_dictype[0]
     tinykbd_char=LTsv_loadfile(LTsv_readlinerest(kanedit_tinykbd,"dic_charname","kanchar.tsv"))
     tinykbd_pickle=LTsv_readlinerest(kanedit_tinykbd,"glyph_picklename","kanchar.tsv")
-    LTsv_glyphOBJunpickle(tinykbd_pickle)
+    LTsv9_glyphOBJunpickle(tinykbd_pickle)
 
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_tinykbd_new(kbd_resize)
@@ -360,7 +360,7 @@ def kanedit_configload():
     kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg","mark"))
     kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg","mark"))
     kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"font_size",str(kanedit_fontsize))),5),100)
-    LTsv_glyphdicload(LTsv_readlinerest(kanedit_config,"dic_charname","kanchar.tsv"))
+    LTsv9_glyphdicload(LTsv_readlinerest(kanedit_config,"dic_charname","kanchar.tsv"))
     tinykbd_word=LTsv_loadfile(LTsv_readlinerest(kanedit_config,"dic_wordname","kanword.tsv"))
     tinykbd_zip=LTsv_loadfile(LTsv_readlinerest(kanedit_config,"dic_zipname","kanzip.tsv"))
     kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"open_last","kanedit.txt")
@@ -381,7 +381,7 @@ def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
     kanedit_config=LTsv_pushlinerest(kanedit_config,"eval_entry",kanmemo_textvalue)
     kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
     LTsv_savefile("kanedit.tsv",kanedit_ltsv)
-    LTsv_glyphOBJpickle(tinykbd_pickle)
+    LTsv9_glyphOBJpickle(tinykbd_pickle)
     LTsv_window_exit()
 kanedit_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanedit_exit_configsave)
 
@@ -398,9 +398,9 @@ if len(LTsv_GUI) > 0:
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)
     LTsv_widget_showhide(kanedit_window,True)
     if LTsv_GUI == LTsv_GUI_GTK2:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawGTK_glyph,LTsv9_drawGTK_glyphfill
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawTkinter_glyph,LTsv9_drawTkinter_glyphfill
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)

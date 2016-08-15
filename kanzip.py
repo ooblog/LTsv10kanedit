@@ -176,11 +176,11 @@ LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
     from LTsv_kbd    import *
     LTsv_kbdinit()
-    LTsv_glyphdicload("kanchar.tsv")
+    LTsv9_glyphdicload("kanchar.tsv")
     if LTsv_GUI == LTsv_GUI_GTK2:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawGTK_glyph,LTsv_drawGTK_glyphfill
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawGTK_glyph,LTsv9_drawGTK_glyphfill
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv_drawTkinter_glyph,LTsv_drawTkinter_glyphfill
+        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawTkinter_glyph,LTsv9_drawTkinter_glyphfill
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)

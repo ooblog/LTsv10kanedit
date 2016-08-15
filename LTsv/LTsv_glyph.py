@@ -28,7 +28,7 @@ LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
 LTsv_glyph_kbd_fontcolor,LTsv_glyph_kbd_bgcolor="black","#CFE6CF"
-def LTsv_glyph_init(LTsv_glyph_ltsvpath="kanglyph.tsv"):
+def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     global LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle
     global LTsv_glyph_irohatype,LTsv_glyph_irohatypeN,LTsv_glyph_irohatypeX
@@ -60,29 +60,38 @@ def LTsv_glyph_init(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
     LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
 
+def LTsv_global_kandic():                              return LTsv_glyph_kandic
+def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
 
-def LTsv_glyphdicload(dicname="kanchar.tsv"):
+def LTsv_glyph_kbddraw():
+    pass
+
+def LTsv_glyph_kbdsave():
+    pass
+
+
+def LTsv9_glyphdicload(dicname="kanchar.tsv"):
     global LTsv_glyph_kandic
     LTsv_glyph_kandic=LTsv_loadfile(dicname) if os.path.isfile(dicname) else LTsv_keyboard_dic()
 
-def LTsv_glyphOBJpickle(filename="kanpickle.bin"):
+def LTsv9_glyphOBJpickle(filename="kanpickle.bin"):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     glyphOBJpickle=(LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ)
     with open(filename,mode='wb') as pickle_fobj:
         pickle.dump(glyphOBJpickle,pickle_fobj,protocol=2)
 
-def LTsv_glyphOBJunpickle(filename="kanpickle.bin"):
+def LTsv9_glyphOBJunpickle(filename="kanpickle.bin"):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     if os.path.isfile(filename):
         with open(filename,mode='rb') as pickle_fobj:
             glyphOBJpickle=pickle.load(pickle_fobj)
         LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ=glyphOBJpickle
 
-def LTsv_glyphdicread(dictext):
+def LTsv9_glyphdicread(dictext):
     global LTsv_glyph_kandic
     LTsv_glyph_kandic=dictext
 
-def LTsv_glyphpath(glyphcode):
+def LTsv9_glyphpath(glyphcode):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     global LTsv_glyph_kandic
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
@@ -101,7 +110,7 @@ def LTsv_glyphpath(glyphcode):
     LTsv_kanclockOBJ[glyphcode]=LTsv_glyphclock
     LTsv_kanwideOBJ[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
 
-def LTsv_glyphpath_outer(glyphcode):
+def LTsv9_glyphpath_outer(glyphcode):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     global LTsv_glyph_kandic
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
@@ -126,7 +135,7 @@ def LTsv_glyphpath_outer(glyphcode):
     LTsv_kanclockOBJ[glyphcode]=LTsv_glyphclock
     LTsv_kanwideOBJ[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
 
-def LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv9_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     draw_xf,draw_yf=draw_x,draw_y
     for glyphcode in draw_t:
@@ -143,14 +152,14 @@ def LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw
             if draw_SP:
                 glyphcode=""
         if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath_outer(glyphcode)
+            LTsv9_glyphpath_outer(glyphcode)
         LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
         for LTsv_glyphpointlist in LTsv_glyphnote:
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
             LTsv_drawGTK_polygon(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
-def LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv9_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     draw_xf,draw_yf=draw_x,draw_y
     for glyphcode in draw_t:
@@ -167,14 +176,14 @@ def LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,
             if draw_SP:
                 glyphcode=""
         if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath(glyphcode)
+            LTsv9_glyphpath(glyphcode)
         LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
         for LTsv_glyphpointlist in LTsv_glyphnote:
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
             LTsv_drawTkinter_polygon(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
-def LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     draw_xf,draw_yf=draw_x,draw_y
     for glyphcode in draw_t:
@@ -191,7 +200,7 @@ def LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,
             if draw_SP:
                 glyphcode=""
         if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath_outer(glyphcode)
+            LTsv9_glyphpath_outer(glyphcode)
         LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
@@ -204,7 +213,7 @@ def LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,
             LTsv_drawGTK_polygonfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
-def LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
     global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     draw_xf,draw_yf=draw_x,draw_y
     for glyphcode in draw_t:
@@ -221,7 +230,7 @@ def LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_
             if draw_SP:
                 glyphcode=""
         if not glyphcode in LTsv_kanglyphOBJ:
-            LTsv_glyphpath(glyphcode)
+            LTsv9_glyphpath(glyphcode)
         LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
@@ -230,9 +239,6 @@ def LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_
             else:
                 LTsv_drawTkinter_fontfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
-
-def LTsv_kbddraw():
-    pass
 
 def debug_mousepress(window_objvoid=None,window_objptr=None):
     keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(),0),debug_reversi_H)
@@ -380,7 +386,7 @@ if __name__=="__main__":
     LTsv_GUI=LTsv_guiinit()
     if len(LTsv_GUI) > 0:
         import random
-        LTsv_glyph_init(LTsv_glyph_ltsvpath="kanglyph.tsv")
+        LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv")
         debug_kbd_size=1
         debug_kbdH=6*4*debug_kbd_size
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
