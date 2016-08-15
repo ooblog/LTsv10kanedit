@@ -17,29 +17,49 @@ LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle="","","
 LTsv_glyph_irohatype= ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","゛","゜","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeN=["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeX=["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ","タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ","チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム","ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ","｜"]
-LTsv_glyph_choice=    ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
-LTsv_glyph_choiceN=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
-LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","Ε","Ρ","Τ","Υ","Θ","Ι","Ο","Π","｀","プ","Α","Σ","Δ","Φ","Γ","Η","Ξ","Κ","Λ","代","鍵","ぬ","Ζ","Χ","Ψ","Ω","Β","Ν","Μ","熙","●","▲","■","￥","Σ"]
 LTsv_glyph_alphatype= ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
 LTsv_glyph_alphatypeN=["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
 LTsv_glyph_alphatypeX=["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω","●","▲","■"]
 LTsv_glyph_dictype=    ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","幅"]
+LTsv_glyph_choice=    ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
+LTsv_glyph_choiceN=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
+LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","Ε","Ρ","Τ","Υ","Θ","Ι","Ο","Π","｀","プ","Α","Σ","Δ","Φ","Γ","Η","Ξ","Κ","Λ","代","鍵","ぬ","Ζ","Χ","Ψ","Ω","Β","Ν","Μ","熙","●","▲","■","￥","Σ"]
+LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
+LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
+LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
+LTsv_glyph_kbd_fontcolor,LTsv_glyph_kbd_bgcolor="black","#CFE6CF"
 def LTsv_glyph_init(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     global LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle
+    global LTsv_glyph_irohatype,LTsv_glyph_irohatypeN,LTsv_glyph_irohatypeX
+    global LTsv_glyph_alphatype,LTsv_glyph_alphatypeN,LTsv_glyph_alphatypeX
+    global LTsv_glyph_dictype
+    global LTsv_glyph_choice,LTsv_glyph_choiceN,LTsv_glyph_choiceX
+    global LTsv_glyph_irohaalpha,LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX
     LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(LTsv_glyph_ltsvpath))+"/"
     LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
     LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
     LTsv_glyph_kandicname=LTsv_readlinerest(LTsv_glyph_config,"dicname",LTsv_glyph_kandicname)
+    LTsv_glyph_kandic=LTsv_loadfile(LTsv_glyph_kandicname)
     LTsv_glyph_kanmapname=LTsv_readlinerest(LTsv_glyph_config,"mapname",LTsv_glyph_kanmapname)
+    LTsv_glyph_kanmap=LTsv_loadfile(LTsv_glyph_kanmapname)
     LTsv_glyph_kanpicklename=LTsv_readlinerest(LTsv_glyph_config,"picklename",LTsv_glyph_kanpicklename)
+#    with open(LTsv_glyph_kanpicklename,mode='wb') as pickle_fobj:
+#        pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+    LTsv_glyph_irohatype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatype",LTsv_tuple2tsv(LTsv_glyph_irohatype)))
+    LTsv_glyph_irohatypeN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeN",LTsv_tuple2tsv(LTsv_glyph_irohatypeN)))
+    LTsv_glyph_irohatypeX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeX",LTsv_tuple2tsv(LTsv_glyph_irohatypeX)))
+    LTsv_glyph_alphatype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"alphatype",LTsv_tuple2tsv(LTsv_glyph_alphatype)))
+    LTsv_glyph_alphatypeN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"alphatypeN",LTsv_tuple2tsv(LTsv_glyph_alphatypeN)))
+    LTsv_glyph_alphatypeX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"alphatypeX",LTsv_tuple2tsv(LTsv_glyph_alphatypeX)))
+    LTsv_glyph_dictype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"dictype",LTsv_tuple2tsv(LTsv_glyph_dictype)))
+    LTsv_glyph_choice=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choice",LTsv_tuple2tsv(LTsv_glyph_choice)))
+    LTsv_glyph_choiceN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choiceN",LTsv_tuple2tsv(LTsv_glyph_choiceN)))
+    LTsv_glyph_choiceX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choiceX",LTsv_tuple2tsv(LTsv_glyph_choiceX)))
+    LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
+    LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
+    LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
 
-#    print("LTsv_glyph_kandicname",LTsv_glyph_kandicname)
-##    print("LTsv_glyph_kanmapname",LTsv_glyph_kanmapname)
-#    print("LTsv_glyph_kanpicklename",LTsv_glyph_kanpicklename)
-#    print(LTsv_glyph_ltsv)
-#    keyboard_kanmapT=LTsv_loadfile(os.path.normpath(LTsv_glyph_tsvdir+LTsv_glyph_kandicname)
-#        keyboard_kanmapT=LTsv_loadfile(os.path.normpath(LTsv_tsvdir+LTsv_readlinerest(keyboard_mapdic_page,"mapname")))
 
 def LTsv_glyphdicload(dicname="kanchar.tsv"):
     global LTsv_glyph_kandic
