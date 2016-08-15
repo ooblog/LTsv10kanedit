@@ -62,6 +62,20 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
 
 def LTsv_global_kandic():                              return LTsv_glyph_kandic
 def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
+def LTsv_global_kanpickle():                          return LTsv_glyph_kanpickle
+def LTsv_global_irohatype():                          return LTsv_glyph_irohatype
+def LTsv_global_irohatypeN():                         return LTsv_glyph_irohatypeN
+def LTsv_global_irohatypeX():                         return LTsv_glyph_irohatypeX
+def LTsv_global_alphatype():                          return LTsv_glyph_alphatype
+def LTsv_global_alphatypeN():                         return LTsv_glyph_alphatypeN
+def LTsv_global_alphatypeX():                         return LTsv_glyph_alphatypeX
+def LTsv_global_dictype():                             return LTsv_glyph_dictype
+def LTsv_global_choice():                              return LTsv_glyph_choice
+def LTsv_global_choiceN():                             return LTsv_glyph_choiceN
+def LTsv_global_choiceX():                             return LTsv_glyph_choiceX
+def LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha
+def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
+def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
 
 def LTsv_glyph_kbddraw():
     pass
