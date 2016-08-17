@@ -12,8 +12,8 @@ from LTsv_printf import *
 from LTsv_gui    import *
 
 LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
-LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename="LTsv/","kanchar.tsv","kanmap.tsv","kanpickle.bin"
-LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle="","","",""
+LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername="LTsv/","kanchar.tsv","kanmap.tsv","kanpickleGTK.bin","kanpickleTkinter.bin"
+LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickleGTK,LTsv_glyph_kanpickleTkinter="","","",{},{}
 LTsv_glyph_irohatype= ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","゛","゜","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeN=["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeX=["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ","タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ","チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム","ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ","｜"]
@@ -28,9 +28,10 @@ LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
 LTsv_glyph_kbd_fontcolor,LTsv_glyph_kbd_bgcolor="black","#CFE6CF"
+LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
-    global LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename
-    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle
+    global LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
+    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickleGTK,LTsv_glyph_kanpickleTkinter
     global LTsv_glyph_irohatype,LTsv_glyph_irohatypeN,LTsv_glyph_irohatypeX
     global LTsv_glyph_alphatype,LTsv_glyph_alphatypeN,LTsv_glyph_alphatypeX
     global LTsv_glyph_dictype
@@ -43,9 +44,15 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     LTsv_glyph_kandic=LTsv_loadfile(LTsv_glyph_kandicname)
     LTsv_glyph_kanmapname=LTsv_readlinerest(LTsv_glyph_config,"mapname",LTsv_glyph_kanmapname)
     LTsv_glyph_kanmap=LTsv_loadfile(LTsv_glyph_kanmapname)
-    LTsv_glyph_kanpicklename=LTsv_readlinerest(LTsv_glyph_config,"picklename",LTsv_glyph_kanpicklename)
-#    with open(LTsv_glyph_kanpicklename,mode='wb') as pickle_fobj:
-#        pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+    if LTsv_global_GUI() == "GTK2":
+        LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
+#        with open(LTsv_glyph_kanpickleGTKname,mode='wb') as pickle_fobj:
+#            pickle.dump(LTsv_glyph_kanpickleGTK,pickle_fobj,protocol=2)
+        
+    if LTsv_global_GUI() == "Tkinter":
+        LTsv_glyph_kanpickleTkintername=LTsv_readlinerest(LTsv_glyph_config,"pickleTkintername",LTsv_glyph_kanpickleTkintername)
+#        with open(LTsv_glyph_kanpickleTkintername,mode='wb') as pickle_fobj:
+#            pickle.dump(LTsv_glyph_kanpickleTkinter,pickle_fobj,protocol=2)
     LTsv_glyph_irohatype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatype",LTsv_tuple2tsv(LTsv_glyph_irohatype)))
     LTsv_glyph_irohatypeN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeN",LTsv_tuple2tsv(LTsv_glyph_irohatypeN)))
     LTsv_glyph_irohatypeX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeX",LTsv_tuple2tsv(LTsv_glyph_irohatypeX)))
@@ -77,6 +84,79 @@ def LTsv_global_irohaalpha():                            return LTsv_glyph_iroha
 def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
 def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
 
+LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
+def LTsv_glyphpath(glyphcode):
+    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
+    global LTsv_glyph_kandic
+    LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
+    LTsv_glyph_path,LTsv_glyph_wide=LTsv_pickdatalabel(LTsv_glyph_kanline,"活"),LTsv_pickdatalabel(LTsv_glyph_kanline,"幅")
+    LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
+    LTsv_glyphnote,LTsv_glyphclock=[],[]
+    for LTsv_glyphline in LTsv_glyph_pathZ:
+        LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
+        for LTsv_glyphpoint in LTsv_glyphdata:
+            if LTsv_glyphpoint.count(',') != 1: continue;
+            LTsv_glyphpoints=LTsv_glyphpoint.strip(' ').split(',')
+            LTsv_glyphpointlist+=[int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0]
+            LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
+        LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
+    LTsv_kanglyphOBJ[glyphcode]=LTsv_glyphnote
+    LTsv_kanclockOBJ[glyphcode]=LTsv_glyphclock
+    LTsv_kanwideOBJ[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
+
+def LTsv_drawGTK_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
+    draw_xf,draw_yf=draw_x,draw_y
+    for glyphcode in draw_t:
+#        if LTsv_chrcode(glyphcode) < 32:
+        if glyphcode == '\n':
+            if draw_LF:
+                glyphcode=""
+            else:
+                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
+                continue
+        if glyphcode == '\t':
+            if draw_HT:
+                glyphcode=""
+        if glyphcode == ' ':
+            if draw_SP:
+                glyphcode=""
+        if not glyphcode in LTsv_kanglyphOBJ:
+            LTsv9_glyphpath_outer(glyphcode)
+        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
+        for LTsv_glyphpointlist in LTsv_glyphnote:
+            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
+            LTsv_drawGTK_polygon(*tuple(LTsv_glyphpointresize))
+        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
+
+def LTsv_drawTkinter_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+    global LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
+    draw_xf,draw_yf=draw_x,draw_y
+    for glyphcode in draw_t:
+        if glyphcode == '\n':
+            if draw_LF:
+                glyphcode=""
+            else:
+                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
+                continue
+        if glyphcode == '\t':
+            if draw_HT:
+                glyphcode=""
+        if glyphcode == ' ':
+            if draw_SP:
+                glyphcode=""
+        if not glyphcode in LTsv_kanglyphOBJ:
+            LTsv9_glyphpath(glyphcode)
+        LTsv_glyphnote=LTsv_kanglyphOBJ[glyphcode]
+        for LTsv_glyphpointlist in LTsv_glyphnote:
+            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
+            LTsv_drawTkinter_polygon(*tuple(LTsv_glyphpointresize))
+        draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
+
+def LTsv_draw_glyphs_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_glyphs
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_glyphs
+
 def LTsv_glyph_kbddraw():
     pass
 
@@ -84,6 +164,7 @@ def LTsv_glyph_kbdsave():
     pass
 
 
+LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
 def LTsv9_glyphdicload(dicname="kanchar.tsv"):
     global LTsv_glyph_kandic
     LTsv_glyph_kandic=LTsv_loadfile(dicname) if os.path.isfile(dicname) else LTsv_keyboard_dic()

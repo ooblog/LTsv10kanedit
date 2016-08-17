@@ -10,6 +10,7 @@ if sys.version_info.major == 2:
     import htmlentitydefs
 if sys.version_info.major == 3:
     import html.entities
+LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 
 LTsv_libc=None
 if sys.platform.startswith("win"):
@@ -52,22 +53,29 @@ def LTsv_utf2xml(LTsv_text):
 
 def LTsv_xml2utf(LTsv_text):
     LTsv_utftext=LTsv_text
-    if sys.version_info.major == 2:
-        for LTsv_unichar in re.findall(re.compile("&[/#a-zA-Z0-9]+?;"),LTsv_text):
-            if LTsv_unichar.startswith("&#"):
-                LTsv_unicharcode=int("0"+LTsv_unichar.lstrip("&#").rstrip(";"),16) if LTsv_unichar[2] in ('x','X') else int(LTsv_unichar.lstrip("&#").rstrip(";"))
-                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,unichr(LTsv_unicharcode))
-            else:
-                LTsv_unicharcode=htmlentitydefs.name2codepoint.get(LTsv_unichar.lstrip("&").rstrip(";"))
-                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,unichr(LTsv_unicharcode)) if not LTsv_unicharcode is None else LTsv_utftext
-    if sys.version_info.major == 3:
-        for LTsv_unichar in re.findall(re.compile("&[/#a-zA-Z0-9]+?;"),LTsv_text):
-            if LTsv_unichar.startswith("&#"):
-                LTsv_unicharcode=int("0"+LTsv_unichar.lstrip("&#").rstrip(";"),16) if LTsv_unichar[2] in ('x','X') else int(LTsv_unichar.lstrip("&#").rstrip(";"))
-                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,chr(LTsv_unicharcode))
-            else:
-                LTsv_unicharcode=html.entities.name2codepoint.get(LTsv_unichar.lstrip("&").rstrip(";"))
-                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,chr(LTsv_unicharcode)) if not LTsv_unicharcode is None else LTsv_utftext
+    for LTsv_unichar in re.findall(re.compile("&[/#a-zA-Z0-9]+?;"),LTsv_text):
+        if LTsv_unichar.startswith("&#"):
+            LTsv_unicharcode=int("0"+LTsv_unichar.lstrip("&#").rstrip(";"),16) if LTsv_unichar[2] in ('x','X') else int(LTsv_unichar.lstrip("&#").rstrip(";"))
+            LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,LTsv_chrcode(LTsv_unicharcode))
+        else:
+            LTsv_unicharcode=htmlentitydefs.name2codepoint.get(LTsv_unichar.lstrip("&").rstrip(";"))
+            LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,LTsv_chrcode(LTsv_unicharcode)) if not LTsv_unicharcode is None else LTsv_utftext
+#    if sys.version_info.major == 2:
+#        for LTsv_unichar in re.findall(re.compile("&[/#a-zA-Z0-9]+?;"),LTsv_text):
+#            if LTsv_unichar.startswith("&#"):
+#                LTsv_unicharcode=int("0"+LTsv_unichar.lstrip("&#").rstrip(";"),16) if LTsv_unichar[2] in ('x','X') else int(LTsv_unichar.lstrip("&#").rstrip(";"))
+#                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,unichr(LTsv_unicharcode))
+#            else:
+#                LTsv_unicharcode=htmlentitydefs.name2codepoint.get(LTsv_unichar.lstrip("&").rstrip(";"))
+#                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,unichr(LTsv_unicharcode)) if not LTsv_unicharcode is None else LTsv_utftext
+#    if sys.version_info.major == 3:
+#        for LTsv_unichar in re.findall(re.compile("&[/#a-zA-Z0-9]+?;"),LTsv_text):
+#            if LTsv_unichar.startswith("&#"):
+#                LTsv_unicharcode=int("0"+LTsv_unichar.lstrip("&#").rstrip(";"),16) if LTsv_unichar[2] in ('x','X') else int(LTsv_unichar.lstrip("&#").rstrip(";"))
+#                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,chr(LTsv_unicharcode))
+#            else:
+#                LTsv_unicharcode=html.entities.name2codepoint.get(LTsv_unichar.lstrip("&").rstrip(";"))
+#                LTsv_utftext=LTsv_utftext.replace(LTsv_unichar,chr(LTsv_unicharcode)) if not LTsv_unicharcode is None else LTsv_utftext
     return LTsv_utftext
 
 LTsv_Hira_YOO="あいえおなにぬねのやゆよらりるれろわをんぁぃぅぇぉっゃゅょゎゐゑ"
@@ -146,12 +154,14 @@ LTsv_INKFF=10240+0xff     #⣿
 def LTsv_utf2ink(LTsv_text):
     LTsv_inktext=""
     LTsv_Btext=LTsv_text.encode("UTF-8","ignore")
-    if sys.version_info.major == 2:
-        for LTsv_unicode in LTsv_Btext:
-            LTsv_inktext+=unichr(LTsv_INK00+ord(LTsv_unicode))
-    if sys.version_info.major == 3:
-        for LTsv_unicode in LTsv_Btext:
-            LTsv_inktext+=chr(LTsv_INK00+LTsv_unicode)
+    for LTsv_unicode in LTsv_Btext:
+        LTsv_inktext+=LTsv_chrcode(LTsv_INK00+ord(LTsv_unicode))
+#    if sys.version_info.major == 2:
+#        for LTsv_unicode in LTsv_Btext:
+#            LTsv_inktext+=unichr(LTsv_INK00+ord(LTsv_unicode))
+#    if sys.version_info.major == 3:
+#        for LTsv_unicode in LTsv_Btext:
+#            LTsv_inktext+=chr(LTsv_INK00+LTsv_unicode)
     return LTsv_inktext
 
 def LTsv_ink2utf(LTsv_text):
@@ -181,10 +191,11 @@ def LTsv_ink2utf(LTsv_text):
             LTsv_unicode=0
             LTsv_byteptr+=1
         if LTsv_unicode > 0:
-            if sys.version_info.major == 2:
-                LTsv_utftext+=unichr(LTsv_unicode)
-            if sys.version_info.major == 3:
-                LTsv_utftext+=chr(LTsv_unicode)
+            LTsv_utftext+=LTsv_chrcode(LTsv_unicode)
+#            if sys.version_info.major == 2:
+#                LTsv_utftext+=unichr(LTsv_unicode)
+#            if sys.version_info.major == 3:
+#                LTsv_utftext+=chr(LTsv_unicode)
     return LTsv_utftext
 
 def LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False):

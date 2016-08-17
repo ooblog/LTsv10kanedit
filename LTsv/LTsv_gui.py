@@ -40,7 +40,6 @@ LTsv_pictureOBJ,LTsv_pictureW,LTsv_pictureH={},{},{}
 LTsv_iconOBJ={}; LTsv_iconOBJnotify=[]
 LTsv_popupmenuOBJ={}
 LTsv_default_iconuri=""
-LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
 
 def LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax):
     LTsv_min,LTsv_max=(LTsv_libvermin,LTsv_libvermax) if LTsv_libvermin <= LTsv_libvermax else (LTsv_libvermax,LTsv_libvermin)
