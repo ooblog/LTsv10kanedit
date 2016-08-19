@@ -832,12 +832,15 @@ version(branch) 20160718M003911
   LTsv_guistyleでUI指定できるがPuppyLinuxだと強制的に「GTK2」。Windowsだと今の所「Tkinter」。「WinAPI」は未実装。
 
   LTsv_global_GUI(); LTsv_global_Notify(); LTsv_global_libgtk(); LTsv_global_libgdk(); LTsv_global_libobj(); LTsv_global_widgetgetpage(LTsv_UUID): 
-  LTsv_global_widgetOBJ(LTsv_objid); LTsv_global_iconOBJ(LTsv_objid): LTsv_global_notifyOBJ(LTsv_objid): 
+  LTsv_global_widgetOBJ(LTsv_objid); LTsv_global_iconOBJ(LTsv_objid); LTsv_global_notifyOBJ(LTsv_objid); LTsv_global_popupmenuOBJ(LTsv_objid);
   global系はモジュール内の変数に直接アクセスする場合に使用。
 
  LTsv_global_canvasmotionX(); LTsv_global_canvasmotionY();
   「canvas」上のマウスの座標を取得。「canvas」の解説は「LTsv_canvas_new()」を参照。
   「canvas」の外に出ると正しい値は取得できなくなるので「LTsv_canvas_leave()」系の対策は必須。
+
+ LTsv_global_canvascolor(); LTsv_global_canvasbgcolor();
+  「canvas」上の色を取得。
 
  LTsv_global_pictureOBJ(LTsv_objid): LTsv_global_pictureW(LTsv_objid): LTsv_global_pictureH(LTsv_objid):
   「canvas」用の画像を管理。解説は「LTsv_draw_picture_load()」を参照。
@@ -1210,38 +1213,78 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
 
 １-8a．[LTsv_glyph.py]の関数一覧
 
- 「canvas」上でフォントグリフを描画するモジュールです。
+ 「canvas」上でフォントグリフを描画するモジュールです。漢直キーボード関連も扱います。
  ・「LTsv_draw_font_shell()」「LTsv_draw_text_shell()」との違いはフォントを用いずにグリフを描画することです。
- ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8を扱います。
+ ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱います。
  ・単体風テストとして漢直キーボードでリバーシを操作するデモを作成中。
+ ・「活(5x5)」「漫(comic)」の使い分け未実装。
+ ・ LTsv9系の関数は置き換え削除の予定。
 
- LTsv_glyphdicload(dicname="kanchar.tsv"):
+ LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv")
+ フォントグリフの初期化です。設定ファイル「LTsv/kanglyph.tsv」に基づいて色々と各種ファイルの読み込みなど準備。
+
+ LTsv_global_kandic()
+  漢直キーボードの単漢字辞書「LTsv/kanchar.tsv」を取得できます。
+
+ LTsv_global_kanmap()
+  漢直キーボードの漢字配列「LTsv/kanmap.tsv」を取得できます。
+
+ LTsv_global_kanpickle()
+  フォントグリフの座標データpickleをセーブします。
+
+ LTsv_global_irohatype(); LTsv_global_irohatypeN(); LTsv_global_irohatypeX()
+ LTsv_global_alphatype(); LTsv_global_alphatypeN(); LTsv_global_alphatypeX(); 
+ LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX()
+ LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX(); 
+  漢直キーボードのデータを取得。
+
+ LTsv_glyphSVGGTK(LTsv_glyph_path); LTsv_glyphSVGGTKTkinter(LTsv_glyph_path); LTsv_glyphSVG_shell(LTsv_GUI);
+  フォントグリフの座標データをSVGからリストに変換。
+  GTKの「gdk_draw_polygon()」は1ドット未満の図形が省略されてしまうのでフォントを太らせる処理が「LTsv_glyphSVGGTK()」にはある。
+
+ LTsv_glyphpath(glyphcode):
+  フォントグリフの「幅」「活」「漫」のデータを単漢字辞書から抽出。
+
+ LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
+  「canvas」にフォントグリフ(ポリゴン)の描画(ワイヤフレーム)。
+  draw_tにテキスト文字列、draw_x,draw_yに表示座標、draw_fにフォントサイズ。
+
+ LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
+  「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
+  j事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
+
+ LTsv_glyph_kbddraw():
+ LTsv_glyph_kbdqueue():
+ LTsv_glyph_kbdsave()
+  フォントグリフの座標データpickleをセーブします。
+
+ LTsv9_glyphdicload(dicname="kanchar.tsv"):
   単漢字辞書ファイル「kanchar.tsv」を読み込む。
   ファイルが見つからない場合「LTsv_keyboard_dic()」から読み込む。
 
- LTsv_glyphOBJpickle(filename="kanpickle.bin"):
+ LTsv9_glyphOBJpickle(filename="kanpickle.bin"):
   フォント座標(パス回転方向とフォント幅含む)をpickle化してファイルに保存。
 
- LTsv_glyphOBJunpickle(filename="kanpickle.bin"):
+ LTsv9_glyphOBJunpickle(filename="kanpickle.bin"):
   pickle化してファイルに保存したフォント座標(パス回転方向とフォント幅含む)を読み込む。
 
- LTsv_glyphdicread(dictext):
+ LTsv9_glyphdicread(dictext):
   単漢字辞書のテキストデータを読み込む。
 
- LTsv_glyphpath(glyphcode):
+ LTsv9_glyphpath(glyphcode):
   「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。
   通常は後述の「kanfont_drawTkinter_glyph()」から自動呼び出し。
 
- LTsv_glyphpath_outer(glyphcode):
+ LTsv9_glyphpath_outer(glyphcode):
   「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。「GTK2」の場合１ドット未満の図形が消えるのでフォントを太らせる。
   正確には「kanfont」で作成する「kantray5x5」フォント座標の末尾が98の座標を繰り上げる。
   通常は後述の「kanfont_drawGTK_glyph()」から自動呼び出し。
 
- LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+ LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
   フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
   draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
 
- LTsv_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
+ LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
   フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
   反時計周りのパスは「LTsv_drawGTK_delete()」「LTsv_drawTkinter_delete()」で初期化に使う色。初期値は「white」。
   draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
@@ -1290,6 +1333,11 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  Ｑ．ボタンなどのGUIにフォント「kantray5x5comic」を用いるにはどうすればいいですか。
  Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接は使えません。
      GUIで表示する場合は付属の「kanfont.svg」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
+
+ Ｑ．「LTsv_draw_font(LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv_glyph.py)」系の違いはなんですか。
+ Ａ．「Tkinter」が「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示モジュール用意しました。
+    フォントをインストールしなくても漢直が使えるようにするために「kanedit5x5comic」という独自のフォントを用意しました。
+    「用意しました」と言いましたが一部の文字しか用意できてないので注意。
 
 
 ４．   作者について、例えば連絡先。
