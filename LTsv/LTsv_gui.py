@@ -99,6 +99,8 @@ def LTsv_global_libgdk():                           return LTsv_libgdk
 def LTsv_global_libobj():                           return LTsv_libobj
 def LTsv_global_canvasmotionX():                    return LTsv_canvas_motion_X
 def LTsv_global_canvasmotionY():                    return LTsv_canvas_motion_Y
+def LTsv_global_canvascolor():                    return LTsv_canvascolor
+def LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor
 def LTsv_global_widgetgetltsv():                    return LTsv_widgetLTSV
 def LTsv_global_widgetgetpage(LTsv_widgetPAGENAME): return LTsv_getpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME)
 def LTsv_global_widgetOBJ(LTsv_objid):              return LTsv_widgetOBJ[LTsv_objid]
@@ -963,6 +965,7 @@ LTsv_GDK_KEY_PRESS_MASK=     1<<10
 LTsv_GDK_SCROLL_MASK=        1<<21
 LTsv_GDK_ARCFILL=23040
 
+LTsv_canvascolor,LTsv_canvasbgcolor="black","white"
 def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100):
     global LTsv_widgetLTSV,canvas_EMLtimeout,canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
@@ -1092,11 +1095,14 @@ def LTsv_draw_delete_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_delete
 
 def LTsv_drawGTK_color(draw_c=""):
+    global LTsv_canvascolor,LTsv_canvasbgcolor
+    LTsv_canvascolor=draw_c
     LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKcanvas_gccolor))
     LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
 
 def LTsv_drawTkinter_color(draw_c=""):
     global LTsv_Tkintercanvas_color
+    global LTsv_canvascolor,LTsv_canvasbgcolor
     LTsv_Tkintercanvas_color=draw_c
 
 def LTsv_draw_color_shell(LTsv_GUI):
@@ -1104,11 +1110,14 @@ def LTsv_draw_color_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_color
 
 def LTsv_drawGTK_bgcolor(draw_c=""):
+    global LTsv_canvascolor,LTsv_canvasbgcolor
+    LTsv_canvasbgcolor=LTsv_canvasbgcolor
     LTsv_libgdk.gdk_color_parse(draw_c.encode("utf-8"),ctypes.pointer(LTsv_GTKfont_gccolor))
     LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
 
 def LTsv_drawTkinter_bgcolor(draw_c=""):
     global LTsv_Tkinterfont_color
+    global LTsv_canvascolor,LTsv_canvasbgcolor
     LTsv_Tkinterfont_color=draw_c
 
 def LTsv_draw_bgcolor_shell(LTsv_GUI):
