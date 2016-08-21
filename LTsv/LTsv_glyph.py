@@ -30,7 +30,9 @@ LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","�
 LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
-LTsv_glyph_kbd_fontcolor,LTsv_glyph_kbd_bgcolor="black","#CFE6CF"
+LTsv_glyph_kbdTAG="kanglyphkbd"
+LTsv_glyph_kbdF=6; LTsv_glyph_kbdH=LTsv_glyph_kbdF*4; LTsv_glyph_kbdW=LTsv_glyph_kbdH*4;
+LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#CFE6CF"
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
 LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
@@ -45,6 +47,7 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     global LTsv_glyph_dictype
     global LTsv_glyph_choice,LTsv_glyph_choiceN,LTsv_glyph_choiceX
     global LTsv_glyph_irohaalpha,LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX
+    global LTsv_glyph_kbdTAG,LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor
     global LTsv_draw_color,LTsv_draw_bgcolor
     global LTsv_draw_polygon,LTsv_draw_polygonfill
     global LTsv_glyphSVG
@@ -81,6 +84,9 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv"):
     LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
     LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
     LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
+    LTsv_glyph_kbdTAG=LTsv_readlinerest(LTsv_glyph_config,"kbdTAG",LTsv_glyph_kbdTAG)
+    LTsv_glyph_kbdfontcolor=LTsv_readlinerest(LTsv_glyph_config,"fontcolor",LTsv_glyph_kbdfontcolor)
+    LTsv_glyph_kbdbgcolor=LTsv_readlinerest(LTsv_glyph_config,"bgcolor",LTsv_glyph_kbdbgcolor)
 
 def LTsv_global_kandic():                              return LTsv_glyph_kandic
 def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
@@ -98,6 +104,8 @@ def LTsv_global_choiceX():                             return LTsv_glyph_choiceX
 def LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha
 def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
 def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
+def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
+def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
 
 def LTsv_glyphSVGGTK(LTsv_glyph_path):
     LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
@@ -200,7 +208,9 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_draw_color(canvascolor); LTsv_draw_bgcolor(canvasbgcolor)
 
-def LTsv_glyph_kbddraw():
+def LTsv_glyph_kbddraw(kbd_x,kbd_y):
+    LTsv_draw_color(LTsv_glyph_kbdbgcolor)
+    LTsv_draw_polygonfill(*tuple([kbd_x,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y+LTsv_glyph_kbdH,kbd_x,kbd_y+LTsv_glyph_kbdH]))
     if LTsv_global_GUI() == "GTK2":
         pass
     if LTsv_global_GUI() == "Tkinter":
@@ -513,6 +523,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
             milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[bw] else milklidcount
 #        LTsv_draw_text(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20])
         LTsv_draw_glyphsfill(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20],draw_f=debug_kbdH//2,draw_g="活")
+    LTsv_glyph_kbddraw(debug_kbdX,debug_kbdY)
     LTsv_draw_queue()
 
 def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
@@ -547,13 +558,13 @@ if __name__=="__main__":
     if len(LTsv_GUI) > 0:
         import random
         LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv")
-        debug_kbd_size=1
-        debug_kbdH=6*4*debug_kbd_size
+        debug_kbdH=LTsv_glyph_kbdH*1
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
         debug_milkfont="kantray5x5comic,{0}".format(debug_kbdH//2)
         debug_entryfont="kantray5x5comic,{0}".format(debug_kbdH//4)
         debug_buttonfont="kantray5x5comic,5".format(5)
         debug_reversi_X,debug_reversi_Y,debug_reversi_W,debug_reversi_H=debug_milklid_W*7,debug_milklid_H*1,debug_milklid_W*(2+20+2),debug_milklid_H*(2+8+2)
+        debug_kbdX,debug_kbdY=debug_reversi_W-LTsv_global_glyphkbdW(),debug_reversi_H-LTsv_global_glyphkbdH()*3//2
         debug_milklidLen=(10*10)
         debug_milklidX,debug_milklidY,debug_milkAI,debug_milkMAP=[0]*debug_milklidLen,[0]*debug_milklidLen,[0]*debug_milklidLen,[0]*debug_milklidLen
         for xy in range(debug_milklidLen):
