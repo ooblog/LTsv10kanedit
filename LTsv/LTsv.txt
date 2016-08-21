@@ -1243,7 +1243,10 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
   GTKの「gdk_draw_polygon()」は1ドット未満の図形が省略されてしまうのでフォントを太らせる処理が「LTsv_glyphSVGGTK()」にはある。
 
  LTsv_glyphpath(glyphcode):
-  フォントグリフの「幅」「活」「漫」のデータを単漢字辞書から抽出。
+  フォントグリフの「幅」「活」「漫」のデータを単漢字辞書から抽出してメモリに記憶。
+
+ LTsv_glyphfont_5x5(glyphcode); LTsv_glyphfont_comic(glyphcode); LTsv_glyphfont_shell(draw_g="活");
+  フォントグリフの「活」「漫」のデータをメモリから抽出。
 
  LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(ワイヤフレーム)。
@@ -1253,8 +1256,12 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
   j事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
- LTsv_glyph_kbddraw():
- LTsv_glyph_kbdqueue():
+ LTsv_glyph_kbddelete(kbd_x,kbd_y):
+  漢直キーボードを消去する。「Tkinter」で「kanglyphkbd」タグの図形を消去する。
+
+ LTsv_glyph_kbddraw(kbd_x,kbd_y):
+  漢直キーボードを描画する。「GTK2」の場合「LTsv_draw_queue()」を別途行う必要。
+
  LTsv_glyph_kbdsave()
   フォントグリフの座標データpickleをセーブします。
 

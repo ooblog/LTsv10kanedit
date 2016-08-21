@@ -155,6 +155,16 @@ def LTsv_glyphpath(glyphcode):
     LTsv_glyph_pathcomic=LTsv_pickdatalabel(LTsv_glyph_kanline,"漫")
     LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5) if len(LTsv_glyph_pathcomic) else LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
 
+def LTsv_glyphfont_5x5(glyphcode):
+    return LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
+
+def LTsv_glyphfont_comic(glyphcode):
+    return LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]
+
+def LTsv_glyphfont_shell(draw_g="活"):
+    if draw_g == "活": return LTsv_glyphfont_5x5
+    if draw_g == "漫": return LTsv_glyphfont_comic
+
 def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickleGTK,LTsv_glyph_kanpickleTkinter
     global LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide
@@ -163,6 +173,7 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     for glyphcode in draw_t:
         if glyphcode in "\n\t":
             if glyphcode == '\n':
@@ -172,7 +183,7 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
             continue
         if not glyphcode in LTsv_glyph5x5_coord:
             LTsv_glyphpath(glyphcode)
-        LTsv_glyphnote=LTsv_glyph5x5_coord[glyphcode]
+        LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist in LTsv_glyphnote:
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
             LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
@@ -187,6 +198,7 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     for glyphcode in draw_t:
         if glyphcode in "\n\t":
             if glyphcode == '\n':
@@ -196,8 +208,7 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
             continue
         if not glyphcode in LTsv_glyph5x5_coord:
             LTsv_glyphpath(glyphcode)
-        LTsv_glyphnote=LTsv_glyph5x5_coord[glyphcode]
-        LTsv_clocknote=LTsv_glyph5x5_clock[glyphcode]
+        LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
             if LTsv_clocknote[LTsv_glyphpointlist_count] > 0:
                  LTsv_draw_color(canvascolor)
@@ -208,15 +219,15 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_draw_color(canvascolor); LTsv_draw_bgcolor(canvasbgcolor)
 
-def LTsv_glyph_kbddraw(kbd_x,kbd_y):
-    LTsv_draw_color(LTsv_glyph_kbdbgcolor)
-    LTsv_draw_polygonfill(*tuple([kbd_x,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y+LTsv_glyph_kbdH,kbd_x,kbd_y+LTsv_glyph_kbdH]))
+def LTsv_glyph_kbddelete(kbd_x,kbd_y):
     if LTsv_global_GUI() == "GTK2":
         pass
     if LTsv_global_GUI() == "Tkinter":
         pass
 
-def LTsv_glyph_kbdqueue():
+def LTsv_glyph_kbddraw(kbd_x,kbd_y):
+    LTsv_draw_color(LTsv_glyph_kbdbgcolor)
+    LTsv_draw_polygonfill(*tuple([kbd_x,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y+LTsv_glyph_kbdH,kbd_x,kbd_y+LTsv_glyph_kbdH]))
     if LTsv_global_GUI() == "GTK2":
         pass
     if LTsv_global_GUI() == "Tkinter":
