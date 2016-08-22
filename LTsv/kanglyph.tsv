@@ -3,8 +3,8 @@ code	UTF-8
 enter	LF
 tab	8
 program	LTsv_kbd.py
-LTsvver	20160423S022604
-modify	20160423S022604
+LTsvver	20160718M003911
+modify	20160823T064542
 |L:Tsv]
 
 [kanglyph|
@@ -28,3 +28,8 @@ bgcolor		#CFE6CF
 kbddefsize	1
 |kanglyph]
 
+[reversi|
+entry	．ｈｇｆｅＵＶ８０ＳＴ３ｐＮＦＷＸｘｉｊＲＫＣＱ
+sample	Ｔ８ｈ．３ＵＳｇＶ０ｅｆｎｏｗ
+sample	０Ｓ．ｈｇ３Ｖ８ｅＵＭＴａＦＬｆｏｘｍｕｗｖＤＥＧｊ５ｂ４ＸＣＷＮｐＫｉｄｃ７Ｙ６ＲＺＱｑＢＡｙｚｎｔｒＰＪＩｌｓｋＯＨ
+|reversi]

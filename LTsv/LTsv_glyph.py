@@ -15,7 +15,7 @@ from LTsv_gui    import *
 LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
 LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide={},{},{}
 LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide={},{},{}
-LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername="LTsv/","kanchar.tsv","kanmap.tsv","kanpickleGTK.bin","kanpickleTkinter.bin"
+LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername="LTsv/","","kanchar.tsv","kanmap.tsv","kanpickleGTK.bin","kanpickleTkinter.bin"
 LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle="","","",{}
 LTsv_glyph_irohatype= ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","゛","゜","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeN=["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
@@ -30,6 +30,7 @@ LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","�
 LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
+LTsv_glyph_kanmapN,LTsv_glyph_kanmapX={},{}
 LTsv_glyph_irohamax=12*4; LTsv_glyph_SandS,LTsv_glyph_NFER,LTsv_glyph_XFER,LTsv_glyph_KANA,LTsv_glyph_None=48,49,50,51,52
 LTsv_glyph_kbdTAG="kanglyphkbd"
 LTsv_glyph_kbdF=6; LTsv_glyph_kbdH=LTsv_glyph_kbdF*4; LTsv_glyph_kbdW=LTsv_glyph_kbdH*4;
@@ -43,8 +44,8 @@ LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
 LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
 LTsv_glyphSVG=None
-def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
-    global LTsv_glyph_ltsvdir,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
+def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
+    global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     global LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide
     global LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide
@@ -53,6 +54,7 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=
     global LTsv_glyph_dictype
     global LTsv_glyph_choice,LTsv_glyph_choiceN,LTsv_glyph_choiceX
     global LTsv_glyph_irohaalpha,LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX
+    global LTsv_glyph_kanmapN,LTsv_glyph_kanmapX
     global LTsv_glyph_kbdF,LTsv_glyph_kbdH,LTsv_glyph_kbdW,LTsv_glyph_kbdG,LTsv_glyph_kbdC
     global LTsv_glyph_fontX,LTsv_glyph_fontY,LTsv_glyph_fontG,LTsv_glyph_mouseX,LTsv_glyph_mouseY,LTsv_glyph_mouseC
     global LTsv_glyph_kbdchars
@@ -63,6 +65,7 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=
     global LTsv_draw_polygon,LTsv_draw_polygonfill
     global LTsv_glyphSVG
     LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(LTsv_glyph_ltsvpath))+"/"
+    LTsv_glyph_ltsvpath=ltsvpath
     LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
     LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
     LTsv_glyph_kandicname=LTsv_readlinerest(LTsv_glyph_config,"dicname",LTsv_glyph_kandicname)
@@ -95,6 +98,10 @@ def LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=
     LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
     LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
     LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
+    for irohaalpha in LTsv_glyph_irohaalpha:
+        kbd_lineT=LTsv_readlinerest(LTsv_glyph_kanmap,irohaalpha)
+        kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*(LTsv_glyph_SandS*2-len(kbd_lineL))
+        LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:LTsv_glyph_SandS+1],kbd_lineL[LTsv_glyph_SandS+1:LTsv_glyph_SandS+1+LTsv_glyph_SandS+1]
     LTsv_glyph_kbdTAG=LTsv_readlinerest(LTsv_glyph_config,"kbdTAG",LTsv_glyph_kbdTAG)
     LTsv_glyph_kbdfontcolor=LTsv_readlinerest(LTsv_glyph_config,"fontcolor",LTsv_glyph_kbdfontcolor)
     LTsv_glyph_kbdbgcolor=LTsv_readlinerest(LTsv_glyph_config,"bgcolor",LTsv_glyph_kbdbgcolor)
@@ -254,37 +261,74 @@ def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
             LTsv_kbdcursor=kbd_xy
     return  LTsv_kbdcursor
 
+def LTsv_glyph_kbdselect(choice):
+    global LTsv_glyph_kbdchars
+    if choice in LTsv_glyph_irohaalphaN:
+        choiceNX=LTsv_glyph_irohaalpha[LTsv_glyph_irohaalphaN.index(choice)]
+        LTsv_glyph_kbdchars[0:LTsv_glyph_irohamax]=LTsv_glyph_kanmapN[choiceNX][0:LTsv_glyph_irohamax]
+    elif choice in LTsv_glyph_irohaalphaX:
+        choiceNX=LTsv_glyph_irohaalpha[LTsv_glyph_irohaalphaX.index(choice)]
+        LTsv_glyph_kbdchars[0:LTsv_glyph_irohamax]=LTsv_glyph_kanmapX[choiceNX][0:LTsv_glyph_irohamax]
+
+def LTsv_glyph_choiceNX(choice):
+    if choice in LTsv_glyph_irohaalphaN:
+        choiceNX=LTsv_glyph_irohaalphaN.index(choice)
+    elif choice in LTsv_glyph_irohaalphaX:
+        choiceNX=LTsv_glyph_irohaalphaX.index(choice)
+    return choiceNX
+
 def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
+        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
         if LTsv_kbdcursor == LTsv_glyph_SandS:
             LTsv_glyph_kbdLCR="FlickS"
         elif LTsv_kbdcursor == LTsv_glyph_NFER:
             LTsv_glyph_kbdLCR="SwipeN"
+            LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])]
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
         elif LTsv_kbdcursor == LTsv_glyph_XFER:
             LTsv_glyph_kbdLCR="SwipeX"
+            LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])]
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
         elif LTsv_kbdcursor == LTsv_glyph_KANA:
             LTsv_glyph_kbdLCR="SwipeK"
         else:
             LTsv_glyph_kbdLCR="Tap"
 #            debug_milkAI_add(LTsv_glyph_kbdchars[LTsv_kbdcursor])
 #            debug_milkAI_Auto()
-            print("LTsv_glyph_kbdchars[{0}]".format(LTsv_kbdcursor),LTsv_glyph_kbdchars[LTsv_kbdcursor])
+            LTsv_libc_printf("LTsv_glyph_kbdchars[{0}]{1}".format(LTsv_kbdcursor,LTsv_glyph_kbdchars[LTsv_kbdcursor]))
+        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_draw_queue()
 
 def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        pass
-    else:
-        LTsv_glyph_kbdLCR=""
+        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
+        if LTsv_glyph_kbdLCR == "SwipeN":
+            if LTsv_kbdcursor < LTsv_glyph_SandS:
+                LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_irohaalphaN[LTsv_kbdcursor]
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
+        elif LTsv_glyph_kbdLCR == "SwipeX":
+            if LTsv_kbdcursor < LTsv_glyph_SandS:
+                LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_irohaalphaX[LTsv_kbdcursor]
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
+        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_draw_queue()
 
 def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        pass
+        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
+        if LTsv_glyph_kbdLCR == "SwipeK":
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
+        elif LTsv_glyph_kbdLCR == "FlickS":
+            LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
+        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_draw_queue()
     LTsv_glyph_kbdLCR=""
 
 def LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y):
@@ -541,8 +585,10 @@ def debug_milkAI_reset():
     for xy in [12,17,21,28,71,78,82,87]: debug_milkAI[xy]+=200;
     for xy in [22,27,72,77]: debug_milkAI[xy]+=100;
 
+debug_reversi_entrysavedata=""
 def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     global debug_milkAI,debug_milkMAP,debug_milklidBW,debug_milklidBWwait
+    global debug_reversi_entrysavedata
     reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
     reversi_entry=reversi_entry[:60]
     if len(reversi_entry) == 0:
@@ -579,6 +625,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
             reversi_entry=reversi_entry[:entrylen]
             break
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
+    debug_reversi_entrysavedata=reversi_entry
     LTsv_glyph_kbddelete(debug_reversi_canvas,debug_kbdX,debug_kbdY)
     LTsv_draw_selcanvas(debug_reversi_canvas)
     LTsv_draw_delete()
@@ -634,13 +681,29 @@ def debug_milkAI_add(addentry):
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
     debug_milkAI_entry()
 
+def debug_configload():
+    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
+    LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
+    debug_config=LTsv_getpage(LTsv_glyph_ltsv,"reversi")
+    debug_reversi_entrysavedata=LTsv_readlinerest(debug_config,"entry")
+    LTsv_widget_settext(debug_reversi_entry,debug_reversi_entrysavedata)
+
+def debug_configsave(window_objvoid=None,window_objptr=None):
+    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
+    LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
+    debug_config=LTsv_getpage(LTsv_glyph_ltsv,"reversi")
+    debug_config=LTsv_pushlinerest(debug_config,"entry",debug_reversi_entrysavedata)
+    LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"reversi",debug_config)
+    LTsv_savefile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath),LTsv_glyph_ltsv)
+    LTsv_window_exit()
+
 if __name__=="__main__":
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
     LTsv_GUI=LTsv_guiinit()
     if len(LTsv_GUI) > 0:
         import random
-        LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv")
+        LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv")
         debug_kbdH=25
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
         debug_milkfont="kantray5x5comic,{0}".format(debug_kbdH//2)
@@ -672,7 +735,7 @@ if __name__=="__main__":
         debug_milklid_range=[y*10+x for y in range(1,9) for x in range(1,9)]
         debug_milklid_colorkey=["green","black","white","back","line","nexr"]
         debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F1F1F1","line":"#00918F","next":"#FFD7F3"}
-        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=LTsv_window_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2,event_z=None)
+        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2,event_z=None)
         debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
         debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
 #        debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="０Ｓ．ｈｇ３Ｖ８ｅＵＭＴａＦＬｆｏｘｍｕｗｖＤＥＧｊ５ｂ４ＸＣＷＮｐＫｉｄｃ７Ｙ６ＲＺＱｑＢＡｙｚｎｔｒＰＪＩｌｓｋＯＨ",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
@@ -687,7 +750,9 @@ if __name__=="__main__":
         LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-        debug_milkAI_reset(); debug_milkAI_entry()
+        debug_milkAI_reset()
+        debug_configload()
+        debug_milkAI_entry()
         LTsv_window_main(debug_reversi_window)
     else:
         LTsv_libc_printf("GUIの設定に失敗しました。")
