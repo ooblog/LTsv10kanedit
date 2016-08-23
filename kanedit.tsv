@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	kantray
 LTsvver	20160718M003911
-modify	20160824W010115
+modify	20160824W012827
 |L:Tsv]
 
 [tinykbd|
@@ -17,7 +17,7 @@ kbd_colors	font:#000000	bg:#CFE6CF	mark:#F04E7F
 dic_mapname		LTsv/kanmap.tsv
 dic_charname	LTsv/kanchar.tsv
 glyph_picklename	kanpickle.bin
-find_NXalpha	か
+find_NXalpha	あ
 find_dic	名
 |tinykbd]
 
