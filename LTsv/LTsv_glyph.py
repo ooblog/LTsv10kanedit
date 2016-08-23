@@ -121,7 +121,9 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
         kbdC=LTsv_glyph_kbdC if kbd_xy < LTsv_glyph_SandS else LTsv_glyph_kbdC*2
         kbdG=LTsv_glyph_kbdG if kbd_xy < LTsv_glyph_SandS else LTsv_glyph_kbdG*2
         LTsv_glyph_mouseX[kbd_xy],LTsv_glyph_mouseY[kbd_xy],LTsv_glyph_mouseC[kbd_xy],LTsv_glyph_fontG[kbd_xy]=LTsv_glyph_fontX[kbd_xy]+kbdC,LTsv_glyph_fontY[kbd_xy]+kbdC,kbdC,kbdG
-    LTsv_glyph_kbdselect('＠')
+    LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_readlinerest(LTsv_glyph_config,"last_alpha",LTsv_glyph_kbdchars[LTsv_glyph_KANA])[:1]
+    LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_readlinerest(LTsv_glyph_config,"last_dic",LTsv_glyph_kbdchars[LTsv_glyph_SandS])[:1]
+    LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
 
 def LTsv_global_kandic():                              return LTsv_glyph_kandic
 def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
@@ -398,7 +400,12 @@ def LTsv_glyph_picklesave():
     if LTsv_global_GUI() == "Tkinter":
         with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='wb') as pickle_fobj:
             pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
-    
+    LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
+    LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
+    LTsv_glyph_config=LTsv_pushlinerest(LTsv_glyph_config,"last_alpha",LTsv_glyph_kbdchars[LTsv_glyph_KANA])
+    LTsv_glyph_config=LTsv_pushlinerest(LTsv_glyph_config,"last_dic",LTsv_glyph_kbdchars[LTsv_glyph_SandS])
+    LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"kanglyph",LTsv_glyph_config)
+    LTsv_savefile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath),LTsv_glyph_ltsv)
 
 
 LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
