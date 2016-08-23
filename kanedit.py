@@ -382,6 +382,7 @@ def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
     kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
     LTsv_savefile("kanedit.tsv",kanedit_ltsv)
     LTsv9_glyphOBJpickle(tinykbd_pickle)
+#    LTsv_glyph_picklesave()
     LTsv_window_exit()
 kanedit_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanedit_exit_configsave)
 

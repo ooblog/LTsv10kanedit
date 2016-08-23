@@ -101,6 +101,8 @@ ENV/
 # git push github:ooblog/LTsv10kanedit.git :20160718M003911
 LTsv/testfile/
 LTsv/kanpickle.bin
+LTsv/kanpickleGTK.bin
+LTsv/kanpickleTkinter.bin
 kanpickle.bin
 kanfont.svg
 kanzip.tsv

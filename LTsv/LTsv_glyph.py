@@ -77,14 +77,16 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
     LTsv_glyphSVG=LTsv_glyphSVG_shell(LTsv_GUI)
     if LTsv_global_GUI() == "GTK2":
         LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
-#        with open(LTsv_glyph_kanpickleTkintername,mode='rb') as pickle_fobj:
-#            LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
-#        LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide=LTsv_glyph_kanpickle
+        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname)):
+            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='rb') as pickle_fobj:
+                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
+            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide=LTsv_glyph_kanpickle
     if LTsv_global_GUI() == "Tkinter":
         LTsv_glyph_kanpickleTkintername=LTsv_readlinerest(LTsv_glyph_config,"pickleTkintername",LTsv_glyph_kanpickleTkintername)
-#        with open(LTsv_glyph_kanpickleTkintername,mode='rb') as pickle_fobj:
-#            LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
-#        LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide=LTsv_glyph_kanpickle
+        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername)):
+            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='rb') as pickle_fobj:
+                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
+            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide=LTsv_glyph_kanpickle
     LTsv_glyph_irohatype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatype",LTsv_tuple2tsv(LTsv_glyph_irohatype)))
     LTsv_glyph_irohatypeN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeN",LTsv_tuple2tsv(LTsv_glyph_irohatypeN)))
     LTsv_glyph_irohatypeX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeX",LTsv_tuple2tsv(LTsv_glyph_irohatypeX)))
@@ -296,8 +298,7 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
             LTsv_glyph_kbdLCR="SwipeK"
         else:
             LTsv_glyph_kbdLCR="Tap"
-#            debug_milkAI_add(LTsv_glyph_kbdchars[LTsv_kbdcursor])
-#            debug_milkAI_Auto()
+            debug_milkAI_add(LTsv_glyph_kbdchars[LTsv_kbdcursor])
             LTsv_libc_printf("LTsv_glyph_kbdchars[{0}]{1}".format(LTsv_kbdcursor,LTsv_glyph_kbdchars[LTsv_kbdcursor]))
         LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
         LTsv_draw_queue()
@@ -348,16 +349,16 @@ def LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y):
     for kbd_xy in range(LTsv_glyph_None):
         LTsv_draw_glyphsfill(draw_t=LTsv_glyph_kbdchars[kbd_xy],draw_x=kbd_x+LTsv_glyph_fontX[kbd_xy],draw_y=kbd_y+LTsv_glyph_fontY[kbd_xy],draw_f=LTsv_glyph_fontG[kbd_xy],draw_g="活")
 
-def LTsv_glyph_kbdsave():
+def LTsv_glyph_picklesave():
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickleGTK,LTsv_glyph_kanpickleTkinter
     global LTsv_kanglyph5x5OBJ,LTsv_kanglyphcomicOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
-#    LTsv_glyph_kanpickle=LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide
-#    if LTsv_global_GUI() == "GTK2":
-#        with open(LTsv_glyph_kanpickleGTKname,mode='wb') as pickle_fobj:
-#            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
-#    if LTsv_global_GUI() == "Tkinter":
-#        with open(LTsv_glyph_kanpickleTkintername,mode='wb') as pickle_fobj:
-#            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+    LTsv_glyph_kanpickle=LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide
+    if LTsv_global_GUI() == "GTK2":
+        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='wb') as pickle_fobj:
+            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+    if LTsv_global_GUI() == "Tkinter":
+        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='wb') as pickle_fobj:
+            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
 
 LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
 def LTsv9_glyphdicload(dicname="kanchar.tsv"):
@@ -695,6 +696,7 @@ def debug_configsave(window_objvoid=None,window_objptr=None):
     debug_config=LTsv_pushlinerest(debug_config,"entry",debug_reversi_entrysavedata)
     LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"reversi",debug_config)
     LTsv_savefile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath),LTsv_glyph_ltsv)
+    LTsv_glyph_picklesave()
     LTsv_window_exit()
 
 if __name__=="__main__":

@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160823T064542
+modify	20160824W011439
 |L:Tsv]
 
 [kanglyph|
@@ -29,7 +29,7 @@ kbddefsize	1
 |kanglyph]
 
 [reversi|
-entry	．ｈｇｆｅＵＶ８０ＳＴ３ｐＮＦＷＸｘｉｊＲＫＣＱ
+entry	
 sample	Ｔ８ｈ．３ＵＳｇＶ０ｅｆｎｏｗ
 sample	０Ｓ．ｈｇ３Ｖ８ｅＵＭＴａＦＬｆｏｘｍｕｗｖＤＥＧｊ５ｂ４ＸＣＷＮｐＫｉｄｃ７Ｙ６ＲＺＱｑＢＡｙｚｎｔｒＰＪＩｌｓｋＯＨ
 |reversi]
