@@ -316,17 +316,6 @@ def LTsv_glyph_tapcallback_shell(kbd_canvas,callback):
     global LTsv_glyph_tapcallback
     LTsv_glyph_tapcallback[kbd_canvas]=callback
 
-def LTsv_getdic(LTsv_text,LTsv_first,LTsv_label):
-    LTsv_data=""
-    LTsv_page='\n'+LTsv_text+'\n'
-    LTsv_tagL='\n'+LTsv_first+'\t'; LTsv_posL=LTsv_page.find(LTsv_tagL)
-    if 0 <= LTsv_posL:
-        LTsv_rest='\t'+LTsv_page[LTsv_posL+len(LTsv_tagL):LTsv_page.find('\n',LTsv_posL+1)]+'\t'
-        LTsv_tagR='\t'+LTsv_label+":"; LTsv_posR=LTsv_rest.find(LTsv_tagR)
-        if 0 <= LTsv_posR:
-            LTsv_data=LTsv_rest[LTsv_posR+len(LTsv_tagR):LTsv_rest.find('\t',LTsv_posR+1)]
-    return LTsv_data
-
 def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
@@ -337,7 +326,7 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
             LTsv_glyph_kbdchar_SandS=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
 #            for kbd_xy,kbd_c in enumerate(LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]):
 #                LTsv_glyph_kbdchars[kbd_xy]=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,kbd_c),LTsv_glyph_kbdchar_SandS)[:1]
-            LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]=[LTsv_getdic(LTsv_glyph_kandic,kbd_c,LTsv_glyph_kbdchar_SandS)[:1] for kbd_c in LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]]
+            LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]=[LTsv_pickdic(LTsv_glyph_kandic,kbd_c,LTsv_glyph_kbdchar_SandS)[:1] for kbd_c in LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]]
         elif LTsv_kbdcursor == LTsv_glyph_NFER:
             LTsv_glyph_kbdLCR="SwipeN"
             LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
@@ -395,9 +384,10 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
             LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
         elif LTsv_glyph_kbdLCR == "FlickS":
             LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
-            if kbd_canvas in LTsv_glyph_tapcallback:
-                if LTsv_glyph_tapcallback[kbd_canvas] != None:
-                    LTsv_glyph_tapcallback[kbd_canvas](LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,LTsv_glyph_kbdchars[LTsv_kbdcursor]),LTsv_glyph_kbdchars[LTsv_glyph_SandS]))
+            if LTsv_kbdcursor < LTsv_glyph_SandS:
+                if kbd_canvas in LTsv_glyph_tapcallback:
+                    if LTsv_glyph_tapcallback[kbd_canvas] != None:
+                        LTsv_glyph_tapcallback[kbd_canvas](LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,LTsv_glyph_kbdchars[LTsv_kbdcursor]),LTsv_glyph_kbdchars[LTsv_glyph_SandS]))
         LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
     LTsv_glyph_kbdLCR=""

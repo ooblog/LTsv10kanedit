@@ -228,6 +228,17 @@ def LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None):
         LTsv_data=LTsv_splits[LTsv_posL+len(LTsv_tagL):LTsv_posR]
     return LTsv_data
 
+def LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label):
+    LTsv_data=""
+    LTsv_page='\n'+LTsv_text+'\n'
+    LTsv_tagL='\n'+LTsv_first+'\t'; LTsv_posL=LTsv_page.find(LTsv_tagL)
+    if 0 <= LTsv_posL:
+        LTsv_rest='\t'+LTsv_page[LTsv_posL+len(LTsv_tagL):LTsv_page.find('\n',LTsv_posL+1)]+'\t'
+        LTsv_tagR='\t'+LTsv_label+":"; LTsv_posR=LTsv_rest.find(LTsv_tagR)
+        if 0 <= LTsv_posR:
+            LTsv_data=LTsv_rest[LTsv_posR+len(LTsv_tagR):LTsv_rest.find('\t',LTsv_posR+1)]
+    return LTsv_data
+
 def LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None):
     LTsv_data="" if LTsv_default is None else LTsv_pickdatanum(LTsv_default,0)
     LTsv_join=LTsv_line; LTsv_splits='\t'+LTsv_line.replace('\n','\t')+'\t'; LTsv_tagL='\t'+LTsv_label+":"

@@ -259,6 +259,10 @@ version(branch) 20160718M003911
   1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。
   LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。
 
+ LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)
+  「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書読込用途。
+  LTSVページからfirst(縦軸ラベル)指定行の横軸ラベル(LTsv_label)指定で1個読み込む。
+
  LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)
   1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。
   元LTSVに存在しない横軸ラベル(LTsv_label)の場合末尾に追加。
