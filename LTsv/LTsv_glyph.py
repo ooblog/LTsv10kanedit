@@ -41,10 +41,11 @@ LTsv_glyph_kbdLCR=""
 LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#CFE6CF"
 LTsv_glyph_kbdsize=1
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
+LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI)
 LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
 LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
 LTsv_glyphSVG=None
-def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
+def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
     global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     global LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide
@@ -60,21 +61,23 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_kbddefsize=None):
     global LTsv_glyph_kbdchars
     global LTsv_glyph_kbdLCR
     global LTsv_glyph_kbdTAG,LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor
+    global LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue
     global LTsv_draw_color,LTsv_draw_bgcolor
     global LTsv_glyph_kbdsize
     global LTsv_draw_polygon,LTsv_draw_polygonfill
     global LTsv_glyphSVG
-    LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(LTsv_glyph_ltsvpath))+"/"
+    LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(ltsvpath))+"/"
     LTsv_glyph_ltsvpath=ltsvpath
     LTsv_glyph_ltsv=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_ltsvpath))
     LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
     LTsv_glyph_kandicname=LTsv_readlinerest(LTsv_glyph_config,"dicname",LTsv_glyph_kandicname)
-    LTsv_glyph_kandic=LTsv_loadfile(LTsv_glyph_kandicname)
+    LTsv_glyph_kandic=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kandicname))
     LTsv_glyph_kanmapname=LTsv_readlinerest(LTsv_glyph_config,"mapname",LTsv_glyph_kanmapname)
-    LTsv_glyph_kanmap=LTsv_loadfile(LTsv_glyph_kanmapname)
-    LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
-    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
-    LTsv_glyphSVG=LTsv_glyphSVG_shell(LTsv_GUI)
+    LTsv_glyph_kanmap=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanmapname))
+    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_glyph_GUI),LTsv_draw_delete_shell(LTsv_glyph_GUI),LTsv_draw_queue_shell(LTsv_glyph_GUI)
+    LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_glyph_GUI),LTsv_draw_bgcolor_shell(LTsv_glyph_GUI)
+    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_glyph_GUI),LTsv_draw_polygonfill_shell(LTsv_glyph_GUI)
+    LTsv_glyphSVG=LTsv_glyphSVG_shell(LTsv_glyph_GUI)
     if LTsv_global_GUI() == "GTK2":
         LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
         if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname)):
@@ -304,7 +307,7 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
         if LTsv_kbdcursor == LTsv_glyph_SandS:
             LTsv_glyph_kbdLCR="FlickS"
             LTsv_glyph_kbdchar_SandS=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
@@ -327,14 +330,14 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
             LTsv_glyph_kbdLCR="Tap"
             if LTsv_glyph_tapcallback != None:
                 LTsv_glyph_tapcallback(LTsv_glyph_kbdchars[LTsv_kbdcursor])
-        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
 
 def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
         if LTsv_glyph_kbdLCR == "SwipeN":
             if LTsv_kbdcursor < LTsv_glyph_SandS:
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_kbdcursor])
@@ -351,14 +354,14 @@ def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
                 LTsv_glyph_kbdselect('σ')
             elif LTsv_kbdcursor != LTsv_glyph_XFER:
                 LTsv_glyph_kbdselect('Σ')
-        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
 
 def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
         if LTsv_glyph_kbdLCR == "SwipeK":
             if LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_dictype:
                 LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
@@ -369,7 +372,7 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
             LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
             if LTsv_glyph_tapcallback != None:
                 LTsv_glyph_tapcallback(LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,LTsv_glyph_kbdchars[LTsv_kbdcursor]),LTsv_glyph_kbdchars[LTsv_glyph_SandS]))
-        LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
     LTsv_glyph_kbdLCR=""
 
@@ -751,7 +754,7 @@ if __name__=="__main__":
     LTsv_GUI=LTsv_guiinit()
     if len(LTsv_GUI) > 0:
         import random
-        LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv")
+        LTsv_glyph_kbdinit(ltsvpath="./kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
         debug_kbdH=25
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
         debug_milkfont="kantray5x5comic,{0}".format(debug_kbdH//2)

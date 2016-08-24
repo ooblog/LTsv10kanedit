@@ -14,13 +14,12 @@ from LTsv_kbd     import *
 from LTsv_gui     import *
 from LTsv_glyph  import *
 
-tinykbd_dictype=    ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","幅"]
 PSfont_ZW,PSfont_CW,PSchar_ZW,PSchar_CW=1024,624,1000,600
 kanfont_ltsv,kanfont_config="",""
 kanfont_dicname,kanfont_mapname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths="kanchar.tsv","kanmap.tsv","kanfont.svg","kantray5x5comic","1024,624"
 kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage=25,0,"kanfont_grid25_199.png"
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
-kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(tinykbd_dictype)+1),[None]*(len(tinykbd_dictype)+1)
+kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(LTsv_global_dictype())+1),[None]*(len(LTsv_global_dictype())+1)
 
 def kanfont_codespin_shell(window_objvoid=None,window_objptr=None):
     if LTsv_widget_getnumber(kanfont_code_scale) != LTsv_widget_getnumber(kanfont_code_spin):
@@ -42,6 +41,15 @@ def kanfont_glyph_draw():
     LTsv_draw_picture(kanfont_gridimage,0,0)
     LTsv_draw_queue()
 
+def kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_mousepress(kanfont_kbd_canvas,0,0)
+
+def kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_mousemotion(kanfont_kbd_canvas,0,0)
+
+def kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_mouserelease(kanfont_kbd_canvas,0,0)
+
 def kanfont_configload():
     global kanfont_ltsv,kanfont_config
     global kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage
@@ -51,6 +59,7 @@ def kanfont_configload():
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
+    LTsv_glyph_kbdinit(ltsvpath="LTsv/kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanfont_configload()
     kanfont_fontsize_entry=10;    kanfont_font_entry="{0},{1}".format(kanfont_fontname,kanfont_fontsize_entry); kanfont_label_WH=kanfont_fontsize_entry*2
     kanfont_fontsize_scale=40;    kanfont_font_scale="{0},{1}".format(kanfont_fontname,kanfont_fontsize_scale); kanfont_scale_WH=kanfont_fontsize_scale*2
@@ -76,13 +85,13 @@ if len(LTsv_GUI) > 0:
     kanfont_gothic_radio=LTsv_radio_new(kanfont_window,widget_t="活",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*1//8,widget_y=kanfont_canvas_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
     kanfont_comic_radio=LTsv_radio_new(kanfont_window,widget_t="漫",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*1//8,widget_y=kanfont_canvas_WH+kanfont_label_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
     LTsv_widget_newUUID()
-    for dictype_cnt,dictype_split in enumerate(tinykbd_dictype):
+    for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_radio_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_label_WH,widget_w=kanfont_label_WH*2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
-    dictype_cnt,dictype_split=len(tinykbd_dictype),"code"
-    kanfont_dictype_label[dictype_cnt]=LTsv_radio_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_scale_X,widget_y=0,widget_w=kanfont_scale_W,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
     kanfont_dic_button=LTsv_button_new(kanfont_window,widget_t=kanfont_dicname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*3,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
     kanfont_map_button=LTsv_button_new(kanfont_window,widget_t=kanfont_mapname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*2,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t=kanfont_svgname,widget_x=kanfont_entry_X,widget_y=kanfont_H-kanfont_label_WH*1,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
+    kanfont_kbd_canvas=LTsv_canvas_new(kanfont_window,widget_x=kanfont_W-LTsv_global_glyphkbdW(),widget_y=kanfont_H-LTsv_global_glyphkbdH(),widget_w=LTsv_global_glyphkbdW(),widget_h=LTsv_global_glyphkbdH(),
+     event_p=kanfont_kbd_mousepress,event_m=kanfont_kbd_mousemotion,event_r=kanfont_kbd_mouserelease,event_w=50)
     LTsv_widget_showhide(kanfont_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
@@ -91,6 +100,8 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanfont_glyph_draw()
+    LTsv_glyph_kbddelete(kanfont_kbd_canvas,0,0); LTsv_glyph_kbddraw(kanfont_kbd_canvas,0,0); LTsv_draw_queue()
+    print(LTsv_global_kanmap())
     LTsv_window_main(kanfont_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")
