@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160824W235903
+modify	20160825R025440
 |L:Tsv]
 
 [kanglyph|
@@ -24,12 +24,12 @@ choiceN		名	音	訓	送	異	俗	簡	繁	越	地	逆	非	英	顔	ε	ρ	τ	υ	θ	
 choiceX		名	音	訓	送	異	俗	簡	繁	越	地	逆	非	英	顔	Ε	Ρ	Τ	Υ	Θ	Ι	Ο	Π	｀	プ	Α	Σ	Δ	Φ	Γ	Η	Ξ	Κ	Λ	代	鍵	ぬ	Ζ	Χ	Ψ	Ω	Β	Ν	Μ	熙	●	▲	■	￥	Σ
 kbdTAG		kanglyphkbd
 fontcolor		black
-bgcolor		#CFE6CF
+bgcolor		#FFCBFF
 kbddefsize	1
-last_alpha	ぬ
+last_alpha	＠
 last_dic	英
 |kanglyph]
 
 [reversi|
-entry	Ｔ
+entry	ＴＳ０
 |reversi]
