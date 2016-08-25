@@ -408,7 +408,7 @@ def kanfont_configload():
     global kanfont_char,kanfont_dic,kanfont_alpha
     global kanfont_dicname,kanfont_mapname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths
     global kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage
-    kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
+    kanfont_ltsv=LTsv_loadfile("kanfont1.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
     kanfont_alpha=LTsv_readlinerest(kanfont_config,"find_alpha",kanfont_alpha)
     kanfont_dic=LTsv_readlinerest(kanfont_config,"find_dic",kanfont_dic)

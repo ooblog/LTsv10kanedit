@@ -85,7 +85,7 @@ def kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None):
 def kanfont_configload():
     global kanfont_ltsv,kanfont_config
     global kanfont_fontgrid,kanfont_fontinner,kanfont_gridimage
-    kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
+    kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
     kanfont_gridimage=LTsv_readlinerest(kanfont_config,"gridimage",kanfont_gridimage)
 

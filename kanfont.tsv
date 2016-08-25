@@ -1,12 +1,3 @@
-[L:Tsv|
-code	UTF-8
-enter	LF
-tab	8
-program	kanfont
-LTsvver	20160718M003911
-modify	20160824W222401
-|L:Tsv]
-
 [kanfont|
 find_alpha	σ
 find_dic	代
@@ -18,8 +9,7 @@ font_grid	50
 font_gridinner	1
 gridimage	kanfont_grid25_198.png
 |kanfont]
-
-
-# Copyright (c) 2016 ooblog
-# License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
+[L:Tsv|
+LTsvver	20160718M003911
+modify	20160826F021304
+|L:Tsv]
