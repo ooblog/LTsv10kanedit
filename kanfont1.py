@@ -430,14 +430,14 @@ def kanfont_exit_configsave(window_objvoid=None,window_objptr=None):
     keyboard_cursorMS,keyboard_cursorIR,keyboard_cursorAF,keyboard_cursorOLD,keyboard_cursorDIC,keyboard_cursorNX,keyboard_cursorK,keyboard_cursorLCR=LTsv_keyboard_NXK()
     keyboard_irohatype,keyboard_alphatype,keyboard_dictype,keyboard_tofu=LTsv_keyboard_iroha_type()
     kanfont_alpha,kanfont_dic=keyboard_alphatype[keyboard_cursorAF],keyboard_cursorDIC
-    kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
+    kanfont_ltsv=LTsv_loadfile("kanfont1.tsv")
     kanfont_config=LTsv_pushlinerest(kanfont_config,"find_alpha",kanfont_alpha)
     kanfont_config=LTsv_pushlinerest(kanfont_config,"find_dic",kanfont_dic)
     kanfont_config=LTsv_pushlinerest(kanfont_config,"find_char",kanfont_char)
     kanfont_config=LTsv_pushlinerest(kanfont_config,"font_grid",str(kanfont_fontgrid))
     kanfont_config=LTsv_pushlinerest(kanfont_config,"font_gridinner",str(kanfont_fontinner))
     kanfont_ltsv=LTsv_putpage(kanfont_ltsv,"kanfont",kanfont_config)
-    LTsv_savefile("kanfont.tsv",kanfont_ltsv)
+    LTsv_savefile("kanfont1.tsv",kanfont_ltsv)
     LTsv_window_exit()
 kanfont_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanfont_exit_configsave)
 

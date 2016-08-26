@@ -45,6 +45,8 @@ LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI)
 LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
 LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
+LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
+LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
 LTsv_glyphSVG=None
 def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
     global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
@@ -66,6 +68,8 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     global LTsv_draw_color,LTsv_draw_bgcolor
     global LTsv_glyph_kbdsize
     global LTsv_draw_polygon,LTsv_draw_polygonfill
+    global LTsv_draw_squares,LTsv_draw_squaresfill
+    global LTsv_draw_circles,LTsv_draw_circlesfill
     global LTsv_glyphSVG
     LTsv_glyph_ltsvpath=ltsvpath
     LTsv_glyph_ltsv=LTsv_loadfile(LTsv_glyph_ltsvpath)
@@ -78,6 +82,8 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_glyph_GUI),LTsv_draw_delete_shell(LTsv_glyph_GUI),LTsv_draw_queue_shell(LTsv_glyph_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_glyph_GUI),LTsv_draw_bgcolor_shell(LTsv_glyph_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_glyph_GUI),LTsv_draw_polygonfill_shell(LTsv_glyph_GUI)
+    LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_glyph_GUI),LTsv_draw_squaresfill_shell(LTsv_glyph_GUI)
+    LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_glyph_GUI),LTsv_draw_circlesfill_shell(LTsv_glyph_GUI)
     LTsv_glyphSVG=LTsv_glyphSVG_shell(LTsv_glyph_GUI)
     if LTsv_global_GUI() == "GTK2":
         LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
@@ -197,7 +203,10 @@ def LTsv_glyphpath(glyphcode):
     LTsv_glyph_path5x5=LTsv_pickdatalabel(LTsv_glyph_kanline,"活")
     LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5)
     LTsv_glyph_pathcomic=LTsv_pickdatalabel(LTsv_glyph_kanline,"漫")
-    LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5) if len(LTsv_glyph_pathcomic) else LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
+    if len(LTsv_glyph_pathcomic):
+        LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
+    else:
+        LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
 
 def LTsv_glyphfont_5x5(glyphcode):
     return LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
@@ -286,6 +295,27 @@ def LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//
         LTsv_draw_color(draw_c="#6E81D9" if glyphclock > 0 else "#6ED997" if glyphclock < 0 else "#D96ED3")
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
+
+def LTsv_glyph_note(draw_t="",draw_g="活"):
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
+    glyphcode=draw_t[:1]
+    if not glyphcode in LTsv_glyph5x5_coord:
+        LTsv_glyphpath(glyphcode)
+    LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
+    return LTsv_glyphnote
+
+def LTsv_draw_glyphedit(draw_t="",draw_x=0,draw_y=0,draw_z=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
+    glyphcode=draw_t[:1]
+    if not glyphcode in LTsv_glyph5x5_coord:
+        LTsv_glyphpath(glyphcode)
+    LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
+    for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+        if draw_z != LTsv_glyphpointlist_count: continue;
+        glyphclock=LTsv_clocknote[LTsv_glyphpointlist_count]
+        LTsv_draw_color(draw_c="#6E81D9" if glyphclock > 0 else "#6ED997" if glyphclock < 0 else "#D96ED3")
+        LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
+        LTsv_draw_squaresfill(10,*tuple(LTsv_glyphpointresize))
 
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_selcanvas(kbd_canvas,draw_g=LTsv_glyph_kbdTAG)
