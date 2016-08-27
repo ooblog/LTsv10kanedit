@@ -41,6 +41,7 @@ LTsv_glyph_kbdchars=[""]*(LTsv_glyph_None); LTsv_glyph_kbdchars[LTsv_glyph_SandS
 LTsv_glyph_kbdLCR=""
 LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#FFCBFF"
 LTsv_glyph_kbdsize=1
+LTsv_glyph_cursorsize=10
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
 LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI)
 LTsv_draw_color,LTsv_draw_bgcolor=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI)
@@ -304,21 +305,50 @@ def LTsv_glyph_note(draw_t="",draw_g="活"):
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     return LTsv_glyphnote
 
-def LTsv_draw_glyphedit(draw_t="",draw_x=0,draw_y=0,draw_z=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
+def LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活"):
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
+    glyphcode=draw_t[:1]
+    if not glyphcode in LTsv_glyph5x5_coord:
+        LTsv_glyphpath(glyphcode)
+    LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
+    grid_p,grid_q=-1,-1
+    for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+        if path_z != LTsv_glyphpointlist_count: continue;
+        LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
+        LTsv_glyphpointseg=[(xy+LTsv_glyphpointresize[(odd+2)%len(LTsv_glyphpointresize)])//2 for odd,xy in enumerate(LTsv_glyphpointresize)]
+        grid_len=len(LTsv_glyphpointlist)//2
+        for glyphpoints in range(grid_len):
+            if abs(LTsv_glyphpointresize[glyphpoints*2]-grid_x) < LTsv_glyph_cursorsize//2 and abs(LTsv_glyphpointresize[glyphpoints*2+1]-grid_y) < LTsv_glyph_cursorsize//2:
+                grid_p=glyphpoints
+            if abs(LTsv_glyphpointseg[glyphpoints*2]-grid_x) < LTsv_glyph_cursorsize//2 and abs(LTsv_glyphpointseg[glyphpoints*2+1]-grid_y) < LTsv_glyph_cursorsize//2:
+                grid_q=glyphpoints
+    return grid_p,grid_q
+
+def LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-1,grid_q=-1,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
     if not glyphcode in LTsv_glyph5x5_coord:
         LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-        if draw_z != LTsv_glyphpointlist_count: continue;
+        if path_z != LTsv_glyphpointlist_count: continue;
         glyphclock=LTsv_clocknote[LTsv_glyphpointlist_count]
         LTsv_draw_color(draw_c="#6E81D9" if glyphclock > 0 else "#6ED997" if glyphclock < 0 else "#D96ED3")
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
-        LTsv_draw_squaresfill(10,*tuple(LTsv_glyphpointresize))
-        if draw_s != 0:
-            LTsv_glyphpointseg=[(xy+LTsv_glyphpointresize[(odd+2)%len(LTsv_glyphpointresize)])//2 for odd,xy in enumerate(LTsv_glyphpointresize)]
-            LTsv_draw_squares(10,*tuple(LTsv_glyphpointseg))
+        LTsv_glyphpointseg=[(xy+LTsv_glyphpointresize[(odd+2)%len(LTsv_glyphpointresize)])//2 for odd,xy in enumerate(LTsv_glyphpointresize)]
+        grid_len=len(LTsv_glyphpointlist)//2
+        for glyphpoints in range(grid_len):
+            x,y=LTsv_glyphpointresize[glyphpoints*2],LTsv_glyphpointresize[glyphpoints*2+1]
+            if grid_p == glyphpoints:
+                LTsv_draw_squaresfill(LTsv_glyph_cursorsize,*tuple([x,y]))
+            else:
+                LTsv_draw_squares(LTsv_glyph_cursorsize,*tuple([x,y]))
+            if draw_s != 0:
+                x,y=LTsv_glyphpointseg[glyphpoints*2],LTsv_glyphpointseg[glyphpoints*2+1]
+                if grid_q == glyphpoints:
+                    LTsv_draw_circlesfill(LTsv_glyph_cursorsize,*tuple([x,y]))
+                else:
+                    LTsv_draw_circles(LTsv_glyph_cursorsize,*tuple([x,y]))
 
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_selcanvas(kbd_canvas,draw_g=LTsv_glyph_kbdTAG)

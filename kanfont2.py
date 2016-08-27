@@ -19,7 +19,7 @@ kanfont_ltsv,kanfont_config="",""
 kanfont_dicname,kanfont_mapname,kanfont_fontname,kanfont_fontwidths="kanchar.tsv","kanmap.tsv","kantray5x5comic","1024,624"
 kanfont_svgname=["kanfont5x5.svg","kanfontcomic.svg"]
 kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage="ぱ",25,0,0,0,"kanfont_grid25_199.png"
-kanfont_gridX,kanfont_gridY=0,0
+kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ=0,0,0,0
 kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX="#6E81D9","#6ED997","#D96ED3"
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
 kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(LTsv_global_dictype())+1),[None]*(len(LTsv_global_dictype())+1)
@@ -84,13 +84,15 @@ def debug_gothic_shell(radioNumber):
     return debug_gothic_kernel
 
 def kanfont_glyph_grid():
-    global kanfont_gridX,kanfont_gridY
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ
     kanfont_gridX,kanfont_gridY=min(max(LTsv_global_canvasmotionX(),0),PSchar_ZW//2),min(max(LTsv_global_canvasmotionY(),0),PSchar_ZW//2)
     if kanfont_gridinner:
         kanfont_gridX=(kanfont_gridX//kanfont_fontgrid)*kanfont_fontgrid if kanfont_gridX//(kanfont_fontgrid//2)%2 == 0 else (kanfont_gridX//kanfont_fontgrid+1)*kanfont_fontgrid-1
         kanfont_gridY=(kanfont_gridY//kanfont_fontgrid)*kanfont_fontgrid if kanfont_gridY//(kanfont_fontgrid//2)%2 == 0 else (kanfont_gridY//kanfont_fontgrid+1)*kanfont_fontgrid-1
     else:
         kanfont_gridX,kanfont_gridY=(kanfont_gridX+(kanfont_fontgrid//2))//kanfont_fontgrid*kanfont_fontgrid,(kanfont_gridY+(kanfont_fontgrid//2))//kanfont_fontgrid*kanfont_fontgrid
+    glyphentrychar=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+    kanfont_gridP,kanfont_gridQ=LTsv_draw_glyphmouse(draw_t=glyphentrychar,draw_x=0,draw_y=0,path_z=LTsv_widget_getnumber(kanfont_path_scale),grid_x=kanfont_gridX,grid_y=kanfont_gridY,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
 
 kanfont_gridview=False
 def kanfont_glyph_draw():
@@ -103,22 +105,19 @@ def kanfont_glyph_draw():
         LTsv_draw_glyphclock(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
     else:
         LTsv_draw_glyphclockfill(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
-    LTsv_draw_glyphedit(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_z=LTsv_widget_getnumber(kanfont_path_scale),draw_s=kanfont_lineseg,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
+    LTsv_draw_glyphcursor(draw_t=glyphentrychar,draw_x=0,draw_y=0,path_z=LTsv_widget_getnumber(kanfont_path_scale),draw_s=kanfont_lineseg,grid_p=kanfont_gridP,grid_q=kanfont_gridQ,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
     LTsv_draw_queue()
 
 def kanfont_glyph_mousepress(window_objvoid=None,window_objptr=None):
     kanfont_glyph_grid()
-#    LTsv_glyphnote=LTsv_glyph_note(LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_glyph_draw()
 
 def kanfont_glyph_mousemotion(window_objvoid=None,window_objptr=None):
     kanfont_glyph_grid()
-#    LTsv_glyphnote=LTsv_glyph_note(LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_glyph_draw()
 
 def kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None):
     kanfont_glyph_grid()
-#    LTsv_glyphnote=LTsv_glyph_note(LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_glyph_draw()
 
 def kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None):

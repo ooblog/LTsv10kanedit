@@ -4,16 +4,16 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160827S101754
+modify	20160827S214553
 |L:Tsv]
 
 [kanfont|
-seek	1
+seek	ぬ
 svg_name	kanfont.svg
 font_name	kantray5x5comic
 font_widths	1024	624	824
 grid	50
-inner	1
+inner	0
 lineseg	1
 gothic	0
 gridimage	kanfont_grid25_198.png
