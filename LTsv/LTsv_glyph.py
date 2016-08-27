@@ -137,7 +137,11 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_readlinerest(LTsv_glyph_config,"last_dic",LTsv_glyph_kbdchars[LTsv_glyph_SandS])[:1]
     LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
 
-def LTsv_global_kandic():                              return LTsv_glyph_kandic
+#def LTsv_global_kandic():                              return LTsv_glyph_kandic
+def LTsv_global_kandic(new_kandic=None):
+    global LTsv_glyph_kandic
+    LTsv_glyph_kandic=LTsv_glyph_kandic if new_kandic == None else new_kandic
+    return LTsv_glyph_kandic
 def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
 def LTsv_global_kanpickle():                          return LTsv_glyph_kanpickle
 def LTsv_global_irohatype():                          return LTsv_glyph_irohatype
@@ -204,15 +208,19 @@ def LTsv_glyphpath(glyphcode):
     LTsv_glyph_path5x5=LTsv_pickdatalabel(LTsv_glyph_kanline,"活")
     LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5)
     LTsv_glyph_pathcomic=LTsv_pickdatalabel(LTsv_glyph_kanline,"漫")
-    if len(LTsv_glyph_pathcomic):
+    if len(LTsv_glyph_pathcomic) > 0:
         LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
     else:
         LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
 
 def LTsv_glyphfont_5x5(glyphcode):
+    if not glyphcode in LTsv_glyph5x5_coord:
+        LTsv_glyphpath(glyphcode)
     return LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
 
 def LTsv_glyphfont_comic(glyphcode):
+    if not glyphcode in LTsv_glyphcomic_coord:
+        LTsv_glyphpath(glyphcode)
     return LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]
 
 def LTsv_glyphfont_shell(draw_g="活"):
@@ -235,8 +243,6 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
             if glyphcode == '\t':
                 draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
             continue
-        if not glyphcode in LTsv_glyph5x5_coord:
-            LTsv_glyphpath(glyphcode)
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist in LTsv_glyphnote:
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
@@ -260,8 +266,6 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
             if glyphcode == '\t':
                 draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
             continue
-        if not glyphcode in LTsv_glyph5x5_coord:
-            LTsv_glyphpath(glyphcode)
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
             if LTsv_clocknote[LTsv_glyphpointlist_count] > 0:
@@ -276,8 +280,6 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
 def LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
-    if not glyphcode in LTsv_glyph5x5_coord:
-        LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
         glyphclock=LTsv_clocknote[LTsv_glyphpointlist_count]
@@ -288,8 +290,6 @@ def LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,dr
 def LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
-    if not glyphcode in LTsv_glyph5x5_coord:
-        LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
         glyphclock=LTsv_clocknote[LTsv_glyphpointlist_count]
@@ -297,19 +297,32 @@ def LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
 
-def LTsv_glyph_note(draw_t="",draw_g="活"):
+def LTsv_glyph_getnote(draw_t="",draw_g="活"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
-    if not glyphcode in LTsv_glyph5x5_coord:
-        LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     return LTsv_glyphnote
+
+def kanfont_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
+    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
+    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
+    glyphcode=draw_t[:1]
+    LTsv_glyph_kanpath=""
+    for glyphpoints in glyphnote:
+        glyphpointlist=""
+        for draw_xy_count in range(len(glyphpoints)//2):
+            glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+        LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
+    LTsv_glyph_kanpath=LTsv_glyph_kanpath.rstrip(' ')
+    LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
+    LTsv_glyph_kanline=LTsv_setdatalabel(LTsv_glyph_kanline,draw_g,LTsv_glyph_kanpath)
+    LTsv_glyph_kandic=LTsv_pushlinerest(LTsv_glyph_kandic,glyphcode,LTsv_glyph_kanline)
+    LTsv_glyphpath(glyphcode)
+    LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
 
 def LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
-    if not glyphcode in LTsv_glyph5x5_coord:
-        LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     grid_p,grid_q=-1,-1
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
@@ -327,8 +340,6 @@ def LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar
 def LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-1,grid_q=-1,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
-    if not glyphcode in LTsv_glyph5x5_coord:
-        LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
         if path_z != LTsv_glyphpointlist_count: continue;
