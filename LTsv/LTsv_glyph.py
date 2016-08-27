@@ -304,7 +304,7 @@ def LTsv_glyph_note(draw_t="",draw_g="活"):
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     return LTsv_glyphnote
 
-def LTsv_draw_glyphedit(draw_t="",draw_x=0,draw_y=0,draw_z=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
+def LTsv_draw_glyphedit(draw_t="",draw_x=0,draw_y=0,draw_z=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
     if not glyphcode in LTsv_glyph5x5_coord:
@@ -316,6 +316,9 @@ def LTsv_draw_glyphedit(draw_t="",draw_x=0,draw_y=0,draw_z=0,draw_f=LTsv_PSchar_
         LTsv_draw_color(draw_c="#6E81D9" if glyphclock > 0 else "#6ED997" if glyphclock < 0 else "#D96ED3")
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
         LTsv_draw_squaresfill(10,*tuple(LTsv_glyphpointresize))
+        if draw_s != 0:
+            LTsv_glyphpointseg=[(xy+LTsv_glyphpointresize[(odd+2)%len(LTsv_glyphpointresize)])//2 for odd,xy in enumerate(LTsv_glyphpointresize)]
+            LTsv_draw_squares(10,*tuple(LTsv_glyphpointseg))
 
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_selcanvas(kbd_canvas,draw_g=LTsv_glyph_kbdTAG)
@@ -737,10 +740,10 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     for xy in debug_milklid_range:
         if debug_milklid_check(xy,debug_milklidBW) > 0:
             LTsv_draw_color(debug_milklid_colordic["next"])
-            LTsv_draw_glyphs(draw_t=debug_reversi_key[xy],draw_x=debug_milklidX[xy]+debug_kbdH//8,draw_y=debug_milklidY[xy]+debug_kbdH//8,draw_f=debug_kbdH*2//3,draw_g="活")
+            LTsv_draw_glyphs(draw_t=debug_reversi_key[xy],draw_x=debug_milklidX[xy]+debug_kbdH//8,draw_y=debug_milklidY[xy]+debug_kbdH//8,draw_f=debug_kbdH*2//3,draw_g="漫")
         else:
             LTsv_draw_color(debug_milklid_colordic[debug_milklid_colorkey[debug_milkMAP[xy]]])
-            LTsv_draw_glyphsfill(draw_t=debug_reversi_key[xy],draw_x=debug_milklidX[xy]+debug_kbdH//8,draw_y=debug_milklidY[xy]+debug_kbdH//8,draw_f=debug_kbdH*2//3,draw_g="活")
+            LTsv_draw_glyphsfill(draw_t=debug_reversi_key[xy],draw_x=debug_milklidX[xy]+debug_kbdH//8,draw_y=debug_milklidY[xy]+debug_kbdH//8,draw_f=debug_kbdH*2//3,draw_g="漫")
     LTsv_draw_color(debug_milklid_colordic["line"])
     LTsv_draw_polygon(debug_milklidX[11],debug_milklidY[11],debug_milklidX[19],debug_milklidY[19],debug_milklidX[99],debug_milklidY[99],debug_milklidX[91],debug_milklidY[91])
     LTsv_draw_polygon(debug_milklidX[33],debug_milklidY[33],debug_milklidX[37],debug_milklidY[37],debug_milklidX[77],debug_milklidY[77],debug_milklidX[73],debug_milklidY[73])
@@ -750,7 +753,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
         milklidcount=0
         for xy in debug_milklid_range:
             milklidcount=milklidcount+1 if debug_milkMAP[xy] == debug_milklidBWswitch[bw] else milklidcount
-        LTsv_draw_glyphsfill(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20],draw_f=debug_kbdH//2,draw_g="活")
+        LTsv_draw_glyphsfill(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20],draw_f=debug_kbdH//2,draw_g="漫")
     LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
     LTsv_draw_queue()
 
