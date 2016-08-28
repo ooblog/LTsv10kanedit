@@ -19,7 +19,7 @@ kanfont_ltsv,kanfont_config="",""
 kanfont_dicname,kanfont_mapname,kanfont_fontname,kanfont_fontwidths="kanchar.tsv","kanmap.tsv","kantray5x5comic","1024,624"
 kanfont_svgname=["kanfont5x5.svg","kanfontcomic.svg"]
 kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage="ぱ",25,0,0,0,"kanfont_grid25_199.png"
-kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ=0,0,-1,-1,-1,-1,-1
+kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY=0,0,-1,-1,-1,-1,-1,0,0
 kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX="#6E81D9","#6ED997","#D96ED3"
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
 kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(LTsv_global_dictype())+1),[None]*(len(LTsv_global_dictype())+1)
@@ -84,15 +84,16 @@ def debug_gothic_shell(radioNumber):
     return debug_gothic_kernel
 
 def kanfont_glyph_grid():
-    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ
-    kanfont_gridX,kanfont_gridY=min(max(LTsv_global_canvasmotionX(),0),PSchar_ZW//2),min(max(LTsv_global_canvasmotionY(),0),PSchar_ZW//2)
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
+    kanfont_mouseX,kanfont_mouseY=min(max(LTsv_global_canvasmotionX(),0),PSchar_ZW//2),min(max(LTsv_global_canvasmotionY(),0),PSchar_ZW//2)
+    kanfont_gridX,kanfont_gridY=kanfont_mouseX,kanfont_mouseY
     if kanfont_gridinner:
         kanfont_gridX=(kanfont_gridX//kanfont_fontgrid)*kanfont_fontgrid if kanfont_gridX//(kanfont_fontgrid//2)%2 == 0 else (kanfont_gridX//kanfont_fontgrid+1)*kanfont_fontgrid-1
         kanfont_gridY=(kanfont_gridY//kanfont_fontgrid)*kanfont_fontgrid if kanfont_gridY//(kanfont_fontgrid//2)%2 == 0 else (kanfont_gridY//kanfont_fontgrid+1)*kanfont_fontgrid-1
     else:
         kanfont_gridX,kanfont_gridY=(kanfont_gridX+(kanfont_fontgrid//2))//kanfont_fontgrid*kanfont_fontgrid,(kanfont_gridY+(kanfont_fontgrid//2))//kanfont_fontgrid*kanfont_fontgrid
     glyphentrychar=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
-    kanfont_gridP,kanfont_gridQ=LTsv_draw_glyphmouse(draw_t=glyphentrychar,draw_x=0,draw_y=0,path_z=LTsv_widget_getnumber(kanfont_path_scale),grid_x=kanfont_gridX,grid_y=kanfont_gridY,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+    kanfont_gridP,kanfont_gridQ=LTsv_draw_glyphmouse(draw_t=glyphentrychar,draw_x=0,draw_y=0,path_z=LTsv_widget_getnumber(kanfont_path_scale),grid_x=kanfont_gridX,grid_y=kanfont_gridY,mouse_x=kanfont_mouseX,mouse_y=kanfont_mouseY,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
 
 kanfont_gridview=False
 def kanfont_glyph_draw():
@@ -109,40 +110,64 @@ def kanfont_glyph_draw():
     LTsv_draw_queue()
 
 def kanfont_glyph_mousepress(window_objvoid=None,window_objptr=None):
-    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
     kanfont_glyph_grid()
     glyphcode=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
     glyphnote=LTsv_glyph_getnote(glyphcode,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_catchZ=LTsv_widget_getnumber(kanfont_path_scale)
-    if kanfont_catchZ == len(glyphnote):
+    if kanfont_catchZ >= len(glyphnote):
         glyphnote.append([kanfont_gridX*2,kanfont_gridY*2])
         kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
         kanfont_pathadjustment(kanfont_catchZ)
-    if kanfont_catchZ < len(glyphnote):
+    else:
+        kanfont_catchX,kanfont_catchY=kanfont_gridX,kanfont_gridY
         if kanfont_gridP >= 0:
             kanfont_catchP=kanfont_gridP
         else:
-            glyphnote[kanfont_catchZ]+=[kanfont_gridX*2]; glyphnote[kanfont_catchZ]+=[kanfont_gridY*2]
-            kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
-#    print(glyphnote)
+            if kanfont_gridQ >= 0:
+                if kanfont_lineseg:
+                    kanfont_catchQ=(kanfont_gridQ+1+len(glyphnote[kanfont_catchZ])//2)%(len(glyphnote[kanfont_catchZ])//2)
+                    glyphnote[kanfont_catchZ].insert(kanfont_catchQ*2,kanfont_gridY*2); glyphnote[kanfont_catchZ].insert(kanfont_catchQ*2,kanfont_gridX*2)
+                    kanfont_catchP=kanfont_catchQ
+            else:
+                glyphnote[kanfont_catchZ]+=[kanfont_gridX*2]; glyphnote[kanfont_catchZ]+=[kanfont_gridY*2]
+                kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_glyph_draw()
 
 def kanfont_glyph_mousemotion(window_objvoid=None,window_objptr=None):
-    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
     kanfont_glyph_grid()
+    glyphcode=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+    glyphnote=LTsv_glyph_getnote(glyphcode,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+    kanfont_catchZ=LTsv_widget_getnumber(kanfont_path_scale)
     if kanfont_catchP >= 0:
-        pass
+        glyphnote[kanfont_catchZ][kanfont_catchP*2],glyphnote[kanfont_catchZ][kanfont_catchP*2+1]=kanfont_gridX*2,kanfont_gridY*2
+        kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+    if kanfont_catchX != kanfont_gridX or kanfont_catchY != kanfont_gridY:
+        kanfont_catchX,kanfont_catchY=-1,-1
     kanfont_glyph_draw()
 
 def kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None):
-    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ
-    kanfont_catchP,kanfont_catchQ,kanfont_catchZ=-1,-1,-1
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
     kanfont_glyph_grid()
+    glyphcode=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+    glyphnote=LTsv_glyph_getnote(glyphcode,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+    kanfont_catchZ=LTsv_widget_getnumber(kanfont_path_scale)
+    if kanfont_catchP >= 0:
+        if kanfont_catchX == kanfont_gridX and kanfont_catchY == kanfont_gridY:
+            if len(glyphnote[kanfont_catchZ]) > 2:
+                glyphnote[kanfont_catchZ].pop(kanfont_catchP*2); glyphnote[kanfont_catchZ].pop(kanfont_catchP*2)
+                kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+            else:
+                del glyphnote[kanfont_catchZ]
+                kanfont_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
+                kanfont_pathadjustment(kanfont_catchZ)
+    kanfont_catchP,kanfont_catchQ,kanfont_catchZ=-1,-1,-1
     kanfont_glyph_draw()
 
 def kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None):
     global kanfont_gridview
-    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ
+    global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
     kanfont_gridview=True
     kanfont_catchP,kanfont_catchQ,kanfont_catchZ=-1,-1,-1
     kanfont_glyph_draw()
