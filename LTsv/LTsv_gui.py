@@ -101,7 +101,11 @@ def LTsv_global_canvasmotionX():                    return LTsv_canvas_motion_X
 def LTsv_global_canvasmotionY():                    return LTsv_canvas_motion_Y
 def LTsv_global_canvascolor():                    return LTsv_canvascolor
 def LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor
-def LTsv_global_widgetgetltsv():                    return LTsv_widgetLTSV
+#def LTsv_global_widgetgetltsv():                    return LTsv_widgetLTSV
+def LTsv_global_widgetltsv(new_LTSV=None):
+    global LTsv_widgetLTSV
+    LTsv_widgetLTSV=LTsv_widgetLTSV if new_LTSV == None else new_LTSV
+    return LTsv_widgetLTSV
 def LTsv_global_widgetgetpage(LTsv_widgetPAGENAME): return LTsv_getpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME)
 def LTsv_global_widgetOBJ(LTsv_objid):              return LTsv_widgetOBJ[LTsv_objid]
 def LTsv_global_pictureOBJ(LTsv_objid):             return LTsv_pictureOBJ[LTsv_objid]
@@ -129,7 +133,8 @@ def LTsv_widget_newobj(LTsv_widgetpagelocal,LTsv_widgetoption,widget_obj):
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
-  menu_o=None,menu_b=None,menu_c=None,kbd_d=None,kbd_g=None,kbd_s=None):
+  menu_o=None,menu_b=None,menu_c=None,kbd_d=None,kbd_g=None,kbd_s=None,
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -165,6 +170,11 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if kbd_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"keyboard_draw",kbd_d)
     if kbd_g    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"keyboard_getkey",kbd_g)
     if kbd_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"keyboard_setkey",kbd_s)
+    if kbd_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_press",kbd_p)
+    if kbd_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_release",kbd_r)
+    if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_motion",kbd_m)
+    if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_enter",kbd_e)
+    if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_leave",kbd_l)
     return LTsv_widgetPAGE
 
 def LTsv_fonttuple(LTsv_line):
