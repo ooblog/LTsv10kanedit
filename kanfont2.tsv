@@ -4,21 +4,25 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160830T072532
+modify	20160831W024752
 |L:Tsv]
 
 [kanfont|
-seek	1
-svg_name	kanfont.svg
-font_name	kantray5x5comic
-font_widths	1024	624	824
+seek	ぬ
 grid	50
 inner	1
 lineseg	1
 gothic	1
 gridimage	kanfont_grid25_198.png
 glyphcolor	R:#6E81D9	L:#6ED997	X:#D96ED3
+dic_name	kan5x5comic.tsv
+svg_name	kan5x5comic.svg
+font_name	kan5x5comic
+font_widths	1024,824,624
+autosave	off
+savetime	@0h:@0n:@0s
 |kanfont]
+
 
 # Copyright (c) 2016 ooblog
 # License: MIT

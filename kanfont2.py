@@ -7,7 +7,7 @@ os.chdir(sys.path[0])
 sys.path.append("LTsv")
 from LTsv_printf  import *
 from LTsv_file    import *
-#from LTsv_time    import *
+from LTsv_time    import *
 #from LTsv_calc    import *
 #from LTsv_joy     import *
 from LTsv_kbd     import *
@@ -16,11 +16,10 @@ from LTsv_glyph  import *
 
 PSfont_ZW,PSfont_CW,PSchar_ZW,PSchar_CW=1024,624,1000,600
 kanfont_ltsv,kanfont_config="",""
-kanfont_dicname,kanfont_mapname,kanfont_fontname,kanfont_fontwidths="kanchar.tsv","kanmap.tsv","kantray5x5comic","1024,624"
-kanfont_svgname=["kanfont5x5.svg","kanfont5x5comic.svg"]
 kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage="ぱ",25,0,0,0,"kanfont_grid25_199.png"
 kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY=0,0,-1,-1,-1,-1,-1,0,0
 kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX="#6E81D9","#6ED997","#D96ED3"
+kanfont_dicname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime="kanchar.tsv","kan5x5comic.svg","kan5x5comic","1024,824,624","off","@0h:@0n:@0s"
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
 kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(LTsv_global_dictype())+1),[None]*(len(LTsv_global_dictype())+1)
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
@@ -41,6 +40,9 @@ def kanfont_code():
     kanfont_pathadjustment()
     LTsv_glyphpath(kanfont_seek)
     kanfont_glyph_draw()
+    LTsv_glyph_kanline=LTsv_readlinerest(LTsv_global_kandic(),kanfont_seek)
+    for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
+        LTsv_kbdentry_settext(kanfont_dictype_canvas[dictype_cnt],widget_t=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))
 
 def kanfont_codespin_shell(window_objvoid=None,window_objptr=None):
     if LTsv_widget_getnumber(kanfont_code_scale) != LTsv_widget_getnumber(kanfont_code_spin):
@@ -55,7 +57,7 @@ def kanfont_codescale_shell(window_objvoid=None,window_objptr=None):
     return
 
 def kanfont_codekbd(kbdentry):
-    kbdentrycode=ord(kbdentry[0])
+    kbdentrycode=ord(kbdentry[:1])
     LTsv_widget_setnumber(kanfont_code_scale,int(kbdentrycode))
     kanfont_code()
 
@@ -180,6 +182,7 @@ def kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None):
 def kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None):
     global kanfont_gridview
     kanfont_gridview=False
+    LTsv_widget_settext(kanfont_svg_button,"save:{0}".format(kanfont_svgname))
     kanfont_glyph_draw()
 
 def kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None):
@@ -191,10 +194,49 @@ def kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None):
 def kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mouserelease(kanfont_kbd_canvas,0,2)
 
+def kanfont_svgsave(window_objvoid=None,window_objptr=None):
+    global kanfont_dicname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
+    kanchar=LTsv_global_kandic().rstrip('\n').split('\n')
+    kanfont_svgtext=(
+      '<?xml version="1.0" encoding="UTF-8"?>\n'
+      '<svg\n'
+      '  xmlns="http://www.w3.org/2000/svg" version="1.1"\n'
+      '  xmlns:dc="http://purl.org/dc/elements/1.1/"\n'
+      '  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n'
+      '  xmlns:svg="http://www.w3.org/2000/svg">\n'
+      '    <defs>\n'
+    )
+    for fontwidths in kanfont_fontwidths.split(','):
+        kanfont_svgtext+=(
+          '        <font id="{0}" horiz-adv-x="{2}">\n'
+          '            <font-face font-family="{1}" units-per-em="{2}"/>\n'
+          ''.format(kanfont_fontname if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname,fontwidths),kanfont_fontname,fontwidths)
+        )
+        for kanline in kanchar:
+            kanpath=LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活")
+            if len(kanpath):
+                kanwide=LTsv_pickdatalabel(kanline,"幅"); kanwide=kanwide if len(kanwide) else "1024"
+                if kanwide == fontwidths:
+                    kanglyphname=kanline[0:kanline.find('\t')]; kanglyphname=kanglyphname if not kanglyphname in '&"<>' else LTsv_utf2xml(kanglyphname)
+                    kanfont_svgtext+=(
+                      '            <glyph glyph-name="{0}" unicode="{0}" d="{1}" />\n'.format(kanglyphname,kanpath)
+                    )
+        kanfont_svgtext+=(
+          '        </font>\n'
+        )
+    kanfont_svgtext+=(
+      '    </defs>\n'
+      '</svg>\n'
+    )
+    LTsv_saveplain(kanfont_dicname,LTsv_global_kandic())
+    LTsv_saveplain(kanfont_svgname,kanfont_svgtext)
+    LTsv_widget_settext(kanfont_svg_button,LTsv_getdaytimestr("savetime({0})".format("@0h:@0n:@0s")))
+
 def kanfont_configload():
     global kanfont_ltsv,kanfont_config
     global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
     global kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX
+    global kanfont_dicname,kanfont_svgname,kanfont_fontname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
     kanfont_seek=LTsv_readlinerest(kanfont_config,"seek",kanfont_seek)[:1]
@@ -204,6 +246,12 @@ def kanfont_configload():
     kanfont_gothic=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"gothic",str(kanfont_gothic))),0),1)
     kanfont_gridimage=LTsv_readlinerest(kanfont_config,"gridimage",kanfont_gridimage)
     kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"glyphcolor"),"R","L","X"))
+    kanfont_dicname=LTsv_readlinerest(kanfont_config,"dic_name",kanfont_dicname)
+    kanfont_svgname=LTsv_readlinerest(kanfont_config,"svg_name",kanfont_svgname)
+    kanfont_fontname=LTsv_readlinerest(kanfont_config,"font_name",kanfont_fontname)
+    kanfont_fontwidths=LTsv_readlinerest(kanfont_config,"font_widths",kanfont_fontwidths)
+    kanfont_autosave=LTsv_readlinerest(kanfont_config,"autosave",kanfont_autosave)
+    kanfont_savetime=LTsv_readlinerest(kanfont_config,"savetime",kanfont_savetime)
 
 def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
     global kanfont_ltsv,kanfont_config
@@ -217,6 +265,8 @@ def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
     kanfont_ltsv=LTsv_putpage(kanfont_ltsv,"kanfont",kanfont_config)
     LTsv_savefile("kanfont2.tsv",kanfont_ltsv)
     LTsv_glyph_picklesave()
+    if kanfont_autosave in ["1","TRUE","True","true","YES","Yes","yes","ON","On","on"]:
+        kanfont_svgsave()
     LTsv_window_exit()
 
 LTsv_GUI=LTsv_guiinit()
@@ -254,7 +304,7 @@ if len(LTsv_GUI) > 0:
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
         kanfont_dictype_canvas[dictype_cnt]=LTsv_kbdentry_new(kanfont_window,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W//2,widget_h=kanfont_entry_H,event_w=50)
-    kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t=kanfont_svgname[1],widget_x=kanfont_entry_X+kanfont_entry_W//2,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=None)
+    kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}".format(kanfont_svgname),widget_x=kanfont_entry_X+kanfont_entry_W//2,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave)
     LTsv_widget_showhide(kanfont_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)

@@ -124,17 +124,24 @@ def LTsv_widget_newUUID(LTsv_widgetID=None):
     return LTsv_uuid
 LTsv_widget_oldID=LTsv_widget_newUUID()
 
-def LTsv_widget_newobj(LTsv_widgetpagelocal,LTsv_widgetoption,widget_obj):
+def LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj):
     global LTsv_widgetOBJ,LTsv_widgetOBJcount
-    LTsv_widgetpagelocal=LTsv_pushlinerest(LTsv_widgetpagelocal,LTsv_widgetoption,str(LTsv_widgetOBJcount))
+    LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,LTsv_widgetoption,str(LTsv_widgetOBJcount))
     LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]=widget_obj; LTsv_widgetOBJcount+=1
-    return LTsv_widgetpagelocal
+    return LTsv_widgetPAGE
+
+def LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption):
+    LTsv_widgetOBJcount=LTsv_readlinerest(LTsv_widgetPAGE,LTsv_widgetoption)
+    if LTsv_widgetOBJcount in LTsv_widgetOBJ:
+        return LTsv_widgetOBJ[LTsv_widgetOBJcount]
+    else:
+        return None
 
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
   menu_o=None,menu_b=None,menu_c=None,kbd_d=None,kbd_g=None,kbd_s=None,
-  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None):
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -175,6 +182,7 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_motion",kbd_m)
     if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_enter",kbd_e)
     if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_leave",kbd_l)
+    if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_nput",kbd_i)
     return LTsv_widgetPAGE
 
 def LTsv_fonttuple(LTsv_line):
