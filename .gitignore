@@ -99,8 +99,8 @@ ENV/
 # git merge 20160718M003911
 # git branch -d 20160718M003911
 # git push github:ooblog/LTsv10kanedit.git :20160718M003911
-kan5x5comic.svg
-kan5x5comic.tsv
+kan5x5.svg
+kan5x5.tsv
 LTsv/testfile/
 LTsv/kanpickle.bin
 LTsv/kanpickleGTK.bin

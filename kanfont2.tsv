@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160831W024752
+modify	20160901R020733
 |L:Tsv]
 
 [kanfont|
@@ -12,16 +12,17 @@ seek	ぬ
 grid	50
 inner	1
 lineseg	1
-gothic	1
+gothic	0
 gridimage	kanfont_grid25_198.png
 glyphcolor	R:#6E81D9	L:#6ED997	X:#D96ED3
-dic_name	kan5x5comic.tsv
-svg_name	kan5x5comic.svg
-font_name	kan5x5comic
+dic_name	kan5x5.tsv
+svg_name	kan5x5.svg
+font_name	活:kan5x5	漫:kan5x5comic	筆:kan5x5brush
 font_widths	1024,824,624
 autosave	off
 savetime	@0h:@0n:@0s
 |kanfont]
+# font_name	kan5x5comic
 
 
 # Copyright (c) 2016 ooblog

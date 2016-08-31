@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160831W024752
+modify	20160901R020733
 |L:Tsv]
 
 [kanglyph|
@@ -18,8 +18,8 @@ irohatypeX	ヌ	フ	ア	ウ	エ	オ	ヤ	ユ	ヨ	ワ	ホ	ヘ	タ	テ	イ	ス	カ	�
 alphatype		α	β	γ	δ	ε	ζ	η	θ	ι	κ	λ	μ	ν	ξ	ο	π	ρ	σ	τ	υ	φ	χ	ψ	ω	○	△	□
 alphatypeN	α	β	γ	δ	ε	ζ	η	θ	ι	κ	λ	μ	ν	ξ	ο	π	ρ	σ	τ	υ	φ	χ	ψ	ω	○	△	□
 alphatypeX	Α	Β	Γ	Δ	Ε	Ζ	Η	Θ	Ι	Κ	Λ	Μ	Ν	Ξ	Ο	Π	Ρ	Σ	Τ	Υ	Φ	Χ	Ψ	Ω	●	▲	■
-dictype		英	名	音	訓	送	異	俗	熙	簡	繁	越	地	顔	鍵	代	逆	非	難	活	漫	幅
-glyphtype		活	漫
+dictype		英	名	音	訓	送	異	俗	熙	簡	繁	越	地	顔	鍵	代	逆	非	難	活	漫	筆	幅
+glyphtype		活	漫	筆
 choice			名	音	訓	送	異	俗	簡	繁	越	地	逆	非	英	顔	ε	ρ	τ	υ	θ	ι	ο	π	＠	ぷ	α	σ	δ	φ	γ	η	ξ	κ	λ	代	鍵	ぬ	ζ	χ	ψ	ω	β	ν	μ	熙	○	△	□	￥	σ
 choiceN		名	音	訓	送	異	俗	簡	繁	越	地	逆	非	英	顔	ε	ρ	τ	υ	θ	ι	ο	π	＠	ぷ	α	σ	δ	φ	γ	η	ξ	κ	λ	代	鍵	ぬ	ζ	χ	ψ	ω	β	ν	μ	熙	○	△	□	￥	σ
 choiceX		名	音	訓	送	異	俗	簡	繁	越	地	逆	非	英	顔	Ε	Ρ	Τ	Υ	Θ	Ι	Ο	Π	｀	プ	Α	Σ	Δ	Φ	Γ	Η	Ξ	Κ	Λ	代	鍵	ぬ	Ζ	Χ	Ψ	Ω	Β	Ν	Μ	熙	●	▲	■	￥	Σ
@@ -32,5 +32,5 @@ last_dic	英
 |kanglyph]
 
 [reversi|
-entry	ＴＳ０Ｕ
+entry	ＴＳ０ＵＪ
 |reversi]
