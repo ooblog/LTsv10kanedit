@@ -242,7 +242,6 @@ def LTsv_glyphfont_shell(draw_g="活"):
     if draw_g == "筆": return LTsv_glyphfont_brush
 
 def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
-#    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
@@ -262,7 +261,6 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
 def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
-#    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
@@ -287,8 +285,7 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_draw_color(canvascolor); LTsv_draw_bgcolor(canvasbgcolor)
 
-def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
-#    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
+def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
@@ -388,7 +385,7 @@ def LTsv_glyph_getnote(draw_t="",draw_g="活"):
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     return LTsv_glyphnote
 
-def kanfont_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
+def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
@@ -470,6 +467,7 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
                     LTsv_glyph_tapcallback[kbd_canvas](LTsv_glyph_kbdchars[LTsv_kbdcursor])
         LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
+    return LTsv_kbdcursor
 
 def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
@@ -494,6 +492,7 @@ def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
                 LTsv_glyph_kbdselect('Σ')
         LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
+    return LTsv_kbdcursor
 
 def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
@@ -515,6 +514,7 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
         LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
         LTsv_draw_queue()
     LTsv_glyph_kbdLCR=""
+    return LTsv_kbdcursor
 
 def LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y):
     if LTsv_global_GUI() == "GTK2":
@@ -801,13 +801,12 @@ def LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
 def debug_mousepress(window_objvoid=None,window_objptr=None):
-    keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(),0),debug_reversi_H)
-    if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
-        for xy in debug_milklid_range:
-            if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
-                debug_milkAI_add(debug_reversi_key[xy])
-    else:
-        LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+    if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
+        keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(),0),debug_reversi_H)
+        if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
+            for xy in debug_milklid_range:
+                if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
+                    debug_milkAI_add(debug_reversi_key[xy])
 
 def debug_mousemotion(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mousemotion(debug_reversi_canvas,debug_kbdX,debug_kbdY)
@@ -940,6 +939,10 @@ def debug_milkAI_add(addentry):
     milkcounttotal=0
     for xy in debug_milklid_range:
         milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
+    if addentrychar == "\uf0db": #
+        debug_milkAI_BS(); return;
+    if addentrychar == "\uf0d1": #
+        debug_milkAI_Auto(); return;
     if milkcounttotal > 0:
         if addentrychar in debug_reversi_key and addentrychar != debug_reversi_key[0]:
             if debug_milklid_check(debug_reversi_key.index(addentrychar),debug_milklidBW) > 0:

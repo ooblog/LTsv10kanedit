@@ -21,9 +21,11 @@ version(branch) 20160718M003911
  １-6b．[LTsv_kbd.tsv]のタグ解説
  １-7a．[LTsv_gui.py]の関数一覧
  １-8a．[LTsv_glyph.py]の関数一覧
+ １-8b．漢直キーボードの操作方法(マウス)
  ２-0． 「L:Tsv」を用いるアプリケーションの作り方。
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
+ ３-2． 漢直キーボードのＦＡＱ
  ４．   作者について、例えば連絡先。
 
 
@@ -65,7 +67,8 @@ version(branch) 20160718M003911
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント「kantray5x5」「kantray5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- [kantray5x5.svg][kantray5x5comic.svg]を[kantray5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
+ GTK経由でキーボードを読み込む方法が不明。
+ [kan5x5.svg]を[kan5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
  [kanchar.tsv]に異体字を移管して[kanmap.tsv]を圧縮していく作業は当分続く。現在人名に使える漢字の異体字の字引入力中心に作業中。
  通知タスクトレイ(Notify)が使えない環境にも対応するためテキストエディタ「kanedit」も現在制作中。
  「kantray」で使ってた漢直キーボード「LTsv_keyboard_new()」を廃止して「kanedit」の漢直キーボードに置き換える予定。
@@ -1215,31 +1218,43 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  debug_checkbutton(window_objvoid=None,window_objptr=None)
   単体風テスト専用。チェックボタン「check」の動作確認。
 
+ debug_checkbutton(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。ラジオボタン「radio」の動作確認。
+
+ debug_keypress(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。キーボード入力(押下)の動作検証。「Tkinter」のみ動作確認。
+
+ debug_keyrelease(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。キーボード入力(押上)の動作検証。「Tkinter」のみ動作確認。
+
+
 １-8a．[LTsv_glyph.py]の関数一覧
 
  「canvas」上でフォントグリフを描画するモジュールです。漢直キーボード関連も扱います。
  ・「LTsv_draw_font_shell()」「LTsv_draw_text_shell()」との違いはフォントを用いずにグリフを描画することです。
  ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱います。
- ・単体風テストとして漢直キーボードでリバーシを操作するデモを作成中。
+ ・単体風テストとして漢直キーボードでリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。
  ・「活(5x5)」「漫(comic)」の使い分け未実装。
  ・ LTsv9系の関数は置き換え削除の予定。
 
  LTsv_glyph_kbdinit(LTsv_glyph_ltsvpath="kanglyph.tsv")
  フォントグリフの初期化です。設定ファイル「LTsv/kanglyph.tsv」に基づいて色々と各種ファイルの読み込みなど準備。
 
- LTsv_global_kandic()
+ LTsv_global_kandic(new_kandic=None)
   漢直キーボードの単漢字辞書「LTsv/kanchar.tsv」を取得できます。
 
  LTsv_global_kanmap()
   漢直キーボードの漢字配列「LTsv/kanmap.tsv」を取得できます。
 
  LTsv_global_kanpickle()
-  フォントグリフの座標データpickleをセーブします。
+  フォントグリフの座標データpickleを取得できます。
 
  LTsv_global_irohatype(); LTsv_global_irohatypeN(); LTsv_global_irohatypeX()
  LTsv_global_alphatype(); LTsv_global_alphatypeN(); LTsv_global_alphatypeX(); 
- LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX()
+ LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX(); 
  LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX(); 
+ LTsv_global_glyphkbdH(): LTsv_global_glyphkbdW();
+ LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
 
  LTsv_glyphSVGGTK(LTsv_glyph_path); LTsv_glyphSVGGTKTkinter(LTsv_glyph_path); LTsv_glyphSVG_shell(LTsv_GUI);
@@ -1247,27 +1262,85 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
   GTKの「gdk_draw_polygon()」は1ドット未満の図形が省略されてしまうのでフォントを太らせる処理が「LTsv_glyphSVGGTK()」にはある。
 
  LTsv_glyphpath(glyphcode):
-  フォントグリフの「幅」「活」「漫」のデータを単漢字辞書から抽出してメモリに記憶。
+  フォントグリフの「幅」「活」「漫」「筆」のデータを単漢字辞書から抽出してメモリに記憶。
 
- LTsv_glyphfont_5x5(glyphcode); LTsv_glyphfont_comic(glyphcode); LTsv_glyphfont_shell(draw_g="活");
-  フォントグリフの「活」「漫」のデータをメモリから抽出。
+ LTsv_glyphfont_5x5(glyphcode); LTsv_glyphfont_comic(glyphcode); LTsv_glyphfont_brush(glyphcode); LTsv_glyphfont_shell(draw_g="活");
+  フォントグリフの「活」「漫」「筆」のデータをメモリから抽出。
 
  LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(ワイヤフレーム)。
-  draw_tにテキスト文字列、draw_x,draw_yに表示座標、draw_fにフォントサイズ。
+  draw_tにテキスト文字列、draw_x,draw_yに表示座標、draw_fにフォントサイズ。draw_gでフォントの種類。
 
  LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
-  j事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
+  事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
- LTsv_glyph_kbddelete(kbd_x,kbd_y):
-  漢直キーボードを消去する。「Tkinter」で「kanglyphkbd」タグの図形を消去する。
+ LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+  「canvas」にフォントグリフ(ポリゴン)の描画。
+  テキスト選択カーソルを表現するために「LTsv_draw_glyphs()」「LTsv_draw_glyphsfill()」的な描画を使い分ける予定。
 
- LTsv_glyph_kbddraw(kbd_x,kbd_y):
-  漢直キーボードを描画する。「GTK2」の場合「LTsv_draw_queue()」を別途行う必要。
+ LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")
+  ほぼ「kanfont」用。1文字のフォントグリフの右回転をcolor_R、左回転をcolor_L、判別困難または不能な図形はcolor_Xで色分けする(ワイヤフレーム)。
 
- LTsv_glyph_kbdsave()
+ LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")
+  ほぼ「kanfont」用。1文字のフォントグリフの右回転をcolor_R、左回転をcolor_L、判別困難または不能な図形はcolor_Xで色分けする(塗り潰し)。
+
+ LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-1,grid_q=-1,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")
+  ほぼ「kanfont」用。フォントグリフのポリゴンの頂点や線分に座標を表示する。
+  grid_pが0以上の時対応する頂点座標を四角で塗り潰し。その他の頂点座標は塗り潰さない四角(ワイヤフレーム)。
+  grid_qが0以上の時対応する線分座標を円で塗り潰し。その他の線分座標は塗り潰さない円(ワイヤフレーム)。ただしdraw_sが0の時は線分座標自体が表示されない。
+
+def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_W="#9F6C00"):
+  ほぼ「kanfont」用。フォントグリフの「幅」を表示。  draw_gでフォントの種類を一応選べるけど単漢字辞書の「幅」は共通のはず。
+
+ LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,mouse_x=LTsv_PSchar_ZW//2,mouse_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活")
+  ほぼ「kanfont」用。mouse_x,mouse_yにマウス座標を入れて「LTsv_draw_glyphcursor()」で使用する「grid_p」「grid_q」の値を取得。
+
+ LTsv_glyph_getnote(draw_t="",draw_g="活")
+  フォントグリフの座標をリストで取得。draw_tにテキスト1文字分、draw_gでフォントの種類。
+
+ LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")
+  ほぼ「kanfont」用。メモリ上の単漢字辞書のフォントグリフを更新する。
+  draw_tにテキスト1文字分、glyphnoteのフォントグリフ座標リストは「LTsv_glyph_getnote()」で取得できるような内容、draw_gでフォントの種類。
+
+ LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
+  漢直キーボードのどのキーの上にマウスカーソルがあるか調べる。
+  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
+  キーボードの上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。
+
+ LTsv_glyph_kbdselect(choice):
+  漢直キーボードの表示鍵盤を変更する。鍵盤名の一覧は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」あたりを参考。
+
+ LTsv_glyph_choiceNX(choice):
+  漢直キーボードの鍵盤名から鍵盤番号的な数値に変換。
+
+ LTsv_glyph_tapcallback_shell(kbd_canvas,callback)
+  漢直キーボードの文字入力を受けとる関数の指定。
+  kbd_canvasでキャンバス、callbackで呼び出す関数。呼び出される関数は文字列引数を用意する。
+
+ LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y);
+  「canvas」の「mousepress」「mousemotion」「mouserelease」系の関数にそれぞれ配置する事で、「canvas」の任意の位置に漢直キーボードを出現。
+  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
+  キーボードの上にマウスが無い場合は「LTsv_glyph_kbdcursor()」と同様に「LTsv_global_kbdcursorNone()」を返す。「debug_mousepress()」も参考。も参考。
+  キャンバス描画のタイミング調整や「LTsv_draw_queue()」などのタイミングは「LTsv_kbdentry_new()」も参考。
+  漢直キーボードのマウス操作は「１-8b．漢直キーボードの操作方法(マウス)」を参考。
+
+ LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
+  漢直キーボードの消去。「Tkinter」では描画したオブジェクトは消す必要があるので注意。
+
+ LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
+  漢直キーボードの描画。「Tkinter」では描画したオブジェクトは消す必要があるので「LTsv_glyph_kbddelete()」と歩調を合わせる必要。
+  通常は「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも描画されるはず。
+
+ LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
+
+ LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
+  「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」を設置。
+  widget_w,widget_hは直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
+
+ LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
+  kbd_canvasでキャンバス、widget_tで書き換える文字列。
 
  LTsv9_glyphdicload(dicname="kanchar.tsv"):
   単漢字辞書ファイル「kanchar.tsv」を読み込む。
@@ -1301,6 +1374,78 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
   draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
   draw_LFで改行を「&#61649;(0xf0d1)」で可視化、draw_HTでタブを「&#61632;(0xf0c0)」を用いて可視化、draw_SPでスペースを「&#61644;(0xf080)」を用いて可視化。
 
+ debug_mousepress(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。リバーシの盤面をクリックした時の動作。
+  「LTsv_glyph_mousepress()」が「LTsv_global_kbdcursorNone()」を返した時だリバーシの盤面処理。
+
+ debug_mousemotion(window_objvoid=None,window_objptr=None); debug_mouserelease(window_objvoid=None,window_objptr=None);
+  単体風テスト専用。リバーシの盤面操作のクリック以外。
+  直キーボードの「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」を呼び出すだけ。
+
+ debug_milklid_check(xy,bw)
+  単体風テスト専用。リバーシでxy升にbw石が置けるか(裏返せる石があるか)チェック。
+
+ debug_milklid_turn(xy,bw)
+  単体風テスト専用。リバーシでxy升にbw石を置いて挟んだ石を裏返す。
+
+ debug_milkAI_BS(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。一手前に戻す。
+
+ debug_milkAI_reset():
+  単体風テスト専用。リバーシAIのアルゴリズム初期化(戦略変更)。
+
+ def debug_milkAI_entry(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。リバーシの棋譜更新。間違った棋譜でも途中まで入力が通る。
+
+ debug_milkAI_Auto(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。リバーシAIが自動で石を置く。「Auto」ボタンを押すのは手動。
+
+ debug_milkAI_add(addentry)
+  単体風テスト専用。何らかの方法で石が置かれた時の動作。試合が決着してる場合は盤面初期化。
+
+ debug_configload()
+  単体風テスト専用。「LTsv/kanglyph.tsv」から棋譜を読み込む。
+
+ debug_configsave_exit(window_objvoid=None,window_objptr=None)
+  単体風テスト専用。「LTsv/kanglyph.tsv」に棋譜を保存するだけでなく、
+  漢直キーボードのォントグリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。
+
+
+１-8b．漢直キーボードの操作方法(マウス)
+
+  ※四隅のＮＸ等は実際には縦横２倍の大きさです。
+
+  Ｎ　ぬふあうえおやゆよわほへ　Ｘ
+  　　たていすかんなにらせ沼濡　　
+  　　ちとしはきくまのりれけむ　　
+  ぬ　つさそひこみもねるめろﾇ 　英
+
+   小さい文字をタップ          文字入力。アプリ毎に入力された文字の処理方法は異なります。
+   左上(Ｎ)からフリック        NFER鍵盤(ひらがな)の選択。
+   右上(Ｘ)からフリック        XFER鍵盤(カタカナ)の選択。
+   左下(Ｎの下)からフリック    α鍵盤の選択。もしくは辞書の変更。
+   右下(Ｎの下)からフリック    字引入力。単漢字辞書の項目が代入。
+
+  空白を入力する場合はアルファベット大文字を表示して「）」と「＝」の間の０の位置が空白です。
+
+  Ｎ　１２３４５６７８９０－＾　Ｘ
+  　　ｑｗｅｒｔｙｕｉｏｐ＠［　　
+  　　ａｓｄｆｇｈｊｋｌ；：］　　
+  ＠　ｚｘｃｖｂｎｍ，．／＼￥　英
+
+  Ｎ　！”＃＄％＆’（）　＝～　Ｘ
+  　　ＱＷＥＲＴＹＵＩＯＰ｀｛　　
+  　　ＡＳＤＦＧＨＪＫＬ＋＊｝　　
+  ｀　ＺＸＣＶＢＮＭ＜＞？＿｜　英
+
+  α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
+
+   HJKL        カーソル移動。H←,J↓,K↑,L→
+   YUBN        カーソル斜め移動。Y↖,U↗,B↙,N↘
+   ;+          エンターキー。Enter
+   ,<          バックスペース。BS
+   .>          カーソルから右の文字デリート。DEL
+
 
 ２-0． 「L:Tsv」を用いるアプリケーションの作り方。
 
@@ -1318,10 +1463,11 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
       Welcome to Python.org
       https://www.python.org/
 
- Ｑ．[LTsv_gui.py]をダブルクリックしても起動しない。[kanedit.py][kanfont.py][kanzip.py]とかは起動する。
- Ａ．LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
-     回避するには「if __name__=="__main__":」以下の「print」「LTsv_libc_printf」を含む行をコメントアウトするか、
-     ターミナルから「# ./LTsv_gui.py」とコマンド起動してみてください。「Geany」でF5でも起動できるはずです。
+ Ｑ．[LTsv_gui.py]をダブルクリックしても起動しない。[kanedit.py][kanfont.py][kanzip.py]とか[LTsv_glyph.py]は起動する。
+ Ａ．「gtk_init()」と「gtk_main()」の途中にに「print()」や「LTsv_libc_printf()」があるとGUIが表示されないようです。
+     回避するには「LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))」をコメントアウトするか、
+     ターミナルから「# ./LTsv_gui.py」とコマンド起動してみてください。
+     コメントアウトしなくても「Geany」からF5でも起動できるはずです。
 
  Ｑ．[kanedit.py]が未完成だ。
  Ａ．[kanedit.py]も[kanfont.py]が未完成です。
@@ -1349,6 +1495,17 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  Ａ．「Tkinter」が「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示モジュール用意しました。
     フォントをインストールしなくても漢直が使えるようにするために「kanedit5x5comic」という独自のフォントを用意しました。
     「用意しました」と言いましたが一部の文字しか用意できてないので注意。
+
+ Ｑ．「LTsv」フォルダのモジュール群は他のアプリの開発に使っていいんですか？
+ Ａ．無保証覚悟自己責任と背乗りアレオレ詐欺をしなければ。あと辞書データの個々の単語の取扱い注意で。
+     文末記載のGitHubリポジトリへのリンク貼っておけば変な誤解は事故らないと思います。
+
+
+３-2． 漢直キーボードのＦＡＱ
+
+ Ｑ．目的の漢字がどこにあるかわからない。
+ Ａ．漢字の配列や字引入力の詳細などは「kanedit」の[kanedit.txt]に記載予定です。「kanedit」そのものもまだ制作中です。
+     他のアプリの開発に使われた「LTsv」フォルダのモジュール群のみ入手した人は文末記載のGitHubリポジトリから「LTsv10kanedit」入手すると参考。
 
 
 ４．   作者について、例えば連絡先。

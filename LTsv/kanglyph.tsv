@@ -4,7 +4,7 @@ enter	LF
 tab	8
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160901R020733
+modify	20160902F063012
 |L:Tsv]
 
 [kanglyph|
@@ -27,10 +27,10 @@ kbdTAG		kanglyphkbd
 fontcolor		black
 bgcolor		#FFCBFF
 kbddefsize	1
-last_alpha	ぬ
+last_alpha	σ
 last_dic	英
 |kanglyph]
 
 [reversi|
-entry	ＴＳ０ＵＪ
+entry	．ｈＴＳｇｆｅＵＶ８０３ｐＷＮＥＦｉＸｘｊ５ＤｂＲＱＫｍｕｄｃＣＹ６４ｖｗｏＭｎＺａＬ７ＢｒｚＩＡｔｙＪｓ
 |reversi]

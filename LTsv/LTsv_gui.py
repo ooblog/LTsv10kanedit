@@ -218,6 +218,16 @@ def LTsv_tkinter_hideondelete_shell(LTsv_windowPAGENAME):
 
 LTsv_GTK_WINDOW_TOPLEVEL=0
 LTsv_GTK_WIN_POS_CENTER=1
+class LTsv_GdkEventKey(ctypes.Structure):
+    _fields_ = [
+        ('type',ctypes.c_int),
+        ('window',ctypes.c_void_p),
+        ('send_event',ctypes.c_ubyte),
+        ('time',ctypes.c_uint),
+        ('state',ctypes.c_uint),
+        ('keyval',ctypes.c_uint),
+    ]
+LTsv_CALLBACLTYPE_GdkEventKey=ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.POINTER(LTsv_GdkEventKey))
 def LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None):
     global LTsv_widgetLTSV
     LTsv_windowPAGENAME=LTsv_widget_newUUID(widget_n); LTsv_windowPAGE=""
@@ -237,10 +247,12 @@ def LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=2
             event_z_cbk=LTsv_CALLBACLTYPE(event_z)
             LTsv_libobj.g_signal_connect_data(window_o,"configure-event".encode("utf-8"),event_z_cbk,0,0,0)
         if event_k:
-            event_k_cbk=LTsv_CALLBACLTYPE(event_k)
+#            event_k_cbk=LTsv_CALLBACLTYPE(event_k)
+            event_k_cbk=LTsv_CALLBACLTYPE_GdkEventKey(event_k)
             LTsv_libobj.g_signal_connect_data(window_o,"key-press-event".encode("utf-8"),event_k_cbk,0,0,0)
         if event_y:
-            event_y_cbk=LTsv_CALLBACLTYPE(event_y)
+#            event_y_cbk=LTsv_CALLBACLTYPE(event_y)
+            event_y_cbk=LTsv_CALLBACLTYPE_GdkEventKey(event_y)
             LTsv_libobj.g_signal_connect_data(window_o,"key-release-event".encode("utf-8"),event_y_cbk,0,0,0)
         LTsv_windowPAGE=LTsv_widgetPAGEXYWH(LTsv_windowPAGE,widget_o=window_o,widget_t=widget_t,widget_c=widget_c,event_b=event_b_cbk,event_z=event_z_cbk,event_k=event_k_cbk,event_y=event_y_cbk)
     if LTsv_GUI == LTsv_GUI_Tkinter:
@@ -1805,6 +1817,7 @@ def debug_canvas(window_objvoid=None,window_objptr=None):
     LTsv_draw_text("getkbdnames:{0}".format(LTsv_getkbdnames()),draw_x=txt_x,draw_y=txt_y+debug_label_WH*1)
     LTsv_draw_text("getkbdcodes:{0}".format(LTsv_getkbdcodes()),draw_x=txt_x,draw_y=txt_y+debug_label_WH*2)
     LTsv_draw_text("getkbdkanas:{0}".format(LTsv_getkbdkanas()),draw_x=txt_x,draw_y=txt_y+debug_label_WH*3)
+    LTsv_draw_text("debug_keyevent:\n{0}".format(debug_keyevent),draw_x=txt_x,draw_y=txt_y+debug_label_WH*5)
     LTsv_draw_color(debug_scaleRGB)
     LTsv_draw_polygon(*tuple(debug_polygonpointlist))
     if LTsv10_logoOBJ:
@@ -1884,6 +1897,31 @@ def debug_radiobutton_shell(radioNumber):
         LTsv_widget_settext(debug_edit,widget_t="{0}:{1}\n".format(LTsv_widget_gettext(debug_radio[radioNumber]),LTsv_widget_getnumber(debug_radio[radioNumber])))
     return debug_radiobutton_kernel
 
+#class LTsv_GdkEventKey(ctypes.Structure):
+#    _fields_ = [
+#        ('type',ctypes.c_int),
+#        ('window',ctypes.c_void_p),
+#        ('send_event',ctypes.c_ubyte),
+#        ('time',ctypes.c_uint),
+#        ('state',ctypes.c_uint),
+#        ('keyval',ctypes.c_uint),
+#    ]
+debug_keyevent=""
+def debug_keypress(window_objvoid=None,window_objptr=None):
+    global debug_keyevent
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        print("debug_keypress",window_objvoid,window_objptr)
+        debug_keyevent="debug_keypress"
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        debug_keyevent+="\t{0}".format(window_objvoid.char)
+def debug_keyrelease(window_objvoid=None,window_objptr=None):
+    global debug_keyevent
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        print("debug_keyrelease",window_objvoid,window_objptr)
+        debug_keyevent="debug_keyrelease"
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        debug_keyevent=debug_keyevent.replace("\t{0}".format(window_objvoid.char),"")
+
 
 if __name__=="__main__":
     from LTsv_printf import *
@@ -1908,7 +1946,7 @@ if __name__=="__main__":
         debug_joypad_X,debug_joypad_Y,debug_joypad_W,debug_joypad_H=debug_canvas_W//6,debug_canvas_H*1//4+debug_label_WH*2,debug_canvas_H*2//4,debug_canvas_H*2//4
         debug_padxkey,debug_padykey=["Px","Lx","Rx"],["Py","Ly","Ry"]
         debug_keyspin_X,debug_keyspin_Y,debug_keyspin_W,debug_keyspin_H=0,debug_keysetup_H-debug_label_WH*9,debug_keysetup_W//14,debug_label_WH
-        debug_keysetup_window=LTsv_window_new(widget_t="L:Tsv GUI test and KeyCode Setup",event_b=LTsv_window_exit,widget_w=debug_keysetup_W,widget_h=debug_keysetup_H,event_z=None)
+        debug_keysetup_window=LTsv_window_new(widget_t="L:Tsv GUI test and KeyCode Setup",event_b=LTsv_window_exit,widget_w=debug_keysetup_W,widget_h=debug_keysetup_H,event_z=None,event_k=debug_keypress,event_y=debug_keyrelease)
         debug_timentry_default="@000y年-@0m月(@0wnyi/@ywi週)-@0dm日(@wdj曜)@0h:@0n:@0s FPS:@0fpc"
         debug_keysetup_timentry=LTsv_entry_new(debug_keysetup_window,widget_t="",widget_x=0,widget_y=0,widget_w=debug_keysetup_W-debug_keyspin_W*1,widget_h=debug_label_WH,widget_f=debug_font_entry)
         debug_keysetup_timebutton=LTsv_button_new(debug_keysetup_window,widget_t="reset",widget_x=debug_keysetup_W-debug_keyspin_W*1,widget_y=0,widget_w=debug_keyspin_W*1,widget_h=debug_label_WH,widget_f=debug_font_entry,event_b=debug_timebutton)
