@@ -94,6 +94,9 @@ def LTsv_guiinit(LTsv_guistyle=LTsv_GUI_GTK2,LTsv_libvermin=0,LTsv_libvermax=0):
 
 def LTsv_global_GUI():                              return LTsv_GUI
 def LTsv_global_Notify():                           return LTsv_Notify
+def LTsv_global_GTK2():                             return LTsv_GUI_GTK2
+def LTsv_global_Tkinter():                           return LTsv_GUI_Tkinter
+def LTsv_global_WinAPI():                           return LTsv_GUI_WinAPI
 def LTsv_global_libgtk():                           return LTsv_libgtk
 def LTsv_global_libgdk():                           return LTsv_libgdk
 def LTsv_global_libobj():                           return LTsv_libobj

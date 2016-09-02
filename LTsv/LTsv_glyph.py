@@ -355,7 +355,7 @@ def LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-
                     LTsv_draw_circles(LTsv_glyph_cursorsize-2,*tuple([x,y]))
 
 def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_W="#9F6C00"):
-    LTsv_draw_color(draw_c="#9F6C00")
+    LTsv_draw_color(color_W)
     glyphcode=draw_t[:1]
     wide=LTsv_glyph5x5_wide[glyphcode]//2
     LTsv_draw_squares(LTsv_glyph_cursorsize,*tuple([LTsv_PSchar_ZW//2//20*xy if xy%2 else wide for xy in range(20)]))
@@ -550,9 +550,9 @@ def LTsv_glyph_picklesave():
     LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"kanglyph",LTsv_glyph_config)
     LTsv_savefile(LTsv_glyph_ltsvpath,LTsv_glyph_ltsv)
 
-LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor={},{},{},{},{}
+LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor={},{},{},{},{}
 def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
-    global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor
+    global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
     def kbdentry_input(kbdentry):
         LTsv_kbdentry_cursor[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursor[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
         if kbdentry in "":
@@ -569,29 +569,29 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
             LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+kbdentry+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]:]
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_color[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_press(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mousepress(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_release(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mouserelease(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_motion(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mousemotion(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_enter(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_color,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_color[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_leave(window_objvoid=None,window_objptr=None):
@@ -601,11 +601,11 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
         LTsv_glyph_kbddelete(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_color[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_draw_queue()
     kbdentry_canvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
      event_p=kbdentry_press,event_r=kbdentry_release,event_m=kbdentry_motion,event_e=kbdentry_enter,event_l=kbdentry_leave,event_w=event_w)
-    LTsv_kbdentry_color[kbdentry_canvas]="#9F6C00"
+    LTsv_kbdentry_fontcolor[kbdentry_canvas]=LTsv_global_canvascolor()
     LTsv_kbdentry_text[kbdentry_canvas]=""
     LTsv_kbdentry_cursor[kbdentry_canvas]=0
     LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH

@@ -838,7 +838,8 @@ version(branch) 20160718M003911
   「Tkinter」と「GTK2」のどのGUIを使うかを決定。
   LTsv_guistyleでUI指定できるがPuppyLinuxだと強制的に「GTK2」。Windowsだと今の所「Tkinter」。「WinAPI」は未実装。
 
-  LTsv_global_GUI(); LTsv_global_Notify(); LTsv_global_libgtk(); LTsv_global_libgdk(); LTsv_global_libobj(); LTsv_global_widgetgetpage(LTsv_UUID): 
+  LTsv_global_GUI(); LTsv_global_Notify(); LTsv_global_GTK2(); LTsv_global_Tkinter(); LTsv_global_WinAPI();
+  LTsv_global_libgtk(); LTsv_global_libgdk(); LTsv_global_libobj(); LTsv_global_widgetgetpage(LTsv_UUID): 
   LTsv_global_widgetOBJ(LTsv_objid); LTsv_global_iconOBJ(LTsv_objid); LTsv_global_notifyOBJ(LTsv_objid); LTsv_global_popupmenuOBJ(LTsv_objid);
   global系はモジュール内の変数に直接アクセスする場合に使用。
 

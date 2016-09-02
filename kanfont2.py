@@ -18,8 +18,9 @@ PSfont_ZW,PSfont_CW,PSchar_ZW,PSchar_CW=1024,624,1000,600
 kanfont_ltsv,kanfont_config="",""
 kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage="ぱ",25,0,0,0,"kanfont_grid25_199.png"
 kanfont_refer,kanfont_refergrid="Noto Sans Japanese Regular",0
+kanfont_referposX,kanfont_referposY,kanfont_referposS,kanfont_referposC=0,0,PSchar_ZW//2,"#E5E5E5"
 kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY=0,0,-1,-1,-1,-1,-1,0,0
-kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX="#6E81D9","#6ED997","#D96ED3"
+kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG="#6E81D9","#6ED997","#D96ED3","#9F6C00"
 kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime="kanchar.tsv","kan5x5comic.svg","1024,824,624","off","@0h:@0n:@0s"
 kanfont_fontname={"活":"kan5x5","漫":"kan5x5comic","筆":"kan5x5brush"}
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
@@ -114,12 +115,12 @@ def kanfont_glyph_draw():
     if kanfont_gridview:
         LTsv_draw_picture(kanfont_gridimage,0,0)
         if kanfont_refergrid:
-            LTsv_draw_color("#E5E5E5"); LTsv_draw_font(draw_f=kanfont_font_grid); LTsv_draw_text(draw_t=glyphentrychar,draw_x=0,draw_y=0);
-        LTsv_draw_color("#9F6C00"); LTsv_draw_glyphsfill(draw_t="X{0:3}Y{1:3}".format(kanfont_gridX,kanfont_gridY),draw_x=kanfont_gridX,draw_y=kanfont_gridY,draw_f=10,draw_g="漫")
+            LTsv_draw_color(kanfont_referposC); LTsv_draw_font(draw_f=kanfont_font_grid); LTsv_draw_text(draw_t=glyphentrychar,draw_x=kanfont_referposX,draw_y=kanfont_referposY);
+        LTsv_draw_color(kanfont_glyphcolorG); LTsv_draw_glyphsfill(draw_t="X{0:3}Y{1:3}".format(kanfont_gridX,kanfont_gridY),draw_x=kanfont_gridX,draw_y=kanfont_gridY,draw_f=10,draw_g="漫")
         LTsv_draw_glyphclock(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
     else:
         LTsv_draw_glyphclockfill(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
-        LTsv_draw_glypwide(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_W="#9F6C00")
+        LTsv_draw_glypwide(draw_t=glyphentrychar,draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_W=kanfont_glyphcolorG)
     LTsv_draw_glyphcursor(draw_t=glyphentrychar,draw_x=0,draw_y=0,path_z=LTsv_widget_getnumber(kanfont_path_scale),draw_s=kanfont_lineseg,grid_p=kanfont_gridP,grid_q=kanfont_gridQ,draw_f=LTsv_PSchar_ZW//2,draw_g=LTsv_global_glyphtype()[kanfont_gothic],color_R=kanfont_glyphcolorR,color_L=kanfont_glyphcolorL,color_X=kanfont_glyphcolorX)
     LTsv_draw_queue()
 
@@ -246,7 +247,8 @@ def kanfont_configload():
     global kanfont_ltsv,kanfont_config
     global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
     global kanfont_refer,kanfont_refergrid
-    global kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX
+    global kanfont_referposX,kanfont_referposY,kanfont_referposS,kanfont_referposC
+    global kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     global kanfont_fontname
     kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
@@ -259,7 +261,12 @@ def kanfont_configload():
     kanfont_gridimage=LTsv_readlinerest(kanfont_config,"gridimage",kanfont_gridimage)
     kanfont_refer=LTsv_readlinerest(kanfont_config,"refer",kanfont_refer)
     kanfont_refergrid=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"refergrid",str(kanfont_refergrid))),0),1)
-    kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"glyphcolor"),"R","L","X"))
+    if LTsv_global_GUI() == LTsv_global_GTK2():
+        kanfont_referposX_t,kanfont_referposY_t,kanfont_referposS_t,kanfont_referposC=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"referGTK"),"X","Y","S","C"));
+    if LTsv_global_GUI() == LTsv_global_Tkinter():
+        kanfont_referposX_t,kanfont_referposY_t,kanfont_referposS_t,kanfont_referposC=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"referTkinter"),"X","Y","S","C"));
+    kanfont_referposX,kanfont_referposY,kanfont_referposS=LTsv_intstr0x(kanfont_referposX_t),LTsv_intstr0x(kanfont_referposY_t),LTsv_intstr0x(kanfont_referposS_t)
+    kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"glyphcolor"),"R","L","X","G"))
     kanfont_dicname=LTsv_readlinerest(kanfont_config,"dic_name",kanfont_dicname)
     kanfont_svgname=LTsv_readlinerest(kanfont_config,"svg_name",kanfont_svgname)
     kanfont_fontname["活"],kanfont_fontname["漫"],kanfont_fontname["筆"]=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"font_name"),"活","漫","筆"))
@@ -292,7 +299,8 @@ if len(LTsv_GUI) > 0:
     kanfont_fontsize_entry=LTsv_global_glyphkbdH()//2-2;    kanfont_font_entry="{0},{1}".format(kanfont_fontname["漫"],kanfont_fontsize_entry); kanfont_label_WH=kanfont_fontsize_entry*2
     kanfont_fontsize_refer=LTsv_global_glyphkbdH()//2-2;    kanfont_font_refer="{0},{1}".format(kanfont_refer,kanfont_fontsize_refer)
 #    kanfont_fontsize_grid=PSchar_ZW//2;    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
-    kanfont_fontsize_grid=int(PSchar_ZW//2*0.75);    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
+#    kanfont_fontsize_grid=int(PSchar_ZW//2*0.75);    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
+    kanfont_fontsize_grid=kanfont_referposS;    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
     kanfont_entry_H=LTsv_global_glyphkbdH()+2
     kanfont_canvas_WH=PSfont_ZW//2; kanfont_scale_W=LTsv_global_glyphkbdW(); kanfont_entry_W=1024-kanfont_scale_W-kanfont_canvas_WH-kanfont_label_WH; 
     kanfont_canvas_X=kanfont_scale_W; kanfont_label_X=kanfont_canvas_X+kanfont_canvas_WH; kanfont_entry_X=kanfont_label_X+kanfont_label_WH; kanfont_W=kanfont_entry_X+kanfont_entry_W
@@ -308,7 +316,7 @@ if len(LTsv_GUI) > 0:
      event_p=kanfont_glyph_mousepress,event_m=kanfont_glyph_mousemotion,event_r=kanfont_glyph_mouserelease,event_e=kanfont_glyph_mouseenter,event_l=kanfont_glyph_mouseleave,event_w=50)
     kanfont_gridimageOBJ=LTsv_draw_picture_load(kanfont_gridimage)
     kanfont_path_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH,widget_w=kanfont_canvas_WH-kanfont_entry_W*3//8,widget_h=kanfont_label_WH*2,widget_s=0,widget_e=9,widget_a=1,event_b=kanfont_pathsel_shell)
-    kanfont_refer_check=LTsv_check_new(kanfont_window,widget_t=kanfont_refer,widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_refer,event_b=kanfont_refer_shell)
+    kanfont_refer_check=LTsv_check_new(kanfont_window,widget_t="refer",widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_refer,event_b=kanfont_refer_shell)
     kanfont_grid_label=LTsv_label_new(kanfont_window,widget_t="grid",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
     kanfont_grid_spin=LTsv_spin_new(kanfont_window,widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH+kanfont_label_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_s=5,widget_e=PSchar_ZW//5,widget_a=1,widget_f=kanfont_font_entry,event_b=kanfont_grid_shell)
     kanfont_inner_check=LTsv_check_new(kanfont_window,widget_t="24",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_inner_shell)
