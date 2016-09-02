@@ -36,11 +36,11 @@ def kanfont_pathadjustment(pathpos=None):
     LTsv_widget_setnumber(kanfont_path_scale,pathadjustlen if pathpos == None else pathpos)
     LTsv_widget_showhide(kanfont_path_scale,True)
 
-def kanfont_code():
+def kanfont_code(pathpos=None):
     global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
     kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
     LTsv_widget_settext(kanfont_code_label,hex(LTsv_widget_getnumber(kanfont_code_scale)).replace("0x","U+"))
-    kanfont_pathadjustment()
+    kanfont_pathadjustment(pathpos)
     LTsv_glyphpath(kanfont_seek)
     kanfont_glyph_draw()
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_global_kandic(),kanfont_seek)
@@ -193,7 +193,7 @@ def kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None):
 def kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None):
     global kanfont_gridview
     kanfont_gridview=False
-    kanfont_code()
+    kanfont_code(LTsv_widget_getnumber(kanfont_path_scale))
 
 def kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mousepress(kanfont_kbd_canvas,0,2)
@@ -298,8 +298,6 @@ if len(LTsv_GUI) > 0:
     kanfont_configload()
     kanfont_fontsize_entry=LTsv_global_glyphkbdH()//2-2;    kanfont_font_entry="{0},{1}".format(kanfont_fontname["漫"],kanfont_fontsize_entry); kanfont_label_WH=kanfont_fontsize_entry*2
     kanfont_fontsize_refer=LTsv_global_glyphkbdH()//2-2;    kanfont_font_refer="{0},{1}".format(kanfont_refer,kanfont_fontsize_refer)
-#    kanfont_fontsize_grid=PSchar_ZW//2;    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
-#    kanfont_fontsize_grid=int(PSchar_ZW//2*0.75);    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
     kanfont_fontsize_grid=kanfont_referposS;    kanfont_font_grid="{0},{1}".format(kanfont_refer,kanfont_fontsize_grid)
     kanfont_entry_H=LTsv_global_glyphkbdH()+2
     kanfont_canvas_WH=PSfont_ZW//2; kanfont_scale_W=LTsv_global_glyphkbdW(); kanfont_entry_W=1024-kanfont_scale_W-kanfont_canvas_WH-kanfont_label_WH; 
@@ -316,7 +314,7 @@ if len(LTsv_GUI) > 0:
      event_p=kanfont_glyph_mousepress,event_m=kanfont_glyph_mousemotion,event_r=kanfont_glyph_mouserelease,event_e=kanfont_glyph_mouseenter,event_l=kanfont_glyph_mouseleave,event_w=50)
     kanfont_gridimageOBJ=LTsv_draw_picture_load(kanfont_gridimage)
     kanfont_path_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH,widget_w=kanfont_canvas_WH-kanfont_entry_W*3//8,widget_h=kanfont_label_WH*2,widget_s=0,widget_e=9,widget_a=1,event_b=kanfont_pathsel_shell)
-    kanfont_refer_check=LTsv_check_new(kanfont_window,widget_t="refer",widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//2,widget_h=kanfont_label_WH,widget_f=kanfont_font_refer,event_b=kanfont_refer_shell)
+    kanfont_refer_check=LTsv_check_new(kanfont_window,widget_t="refer",widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_entry_W*2//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_refer_shell)
     kanfont_grid_label=LTsv_label_new(kanfont_window,widget_t="grid",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
     kanfont_grid_spin=LTsv_spin_new(kanfont_window,widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH+kanfont_label_WH,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_s=5,widget_e=PSchar_ZW//5,widget_a=1,widget_f=kanfont_font_entry,event_b=kanfont_grid_shell)
     kanfont_inner_check=LTsv_check_new(kanfont_window,widget_t="24",widget_x=kanfont_canvas_X+kanfont_canvas_WH-kanfont_entry_W*3//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_entry_W*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_inner_shell)
@@ -336,6 +334,7 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
     LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
+    LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanfont_codekbd(kanfont_seek)
     LTsv_widget_setnumber(kanfont_grid_spin,kanfont_fontgrid); kanfont_grid_shell()

@@ -1256,6 +1256,20 @@ def LTsv_draw_circlesfill_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_circlesfill
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_circlesfill
 
+def LTsv_drawGTK_points(*draw_xy):
+    for draw_xy_count in range(len(draw_xy)//2):
+        draw_x,draw_y=draw_xy[draw_xy_count*2],draw_xy[draw_xy_count*2+1]
+        LTsv_libgdk.gdk_draw_point(LTsv_GTKcanvas_m,LTsv_GTKcanvas_g,draw_x,draw_y)
+
+def LTsv_drawTkinter_points(*draw_xy):
+    for draw_xy_count in range(len(draw_xy)//2):
+        draw_x,draw_y=draw_xy[draw_xy_count*2],draw_xy[draw_xy_count*2+1]
+        LTsv_Tkintercanvas_o.create_line(draw_x,draw_y,draw_x+1,draw_y+1,fill=LTsv_canvascolor,tag=LTsv_Tkintercanvas_TAG)
+
+def LTsv_draw_points_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_points
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_points
+
 def LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi):
     LTsv_libgdk.gdk_draw_arc(LTsv_GTKcanvas_m,LTsv_GTKcanvas_g,False,draw_x,draw_y,draw_w,draw_h,int(draw_s*LTsv_GDK_ARCFILL/2.0/math.pi),int(draw_e*LTsv_GDK_ARCFILL/2.0/math.pi))
 
@@ -1802,15 +1816,16 @@ def debug_canvas(window_objvoid=None,window_objptr=None):
     for pad_xy,pad_circle in enumerate([LTsv_draw_squares,LTsv_draw_circles,LTsv_draw_circles]):
         pad_x,pad_y=debug_joypad_X+pad_xy*debug_joypad_W,debug_joypad_Y
         pad_circle(debug_joypad_W,*(pad_x,pad_y))
+        LTsv_draw_points(pad_x,pad_y)
         if LTsv_joymax > 0:
             stick_w=int(LTsv_pickdatalabel(pad_axis,debug_padxkey[pad_xy]))
             stick_h=int(LTsv_pickdatalabel(pad_axis,debug_padykey[pad_xy]))
             stick_t=math.atan2(stick_w,stick_h)
             stick_s=LTsv_atanscalar(stick_w,stick_h)
             LTsv_draw_polygon(*(pad_x,pad_y,pad_x+int(math.sin(stick_t)*stick_s*debug_joypad_W/2/LTsv_WINJOYCENTER),pad_y+int(math.cos(stick_t)*stick_s*debug_joypad_W/2/LTsv_WINJOYCENTER)))
-            LTsv_draw_text("{0},{1}\n{2},{3}\nθ{4}\n∇{5}".format(debug_padxkey[pad_xy],debug_padykey[pad_xy],LTsv_pickdatalabel(pad_axis,debug_padxkey[pad_xy]),LTsv_pickdatalabel(pad_axis,debug_padykey[pad_xy]),stick_t,stick_s),draw_x=pad_x,draw_y=pad_y)
+            LTsv_draw_text("{0},{1}\n{2},{3}\nθ{4}\n∇{5}".format(debug_padxkey[pad_xy],debug_padykey[pad_xy],LTsv_pickdatalabel(pad_axis,debug_padxkey[pad_xy]),LTsv_pickdatalabel(pad_axis,debug_padykey[pad_xy]),stick_t,stick_s),draw_x=pad_x+3,draw_y=pad_y+3)
         else:
-            LTsv_draw_text("{0},{1}".format(debug_padxkey[pad_xy],debug_padykey[pad_xy]),draw_x=pad_x,draw_y=pad_y)
+            LTsv_draw_text("{0},{1}".format(debug_padxkey[pad_xy],debug_padykey[pad_xy]),draw_x=pad_x+3,draw_y=pad_y+3)
     debug_arc_W=debug_joypad_X+int(debug_joypad_W*2.5)
     LTsv_draw_arc(debug_arc_W,debug_joypad_Y-debug_joypad_W//2,debug_canvas_W-debug_arc_W-2,debug_joypad_W,-math.pi*0.5,math.pi*1.8)
     txt_x,txt_y=500,debug_joypad_Y+debug_joypad_H//2
@@ -2011,6 +2026,7 @@ if __name__=="__main__":
         LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
         LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
+        LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
         debug_timebutton()
         debug_canvas()

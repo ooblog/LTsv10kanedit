@@ -1102,12 +1102,15 @@ version(branch) 20160718M003911
  LTsv_drawGTK_circlesfill(draw_wh=16,*draw_xy); LTsv_drawTkinter_circlesfill(draw_wh=16,*draw_xy); LTsv_draw_circlesfill_shell(LTsv_GUI)
   「canvas」にポリゴンの座標に円を描画(塗り潰し)。座標は(x,y,x,y…)とX座標とY座標が交互に来るタプル。
 
-LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_drawTkinter_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_draw_arc_shell(LTsv_GUI)
+ LTsv_drawGTK_points(*draw_xy); LTsv_drawTkinter_points(*draw_xy); LTsv_draw_points_shell(LTsv_GUI)
+  「canvas」にポリゴンの座標に点を描画。座標は(x,y,x,y…)とX座標とY座標が交互に来るタプル。
+
+ LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_drawTkinter_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_draw_arc_shell(LTsv_GUI)
   「canvas」に弧または扇を描画(ワイヤフレーム)。「arc」の挙動が「GTK2」と「Tkinter」で事なる。
   「GTK2」では楕円の弧(視力検査ランドルト環)、「Tkinter」では扇(パックマン)を描画。
   左上座標はdraw_x,draw_y。相対位置をdraw_w,draw_h。draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
 
-LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_drawGTK_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_draw_arcfill_shell(LTsv_GUI)
+ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_drawGTK_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi); LTsv_draw_arcfill_shell(LTsv_GUI)
   「canvas」に弧または扇を描画(塗り潰し)。弧の塗り潰しは扇なので「GTK2」と「Tkinter」が結果的にほぼ同じ挙動。
   左上座標はdraw_x,draw_y。相対位置をdraw_w,draw_h。draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
 
@@ -1275,6 +1278,10 @@ LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math
  LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
   事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
+
+ LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
+  「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
+  「Tkinter」でドット欠け回避のため、「LTsv_draw_glyphsfill()」に「LTsv_draw_points()」を追加。
 
  LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画。
