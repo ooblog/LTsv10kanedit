@@ -1046,10 +1046,13 @@ version(branch) 20160718M003911
 
  LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)
   GUIオブジェクト「canvas」を作成。画像やテキストの表示。マウスクリックやマウスポインタの移動でイベント。
-  「Tkinter」はベクトル(Flashの類)と「GTK2」はラスタ(PNGなどドット絵の類)の挙動の違いに注意。
+  event_pはマウス押下時のイベント。event_rはマウス押上時のイベント。
+  event_eはマウスカーソルが「canvas」枠内に入ったときのイベント。event_lはマウスカーソルが「canvas」枠外に出た時のイベント。
+  event_mはマウスカーソルが「canvas」枠内に滞在中はevent_wミリ秒毎に発生する。マウスを動かしてなくてもevent_mは実行するので注意。
 
   マウス座標は「LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()」で取得。
 
+  「Tkinter」の描画はベクトル(Flashの類)と「GTK2」の描画はラスタ(PNGなどドット絵の類)の挙動の違いに注意。
   描画高速化のため「LTsv_draw_*_shell(LTsv_GUI)」で関数オブジェクトを用意する手続き推奨。
    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI)
 

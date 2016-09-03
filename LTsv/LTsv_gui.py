@@ -35,7 +35,9 @@ LTsv_widgetLTSV=LTsv_newfile("LTsv_gui",LTsv_default=None)
 LTsv_widgetOBJ={}; LTsv_widgetOBJcount=0
 LTsv_timerOBJ={}; LTsv_timer_cbk={}
 LTsv_canvas_motion_X,LTsv_canvas_motion_Y=0,0
-canvas_EMLtimeout,canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave,canvas_EMLafter={},{},{},{},{}
+#canvas_CBKtimeout,canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave,canvas_CBKafter={},{},{},{},{}
+canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave={},{},{}
+canvas_CBKenter,canvas_CBKmotion,canvas_CBKleave,canvas_CBKtimeout,canvas_CBKafter,LTsv_canvasCBKpagename={},{},{},{},{},{}
 LTsv_pictureOBJ,LTsv_pictureW,LTsv_pictureH={},{},{}
 LTsv_iconOBJ={}; LTsv_iconOBJnotify=[]
 LTsv_popupmenuOBJ={}
@@ -1000,13 +1002,16 @@ LTsv_GDK_ARCFILL=23040
 
 LTsv_canvascolor,LTsv_canvasbgcolor="black","white"
 def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100):
-    global LTsv_widgetLTSV,canvas_EMLtimeout,canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave
+#    global LTsv_widgetLTSV,canvas_CBKtimeout,canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave
+    global LTsv_widgetLTSV
+    global canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave
+    global canvas_CBKenter,canvas_CBKmotion,canvas_CBKleave,canvas_CBKtimeout,canvas_CBKafter,LTsv_canvasCBKpagename
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
     window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
     LTsv_widgetPAGENAME=LTsv_widget_newUUID(widget_n); LTsv_widgetPAGE=""
+#    canvas_CBKafter[LTsv_widgetPAGENAME]=False
+#    canvas_EMLenter[LTsv_widgetPAGENAME],canvas_EMLmotion[LTsv_widgetPAGENAME],canvas_EMLleave[LTsv_widgetPAGENAME]=event_e,event_m,event_l
     LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_k="canvas",widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h)
-    canvas_EMLafter[LTsv_widgetPAGENAME]=False
-    canvas_EMLenter[LTsv_widgetPAGENAME],canvas_EMLmotion[LTsv_widgetPAGENAME],canvas_EMLleave[LTsv_widgetPAGENAME]=event_e,event_m,event_l
     if LTsv_GUI == LTsv_GUI_GTK2:
         widget_p=LTsv_libgtk.gtk_image_new()
         widget_o=LTsv_libgtk.gtk_event_box_new()
@@ -1026,10 +1031,12 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
         widget_o.place(x=widget_x,y=widget_y)
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o)
     def LTsv_canvas_enter(window_objvoid=None,window_objptr=None):
-        global canvas_EMLafter
-        if canvas_EMLafter[LTsv_widgetPAGENAME] == False:
-            canvas_EMLafter[LTsv_widgetPAGENAME]=True
-            if canvas_EMLenter[LTsv_widgetPAGENAME] != None: canvas_EMLenter[LTsv_widgetPAGENAME]()
+        global canvas_CBKafter
+        if canvas_CBKafter[LTsv_widgetPAGENAME] == False:
+            canvas_CBKafter[LTsv_widgetPAGENAME]=True
+#            if canvas_EMLenter[LTsv_widgetPAGENAME] != None: canvas_EMLenter[LTsv_widgetPAGENAME]()
+            if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
+                LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLenter[LTsv_widgetPAGENAME],event_i="{0}_enter".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
             LTsv_canvas_timeout()
         return 0
     def LTsv_canvas_motion(window_objvoid=None,window_objptr=None):
@@ -1043,28 +1050,41 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
                 LTsv_canvas_motion_X,LTsv_canvas_motion_Y=int(mouse_x),int(mouse_y)
         return 0
     def LTsv_canvas_timeout(window_objvoid=None,window_objptr=None):
-        global canvas_EMLafter
-        if canvas_EMLafter[LTsv_widgetPAGENAME] == True:
+        global canvas_CBKafter
+        if canvas_CBKafter[LTsv_widgetPAGENAME] == True:
             if canvas_EMLmotion[LTsv_widgetPAGENAME] != None: canvas_EMLmotion[LTsv_widgetPAGENAME]()
-            LTsv_window_after(LTsv_windowPAGENAME,event_b=LTsv_canvas_timeout,event_i=LTsv_windowPAGENAME,event_w=event_w)
+#            LTsv_window_after(LTsv_windowPAGENAME,event_b=LTsv_canvas_timeout,event_i=LTsv_windowPAGENAME,event_w=event_w)
+            LTsv_window_after(LTsv_windowPAGENAME,event_b=LTsv_canvas_timeout,event_i="{0}_motion".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
         return 0
-    canvas_EMLtimeout[LTsv_widgetPAGENAME]=LTsv_canvas_timeout
+#    canvas_CBKtimeout[LTsv_widgetPAGENAME]=LTsv_canvas_timeout
     def LTsv_canvas_leave(window_objvoid=None,window_objptr=None):
-        global canvas_EMLafter
-        canvas_EMLafter[LTsv_widgetPAGENAME]=False
-        if canvas_EMLleave[LTsv_widgetPAGENAME] != None: canvas_EMLleave[LTsv_widgetPAGENAME]()
+        global canvas_CBKafter,LTsv_canvasCBKpagename
+        canvas_CBKafter[LTsv_widgetPAGENAME]=False
+#        if canvas_EMLleave[LTsv_widgetPAGENAME] != None: canvas_EMLleave[LTsv_widgetPAGENAME]()
+        if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
+#            print("{0}_leave".format(LTsv_windowPAGENAME))
+#            print("{0}_leave".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]))
+            LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLleave[LTsv_widgetPAGENAME],event_i="{0}_leave".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
         return 0
+#    print(LTsv_widgetPAGENAME,canvas_CBKenter[LTsv_widgetPAGENAME],canvas_CBKmotion[LTsv_widgetPAGENAME],canvas_CBKleave[LTsv_widgetPAGENAME])
+    canvas_EMLenter[LTsv_widgetPAGENAME],canvas_EMLmotion[LTsv_widgetPAGENAME],canvas_EMLleave[LTsv_widgetPAGENAME]=event_e,event_m,event_l
+    canvas_CBKenter[LTsv_widgetPAGENAME],canvas_CBKmotion[LTsv_widgetPAGENAME],canvas_CBKleave[LTsv_widgetPAGENAME]=LTsv_canvas_enter,LTsv_canvas_motion,LTsv_canvas_leave
+    canvas_CBKtimeout[LTsv_widgetPAGENAME],canvas_CBKafter[LTsv_widgetPAGENAME],LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]=LTsv_canvas_timeout,False,LTsv_widgetPAGENAME
+#    print("LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]",LTsv_canvasCBKpagename[LTsv_widgetPAGENAME])
     if LTsv_GUI == LTsv_GUI_GTK2:
         LTsv_libgtk.gtk_widget_set_events(widget_o,LTsv_GDK_POINTER_MOTION_MASK)
         event_p_cbk=LTsv_CALLBACLTYPE(event_p) if event_p != None else LTsv_CALLBACLTYPE(LTsv_window_none)
         LTsv_libobj.g_signal_connect_data(widget_o,"button-press-event".encode("utf-8"),event_p_cbk,0,0,0)
         event_r_cbk=LTsv_CALLBACLTYPE(event_r) if event_r != None else LTsv_CALLBACLTYPE(LTsv_window_none)
         LTsv_libobj.g_signal_connect_data(widget_o,"button-release-event".encode("utf-8"),event_r_cbk,0,0,0)
-        event_e_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_enter) if LTsv_canvas_enter != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+#        event_e_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_enter) if LTsv_canvas_enter != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+        event_e_cbk=LTsv_CALLBACLTYPE(canvas_CBKenter[LTsv_widgetPAGENAME]) if LTsv_canvas_enter != None else LTsv_CALLBACLTYPE(LTsv_window_none)
         LTsv_libobj.g_signal_connect_data(widget_o,"enter-notify-event".encode("utf-8"),event_e_cbk,0,0,0)
-        event_m_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_motion) if LTsv_canvas_motion != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+#        event_m_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_motion) if LTsv_canvas_motion != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+        event_m_cbk=LTsv_CALLBACLTYPE(canvas_CBKmotion[LTsv_widgetPAGENAME]) if LTsv_canvas_motion != None else LTsv_CALLBACLTYPE(LTsv_window_none)
         LTsv_libobj.g_signal_connect_data(widget_o,"motion-notify-event".encode("utf-8"),event_m_cbk,0,0,0)
-        event_l_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_leave) if LTsv_canvas_leave != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+#        event_l_cbk=LTsv_CALLBACLTYPE(LTsv_canvas_leave) if LTsv_canvas_leave != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+        event_l_cbk=LTsv_CALLBACLTYPE(canvas_CBKleave[LTsv_widgetPAGENAME]) if LTsv_canvas_leave != None else LTsv_CALLBACLTYPE(LTsv_window_none)
         LTsv_libobj.g_signal_connect_data(widget_o,"leave-notify-event".encode("utf-8"),event_l_cbk,0,0,0)
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,event_p=event_p_cbk,event_r=event_r_cbk,event_e=event_e_cbk,event_m=event_m_cbk,event_l=event_l_cbk)
     if LTsv_GUI == LTsv_GUI_Tkinter:
@@ -1072,12 +1092,12 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
             widget_o.bind("<ButtonPress>",event_p)
         if event_r != None:
             widget_o.bind("<ButtonRelease>",event_r)
-        if event_r != LTsv_canvas_enter:
-            widget_o.bind("<Enter>",LTsv_canvas_enter)
-        if event_r != LTsv_canvas_motion:
-            widget_o.bind("<Motion>",LTsv_canvas_motion)
-        if event_r != LTsv_canvas_leave:
-            widget_o.bind("<Leave>",LTsv_canvas_leave)
+#        widget_o.bind("<Enter>",LTsv_canvas_enter)
+#        widget_o.bind("<Motion>",LTsv_canvas_motion)
+#        widget_o.bind("<Leave>",LTsv_canvas_leave)
+        widget_o.bind("<Enter>",canvas_CBKenter[LTsv_widgetPAGENAME])
+        widget_o.bind("<Motion>",canvas_CBKmotion[LTsv_widgetPAGENAME])
+        widget_o.bind("<Leave>",canvas_CBKleave[LTsv_widgetPAGENAME])
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,event_p=event_p,event_r=event_r,event_e=LTsv_canvas_enter,event_m=LTsv_canvas_motion,event_l=LTsv_canvas_leave)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
@@ -1600,7 +1620,7 @@ def LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,ev
                 keyboard_setkey(keyboard_dicinput[keyboard_cursorMS],setfind=False)
         LTsv_keyboard_NXK(cursorLCR="000",cursorK=0)
         LTsv_keyboard_draw()
-    def LTsv_keyboard_leave():
+    def LTsv_keyboard_leave(callback_void=None,callback_ptr=None):
         LCR=LTsv_keyboard_NXK(cursorMS=keyboard_dicselpos+1)
         LTsv_keyboard_draw()
     kantray_kbdcanvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=widget_x,widget_y=widget_y,widget_w=keyboard_W,widget_h=keyboard_H,

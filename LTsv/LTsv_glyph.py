@@ -623,7 +623,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
         LTsv_draw_delete()
         LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_draw_queue()
-    kbdentry_canvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
+    kbdentry_canvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
      event_p=kbdentry_press,event_r=kbdentry_release,event_m=kbdentry_motion,event_e=kbdentry_enter,event_l=kbdentry_leave,event_w=event_w)
     LTsv_kbdentry_fontcolor[kbdentry_canvas]=LTsv_global_canvascolor()
     LTsv_kbdentry_text[kbdentry_canvas]=""
