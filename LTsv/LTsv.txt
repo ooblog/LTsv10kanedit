@@ -1281,9 +1281,9 @@ version(branch) 20160718M003911
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
   事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
- LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
+ LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
+  「LTsv_draw_glyphsfill()」を１文字分。改行処理などを省いた高速描画用。漢直キーボードなど等幅表示想定。
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
-  「Tkinter」でドット欠け回避のため、「LTsv_draw_glyphsfill()」に「LTsv_draw_points()」を追加。
 
  LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画。
@@ -1310,8 +1310,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   フォントグリフの座標をリストで取得。draw_tにテキスト1文字分、draw_gでフォントの種類。
 
  LTsv_glyph_pointsrotation(glyphnote=[]):
-  「LTsv_draw_glyphskbd()」で追記する「LTsv_draw_points()」を左上に配置するため、フォントグリフ座標のポリゴンの座標の順番を回転ソートする。
-  「LTsv_draw_points()」が右下の場合「LTsv_glyphSVGGTK()」で座標補正からのドット潰れが発生する場合がある。
+  フォントグリフ座標のポリゴンの座標の順番を回転ソートしてリスト先頭の座標を左上に配置。
 
  LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")
   ほぼ「kanfont」用。メモリ上の単漢字辞書のフォントグリフを更新する。
