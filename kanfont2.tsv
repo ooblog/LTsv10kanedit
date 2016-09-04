@@ -4,11 +4,11 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160905M042205
+modify	20160905M075723
 |L:Tsv]
 
 [kanfont|
-seek	7
+seek	ぬ
 grid	50
 inner	0
 lineseg	1

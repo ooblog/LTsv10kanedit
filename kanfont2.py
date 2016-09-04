@@ -333,6 +333,7 @@ if len(LTsv_GUI) > 0:
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
         kanfont_dictype_canvas[dictype_cnt]=LTsv_kbdentry_new(kanfont_window,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5,widget_h=kanfont_entry_H,event_w=50,event_b=None if dictype_split != "幅" else None)
+    kanfont_clipboard=LTsv_clipboard_new(kanfont_window)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)

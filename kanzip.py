@@ -24,7 +24,7 @@ kanzip_workdir="./kanzip/"
 kanzip_fontsize=10
 kanzip_prefectureMAX=48
 kanzip_prefectureCVID=kanzip_prefectureMAX
-kanzip_font="{0},{1}".format("kantray5x5comic",kanzip_fontsize)
+kanzip_font="{0},{1}".format("kan5x5comic",kanzip_fontsize)
 kanzip_DLlabel_W,kanzip_DLlabel_H=kanzip_fontsize*9,kanzip_fontsize*3;                     kanzip_DLlabel=[""]*(kanzip_prefectureMAX+2)
 kanzip_DLbutton_W,kanzip_DLbutton_H=kanzip_fontsize*12,kanzip_DLlabel_H;                   kanzip_DLbutton=[""]*(kanzip_prefectureMAX+2)
 kanzip_DLprogres_W,kanzip_DLprogres_H=kanzip_DLbutton_W-kanzip_DLlabel_W,kanzip_DLlabel_H; kanzip_DLprogres=[""]*(kanzip_prefectureMAX+2)
