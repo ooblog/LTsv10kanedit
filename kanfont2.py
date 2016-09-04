@@ -204,7 +204,12 @@ def kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None):
 def kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mouserelease(kanfont_kbd_canvas,0,2)
 
-def kanfont_svgsave(window_objvoid=None,window_objptr=None):
+def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
+    LTsv_widget_disableenable(kanfont_svg_button,False)
+    LTsv_widget_settext(kanfont_svg_button,"make:{0}".format(kanfont_svgname))
+    LTsv_window_after(kanfont_window,event_b=kanfont_svgmake,event_i="kanfont_svgmake",event_w=10)
+
+def kanfont_svgmake(window_objvoid=None,window_objptr=None):
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     global kanfont_fontname
     kanchar=LTsv_global_kandic().rstrip('\n').split('\n')
@@ -242,6 +247,7 @@ def kanfont_svgsave(window_objvoid=None,window_objptr=None):
     LTsv_saveplain(kanfont_dicname,LTsv_global_kandic())
     LTsv_saveplain(kanfont_svgname,kanfont_svgtext)
     LTsv_widget_settext(kanfont_svg_button,LTsv_getdaytimestr("savetime({0})".format("@0h:@0n:@0s")))
+    LTsv_widget_disableenable(kanfont_svg_button,True)
 
 def kanfont_configload():
     global kanfont_ltsv,kanfont_config
@@ -289,7 +295,7 @@ def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_savefile("kanfont2.tsv",kanfont_ltsv)
     LTsv_glyph_picklesave()
     if kanfont_autosave in ["1","TRUE","True","true","YES","Yes","yes","ON","On","on"]:
-        kanfont_svgsave()
+        kanfont_svgmake()
     LTsv_window_exit()
 
 LTsv_GUI=LTsv_guiinit()
@@ -327,7 +333,7 @@ if len(LTsv_GUI) > 0:
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
         kanfont_dictype_canvas[dictype_cnt]=LTsv_kbdentry_new(kanfont_window,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5,widget_h=kanfont_entry_H,event_w=50,event_b=None if dictype_split != "幅" else None)
-    kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave)
+    kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)

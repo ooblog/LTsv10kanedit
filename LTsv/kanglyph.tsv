@@ -4,14 +4,13 @@ enter	LF
 tab	8
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160905M014913
+modify	20160905M042205
 |L:Tsv]
 
 [kanglyph|
 dicname		kanchar.tsv
 mapname		kanmap.tsv
-pickleGTKname	kanpickleGTK.bin
-pickleTkintername	kanpickleTkinter.bin
+picklename	kanpickle.bin
 irohatype		ぬ	ふ	あ	う	え	お	や	ゆ	よ	わ	ほ	へ	た	て	い	す	か	ん	な	に	ら	せ	゛	゜	ち	と	し	は	き	く	ま	の	り	れ	け	む	つ	さ	そ	ひ	こ	み	も	ね	る	め	ろ	￥
 irohatypeN	ぬ	ふ	あ	う	え	お	や	ゆ	よ	わ	ほ	へ	た	て	い	す	か	ん	な	に	ら	せ	＠	ぷ	ち	と	し	は	き	く	ま	の	り	れ	け	む	つ	さ	そ	ひ	こ	み	も	ね	る	め	ろ	￥
 irohatypeX	ヌ	フ	ア	ウ	エ	オ	ヤ	ユ	ヨ	ワ	ホ	ヘ	タ	テ	イ	ス	カ	ン	ナ	ニ	ラ	セ	｀	プ	チ	ト	シ	ハ	キ	ク	マ	ノ	リ	レ	ケ	ム	ツ	サ	ソ	ヒ	コ	ミ	モ	ネ	ル	メ	ロ	｜

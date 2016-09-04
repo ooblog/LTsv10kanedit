@@ -963,6 +963,9 @@ version(branch) 20160718M003911
  LTsv_widget_disableenable(LTsv_widgetPAGENAME,widget_i)
   GUIオブジェクトの無効有効の設定。
 
+ LTsv_widget_focus(LTsv_widgetPAGENAME)
+  GUIオブジェクトにフォーカスする。「edit」「entry」「spin」にカーソルを合わせるなど。
+
  LTsv_window_main(LTsv_windowPAGENAME)
   GUIがイベント待ちになるので一旦スクリプトはここで停止。GUIのイベントか「LTsv_window_after()」のタイマー待ち。
 

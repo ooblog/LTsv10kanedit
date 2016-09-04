@@ -547,6 +547,16 @@ def LTsv_widget_disableenable(LTsv_widgetPAGENAME,widget_i):
                 widget_o.configure(state=Tk.DISABLED)
     return 0
 
+def LTsv_widget_focus(LTsv_widgetPAGENAME):
+    global LTsv_widgetLTSV
+    LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME)
+    widget_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        LTsv_libgtk.gtk_widget_grab_focus(widget_o);
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        widget_o.focus_set()
+    return 0
+
 def LTsv_window_main(LTsv_windowPAGENAME):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
@@ -1881,6 +1891,7 @@ def debug_canvas_press(callback_void=None,callback_ptr=None):
     if cursorLCR == "001" or cursorLCR == "010":
         debug_polygonbutton()
     LTsv_widget_settext(debug_keysetup_polygonentry,widget_t="{0}".format(debug_polygonpointlist))
+    LTsv_widget_focus(debug_keysetup_polygonentry)
 
 def debug_polygonbutton(callback_void=None,callback_ptr=None):
     global debug_polygonpointlist

@@ -16,7 +16,8 @@ LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
 LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide={},{},{}
 LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide={},{},{}
 LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide={},{},{}
-LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername="LTsv/","","kanchar.tsv","kanmap.tsv","kanpickleGTK.bin","kanpickleTkinter.bin"
+#LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername="LTsv/","","kanchar.tsv","kanmap.tsv","kanpickleGTK.bin","kanpickleTkinter.bin"
+LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename="LTsv/","","kanchar.tsv","kanmap.tsv","kanpickle.bin"
 LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle="","","",{}
 LTsv_glyph_irohatype= ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","゛","゜","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeN=["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
@@ -51,7 +52,8 @@ LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_d
 LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
 LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
 def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
-    global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
+#    global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
+    global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     global LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide
     global LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide
@@ -88,18 +90,23 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_glyph_GUI),LTsv_draw_squaresfill_shell(LTsv_glyph_GUI)
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_glyph_GUI),LTsv_draw_circlesfill_shell(LTsv_glyph_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_glyph_GUI)
-    if LTsv_global_GUI() == "GTK2":
-        LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
-        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname)):
-            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='rb') as pickle_fobj:
-                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
-            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide=LTsv_glyph_kanpickle
-    if LTsv_global_GUI() == "Tkinter":
-        LTsv_glyph_kanpickleTkintername=LTsv_readlinerest(LTsv_glyph_config,"pickleTkintername",LTsv_glyph_kanpickleTkintername)
-        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername)):
-            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='rb') as pickle_fobj:
-                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
-            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide=LTsv_glyph_kanpickle
+#    if LTsv_global_GUI() == "GTK2":
+#        LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
+#        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname)):
+#            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='rb') as pickle_fobj:
+#                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
+#            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide=LTsv_glyph_kanpickle
+#    if LTsv_global_GUI() == "Tkinter":
+#        LTsv_glyph_kanpickleTkintername=LTsv_readlinerest(LTsv_glyph_config,"pickleTkintername",LTsv_glyph_kanpickleTkintername)
+#        if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername)):
+#            with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='rb') as pickle_fobj:
+#                LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
+#            LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide=LTsv_glyph_kanpickle
+    LTsv_glyph_kanpicklename=LTsv_readlinerest(LTsv_glyph_config,"picklename",LTsv_glyph_kanpicklename)
+    if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpicklename)):
+        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpicklename),mode='rb') as pickle_fobj:
+            LTsv_glyph_kanpickle=pickle.load(pickle_fobj)
+        LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide=LTsv_glyph_kanpickle
     LTsv_glyph_irohatype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatype",LTsv_tuple2tsv(LTsv_glyph_irohatype)))
     LTsv_glyph_irohatypeN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeN",LTsv_tuple2tsv(LTsv_glyph_irohatypeN)))
     LTsv_glyph_irohatypeX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"irohatypeX",LTsv_tuple2tsv(LTsv_glyph_irohatypeX)))
@@ -534,12 +541,14 @@ def LTsv_glyph_picklesave():
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     global LTsv_kanglyph5x5OBJ,LTsv_kanglyphcomicOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ
     LTsv_glyph_kanpickle=LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide,LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide,LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide
-    if LTsv_global_GUI() == "GTK2":
-        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='wb') as pickle_fobj:
-            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
-    if LTsv_global_GUI() == "Tkinter":
-        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='wb') as pickle_fobj:
-            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+#    if LTsv_global_GUI() == "GTK2":
+#        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname),mode='wb') as pickle_fobj:
+#            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+#    if LTsv_global_GUI() == "Tkinter":
+#        with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleTkintername),mode='wb') as pickle_fobj:
+#            pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
+    with open(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpicklename),mode='wb') as pickle_fobj:
+        pickle.dump(LTsv_glyph_kanpickle,pickle_fobj,protocol=2)
     LTsv_glyph_ltsv=LTsv_loadfile(LTsv_glyph_ltsvpath)
     LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
     LTsv_glyph_config=LTsv_pushlinerest(LTsv_glyph_config,"last_alpha",LTsv_glyph_kbdchars[LTsv_glyph_KANA])
