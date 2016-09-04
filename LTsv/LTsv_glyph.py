@@ -50,7 +50,6 @@ LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_d
 LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
 LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
 LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
-LTsv_glyphSVG=None
 def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
     global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpickleGTKname,LTsv_glyph_kanpickleTkintername
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -75,7 +74,6 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     global LTsv_draw_squares,LTsv_draw_squaresfill
     global LTsv_draw_circles,LTsv_draw_circlesfill
     global LTsv_draw_points
-    global LTsv_glyphSVG
     LTsv_glyph_ltsvpath=ltsvpath
     LTsv_glyph_ltsv=LTsv_loadfile(LTsv_glyph_ltsvpath)
     LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(LTsv_glyph_ltsvpath))+"/"
@@ -90,7 +88,6 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_glyph_GUI),LTsv_draw_squaresfill_shell(LTsv_glyph_GUI)
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_glyph_GUI),LTsv_draw_circlesfill_shell(LTsv_glyph_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_glyph_GUI)
-    LTsv_glyphSVG=LTsv_glyphSVG_shell(LTsv_glyph_GUI)
     if LTsv_global_GUI() == "GTK2":
         LTsv_glyph_kanpickleGTKname=LTsv_readlinerest(LTsv_glyph_config,"pickleGTKname",LTsv_glyph_kanpickleGTKname)
         if os.path.isfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpickleGTKname)):
@@ -167,26 +164,7 @@ def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
 def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
 def LTsv_global_kbdcursorNone():                           return LTsv_glyph_None
 
-def LTsv_glyphSVGfat(LTsv_glyph_path):
-    LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
-    LTsv_glyphnote,LTsv_glyphclock=[],[]
-    for LTsv_glyphline in LTsv_glyph_pathZ:
-        LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
-        for LTsv_glyphpoint in LTsv_glyphdata:
-            if LTsv_glyphpoint.count(',') != 1: continue;
-            LTsv_glyphpoints=LTsv_glyphpoint.strip(' ').split(',')
-#            LTsv_glyphpointlist+=[int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0]
-#            LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
-            LTsv_glyphpoint98=int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0
-            LTsv_glyphpoint98=LTsv_glyphpoint98 if LTsv_glyphpoint98 % 100 != 98 else LTsv_glyphpoint98+2
-            LTsv_glyphpointlist+=[LTsv_glyphpoint98]
-            LTsv_glyphpoint98=int(LTsv_glyphpoints[1]) if LTsv_glyphpoints[1].isdigit() else 0
-            LTsv_glyphpoint98=LTsv_glyphpoint98 if LTsv_glyphpoint98 % 100 != 2 else LTsv_glyphpoint98-2
-            LTsv_glyphpointlist+=[LTsv_PSchar_ZW-LTsv_glyphpoint98]
-        LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
-    return LTsv_glyphnote,LTsv_glyphclock
-
-def LTsv_glyphSVGnomal(LTsv_glyph_path):
+def LTsv_glyphSVG(LTsv_glyph_path):
     LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
@@ -198,10 +176,6 @@ def LTsv_glyphSVGnomal(LTsv_glyph_path):
             LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
         LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
     return LTsv_glyphnote,LTsv_glyphclock
-
-def LTsv_glyphSVG_shell(LTsv_GUI):
-    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_glyphSVGnomal
-    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_glyphSVGnomal
 
 def LTsv_glyphpath(glyphcode):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -279,12 +253,8 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
             continue
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-#            if LTsv_clocknote[LTsv_glyphpointlist_count] > 0:
-#                 LTsv_draw_color(canvascolor)
-#            else:
-#                 LTsv_draw_color(canvasbgcolor)
-            LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
+            LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
             LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
@@ -295,24 +265,19 @@ def LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
     glyphcode=draw_t[:1]
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-#        if LTsv_clocknote[LTsv_glyphpointlist_count] > 0:
-#             LTsv_draw_color(canvascolor)
-#        else:
-#            LTsv_draw_color(canvasbgcolor)
-        LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
+        LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
-#        LTsv_draw_points(*tuple(LTsv_glyphpointresize[:2]))
     LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
 
-def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
-    for glyphcode in draw_t:
+    for draw_t_pos,glyphcode in enumerate(draw_t):
         if glyphcode in "\n\t":
             if glyphcode == '\n':
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
@@ -320,15 +285,16 @@ def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,d
                 draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
             continue
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
-        for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-#            if LTsv_clocknote[LTsv_glyphpointlist_count] > 0:
-#                 LTsv_draw_color(canvascolor)
-#            else:
-#                 LTsv_draw_color(canvasbgcolor)
-            LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
-            LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-            LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
-#            LTsv_draw_points(*tuple(LTsv_glyphpointresize[:2]))
+        if draw_cL <= draw_t_pos <= draw_cR:
+            LTsv_draw_color(canvascolor)
+            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+                LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
+                LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
+        else:
+            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+                LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
+                LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
+                LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_draw_color(canvascolor); LTsv_draw_bgcolor(canvasbgcolor)
 
@@ -589,18 +555,18 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
         if kbdentry in "":
             if kbdentry == "\uf0db": #
                 LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursor[kbdentry_canvas]-1,0)]+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]:]
-            elif kbdentry == "\uf0dc": #
-                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]+1:]
+#            elif kbdentry == "\uf0dc": #
+#                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]+1:]
             elif kbdentry in "\uf0cd\uf0c1\uf0d8": #
                 LTsv_kbdentry_cursor[kbdentry_canvas]=max(LTsv_kbdentry_cursor[kbdentry_canvas]-1,0)
             elif kbdentry in "\uf0d0\uf0c2\uf0d9": #
                 LTsv_kbdentry_cursor[kbdentry_canvas]=min(LTsv_kbdentry_cursor[kbdentry_canvas]+1,len(LTsv_kbdentry_text[kbdentry_canvas]))
-            print(LTsv_kbdentry_cursor[kbdentry_canvas])
         else:
             LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+kbdentry+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]:]
+            LTsv_kbdentry_cursor[kbdentry_canvas]+=1
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursor[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursor[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_press(window_objvoid=None,window_objptr=None):
@@ -622,7 +588,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
         global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursor[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursor[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_leave(window_objvoid=None,window_objptr=None):
@@ -638,7 +604,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
      event_p=kbdentry_press,event_r=kbdentry_release,event_m=kbdentry_motion,event_e=kbdentry_enter,event_l=kbdentry_leave,event_w=event_w)
     LTsv_kbdentry_fontcolor[kbdentry_canvas]=LTsv_global_canvascolor()
     LTsv_kbdentry_text[kbdentry_canvas]=""
-    LTsv_kbdentry_cursor[kbdentry_canvas]=0
+    LTsv_kbdentry_cursor[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
     LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH
     LTsv_glyph_tapcallback_shell(kbdentry_canvas,kbdentry_input)
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
@@ -652,6 +618,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
 def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
     global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text
     LTsv_kbdentry_text[kbdentry_canvas]=widget_t
+    LTsv_kbdentry_cursor[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,kbdentry_canvas)
     LTsv_widget_getobj(LTsv_widgetPAGE,"kbdentry_leave")()
@@ -796,10 +763,8 @@ def LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
             LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
             if LTsv_kanclockOBJ[glyphcode][LTsv_glyphpointlist_count] > 0:
-#                LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
                 LTsv_drawGTK_gcfcolor()
             else:
-#                LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKfont_gccolor))
                 LTsv_drawGTK_gcbcolor()
             LTsv_drawGTK_polygonfill(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_kanwideOBJ[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w

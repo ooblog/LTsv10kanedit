@@ -1264,7 +1264,7 @@ version(branch) 20160718M003911
  LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
 
- LTsv_glyphSVGfat(LTsv_glyph_path); LTsv_glyphSVGnomal(LTsv_glyph_path); LTsv_glyphSVG_shell(LTsv_GUI);
+ LTsv_glyphSVG(LTsv_glyph_path);
   フォントグリフの座標データをSVGからリストに変換。
 
  LTsv_glyphpath(glyphcode):
@@ -1285,7 +1285,7 @@ version(branch) 20160718M003911
   「LTsv_draw_glyphsfill()」を１文字分。改行処理などを省いた高速描画用。漢直キーボードなど等幅表示想定。
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
- LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+ LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
   「canvas」にフォントグリフ(ポリゴン)の描画。
   テキスト選択カーソルを表現するために「LTsv_draw_glyphs()」「LTsv_draw_glyphsfill()」的な描画を使い分ける予定。
 

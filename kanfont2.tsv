@@ -4,11 +4,11 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160904U095803
+modify	20160905M014913
 |L:Tsv]
 
 [kanfont|
-seek	0
+seek	6
 grid	50
 inner	0
 lineseg	1
@@ -19,7 +19,7 @@ refergrid	1
 referGTK		X:-30	Y:-30	S:420	C:#E5E5E5
 referTkinter	X:-30	Y:-135	S:420	C:#E5E5E5
 glyphcolor	R:#6E81D9	L:#6ED997	X:#D96ED3	G:#9F6C00
-dic_name	kan5x5.tsv
+dic_name	LTsv/kanchar.tsv
 svg_name	kan5x5.svg
 font_name	活:kan5x5	漫:kan5x5comic	筆:kan5x5brush
 font_widths	1024,824,624
