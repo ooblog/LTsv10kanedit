@@ -536,55 +536,55 @@ def LTsv_glyph_picklesave():
     LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"kanglyph",LTsv_glyph_config)
     LTsv_savefile(LTsv_glyph_ltsvpath,LTsv_glyph_ltsv)
 
-LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor={},{},{},{},{}
+LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL,LTsv_kbdentry_cursorR={},{},{},{},{},{}
 def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
-    global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
+    global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
     def kbdentry_input(kbdentry):
-        LTsv_kbdentry_cursor[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursor[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
+        LTsv_kbdentry_cursorL[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
         if kbdentry in "":
             if kbdentry in "\uf0db\uf0dc": #
-                if LTsv_kbdentry_cursor[kbdentry_canvas] < len(LTsv_kbdentry_text[kbdentry_canvas]):
-                    LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursor[kbdentry_canvas],0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursor[kbdentry_canvas]+1,0):]
+                if LTsv_kbdentry_cursorL[kbdentry_canvas] < len(LTsv_kbdentry_text[kbdentry_canvas]):
+                    LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursorL[kbdentry_canvas],0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursorL[kbdentry_canvas]+1,0):]
                 else:
                     LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:len(LTsv_kbdentry_text[kbdentry_canvas])-1]
             elif kbdentry in "\uf0c3": #
-                LTsv_kbdentry_cursor[kbdentry_canvas]=0
+                LTsv_kbdentry_cursorL[kbdentry_canvas]=0
             elif kbdentry in "\uf0cd\uf0ce\uf0c1\uf0d8": #
-                LTsv_kbdentry_cursor[kbdentry_canvas]=max(LTsv_kbdentry_cursor[kbdentry_canvas]-1,0)
+                LTsv_kbdentry_cursorL[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)
             elif kbdentry in "\uf0d0\uf0cf\uf0c2\uf0d9": #
-                LTsv_kbdentry_cursor[kbdentry_canvas]=min(LTsv_kbdentry_cursor[kbdentry_canvas]+1,len(LTsv_kbdentry_text[kbdentry_canvas]))
+                LTsv_kbdentry_cursorL[kbdentry_canvas]=min(LTsv_kbdentry_cursorL[kbdentry_canvas]+1,len(LTsv_kbdentry_text[kbdentry_canvas]))
             elif kbdentry in "\uf0da": #
-                LTsv_kbdentry_cursor[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
+                LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
             elif kbdentry in "\uf0d7": #
-                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+"clip"+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]:]
+                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+"clip"+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:]
         else:
-            LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursor[kbdentry_canvas]]+kbdentry+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursor[kbdentry_canvas]:]
-            LTsv_kbdentry_cursor[kbdentry_canvas]+=1
+            LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+kbdentry+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:]
+            LTsv_kbdentry_cursorL[kbdentry_canvas]+=1
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursor[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursor[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursorL[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursorL[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_press(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mousepress(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_release(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mouserelease(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_motion(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_glyph_mousemotion(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_enter(window_objvoid=None,window_objptr=None):
-        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursor
+        global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
-        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursor[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursor[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursorL[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursorL[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddraw(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_queue()
     def kbdentry_leave(window_objvoid=None,window_objptr=None):
@@ -600,7 +600,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
      event_p=kbdentry_press,event_r=kbdentry_release,event_m=kbdentry_motion,event_e=kbdentry_enter,event_l=kbdentry_leave,event_w=event_w)
     LTsv_kbdentry_fontcolor[kbdentry_canvas]=LTsv_global_canvascolor()
     LTsv_kbdentry_text[kbdentry_canvas]=""
-    LTsv_kbdentry_cursor[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
+    LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas]); LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
     LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH
     LTsv_glyph_tapcallback_shell(kbdentry_canvas,kbdentry_input)
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
@@ -614,7 +614,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
 def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
     global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text
     LTsv_kbdentry_text[kbdentry_canvas]=widget_t
-    LTsv_kbdentry_cursor[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
+    LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas]); LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,kbdentry_canvas)
     LTsv_widget_getobj(LTsv_widgetPAGE,"kbdentry_leave")()
