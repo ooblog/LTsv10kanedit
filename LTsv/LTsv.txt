@@ -51,7 +51,7 @@ version(branch) 20160718M003911
 ０-1． インストール＆アンインストール方法・その他セットアップ方法
 
  インストール自体は「https://github.com/ooblog/LTsv9kantray」から「Download ZIP」でダウンロードした[LTsv9kantray-master.zip]を解凍するだけです。
- [kantray5x5comic.ttf]を用意する場合は[kanfont.svg]または[kantray5x5comic.woff]から変換。
+ [kantray5x5comic.ttf]を用意する場合は[kan5x5.svg]または[kantray5x5comic.woff]から変換。
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)」も参考)。
 
@@ -1264,9 +1264,8 @@ version(branch) 20160718M003911
  LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
 
- LTsv_glyphSVGGTK(LTsv_glyph_path); LTsv_glyphSVGGTKTkinter(LTsv_glyph_path); LTsv_glyphSVG_shell(LTsv_GUI);
+ LTsv_glyphSVGfat(LTsv_glyph_path); LTsv_glyphSVGnomal(LTsv_glyph_path); LTsv_glyphSVG_shell(LTsv_GUI);
   フォントグリフの座標データをSVGからリストに変換。
-  GTKの「gdk_draw_polygon()」は1ドット未満の図形が省略されてしまうのでフォントを太らせる処理が「LTsv_glyphSVGGTK()」にはある。
 
  LTsv_glyphpath(glyphcode):
   フォントグリフの「幅」「活」「漫」「筆」のデータを単漢字辞書から抽出してメモリに記憶。
@@ -1309,6 +1308,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  LTsv_glyph_getnote(draw_t="",draw_g="活")
   フォントグリフの座標をリストで取得。draw_tにテキスト1文字分、draw_gでフォントの種類。
+
+ LTsv_glyph_pointsrotation(glyphnote=[]):
+  「LTsv_draw_glyphskbd()」で追記する「LTsv_draw_points()」を左上に配置するため、フォントグリフ座標のポリゴンの座標の順番を回転ソートする。
+  「LTsv_draw_points()」が右下の場合「LTsv_glyphSVGGTK()」で座標補正からのドット潰れが発生する場合がある。
 
  LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")
   ほぼ「kanfont」用。メモリ上の単漢字辞書のフォントグリフを更新する。
@@ -1432,10 +1435,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   ぬ　つさそひこみもねるめろﾇ 　英
 
    小さい文字をタップ          文字入力。アプリ毎に入力された文字の処理方法は異なります。
-   左上(Ｎ)からフリック        NFER鍵盤(ひらがな)の選択。
-   右上(Ｘ)からフリック        XFER鍵盤(カタカナ)の選択。
+   左上(Ｎ)からフリック        NFER鍵盤(ひらがな)の選択。Ｎの下にフリックでα鍵盤の「σ」(HJKL)。
+   右上(Ｘ)からフリック        XFER鍵盤(カタカナ)の選択。Ｘの下にフリックでα鍵盤の「Σ」(電卓)。
    左下(Ｎの下)からフリック    α鍵盤の選択。もしくは辞書の変更。
-   右下(Ｎの下)からフリック    字引入力。単漢字辞書の項目が代入。
+   右下(Ｘの下)からフリック    字引入力。単漢字辞書の項目が代入。
 
   空白を入力する場合はアルファベット大文字を表示して「）」と「＝」の間の０の位置が空白です。
 
@@ -1500,7 +1503,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  Ｑ．ボタンなどのGUIにフォント「kantray5x5comic」を用いるにはどうすればいいですか。
  Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接は使えません。
-     GUIで表示する場合は付属の「kanfont.svg」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
+     GUIで表示する場合は付属の「kan5x5.svg」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
 
  Ｑ．「LTsv_draw_font(LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv_glyph.py)」系の違いはなんですか。
  Ａ．「Tkinter」が「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示モジュール用意しました。

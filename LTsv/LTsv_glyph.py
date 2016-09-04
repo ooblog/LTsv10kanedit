@@ -167,7 +167,7 @@ def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
 def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
 def LTsv_global_kbdcursorNone():                           return LTsv_glyph_None
 
-def LTsv_glyphSVGGTK(LTsv_glyph_path):
+def LTsv_glyphSVGfat(LTsv_glyph_path):
     LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
@@ -186,7 +186,7 @@ def LTsv_glyphSVGGTK(LTsv_glyph_path):
         LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
     return LTsv_glyphnote,LTsv_glyphclock
 
-def LTsv_glyphSVGTkinter(LTsv_glyph_path):
+def LTsv_glyphSVGnomal(LTsv_glyph_path):
     LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
@@ -200,8 +200,8 @@ def LTsv_glyphSVGTkinter(LTsv_glyph_path):
     return LTsv_glyphnote,LTsv_glyphclock
 
 def LTsv_glyphSVG_shell(LTsv_GUI):
-    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_glyphSVGGTK
-    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_glyphSVGTkinter
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_glyphSVGnomal
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_glyphSVGnomal
 
 def LTsv_glyphpath(glyphcode):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -300,7 +300,7 @@ def LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dra
             LTsv_draw_color(canvasbgcolor)
         LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_y if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_x for odd,xy in enumerate(LTsv_glyphpointlist)]
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
-        LTsv_draw_points(*tuple(LTsv_glyphpointresize[:2]))
+#        LTsv_draw_points(*tuple(LTsv_glyphpointresize[:2]))
     LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
 
 def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
@@ -404,6 +404,14 @@ def LTsv_glyph_getnote(draw_t="",draw_g="活"):
     glyphcode=draw_t[:1]
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
     return LTsv_glyphnote
+
+def LTsv_glyph_pointsrotation(glyphnote=[]):
+    for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(glyphnote):
+        distance=[math.sqrt(LTsv_glyphpointlist[xy*2]**2+LTsv_glyphpointlist[xy*2+1]**2) for xy in range(len(LTsv_glyphpointlist)//2)]
+        rotation=distance.index(min(distance))
+        if rotation != 0:
+            glyphnote[LTsv_glyphpointlist_count]=[LTsv_glyphpointlist[(odd+rotation*2)%len(LTsv_glyphpointlist)] for odd,xy in enumerate(LTsv_glyphpointlist)]
+    return glyphnote
 
 def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
