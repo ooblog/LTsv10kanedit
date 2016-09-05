@@ -282,7 +282,7 @@ def kanfont_configload():
     global kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     global kanfont_fontname,kanfont_glyphtype
-    kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
+    kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
     kanfont_seek=LTsv_readlinerest(kanfont_config,"seek",kanfont_seek)[:1]
     kanfont_fontgrid=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"grid",str(kanfont_fontgrid))),10),100)
@@ -310,7 +310,7 @@ def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
     global kanfont_ltsv,kanfont_config
     global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
     global kanfont_refer,kanfont_refergrid
-    kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
+    kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
     kanfont_config=LTsv_pushlinerest(kanfont_config,"seek",kanfont_seek)
     kanfont_config=LTsv_pushlinerest(kanfont_config,"grid",str(kanfont_fontgrid))
     kanfont_config=LTsv_pushlinerest(kanfont_config,"inner",str(kanfont_gridinner))
@@ -318,7 +318,7 @@ def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
     kanfont_config=LTsv_pushlinerest(kanfont_config,"gothic",str(kanfont_gothic))
     kanfont_config=LTsv_pushlinerest(kanfont_config,"refergrid",str(kanfont_refergrid))
     kanfont_ltsv=LTsv_putpage(kanfont_ltsv,"kanfont",kanfont_config)
-    LTsv_savefile("kanfont2.tsv",kanfont_ltsv)
+    LTsv_savefile("kanfont.tsv",kanfont_ltsv)
     LTsv_glyph_picklesave()
     if kanfont_autosave in ["1","TRUE","True","true","YES","Yes","yes","ON","On","on"]:
         kanfont_svgmake()
