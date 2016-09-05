@@ -145,7 +145,7 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
   menu_o=None,menu_b=None,menu_c=None,kbd_d=None,kbd_g=None,kbd_s=None,
-  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None):
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_c=None,kbd_v=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -186,7 +186,9 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_motion",kbd_m)
     if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_enter",kbd_e)
     if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_leave",kbd_l)
-    if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_nput",kbd_i)
+    if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_input",kbd_i)
+    if kbd_c    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_copy",kbd_c)
+    if kbd_v    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_‎paste",kbd_v)
     return LTsv_widgetPAGE
 
 def LTsv_fonttuple(LTsv_line):
@@ -1443,7 +1445,7 @@ def LTsv_keyboard_size(keyboard_fontsize=12):
     widget_w,widget_h=keyboard_fontKP+keyboard_buttonsize*14+keyboard_fontKP,keyboard_fontKP+keyboard_buttonsize*4+keyboard_fontKP
     return "{0}\t{1}".format(widget_w,widget_h)
 
-def LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,event_w=50,keyboard_getkey=None,keyboard_setkey=None,widget_f="kantray5x5comic,12"):
+def LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,event_w=50,keyboard_getkey=None,keyboard_setkey=None,widget_f="kan5x5comic,12"):
     keyboard_colorF,keyboard_colorB,keyboard_colorN,keyboard_colorX,keyboard_colorK,keyboard_colorO,keyboard_colorI="#111111","#FFFFFF","#2591FC","#1CDA00","#F6B555","#FF007C","#FCAEAF"
     keyboard_irohamax,keyboard_alphapos,keyboard_guidepos,keyboard_dicinppos,keyboard_dicselpos,keyboard_iroha,keyboard_guideN,keyboard_guideX,keyboard_guideK,keyboard_guideKN,keyboard_guideKX=LTsv_keyboard_iroha_guide()
     keyboard_irohatype,keyboard_alphatype,keyboard_dictype,keyboard_tofu=LTsv_keyboard_iroha_type()
@@ -1971,7 +1973,7 @@ if __name__=="__main__":
         from LTsv_kbd    import *
         LTsv_kbdinit("./LTsv_kbd.tsv",LTsv_initmouse=False)
         LTsv_joymax=LTsv_joyinit()
-        debug_fontname="kantray5x5comic"
+        debug_fontname="kan5x5comic"
         debug_fontsize_entry=10; debug_font_entry="{0},{1}".format(debug_fontname,debug_fontsize_entry); debug_label_WH=debug_fontsize_entry*2
         debug_keysetup_W,debug_keysetup_H=800,600
         debug_canvas_X,debug_canvas_Y,debug_canvas_W,debug_canvas_H=0,debug_label_WH,debug_keysetup_W-120,debug_keysetup_H*3//5

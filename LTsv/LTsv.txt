@@ -1351,9 +1351,9 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
 
- LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
+ LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
   「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」を設置。
-  widget_w,widget_hは直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
+  widget_w,widget_hは漢直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
 
  LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
   kbd_canvasでキャンバス、widget_tで書き換える文字列。
