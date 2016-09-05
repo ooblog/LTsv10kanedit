@@ -22,7 +22,7 @@ kanfont_referposX,kanfont_referposY,kanfont_referposS,kanfont_referposC=0,0,PSch
 kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY=0,0,-1,-1,-1,-1,-1,0,0
 kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG="#6E81D9","#6ED997","#D96ED3","#9F6C00"
 kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime="kanchar.tsv","kan5x5comic.svg","1024,824,624","off","@0h:@0n:@0s"
-kanfont_fontname={"活":"kan5x5","漫":"kan5x5comic","筆":"kan5x5brush"}
+kanfont_fontname,kanfont_glyphtype={"活":"kan5x5","漫":"kan5x5comic","筆":"kan5x5brush"},"漫"
 kanfont_max=0x2ffff  # if LTsv_GUI != "Tkinter" else 0xffff
 kanfont_dictype_label,kanfont_dictype_entry=[None]*(len(LTsv_global_dictype())+1),[None]*(len(LTsv_global_dictype())+1)
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
@@ -218,6 +218,16 @@ def kanfont_dictype_paste():
 def kanfont_dictype_copy(clippaste):
     LTsv_widget_settext(kanfont_clipboard,clippaste)
 
+def kanfont_dictype_inputed_shell(dictype_cnt):
+    def kanfont_dictype_kernel(LTsv_kbdentry_input):
+        LTsv_kbdentry_edit=LTsv_kbdentry_input
+        if LTsv_global_dictype()[dictype_cnt] == "幅":
+            LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
+            LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
+        LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
+        return LTsv_kbdentry_edit
+    return kanfont_dictype_kernel
+
 def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
     LTsv_widget_disableenable(kanfont_svg_button,False)
     LTsv_widget_settext(kanfont_svg_button,"make:{0}".format(kanfont_svgname))
@@ -225,8 +235,9 @@ def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
 
 def kanfont_svgmake(window_objvoid=None,window_objptr=None):
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
-    global kanfont_fontname
+    global kanfont_fontname,kanfont_glyphtype
     kanchar=LTsv_global_kandic().rstrip('\n').split('\n')
+    glyphtype=kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]
     kanfont_svgtext=(
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<svg\n'
@@ -240,7 +251,7 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
         kanfont_svgtext+=(
           '        <font id="{0}" horiz-adv-x="{2}">\n'
           '            <font-face font-family="{1}" units-per-em="{2}"/>\n'
-          ''.format(kanfont_fontname["漫"] if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname["漫"],fontwidths),kanfont_fontname["漫"],fontwidths)
+          ''.format(kanfont_fontname[glyphtype] if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname[glyphtype],fontwidths),kanfont_fontname[glyphtype],fontwidths)
         )
         for kanline in kanchar:
             kanpath=LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活")
@@ -270,7 +281,7 @@ def kanfont_configload():
     global kanfont_referposX,kanfont_referposY,kanfont_referposS,kanfont_referposC
     global kanfont_glyphcolorR,kanfont_glyphcolorL,kanfont_glyphcolorX,kanfont_glyphcolorG
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
-    global kanfont_fontname
+    global kanfont_fontname,kanfont_glyphtype
     kanfont_ltsv=LTsv_loadfile("kanfont2.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
     kanfont_seek=LTsv_readlinerest(kanfont_config,"seek",kanfont_seek)[:1]
@@ -290,6 +301,7 @@ def kanfont_configload():
     kanfont_dicname=LTsv_readlinerest(kanfont_config,"dic_name",kanfont_dicname)
     kanfont_svgname=LTsv_readlinerest(kanfont_config,"svg_name",kanfont_svgname)
     kanfont_fontname["活"],kanfont_fontname["漫"],kanfont_fontname["筆"]=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanfont_config,"font_name"),"活","漫","筆"))
+    kanfont_glyphtype=LTsv_readlinerest(kanfont_config,"font_glyphtype",kanfont_glyphtype)
     kanfont_fontwidths=LTsv_readlinerest(kanfont_config,"font_widths",kanfont_fontwidths)
     kanfont_autosave=LTsv_readlinerest(kanfont_config,"autosave",kanfont_autosave)
     kanfont_savetime=LTsv_readlinerest(kanfont_config,"savetime",kanfont_savetime)
@@ -348,7 +360,7 @@ if len(LTsv_GUI) > 0:
     kanfont_dictype_canvas=[None]*len(LTsv_global_dictype())
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
-        kanfont_dictype_canvas[dictype_cnt]=LTsv_kbdentry_new(kanfont_window,event_b=None if dictype_split != "幅" else None,clip_c=kanfont_dictype_copy,clip_v=kanfont_dictype_paste,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5,widget_h=kanfont_entry_H,event_w=50)
+        kanfont_dictype_canvas[dictype_cnt]=LTsv_kbdentry_new(kanfont_window,event_b=kanfont_dictype_inputed_shell(dictype_cnt),clip_c=kanfont_dictype_copy,clip_v=kanfont_dictype_paste,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5,widget_h=kanfont_entry_H,event_w=50)
     kanfont_clipboard=LTsv_clipboard_new(kanfont_window)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)

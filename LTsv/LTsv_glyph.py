@@ -395,6 +395,14 @@ def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     LTsv_glyphpath(glyphcode)
     LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
 
+def LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗"):
+    global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
+    glyphcode=draw_t[:1]
+    if LTsv_pickdic(LTsv_glyph_kandic,glyphcode,draw_g) != kanpath:
+        LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
+        LTsv_glyph_kanline=LTsv_setdatalabel(LTsv_glyph_kanline,draw_g,kanpath)
+        LTsv_glyph_kandic=LTsv_pushlinerest(LTsv_glyph_kandic,glyphcode,LTsv_glyph_kanline)
+
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_selcanvas(kbd_canvas,draw_g=LTsv_glyph_kbdTAG)
     mouseX,mouseY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
@@ -538,7 +546,7 @@ def LTsv_glyph_picklesave():
 
 LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL,LTsv_kbdentry_cursorR={},{},{},{},{},{}
 LTsv_clipentry_c,LTsv_clipentry_v,LTsv_clipentry_e={},{},{}
-def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
+def LTsv_kbdentry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,clip_c=None,clip_v=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
     global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
     global LTsv_clipentry_c,LTsv_clipentry_v,LTsv_clipentry_e
     def kbdentry_input(kbdentry):
@@ -549,7 +557,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,w
             if kbdentry in "":
                 LTsv_kbdentry_clippaste=LTsv_clipentry_v[kbdentry_canvas]()
                 LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+LTsv_kbdentry_clippaste+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorR[kbdentry_canvas]:]
-                LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]+len(LTsv_kbdentry_clippaste)-1
+                LTsv_kbdentry_cursorR[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas],LTsv_kbdentry_cursorL[kbdentry_canvas]+len(LTsv_kbdentry_clippaste)-1)
             if kbdentry in "":
                 LTsv_clipentry_c[kbdentry_canvas](LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:max(LTsv_kbdentry_cursorR[kbdentry_canvas]+1,0)])
             if kbdentry in "":
@@ -577,43 +585,9 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,w
                 LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
             if kbdentry in "":
                 LTsv_kbdentry_cursorL[kbdentry_canvas]=LTsv_kbdentry_cursorR[kbdentry_canvas]
-
-
-##            if kbdentry in "\uf0d2": #
-#                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursorL[kbdentry_canvas],0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursorR[kbdentry_canvas]+1,0):]
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
-#            elif kbdentry in "\uf0d1": #
-#                if 0 < LTsv_kbdentry_cursorL[kbdentry_canvas]:
-#                    LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursorL[kbdentry_canvas],0):]
-#                    LTsv_kbdentry_cursorL[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
-#            elif kbdentry in "\uf0db\uf0dd": #
-#                LTsv_kbdentry_cursorL[kbdentry_canvas]=0
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
-#            elif kbdentry in "\uf0cd\uf0cf\uf0c1\uf0d8": #
-##                LTsv_kbdentry_cursorL[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
-#            elif kbdentry in "\uf0d0\uf0ce\uf0c2\uf0d9": #
-#                LTsv_kbdentry_cursorL[kbdentry_canvas]=min(LTsv_kbdentry_cursorL[kbdentry_canvas]+1,len(LTsv_kbdentry_text[kbdentry_canvas]))
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
-#            elif kbdentry in "\uf0dc\uf0de": #
-#                LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
-#            elif kbdentry in "\uf0c8": #
-#                LTsv_kbdentry_cursorL[kbdentry_canvas]=0
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
-#            elif kbdentry in "\uf0d7": #
-#                LTsv_kbdentry_clippaste=LTsv_clipentry_v[kbdentry_canvas]()
-#                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+LTsv_kbdentry_clippaste+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorR[kbdentry_canvas]:]
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]+len(LTsv_kbdentry_clippaste)-1),len(LTsv_kbdentry_text[kbdentry_canvas]))
-#            elif kbdentry in "\uf0d6\uf0d5": #
-#                LTsv_clipentry_c[kbdentry_canvas]("copytest")
-#                LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+"clip"+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:]
-#                LTsv_kbdentry_cursorR[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
         else:
             LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+kbdentry+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:]
-            LTsv_kbdentry_cursorL[kbdentry_canvas]+=1
-            LTsv_kbdentry_cursorR[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
+            LTsv_kbdentry_cursorL[kbdentry_canvas]+=1; LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
         LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsentry(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_cL=LTsv_kbdentry_cursorL[kbdentry_canvas],draw_cR=LTsv_kbdentry_cursorR[kbdentry_canvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
@@ -650,7 +624,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,w
         LTsv_draw_delete()
         LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_draw_queue()
-    kbdentry_canvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
+    kbdentry_canvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=widget_n,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
      event_p=kbdentry_press,event_r=kbdentry_release,event_m=kbdentry_motion,event_e=kbdentry_enter,event_l=kbdentry_leave,event_w=event_w)
     LTsv_kbdentry_fontcolor[kbdentry_canvas]=LTsv_global_canvascolor()
     LTsv_kbdentry_text[kbdentry_canvas]=""
@@ -663,7 +637,6 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,w
     LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,kbd_p=kbdentry_press,kbd_r=kbdentry_release,kbd_m=kbdentry_motion,kbd_e=kbdentry_enter,kbd_l=kbdentry_leave,kbd_i=kbdentry_input)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,kbdentry_canvas,LTsv_widgetPAGE)
     LTsv_global_widgetltsv(LTsv_widgetLTSV)
-    kbdentry_leave()
     return kbdentry_canvas
 
 def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
@@ -672,11 +645,18 @@ def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
     LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas]); LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,kbdentry_canvas)
-    LTsv_widget_getobj(LTsv_widgetPAGE,"kbdentry_leave")()
+#    LTsv_widget_getobj(LTsv_widgetPAGE,"kbdentry_leave")()
+    LTsv_glyph_kbddelete(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
+    LTsv_draw_selcanvas(kbdentry_canvas)
+    LTsv_draw_delete()
+    LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+    LTsv_draw_queue()
     LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,kbdentry_canvas,LTsv_widgetPAGE)
     LTsv_global_widgetltsv(LTsv_widgetLTSV)
 
+def LTsv_kbdentry_gettext(kbdentry_canvas):
+    return LTsv_kbdentry_text[kbdentry_canvas]
 
 LTsv_kanglyphOBJ,LTsv_kanclockOBJ,LTsv_kanwideOBJ={},{},{}
 def LTsv9_glyphdicload(dicname="kanchar.tsv"):

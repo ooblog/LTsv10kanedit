@@ -4,15 +4,15 @@ enter	LF
 tab	8
 program	kanfont
 LTsvver	20160718M003911
-modify	20160906T013249
+modify	20160906T071055
 |L:Tsv]
 
 [kanfont|
-seek	ぬ
+seek	え
 grid	50
 inner	0
 lineseg	1
-gothic	0
+gothic	1
 gridimage	kanfont_grid25_198.png
 refer		Noto Sans Japanese Regular
 refergrid	1
@@ -22,6 +22,7 @@ glyphcolor	R:#6E81D9	L:#6ED997	X:#D96ED3	G:#9F6C00
 dic_name	LTsv/kanchar.tsv
 svg_name	kan5x5.svg
 font_name	活:kan5x5	漫:kan5x5comic	筆:kan5x5brush
+font_glyphtype	漫
 font_widths	1024,824,624
 autosave	off
 savetime	@0h:@0n:@0s
