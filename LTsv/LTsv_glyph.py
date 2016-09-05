@@ -213,7 +213,7 @@ def LTsv_glyphfont_shell(draw_g="活"):
 
 def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
     draw_xf,draw_yf=draw_x,draw_y
-    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
+    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
@@ -232,7 +232,7 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
 
 def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
     draw_xf,draw_yf=draw_x,draw_y
-    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
+    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
@@ -265,7 +265,7 @@ def LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
 
 def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
     draw_xf,draw_yf=draw_x,draw_y
-    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"")
+    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
     draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
@@ -537,23 +537,29 @@ def LTsv_glyph_picklesave():
     LTsv_savefile(LTsv_glyph_ltsvpath,LTsv_glyph_ltsv)
 
 LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL,LTsv_kbdentry_cursorR={},{},{},{},{},{}
+LTsv_clipentry_c,LTsv_clipentry_v,LTsv_clipentry_e={},{},{}
 def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
     global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text,LTsv_kbdentry_fontcolor,LTsv_kbdentry_cursorL
+    global LTsv_clipentry_c,LTsv_clipentry_v,LTsv_clipentry_e
     def kbdentry_input(kbdentry):
         LTsv_kbdentry_cursorL[kbdentry_canvas]=min(max(0,LTsv_kbdentry_cursorL[kbdentry_canvas]),len(LTsv_kbdentry_text[kbdentry_canvas]))
-        if kbdentry in "":
-            if kbdentry in "\uf0db\uf0dc": #
+        if kbdentry in "": #
+            if kbdentry in "\uf0d2": #
                 if LTsv_kbdentry_cursorL[kbdentry_canvas] < len(LTsv_kbdentry_text[kbdentry_canvas]):
                     LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursorL[kbdentry_canvas],0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursorL[kbdentry_canvas]+1,0):]
                 else:
                     LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:len(LTsv_kbdentry_text[kbdentry_canvas])-1]
-            elif kbdentry in "\uf0c3": #
+            elif kbdentry in "\uf0d1": #
+                if 0 < LTsv_kbdentry_cursorL[kbdentry_canvas]:
+                    LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)]+LTsv_kbdentry_text[kbdentry_canvas][max(LTsv_kbdentry_cursorL[kbdentry_canvas],0):]
+                    LTsv_kbdentry_cursorL[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)
+            elif kbdentry in "\uf0db\uf0dd": #
                 LTsv_kbdentry_cursorL[kbdentry_canvas]=0
             elif kbdentry in "\uf0cd\uf0ce\uf0c1\uf0d8": #
                 LTsv_kbdentry_cursorL[kbdentry_canvas]=max(LTsv_kbdentry_cursorL[kbdentry_canvas]-1,0)
             elif kbdentry in "\uf0d0\uf0cf\uf0c2\uf0d9": #
                 LTsv_kbdentry_cursorL[kbdentry_canvas]=min(LTsv_kbdentry_cursorL[kbdentry_canvas]+1,len(LTsv_kbdentry_text[kbdentry_canvas]))
-            elif kbdentry in "\uf0da": #
+            elif kbdentry in "\uf0dc\uf0de": #
                 LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas])
             elif kbdentry in "\uf0d7": #
                 LTsv_kbdentry_text[kbdentry_canvas]=LTsv_kbdentry_text[kbdentry_canvas][:LTsv_kbdentry_cursorL[kbdentry_canvas]]+"clip"+LTsv_kbdentry_text[kbdentry_canvas][LTsv_kbdentry_cursorL[kbdentry_canvas]:]
@@ -589,8 +595,8 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
         LTsv_draw_queue()
     def kbdentry_leave(window_objvoid=None,window_objptr=None):
         global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text
-        if event_b != None:
-            LTsv_kbdentry_text[kbdentry_canvas]=event_b(LTsv_kbdentry_text[kbdentry_canvas])
+        if LTsv_clipentry_e[kbdentry_canvas] != None:
+            LTsv_kbdentry_text[kbdentry_canvas]=LTsv_clipentry_e[kbdentry_canvas](LTsv_kbdentry_text[kbdentry_canvas])
         LTsv_glyph_kbddelete(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
@@ -602,6 +608,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,widget_x=0,widget_y=0,wid
     LTsv_kbdentry_text[kbdentry_canvas]=""
     LTsv_kbdentry_cursorL[kbdentry_canvas]=len(LTsv_kbdentry_text[kbdentry_canvas]); LTsv_kbdentry_cursorR[kbdentry_canvas]=LTsv_kbdentry_cursorL[kbdentry_canvas]
     LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH
+    LTsv_clipentry_e[kbdentry_canvas]=event_b
     LTsv_glyph_tapcallback_shell(kbdentry_canvas,kbdentry_input)
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,kbdentry_canvas)
@@ -695,7 +702,7 @@ def LTsv9_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dra
     for glyphcode in draw_t:
         if glyphcode == '\n':
             if draw_LF:
-                glyphcode=""
+                glyphcode="\uf0d3" #
             else:
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
                 continue
@@ -719,7 +726,7 @@ def LTsv9_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1
     for glyphcode in draw_t:
         if glyphcode == '\n':
             if draw_LF:
-                glyphcode=""
+                glyphcode="\uf0d3" #
             else:
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
                 continue
@@ -743,7 +750,7 @@ def LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1
     for glyphcode in draw_t:
         if glyphcode == '\n':
             if draw_LF:
-                glyphcode=""
+                glyphcode="\uf0d3" #
             else:
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
                 continue
@@ -771,7 +778,7 @@ def LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw
     for glyphcode in draw_t:
         if glyphcode == '\n':
             if draw_LF:
-                glyphcode=""
+                glyphcode="\uf0d3" #
             else:
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
                 continue
@@ -931,9 +938,9 @@ def debug_milkAI_add(addentry):
     milkcounttotal=0
     for xy in debug_milklid_range:
         milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
-    if addentrychar == "\uf0db": #
-        debug_milkAI_BS(); return;
     if addentrychar == "\uf0d1": #
+        debug_milkAI_BS(); return;
+    if addentrychar == "\uf0d3": #
         debug_milkAI_Auto(); return;
     if milkcounttotal > 0:
         if addentrychar in debug_reversi_key and addentrychar != debug_reversi_key[0]:
@@ -970,9 +977,9 @@ if __name__=="__main__":
         LTsv_glyph_kbdinit(ltsvpath="./kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
         debug_kbdH=25
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
-        debug_milkfont="kantray5x5comic,{0}".format(debug_kbdH//2)
-        debug_entryfont="kantray5x5comic,{0}".format(debug_kbdH//4)
-        debug_buttonfont="kantray5x5comic,5".format(5)
+        debug_milkfont="kan5x5comic,{0}".format(debug_kbdH//2)
+        debug_entryfont="kan5x5comic,{0}".format(debug_kbdH//4)
+        debug_buttonfont="kan5x5comic,5".format(5)
         debug_reversi_X,debug_reversi_Y,debug_reversi_W,debug_reversi_H=debug_milklid_W*7,debug_milklid_H*1,debug_milklid_W*(2+20+2),debug_milklid_H*(2+8+2)
         debug_kbdX,debug_kbdY=debug_reversi_W-LTsv_global_glyphkbdW(),debug_reversi_H-LTsv_global_glyphkbdH()*3//2
         debug_milklidLen=(10*10)
