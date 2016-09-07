@@ -1351,9 +1351,20 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
 
- LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
+ LTsv_kbdentry_hjkl(entry_t="",entry_ch="",entry_cL=0,entry_cR=0,clip_c=None,clip_v=None,clip_e=None)
+  「LTsv_kbdentry_new()」などで使う直キーボードの入力・カーソル移動・クリップボード処理。
+  entry_tはエントリーの元々の文字列。entry_chは追加する文字列またはカーソル移動などのコマンド。
+  entry_cL,entry_cRはカーソル位置(選択範囲)。
+  clip_cはコピー、clip_vは貼り付け時の関数。
+  clip_cはα鍵盤「σ」にある「&#61654;(U+f0d6)」もしくは「&#61653;(U+f0d5)」押下時の関数。Ctrl+CやCtrl+Xを想定。
+  clip_vはα鍵盤「σ」にある「&#61655;(U+f0d7)」押下時の関数。Ctrl+Vを想定。
+  clip_eはα鍵盤「σ」にある「&#61651;(U+f0d3)」押下時の関数。Enterを想定。
+
+ LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,clip_e=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
   「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」を設置。
   widget_w,widget_hは漢直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
+  event_bで「canvas」からマウスを外したときの処理。
+  clip_c,clip_v,clip_eは「LTsv_kbdentry_hjkl()」を参考。
 
  LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
   kbd_canvasでキャンバス、widget_tで書き換える文字列。

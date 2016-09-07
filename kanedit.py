@@ -50,7 +50,8 @@ def kanedit_memodraw(memo_x,memo_y):
     LTsv_draw_bgcolor(kanmemo_bgcolor); LTsv_draw_color(kanmemo_bgcolor); 
     LTsv_draw_polygonfill(memo_x,memo_y,kanedit_W-LTsv_global_glyphkbdW(),memo_y,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H,memo_x,kanedit_H)
     LTsv_draw_color(kanmemo_fontcolor)
-    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+#    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+    LTsv_draw_color(kanmemo_fontcolor); LTsv_draw_glyphsentry(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_cL=kanmemo_textleft,draw_cR=kanmemo_textright,draw_f=kanedit_fontsize,draw_g="漫")
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
     global kanedit_W,kanedit_H,kanedit_RS
@@ -69,8 +70,35 @@ def kanedit_resize(callback_void=None,callback_ptr=None):
         kanedit_RS=True
         kanedit_resizeredraw()
 
+def kanfont_memo_copy(clippaste):
+    LTsv_widget_settext(kanedit_clipboard,clippaste)
+
+def kanedit_memo_paste():
+    clippaste=LTsv_widget_gettext(kanedit_clipboard)
+    return clippaste
+
+def kanfont_memo_eval(clippaste):
+    if len(clippaste) == 0:
+        LTsv_glyph_kbdselect('Σ')
+    elif clippaste.find('⇔') < 0:
+        clippaste+='⇔'
+    LTsv_libc_printf(clippaste)
+    kanedit_memodraw(0,kanedit_H-kanedit_fontsize)
+    return clippaste
+
+def kanedit_inputmemo(inputchar):
+    global kanedit_texteditfilename,kanedit_textvalue
+    global kanedit_ltsv,kanedit_config
+    global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
+    kanmemo_textvalue,kanmemo_textleft,kanmemo_textright=LTsv_kbdentry_hjkl(entry_t=kanmemo_textvalue,entry_ch=inputchar,entry_cL=kanmemo_textleft,entry_cR=kanmemo_textright,clip_c=kanfont_memo_copy,clip_v=kanedit_memo_paste,clip_e=kanfont_memo_eval)
+
+def kanedit_input(inputchar):
+    kanedit_inputmemo(inputchar)
+    kanedit_redraw()
+
 def kanedit_mousepress(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_mousepress(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
+    if LTsv_glyph_mousepress(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH()) == LTsv_global_kbdcursorNone():
+        pass
 
 def kanedit_mousemotion(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mousemotion(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
@@ -81,12 +109,12 @@ def kanedit_mouserelease(window_objvoid=None,window_objptr=None):
 def kanedit_keypress(window_objvoid=None,window_objptr=None):
     LTsv_setkbddata(20,0)
     kanedit_getkbdnames,kanedit_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-    keybind=LTsv_readlinerest(kanedit_keybind,kanedit_getkbdnames.rstrip('\t').replace('\t',' '))
-    if len(keybind):
-        pass
+#    keybind=LTsv_readlinerest(kanedit_keybind,kanedit_getkbdnames.rstrip('\t').replace('\t',' '))
+#    if len(keybind):
+#        pass
 #        kanedit_inputchar(keybind)
-    else:
-        pass
+#    else:
+#        pass
 #        if tinykbd_keepSandS == 0 and tinykbd_inputSandS in kanedit_getkbdnames:
 #            tinykbd_keepSandS=1
 #            for kbd_xy in range(tinykbd_irohamax):
@@ -142,7 +170,7 @@ def kanedit_textload(filename):
 
 def kanedit_configload():
     global kanedit_W,kanedit_H,kanedit_RS
-    global kanedit_ltsv,kanedit_config,kanedit_tinykbd,kanedit_keybind,kanedit_charbind
+    global kanedit_ltsv,kanedit_config
     global kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor,kanedit_fontsize
     global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
     global kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor
@@ -153,14 +181,12 @@ def kanedit_configload():
     kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg","mark"))
     kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"font_size",str(kanedit_fontsize))),5),100)
     kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg","mark"))
-    kanmemo_textvalue=LTsv_readlinerest(kanedit_config,"memo_entry")
-    kanedit_keybind=LTsv_getpage(kanedit_ltsv,"keybind")
-    kanedit_charbind=LTsv_getpage(kanedit_ltsv,"charbind")
+    kanmemo_textvalue=LTsv_readlinerest(kanedit_config,"memo_entry"); kanmemo_textleft,kanmemo_textright=len(kanmemo_textvalue),len(kanmemo_textvalue)
     kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"edit_last","kanedit.txt")
     kanedit_textload(kanedit_texteditfilename)
 
 def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
-    global kanedit_ltsv,kanedit_config,kanedit_tinykbd,kanedit_keybind,kanedit_charbind
+    global kanedit_ltsv,kanedit_config
     kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_config=LTsv_pushlinerest(kanedit_config,"edit_last",kanedit_texteditfilename)
@@ -190,6 +216,7 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
+    LTsv_glyph_tapcallback_shell(kanedit_canvas,kanedit_input)
     kanedit_resize()
     kanedit_redraw()
     LTsv_window_main(kanedit_window)
