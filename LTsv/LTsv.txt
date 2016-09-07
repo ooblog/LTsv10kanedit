@@ -1259,11 +1259,11 @@ version(branch) 20160718M003911
  LTsv_global_kanpickle()
   フォントグリフの座標データpickleを取得できます。
 
- LTsv_global_irohatype(); LTsv_global_irohatypeN(); LTsv_global_irohatypeX()
+ LTsv_global_irohatype(); LTsv_global_irohatypeN(); LTsv_global_irohatypeX();
  LTsv_global_alphatype(); LTsv_global_alphatypeN(); LTsv_global_alphatypeX(); 
  LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX(); 
  LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX(); 
- LTsv_global_glyphkbdH(): LTsv_global_glyphkbdW();
+ LTsv_global_glyphkbdH(); LTsv_global_glyphkbdW(); LTsv_global_glyphkbdF();
  LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
 

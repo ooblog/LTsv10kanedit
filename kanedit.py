@@ -16,7 +16,7 @@ from LTsv_gui     import *
 from LTsv_glyph  import *
 
 kanedit_window=None
-kanedit_getkbdnames,kanedit_getkbdkanas,kanedit_inputkey="","",0
+kanedit_getkbdnames,kanedit_getkbdkanas="",""
 kanedit_W,kanedit_H,kanedit_RS=LTsv_global_glyphkbdW(),LTsv_global_glyphkbdH(),False
 kanedit_ltsv,kanedit_config="",""
 kanedit_texteditfilename,kanedit_textvalue="",""
@@ -24,16 +24,13 @@ kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor,kanedit_fontsize="black","#F
 kanmemo_textvalue,kanmemo_textleft,kanmemo_textright="",0,0
 kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor="black","white","red"
 
-
 def kanedit_redraw():
     LTsv_glyph_kbddelete(kanedit_canvas)
     LTsv_draw_selcanvas(kanedit_canvas)
     LTsv_draw_delete(kanedit_bgcolor)
     kanedit_editdraw(5,5)
-    kanedit_memodraw(0,kanedit_H-LTsv_global_glyphkbdF())
+    kanedit_memodraw(0,kanedit_H-kanedit_fontsize)
     LTsv_glyph_kbddraw(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
-    if kanedit_inputkey:
-        LTsv_widget_settext(kanedit_window,widget_t="kanedit:{0}".format(kanedit_getkbdnames.replace('\t',' ')))
     LTsv_draw_queue()
 
 def kanedit_editdraw(edit_x,edit_y):
@@ -53,7 +50,7 @@ def kanedit_memodraw(memo_x,memo_y):
     LTsv_draw_bgcolor(kanmemo_bgcolor); LTsv_draw_color(kanmemo_bgcolor); 
     LTsv_draw_polygonfill(memo_x,memo_y,kanedit_W-LTsv_global_glyphkbdW(),memo_y,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H,memo_x,kanedit_H)
     LTsv_draw_color(kanmemo_fontcolor)
-#    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=LTsv_global_glyphkbdF(),draw_w=1,draw_h=1,draw_g="漫",draw_LF=True,draw_HT=True,draw_SP=True)
+    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
     global kanedit_W,kanedit_H,kanedit_RS
@@ -146,75 +143,31 @@ def kanedit_textload(filename):
 def kanedit_configload():
     global kanedit_W,kanedit_H,kanedit_RS
     global kanedit_ltsv,kanedit_config,kanedit_tinykbd,kanedit_keybind,kanedit_charbind
+    global kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor,kanedit_fontsize
+    global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
+    global kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor
     kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_resizeW,kanedit_resizeH=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"window_size"),"width","height"))
     kanedit_W,kanedit_H=min(max(LTsv_intstr0x(kanedit_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w(kanedit_window)),min(max(LTsv_intstr0x(kanedit_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h(kanedit_window))
-
-
-#    global kanedit_W,kanedit_H,kanedit_RS
-#    global kanedit_ltsv,kanedit_config,kanedit_tinykbd,kanedit_keybind,kanedit_charbind
-#    global tinykbd_inputSandS,tinykbd_inputNFER,tinykbd_inputXFER,tinykbd_inputKANA
-#    global kanedit_getkbdnames,kanedit_getkbdkanas,kanedit_inputkey
-#    global kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor,kanedit_fontsize
-#    global tinykbd_map,tinykbd_char,tinykbd_pickle,tinykbd_word,tinykbd_zip
-#    global tinykbd_kanmapN,tinykbd_kanmapX,tinykbd_kanmapD
-#    global tinykbd_fontcolor,tinykbd_bgcolor,tinykbd_markcolor
-#    global tinykbd_fontchar
-#    global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
-#    global kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor
-#    kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
-#    kanedit_tinykbd=LTsv_getpage(kanedit_ltsv,"tinykbd")
-#    kbd_resize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_tinykbd,"kbd_resize")),1),5)
-#    tinykbd_inputSandS=LTsv_readlinerest(kanedit_tinykbd,"input_SandS",tinykbd_inputSandS)
-#    tinykbd_inputNFER=LTsv_readlinerest(kanedit_tinykbd,"input_NFER",tinykbd_inputNFER)
-#    tinykbd_inputXFER=LTsv_readlinerest(kanedit_tinykbd,"input_XFER",tinykbd_inputXFER)
-#    tinykbd_inputKANA=LTsv_readlinerest(kanedit_tinykbd,"input_KANA",tinykbd_inputKANA)
-#    tinykbd_fontcolor,tinykbd_bgcolor,tinykbd_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_tinykbd,"kbd_colors"),"font","bg","mark"))
-#    tinykbd_map=LTsv_loadfile(LTsv_readlinerest(kanedit_tinykbd,"dic_mapname","kanmap.tsv"))
-#    for irohaalpha in tinykbd_irohaalpha:
-#        kbd_lineT=LTsv_readlinerest(tinykbd_map,irohaalpha)
-#        kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*(tinykbd_SandS*2-len(kbd_lineL))
-#        tinykbd_kanmapN[irohaalpha],tinykbd_kanmapX[irohaalpha]=kbd_lineL[0:tinykbd_SandS+1],kbd_lineL[tinykbd_SandS+1:tinykbd_SandS+1+tinykbd_SandS+1]
-#    kanedit_tinykbd_select(tinykbd_fontchar[tinykbd_KANA])
-#    tinykbd_fontchar[tinykbd_KANA]=LTsv_readlinerest(kanedit_tinykbd,"find_NXalpha",tinykbd_fontchar[tinykbd_KANA])
-#    tinykbd_fontchar[tinykbd_KANA]=tinykbd_fontchar[tinykbd_KANA] if tinykbd_fontchar[tinykbd_KANA] in tinykbd_irohaalphaN or tinykbd_fontchar[tinykbd_KANA] in tinykbd_irohaalphaX else tinykbd_irohatype[0]
-#    tinykbd_fontchar[tinykbd_SandS]=LTsv_readlinerest(kanedit_tinykbd,"find_dic",tinykbd_fontchar[tinykbd_SandS])
-##    tinykbd_fontchar[tinykbd_SandS]=tinykbd_fontchar[tinykbd_SandS] if tinykbd_fontchar[tinykbd_SandS] in tinykbd_dictype else tinykbd_dictype[0]
-#    tinykbd_char=LTsv_loadfile(LTsv_readlinerest(kanedit_tinykbd,"dic_charname","kanchar.tsv"))
-#    tinykbd_pickle=LTsv_readlinerest(kanedit_tinykbd,"glyph_picklename","kanchar.tsv")
-#    LTsv9_glyphOBJunpickle(tinykbd_pickle)
-#    kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
-#    kanedit_tinykbd_new(kbd_resize)
-#    kanedit_resizeW,kanedit_resizeH=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"window_size"),"width","height"))
-#    kanedit_W,kanedit_H=min(max(LTsv_intstr0x(kanedit_resizeW),tinykbd_W),LTsv_screen_w(kanedit_window)),min(max(LTsv_intstr0x(kanedit_resizeH),tinykbd_H),LTsv_screen_h(kanedit_window))
-#    kanedit_inputkey=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"kbd_inputkey")),0),1)
-#    kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg","mark"))
-#    kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg","mark"))
-#    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"font_size",str(kanedit_fontsize))),5),100)
-#    LTsv9_glyphdicload(LTsv_readlinerest(kanedit_config,"dic_charname","kanchar.tsv"))
-#    tinykbd_word=LTsv_loadfile(LTsv_readlinerest(kanedit_config,"dic_wordname","kanword.tsv"))
-#    tinykbd_zip=LTsv_loadfile(LTsv_readlinerest(kanedit_config,"dic_zipname","kanzip.tsv"))
-#    kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"open_last","kanedit.txt")
-#    kanedit_textload(kanedit_texteditfilename)
-#    kanedit_keybind=LTsv_getpage(kanedit_ltsv,"keybind")
-#    kanedit_charbind=LTsv_getpage(kanedit_ltsv,"charbind")
-#    kanmemo_textvalue=LTsv_readlinerest(kanedit_config,"eval_entry")
+    kanedit_fontcolor,kanedit_bgcolor,kanedit_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg","mark"))
+    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"font_size",str(kanedit_fontsize))),5),100)
+    kanmemo_fontcolor,kanmemo_bgcolor,kanmemo_markcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg","mark"))
+    kanmemo_textvalue=LTsv_readlinerest(kanedit_config,"memo_entry")
+    kanedit_keybind=LTsv_getpage(kanedit_ltsv,"keybind")
+    kanedit_charbind=LTsv_getpage(kanedit_ltsv,"charbind")
+    kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"edit_last","kanedit.txt")
+    kanedit_textload(kanedit_texteditfilename)
 
 def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
     global kanedit_ltsv,kanedit_config,kanedit_tinykbd,kanedit_keybind,kanedit_charbind
-#    kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
-#    kanedit_tinykbd=LTsv_getpage(kanedit_ltsv,"tinykbd")
-#    kanedit_tinykbd=LTsv_pushlinerest(kanedit_tinykbd,"find_NXalpha",tinykbd_fontchar[tinykbd_KANA])
-#    kanedit_tinykbd=LTsv_pushlinerest(kanedit_tinykbd,"find_dic",tinykbd_fontchar[tinykbd_SandS])
-#    kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"tinykbd",kanedit_tinykbd)
-#    kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
-#    kanedit_config=LTsv_pushlinerest(kanedit_config,"open_last",kanedit_texteditfilename)
-#    kanedit_config=LTsv_pushlinerest(kanedit_config,"eval_entry",kanmemo_textvalue)
-#    kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
-#    LTsv_savefile("kanedit.tsv",kanedit_ltsv)
-#    LTsv9_glyphOBJpickle(tinykbd_pickle)
-#    LTsv_glyph_picklesave()
+    kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
+    kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
+    kanedit_config=LTsv_pushlinerest(kanedit_config,"edit_last",kanedit_texteditfilename)
+    kanedit_config=LTsv_pushlinerest(kanedit_config,"memo_entry",kanmemo_textvalue)
+    kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
+    LTsv_savefile("kanedit.tsv",kanedit_ltsv)
+    LTsv_glyph_picklesave()
     LTsv_window_exit()
 kanedit_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanedit_exit_configsave)
 
