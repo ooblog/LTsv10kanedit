@@ -377,7 +377,7 @@ if len(LTsv_GUI) > 0:
     LTsv_widget_setnumber(kanfont_seg_check,kanfont_lineseg)
     LTsv_widget_setnumber(kanfont_gothic_radio[0],kanfont_gothic)
     LTsv_widget_setnumber(kanfont_refer_check,kanfont_refergrid)
-    LTsv_glyph_kbddelete(kanfont_kbd_canvas,0,2); LTsv_glyph_kbddraw(kanfont_kbd_canvas,0,2); LTsv_draw_queue()
+    LTsv_glyph_kbddelete(kanfont_kbd_canvas); LTsv_glyph_kbddraw(kanfont_kbd_canvas,0,2); LTsv_draw_queue()
     LTsv_window_main(kanfont_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")

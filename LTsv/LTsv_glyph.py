@@ -155,6 +155,7 @@ def LTsv_global_irohaalphaN():                           return LTsv_glyph_iroha
 def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
 def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
 def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
+def LTsv_global_glyphkbdF():                           return LTsv_glyph_kbdF
 def LTsv_global_kbdcursorNone():                           return LTsv_glyph_None
 
 def LTsv_glyphSVG(LTsv_glyph_path):
@@ -439,7 +440,7 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
+        LTsv_glyph_kbddelete(kbd_canvas)
         if LTsv_kbdcursor == LTsv_glyph_SandS:
             LTsv_glyph_kbdLCR="FlickS"
             LTsv_glyph_kbdchar_SandS=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
@@ -471,7 +472,7 @@ def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
+        LTsv_glyph_kbddelete(kbd_canvas)
         if LTsv_glyph_kbdLCR == "SwipeN":
             if LTsv_kbdcursor < LTsv_glyph_SandS:
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_kbdcursor])
@@ -496,7 +497,7 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
-        LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
+        LTsv_glyph_kbddelete(kbd_canvas)
         if LTsv_glyph_kbdLCR == "SwipeK":
             if LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_dictype:
                 LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
@@ -514,7 +515,7 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     LTsv_glyph_kbdLCR=""
     return LTsv_kbdcursor
 
-def LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y):
+def LTsv_glyph_kbddelete(kbd_canvas):
     if LTsv_global_GUI() == "GTK2":
         pass
     if LTsv_global_GUI() == "Tkinter":
@@ -619,7 +620,7 @@ def LTsv_kbdentry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,clip_c=None
         global LTsv_kbdentry_x,LTsv_kbdentry_y,LTsv_kbdentry_text
         if LTsv_clipentry_e[kbdentry_canvas] != None:
             LTsv_kbdentry_text[kbdentry_canvas]=LTsv_clipentry_e[kbdentry_canvas](LTsv_kbdentry_text[kbdentry_canvas])
-        LTsv_glyph_kbddelete(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
+        LTsv_glyph_kbddelete(kbdentry_canvas)
         LTsv_draw_selcanvas(kbdentry_canvas)
         LTsv_draw_delete()
         LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
@@ -646,7 +647,7 @@ def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,kbdentry_canvas)
 #    LTsv_widget_getobj(LTsv_widgetPAGE,"kbdentry_leave")()
-    LTsv_glyph_kbddelete(kbdentry_canvas,LTsv_kbdentry_x[kbdentry_canvas],LTsv_kbdentry_y[kbdentry_canvas])
+    LTsv_glyph_kbddelete(kbdentry_canvas)
     LTsv_draw_selcanvas(kbdentry_canvas)
     LTsv_draw_delete()
     LTsv_draw_color(LTsv_kbdentry_fontcolor[kbdentry_canvas]); LTsv_draw_glyphsfill(draw_t=LTsv_kbdentry_text[kbdentry_canvas],draw_x=0,draw_y=LTsv_glyph_kbdH//4,draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
@@ -922,7 +923,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
             break
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
     debug_reversi_entrysavedata=reversi_entry
-    LTsv_glyph_kbddelete(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+    LTsv_glyph_kbddelete(debug_reversi_canvas)
     LTsv_draw_selcanvas(debug_reversi_canvas)
     LTsv_draw_delete()
     LTsv_draw_color(debug_milklid_colordic["back"]); LTsv_draw_polygonfill(0,0,debug_reversi_W,0,debug_reversi_W,debug_reversi_H,0,debug_reversi_H)
