@@ -51,7 +51,7 @@ version(branch) 20160718M003911
 ０-1． インストール＆アンインストール方法・その他セットアップ方法
 
  インストール自体は「https://github.com/ooblog/LTsv9kantray」から「Download ZIP」でダウンロードした[LTsv9kantray-master.zip]を解凍するだけです。
- [kantray5x5comic.ttf]を用意する場合は[kan5x5.svg]または[kantray5x5comic.woff]から変換。
+ [kan5x5comic.ttf]を用意する場合は[kan5x5.svg]または[kan5x5comic.woff]から変換。
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)」も参考)。
 
@@ -65,7 +65,7 @@ version(branch) 20160718M003911
 ０-3． その他現在わかっている不具合や今後の課題。
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
- フォント「kantray5x5」「kantray5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。
+ フォント「kantray5x5」「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTK経由でキーボードを読み込む方法が不明。
  [kan5x5.svg]を[kan5x5comic.ttf]に変換する手段として「FontForge」が必要。直接フォント生成とかできればベストだが優先順位は低い。
@@ -99,7 +99,7 @@ version(branch) 20160718M003911
   [L:Tsv|                   「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでファイルの先頭に。
    code                       文字コードの宣言で「UTF-8」。
    enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。
-   tab                        半角全角の横幅は形骸化してると思われるが(フォント「kantray5x5comic」の半角と全角の幅の比率が約5:3(1024:624))、タブは半角スペース「8」の設定。
+   tab                        半角全角の横幅は形骸化してると思われるが(フォント「kan5x5comic」の半角と全角の幅の比率が約5:3(1024:624))、タブは半角スペース「4」の設定。
    program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。
    1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。
    LTsvver                    [LTsv_file.py]の「LTsv_file_ver()」。構文解析パーサのバージョン。
@@ -917,7 +917,7 @@ version(branch) 20160718M003911
    keyboard_setkey(kbd_s)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される漢直鍵盤の文字入力を受けとるコールバック関数。
 
  LTsv_fonttuple(LTsv_line)
-  「Tkinter」ではフォントはタプルなので、CSV「"kantray5x5comic,12"」を「(kantray5x5comic,12)」とタプルに変換。
+  「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
 
  LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)
   「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。
@@ -1122,7 +1122,7 @@ version(branch) 20160718M003911
 
  LTsv_drawGTK_font(draw_f=""); LTsv_drawTkinter_font(draw_f=None); LTsv_draw_font_shell(LTsv_GUI)
   「canvas」のフォント指定。
-  「kantray5x5comic,16」のようにカンマでフォント名とフォントサイズを区切る。
+  「kan5x5comic,16」のようにカンマでフォント名とフォントサイズを区切る。
 
  LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0); LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0); LTsv_draw_text_shell(LTsv_GUI)
   「canvas」でフォントによる文字描画。
@@ -1162,7 +1162,7 @@ version(branch) 20160718M003911
  LTsv_keyboard_size(keyboard_fontsize=12)
   漢直キーボードのサイズをフォントサイズから計算する。
 
- LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,event_w=50,keyboard_getkey=None,keyboard_setkey=None,widget_f="kantray5x5comic,12")
+ LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,event_w=50,keyboard_getkey=None,keyboard_setkey=None,widget_f="kan5x5comic,12")
   GUIオブジェクト「canvas」に漢直キーボードの機能をオーバーライドする。複数設置は想定していない。
   鍵盤のマウス操作は「５-1b．基本操作方法」の「鍵盤のフリック操作」を参考。「kantray」「kanfont」ほぼ共通。
 
@@ -1260,9 +1260,10 @@ version(branch) 20160718M003911
   フォントグリフの座標データpickleを取得できます。
 
  LTsv_global_irohatype(); LTsv_global_irohatypeN(); LTsv_global_irohatypeX();
- LTsv_global_alphatype(); LTsv_global_alphatypeN(); LTsv_global_alphatypeX(); 
- LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX(); 
- LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX(); 
+ LTsv_global_alphatype(); LTsv_global_alphatypeN(); LTsv_global_alphatypeX();
+ LTsv_global_dictype(); LTsv_global_choice(); LTsv_global_choiceN(); LTsv_global_choiceX();
+ LTsv_global_evaltype(); 
+ LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX();
  LTsv_global_glyphkbdH(); LTsv_global_glyphkbdW(); LTsv_global_glyphkbdF();
  LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
@@ -1361,13 +1362,19 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   clip_eはα鍵盤「σ」にある「&#61651;(U+f0d3)」押下時の関数。Enterを想定。
 
  LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,clip_e=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
-  「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」を設置。
+  「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」(キャンバスエントリー)を設置。
   widget_w,widget_hは漢直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
   event_bで「canvas」からマウスを外したときの処理。
   clip_c,clip_v,clip_eは「LTsv_kbdentry_hjkl()」を参考。
 
  LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
-  kbd_canvasでキャンバス、widget_tで書き換える文字列。
+  kbd_canvasのキャンバスエントリーに文字列を設定。widget_tで書き換える文字列。
+
+ LTsv_kbdentry_gettext(kbdentry_canvas)
+  kbd_canvasのキャンバスエントリーから文字列を取得。
+
+ LTsv_kbdentry_evaltext(calc_value="")
+  文字列から漢直キーボードの検索をしたり電卓機能などを使う。
 
  LTsv9_glyphdicload(dicname="kanchar.tsv"):
   単漢字辞書ファイル「kanchar.tsv」を読み込む。
@@ -1392,11 +1399,11 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   通常は後述の「kanfont_drawGTK_glyph()」から自動呼び出し。
 
  LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
+  フォント[kan5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
   draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
 
  LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kantray5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
+  フォント[kan5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
   反時計周りのパスは「LTsv_drawGTK_delete()」「LTsv_drawTkinter_delete()」で初期化に使う色。初期値は「white」。
   draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
   draw_LFで改行を「&#61649;(0xf0d1)」で可視化、draw_HTでタブを「&#61632;(0xf0c0)」を用いて可視化、draw_SPでスペースを「&#61644;(0xf080)」を用いて可視化。
@@ -1514,9 +1521,9 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  Ａ．以前はHSP版(tsvtool6)やBaCon版(tsvtool7)を作ってたので資産流用です。
      逆に言うとクラスとかタプルとか存在しない言語にも「L:Tsv」を移植しやすいということ。
 
- Ｑ．ボタンなどのGUIにフォント「kantray5x5comic」を用いるにはどうすればいいですか。
+ Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。
  Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接は使えません。
-     GUIで表示する場合は付属の「kan5x5.svg」を「kantray5x5comic.ttf」に変換する等してフォントのインストール。
+     GUIで表示する場合は付属の「kan5x5.svg」を「kan5x5comic.ttf」に変換する等してフォントのインストール。
 
  Ｑ．「LTsv_draw_font(LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv_glyph.py)」系の違いはなんですか。
  Ａ．「Tkinter」が「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示モジュール用意しました。

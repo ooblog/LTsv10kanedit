@@ -77,14 +77,9 @@ def kanedit_memo_paste():
     clippaste=LTsv_widget_gettext(kanedit_clipboard)
     return clippaste
 
-def kanfont_memo_eval(clippaste):
-    if len(clippaste) == 0:
-        LTsv_glyph_kbdselect('Σ')
-    elif clippaste.find('⇔') < 0:
-        clippaste+='⇔'
-    LTsv_libc_printf(clippaste)
-    kanedit_memodraw(0,kanedit_H-kanedit_fontsize)
-    return clippaste
+def kanfont_memo_eval(calc_value):
+    calc_V=LTsv_kbdentry_evaltext(calc_value)
+    return calc_V
 
 def kanedit_inputmemo(inputchar):
     global kanedit_texteditfilename,kanedit_textvalue

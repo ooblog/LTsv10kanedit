@@ -29,6 +29,8 @@ LTsv_glyph_glyphtype=  ["活","漫","筆"]
 LTsv_glyph_choice=    ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
 LTsv_glyph_choiceN=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","ε","ρ","τ","υ","θ","ι","ο","π","＠","ぷ","α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ","ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","σ"]
 LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","Ε","Ρ","Τ","Υ","Θ","Ι","Ο","Π","｀","プ","Α","Σ","Δ","Φ","Γ","Η","Ξ","Κ","Λ","代","鍵","ぬ","Ζ","Χ","Ψ","Ω","Β","Ν","Μ","熙","●","▲","■","￥","Σ"]
+LTsv_glyph_evaltype= ["平","片","大","小","半","全","＼","￥","清","Ｈ","Ｍ","濁","Ｂ","Ｐ","今","⑩","⑯","⑧","⓪","照","探","〒","汎","算"]
+LTsv_glyph_evalslash,LTsv_glyph_evaldakuon,LTsv_glyph_evalseion="￥","Ｐ","Ｈ"
 LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
@@ -60,6 +62,7 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     global LTsv_glyph_alphatype,LTsv_glyph_alphatypeN,LTsv_glyph_alphatypeX
     global LTsv_glyph_dictype,LTsv_glyph_glyphtype
     global LTsv_glyph_choice,LTsv_glyph_choiceN,LTsv_glyph_choiceX
+    global LTsv_glyph_evaltype,LTsv_glyph_evalslash,LTsv_glyph_evaldakuon,LTsv_glyph_evalseion
     global LTsv_glyph_irohaalpha,LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX
     global LTsv_glyph_kanmapN,LTsv_glyph_kanmapX
     global LTsv_glyph_kbdF,LTsv_glyph_kbdH,LTsv_glyph_kbdW,LTsv_glyph_kbdG,LTsv_glyph_kbdC
@@ -104,6 +107,10 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     LTsv_glyph_choice=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choice",LTsv_tuple2tsv(LTsv_glyph_choice)))
     LTsv_glyph_choiceN=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choiceN",LTsv_tuple2tsv(LTsv_glyph_choiceN)))
     LTsv_glyph_choiceX=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"choiceX",LTsv_tuple2tsv(LTsv_glyph_choiceX)))
+    LTsv_glyph_evaltype=LTsv_tsv2list(LTsv_readlinerest(LTsv_glyph_config,"evaltype",LTsv_tuple2tsv(LTsv_glyph_evaltype)))
+    LTsv_glyph_evalslash=LTsv_readlinerest(LTsv_glyph_config,"eval_slash",LTsv_glyph_evalslash)
+    LTsv_glyph_evaldakuon=LTsv_readlinerest(LTsv_glyph_config,"eval_dakuon",LTsv_glyph_evaldakuon)
+    LTsv_glyph_evalseion=LTsv_readlinerest(LTsv_glyph_config,"eval_seion",LTsv_glyph_evalseion)
     LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
     LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
     LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
@@ -150,6 +157,7 @@ def LTsv_global_glyphtype():                          return LTsv_glyph_glyphtyp
 def LTsv_global_choice():                              return LTsv_glyph_choice
 def LTsv_global_choiceN():                             return LTsv_glyph_choiceN
 def LTsv_global_choiceX():                             return LTsv_glyph_choiceX
+def LTsv_global_evaltype():                             return LTsv_glyph_evaltype
 def LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha
 def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
 def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
@@ -431,6 +439,9 @@ def LTsv_glyph_choiceNX(choice):
         choiceNX=LTsv_glyph_irohaalphaX.index(choice)
     return choiceNX
 
+def LTsv_glyph_kbdfind(choice):
+    pass
+
 LTsv_glyph_tapcallback={}
 def LTsv_glyph_tapcallback_shell(kbd_canvas,callback):
     global LTsv_glyph_tapcallback
@@ -660,6 +671,88 @@ def LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
 
 def LTsv_kbdentry_gettext(kbdentry_canvas):
     return LTsv_kbdentry_text[kbdentry_canvas]
+
+def LTsv_kbdentry_evaltext(calc_value=""):
+    calc_V,calc_K,calc_Q,calc_A=calc_value,"","",""
+    if len(calc_V) == 0:
+        LTsv_glyph_kbdselect('Σ')
+    elif calc_V.find('⇔') < 0:
+        calc_V+='⇔'
+    if calc_V.find('⇔') == 0:
+        if calc_V[:2] == "⇔⇔":
+            calc_Q=calc_V[0]
+            calc_A=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_Q),LTsv_glyph_kbdchars[LTsv_glyph_SandS])
+            if len(calc_A) > 0:
+                calc_K=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
+            else:
+                calc_K,calc_A="照",""
+        else:
+            if len(calc_V) == 1:
+                if len(LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_V[0]),LTsv_glyph_kbdchars[LTsv_glyph_SandS])) > 0:
+                    calc_K,calc_Q=LTsv_glyph_kbdchars[LTsv_glyph_SandS],calc_V[0]
+                else:
+                    calc_K,calc_Q="照",calc_V[0]
+            else:
+                calc_K,calc_Q="算",""
+    elif calc_V.find('⇔') == 1:
+        calc_Q=calc_V[0]
+        if len(calc_V) > 2:
+            if calc_V[2] == ('⇔'):
+                if calc_Q in LTsv_glyph_evaltype or calc_Q in LTsv_glyph_dictype:
+                    calc_K=calc_Q
+        if calc_K == "":
+            calc_A=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_Q),LTsv_glyph_kbdchars[LTsv_glyph_SandS])
+            if len(calc_A) > 0:
+                calc_K=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
+            else:
+                calc_K,calc_A="照",""
+        LTsv_glyph_kbdfind(calc_Q)
+    elif calc_V.find('⇔') == 2:
+        if calc_V[0] in LTsv_glyph_evaltype or calc_V[0] in LTsv_glyph_dictype:
+            calc_K,calc_Q=calc_V[0],calc_V[1]
+        else:
+            calc_K,calc_Q="汎",calc_V[:2]
+    else:
+        if len(calc_V) > 0:
+            calc_Q=calc_V[:calc_V.find('⇔')]
+            if (calc_Q.startswith("&#") or calc_Q.startswith("&")) and calc_Q.endswith(";"):
+                calc_K="照"
+            elif calc_Q[0] in LTsv_glyph_evaltype:
+                calc_K,calc_Q=calc_Q[0],calc_Q[1:]
+            else:
+                calc_K="汎"
+    if calc_K == "全":
+        calc_K="￥" if LTsv_glyph_evalslash == "￥" else "＼"
+    if calc_K == "濁":
+        calc_K="Ｐ" if LTsv_glyph_evaldakuon == "Ｐ" else "Ｂ"
+    if calc_K == "清":
+        calc_K="Ｈ" if LTsv_glyph_evalseion == "Ｈ" else "Ｍ"
+    if calc_K in LTsv_glyph_dictype:
+        calc_A=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_Q),calc_K)
+    elif calc_K == "平":
+        calc_A=LTsv_kanare(calc_Q,"Kata2Hira")
+    elif calc_K == "片":
+        calc_A=LTsv_kanare(calc_Q,"Hira2Kata")
+    elif calc_K == "大":
+        calc_A=LTsv_kanare(calc_Q,"Alpha2BIG")
+    elif calc_K == "小":
+        calc_A=LTsv_kanare(calc_Q,"Alpha2SML")
+    elif calc_K == "半":
+        calc_A=LTsv_kanare(calc_Q,"HiraKana2HanKaKe"); calc_A=LTsv_kanare(calc_A,"Alpha2HAN")
+    elif calc_K == "＼":
+        calc_A=LTsv_kanare(calc_Q,"Han2Kata");         calc_A=LTsv_kanare(calc_A,"Alpha2ZENBS")
+    elif calc_K == "￥":
+        calc_A=LTsv_kanare(calc_Q,"Han2Kata");         calc_A=LTsv_kanare(calc_A,"Alpha2ZENYen")
+    elif calc_K == "Ｈ":
+        calc_A=LTsv_kanare(calc_Q,"HiraKana2SeiH")
+    elif calc_K == "Ｍ":
+        calc_A=LTsv_kanare(calc_Q,"HiraKana2SeiM")
+    elif calc_K == "Ｂ":
+        calc_A=LTsv_kanare(calc_Q,"HiraKana2DakB")
+    elif calc_K == "Ｐ":
+        calc_A=LTsv_kanare(calc_Q,"HiraKana2DakP")
+    LTsv_libc_printf(calc_V)
+    return calc_V
 
 def debug_mousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
