@@ -3,12 +3,12 @@
 from __future__ import division,print_function,absolute_import,unicode_literals
 import sys
 import os
-os.chdir(sys.path[0])
+import math
 if sys.version_info.major == 2:
     import urllib
 if sys.version_info.major == 3:
     import urllib.request
-import math
+os.chdir(sys.path[0])
 sys.path.append("LTsv")
 from LTsv_printf  import *
 from LTsv_file    import *
@@ -53,20 +53,13 @@ for ken in range(kanzip_prefectureMAX+1):
     kanzip_prefectureTSV[ken]=kanzip_workdir+kanzip_prefecturesNAME[ken]+".tsv"
 kanzip_prefectureURL[0]=kanzip_japanpostURL+"jigyosyo/zip/"+kanzip_prefecturesNAME[0]+".zip"
 kanzip_prefecturedic=dict(zip(kanzip_prefecturesKAN,kanzip_prefectureURL))
-if sys.version_info.major == 2:
-    kanzip_prefectures_glyph={"事業所":unichr(12306),"北海道":unichr(61568),"青森県":unichr(61569),"岩手県":unichr(61570),"宮城県":unichr(61571),"秋田県":unichr(61572),"山形県":unichr(61573),"福島県":unichr(61574),
-                              "茨城県":unichr(61575),"栃木県":unichr(61576),"群馬県":unichr(61577),"埼玉県":unichr(61578),"千葉県":unichr(61579),"東京都":unichr(61580),"神奈川県":unichr(61581),"新潟県":unichr(61582),
-                              "富山県":unichr(61583),"石川県":unichr(61584),"福井県":unichr(61585),"山梨県":unichr(61586),"長野県":unichr(61587),"岐阜県":unichr(61588),"静岡県":unichr(61589),"愛知県":unichr(61590),
-                              "三重県":unichr(61591),"滋賀県":unichr(61592),"京都府":unichr(61593),"大阪府":unichr(61594),"兵庫県":unichr(61595),"奈良県":unichr(61596),"和歌山県":unichr(61597),"鳥取県":unichr(61598),
-                              "島根県":unichr(61599),"岡山県":unichr(61600),"広島県":unichr(61601),"山口県":unichr(61602),"徳島県":unichr(61603),"香川県":unichr(61604),"愛媛県":unichr(61605),"高知県":unichr(61606),
-                              "福岡県":unichr(61607),"佐賀県":unichr(61608),"長崎県":unichr(61609),"熊本県":unichr(61610),"大分県":unichr(61611),"宮崎県":unichr(61612),"鹿児島県":unichr(61613),"沖縄県":unichr(61614),"全国一括":unichr(61615)}
-if sys.version_info.major == 3:
-    kanzip_prefectures_glyph={"事業所":chr(12306),"北海道":chr(61568),"青森県":chr(61569),"岩手県":chr(61570),"宮城県":chr(61571),"秋田県":chr(61572),"山形県":chr(61573),"福島県":chr(61574),
-                              "茨城県":chr(61575),"栃木県":chr(61576),"群馬県":chr(61577),"埼玉県":chr(61578),"千葉県":chr(61579),"東京都":chr(61580),"神奈川県":chr(61581),"新潟県":chr(61582),
-                              "富山県":chr(61583),"石川県":chr(61584),"福井県":chr(61585),"山梨県":chr(61586),"長野県":chr(61587),"岐阜県":chr(61588),"静岡県":chr(61589),"愛知県":chr(61590),
-                              "三重県":chr(61591),"滋賀県":chr(61592),"京都府":chr(61593),"大阪府":chr(61594),"兵庫県":chr(61595),"奈良県":chr(61596),"和歌山県":chr(61597),"鳥取県":chr(61598),
-                              "島根県":chr(61599),"岡山県":chr(61600),"広島県":chr(61601),"山口県":chr(61602),"徳島県":chr(61603),"香川県":chr(61604),"愛媛県":chr(61605),"高知県":chr(61606),
-                              "福岡県":chr(61607),"佐賀県":chr(61608),"長崎県":chr(61609),"熊本県":chr(61610),"大分県":chr(61611),"宮崎県":chr(61612),"鹿児島県":chr(61613),"沖縄県":chr(61614),"全国一括":chr(61615)}
+LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
+kanzip_prefectures_glyph={"事業所":LTsv_chrcode(12306),"北海道":LTsv_chrcode(61568),"青森県":LTsv_chrcode(61569),"岩手県":LTsv_chrcode(61570),"宮城県":LTsv_chrcode(61571),"秋田県":LTsv_chrcode(61572),"山形県":LTsv_chrcode(61573),"福島県":LTsv_chrcode(61574),
+                              "茨城県":LTsv_chrcode(61575),"栃木県":LTsv_chrcode(61576),"群馬県":LTsv_chrcode(61577),"埼玉県":LTsv_chrcode(61578),"千葉県":LTsv_chrcode(61579),"東京都":LTsv_chrcode(61580),"神奈川県":LTsv_chrcode(61581),"新潟県":LTsv_chrcode(61582),
+                              "富山県":LTsv_chrcode(61583),"石川県":LTsv_chrcode(61584),"福井県":LTsv_chrcode(61585),"山梨県":LTsv_chrcode(61586),"長野県":LTsv_chrcode(61587),"岐阜県":LTsv_chrcode(61588),"静岡県":LTsv_chrcode(61589),"愛知県":LTsv_chrcode(61590),
+                              "三重県":LTsv_chrcode(61591),"滋賀県":LTsv_chrcode(61592),"京都府":LTsv_chrcode(61593),"大阪府":LTsv_chrcode(61594),"兵庫県":LTsv_chrcode(61595),"奈良県":LTsv_chrcode(61596),"和歌山県":LTsv_chrcode(61597),"鳥取県":LTsv_chrcode(61598),
+                              "島根県":LTsv_chrcode(61599),"岡山県":LTsv_chrcode(61600),"広島県":LTsv_chrcode(61601),"山口県":LTsv_chrcode(61602),"徳島県":LTsv_chrcode(61603),"香川県":LTsv_chrcode(61604),"愛媛県":LTsv_chrcode(61605),"高知県":LTsv_chrcode(61606),
+                              "福岡県":LTsv_chrcode(61607),"佐賀県":LTsv_chrcode(61608),"長崎県":LTsv_chrcode(61609),"熊本県":LTsv_chrcode(61610),"大分県":LTsv_chrcode(61611),"宮崎県":LTsv_chrcode(61612),"鹿児島県":LTsv_chrcode(61613),"沖縄県":LTsv_chrcode(61614),"全国一括":LTsv_chrcode(61615)}
 
 def kanzip_fileexist(window_objvoid=None,window_objptr=None):
     tsvcount=0
@@ -100,18 +93,19 @@ def kanzip_buzyicon(kanzip_ken,kanzip_buzy):
     LTsv_draw_selcanvas(kanzip_DLprogres[kanzip_ken])
     LTsv_draw_delete("white")
     if kanzip_buzy:
-        LTsv_draw_color(draw_c="gray"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
+        LTsv_draw_color("gray"); LTsv_draw_glyphs(draw_t=kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1,draw_g="漫")
+        LTsv_draw_queue()
     else:
         for ken in range(kanzip_prefectureMAX+1):
             LTsv_widget_disableenable(kanzip_DLbutton[ken],False)
-        LTsv_draw_color(draw_c="gray"); LTsv_drawtk_glyphfill(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
-        LTsv_draw_color(draw_c="black"); LTsv_drawtk_glyph(kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1)
+        LTsv_draw_color("gray"); LTsv_draw_glyphsfill(draw_t=kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1,draw_g="漫")
+        LTsv_draw_color("black"); LTsv_draw_glyphs(draw_t=kanzip_prefectures_glyph[kanzip_prefecturesKAN[kanzip_ken]],draw_x=0,draw_y=0,draw_f=kanzip_DLlabel_H-1,draw_g="漫")
     LTsv_draw_queue()
-    LTsv_widget_showhide(kanzip_DLprogres[kanzip_ken],True)
+#    LTsv_widget_showhide(kanzip_DLprogres[kanzip_ken],True)
 
 def kanzip_DL_report(kanzip_DL_cnt=None,kanzip_DL_size=None,kanzip_DL_total=None):
-    pass
 #    LTsv_libc_printf("{0}({1}/{2})".format(kanzip_prefectureDL[kanzip_ken],min(kanzip_DL_cnt*kanzip_DL_size,kanzip_DL_total),kanzip_DL_total))
+    pass
 
 def kanzip_DL_shell(kanzip_ken):
     def kanzip_DL_convert(window_objvoid=None,window_objptr=None):
@@ -174,19 +168,7 @@ def kanzip_FX_merge(window_objvoid=None,window_objptr=None):
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
-    from LTsv_kbd    import *
-    LTsv_kbdinit()
-    LTsv9_glyphdicload("kanchar.tsv")
-    if LTsv_GUI == LTsv_GUI_GTK2:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawGTK_glyph,LTsv9_drawGTK_glyphfill
-    if LTsv_GUI == LTsv_GUI_Tkinter:
-        LTsv_drawtk_glyph,LTsv_drawtk_glyphfill=LTsv9_drawTkinter_glyph,LTsv9_drawTkinter_glyphfill
-    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
-    LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
-    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
-    LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
-    LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
-    LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
+    LTsv_glyph_kbdinit(ltsvpath="LTsv/kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
     kanzip_window=LTsv_window_new(widget_t="kanzip",event_b=LTsv_window_exit,widget_w=kanzip_window_W,widget_h=kanzip_window_H)
     if not os.path.isdir(kanzip_workdir): os.mkdir(kanzip_workdir)
     for ken in range(kanzip_prefectureMAX):
@@ -199,11 +181,17 @@ if len(LTsv_GUI) > 0:
     kanzip_DLbutton[kanzip_prefectureMAX]=LTsv_button_new(kanzip_window,event_b=kanzip_DLbuzy[str(kanzip_prefectureMAX)],widget_t="都道府県と事業所をダウンロード＆コンバートし終えてから[{0}]にマージ。".format(kanzip_kanzip_tsv),widget_x=0,widget_y=kanzip_prefecture_H*6,widget_w=kanzip_FXbutton_W,widget_h=kanzip_FXbutton_H,widget_f=kanzip_font)
     kanzip_DLprogres[kanzip_prefectureMAX]=LTsv_canvas_new(kanzip_window,widget_x=kanzip_window_W-kanzip_DLprogres_W,widget_y=kanzip_prefecture_H*6,widget_w=kanzip_DLprogres_W,widget_h=kanzip_DLprogres_H)
     LTsv_widget_showhide(kanzip_window,True)
+    LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
+    LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
+    LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
+    LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
+    LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
+    LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
+    LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanzip_fileexist()
     LTsv_window_main(kanzip_window)
 
 
 # Copyright (c) 2016 ooblog
 # License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
-
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE

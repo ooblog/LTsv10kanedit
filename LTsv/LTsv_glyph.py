@@ -10,6 +10,10 @@ except:
    import pickle
 from LTsv_file    import *
 from LTsv_printf import *
+from LTsv_time    import *
+from LTsv_calc    import *
+#from LTsv_joy     import *
+#from LTsv_kbd     import *
 from LTsv_gui    import *
 
 LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
@@ -31,6 +35,8 @@ LTsv_glyph_choiceN=   ["名","音","訓","送","異","俗","簡","繁","越","�
 LTsv_glyph_choiceX=   ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非","英","顔","Ε","Ρ","Τ","Υ","Θ","Ι","Ο","Π","｀","プ","Α","Σ","Δ","Φ","Γ","Η","Ξ","Κ","Λ","代","鍵","ぬ","Ζ","Χ","Ψ","Ω","Β","Ν","Μ","熙","●","▲","■","￥","Σ"]
 LTsv_glyph_evaltype= ["平","片","大","小","半","全","＼","￥","清","Ｈ","Ｍ","濁","Ｂ","Ｐ","今","⑩","⑯","⑧","⓪","照","探","〒","汎","算"]
 LTsv_glyph_evalslash,LTsv_glyph_evaldakuon,LTsv_glyph_evalseion="￥","Ｐ","Ｈ"
+LTsv_glyph_now,LTsv_glyph_overhour,LTsv_glyph_branch="年-月-日(週曜)時:分:秒","30","@000y@0m@0dm@wdec@0h@0n@0s"
+LTsv_glyph_worddicname,LTsv_glyph_zipdicname,LTsv_glyph_worddic,LTsv_glyph_zipdic="../kanword.tsv","../kanzip.tsv","",""
 LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
 LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
 LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
@@ -42,7 +48,7 @@ LTsv_glyph_kbdG,LTsv_glyph_kbdC=LTsv_glyph_kbdF-1,LTsv_glyph_kbdF//2
 LTsv_glyph_fontX,LTsv_glyph_fontY,LTsv_glyph_fontG,LTsv_glyph_mouseX,LTsv_glyph_mouseY,LTsv_glyph_mouseC=[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None)
 LTsv_glyph_kbdchars=[""]*(LTsv_glyph_None); LTsv_glyph_kbdchars[LTsv_glyph_SandS],LTsv_glyph_kbdchars[LTsv_glyph_NFER],LTsv_glyph_kbdchars[LTsv_glyph_XFER],LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_dictype[0],"Ｎ","Ｘ",LTsv_glyph_irohatype[0]
 LTsv_glyph_kbdLCR=""
-LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#FFCBFF"
+LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#DAFFF0"
 LTsv_glyph_kbdsize=1
 LTsv_glyph_cursorsize=10
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
@@ -63,6 +69,8 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     global LTsv_glyph_dictype,LTsv_glyph_glyphtype
     global LTsv_glyph_choice,LTsv_glyph_choiceN,LTsv_glyph_choiceX
     global LTsv_glyph_evaltype,LTsv_glyph_evalslash,LTsv_glyph_evaldakuon,LTsv_glyph_evalseion
+    global LTsv_glyph_now,LTsv_glyph_overhour,LTsv_glyph_branch
+    global LTsv_glyph_worddicname,LTsv_glyph_zipdicname,LTsv_glyph_worddic,LTsv_glyph_zipdic
     global LTsv_glyph_irohaalpha,LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX
     global LTsv_glyph_kanmapN,LTsv_glyph_kanmapX
     global LTsv_glyph_kbdF,LTsv_glyph_kbdH,LTsv_glyph_kbdW,LTsv_glyph_kbdG,LTsv_glyph_kbdC
@@ -751,6 +759,76 @@ def LTsv_kbdentry_evaltext(calc_value=""):
         calc_A=LTsv_kanare(calc_Q,"HiraKana2DakB")
     elif calc_K == "Ｐ":
         calc_A=LTsv_kanare(calc_Q,"HiraKana2DakP")
+    elif calc_K == "⑩":
+        calc_A=str(LTsv_intstr0x(calc_Q))
+    elif calc_K == "⑯":
+        calc_A=hex(LTsv_intstr0x(calc_Q.lstrip('0x').strip('$')))
+    elif calc_K == "⑧":
+        calc_A=LTsv_utf2ink(calc_Q)
+    elif calc_K == "⓪":
+        calc_A=LTsv_ink2utf(calc_Q)
+    elif calc_K == "照":
+        if (calc_Q.startswith("&#") or calc_Q.startswith("&")) and calc_Q.endswith(";"):
+            calc_A=LTsv_xml2utf(calc_Q)
+        else:
+            calc_A=LTsv_utf2xml(calc_Q)
+#LTsv_glyph_now,LTsv_glyph_overhour,LTsv_glyph_branch="年-月-日(週曜)時:分:秒","30","@000y@0m@0dm@wdec@0h@0n@0s"
+#    elif calc_K == "今":
+#        LTsv_putdaytimenow(overhour=kantray_evaloverhour)
+#        if "枝" in calc_Q:
+#            calc_Q="枝"
+#       elif calc_K == "今":
+#        LTsv_putdaytimenow(overhour=kantray_evaloverhour)
+#        if "枝" in calc_Q:
+#            calc_Q="枝"
+#            calc_A=LTsv_getdaytimestr(kantray_evalbranch)
+#        else:
+#            calc_Q=calc_Q.replace("今",kantray_evalnow)
+#            calc_Q=calc_Q.replace("干","@yzj").replace("年","@000y").replace("月","@0m").replace("日","@0dm").replace("週","@0wnyi").replace("曜","@wdj").replace("時","@0h").replace("分","@0n").replace("秒","@0s")
+#            calc_Q=calc_Q.replace("版",LTsv_file_ver())
+#            calc_Q=calc_Q.replace("印",kantray_evalbranch)
+#            calc_A=LTsv_getdaytimestr(calc_Q)
+#         calc_A=LTsv_getdaytimestr(kantray_evalbranch)
+#        else:
+#            calc_Q=calc_Q.replace("今",kantray_evalnow)
+#            calc_Q=calc_Q.replace("干","@yzj").replace("年","@000y").replace("月","@0m").replace("日","@0dm").replace("週","@0wnyi").replace("曜","@wdj").replace("時","@0h").replace("分","@0n").replace("秒","@0s")
+#            calc_Q=calc_Q.replace("版",LTsv_file_ver())
+#            calc_Q=calc_Q.replace("印",kantray_evalbranch)
+#            calc_A=LTsv_getdaytimestr(calc_Q)
+#    elif calc_K == "〒":
+#        kantray_kanzip=LTsv_loadfile(LTsv_readlinerest(kantray_config,"dic_zipname"),kantray_kanzip)
+#        calc_Q=LTsv_kanare(calc_Q,"HiraKana2HanKaKe"); calc_Q=LTsv_kanare(calc_Q,"Alpha2HAN")
+#        calc_Q=(calc_Q.replace('-','').replace('ｰ','')+'0'*7)[:7]
+#        calc_A=LTsv_readlinerest(kantray_kanzip,calc_Q)
+#    elif calc_K == "探":
+#        for calc_F in calc_Q:
+#            calc_EX=""
+#            calc_EXdic=LTsv_pickdatalabel(LTsv_readlinerest(keyboard_kandic,calc_F),'異')+ \
+#              LTsv_pickdatalabel(LTsv_readlinerest(keyboard_kandic,calc_F),'簡')+ \
+#              LTsv_pickdatalabel(LTsv_readlinerest(keyboard_kandic,calc_F),'繁')+ \
+#              LTsv_pickdatalabel(LTsv_readlinerest(keyboard_kandic,calc_F),'代')
+#            for calc_e in calc_EXdic:
+#                calc_EX=calc_EX if ord(calc_e) < 128 else calc_EX+calc_e
+#            find_existpos=LTsv_keyboard_find(kantray_canvas,find_t=calc_F+calc_EX,find_max=kantray_max)
+#            if find_existpos >= 0:
+#                calc_A=calc_F
+#                break
+#    elif calc_K == "汎":
+#        kantray_kanword=LTsv_loadfile(LTsv_readlinerest(kantray_config,"dic_wordname"),kantray_kanword)
+#        calc_A=LTsv_readlinerest(kantray_kanword,calc_Q)
+#        if calc_A == "":
+#            calc_A=LTsv_readlinerest(kantray_kanword,LTsv_kanare(calc_Q,"Kata2Hira"))
+#            calc_Q=LTsv_kanare(calc_Q,"Kata2Hira") if calc_A != "" else calc_Q
+#        if calc_A == "":
+#            calc_A=LTsv_readlinerest(kantray_kanword,LTsv_kanare(calc_Q,"Hira2Kata"))
+#            calc_Q=LTsv_kanare(calc_Q,"Kata2Hira") if calc_A != "" else calc_Q
+#        if calc_A == "":
+#            calc_K="算"
+#LTsv_glyph_worddicname,LTsv_glyph_zipdicname,LTsv_glyph_worddic,LTsv_glyph_zipdic="../kanword.tsv","../kanzip.tsv","",""
+    if calc_K == "算":
+        calc_A=LTsv_calc(calc_Q)
+    if calc_K != "":
+        calc_V="{0}{1}⇔{2}".format(calc_K,calc_Q,calc_A)
     LTsv_libc_printf(calc_V)
     return calc_V
 

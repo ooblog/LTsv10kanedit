@@ -5,13 +5,12 @@ import sys
 import os
 os.chdir(sys.path[0])
 sys.path.append("LTsv")
-import copy
 from LTsv_printf  import *
 from LTsv_file    import *
-from LTsv_time    import *
-from LTsv_calc    import *
+#from LTsv_time    import *
+#from LTsv_calc    import *
 #from LTsv_joy     import *
-from LTsv_kbd     import *
+#from LTsv_kbd     import *
 from LTsv_gui     import *
 from LTsv_glyph  import *
 
@@ -217,3 +216,8 @@ if len(LTsv_GUI) > 0:
     LTsv_window_main(kanedit_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")
+
+
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
