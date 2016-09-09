@@ -101,59 +101,10 @@ def kanedit_mouserelease(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mouserelease(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
 
 def kanedit_keypress(window_objvoid=None,window_objptr=None):
-    LTsv_setkbddata(20,0)
-    kanedit_getkbdnames,kanedit_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-#    keybind=LTsv_readlinerest(kanedit_keybind,kanedit_getkbdnames.rstrip('\t').replace('\t',' '))
-#    if len(keybind):
-#        pass
-#        kanedit_inputchar(keybind)
-#    else:
-#        pass
-#        if tinykbd_keepSandS == 0 and tinykbd_inputSandS in kanedit_getkbdnames:
-#            tinykbd_keepSandS=1
-#            for kbd_xy in range(tinykbd_irohamax):
-#                tinykbd_fontchar[kbd_xy]=LTsv_pickdatalabel(LTsv_readlinerest(tinykbd_char,tinykbd_fontchar[kbd_xy]),tinykbd_fontchar[tinykbd_SandS])
-#                tinykbd_fontchar[kbd_xy]=tinykbd_fontchar[kbd_xy][0:1]
-#        if tinykbd_keepNFER == 0 and tinykbd_inputNFER in kanedit_getkbdnames:
-#            tinykbd_keepNFER=1
-#            tinykbd_fontchar[tinykbd_KANA]=tinykbd_irohaalphaN[kanedit_tinykbd_selected(tinykbd_fontchar[tinykbd_KANA])]
-#            kanedit_tinykbd_select(tinykbd_fontchar[tinykbd_KANA])
-#        if tinykbd_keepXFER == 0 and tinykbd_inputXFER in kanedit_getkbdnames:
-#            tinykbd_keepXFER=1
-#            tinykbd_fontchar[tinykbd_KANA]=tinykbd_irohaalphaX[kanedit_tinykbd_selected(tinykbd_fontchar[tinykbd_KANA])]
-#            kanedit_tinykbd_select(tinykbd_fontchar[tinykbd_KANA])
-#        if tinykbd_keepKANA == 0 and tinykbd_inputKANA in kanedit_getkbdnames:
-#            tinykbd_keepKANA=1
-#            if tinykbd_fontchar[tinykbd_KANA] in tinykbd_irohaalphaN:
-#                tinykbd_fontchar[0:tinykbd_irohamax]=tinykbd_choiceN[0:tinykbd_irohamax]
-#            elif tinykbd_fontchar[tinykbd_KANA] in tinykbd_irohaalphaX:
-#                tinykbd_fontchar[0:tinykbd_irohamax]=tinykbd_choiceX[0:tinykbd_irohamax]
-#        for getkbdkanas in kanedit_getkbdkanas.split('\t'):
-#            if not tinykbd_keepKANA:
-#                if getkbdkanas in tinykbd_irohatype:
-#                    kanedit_inputcharNX(tinykbd_fontchar[tinykbd_KANA],tinykbd_irohatype.index(getkbdkanas))
-#kanedit_inputchar(inputchar)
-#                    kanedit_inputcharNX(tinykbd_fontchar[tinykbd_KANA],tinykbd_irohatype.index(getkbdkanas))
-#    kanedit_redraw()
+    LTsv_glyph_typepress(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
 
 def kanedit_keyrelease(window_objvoid=None,window_objptr=None):
-    pass
-#    global kanedit_getkbdnames,kanedit_getkbdkanas,kanedit_inputkey
-#    global tinykbd_keepSandS,tinykbd_keepNFER,tinykbd_keepXFER,tinykbd_keepKANA
-#    if kanedit_getkbdnames == tinykbd_inputSandS:
-#        kanedit_inputcharNX(tinykbd_fontchar[tinykbd_KANA],tinykbd_SandS)
-#    LTsv_setkbddata(20,0)
-#    kanedit_getkbdnames=LTsv_getkbdnames()
-#    if not tinykbd_inputSandS in kanedit_getkbdnames:
-#        tinykbd_keepSandS=0
-#        kanedit_tinykbd_select(tinykbd_fontchar[tinykbd_KANA])
-#    if not tinykbd_inputNFER in kanedit_getkbdnames:
-#        tinykbd_keepNFER=0
-#    if not tinykbd_inputXFER in kanedit_getkbdnames:
-#        tinykbd_keepXFER=0
-#    if not tinykbd_inputKANA in kanedit_getkbdnames:
-#        tinykbd_keepKANA=0
-#    kanedit_redraw()
+    LTsv_glyph_typerelease(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
 
 def kanedit_textload(filename):
     global kanedit_window
@@ -195,6 +146,7 @@ kanedit_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanedit_exit_configsave)
 LTsv_GUI=LTsv_guiinit()
 #kantray_max=0x2ffff if LTsv_GUI != "Tkinter" else 0xffff :「kanedit」non limit!
 if len(LTsv_GUI) > 0:
+    LTsv_kbdinit(LTsv_initmouse=True)
     LTsv_glyph_kbdinit(ltsvpath="LTsv/kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanedit_window=LTsv_window_new(widget_t="kanedit",event_b=kanedit_exit_configsave,widget_w=kanedit_W,widget_h=kanedit_H,event_z=kanedit_resize,event_k=kanedit_keypress,event_y=kanedit_keyrelease)
     kanedit_configload()

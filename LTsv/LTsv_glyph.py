@@ -47,7 +47,9 @@ LTsv_glyph_kbdF=6; LTsv_glyph_kbdH=LTsv_glyph_kbdF*4; LTsv_glyph_kbdW=LTsv_glyph
 LTsv_glyph_kbdG,LTsv_glyph_kbdC=LTsv_glyph_kbdF-1,LTsv_glyph_kbdF//2
 LTsv_glyph_fontX,LTsv_glyph_fontY,LTsv_glyph_fontG,LTsv_glyph_mouseX,LTsv_glyph_mouseY,LTsv_glyph_mouseC=[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None),[0]*(LTsv_glyph_None)
 LTsv_glyph_kbdchars=[""]*(LTsv_glyph_None); LTsv_glyph_kbdchars[LTsv_glyph_SandS],LTsv_glyph_kbdchars[LTsv_glyph_NFER],LTsv_glyph_kbdchars[LTsv_glyph_XFER],LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_dictype[0],"Ｎ","Ｘ",LTsv_glyph_irohatype[0]
-LTsv_glyph_kbdLCR=""
+LTsv_glyph_kbdtype=tuple(["活" if t < LTsv_glyph_SandS else "漫" for t in range(LTsv_glyph_None)])
+LTsv_glyph_kbdLCR=[""]
+LTsv_glyph_NXKS,LTsv_glyph_kbdSpace,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA=LTsv_glyph_None,"Space","NFER","XFER","KANA"
 LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#DAFFF0"
 LTsv_glyph_kbdsize=1
 LTsv_glyph_cursorsize=10
@@ -76,7 +78,6 @@ def LTsv_glyph_kbdinit(ltsvpath="kanglyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbdd
     global LTsv_glyph_kbdF,LTsv_glyph_kbdH,LTsv_glyph_kbdW,LTsv_glyph_kbdG,LTsv_glyph_kbdC
     global LTsv_glyph_fontX,LTsv_glyph_fontY,LTsv_glyph_fontG,LTsv_glyph_mouseX,LTsv_glyph_mouseY,LTsv_glyph_mouseC
     global LTsv_glyph_kbdchars
-    global LTsv_glyph_kbdLCR
     global LTsv_glyph_kbdTAG,LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor
     global LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue
     global LTsv_draw_color,LTsv_draw_bgcolor
@@ -174,6 +175,7 @@ def LTsv_global_evaltype():                             return LTsv_glyph_evalty
 def LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha
 def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
 def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
+def LTsv_global_kbdchars():                          return LTsv_glyph_kbdchars
 def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
 def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
 def LTsv_global_glyphkbdF():                           return LTsv_glyph_kbdF
@@ -201,13 +203,18 @@ def LTsv_glyphpath(glyphcode):
     LTsv_glyph_wide=LTsv_pickdatalabel(LTsv_glyph_kanline,"幅"); LTsv_glyph5x5_wide[glyphcode]=int(LTsv_glyph_wide) if len(LTsv_glyph_wide) else LTsv_PSfont_ZW
     LTsv_glyphcomic_wide[glyphcode],LTsv_glyphbrush_wide[glyphcode]=LTsv_glyph5x5_wide[glyphcode],LTsv_glyph5x5_wide[glyphcode]
     LTsv_glyph_path5x5=LTsv_pickdatalabel(LTsv_glyph_kanline,"活")
-    LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5)
     LTsv_glyph_pathcomic=LTsv_pickdatalabel(LTsv_glyph_kanline,"漫")
+    LTsv_glyph_pathbrush=LTsv_pickdatalabel(LTsv_glyph_kanline,"筆")
+    if len(LTsv_glyph_path5x5) > 0:
+        LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_path5x5)
+    elif len(LTsv_glyph_pathcomic) > 0:
+        LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
+    else:
+        LTsv_glyph5x5_coord[glyphcode],LTsv_glyphbrush_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathbrush)
     if len(LTsv_glyph_pathcomic) > 0:
         LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
     else:
         LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]
-    LTsv_glyph_pathbrush=LTsv_pickdatalabel(LTsv_glyph_kanline,"筆")
     if len(LTsv_glyph_pathbrush) > 0:
         LTsv_glyphbrush_coord[glyphcode],LTsv_glyphbrush_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathbrush)
     else:
@@ -552,6 +559,61 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     LTsv_glyph_kbdLCR=""
     return LTsv_kbdcursor
 
+def LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y):
+    global LTsv_glyph_NXKS,LTsv_glyph_kbdSpace,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA
+    LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
+    print(glyphtype_getkbdnames)
+    LTsv_glyph_NXKS= \
+     LTsv_glyph_SandS if LTsv_glyph_kbdSpace in glyphtype_getkbdnames else \
+     LTsv_glyph_NFER if LTsv_glyph_kbdNFER in glyphtype_getkbdnames else \
+     LTsv_glyph_XFER if LTsv_glyph_kbdXFER in glyphtype_getkbdnames else \
+     LTsv_glyph_KANA if LTsv_glyph_kbdKANA in glyphtype_getkbdnames else LTsv_glyph_None
+    if LTsv_glyph_NXKS == LTsv_glyph_NFER:
+        LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+        LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
+    if LTsv_glyph_NXKS == LTsv_glyph_XFER:
+        LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+        LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
+    if kbd_canvas in LTsv_glyph_tapcallback:
+        if LTsv_glyph_tapcallback[kbd_canvas] != None:
+            if "Tab" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "BS" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "DEL" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "Enter" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "Left" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("")
+            if "Down" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "Up" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "Right" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "Home" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "End" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "PgUp" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            if "PgDn" in glyphtype_getkbdnames: LTsv_glyph_tapcallback[kbd_canvas]("");
+            for kbdkanas in glyphtype_getkbdkanas.split('\t') if len(glyphtype_getkbdkanas) > 0 else []:
+                if kbdkanas in LTsv_glyph_irohatype:
+                    LTsv_kbdcursor=LTsv_glyph_irohatype.index(kbdkanas)
+                    if LTsv_glyph_NXKS == LTsv_glyph_None:
+                        LTsv_glyph_tapcallback[kbd_canvas](LTsv_glyph_kbdchars[LTsv_kbdcursor])
+                    elif LTsv_glyph_NXKS <= LTsv_glyph_SandS:
+                        LTsv_glyph_NXKS == LTsv_kbdcursor
+                    elif LTsv_glyph_NXKS == LTsv_glyph_NFER:
+                        pass
+                    elif LTsv_glyph_NXKS == LTsv_glyph_XFER:
+                        pass
+                    elif LTsv_glyph_NXKS == LTsv_glyph_KANA:
+                        pass
+
+def LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y):
+    global LTsv_glyph_NXKS,LTsv_glyph_kbdSpace,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA
+    LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
+    if LTsv_glyph_NXKS <= LTsv_glyph_SandS:
+        if not LTsv_glyph_kbdSpace in glyphtype_getkbdnames:
+            print("SandS",LTsv_glyph_NXKS,LTsv_glyph_SandS)
+    LTsv_glyph_NXKS= \
+     LTsv_glyph_SandS if LTsv_glyph_kbdSpace in glyphtype_getkbdnames else \
+     LTsv_glyph_NFER if LTsv_glyph_kbdNFER in glyphtype_getkbdnames else \
+     LTsv_glyph_XFER if LTsv_glyph_kbdXFER in glyphtype_getkbdnames else \
+     LTsv_glyph_KANA if LTsv_glyph_kbdKANA in glyphtype_getkbdnames else LTsv_glyph_None
+
 def LTsv_glyph_kbddelete(kbd_canvas):
     if LTsv_global_GUI() == "GTK2":
         pass
@@ -567,7 +629,7 @@ def LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_polygonfill(*tuple([kbd_x,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y,kbd_x+LTsv_glyph_kbdW,kbd_y+LTsv_glyph_kbdH,kbd_x,kbd_y+LTsv_glyph_kbdH]))
     LTsv_draw_color(LTsv_glyph_kbdfontcolor)
     for kbd_xy in range(LTsv_glyph_None):
-        LTsv_draw_glyphskbd(draw_t=LTsv_glyph_kbdchars[kbd_xy],draw_x=kbd_x+LTsv_glyph_fontX[kbd_xy],draw_y=kbd_y+LTsv_glyph_fontY[kbd_xy],draw_f=LTsv_glyph_fontG[kbd_xy],draw_g="活")
+        LTsv_draw_glyphskbd(draw_t=LTsv_glyph_kbdchars[kbd_xy],draw_x=kbd_x+LTsv_glyph_fontX[kbd_xy],draw_y=kbd_y+LTsv_glyph_fontY[kbd_xy],draw_f=LTsv_glyph_fontG[kbd_xy],draw_g=LTsv_glyph_kbdtype[kbd_xy])
 
 def LTsv_glyph_picklesave():
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -588,7 +650,7 @@ def LTsv_kbdentry_hjkl(entry_t="",entry_ch="",entry_cL=0,entry_cR=0,clip_c=None,
     entry_cL,entry_cR=min(max(0,entry_cL),len(entry_t)),min(max(0,entry_cR),len(entry_t))
     if entry_cR < entry_cL: entry_cL,entry_cR=entry_cR,entry_cL
     LTsv_hjkl_clippaste=""
-    if entry_ch in "":
+    if entry_ch in "":
         if entry_ch in "":
             LTsv_hjkl_clippaste="\t"
         if entry_ch in "":

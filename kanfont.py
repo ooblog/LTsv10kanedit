@@ -256,7 +256,8 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
           ''.format(kanfont_fontname[glyphtype] if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname[glyphtype],fontwidths),kanfont_fontname[glyphtype],fontwidths)
         )
         for kanline in kanchar:
-            kanpath=LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活")
+            kanpath=LTsv_pickdatalabel(kanline,glyphtype)
+            kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"筆")
             if len(kanpath):
                 kanwide=LTsv_pickdatalabel(kanline,"幅"); kanwide=kanwide if len(kanwide) else "1024"
                 if kanwide == fontwidths:
