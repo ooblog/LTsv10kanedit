@@ -254,6 +254,17 @@ def LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None):
             LTsv_join+='\t'+LTsv_label+":"+LTsv_data
     return LTsv_join.strip('\t')
 
+def LTsv_sievelabels(LTsv_rest,LTsv_labels=""):
+    return LTsv_sievetuplelabels(LTsv_rest,*LTsv_tsv2tuple(LTsv_labels))
+
+def LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels):
+    LTsv_line=""
+    for LTsv_label in LTsv_labels:
+        LTsv_data=LTsv_pickdatalabel(LTsv_rest,LTsv_label)
+        if len(LTsv_data) > 0:
+            LTsv_line+="{0}:{1}\t".format(LTsv_label,LTsv_data)
+    return LTsv_line.rstrip('\t')
+
 def LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None):
     LTsv_line="" if LTsv_default is None else LTsv_default
     if len(LTsv_line) > 0:
@@ -577,6 +588,8 @@ if __name__=="__main__":
     printlog=LTsv_libc_printf("LTsv_tuple2tsv(joytuple)↓\n{0}".format(joylabel),printlog)
     joylabel=LTsv_tuple2tsv(joylist)
     printlog=LTsv_libc_printf("LTsv_tuple2tsv(joylist)↓\n{0}".format(joylabel),printlog)
+    printlog=LTsv_libc_printf("LTsv_sievetuplelabels(joytsv,*tuple(['A','B','N','X','Y']))↓\n{0}".format(LTsv_sievetuplelabels(joytsv,*tuple(['A','B','N','X','Y']))),printlog)
+    printlog=LTsv_libc_printf("LTsv_sievelabels(joytsv,'A\\tB\\tN\\tX\\tY')↓\n{0}".format(LTsv_sievelabels(joytsv,'A\tB\tN\tX\tY')),printlog)
     print("")
     loadfile=LTsv_putpage(loadfile,"printlog",printlog)
     LTsv_savefile(txtpath,loadfile); LTsv_libc_printf("LTsv_savefile('{0}',loadfile)".format(txtpath))

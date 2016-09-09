@@ -273,6 +273,10 @@ version(branch) 20160718M003911
   文字列長0のデータLTsv_default(LTsv_data)であっても省略しなかった場合は横軸ラベル項目を追加もしくは上書き。
   上記のLTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。
 
+ LTsv_sievelabels(LTsv_rest,LTsv_labels=""); LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels);
+  rest1行(first縦軸ラベルを含まない)の横軸ラベルの順番を入れ替える。ついでにデータを含まないラベルを除去。
+  「LTsv_sievelabels()」にはtsvでラベル一覧LTsv_labelsを、「LTsv_sievetuplelabels()」はタプルでラベル一覧LTsv_labelsを渡す。
+
  LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)
   LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を追加する。複数行挿入も可能。普通にテキストの行挿入。
   LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。
@@ -328,9 +332,11 @@ version(branch) 20160718M003911
 
  LTsv_unziplabelsdata(LTsv_line,LTsv_labels)
   1行のラベル有りLTSV「label:data	label:data	…」からラベル(tsv)が存在するデータだけを取り出してtsv「data	data	…」に。
+  LTsv_labelsはtsv形式。
 
  LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)
   1行のラベル有りLTSV「label:data	label:data	…」からラベル(可変長引数)が存在するデータだけを取り出してtsv「data	data	…」に。
+  LTsv_labelsはpythonのリスト形式。
 
  LTsv_tuple2tsv(LTsv_tuple)
   PythonのタプルやリストをLTSVに。
@@ -1320,27 +1326,36 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   ほぼ「kanfont」用。メモリ上の単漢字辞書のフォントグリフを更新する。
   draw_tにテキスト1文字分、glyphnoteのフォントグリフ座標リストは「LTsv_glyph_getnote()」で取得できるような内容、draw_gでフォントの種類。
 
+ LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗"):
+  メモリ上の単漢字辞書を更新する。
+
  LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
   漢直キーボードのどのキーの上にマウスカーソルがあるか調べる。
   kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
   キーボードの上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。
 
  LTsv_glyph_kbdselect(choice):
-  漢直キーボードの表示鍵盤を変更する。鍵盤名の一覧は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」あたりを参考。
+  漢直キーボードの表示鍵盤を鍵盤名で変更する。鍵盤名の一覧は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」あたりを参考。
 
  LTsv_glyph_choiceNX(choice):
   漢直キーボードの鍵盤名から鍵盤番号的な数値に変換。
+
+ LTsv_glyph_kbdfind(find_t):
+  漢直キーボードの表示鍵盤を盤面上の文字を検索して変更する。
 
  LTsv_glyph_tapcallback_shell(kbd_canvas,callback)
   漢直キーボードの文字入力を受けとる関数の指定。
   kbd_canvasでキャンバス、callbackで呼び出す関数。呼び出される関数は文字列引数を用意する。
 
  LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y);
-  「canvas」の「mousepress」「mousemotion」「mouserelease」系の関数にそれぞれ配置する事で、「canvas」の任意の位置に漢直キーボードを出現。
+  「canvas」の「event_p=*_mousepress」「event_m=*_mousemotion」「event_r=*_mouserelease」系の関数内にそれぞれ配置する事で、「canvas」の任意の位置に漢直キーボードを出現。
   kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
   キーボードの上にマウスが無い場合は「LTsv_glyph_kbdcursor()」と同様に「LTsv_global_kbdcursorNone()」を返す。「debug_mousepress()」も参考。も参考。
   キャンバス描画のタイミング調整や「LTsv_draw_queue()」などのタイミングは「LTsv_kbdentry_new()」も参考。
   漢直キーボードのマウス操作は「１-8b．漢直キーボードの操作方法(マウス)」を参考。
+
+ LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y);
+  「windows」の「event_k=*_keypress」「event_y=*_keyrelease」系の関数内にそれぞれ配置する事で、漢直キーボードへの物理キーボードからの入力受付。
 
  LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
   漢直キーボードの消去。「Tkinter」では描画したオブジェクトは消す必要があるので注意。

@@ -430,6 +430,7 @@ def LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗"):
     if LTsv_pickdic(LTsv_glyph_kandic,glyphcode,draw_g) != kanpath:
         LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
         LTsv_glyph_kanline=LTsv_setdatalabel(LTsv_glyph_kanline,draw_g,kanpath)
+        LTsv_glyph_kanline=LTsv_sievetuplelabels(LTsv_glyph_kanline,*tuple(LTsv_glyph_dictype))
         LTsv_glyph_kandic=LTsv_pushlinerest(LTsv_glyph_kandic,glyphcode,LTsv_glyph_kanline)
 
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
