@@ -147,7 +147,7 @@ LTsv_GUI=LTsv_guiinit()
 #kantray_max=0x2ffff if LTsv_GUI != "Tkinter" else 0xffff :「kanedit」non limit!
 if len(LTsv_GUI) > 0:
     LTsv_kbdinit(LTsv_initmouse=True)
-    LTsv_glyph_kbdinit(ltsvpath="LTsv/kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
+    LTsv_glyph_kbdinit(ltsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanedit_window=LTsv_window_new(widget_t="kanedit",event_b=kanedit_exit_configsave,widget_w=kanedit_W,widget_h=kanedit_H,event_z=kanedit_resize,event_k=kanedit_keypress,event_y=kanedit_keyrelease)
     kanedit_configload()
     LTsv_window_resize(kanedit_window,kanedit_W,kanedit_H)
