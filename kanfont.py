@@ -258,8 +258,6 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
           ''.format(kanfont_fontname[glyphtype] if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname[glyphtype],fontwidths),kanfont_fontname[glyphtype],fontwidths)
         )
         for kanline in kanchar:
-#            kanpath=LTsv_pickdatalabel(kanline,glyphtype)
-#            kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"筆")
             for typeswap in kanfont_glyphtypeswap[glyphtype]:
                 kanpath=LTsv_pickdatalabel(kanline,typeswap); kanpath=kanpath if not "[" in kanpath else LTsv_glyphSVG5x(kanpath)
                 if len(kanpath): break;
@@ -292,7 +290,7 @@ def kanfont_configload():
     global kanfont_fontname,kanfont_glyphtype
     kanfont_ltsv=LTsv_loadfile("kanfont.tsv")
     kanfont_config=LTsv_getpage(kanfont_ltsv,"kanfont")
-    kanfont_seek=LTsv_readlinerest(kanfont_config,"seek",kanfont_seek)[:1]
+    kanfont_seek=LTsv_readlinerest(kanfont_config,"seek",kanfont_seek); kanfont_seek=kanfont_seek[:1] if len(kanfont_seek) else "ぱ"
     kanfont_fontgrid=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"grid",str(kanfont_fontgrid))),10),100)
     kanfont_gridinner=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"inner",str(kanfont_gridinner))),0),1)
     kanfont_lineseg=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"lineseg",str(kanfont_lineseg))),0),1)

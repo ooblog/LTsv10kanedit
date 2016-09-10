@@ -229,7 +229,7 @@ def LTsv_glyphpath(glyphcode):
     elif len(LTsv_glyph_pathcomic) > 0:
         LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
     else:
-        LTsv_glyph5x5_coord[glyphcode],LTsv_glyphbrush_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathbrush)
+        LTsv_glyph5x5_coord[glyphcode],LTsv_glyph5x5_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathbrush)
     if len(LTsv_glyph_pathcomic) > 0:
         LTsv_glyphcomic_coord[glyphcode],LTsv_glyphcomic_clock[glyphcode]=LTsv_glyphSVG(LTsv_glyph_pathcomic)
     else:
