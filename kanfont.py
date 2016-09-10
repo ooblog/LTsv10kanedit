@@ -235,11 +235,13 @@ def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
     LTsv_widget_settext(kanfont_svg_button,"make:{0}".format(kanfont_svgname))
     LTsv_window_after(kanfont_window,event_b=kanfont_svgmake,event_i="kanfont_svgmake",event_w=10)
 
+kanfont_glyphtypeswap={"活":"活漫筆","漫":"漫活筆","筆":"筆活漫"}
 def kanfont_svgmake(window_objvoid=None,window_objptr=None):
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     global kanfont_fontname,kanfont_glyphtype
     kanchar=LTsv_global_kandic().rstrip('\n').split('\n')
     glyphtype=kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]
+    if not glyphtype in kanfont_glyphtypeswap: glyphtype="活"
     kanfont_svgtext=(
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<svg\n'
@@ -256,8 +258,11 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
           ''.format(kanfont_fontname[glyphtype] if fontwidths == str(PSfont_ZW) else "{0}_w{1}".format(kanfont_fontname[glyphtype],fontwidths),kanfont_fontname[glyphtype],fontwidths)
         )
         for kanline in kanchar:
-            kanpath=LTsv_pickdatalabel(kanline,glyphtype)
-            kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"筆")
+#            kanpath=LTsv_pickdatalabel(kanline,glyphtype)
+#            kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"活"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"漫"); kanpath=kanpath if len(kanpath) else LTsv_pickdatalabel(kanline,"筆")
+            for typeswap in kanfont_glyphtypeswap[glyphtype]:
+                kanpath=LTsv_pickdatalabel(kanline,typeswap); kanpath=kanpath if not "[" in kanpath else LTsv_glyphSVG5x(kanpath)
+                if len(kanpath): break;
             if len(kanpath):
                 kanwide=LTsv_pickdatalabel(kanline,"幅"); kanwide=kanwide if len(kanwide) else "1024"
                 if kanwide == fontwidths:

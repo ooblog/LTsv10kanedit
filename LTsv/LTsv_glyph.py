@@ -181,8 +181,27 @@ def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
 def LTsv_global_glyphkbdF():                           return LTsv_glyph_kbdF
 def LTsv_global_kbdcursorNone():                           return LTsv_glyph_None
 
+LTsv_glyphSVG5xdic={"M ":"[","z ":"]",
+ "0,1000 ":"0","200,1000 ":"1","400,1000 ":"2","600,1000 ":"3","800,1000 ":"4","1000,1000 ":"5",
+ "0,800 ":"6","200,800 ":"7","400,800 ":"8","600,800 ":"9","800,800 ":"a","1000,800 ":"b",
+ "0,600 ":"c","200,600 ":"d","400,600 ":"e","600,600 ":"f","800,600 ":"g","1000,600 ":"h",
+ "0,400 ":"i","200,400 ":"j","400,400 ":"k","600,400 ":"l","800,400 ":"m","1000,400 ":"n",
+ "0,200 ":"o","200,200 ":"p","400,200 ":"q","600,200 ":"r","800,200 ":"s","1000,200 ":"t",
+ "0,0 ":"u","200,0 ":"v","400,0 ":"w","600,0 ":"x","800,0 ":"y","1000,0 ":"z",
+}
+LTsv_glyphSVG5xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG5xdic.items()])
+def LTsv_glyphSVG5x(LTsv_glyph_path):
+    LTsv_glyph_path5x=""
+    for path5x in LTsv_glyph_path:
+        if path5x in LTsv_glyphSVG5xdicMz:
+            LTsv_glyph_path5x+=path5x.replace(path5x,LTsv_glyphSVG5xdicMz[path5x])
+        else:
+            LTsv_glyph_path5x=""; break;
+    return LTsv_glyph_path5x.rstrip(' ')
+
 def LTsv_glyphSVG(LTsv_glyph_path):
-    LTsv_glyph_pathZ=LTsv_glyph_path.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
+    LTsv_glyph_pathZ=LTsv_glyph_path if not "[" in LTsv_glyph_path else LTsv_glyphSVG5x(LTsv_glyph_path)
+    LTsv_glyph_pathZ=LTsv_glyph_pathZ.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
         LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
@@ -409,11 +428,25 @@ def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
     LTsv_glyph_kanpath=""
-    for glyphpoints in glyphnote:
-        glyphpointlist=""
-        for draw_xy_count in range(len(glyphpoints)//2):
-            glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-        LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
+    if draw_g == "活":
+        LTsv_glyph_Mzpath=True
+        for glyphpoints in glyphnote:
+            glyphpointlist=""
+            for draw_xy_count in range(len(glyphpoints)//2):
+                glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+                if glyphpointxy in LTsv_glyphSVG5xdic:
+                    glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
+                else:
+                    LTsv_glyph_kanpath=""; break;
+            else:
+                LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+            if LTsv_glyph_kanpath == "": break;
+    if len(LTsv_glyph_kanpath) == 0:
+        for glyphpoints in glyphnote:
+            glyphpointlist=""
+            for draw_xy_count in range(len(glyphpoints)//2):
+                glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+            LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
     LTsv_glyph_kanpath=LTsv_glyph_kanpath.rstrip(' ')
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
     if draw_g == "活":
@@ -465,11 +498,9 @@ def LTsv_glyph_kbdfind(find_t):
     for exist_index,exist_char in enumerate(find_t):
         for iroha_char in LTsv_glyph_irohaalpha:
             if exist_char in LTsv_glyph_kanmapN[iroha_char]:
-#                print(exist_char,iroha_char,LTsv_glyph_irohaalpha.index(iroha_char),LTsv_glyph_irohaalphaN[LTsv_glyph_irohaalpha.index(iroha_char)])
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_irohaalpha.index(iroha_char)])
                 find_existpos=exist_index
             if exist_char in LTsv_glyph_kanmapX[iroha_char]:
-#                print(exist_char,iroha_char,LTsv_glyph_irohaalpha.index(iroha_char),LTsv_glyph_irohaalphaX[LTsv_glyph_irohaalpha.index(iroha_char)])
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_irohaalpha.index(iroha_char)])
                 find_existpos=exist_index
             if find_existpos >= 0: break;
@@ -563,7 +594,7 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
 def LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_NXKS,LTsv_glyph_kbdSpace,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-    print(glyphtype_getkbdnames)
+#    print(glyphtype_getkbdnames)
     LTsv_glyph_NXKS= \
      LTsv_glyph_SandS if LTsv_glyph_kbdSpace in glyphtype_getkbdnames else \
      LTsv_glyph_NFER if LTsv_glyph_kbdNFER in glyphtype_getkbdnames else \
@@ -608,7 +639,8 @@ def LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y):
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
     if LTsv_glyph_NXKS <= LTsv_glyph_SandS:
         if not LTsv_glyph_kbdSpace in glyphtype_getkbdnames:
-            print("SandS",LTsv_glyph_NXKS,LTsv_glyph_SandS)
+            pass
+#            print("SandS",LTsv_glyph_NXKS,LTsv_glyph_SandS)
     LTsv_glyph_NXKS= \
      LTsv_glyph_SandS if LTsv_glyph_kbdSpace in glyphtype_getkbdnames else \
      LTsv_glyph_NFER if LTsv_glyph_kbdNFER in glyphtype_getkbdnames else \
@@ -895,7 +927,6 @@ def LTsv_kbdentry_evaltext(calc_value=""):
         calc_A=LTsv_calc(calc_Q)
     if calc_K != "":
         calc_V="{0}{1}⇔{2}".format(calc_K,calc_Q,calc_A)
-    LTsv_libc_printf(calc_V)
     return calc_V
 
 def debug_mousepress(window_objvoid=None,window_objptr=None):
