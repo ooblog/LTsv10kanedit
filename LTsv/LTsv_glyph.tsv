@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160911U081514
+modify	20160912M060542
 |L:Tsv]
 
 [kanglyph|
@@ -27,8 +27,8 @@ eval_slash	￥
 eval_dakuon	Ｐ
 eval_seion	Ｈ
 eval_now		年-月-日(週曜)時:分:秒
-eval_overhour	30
 eval_branch	@000y@0m@0dm@wdec@0h@0n@0s
+eval_overhour	30
 eval_worddicname	../kanword.tsv
 eval_zipdicname		../kanzip.tsv
 kbdTAG		kanglyphkbd

@@ -38,7 +38,7 @@ def kanedit_editdraw(edit_x,edit_y):
     textline_y=edit_y
     for kanedit_textline in kanedit_textvalue.split('\n'):
         kanedit_textline+='\n'
-        LTsv_draw_glyphsfill(draw_t=kanedit_textline,draw_x=edit_x,draw_y=textline_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+        LTsv_draw_glyphsfill(draw_t=kanedit_textline,draw_x=edit_x,draw_y=textline_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False)
         textline_y+=kanedit_fontsize+1
         if textline_y > kanedit_H:
             break
@@ -49,7 +49,7 @@ def kanedit_memodraw(memo_x,memo_y):
     LTsv_draw_bgcolor(kanmemo_bgcolor); LTsv_draw_color(kanmemo_bgcolor); 
     LTsv_draw_polygonfill(memo_x,memo_y,kanedit_W-LTsv_global_glyphkbdW(),memo_y,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H,memo_x,kanedit_H)
     LTsv_draw_color(kanmemo_fontcolor)
-#    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+#    LTsv_draw_glyphsfill(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_f=kanedit_fontsize,draw_w=1,draw_h=1,draw_g="漫",draw_LF=False,draw_HT=False)
     LTsv_draw_color(kanmemo_fontcolor); LTsv_draw_glyphsentry(draw_t=kanmemo_textvalue,draw_x=memo_x,draw_y=memo_y,draw_cL=kanmemo_textleft,draw_cR=kanmemo_textright,draw_f=kanedit_fontsize,draw_g="漫")
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):

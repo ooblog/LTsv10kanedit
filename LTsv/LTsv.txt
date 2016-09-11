@@ -22,6 +22,7 @@ version(branch) 20160718M003911
  １-7a．[LTsv_gui.py]の関数一覧
  １-8a．[LTsv_glyph.py]の関数一覧
  １-8b．漢直キーボードの操作方法(マウス)
+ １-8c．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。
  ２-0． 「L:Tsv」を用いるアプリケーションの作り方。
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
@@ -1283,11 +1284,11 @@ version(branch) 20160718M003911
  LTsv_glyphfont_5x5(glyphcode); LTsv_glyphfont_comic(glyphcode); LTsv_glyphfont_brush(glyphcode); LTsv_glyphfont_shell(draw_g="活");
   フォントグリフの「活」「漫」「筆」のデータをメモリから抽出。
 
- LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
+ LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(ワイヤフレーム)。
   draw_tにテキスト文字列、draw_x,draw_yに表示座標、draw_fにフォントサイズ。draw_gでフォントの種類。
 
- LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False)
+ LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。「LTsv_draw_glyphs()」と挙動はほぼ同じ。
   事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
@@ -1295,7 +1296,7 @@ version(branch) 20160718M003911
   「LTsv_draw_glyphsfill()」を１文字分。改行処理などを省いた高速描画用。漢直キーボードなど等幅表示想定。
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
- LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False)
+ LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False)
   「canvas」にフォントグリフ(ポリゴン)の描画。
   テキスト選択カーソルを表現するために「LTsv_draw_glyphs()」「LTsv_draw_glyphsfill()」的な描画を使い分ける予定。
 
@@ -1391,37 +1392,8 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_kbdentry_evaltext(calc_value="")
   文字列から漢直キーボードの検索をしたり電卓機能などを使う。
 
- LTsv9_glyphdicload(dicname="kanchar.tsv"):
-  単漢字辞書ファイル「kanchar.tsv」を読み込む。
-  ファイルが見つからない場合「LTsv_keyboard_dic()」から読み込む。
-
- LTsv9_glyphOBJpickle(filename="kanpickle.bin"):
-  フォント座標(パス回転方向とフォント幅含む)をpickle化してファイルに保存。
-
- LTsv9_glyphOBJunpickle(filename="kanpickle.bin"):
-  pickle化してファイルに保存したフォント座標(パス回転方向とフォント幅含む)を読み込む。
-
- LTsv9_glyphdicread(dictext):
-  単漢字辞書のテキストデータを読み込む。
-
- LTsv9_glyphpath(glyphcode):
-  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。
-  通常は後述の「kanfont_drawTkinter_glyph()」から自動呼び出し。
-
- LTsv9_glyphpath_outer(glyphcode):
-  「kanchar.tsv」の「活」項目のフォントパスの座標変換を指示。「GTK2」の場合１ドット未満の図形が消えるのでフォントを太らせる。
-  正確には「kanfont」で作成する「kantray5x5」フォント座標の末尾が98の座標を繰り上げる。
-  通常は後述の「kanfont_drawGTK_glyph()」から自動呼び出し。
-
- LTsv_drawGTK_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyph(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kan5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(ワイヤフレーム)。
-  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
-
- LTsv9_drawGTK_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False); LTsv9_drawTkinter_glyphfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_LF=False,draw_HT=False,draw_SP=False):
-  フォント[kan5x5comic.ttf]を用意しなくても「kanchar.tsv」から直接グリフを取得して「canvas」に描画(塗り潰し)。
-  反時計周りのパスは「LTsv_drawGTK_delete()」「LTsv_drawTkinter_delete()」で初期化に使う色。初期値は「white」。
-  draw_tに文字列。左上座標はdraw_x,draw_y。draw_fでフォントサイズ。draw_wで文字の隙間。draw_hで行間。
-  draw_LFで改行を「&#61649;(0xf0d1)」で可視化、draw_HTでタブを「&#61632;(0xf0c0)」を用いて可視化、draw_SPでスペースを「&#61644;(0xf080)」を用いて可視化。
+ LTsv_kbdentry_evaltext(calc_value=""):
+  ほぼ「kanedit」用。「１-8c．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。」を参考。
 
  debug_mousepress(window_objvoid=None,window_objptr=None)
   単体風テスト専用。リバーシの盤面をクリックした時の動作。
@@ -1494,6 +1466,89 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    ;+          エンターキー。Enter
    ,<          バックスペース。BS
    .>          カーソルから右の文字デリート。DEL
+
+
+１-8c．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。
+
+ 「LTsv_kbdentry_evaltext()」の引数内容がコマンドか単語か数式かで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。
+
+  １文字のみ入力                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。
+                                     「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」「_⇔」(越)→「照_⇔&#95;」
+  先頭文字列が「&#」                 数値文字参照を文字列にデコード。
+                                     「&#21654;&#21937;&#40634;&#40621;」→「照&#21654;&#21937;&#40634;&#40621;⇔咖喱麺麭」
+  先頭文字が「照」                   文字列を数値文字参照にエンコード。数値文字参照を文字列へのデコードも可能。
+                                     「照咖喱麺麭⇔&#21654;&#21937;&#40634;&#40621;」
+  先頭文字が「〒」                   郵便番号辞書「kantzip.tsv」から住所を表示。
+                                     「〒1638001⇔東京都新宿区西新宿２丁目８－１東京都庁」
+  先頭文字が「平」                   カタカナをひらがな(平仮名)に変換。
+                                     「平ヴァイオリン⇔ゔぁいおりん」
+  先頭文字が「片」                   ひらがなをカタカナ(片仮名)に変換。
+                                     「片ゔぁいおりん⇔ヴァイオリン」
+  先頭文字が「半」                   全角アルファベットとカタカナをに半角に変換。
+                                     「半ヴァイオリン⇔ｳﾞｧｲｵﾘﾝ」。
+  先頭文字が「全」                   半角アルファベットとカタカナをに全角に変換(曖昧な指示)。初期設定では「￥」。
+                                     「全ｳﾞｧｲｵﾘﾝ⇔ヴァイオリン」。
+  先頭文字が「￥」                   半角アルファベットとカタカナをに全角に変換(バックスラッシュを全角円記号に)。
+                                     「￥バックスラッシュ\円記号⇔バックスラッシュ￥円記号」。
+  先頭文字が「＼」                   半角アルファベットとカタカナをに全角に変換(バックスラッシュを全角バックスラッシュに)。
+                                     「＼バックスラッシュ\円記号⇔バックスラッシュ＼円記号」。
+  先頭文字が「清」                   濁音を清音に変換(曖昧な指示)。初期設定では「Ｈ」。
+                                     「清ヴァイオリン⇔ウァイオリン」。
+  先頭文字が「Ｈ」                   濁音を清音に変換("ばびぶべぼ"も"ぱぴぷぺぽ"も"はひふへほ"に)。
+                                     「Ｈカエルぴょこぴょこみぴょこぴょこ、ぼうずがびょうぶにえをかいた⇔カエルひょこひょこみひょこひょこ、ほうすかひょうふにえをかいた」。
+  先頭文字が「Ｍ」                   濁音を清音に変換("ぱぴぷぺぽ"は"まみむめも"に)。
+                                     「Ｍカエルぴょこぴょこみぴょこぴょこ、ぼうずがびょうぶにえをかいた⇔カエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた」。
+  先頭文字が「濁」                   清音を濁音に変換(曖昧な指示)。初期設定では「Ｐ」。
+                                     「濁ウァイオリン⇔ヴァイオリン」。
+  先頭文字が「Ｂ」                   清音を濁音に変換("はひふへほ"は"ばびぶべぼ"に)。
+                                     「Ｂカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルみょごみょごみみょごみょご、ぼゔずがびょゔぶにえをがいだ」。
+  先頭文字が「Ｐ」                   清音を濁音に変換("まみむめも"も"ぱぴぷぺぽ"に)。
+                                     「Ｐカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルぴょごぴょごぴぴょごぴょご、ぼゔずがびょゔぶにえをがいだ」。
+  先頭文字が「大」                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を大文字に変換。
+                                     「大αAndΩ⇔ΑANDΩ」
+  先頭文字が「小」                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を小文字に変換。
+                                     「小ΑAndΩ⇔αandω」
+  先頭文字が「今」                   日時などを取得。「平,干,年,月,日,週,曜,時,分,秒,今,版,印」の他に「日時フォーマット」で詳細な指定も可能。
+                                     「今年-月-日(週曜)時:分:秒」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:15」
+                                     「今今」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:48」。「eval_now」を返す。
+                                     「今版」→「今20160716S001619⇔20160716S001619」。[LTsv_time.py]の「LTsv_time_ver()」を返す。
+                                     「今枝」→「今@000y@0m@0dm@wdec@0h@0n@0s⇔20160716S001619」。「eval_branch」を返す。
+                                     日時の詳しい使い方は「１-3b．日時フォーマットの概要」を参考。
+  先頭文字が「⑧」                   UTF-8文字列を256進数としての8点点字(UTF-8点字)に変換。一般的な点字ではないので注意。
+                                     「⑧点字に類似したもの⇔⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮」。
+  先頭文字が「⓪」                   UTF-8文字列を256進数としての8点点字(UTF-8点字)をUTF-8の文字列に復号。
+                                     「⓪⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮⇔点字に類似したもの」。
+  先頭文字が「⑯」                   10進数を16進数に変換。
+                                     「⑯65535⇔0xffff」。
+  先頭文字が「⑩」先頭文字列が「0x」  16進数を10進数に変換。
+                                     「⑩FFFF⇔65535」「0xFFFF⇔65535」。
+  先頭文字が「英」「名」「音」「訓」「送」「異」「俗」「熙」「簡」「繁」「越」「地」「顔」「鍵」「代」「逆」「非」
+                                    単漢字辞書[kanchar.tsv]から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。先述のキーボード漢直操作「[KANA]」項目を参考。
+  先頭文字が「難」                   漢字の難読レベル(小学校N学年・常用漢字・人名・地名・など)を設定予定。難読の定義が不明瞭なので放置中。
+  先頭文字が「活」「漫」「筆」      「kant5x5comic」のグリフデータ。「kanfont」で編集可能。「活」では独自形式で圧縮される。
+  先頭文字が「幅」                   単漢字辞書[kanchar.tsv]上のデータの「kan5x5comic」のフォントの幅を表示。全角(1024)の場合省略できる。半角(624)と麻雀牌(824)しか種類はないはず。
+                                     「⑩FFFF⇔65535」「0xFFFF⇔65535」。
+  先頭文字が「探」                   文字列から[kanmap.tsv]に含まれる漢字の探索。一種の漢字逆引き。
+                                    [kanmap.tsv]に含まれない漢字であっても[kanchar.tsv]の「異」「簡」「繁」「代」項目、つまり異体字なども検索を試みる。
+                                     「探袮穃粫𡚴岾軅垉椦蟐靹駲閠墸壥⇔𡚴」
+                                     「探」コマンドは「異→簡→繁→代」の順番で探すので「探铺」した時に「鋪」ではなく「舗」が検索されてしまいます。
+  先頭文字が「汎」その他数式以外      汎用辞書[kanword.tsv]から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。
+                                     「汎ヴァイオリン⇔提琴」「汎フカセツフカセツテン⇔不可説不可説転」
+  「3927/1250」といった数式          数式とみなして分数計算。
+                                     「3927/1250⇔3927|1250」
+  「3927|1250」といった分数のみ      分数を少数で表示。
+                                     「3927|1250⇔3.1416」
+                                    電卓の詳しい使い方は[LTsv.txt]の「１-4b．電卓フォーマットの概要」を参考。
+
+  [kanglyph|                         「LTsv_glyph.py」の設定。
+   eval_slash                        半角スラッシュ「/」を全角に変換(「全」だと曖昧な指示)する時、全角スラッシュ「／」と全角円記号「￥」のどっちに変換するか指定。初期値は「￥」。
+   eval_dakuon                       清音を濁音に(「濁」だと曖昧な指示)する時、ハ行は"ばびぶべぼ"のみを扱う「Ｂ」か"まみむめも"から"ぱぴぷぺぽ"に変換する「Ｐ」を指定。初期値は「Ｐ」。
+   eval_seion                        濁音を清音に(「清」だと曖昧な指示)する時、"ばびぶべぼ"も"ぱぴぷぺぽ"も"はひふへほ"に変換する「Ｈ」か"ぱぴぷぺぽ"は"まみむめも"に変換する「Ｍ」を指定。初期値は「Ｈ」。
+   eval_now                          入力欄で「今今」と入力した時に表示する現在時刻。初期設定は「年-月-日(週曜)時:分:秒」。
+   eval_branch                       入力欄で「今枝」と入力した時に表示する現在時刻。初期設定は「@000y@0m@0dm@wdec@0h@0n@0s」。
+   eval_overhour                     日時フォーマットの徹夜時刻の指定。24〜48のいずれか。
+   eval_worddicname                  汎用辞書ファイルの指定(無くても動作)。初期設定は「../kanword.tsv」。
+   eval_zipdicname                   郵便番号辞書ファイルの指定(無くても動作)。初期設定は「../kanzip.tsv」。
 
 
 ２-0． 「L:Tsv」を用いるアプリケーションの作り方。

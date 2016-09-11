@@ -121,8 +121,8 @@ def LTsv_glyph_kbdinit(ltsvpath="./LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_
     LTsv_glyph_evaldakuon=LTsv_readlinerest(LTsv_glyph_config,"eval_dakuon",LTsv_glyph_evaldakuon)
     LTsv_glyph_evalseion=LTsv_readlinerest(LTsv_glyph_config,"eval_seion",LTsv_glyph_evalseion)
     LTsv_glyph_now=LTsv_readlinerest(LTsv_glyph_config,"eval_now",LTsv_glyph_now)
-    LTsv_glyph_overhour=min(max(LTsv_intstr0x(LTsv_readlinerest(LTsv_glyph_config,"font_size",str(LTsv_glyph_overhour))),24),48)
     LTsv_glyph_branch=LTsv_readlinerest(LTsv_glyph_config,"eval_branch",LTsv_glyph_branch)
+    LTsv_glyph_overhour=min(max(LTsv_intstr0x(LTsv_readlinerest(LTsv_glyph_config,"eval_overhour",str(LTsv_glyph_overhour))),24),48)
     LTsv_glyph_worddicname=LTsv_readlinerest(LTsv_glyph_config,"eval_worddicname",LTsv_glyph_worddicname)
     LTsv_glyph_zipdicname=LTsv_readlinerest(LTsv_glyph_config,"eval_zipdicname",LTsv_glyph_zipdicname)
     LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
@@ -259,11 +259,10 @@ def LTsv_glyphfont_shell(draw_g="活"):
     if draw_g == "漫": return LTsv_glyphfont_comic
     if draw_g == "筆": return LTsv_glyphfont_brush
 
-def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False):
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
-    draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     for glyphcode in draw_t:
         if glyphcode in "\n\t":
@@ -278,11 +277,10 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
             LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
 
-def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False):
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
-    draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     for glyphcode in draw_t:
@@ -311,11 +309,10 @@ def LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
     LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
 
-def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False,draw_SP=False):
+def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False):
     draw_xf,draw_yf=draw_x,draw_y
     draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
     draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
-    draw_tf=draw_tf if draw_SP == False else draw_tf.replace(' ',"")
     canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     for draw_t_pos,glyphcode in enumerate(draw_t):

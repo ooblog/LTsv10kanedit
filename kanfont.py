@@ -195,12 +195,18 @@ def kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None):
 def kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None):
     global kanfont_gridview
     global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
+    glyphcode=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+    glyphnote=LTsv_glyph_pointsrotation(LTsv_glyph_getnote(glyphcode,draw_g=LTsv_global_glyphtype()[kanfont_gothic]))
+    LTsv_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_gridview=True
     kanfont_catchP,kanfont_catchQ,kanfont_catchZ=-1,-1,-1
     kanfont_glyph_draw()
 
 def kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None):
     global kanfont_gridview
+    glyphcode=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+    glyphnote=LTsv_glyph_pointsrotation(LTsv_glyph_getnote(glyphcode,draw_g=LTsv_global_glyphtype()[kanfont_gothic]))
+    LTsv_glyph_points2path(draw_t=glyphcode,glyphnote=glyphnote,draw_g=LTsv_global_glyphtype()[kanfont_gothic])
     kanfont_gridview=False
     kanfont_code(LTsv_widget_getnumber(kanfont_path_scale))
 
