@@ -855,6 +855,9 @@ version(branch) 20160718M003911
   「canvas」上のマウスの座標を取得。「canvas」の解説は「LTsv_canvas_new()」を参照。
   「canvas」の外に出ると正しい値は取得できなくなるので「LTsv_canvas_leave()」系の対策は必須。
 
+ LTsv_global_canvasmotionZ()
+  マウスはそもそもどの「canvas」上に存在しているのかを取得。
+
  LTsv_global_canvascolor(); LTsv_global_canvasbgcolor();
   「canvas」上の色を取得。
 

@@ -60,7 +60,7 @@ LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_d
 LTsv_draw_squares,LTsv_draw_squaresfill=LTsv_draw_squares_shell(LTsv_GUI),LTsv_draw_squaresfill_shell(LTsv_GUI)
 LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
 LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
-def LTsv_glyph_kbdinit(ltsvpath="./LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
+def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None):
     global LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     global LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide
@@ -86,7 +86,7 @@ def LTsv_glyph_kbdinit(ltsvpath="./LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_
     global LTsv_draw_squares,LTsv_draw_squaresfill
     global LTsv_draw_circles,LTsv_draw_circlesfill
     global LTsv_draw_points
-    LTsv_glyph_ltsvpath=ltsvpath
+    LTsv_glyph_ltsvpath=LTsv_tsvpath
     LTsv_glyph_ltsv=LTsv_loadfile(LTsv_glyph_ltsvpath)
     LTsv_glyph_ltsvdir=os.path.normpath(os.path.dirname(LTsv_glyph_ltsvpath))+"/"
     LTsv_glyph_config=LTsv_getpage(LTsv_glyph_ltsv,"kanglyph")
@@ -1110,7 +1110,8 @@ if __name__=="__main__":
     LTsv_GUI=LTsv_guiinit()
     if len(LTsv_GUI) > 0:
         import random
-        LTsv_glyph_kbdinit(ltsvpath="./LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
+        LTsv_kbdinit(LTsv_tsvpath="./LTsv_kbd.tsv",LTsv_initmouse=True)
+        LTsv_glyph_kbdinit(LTsv_tsvpath="./LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
         debug_kbdH=25
         debug_milklid_W,debug_milklid_H=debug_kbdH,debug_kbdH
         debug_milkfont="kan5x5comic,{0}".format(debug_kbdH//2)

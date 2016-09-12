@@ -251,6 +251,8 @@ def kanfont_dictype_inputed_shell(dictype_cnt):
             LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
             LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
         LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
+        if LTsv_global_dictype()[dictype_cnt] in "{0}幅".format(LTsv_global_glyphtype()):
+            kanfont_code()
         return LTsv_kbdentry_edit
     return kanfont_dictype_kernel
 
@@ -356,8 +358,8 @@ def kanfont_configsave_exit(window_objvoid=None,window_objptr=None):
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
-    LTsv_kbdinit(LTsv_initmouse=True)
-    LTsv_glyph_kbdinit(ltsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
+    LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=True)
+    LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanfont_configload()
     kanfont_fontsize_entry=LTsv_global_glyphkbdH()//2-2;    kanfont_font_entry="{0},{1}".format(kanfont_fontname["漫"],kanfont_fontsize_entry); kanfont_label_WH=kanfont_fontsize_entry*2
     kanfont_fontsize_refer=LTsv_global_glyphkbdH()//2-2;    kanfont_font_refer="{0},{1}".format(kanfont_refer,kanfont_fontsize_refer)
