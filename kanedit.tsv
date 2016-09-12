@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	kantray
 LTsvver	20160718M003911
-modify	20160912M043842
+modify	20160912M104032
 |L:Tsv]
 
 [kanedit|
@@ -13,7 +13,7 @@ font_size	10
 edit_colors	font:#000000	bg:#FFF3F5	mark:#F04E7F
 edit_last	kanedit.tsv
 memo_colors	font:#000000	bg:#FFFFFF	mark:#F04E7F
-memo_entry	
+memo_entry	しはし
 |kanedit]
 
 

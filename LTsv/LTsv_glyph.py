@@ -591,7 +591,8 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
 def LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_NXKS,LTsv_glyph_kbdSpace,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-#    print(glyphtype_getkbdnames)
+#    print(glyphtype_getkbdnames,glyphtype_getkbdkanas)
+#    print(LTsv_glyph_tapcallback[kbd_canvas])
     LTsv_glyph_NXKS= \
       LTsv_glyph_SandS if LTsv_glyph_kbdSpace in glyphtype_getkbdnames else \
       LTsv_glyph_NFER if LTsv_glyph_kbdNFER in glyphtype_getkbdnames else \

@@ -34,7 +34,7 @@ LTsv_CALLBACLTYPE=ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.c_void_p)
 LTsv_widgetLTSV=LTsv_newfile("LTsv_gui",LTsv_default=None)
 LTsv_widgetOBJ={}; LTsv_widgetOBJcount=0
 LTsv_timerOBJ={}; LTsv_timer_cbk={}
-LTsv_canvas_motion_X,LTsv_canvas_motion_Y=0,0
+LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z=0,0,""
 canvas_EMLenter,canvas_EMLmotion,canvas_EMLleave={},{},{}
 canvas_CBKenter,canvas_CBKmotion,canvas_CBKleave,canvas_CBKtimeout,canvas_CBKafter,LTsv_canvasCBKpagename={},{},{},{},{},{}
 LTsv_pictureOBJ,LTsv_pictureW,LTsv_pictureH={},{},{}
@@ -103,6 +103,7 @@ def LTsv_global_libgdk():                           return LTsv_libgdk
 def LTsv_global_libobj():                           return LTsv_libobj
 def LTsv_global_canvasmotionX():                    return LTsv_canvas_motion_X
 def LTsv_global_canvasmotionY():                    return LTsv_canvas_motion_Y
+def LTsv_global_canvasmotionZ():                    return LTsv_canvas_motion_Z
 def LTsv_global_canvascolor():                    return LTsv_canvascolor
 def LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor
 #def LTsv_global_widgetgetltsv():                    return LTsv_widgetLTSV
@@ -1037,16 +1038,16 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
         widget_o.place(x=widget_x,y=widget_y)
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o)
     def LTsv_canvas_enter(window_objvoid=None,window_objptr=None):
+        global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         global canvas_CBKafter
         if canvas_CBKafter[LTsv_widgetPAGENAME] == False:
-            canvas_CBKafter[LTsv_widgetPAGENAME]=True
-#            if canvas_EMLenter[LTsv_widgetPAGENAME] != None: canvas_EMLenter[LTsv_widgetPAGENAME]()
+            canvas_CBKafter[LTsv_widgetPAGENAME]=True; LTsv_canvas_motion_Z=LTsv_widgetPAGENAME
             if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
                 LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLenter[LTsv_widgetPAGENAME],event_i="{0}_enter".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
             LTsv_canvas_timeout()
         return 0
     def LTsv_canvas_motion(window_objvoid=None,window_objptr=None):
-        global LTsv_canvas_motion_X,LTsv_canvas_motion_Y
+        global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         if LTsv_GUI == LTsv_GUI_GTK2:
             mouse_x,mouse_y=ctypes.c_int(),ctypes.c_int(); LTsv_libgdk.gdk_window_at_pointer(ctypes.byref(mouse_x),ctypes.byref(mouse_y))
             LTsv_canvas_motion_X,LTsv_canvas_motion_Y=int(mouse_x.value),int(mouse_y.value)
@@ -1062,8 +1063,9 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
             LTsv_window_after(LTsv_windowPAGENAME,event_b=LTsv_canvas_timeout,event_i="{0}_motion".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
         return 0
     def LTsv_canvas_leave(window_objvoid=None,window_objptr=None):
+        global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         global canvas_CBKafter,LTsv_canvasCBKpagename
-        canvas_CBKafter[LTsv_widgetPAGENAME]=False
+        canvas_CBKafter[LTsv_widgetPAGENAME]=False; LTsv_canvas_motion_Z=""
         if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
             LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLleave[LTsv_widgetPAGENAME],event_i="{0}_leave".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
         return 0
