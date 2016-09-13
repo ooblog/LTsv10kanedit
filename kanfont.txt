@@ -1,0 +1,39 @@
+「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタです。単漢字辞書「kanchar.tsv」を編集します。
+version(branch) 20160718M003911
+
+目次
+
+ ０-0． ライセンス及びソフトの使用の補足ガイドライン
+ ０-1． 現在わかっている不具合や今後の課題。
+
+
+
+
+
+０-0． ライセンス及びソフトの使用の補足ガイドライン
+
+ ※「MIT License」準拠。
+   MIT License - Choose a License
+   http://choosealicense.com/licenses/mit/
+
+ ※「MIT License」の日本語訳。
+   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
+
+ ※日本語による補足。
+   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。
+   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。
+   ・ソースコードの閲覧やコピーに制限を設けない事。
+
+ ※「kanedit」「kanfont」共通の問題への言及。
+   ・単漢字辞書「kanchar.tsv」の不適切な翻訳やグリフ不足などの不具合に対してもメンテナンス義務もありません。
+
+
+０-1． 現在わかっている不具合や今後の課題。
+
+ Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
+ フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
+ 「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。
+
+
+

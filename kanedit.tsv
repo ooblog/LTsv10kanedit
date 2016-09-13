@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	kantray
 LTsvver	20160718M003911
-modify	20160913T065858
+modify	20160914W054350
 |L:Tsv]
 
 [kanedit|
@@ -19,4 +19,4 @@ memo_entry
 
 # Copyright (c) 2016 ooblog
 # License: MIT
-# https://github.com/ooblog/LTsv9kantray/blob/master/LICENSE
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
