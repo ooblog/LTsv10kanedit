@@ -1045,7 +1045,7 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
         global canvas_CBKafter
         if canvas_CBKafter[LTsv_widgetPAGENAME] == False:
             canvas_CBKafter[LTsv_widgetPAGENAME]=True; LTsv_canvas_motion_Z=LTsv_widgetPAGENAME
-            if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
+            if canvas_EMLenter[LTsv_widgetPAGENAME] != None:
                 LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLenter[LTsv_widgetPAGENAME],event_i="{0}_enter".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
             LTsv_canvas_timeout()
         return 0
