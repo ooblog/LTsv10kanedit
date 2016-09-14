@@ -378,8 +378,11 @@ def LTsv_widget_gettext(LTsv_widgetPAGENAME):
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_label_get_text(LTsv_libgtk.gtk_bin_get_child(widget_o))).value.decode("utf-8")
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.cget("text")
     if widget_k == "clipboard":
-        if LTsv_GUI == LTsv_GUI_GTK2:     widget_t="{0}".format(ctypes.c_char_p(LTsv_libgtk.gtk_clipboard_wait_for_text(widget_o)).value.decode("utf-8"))
-        if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t="{0}".format(widget_o.clipboard_get())
+        try:
+            if LTsv_GUI == LTsv_GUI_GTK2:     widget_t="{0}".format(ctypes.c_char_p(LTsv_libgtk.gtk_clipboard_wait_for_text(widget_o)).value.decode("utf-8"))
+            if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t="{0}".format(widget_o.clipboard_get())
+        except:
+            widget_t=""
     if widget_k == "entry":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_entry_get_text(widget_o)).value.decode("utf-8")
         if LTsv_GUI == LTsv_GUI_Tkinter:  widget_t=widget_o.get()

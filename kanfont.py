@@ -44,6 +44,7 @@ def kanfont_code(pathpos=None):
     kanfont_pathadjustment(pathpos)
     LTsv_glyphpath(kanfont_seek)
     kanfont_glyph_draw()
+    LTsv_widget_disableenable(kanfont_paste_button,True if kanfont_seek != LTsv_widget_gettext(kanfont_clipboard)[:1] else False); LTsv_widget_showhide(kanfont_paste_button,True)
     kanfont_pathsel_shell()
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_global_kandic(),kanfont_seek)
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
@@ -75,6 +76,7 @@ def kanfont_codekbd_paste(window_objvoid=None,window_objptr=None):
 
 def kanfont_codekbd_copy(window_objvoid=None,window_objptr=None):
     LTsv_widget_settext(kanfont_clipboard,LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)))
+    LTsv_widget_disableenable(kanfont_paste_button,True if kanfont_seek != LTsv_widget_gettext(kanfont_clipboard)[:1] else False); LTsv_widget_showhide(kanfont_paste_button,True)
 
 def kanfont_pathsel_shell(window_objvoid=None,window_objptr=None):
     kanfont_catchZ=LTsv_widget_getnumber(kanfont_path_scale)
@@ -446,9 +448,9 @@ if len(LTsv_GUI) > 0:
      event_p=kanfont_glyph_mousepress,event_m=kanfont_glyph_mousemotion,event_r=kanfont_glyph_mouserelease,event_e=kanfont_glyph_mouseenter,event_l=kanfont_glyph_mouseleave,event_w=50)
     kanfont_gridimageOBJ=LTsv_draw_picture_load(kanfont_gridimage)
     kanfont_path_scale=LTsv_scale_new(kanfont_window,widget_x=kanfont_canvas_X,widget_y=kanfont_canvas_WH,widget_w=kanfont_canvas_WH*5//8,widget_h=kanfont_label_WH*2,widget_s=0,widget_e=9,widget_a=1,event_b=kanfont_pathsel_shell)
-    kanfont_layerX_button=LTsv_button_new(kanfont_window,widget_t="‎cut",widget_x=kanfont_canvas_X+kanfont_canvas_WH*1//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerX_shell)
-    kanfont_layerC_button=LTsv_button_new(kanfont_window,widget_t="‎copy",widget_x=kanfont_canvas_X+kanfont_canvas_WH*0//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerC_shell)
-    kanfont_layerV_button=LTsv_button_new(kanfont_window,widget_t="‎paste",widget_x=kanfont_canvas_X+kanfont_canvas_WH*2//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerV_shell)
+    kanfont_layerX_button=LTsv_button_new(kanfont_window,widget_t="cut",widget_x=kanfont_canvas_X+kanfont_canvas_WH*1//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerX_shell)
+    kanfont_layerC_button=LTsv_button_new(kanfont_window,widget_t="copy",widget_x=kanfont_canvas_X+kanfont_canvas_WH*0//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerC_shell)
+    kanfont_layerV_button=LTsv_button_new(kanfont_window,widget_t="paste",widget_x=kanfont_canvas_X+kanfont_canvas_WH*2//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerV_shell)
     kanfont_layerU_button=LTsv_button_new(kanfont_window,widget_t="up",widget_x=kanfont_canvas_X+kanfont_canvas_WH*3//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerU_shell)
     kanfont_layerD_button=LTsv_button_new(kanfont_window,widget_t="down",widget_x=kanfont_canvas_X+kanfont_canvas_WH*4//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_layerD_shell)
     kanfont_grid_label=LTsv_label_new(kanfont_window,widget_t="grid",widget_x=kanfont_canvas_X+kanfont_canvas_WH*5//8,widget_y=kanfont_canvas_WH,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry)
