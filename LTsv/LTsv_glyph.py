@@ -160,6 +160,8 @@ def LTsv_global_kandic(new_kandic=None):
     LTsv_glyph_kandic=LTsv_glyph_kandic if new_kandic == None else new_kandic
     return LTsv_glyph_kandic
 def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
+def LTsv_global_kanmapN():                             return LTsv_glyph_kanmapN
+def LTsv_global_kanmapX():                             return LTsv_glyph_kanmapX
 def LTsv_global_kanpickle():                          return LTsv_glyph_kanpickle
 def LTsv_global_irohatype():                          return LTsv_glyph_irohatype
 def LTsv_global_irohatypeN():                         return LTsv_glyph_irohatypeN

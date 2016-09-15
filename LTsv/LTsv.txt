@@ -1265,7 +1265,7 @@ version(branch) 20160718M003911
  LTsv_global_kandic(new_kandic=None)
   漢直キーボードの単漢字辞書「LTsv/kanchar.tsv」を取得できます。
 
- LTsv_global_kanmap()
+ LTsv_global_kanmap(); LTsv_global_kanmapN(); LTsv_global_kanmapX();
   漢直キーボードの漢字配列「LTsv/kanmap.tsv」を取得できます。
 
  LTsv_global_kanpickle()

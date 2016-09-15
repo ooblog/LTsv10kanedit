@@ -101,6 +101,7 @@ ENV/
 # git push github:ooblog/LTsv10kanedit.git :20160718M003911
 kan5x5.svg
 kan5x5.tsv
+kanmap.png
 LTsv/testfile/
 LTsv/kanpickle.bin
 LTsv/kanpickleGTK.bin
