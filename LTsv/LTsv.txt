@@ -1280,6 +1280,11 @@ version(branch) 20160718M003911
  LTsv_global_kbdcursorNone();
   漢直キーボードのデータを取得。
 
+ LTsv_glyphSVG5x10x(LTsv_glyph_path)
+  フォントグリフの圧縮された座標データをSVGパスに伸張。
+  「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」
+  「[AOBOBQAQ]」→「M 0,1000 100,1000 100,900 0,900 z」
+
  LTsv_glyphSVG(LTsv_glyph_path);
   フォントグリフの座標データをSVGからリストに変換。
 
@@ -1331,6 +1336,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")
   ほぼ「kanfont」用。メモリ上の単漢字辞書のフォントグリフを更新する。
   draw_tにテキスト1文字分、glyphnoteのフォントグリフ座標リストは「LTsv_glyph_getnote()」で取得できるような内容、draw_gでフォントの種類。
+  座標リストは縮できるか試みられ、圧縮できる場合は「LTsv_glyphSVG5x10x()」で伸張できる形式に、圧縮できない場合はSVGパスとして保存。
 
  LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗"):
   メモリ上の単漢字辞書を更新する。
