@@ -136,12 +136,12 @@ def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_config=LTsv_pushlinerest(kanedit_config,"edit_last",kanedit_texteditfilename)
     kanedit_config=LTsv_pushlinerest(kanedit_config,"memo_entry",kanmemo_textvalue)
+    kanedit_config=LTsv_pushlinerest(kanedit_config,"window_size","width:{0}\theight:{1}".format(kanedit_W,kanedit_H))
     kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
     LTsv_savefile("kanedit.tsv",kanedit_ltsv)
     LTsv_glyph_picklesave()
     LTsv_window_exit()
 kanedit_exit_configsave_cbk=LTsv_CALLBACLTYPE(kanedit_exit_configsave)
-
 
 LTsv_GUI=LTsv_guiinit()
 #kantray_max=0x2ffff if LTsv_GUI != "Tkinter" else 0xffff :「kanedit」non limit!

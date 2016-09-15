@@ -211,6 +211,7 @@ def LTsv_glyphSVG(LTsv_glyph_path):
             LTsv_glyphpoints=LTsv_glyphpoint.strip(' ').split(',')
             LTsv_glyphpointlist+=[int(LTsv_glyphpoints[0]) if LTsv_glyphpoints[0].isdigit() else 0]
             LTsv_glyphpointlist+=[(LTsv_PSchar_ZW-int(LTsv_glyphpoints[1])) if LTsv_glyphpoints[1].isdigit() else 0]
+        if len(LTsv_glyphpointlist) == 0: continue;
         LTsv_glyphnote.append(LTsv_glyphpointlist); LTsv_glyphclock.append(LTsv_clockwise(*tuple(LTsv_glyphpointlist)))
     return LTsv_glyphnote,LTsv_glyphclock
 
@@ -444,7 +445,7 @@ def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
             glyphpointlist=""
             for draw_xy_count in range(len(glyphpoints)//2):
                 glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-            LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
+            if len(glyphpointlist) > 0: LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
     LTsv_glyph_kanpath=LTsv_glyph_kanpath.rstrip(' ')
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
     if draw_g == "活":
