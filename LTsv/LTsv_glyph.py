@@ -437,35 +437,62 @@ def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
     LTsv_glyph_kanpath=""
-    if draw_g == "活":
-        for glyphpoints in glyphnote:
-            glyphpointlist=""
-            for draw_xy_count in range(len(glyphpoints)//2):
-                glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-                if glyphpointxy in LTsv_glyphSVG5xdic:
-                    glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
-                else:
-                    LTsv_glyph_kanpath=""; break;
+    for glyphpoints in glyphnote:
+        glyphpointlist=""
+        for draw_xy_count in range(len(glyphpoints)//2):
+            glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+            if glyphpointxy in LTsv_glyphSVG5xdic:
+                glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
             else:
-                LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
-            if LTsv_glyph_kanpath == "": break;
-    elif draw_g == "漫":
-        for glyphpoints in glyphnote:
-            glyphpointlist=""
-            for draw_xy_count in range(len(glyphpoints)//2):
-                glyphpointxy="{0},".format(glyphpoints[draw_xy_count*2])
-                if glyphpointxy in LTsv_glyphSVG10xdic:
-                    glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
-                else:
-                    LTsv_glyph_kanpath=""; break;
-                glyphpointxy="{0} ".format(LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-                if glyphpointxy in LTsv_glyphSVG10xdic:
-                    glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
-                else:
-                    LTsv_glyph_kanpath=""; break;
+                glyphpointlist=""; break;
+        else:
+            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+        if len(glyphpointlist) > 0: continue;
+        for draw_xy_count in range(len(glyphpoints)//2):
+            glyphpointxy="{0},".format(glyphpoints[draw_xy_count*2])
+            if glyphpointxy in LTsv_glyphSVG10xdic:
+                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
             else:
-                LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
-            if LTsv_glyph_kanpath == "": break;
+                glyphpointlist=""; break;
+            glyphpointxy="{0} ".format(LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+            if glyphpointxy in LTsv_glyphSVG10xdic:
+                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
+            else:
+                glyphpointlist=""; break;
+        else:
+            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+        if len(glyphpointlist) > 0: continue;
+        LTsv_glyph_kanpath=""; break;
+
+#    if draw_g == "活":
+#        for glyphpoints in glyphnote:
+#            glyphpointlist=""
+#            for draw_xy_count in range(len(glyphpoints)//2):
+#                glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+#                if glyphpointxy in LTsv_glyphSVG5xdic:
+#                    glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
+#                else:
+#                    LTsv_glyph_kanpath=""; break;
+#            else:
+#                LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+#            if LTsv_glyph_kanpath == "": break;
+#    elif draw_g == "漫":
+#        for glyphpoints in glyphnote:
+#            glyphpointlist=""
+#            for draw_xy_count in range(len(glyphpoints)//2):
+#                glyphpointxy="{0},".format(glyphpoints[draw_xy_count*2])
+#                if glyphpointxy in LTsv_glyphSVG10xdic:
+#                    glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
+#                else:
+#                    LTsv_glyph_kanpath=""; break;
+#                glyphpointxy="{0} ".format(LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+#                if glyphpointxy in LTsv_glyphSVG10xdic:
+#                    glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
+#                else:
+#                    LTsv_glyph_kanpath=""; break;
+#            else:
+#                LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+#            if LTsv_glyph_kanpath == "": break;
     if len(LTsv_glyph_kanpath) == 0:
         for glyphpoints in glyphnote:
             glyphpointlist=""
