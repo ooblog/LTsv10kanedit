@@ -323,8 +323,11 @@ def kanfont_dictype_inputed_shell(dictype_cnt):
             LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
             LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
         LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
-        if LTsv_global_dictype()[dictype_cnt] in "{0}幅".format(LTsv_global_glyphtype()):
-            kanfont_code()
+        if LTsv_global_dictype()[dictype_cnt] in "活漫筆幅":
+            kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+            LTsv_glyphpath(kanfont_seek)
+            kanfont_glyph_draw()
+            LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
         return LTsv_kbdentry_edit
     return kanfont_dictype_kernel
 

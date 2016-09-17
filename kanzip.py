@@ -168,7 +168,7 @@ def kanzip_FX_merge(window_objvoid=None,window_objptr=None):
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
-    LTsv_glyph_kbdinit(ltsvpath="LTsv/kanglyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=None)
+    LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanzip_window=LTsv_window_new(widget_t="kanzip",event_b=LTsv_window_exit,widget_w=kanzip_window_W,widget_h=kanzip_window_H)
     if not os.path.isdir(kanzip_workdir): os.mkdir(kanzip_workdir)
     for ken in range(kanzip_prefectureMAX):

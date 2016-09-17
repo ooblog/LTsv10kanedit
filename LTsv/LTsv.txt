@@ -1473,7 +1473,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
 
    HJKL        カーソル移動。H←,J↓,K↑,L→
-   YUBN        カーソル斜め移動。Y?,U?,B?,N?
+   YUBN        カーソル斜め移動。１行テキストの場合範囲選択。Y↖,U↗,B↙,N↘
    ]          エンターキー。Enter。
    ;          バックスペース。BS。
    :          カーソルから右の文字デリート。DEL。
