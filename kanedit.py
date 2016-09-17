@@ -152,7 +152,7 @@ if len(LTsv_GUI) > 0:
     kanedit_configload()
     LTsv_window_resize(kanedit_window,kanedit_W,kanedit_H)
     kanedit_canvas=LTsv_canvas_new(kanedit_window,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),
-     event_p=kanedit_mousepress,event_r=kanedit_mouserelease,event_m=kanedit_mousemotion,event_w=50)
+     event_p=kanedit_mousepress,event_r=kanedit_mouserelease,event_m=kanedit_mousemotion,event_l=kanedit_mouserelease,event_w=50)
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)
     LTsv_widget_showhide(kanedit_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)

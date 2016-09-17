@@ -568,8 +568,10 @@ def LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y):
         LTsv_draw_queue()
     return LTsv_kbdcursor
 
+LTsv_kbdcursorBF=LTsv_glyph_None
 def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_kbdLCR
+    global LTsv_kbdcursorBF
     LTsv_kbdcursor=LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
     if LTsv_kbdcursor < LTsv_glyph_None:
         LTsv_glyph_kbddelete(kbd_canvas)
@@ -591,6 +593,10 @@ def LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y):
                 LTsv_glyph_kbdselect('Σ')
         LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,LTsv_kbdcursor)
         LTsv_draw_queue()
+    elif LTsv_kbdcursorBF != LTsv_kbdcursor:
+        LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
+        LTsv_draw_queue()
+    LTsv_kbdcursorBF = LTsv_kbdcursor
     return LTsv_kbdcursor
 
 def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
@@ -1068,6 +1074,7 @@ debug_reversi_entrysavedata=""
 def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
     global debug_milkAI,debug_milkMAP,debug_milklidBW,debug_milklidBWwait
     global debug_reversi_entrysavedata
+    LTsv_widget_disableenable(debug_reversi_back,False); LTsv_widget_disableenable(debug_reversi_auto,False);
     reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
     reversi_entry=reversi_entry[:60]
     if len(reversi_entry) == 0:
@@ -1131,6 +1138,7 @@ def debug_milkAI_entry(window_objvoid=None,window_objptr=None):
         LTsv_draw_glyphsfill(draw_t="{0}\n{1:02}\n\n{2}".format(debug_milklidBWstone[debug_milklidBWswitch[bw]],milklidcount,debug_milklidBWwaitname[debug_milklidBWwait[debug_milklidBWswitch[bw]]]),draw_x=debug_milklidBWstatusX[debug_milklidBWswitch[bw]],draw_y=debug_milklidY[20],draw_f=debug_kbdH//2,draw_g="漫")
     LTsv_glyph_kbddraw(debug_reversi_canvas,debug_kbdX,debug_kbdY)
     LTsv_draw_queue()
+    LTsv_widget_disableenable(debug_reversi_back,True); LTsv_widget_disableenable(debug_reversi_auto,True);
 
 def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
     milklist=[0]
@@ -1142,7 +1150,6 @@ def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
         milkAIdic[str(key)]=debug_milkAI[key]
     milkAImax=max(milkAIdic.items(),key=lambda d:d[1])[0]
     debug_milkAI_add(debug_reversi_key[int(milkAImax)])
-    LTsv_widget_focus(debug_reversi_dummy)
 
 def debug_milkAI_add(addentry):
     addentrychar=addentry[:1]
@@ -1150,10 +1157,6 @@ def debug_milkAI_add(addentry):
     milkcounttotal=0
     for xy in debug_milklid_range:
         milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
-    if addentrychar == "\uf0d1": #
-        debug_milkAI_BS(); return;
-    if addentrychar == "\uf0d3": #
-        debug_milkAI_Auto(); return;
     if milkcounttotal > 0:
         if addentrychar in debug_reversi_key and addentrychar != debug_reversi_key[0]:
             if debug_milklid_check(debug_reversi_key.index(addentrychar),debug_milklidBW) > 0:
@@ -1162,6 +1165,15 @@ def debug_milkAI_add(addentry):
         reversi_entry=""
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
     debug_milkAI_entry()
+
+def debug_milkAI_sub(addentry):
+    addentrychar=addentry[:1]
+    if addentrychar in "\uf0d9": #
+        LTsv_widget_settext(debug_reversi_entry,""); debug_milkAI_entry(); return;
+    if addentrychar in "\u2196\u2199": #↖↙
+        debug_milkAI_BS()
+    if addentrychar in "\u2197\u2198": #↗↘
+        debug_milkAI_Auto()
 
 def debug_configload():
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -1222,9 +1234,9 @@ if __name__=="__main__":
         debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2,event_z=None,event_k=debug_keypress,event_y=debug_keyrelease)
         debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=debug_milklid_W*0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
         debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
-        debug_reversi_button=LTsv_button_new(debug_reversi_window,widget_t="Auto",widget_x=debug_reversi_W-debug_milklid_W*2,widget_y=debug_reversi_H,widget_w=debug_milklid_W*2,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_Auto)
+        debug_reversi_auto=LTsv_button_new(debug_reversi_window,widget_t="Auto",widget_x=debug_reversi_W-debug_milklid_W*2,widget_y=debug_reversi_H,widget_w=debug_milklid_W*2,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_Auto)
         debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
-         event_p=debug_mousepress,event_m=debug_mousemotion,event_r=debug_mouserelease,event_w=50)
+         event_p=debug_mousepress,event_m=debug_mousemotion,event_r=debug_mouserelease,event_l=debug_mousemotion,event_w=50)
         LTsv_widget_showhide(debug_reversi_window,True)
         LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
         LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
@@ -1233,7 +1245,7 @@ if __name__=="__main__":
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
         LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_add)
+        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_sub)
         debug_milkAI_reset()
         debug_configload()
         debug_milkAI_entry()
