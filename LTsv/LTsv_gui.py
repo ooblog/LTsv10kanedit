@@ -20,8 +20,8 @@ LTsv_Tkinter=True
 try:
     import tkinter as Tk
     import tkinter.scrolledtext as Tk_sc
-#    import tkFileDialog
-#    import tkMessageBox
+    import tkinter.filedialog as Tk_fd
+#    import messagebox as Tk_mb
 except:
     LTsv_Tkinter=False
 LTsv_libgtk,LTsv_libgdk,LTsv_libobj=None,None,None
@@ -30,6 +30,7 @@ LTsv_GUI_ERROR,LTsv_GUI_GTK2,LTsv_GUI_Tkinter,LTsv_GUI_WinAPI="","GTK2","Tkinter
 LTsv_GUI,LTsv_Notify=LTsv_GUI_ERROR,LTsv_GUI_ERROR
 #LTsv_CALLBACLTYPE=ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.POINTER(ctypes.c_ulong))
 #LTsv_CALLBACLTYPE=ctypes.CFUNCTYPE(ctypes.c_bool,ctypes.c_void_p)
+#LTsv_CALLBACLTYPE=ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.c_int)
 LTsv_CALLBACLTYPE=ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.c_void_p)
 LTsv_widgetLTSV=LTsv_newfile("LTsv_gui",LTsv_default=None)
 LTsv_widgetOBJ={}; LTsv_widgetOBJcount=0
@@ -145,7 +146,7 @@ def LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption):
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
-  menu_o=None,menu_b=None,menu_c=None,
+  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None,dialog_u=None,dialog_r=None,
   kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_c=None,kbd_v=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
@@ -177,8 +178,12 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if event_a  != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"notify_activate",event_a)
     if event_u  != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"notify_popupmenu",event_u)
     if menu_o   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenuobj",menu_o)
-    if menu_b   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenubind",menu_b)
-    if menu_c   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenubind",menu_b)
+    if menu_b   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenulist",menu_b)
+    if menu_c   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenuclick",menu_c)
+    if dialog_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"dialog_type",str(dialog_t))
+    if dialog_c != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"dialog_close",dialog_c)
+    if dialog_u != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"dialog_uri",str(dialog_u))
+    if dialog_r != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"dialog_response",dialog_r)
     if kbd_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_press",kbd_p)
     if kbd_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_release",kbd_r)
     if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_motion",kbd_m)
@@ -337,6 +342,9 @@ def LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t=""):
                 widget_combo=LTsv_popupmenuOBJ[str(widget_o)].split('\n')
                 widget_s=widget_combo.index(widget_t) if widget_t in widget_combo else 0
                 LTsv_libgtk.gtk_combo_box_set_active(widget_o,widget_s)
+    if widget_k == "filedialog":
+        if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_window_set_title(widget_o,widget_t.encode("utf-8","xmlcharrefreplace"))
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
 
 class LTsv_TextIter(ctypes.Structure):
@@ -404,6 +412,8 @@ def LTsv_widget_gettext(LTsv_widgetPAGENAME):
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=LTsv_readlinerest(LTsv_widgetPAGE,"widgettext")
     if widget_k == "combobox":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_combo_box_text_get_active_text(widget_o)).value.decode("utf-8") if LTsv_libgtk.gtk_tree_model_iter_n_children(LTsv_libgtk.gtk_combo_box_get_model(widget_o),None) > 0 else ""
+    if widget_k == "filedialog":
+        if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_window_get_title(widget_o)).value.decode("utf-8")
     return widget_t
 
 def LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0):
@@ -490,6 +500,9 @@ def LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u=""):
                 widget_o.hIcon=icon_o
                 LTsv_shell32.Shell_NotifyIcon(ctypes.c_ulong(LTsv_ICON_NIM_MODIFY),ctypes.pointer(widget_o))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_u=widget_u)
+    if widget_k == "filedialog":
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,dialog_u=widget_u)
+        LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
 
 def LTsv_widget_geturi(LTsv_widgetPAGENAME):
     global LTsv_widgetLTSV
@@ -501,6 +514,12 @@ def LTsv_widget_geturi(LTsv_widgetPAGENAME):
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
     if widget_k == "notify":
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
+    if widget_k == "filedialog":
+        try:
+            if LTsv_GUI == LTsv_GUI_GTK2:    widget_u=ctypes.c_char_p(LTsv_libgtk.gtk_file_chooser_get_filename(widget_o)).value.decode("utf-8")
+            if LTsv_GUI == LTsv_GUI_Tkinter:  widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"dialog_uri")
+        except:
+            widget_u=""
     return widget_u
 
 def LTsv_widget_showhide(LTsv_widgetPAGENAME,widget_i):
@@ -519,6 +538,17 @@ def LTsv_widget_showhide(LTsv_widgetPAGENAME,widget_i):
                 widget_o.deiconify()
             else:
                 widget_o.withdraw()
+    elif widget_k == "filedialog":
+        if LTsv_GUI == LTsv_GUI_GTK2:
+            if widget_i:
+                LTsv_libgtk.gtk_widget_show_all(widget_o)
+            else:
+                LTsv_libgtk.gtk_widget_hide(widget_o)
+        if LTsv_GUI == LTsv_GUI_Tkinter:
+            if widget_i:
+                widget_o()
+            else:
+                pass
     else:
         if LTsv_GUI == LTsv_GUI_GTK2:
             if widget_i:
@@ -1561,6 +1591,50 @@ def LTsv_notifyicon_new(LTsv_windowPAGENAME,notify_n=None,widget_t="",widget_u="
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
+LTsv_GTK_RESPONSE_ACCEPT=      -3
+LTsv_GTK_RESPONSE_APPLY=       -10
+LTsv_GTK_RESPONSE_CANCEL=      -6
+LTsv_GTK_RESPONSE_CLOSE=       -7
+LTsv_GTK_RESPONSE_DELETE_EVENT=-4
+LTsv_GTK_RESPONSE_HELP=        -11
+LTsv_GTK_RESPONSE_NO=          -9
+LTsv_GTK_RESPONSE_OK=          -5
+LTsv_GTK_RESPONSE_YES=         -8
+def LTsv_filedialog_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_filedialog",dialog_t=0,dialog_r=None):
+    global LTsv_widgetLTSV
+    LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
+    window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    LTsv_widgetPAGENAME=LTsv_widget_newUUID(widget_n); LTsv_widgetPAGE=""
+    LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_k="filedialog")
+    if LTsv_GUI == LTsv_GUI_GTK2:
+        LTsv_dialogtype=min(max(dialog_t,0),3)
+        LTsv_dialogtypename=["fileopen","diropen","filesave","dirsave"]
+        widget_w,widget_h=LTsv_screen_w(LTsv_windowPAGENAME)//2,LTsv_screen_h(LTsv_windowPAGENAME)//2
+        widget_o=LTsv_libgtk.gtk_file_chooser_dialog_new(widget_t.encode("utf-8","xmlcharrefreplace"),0,LTsv_dialogtype,"gtk-cancel".encode("utf-8"),LTsv_GTK_RESPONSE_CANCEL,LTsv_dialogtypename[LTsv_dialogtype].encode("utf-8","xmlcharrefreplace"),LTsv_GTK_RESPONSE_ACCEPT,0)
+        LTsv_libgtk.gtk_widget_set_size_request(widget_o,widget_w,widget_h)
+        LTsv_libgtk.gtk_window_set_resizable(widget_o,True)
+        LTsv_libgtk.gtk_window_set_position(window_o,LTsv_GTK_WIN_POS_CENTER)
+        event_r_cbk=LTsv_CALLBACLTYPE(dialog_r) if dialog_r != None else LTsv_CALLBACLTYPE(LTsv_window_none)
+        LTsv_libobj.g_signal_connect_data(widget_o,"response".encode("utf-8"),event_r_cbk,0,0,0)
+        event_c_cbk=LTsv_libgtk.gtk_widget_hide_on_delete
+        LTsv_libobj.g_signal_connect_data(widget_o,"delete-event".encode("utf-8"),event_c_cbk,0,0,0)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,dialog_t=dialog_t,dialog_c=event_c_cbk,dialog_r=event_r_cbk)
+    if LTsv_GUI == LTsv_GUI_Tkinter:
+        def LTsv_filedialog_askopen(window_objvoid=None,window_objptr=None):
+            global LTsv_widgetLTSV
+            LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME)
+            widget_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"widgetobj")]
+            widget_k=LTsv_readlinerest(LTsv_widgetPAGE,"widgetkind")
+            if widget_k == "filedialog":
+                dialog_u=Tk_fd.askopenfilename()
+                LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,dialog_u=dialog_u)
+                LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
+                LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"dialog_response")]()
+        widget_o=LTsv_filedialog_askopen
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,dialog_t=dialog_t,dialog_r=dialog_r)
+    LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
+    return LTsv_widgetPAGENAME
+
 
 def debug_canvas(window_objvoid=None,window_objptr=None):
     global debug_scaleRGB
@@ -1704,6 +1778,17 @@ def debug_keyrelease(window_objvoid=None,window_objptr=None):
     if LTsv_GUI == LTsv_GUI_Tkinter:
         debug_keyevent=debug_keyevent.replace("\t{0}".format(window_objvoid.char),"")
 
+def debug_filedialog(window_objvoid=None,window_objptr=None):
+    LTsv_widget_settext(debug_filedialogwindow,"")
+    LTsv_widget_showhide(debug_filedialogwindow,True)
+
+#LTsv_GTK_RESPONSE_ACCEPT
+def debug_filedialog_response(window_objvoid=None,window_objptr=None):
+    filedialog_filename=LTsv_widget_geturi(debug_filedialogwindow)
+    print("filedialog_filename",filedialog_filename)
+    LTsv_widget_showhide(debug_filedialogwindow,False)
+    LTsv_widget_settext(debug_edit,widget_t=filedialog_filename)
+
 
 if __name__=="__main__":
     from LTsv_printf import *
@@ -1711,7 +1796,6 @@ if __name__=="__main__":
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
     LTsv_GUI=LTsv_guiinit()
-    LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))
     if len(LTsv_GUI) > 0:
         import math
         from LTsv_joy    import *
@@ -1759,6 +1843,8 @@ if __name__=="__main__":
         debug_edit=LTsv_edit_new(debug_keysetup_window,widget_t="",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*4,widget_w=debug_keyspin_W*2,widget_h=debug_keyspin_H*4,widget_f=debug_font_entry)
         debug_clipboard=LTsv_clipboard_new(debug_keysetup_window)
         debug_clipbutton=LTsv_button_new(debug_keysetup_window,widget_t="clip",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*5,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_edit_clip)
+        debug_filedialogbutton=LTsv_button_new(debug_keysetup_window,widget_t="open",widget_x=debug_keyspin_W*2,widget_y=debug_keysetup_H-debug_keyspin_H*1,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_filedialog)
+        debug_filedialogwindow=LTsv_filedialog_new(debug_keysetup_window,widget_t="debug_filedialog",dialog_t=0,dialog_r=debug_filedialog_response)
         for count,label in enumerate(["Acheck","Bcheck","Ccheck"]):
             debug_check[count]=LTsv_check_new(debug_keysetup_window,widget_t=label,widget_x=debug_keysetup_W-debug_keyspin_W*(3-count),widget_y=debug_keysetup_H-debug_keyspin_H*1,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_checkbutton_shell(count))
         for count,label in enumerate(["Aradio","Bradio","Cradio"]):
@@ -1800,6 +1886,7 @@ if __name__=="__main__":
             LTsv_widget_settext(debug_keysetup_combobox,"IndianRed")
         LTsv_window_main(debug_keysetup_window)
     else:
+        LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))
         LTsv_libc_printf("GUIの設定に失敗しました。")
     print("")
     print("__main__",LTsv_file_ver())

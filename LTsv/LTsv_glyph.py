@@ -1153,8 +1153,15 @@ def debug_milkAI_Auto(window_objvoid=None,window_objptr=None):
 
 def debug_milkAI_add(addentry):
     addentrychar=addentry[:1]
-    reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
+    if debug_reversi_canvas == LTsv_global_canvasmotionZ():
+        if addentrychar in "￥":
+            LTsv_widget_settext(debug_reversi_entry,""); debug_milkAI_entry(); return;
+        if addentrychar in "＜":
+            debug_milkAI_BS()
+        if addentrychar in "＞":
+            debug_milkAI_Auto()
     milkcounttotal=0
+    reversi_entry=LTsv_widget_gettext(debug_reversi_entry)
     for xy in debug_milklid_range:
         milkcounttotal+=debug_milklid_check(xy,debug_milklidBW)
     if milkcounttotal > 0:
@@ -1165,15 +1172,6 @@ def debug_milkAI_add(addentry):
         reversi_entry=""
     LTsv_widget_settext(debug_reversi_entry,reversi_entry)
     debug_milkAI_entry()
-
-def debug_milkAI_sub(addentry):
-    addentrychar=addentry[:1]
-    if addentrychar in "\uf0d9": #
-        LTsv_widget_settext(debug_reversi_entry,""); debug_milkAI_entry(); return;
-    if addentrychar in "\u2196\u2199": #↖↙
-        debug_milkAI_BS()
-    if addentrychar in "\u2197\u2198": #↗↘
-        debug_milkAI_Auto()
 
 def debug_configload():
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
@@ -1245,12 +1243,13 @@ if __name__=="__main__":
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
         LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_sub)
+        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_add)
         debug_milkAI_reset()
         debug_configload()
         debug_milkAI_entry()
         LTsv_window_main(debug_reversi_window)
     else:
+        LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))
         LTsv_libc_printf("GUIの設定に失敗しました。")
     print("")
     print("__main__",LTsv_file_ver())

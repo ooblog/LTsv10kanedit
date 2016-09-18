@@ -27,6 +27,14 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 「kanzip」の詳細は「[kanzip.txt](kanzip.txt "kanzip.txt")」を参考。  
 
 
+## 「kanmap」は漢字配列「kanmap.tsv」を編集する…事はまだできませんが「kan5x5comic」を「kanpickle.bin」にある程度積み込む事ができます。
+
+![kanmap_512](icon_cap/kanmap_512.png "kanmap")  
+「[kanmap.tsv](kanmap.tsv "kanmap.tsv")」から「kanpickle.bin」と「kanmap.png」を生成します&#40;PNGの生成はGTKのみ&#41;。  
+
+「kanmap」の詳細は「[kanmap.txt](kanmap.txt "kanmap.txt")」を参考。  
+
+
 ## 「L&#58;Tsv」は上記のようなソフトが作れるモジュール群です。
 
 「L&#58;Tsv」の詳細は「[LTsv/LTsv.txt](LTsv/LTsv.txt "LTsv.txt")」を参考。  

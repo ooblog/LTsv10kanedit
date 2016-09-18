@@ -1,10 +1,13 @@
-「kanfont」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」を編集します。
+「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」を編集します。
 version(branch) 20160718M003911
 
 目次
 
  ０-0． ライセンス及びソフトの使用の補足ガイドライン
  ０-1． 現在わかっている不具合や今後の課題。
+ １．    使い方
+ ２．    ＦＡＱ
+ ３．   作者について、例えば連絡先。
 
 
 
@@ -32,5 +35,33 @@ version(branch) 20160718M003911
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
+ 手動で都道府県のデータを処理するのはしんどいが全国一括だと処理に時間かかりすぎる。
 
+
+１．    使い方
+
+ 「kanmap.py」を起動して「jigyosyo,zip」をダウンロードして「jigyosyo.csv」を取りだし「jigyosyo.tsv」に変換。
+ 同じ事を47都道府県で実施し、「*.tsv」を最終的に「kanzip.tsv」にマージする。
+
+
+２．    ＦＡＱ
+
+ Ｑ．ボタンを１個ずつ押していくのが面倒くさいです。
+ Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので念のため手動確認は大事です。
+
+
+３．   作者について、例えば連絡先。
+
+ 更新情報はGitHubやブログを確認してください。
+
+  ooblog/LTsv10kanedit(GitHub)
+  https://github.com/ooblog/LTsv10kanedit
+
+ [kantray] - 大風呂ダ敷
+  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
+
+
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
 
