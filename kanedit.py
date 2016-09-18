@@ -84,6 +84,8 @@ def kanedit_inputmemo(inputchar):
     global kanedit_texteditfilename,kanedit_textvalue
     global kanedit_ltsv,kanedit_config
     global kanmemo_textvalue,kanmemo_textleft,kanmemo_textright
+    if inputchar == "":
+        LTsv_widget_showhide(kanedit_filedialog,True)
     kanmemo_textvalue,kanmemo_textleft,kanmemo_textright=LTsv_kbdentry_hjkl(entry_t=kanmemo_textvalue,entry_ch=inputchar,entry_cL=kanmemo_textleft,entry_cR=kanmemo_textright,clip_c=kanfont_memo_copy,clip_v=kanedit_memo_paste,clip_e=kanfont_memo_eval)
 
 def kanedit_input(inputchar):
@@ -105,6 +107,11 @@ def kanedit_keypress(window_objvoid=None,window_objptr=None):
 
 def kanedit_keyrelease(window_objvoid=None,window_objptr=None):
     LTsv_glyph_typerelease(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
+
+def kanedit_filedialog_response(window_objvoid=None,window_objptr=None):
+    kanedit_textload(LTsv_widget_geturi(kanedit_filedialog))
+    LTsv_widget_showhide(kanedit_filedialog,False)
+    kanedit_redraw()
 
 def kanedit_textload(filename):
     global kanedit_window
@@ -154,6 +161,7 @@ if len(LTsv_GUI) > 0:
     kanedit_canvas=LTsv_canvas_new(kanedit_window,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),
      event_p=kanedit_mousepress,event_r=kanedit_mouserelease,event_m=kanedit_mousemotion,event_l=kanedit_mouserelease,event_w=50)
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)
+    kanedit_filedialog=LTsv_filedialog_new(kanedit_window,widget_t="File Open",dialog_t=0,event_b=kanedit_filedialog_response)
     LTsv_widget_showhide(kanedit_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)

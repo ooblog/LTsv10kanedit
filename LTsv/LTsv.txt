@@ -74,8 +74,7 @@ version(branch) 20160718M003911
  [kanchar.tsv]に異体字を移管して[kanmap.tsv]を圧縮していく作業は当分続く。現在人名に使える漢字の異体字の字引入力中心に作業中。
  Windowsのエディタで[kanchar.tsv]を開くと3バイト以上の文字が「?」に置き換えられる恐れがある。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- GTK経由でキーボードを読み込む方法が不明。
- 通知タスクトレイ(Notify)が使えない環境にも対応するためテキストエディタ「kanedit」も現在制作中。
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のキーボード取得やファイルダイアログからのキャンセル取得などが不明。
 
 
 １-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
@@ -1205,6 +1204,10 @@ version(branch) 20160718M003911
    widget_u                           アイコンのURI(ファイルパス)。
    menu_b                             「yield ("window exit",LTsv_window_exit_cbk)」のようなイテレータ生成関数でメニューを作成して指定。
    menu_c                             右クリックで(メニューを表示せず)直接実行する関数を指定。
+
+ LTsv_filedialog_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_filedialog",dialog_t=0):
+  ファイルダイアログの作成。ファイル名は「dialog_r」のレスポンス先から「LTsv_widget_geturi()」で取得する。
+  dialog_tが偶数の時ファイル、奇数の時フォルダ。
 
  debug_canvas(window_objvoid=None,window_objptr=None)
   単体風テスト専用。関数が自身を「LTsv_window_after()」で再度呼ぶ事でループさせ日時の表示をしている。
