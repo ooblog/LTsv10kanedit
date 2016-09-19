@@ -4,14 +4,14 @@ enter	LF
 tab	4
 program	kantray
 LTsvver	20160718M003911
-modify	20160918U214920
+modify	20160919M203457
 |L:Tsv]
 
 [kanedit|
 window_size	width:490	height:360
 font_size	10
 edit_colors	font:#000000	bg:#FFF3F5	mark:#F04E7F
-edit_last	
+edit_last	/mnt/sda2/github/LTsv10kanedit/README.md
 memo_colors	font:#000000	bg:#FFFFFF	mark:#F04E7F
 memo_entry	
 |kanedit]
