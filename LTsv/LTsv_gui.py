@@ -143,7 +143,7 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
   menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None, \
-  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_c=None,kbd_v=None,kbd_k=None,kbd_t=None,kbd_u=None,kbd_d=None):
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_c=None,kbd_v=None,kbd_t=None,kbd_u=None,kbd_d=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -187,9 +187,8 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if kbd_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_settext",kbd_s)
     if kbd_c    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_copy",kbd_c)
     if kbd_v    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_‎paste",kbd_v)
-    if kbd_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_k)
-    if kbd_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_t)
-    if kbd_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_u)
+    if kbd_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_gettext",kbd_t)
+    if kbd_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_geturi",kbd_u)
     if kbd_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_deftext",kbd_d)
     return LTsv_widgetPAGE
 
