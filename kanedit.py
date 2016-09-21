@@ -10,7 +10,7 @@ from LTsv_file    import *
 #from LTsv_time    import *
 #from LTsv_calc    import *
 #from LTsv_joy     import *
-#from LTsv_kbd     import *
+from LTsv_kbd     import *
 from LTsv_gui     import *
 from LTsv_glyph  import *
 

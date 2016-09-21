@@ -12,10 +12,6 @@ import datetime
 import math
 from LTsv_file    import *
 from LTsv_printf import *
-try:
-    from LTsv_kbd  import *
-except:
-    pass
 LTsv_Tkinter=True
 try:
     import tkinter as Tk
@@ -146,8 +142,8 @@ def LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption):
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
-  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None,
-  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_c=None,kbd_v=None):
+  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None, \
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_c=None,kbd_v=None,kbd_k=None,kbd_t=None,kbd_u=None,kbd_d=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -188,8 +184,13 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_enter",kbd_e)
     if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_leave",kbd_l)
     if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_input",kbd_i)
+    if kbd_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_settext",kbd_s)
     if kbd_c    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_copy",kbd_c)
     if kbd_v    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_‎paste",kbd_v)
+    if kbd_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_k)
+    if kbd_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_t)
+    if kbd_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_returnkey",kbd_u)
+    if kbd_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"kbdentry_deftext",kbd_d)
     return LTsv_widgetPAGE
 
 def LTsv_fonttuple(LTsv_line):
@@ -340,6 +341,8 @@ def LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t=""):
                 widget_combo=LTsv_popupmenuOBJ[str(widget_o)].split('\n')
                 widget_s=widget_combo.index(widget_t) if widget_t in widget_combo else 0
                 LTsv_libgtk.gtk_combo_box_set_active(widget_o,widget_s)
+    if widget_k == "editcanvas":
+        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_deftext")](LTsv_widgetPAGENAME,UT=widget_t)
     if widget_k == "filedialog":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_window_set_title(widget_o,widget_t.encode("utf-8","xmlcharrefreplace"))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
