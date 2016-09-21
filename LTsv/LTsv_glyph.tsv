@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	LTsv_kbd.py
 LTsvver	20160718M003911
-modify	20160921W164534
+modify	20160921W222351
 |L:Tsv]
 
 [kanglyph|
@@ -32,7 +32,7 @@ eval_overhour	30
 eval_worddicname	../kanword.tsv
 eval_zipdicname		../kanzip
 [kanglyph|
-last_alpha	￥
+last_alpha	ぷ
 last_dic	代
 |kanglyph]
 [reversi|

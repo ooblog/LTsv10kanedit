@@ -928,6 +928,12 @@ version(branch) 20160718M003911
    keyboard_getkey(kbd_g)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるマウスボタンの状態を漢直鍵盤に渡すコールバック関数。
    keyboard_setkey(kbd_s)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される漢直鍵盤の文字入力を受けとるコールバック関数。
 
+def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
+    clip_h=None,clip_i=None,clip_j=None,clip_k=None,clip_l=None,clip_m=None,clip_n=None,
+    clip_o=None,clip_p=None,clip_q=None,clip_r=None,clip_s=None,clip_t=None,clip_u=None,
+    clip_v=None,clip_w=None,clip_x=None,clip_y=None,clip_z=None)
+  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボード用。
+
  LTsv_fonttuple(LTsv_line)
   「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
 
