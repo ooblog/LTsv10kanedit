@@ -993,27 +993,32 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,clip_c=No
         else:
             LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+UC+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:]; LTsv_editcanvasUL[editcanvas]+=1; LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUL[editcanvas]
         editcanvas_settext(editcanvas)
-    def editcanvas_settext(editcanvas,UT=None,UL=None,UR=None):
+    def editcanvas_settext(editcanvas,UT=None,TT=None,UL=None,UR=None,TL=None,TR=None):
         global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas] if UT == None else UT
         LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUL[editcanvas] if UL == None else UL
         LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUR[editcanvas] if UR == None else UR
+        LTsv_editcanvasTT[editcanvas]=LTsv_editcanvasTT[editcanvas] if TT == None else TT
         LTsv_draw_selcanvas(editcanvas); LTsv_draw_delete();
         LTsv_draw_color(LTsv_editcanvasUF[editcanvas])
         LTsv_editcanvasUP[editcanvas]=LTsv_draw_glyphsentry(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_cL=LTsv_editcanvasUL[editcanvas],draw_cR=LTsv_editcanvasUR[editcanvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasTT[editcanvas],draw_x=LTsv_editcanvasTX[editcanvas],draw_y=LTsv_editcanvasTY[editcanvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_color(LTsv_editcanvasUF[editcanvas])
         LTsv_draw_glyphs(draw_t=LTsv_editcanvasUK[editcanvas],draw_x=LTsv_global_canvasmotionX(),draw_y=LTsv_global_canvasmotionY(),draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_glyph_kbddelete(editcanvas)
         LTsv_glyph_kbddraw(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas])
         LTsv_draw_queue()
-    def editcanvas_deftext(editcanvas,UT=None):
+    def editcanvas_deftext(editcanvas,UT=None,TT=None):
         global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas] if UT == None else UT
         LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=len(LTsv_editcanvasUT[editcanvas]),len(LTsv_editcanvasUT[editcanvas])
+        LTsv_editcanvasTT[editcanvas]=LTsv_editcanvasTT[editcanvas] if TT == None else TT
         LTsv_draw_selcanvas(editcanvas); LTsv_draw_delete();
         LTsv_draw_color(LTsv_editcanvasUF[editcanvas])
         LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
+        LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasTT[editcanvas],draw_x=LTsv_editcanvasTX[editcanvas],draw_y=LTsv_editcanvasTY[editcanvas],draw_f=LTsv_glyph_kbdH//2,draw_g="漫")
         LTsv_draw_queue()
     def editcanvas_press(window_objvoid=None,window_objptr=None):
         global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
@@ -1079,9 +1084,9 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,clip_c=No
         return LTsv_editcanvasUT[editcanvas]
     editcanvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=widget_n,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
      event_p=editcanvas_press,event_m=editcanvas_motion,event_r=editcanvas_release,event_e=editcanvas_enter,event_l=editcanvas_leave,event_w=event_w)
-    LTsv_editcanvasUX[editcanvas],LTsv_editcanvasUY[editcanvas],LTsv_editcanvasUT[editcanvas],LTsv_editcanvasUF[editcanvas],LTsv_editcanvasUB[editcanvas],LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas],LTsv_editcanvasUP[editcanvas],LTsv_editcanvasUM[editcanvas],LTsv_editcanvasUK[editcanvas]=0,widget_h-LTsv_glyph_kbdH//2-1,"","black","white",0,0,[0],0,""
-#    LTsv_editcanvasTX[editcanvas],LTsv_editcanvasTY[editcanvas],LTsv_editcanvasTT[editcanvas],LTsv_editcanvasTF[editcanvas],LTsv_editcanvasTB[editcanvas],LTsv_editcanvasTL[editcanvas],LTsv_editcanvasTR[editcanvas],LTsv_editcanvasTP[editcanvas],LTsv_editcanvasTM[editcanvas],LTsv_editcanvasTK[editcanvas]={},{},{},{},{},{},{},{},{},{}
     LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKM[editcanvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH,""
+    LTsv_editcanvasUX[editcanvas],LTsv_editcanvasUY[editcanvas],LTsv_editcanvasUT[editcanvas],LTsv_editcanvasUF[editcanvas],LTsv_editcanvasUB[editcanvas],LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas],LTsv_editcanvasUP[editcanvas],LTsv_editcanvasUM[editcanvas],LTsv_editcanvasUK[editcanvas]=0,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH-1-LTsv_glyph_kbdH//2,"","black","white",0,0,[0],0,""
+    LTsv_editcanvasTX[editcanvas],LTsv_editcanvasTY[editcanvas],LTsv_editcanvasTT[editcanvas],LTsv_editcanvasTF[editcanvas],LTsv_editcanvasTB[editcanvas],LTsv_editcanvasTL[editcanvas],LTsv_editcanvasTR[editcanvas],LTsv_editcanvasTP[editcanvas],LTsv_editcanvasTM[editcanvas],LTsv_editcanvasTK[editcanvas]=0,0,"","black","FFF3F5",0,0,[0],0,""
     LTsv_glyph_tapcallback_shell(editcanvas,editcanvas_input)
     LTsv_widgetLTSV=LTsv_global_widgetltsv()
     LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,editcanvas)
@@ -1097,7 +1102,8 @@ def LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None):
     global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM
     LTsv_editcanvasKX[editcanvas]=LTsv_editcanvasKX[editcanvas] if kbd_x == None else kbd_x
     LTsv_editcanvasKY[editcanvas]=LTsv_editcanvasKY[editcanvas] if kbd_y == None else kbd_y
-    editcanvas_settext(editcanvas);
+    LTsv_editcanvasUY[editcanvas]=LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH-1-LTsv_glyph_kbdH//2
+#    editcanvas_settext(editcanvas);
 
 def LTsv_kbdentry_evaltext(calc_value=""):
     global LTsv_glyph_worddicname,LTsv_glyph_zipdicname,LTsv_glyph_worddic,LTsv_glyph_zipdic

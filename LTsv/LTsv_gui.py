@@ -341,7 +341,7 @@ def LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t=""):
                 widget_s=widget_combo.index(widget_t) if widget_t in widget_combo else 0
                 LTsv_libgtk.gtk_combo_box_set_active(widget_o,widget_s)
     if widget_k == "editcanvas":
-        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_deftext")](LTsv_widgetPAGENAME,UT=widget_t)
+        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_deftext")](LTsv_widgetPAGENAME,TT=widget_t)
     if widget_k == "filedialog":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_window_set_title(widget_o,widget_t.encode("utf-8","xmlcharrefreplace"))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
@@ -412,6 +412,8 @@ def LTsv_widget_gettext(LTsv_widgetPAGENAME):
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=LTsv_readlinerest(LTsv_widgetPAGE,"widgettext")
     if widget_k == "combobox":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_combo_box_text_get_active_text(widget_o)).value.decode("utf-8") if LTsv_libgtk.gtk_tree_model_iter_n_children(LTsv_libgtk.gtk_combo_box_get_model(widget_o),None) > 0 else ""
+    if widget_k == "editcanvas":
+        widget_t=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_gettext")](LTsv_widgetPAGENAME)
     if widget_k == "filedialog":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_window_get_title(widget_o)).value.decode("utf-8")
     return widget_t
@@ -500,6 +502,8 @@ def LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u=""):
                 widget_o.hIcon=icon_o
                 LTsv_shell32.Shell_NotifyIcon(ctypes.c_ulong(LTsv_ICON_NIM_MODIFY),ctypes.pointer(widget_o))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_u=widget_u)
+    if widget_k == "editcanvas":
+        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_deftext")](LTsv_widgetPAGENAME,UT=widget_u)
     if widget_k == "filedialog":
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_u=widget_u)
         LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
@@ -514,6 +518,8 @@ def LTsv_widget_geturi(LTsv_widgetPAGENAME):
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
     if widget_k == "notify":
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
+    if widget_k == "editcanvas":
+        widget_t=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"kbdentry_gettext")](LTsv_widgetPAGENAME)
     if widget_k == "filedialog":
         try:
             if LTsv_GUI == LTsv_GUI_GTK2:    widget_u=ctypes.c_char_p(LTsv_libgtk.gtk_file_chooser_get_filename(widget_o)).value.decode("utf-8")
