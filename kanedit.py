@@ -19,8 +19,8 @@ kanedit_getkbdnames,kanedit_getkbdkanas="",""
 kanedit_W,kanedit_H,kanedit_RS=LTsv_global_glyphkbdW(),LTsv_global_glyphkbdH(),False
 kanedit_ltsv,kanedit_config="",""
 kanedit_texteditfilename,kanedit_textvalue="",""
-kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize="black","#FFF3F5",10
-kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize="black","white",LTsv_global_glyphkbdH()//2
+kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize="black","#FFF9FA",10
+kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize="black","FFFFF3",LTsv_global_glyphkbdH()//2
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
     global kanedit_W,kanedit_H,kanedit_RS
@@ -82,12 +82,14 @@ def kanedit_configload():
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_resizeW,kanedit_resizeH=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"window_size"),"width","height"))
     kanedit_W,kanedit_H=min(max(LTsv_intstr0x(kanedit_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w(kanedit_window)),min(max(LTsv_intstr0x(kanedit_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h(kanedit_window))
-    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"font_size",str(kanedit_fontsize))),5),100)
     kanedit_fontcolor,kanedit_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg"))
-    kanmemo_fontcolor,kanmemo_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg"))
-    LTsv_editcanvas_color(kanedit_canvas,UF=kanmemo_fontcolor,UB=kanmemo_bgcolor,TF=kanedit_fontcolor,TB=kanedit_bgcolor)
+    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"edit_fontsize",str(kanedit_fontsize))),5),100)
     kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"edit_last","kanedit.txt")
     kanedit_textload(kanedit_texteditfilename)
+    kanmemo_fontcolor,kanmemo_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg"))
+    kanmemo_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"memo_fontsize",str(kanedit_fontsize))),5),100)
+    LTsv_editcanvas_color(kanedit_canvas,UF=kanmemo_fontcolor,UB=kanmemo_bgcolor,TF=kanedit_fontcolor,TB=kanedit_bgcolor)
+    LTsv_editcanvas_fontsize(kanedit_canvas,US=kanmemo_fontsize,TS=kanedit_fontsize)
     LTsv_widget_seturi(kanedit_canvas,LTsv_readlinerest(kanedit_config,"memo_entry"))
 
 def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
@@ -108,7 +110,7 @@ if len(LTsv_GUI) > 0:
     LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=True)
     LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanedit_window=LTsv_window_new(widget_t="kanedit",event_b=kanedit_exit_configsave,widget_w=kanedit_W,widget_h=kanedit_H,event_z=kanedit_resize,event_k=kanedit_keypress,event_y=kanedit_keyrelease)
-    kanedit_canvas=LTsv_editcanvas_new(kanedit_window,clip_c=kanfont_memo_copy,clip_v=kanedit_memo_paste,clip_k=kanfont_memo_eval,clip_o=kanedit_filedialog_open,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),event_w=50)
+    kanedit_canvas=LTsv_editcanvas_new(kanedit_window,kbd_k=kanfont_memo_eval,clip_c=kanfont_memo_copy,clip_v=kanedit_memo_paste,clip_o=kanedit_filedialog_open,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),event_w=50)
     kanedit_configload()
     LTsv_window_resize(kanedit_window,kanedit_W,kanedit_H)
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)

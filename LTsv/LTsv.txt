@@ -877,9 +877,10 @@ version(branch) 20160718M003911
   「LTsv_widgetPAGEXYWH()」のオブジェクト管理で番号が被らないようにするカウンタ。
 
  LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None,
-  widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_r=None,widget_c=None,
-  event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None,event_k=None,
-  menu_o=None,menu_b=None,kbd_d=None,kbd_g=None,kbd_s=None):
+  widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None,
+  event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None,
+  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None,
+  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_d=None,kbd_t=None,kbd_u=None,kbd_k=None):
   LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。
   「LTsv_widgetPAGE」の名前には「LTsv_widget_newUUID()」で発行されるユニークIDです。
   LTsv_widgetOBJはテキスト化数値化が困難なGUIオブジェクトを格納し、LTsv_widgetLTSV内で番号ラベルが降られる。
@@ -895,6 +896,8 @@ version(branch) 20160718M003911
                                       「LTsv_scale_new()」なら"combobox"。
                                       「LTsv_combobox_new()」なら"canvas"。
                                       「LTsv_notifyicon_new()」なら"notify"。
+                                      「LTsv_editcanvas_new()」なら"editcanvas"。
+                                      「LTsv_filedialog_new()」なら"filedialog"。
    widgettext(widget_t)               GUIオブジェクトが保有するテキスト。「window」のタイトルなど。
    widgettext(widget_u)               GUIオブジェクトが保有するURI(URLもしくはファイルパス)。「image」のファイルパスなど。
    widgetstart(widget_s)              「scale」など数値入力系GUIオブジェクトのmin(start)。
@@ -924,15 +927,27 @@ version(branch) 20160718M003911
    notify_popupmenu(event_u)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)を右クリックした時のコールバック関数。
    popupmenuobj(menu_o)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニューオブジェクト。
    popupmenubind(menu_b)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニュー表示コールバック関数。
-   keyboard_draw(kbd_d)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される漢直鍵盤描画コールバック関数。
-   keyboard_getkey(kbd_g)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるマウスボタンの状態を漢直鍵盤に渡すコールバック関数。
-   keyboard_setkey(kbd_s)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される漢直鍵盤の文字入力を受けとるコールバック関数。
+   popupmenuclick(menu_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)クリック時のコールバック関数。
+   dialog_type(dialog_t)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログの種類。
+   dialog_close(dialog_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログのgtk_widget_hide_on_delete。
+   editcanvas_press(kbd_p)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押下時コールバック関数。
+   editcanvas_release(kbd_r)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押上時コールバック関数。
+   editcanvas_motion(kbd_m)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル移動コールバック関数。
+   editcanvas_enter(kbd_e)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠内時コールバック関数。
+   editcanvas_leave(kbd_l)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠外時コールバック関数。
+   editcanvas_input(kbd_i)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤文字カーソル
+   editcanvas_settext(kbd_s)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄文字列指定。
+   editcanvas_deftext(kbd_d)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_gettext(kbd_t)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_geturi(kbd_u)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_‎keyenter(kbd_k)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
 
 def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
-    clip_h=None,clip_i=None,clip_j=None,clip_k=None,clip_l=None,clip_m=None,clip_n=None,
-    clip_o=None,clip_p=None,clip_q=None,clip_r=None,clip_s=None,clip_t=None,clip_u=None,
-    clip_v=None,clip_w=None,clip_x=None,clip_y=None,clip_z=None)
-  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボード用。
+  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボードA~Z用。
+   editcanvas_copy(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードコピー処理コールバック関数。
+   editcanvas_open(clip_o)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルオープン処理コールバック関数。
+   editcanvas_‎paste(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
+   editcanvas_cut(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードカット処理コールバック関数。
 
  LTsv_fonttuple(LTsv_line)
   「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
@@ -1389,32 +1404,25 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
 
- LTsv_kbdentry_hjkl(entry_t="",entry_ch="",entry_cL=0,entry_cR=0,clip_c=None,clip_v=None,clip_e=None)
-  「LTsv_kbdentry_new()」などで使う直キーボードの入力・カーソル移動・クリップボード処理。
-  entry_tはエントリーの元々の文字列。entry_chは追加する文字列またはカーソル移動などのコマンド。
-  entry_cL,entry_cRはカーソル位置(選択範囲)。
-  clip_cはコピー、clip_vは貼り付け時の関数。
-  clip_cはα鍵盤「σ」にある「&#61654;(U+f0d6)」もしくは「&#61653;(U+f0d5)」押下時の関数。Ctrl+CやCtrl+Xを想定。
-  clip_vはα鍵盤「σ」にある「&#61655;(U+f0d7)」押下時の関数。Ctrl+Vを想定。
-  clip_eはα鍵盤「σ」にある「&#61651;(U+f0d3)」押下時の関数。Enterを想定。
-
- LTsv_kbdentry_new(LTsv_windowPAGENAME,event_b=None,clip_c=None,clip_v=None,clip_e=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
-  「entry」の代わりに漢直キーボードと1行テキスト入力を一体化した「canvas」(キャンバスエントリー)を設置。
+ LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=None,clip_c=None,clip_v=None,clip_o=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50)
+  漢直キーボードに加えテキスト入力欄も一体化した「editcanvas」を設置。
   widget_w,widget_hは漢直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
-  event_bで「canvas」からマウスを外したときの処理。
-  clip_c,clip_v,clip_eは「LTsv_kbdentry_hjkl()」を参考。
+  event_bで「editcanvas」からマウスを外した時のコールバック関数。kbd_kは[Enter]押した時のコールバック関数。
+  clip_c,clip_vはクリップボード処理のコールバック関数。
+  clip_oはファイルダイアログのコールバック関数。
 
- LTsv_kbdentry_settext(kbdentry_canvas,widget_t=""):
-  kbd_canvasのキャンバスエントリーに文字列を設定。widget_tで書き換える文字列。
+ LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None)
+  「editcanvas」で漢直キーボードの表示位置を変更。テキスト入力欄も移動。
 
- LTsv_kbdentry_gettext(kbdentry_canvas)
-  kbd_canvasのキャンバスエントリーから文字列を取得。
+ LTsv_editcanvas_color(editcanvas,UF=None,UB=None,TF=None,TB=None)
+  「editcanvas」で漢直キーボードのテキスト入力欄の文字色背景色を変更。
 
- LTsv_kbdentry_evaltext(calc_value="")
-  文字列から漢直キーボードの検索をしたり電卓機能などを使う。
+ LTsv_editcanvas_fontsize(editcanvas,US=None,TS=None)
+  「editcanvas」で漢直キーボードのテキスト入力欄のフォントサイズを変更。
 
  LTsv_kbdentry_evaltext(calc_value=""):
-  ほぼ「kanedit」用。「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。」を参考。
+  ほぼ「kanedit」用。文字列から漢直キーボードの検索をしたり電卓機能などを使う。
+  「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。」を参考。
 
  debug_mousepress(window_objvoid=None,window_objptr=None)
   単体風テスト専用。リバーシの盤面をクリックした時の動作。
