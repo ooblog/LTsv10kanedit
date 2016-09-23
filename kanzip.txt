@@ -10,9 +10,6 @@ version(branch) 20160718M003911
  ３．   作者について、例えば連絡先。
 
 
-
-
-
 ０-0． ライセンス及びソフトの使用の補足ガイドライン
 
  ※「MIT License」準拠。
@@ -40,7 +37,7 @@ version(branch) 20160718M003911
 
 １．    使い方
 
- 「kanmap.py」を起動して「jigyosyo,zip」をダウンロードして「jigyosyo.csv」を取りだし「jigyosyo.tsv」に変換。
+ 「kanzip.py」を起動して「jigyosyo,zip」をダウンロードして「jigyosyo.csv」を取りだし「jigyosyo.tsv」に変換。
  同じ事を47都道府県で実施し、「*.tsv」を最終的に「kanzip.tsv」にマージする。
 
 
