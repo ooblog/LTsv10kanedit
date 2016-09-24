@@ -507,6 +507,12 @@ def LTsv_dict2label(LTsv_dict):
 def LTsv_file_ver():
     return "20160718M003911"
 
+def LTsv_issue():
+    LTsv_issuefile=""
+    if sys.platform.startswith("linux"):
+        LTsv_issuefile=LTsv_loadfile("/etc/issue")
+    return LTsv_issuefile
+
 if __name__=="__main__":
     from LTsv_printf import *
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
@@ -590,6 +596,8 @@ if __name__=="__main__":
     printlog=LTsv_libc_printf("LTsv_tuple2tsv(joylist)↓\n{0}".format(joylabel),printlog)
     printlog=LTsv_libc_printf("LTsv_sievetuplelabels(joytsv,*tuple(['A','B','N','X','Y']))↓\n{0}".format(LTsv_sievetuplelabels(joytsv,*tuple(['A','B','N','X','Y']))),printlog)
     printlog=LTsv_libc_printf("LTsv_sievelabels(joytsv,'A\\tB\\tN\\tX\\tY')↓\n{0}".format(LTsv_sievelabels(joytsv,'A\tB\tN\tX\tY')),printlog)
+    print("")
+    printlog=LTsv_libc_printf("LTsv_issue()↓\n{0}".format(LTsv_issue()),printlog)
     print("")
     loadfile=LTsv_putpage(loadfile,"printlog",printlog)
     LTsv_savefile(txtpath,loadfile); LTsv_libc_printf("LTsv_savefile('{0}',loadfile)".format(txtpath))

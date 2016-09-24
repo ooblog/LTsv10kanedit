@@ -366,6 +366,9 @@ version(branch) 20160718M003911
  LTsv_file_ver()
   [LTsv_file.py]のバージョン表示(20160718M003911)。
 
+ LTsv_issue():
+  「/etc/issue」を開いてLinuxのディストリビューションを探る。詳細なバージョン確認方法はディストリ毎に異なる予感。
+
 
 １-3a．[LTsv_time.py]の関数一覧
 
@@ -582,9 +585,9 @@ version(branch) 20160718M003911
  0で割るなどの計算できない場合は無限エラー扱いにして「n|0」と表示します。実際の無限には正負の概念が存在しますが電卓フォーマットの「n|0」は単に計算放棄です。
 
  使用できる数字
-  012456789 １２３４５６７８９０     アラビア数字は全角でも使用できます。
-  〇一二三四五六七八九               漢数字も使用できます。大字も「壱弐参肆伍陸漆捌玖零陌阡萬」が使用可能です。
-  垓京兆億万千百十 銭                漢数字の万単位の繰り上がりも垓までとりあえず対応しています。銭は百分の一になります。
+  012456789 １２３４５６７８９０    アラビア数字は全角でも使用できます。
+  〇一二三四五六七八九              漢数字も使用できます。大字も「壱弐参肆伍陸漆捌玖零陌阡萬」が使用可能です。
+  垓京兆億万千百十 銭               漢数字の万単位の繰り上がりも垓までとりあえず対応しています。銭は百分の一になります。
 
  使用できる演算子
   . ．      小円                    小数点は「3.1416⇔3927|1250」の様にドットを使います。「円」は「3円14銭」のような表現用途。
@@ -600,14 +603,14 @@ version(branch) 20160718M003911
   L lＬｌ   倍                      最小公倍数の計算。負数も絶対値で計算。同じ分母であれば分母を1と見なして無理やり計算。分母が異なる場合「n|0」エラー扱い。
   G gＧｇ   約                      最大公約数の計算。負数も絶対値で計算。同じ分母であれば分母を1と見なして無理やり計算。分母が異なる場合「n|0」エラー扱い。
   % ％      率                      消費税などの計算用。「10000+8%⇔10800|1」のように「10000×1.08⇔10800|1」と小数計算の手間簡略化。
-  y π      周                      円周率。math.pi(約3.14159265359)が代入される。桁数はおそらくPython環境依存。
+  y π      周                       円周率。math.pi(約3.14159265359)が代入される。桁数はおそらくPython環境依存。
   e ｅ      底                      ネイピア数。math.e(約2.71828182846)が代入される。桁数はおそらくPython環境依存。
  括弧および関数用途の演算子
   ()（）                            括弧の中を先に計算する「3(c+1)→3×(c+1)→3×(1+1)→3×2」。もしくは数列の表現にも使用。
   c CＣｃ   数                      数列内で有効なカウント変数。括弧の内外で異なる数列を数えるので注意。初期値は「1」。
-  S SｓＳΣ 列但※                  数列和。「(cΣ1～5)→1＋2＋3＋4＋5」といった等差数列の和を想定。
+  S SｓＳΣ 列但※                   数列和。「(cΣ1～5)→1＋2＋3＋4＋5」といった等差数列の和を想定。
   ! ！      方                      数列積。「(2!1～4)→2×2×2×2」のような乗数や「(c!1～5)→1×2×3×4×5」のような階乗を想定。
-  ~ ～      ?                      数列和(もしくは数列積)の範囲指定。「(cΣ1~4)→1＋2＋3＋4」「(c!4～1)→4×3×2×1」と増減±1の計算は自動。
+  ~ ～      ?                       数列和(もしくは数列積)の範囲指定。「(cΣ1~4)→1＋2＋3＋4」「(c!4～1)→4×3×2×1」と増減±1の計算は自動。
  未実装等で使用できない演算子
   n NｎＮ∞ 無                      0で割った時など計算"できない"事「n|0」を表す。計算には使用できない。
   ,                                 「1,0800⇔10800|1」とコンマ無しの計算結果を帰します。使用でき無い他の演算子もだいたいコンマ扱いです。
@@ -885,69 +888,69 @@ version(branch) 20160718M003911
   「LTsv_widgetPAGE」の名前には「LTsv_widget_newUUID()」で発行されるユニークIDです。
   LTsv_widgetOBJはテキスト化数値化が困難なGUIオブジェクトを格納し、LTsv_widgetLTSV内で番号ラベルが降られる。
 
-   widgetobj(widget_o)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの「LTsv_widgetOBJcount」の方。
-   widgetkind(widget_k)               GUIオブジェクトの種類。「LTsv_window_new()」なら「window」。
-                                      「LTsv_label_new()」なら"label"。
-                                      「LTsv_image_new()」なら"image"。
-                                      「LTsv_button_new()」なら"button"。
-                                      「LTsv_entry_new()」なら"entry"。
-                                      「LTsv_spin_new()」なら"spin"。
-                                      「LTsv_scale_new()」なら"scale"。
-                                      「LTsv_scale_new()」なら"combobox"。
-                                      「LTsv_combobox_new()」なら"canvas"。
-                                      「LTsv_notifyicon_new()」なら"notify"。
-                                      「LTsv_editcanvas_new()」なら"editcanvas"。
-                                      「LTsv_filedialog_new()」なら"filedialog"。
-   widgettext(widget_t)               GUIオブジェクトが保有するテキスト。「window」のタイトルなど。
-   widgettext(widget_u)               GUIオブジェクトが保有するURI(URLもしくはファイルパス)。「image」のファイルパスなど。
-   widgetstart(widget_s)              「scale」など数値入力系GUIオブジェクトのmin(start)。
-   widgetend(widget_e)                「scale」など数値入力系GUIオブジェクトのmax(end)。
-   widgetadd(widget_a)                「scale」など数値入力系GUIオブジェクトの増減量。「Tkinter」だと整数だが「GTK2」だと小数指定が可能。
-   widgetstringvar(widget_v)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトのテキスト。
-   widgetbooleanvar(widget_b)        「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの論理値。
-   widgetphotoimage(widget_p)         「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの画像。
-   widgetpixmap(widget_m)             「canvas」の「LTsv_libgdk.gdk_pixmap_new()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。
-   widgetgc(widget_g)                 「canvas」の「LTsv_GDKCOLOR()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。
-   widgetfont(widget_f)               LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトのフォント。
-   widgetsizeX(widget_x)              GUIオブジェクトのウィンドウ内X座標。
-   widgetsizeY(widget_y)              GUIオブジェクトのウィンドウ内Y座標。
-   widgetsizeW(widget_w)              GUIオブジェクトの横幅。
-   widgetsizeH(widget_h)              GUIオブジェクトの縦幅。
-   widgetcontainer(widget_c)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるオブジェクト配置するルールを格納するコンテナオブジェクト。
-   widgetresize(event_z)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「window」のサイズ変更時のコールバック関数。
+   widgetobj(widget_o)                  「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの「LTsv_widgetOBJcount」の方。
+   widgetkind(widget_k)                 GUIオブジェクトの種類。「LTsv_window_new()」なら「window」。
+                                       「LTsv_label_new()」なら"label"。
+                                       「LTsv_image_new()」なら"image"。
+                                       「LTsv_button_new()」なら"button"。
+                                       「LTsv_entry_new()」なら"entry"。
+                                       「LTsv_spin_new()」なら"spin"。
+                                       「LTsv_scale_new()」なら"scale"。
+                                       「LTsv_scale_new()」なら"combobox"。
+                                       「LTsv_combobox_new()」なら"canvas"。
+                                       「LTsv_notifyicon_new()」なら"notify"。
+                                       「LTsv_editcanvas_new()」なら"editcanvas"。
+                                       「LTsv_filedialog_new()」なら"filedialog"。
+   widgettext(widget_t)                GUIオブジェクトが保有するテキスト。「window」のタイトルなど。
+   widgettext(widget_u)                GUIオブジェクトが保有するURI(URLもしくはファイルパス)。「image」のファイルパスなど。
+   widgetstart(widget_s)               「scale」など数値入力系GUIオブジェクトのmin(start)。
+   widgetend(widget_e)                 「scale」など数値入力系GUIオブジェクトのmax(end)。
+   widgetadd(widget_a)                 「scale」など数値入力系GUIオブジェクトの増減量。「Tkinter」だと整数だが「GTK2」だと小数指定が可能。
+   widgetstringvar(widget_v)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトのテキスト。
+   widgetbooleanvar(widget_b)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの論理値。
+   widgetphotoimage(widget_p)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトの画像。
+   widgetpixmap(widget_m)              「canvas」の「LTsv_libgdk.gdk_pixmap_new()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。
+   widgetgc(widget_g)                  「canvas」の「LTsv_GDKCOLOR()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。
+   widgetfont(widget_f)                LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるGUIオブジェクトのフォント。
+   widgetsizeX(widget_x)               GUIオブジェクトのウィンドウ内X座標。
+   widgetsizeY(widget_y)               GUIオブジェクトのウィンドウ内Y座標。
+   widgetsizeW(widget_w)               GUIオブジェクトの横幅。
+   widgetsizeH(widget_h)               GUIオブジェクトの縦幅。
+   widgetcontainer(widget_c)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるオブジェクト配置するルールを格納するコンテナオブジェクト。
+   widgetresize(event_z)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「window」のサイズ変更時のコールバック関数。
    keyboard_press(event_k)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「window」のキー押した時のコールバック関数。
-   keyboard_release(event_y)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「window」のキー離した時のコールバック関数。
-   widgetcallback(event_b)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される何かしらのコールバック関数(例えば「button」を押した時に呼び出す関数)。
-   mouse_press(event_p)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」でマウスボタンを押した時のコールバック関数。
-   mouse_release(event_r)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」でマウスボタンを離した時のコールバック関数。
-   mouse_enter(event_e)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」にマウスポインタが入った時のコールバック関数。
-   mouse_motion(event_m)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」内でマウスポインタが動いた時のコールバック関数。
-   mouse_leave(event_l)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」からマウスポインタが出た時のコールバック関数。
-   notify_activate(event_a)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)を左クリックした時のコールバック関数。
-   notify_popupmenu(event_u)          「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)を右クリックした時のコールバック関数。
-   popupmenuobj(menu_o)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニューオブジェクト。
-   popupmenubind(menu_b)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニュー表示コールバック関数。
+   keyboard_release(event_y)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「window」のキー離した時のコールバック関数。
+   widgetcallback(event_b)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される何かしらのコールバック関数(例えば「button」を押した時に呼び出す関数)。
+   mouse_press(event_p)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」でマウスボタンを押した時のコールバック関数。
+   mouse_release(event_r)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」でマウスボタンを離した時のコールバック関数。
+   mouse_enter(event_e)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」にマウスポインタが入った時のコールバック関数。
+   mouse_motion(event_m)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」内でマウスポインタが動いた時のコールバック関数。
+   mouse_leave(event_l)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「canvas」からマウスポインタが出た時のコールバック関数。
+   notify_activate(event_a)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)を左クリックした時のコールバック関数。
+   notify_popupmenu(event_u)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)を右クリックした時のコールバック関数。
+   popupmenuobj(menu_o)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニューオブジェクト。
+   popupmenubind(menu_b)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるメニュー表示コールバック関数。
    popupmenuclick(menu_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)クリック時のコールバック関数。
-   dialog_type(dialog_t)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログの種類。
-   dialog_close(dialog_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログのgtk_widget_hide_on_delete。
+   dialog_type(dialog_t)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログの種類。
+   dialog_close(dialog_c)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログのgtk_widget_hide_on_delete。
    editcanvas_press(kbd_p)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押下時コールバック関数。
-   editcanvas_release(kbd_r)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押上時コールバック関数。
-   editcanvas_motion(kbd_m)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル移動コールバック関数。
+   editcanvas_release(kbd_r)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押上時コールバック関数。
+   editcanvas_motion(kbd_m)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル移動コールバック関数。
    editcanvas_enter(kbd_e)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠内時コールバック関数。
    editcanvas_leave(kbd_l)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠外時コールバック関数。
    editcanvas_input(kbd_i)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤文字カーソル
-   editcanvas_settext(kbd_s)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄文字列指定。
-   editcanvas_deftext(kbd_d)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
-   editcanvas_gettext(kbd_t)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
-   editcanvas_geturi(kbd_u)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
-   editcanvas_‎keyenter(kbd_k)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
-
+   editcanvas_settext(kbd_s)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄文字列指定。
+   editcanvas_deftext(kbd_d)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_gettext(kbd_t)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_geturi(kbd_u)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_‎keyenter(kbd_k)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
 def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
   LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボードA~Z用。
    editcanvas_copy(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードコピー処理コールバック関数。
    editcanvas_open(clip_o)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルオープン処理コールバック関数。
-   editcanvas_‎paste(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
-   editcanvas_cut(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードカット処理コールバック関数。
+   editcanvas_‎paste(clip_c)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
+   editcanvas_cut(clip_c)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードカット処理コールバック関数。
+
 
  LTsv_fonttuple(LTsv_line)
   「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
@@ -1476,29 +1479,20 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    左下(Ｎの下)からフリック    α鍵盤の選択。もしくは辞書の変更。
    右下(Ｘの下)からフリック    字引入力。単漢字辞書の項目が代入。
 
-  空白を入力する場合はアルファベットを表示して「）」と「＝」の間の０の位置が空白です。
+ α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
 
-  Ｎ　１２３４５６７８９０－＾　Ｘ　Ｎ　1 2 3 4 5 6 7 8 9 0 - ^ 　Ｘ
-  　　ｑｗｅｒｔｙｕｉｏｐ＠［　　　　　q w e r t y u i o p @ [ 　　
-  　　ａｓｄｆｇｈｊｋｌ；：］　　　　　a s d f g h j k l ; : ] 　　
-  ＠　ｚｘｃｖｂｎｍ，．／＼￥　英　￥　z x c v b n m , . / \ \ 　英
-
-  Ｎ　！”＃＄％＆’（）　＝～　Ｘ　Ｎ　! " # $ % & ' ( ) 　 = ~ 　Ｘ
-  　　ＱＷＥＲＴＹＵＩＯＰ｀｛　　　　　Q W E R T Y U I O P ` { 　　
-  　　ＡＳＤＦＧＨＪＫＬ＋＊｝　　　　　A S D F G H J K L + * } 　　
-  ｀　ＺＸＣＶＢＮＭ＜＞？＿｜　英　｜　Z X C V B N M < > ? _ | 　英
-
-  α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
-
-   HJKL        カーソル移動。H←,J↓,K↑,L→
-   YUBN        カーソル斜め移動。１行テキストの場合範囲選択。Y↖,U↗,B↙,N↘
-   ]          エンターキー。Enter。
-   ;          バックスペース。BS。
-   :          カーソルから右の文字デリート。DEL。
-   A          テキスト全選択。Ctrl+A。
-   X          テキスト切り取り。Ctrl+X。
-   C          テキストコピー。Ctrl+C。
-   V          テキスト貼り付け。Ctrl+V。
+  HJKL        カーソル移動。H←,J↓,K↑,L→
+  YUBN        カーソル斜め移動。１行テキストの場合範囲選択。Y↖,U↗,B↙,N↘
+  ]          エンターキー。Enter。
+  ;          バックスペース。BS。
+  :          カーソルから右の文字デリート。DEL。
+  A          テキスト全選択。Ctrl+A。
+  X          テキスト切り取り。Ctrl+X。
+  C          テキストコピー。Ctrl+C。
+  V          テキスト貼り付け。Ctrl+V。
+  T          タブ文字を入力。
+  I          半角スペース4文字を入力。
+  O         ファイルを開くダイアログ(「kantray」用途)。
 
 
 １-8c．漢直キーボードの操作方法(物理キーボード)
@@ -1508,12 +1502,23 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
   [NFER]+[ぬ〜ろ￥]                   NFER鍵盤切替(青)。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。
   [XFER]+[ヌ〜ロ｜]                   XFER鍵盤切替(緑)。カタカナや大文字など。[XFER]キーを押すだけでも鍵盤は切り替わる。
-  [NFER]+[KANA]                      「σ」鍵盤表示。HJKLカーソル移動などに使います。
-  [XFER]+[KANA]                      「Σ」鍵盤表示。電卓用途。
-  [NFER]+[XFER]or[XFER]+[NFER]   α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」を変更・単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」変更。
-                                          α鍵盤と辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。
-  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]          単漢字辞書による字引入力。
+  [NFER]+[XFER]or[XFER]+[NFER]       α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。
+                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。
+  [KANA]+[NFER]or[NFER]+[KANA]       「σ」鍵盤表示。HJKLカーソル移動などに使います。
+  [KANA]+[XFER]or[XFER]+[KANA]       「Σ」鍵盤表示。電卓用途。
+  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]           単漢字辞書による字引入力。
 
+ 空白を入力する場合はアルファベット鍵盤「￥」「｜」(半角)「＠」「｀」(全角)を表示して「）」と「＝」の間の０の位置が空白です。
+
+  Ｎ　１２３４５６７８９０－＾　Ｘ　Ｎ　1 2 3 4 5 6 7 8 9 0 - ^ 　Ｘ
+  　　ｑｗｅｒｔｙｕｉｏｐ＠［　　　　　q w e r t y u i o p @ [ 　　
+  　　ａｓｄｆｇｈｊｋｌ；：］　　　　　a s d f g h j k l ; : ] 　　
+  ＠　ｚｘｃｖｂｎｍ，．／＼￥　英　￥　z x c v b n m , . / \ \ 　英
+
+  Ｎ　！”＃＄％＆’（）　＝～　Ｘ　Ｎ　! " # $ % & ' ( )    = ~ 　Ｘ
+  　　ＱＷＥＲＴＹＵＩＯＰ｀｛　　　　　Q W E R T Y U I O P ` { 　　
+  　　ＡＳＤＦＧＨＪＫＬ＋＊｝　　　　　A S D F G H J K L + * } 　　
+  ｀　ＺＸＣＶＢＮＭ＜＞？＿｜　英　｜　Z X C V B N M < > ? _ | 　英
 
   漢字配列や字引入力など漢直の詳しい解説は「kanedit.txt」の「１-0． 「漢直」のおさらい(内容は「LTsv/LTsv.txt」と重複)。」なども参考にしてください。
 
@@ -1523,7 +1528,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  「LTsv_kbdentry_evaltext()」の引数内容がコマンドか単語か数式かで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。
 
   １文字のみ入力                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。
-                                     「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」「_⇔」(越)→「照_⇔&#95;」
+                                     「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」
   先頭文字列が「&#」                 数値文字参照を文字列にデコード。
                                      「&#21654;&#21937;&#40634;&#40621;」→「照&#21654;&#21937;&#40634;&#40621;⇔咖喱麺麭」
   先頭文字が「照」                   文字列を数値文字参照にエンコード。数値文字参照を文字列へのデコードも可能。
@@ -1591,7 +1596,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
 １-8e．[LTsv_glyph.tsv]のタグ解説
 
-  [kanglyph|                         「LTsv_glyph.py」の設定。
+  [kanglyph|                         「LTsv/LTsv_glyph.py」の設定。
    dicname                           単漢字辞書を指定。初期値は「kanchar.tsv」。
    mapname                           漢直キーボードの漢字配列を指定。初期値は「kanmap.tsv」。
    picklename                        フォントグリフの座標パイクルを指定。初期値は「kanpickle.bin」。
@@ -1689,6 +1694,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  Ａ．将来的に入力デバイスはタッチパネルに収束する恐れがあると判断しました。
      例えば拡大縮小ジェスチャーなど指を２本以上使うタッチパネルではマウスカーソルの概念自体が希薄になると思います。
      文字入力タップ操作は文字鍵盤からＮＸ等にカーソルをそらすキャンセルが可能です。
+
+ Ｑ．なんで中途半端にVimっぽい操作方法なんですか？
+ Ａ．上下左右([Up][Down][Left][Right])キーと[Space]キーと[Tab]キーが他のGUIで使用されるからです。
+     「kanfont」などでスケールやラジオボタンなど十字キーでフォーカスが移動するGUIも使うので漢直キーボードは使えるキーが限られます。
 
 
 ４．   作者について、例えば連絡先。
