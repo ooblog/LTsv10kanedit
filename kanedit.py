@@ -19,8 +19,8 @@ kanedit_getkbdnames,kanedit_getkbdkanas="",""
 kanedit_W,kanedit_H,kanedit_RS=LTsv_global_glyphkbdW(),LTsv_global_glyphkbdH(),False
 kanedit_ltsv,kanedit_config="",""
 kanedit_texteditfilename,kanedit_textvalue="",""
-kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize="black","#FFF9FA",10
-kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize="black","FFFFF3",LTsv_global_glyphkbdH()//2
+kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle="black","#FFF9FA",10,"漫"
+kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize,kanmemo_fontstyle="black","FFFFF3",LTsv_global_glyphkbdH()//2,"漫"
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
     global kanedit_W,kanedit_H,kanedit_RS
@@ -76,20 +76,22 @@ def kanedit_textload(filename):
 def kanedit_configload():
     global kanedit_W,kanedit_H,kanedit_RS
     global kanedit_ltsv,kanedit_config
-    global kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize
-    global kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize
+    global kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle
+    global kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize,kanmemo_fontstyle
     kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_resizeW,kanedit_resizeH=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"window_size"),"width","height"))
     kanedit_W,kanedit_H=min(max(LTsv_intstr0x(kanedit_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w(kanedit_window)),min(max(LTsv_intstr0x(kanedit_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h(kanedit_window))
     kanedit_fontcolor,kanedit_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg"))
     kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"edit_fontsize",str(kanedit_fontsize))),5),100)
+    kanedit_fontstyle=LTsv_readlinerest(kanedit_config,"edit_fontstyle",kanedit_fontstyle)
     kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"edit_last","kanedit.txt")
     kanedit_textload(kanedit_texteditfilename)
     kanmemo_fontcolor,kanmemo_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg"))
     kanmemo_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"memo_fontsize",str(kanedit_fontsize))),5),100)
+    kanmemo_fontstyle=LTsv_readlinerest(kanedit_config,"memo_fontstyle",kanmemo_fontstyle)
     LTsv_editcanvas_color(kanedit_canvas,UF=kanmemo_fontcolor,UB=kanmemo_bgcolor,TF=kanedit_fontcolor,TB=kanedit_bgcolor)
-    LTsv_editcanvas_fontsize(kanedit_canvas,US=kanmemo_fontsize,TS=kanedit_fontsize)
+    LTsv_editcanvas_font(kanedit_canvas,US=kanmemo_fontsize,TS=kanedit_fontsize,UG=kanmemo_fontstyle,TG=kanedit_fontstyle)
     LTsv_widget_seturi(kanedit_canvas,LTsv_readlinerest(kanedit_config,"memo_entry"))
 
 def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):

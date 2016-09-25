@@ -23,9 +23,9 @@ version(branch) 20160718M003911
  １-8a．[LTsv_glyph.py]の関数一覧
  １-8b．漢直キーボードの操作方法(マウス)
  １-8c．漢直キーボードの操作方法(物理キーボード)
- １-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。
+ １-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
  １-8e．[LTsv_glyph.tsv]のタグ解説
- ２-0． 「L:Tsv」を用いるアプリケーションの作り方。
+ ２-0． 「L:Tsv」を用いるアプリケーションの作り方
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
  ３-2． 漢直キーボードのＦＡＱ
@@ -75,6 +75,7 @@ version(branch) 20160718M003911
  Windowsのエディタで[kanchar.tsv]を開くと3バイト以上の文字が「?」に置き換えられる恐れがある。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ 「LTsv_editcanvas_new()」の「電卓」でスクロールが実装されてない。「メモ帳」の方もテキスト編集ができない。
 
 
 １-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
@@ -939,10 +940,10 @@ version(branch) 20160718M003911
    editcanvas_enter(kbd_e)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠内時コールバック関数。
    editcanvas_leave(kbd_l)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠外時コールバック関数。
    editcanvas_input(kbd_i)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤文字カーソル
-   editcanvas_settext(kbd_s)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄文字列指定。
-   editcanvas_deftext(kbd_d)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
-   editcanvas_gettext(kbd_t)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
-   editcanvas_geturi(kbd_u)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」
+   editcanvas_settext(kbd_s)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄カーソル付き文字列表示変更のコールバック関数。
+   editcanvas_deftext(kbd_d)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄カーソル省略文字列表示変更のコールバック関数。
+   editcanvas_gettext(kbd_t)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄「メモ帳」文字列取得コールバック関数。
+   editcanvas_geturi(kbd_u)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄「電卓」文字列取得コールバック関数。
    editcanvas_‎keyenter(kbd_k)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
 def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
   LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボードA~Z用。
@@ -950,7 +951,6 @@ def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_
    editcanvas_open(clip_o)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルオープン処理コールバック関数。
    editcanvas_‎paste(clip_c)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
    editcanvas_cut(clip_c)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードカット処理コールバック関数。
-
 
  LTsv_fonttuple(LTsv_line)
   「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
@@ -1004,6 +1004,7 @@ def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_
 
  LTsv_window_main(LTsv_windowPAGENAME)
   GUIがイベント待ちになるので一旦スクリプトはここで停止。GUIのイベントか「LTsv_window_after()」のタイマー待ち。
+  「LTsv_guiinit()」から「LTsv_window_main()」の途中で「print()」「LTsv_libc_printf()」などコンソール系命令があるとGUIが起動しないので注意。
 
  LTsv_window_after(LTsv_windowPAGENAME,event_b=None,event_i="mousemotion",event_w=1000)
   タイマーの設定。「LTsv_window_main()」から一時的に抜け出す手段の一つ。
@@ -1413,6 +1414,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   event_bで「editcanvas」からマウスを外した時のコールバック関数。kbd_kは[Enter]押した時のコールバック関数。
   clip_c,clip_vはクリップボード処理のコールバック関数。
   clip_oはファイルダイアログのコールバック関数。
+  「メモ帳」と「電卓」の２つのテキスト入力欄が同時に作成される。
+  「メモ帳」とは「LTsv_widget_settext()」「LTsv_widget_gettext()」でテキスト通信。
+  「電卓」とは「LTsv_widget_seturi()」「LTsv_widget_geturi()」でテキスト通信。
+
 
  LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None)
   「editcanvas」で漢直キーボードの表示位置を変更。テキスト入力欄も移動。
@@ -1420,12 +1425,12 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_editcanvas_color(editcanvas,UF=None,UB=None,TF=None,TB=None)
   「editcanvas」で漢直キーボードのテキスト入力欄の文字色背景色を変更。
 
- LTsv_editcanvas_fontsize(editcanvas,US=None,TS=None)
+ LTsv_editcanvas_font(editcanvas,US=None,TS=None,UG=None,TG=None)
   「editcanvas」で漢直キーボードのテキスト入力欄のフォントサイズを変更。
 
  LTsv_kbdentry_evaltext(calc_value=""):
   ほぼ「kanedit」用。文字列から漢直キーボードの検索をしたり電卓機能などを使う。
-  「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。」を参考。
+  「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
 
  debug_mousepress(window_objvoid=None,window_objptr=None)
   単体風テスト専用。リバーシの盤面をクリックした時の動作。
@@ -1481,18 +1486,25 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
 
-  HJKL        カーソル移動。H←,J↓,K↑,L→
-  YUBN        カーソル斜め移動。１行テキストの場合範囲選択。Y↖,U↗,B↙,N↘
+  HJKL        「editcanvas」のカーソル移動。H←,J↓,K↑,L→
+  YUBN        「メモ帳」ではカーソル斜め移動(予定)。「電卓」の場合範囲選択。Y↖,U↗,B↙,N↘
   ]          エンターキー。Enter。
   ;          バックスペース。BS。
   :          カーソルから右の文字デリート。DEL。
   A          テキスト全選択。Ctrl+A。
-  X          テキスト切り取り。Ctrl+X。
-  C          テキストコピー。Ctrl+C。
-  V          テキスト貼り付け。Ctrl+V。
+  C          テキストをクリップボードにコピー。Ctrl+C。
+  X          テキスト切り取り(クリップボードにコピー)。Ctrl+X。
+  V          クリップボードからテキスト貼り付け。Ctrl+V。
   T          タブ文字を入力。
   I          半角スペース4文字を入力。
   O         ファイルを開くダイアログ(「kantray」用途)。
+
+ テキスト入力欄「editcanvas」の操作
+
+  テキスト選択              カーソル移動。複数文字選択も可能
+  選択文字ドラッグ          選択した文字は移動できる。テキストはクリップボードにもコピー。
+  選択文字欄外までドラッグ  選択した文字は削除もできる。
+  １秒入力欄を押し続ける    文字選択されてない状態で入力欄を押し続ける事でクリップボードから引用できる。
 
 
 １-8c．漢直キーボードの操作方法(物理キーボード)
@@ -1523,9 +1535,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   漢字配列や字引入力など漢直の詳しい解説は「kanedit.txt」の「１-0． 「漢直」のおさらい(内容は「LTsv/LTsv.txt」と重複)。」なども参考にしてください。
 
 
-１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細。
+１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
 
  「LTsv_kbdentry_evaltext()」の引数内容がコマンドか単語か数式かで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。
+ 「kanedit」では省略して「電卓」と呼んでます。
 
   １文字のみ入力                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。
                                      「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」
@@ -1556,9 +1569,9 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   先頭文字が「濁」                   清音を濁音に変換(曖昧な指示)。初期設定では「Ｐ」。
                                      「濁ウァイオリン⇔ヴァイオリン」。
   先頭文字が「Ｂ」                   清音を濁音に変換("はひふへほ"は"ばびぶべぼ"に)。
-                                     「Ｂカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルみょごみょごみみょごみょご、ぼヴずがびょヴぶにえをがいだ」。
+                                     「Ｂカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルみょごみょごみみょごみょご、ぼゔずがびょゔぶにえをがいだ」。
   先頭文字が「Ｐ」                   清音を濁音に変換("まみむめも"も"ぱぴぷぺぽ"に)。
-                                     「Ｐカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルぴょごぴょごぴぴょごぴょご、ぼヴずがびょヴぶにえをがいだ」。
+                                     「Ｐカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルぴょごぴょごぴぴょごぴょご、ぼゔずがびょゔぶにえをがいだ」。
   先頭文字が「大」                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を大文字に変換。
                                      「大αAndΩ⇔ΑANDΩ」
   先頭文字が「小」                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を小文字に変換。
@@ -1583,7 +1596,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   先頭文字が「活」「漫」「筆」       「kant5x5comic」のグリフデータ。「kanfont」で編集可能。「活」では独自形式で圧縮される。
   先頭文字が「幅」                   単漢字辞書[kanchar.tsv]上のデータの「kan5x5comic」のフォントの幅を表示。全角(1024)の場合省略できる。半角(624)と麻雀牌(824)しか種類はないはず。
                                      「⑩FFFF⇔65535」「0xFFFF⇔65535」。
-  先頭文字が「探」                   文字列から[kanmap.tsv]に含まれる漢字の探索。一種の漢字逆引き。
+  先頭文字が「探」                   文字列から[kanmap.tsv]に含まれる漢字の探索。漢字逆引きの一種。文字が見つかり次第鍵盤切替。
                                      [kanmap.tsv]に含まれない漢字であっても[kanchar.tsv]の「異」「簡」「繁」「代」項目、つまり異体字なども検索を試みる。
                                      「探袮穃粫𡚴岾軅垉椦蟐靹駲閠墸壥⇔𡚴」
                                      「探」コマンドは「異→簡→繁→代」の順番で探すので「探铺」した時に「鋪」ではなく「舗」が検索されてしまいます。
@@ -1630,9 +1643,9 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    entry                             リバーシの棋譜。
 
 
-２-0． 「L:Tsv」を用いるアプリケーションの作り方。
+２-0． 「L:Tsv」を用いるアプリケーションの作り方
 
- 「L:Tsv」でどのようなアプリが作れるのかの想定として「LTsv10kanedit(tsvtool10)」にて「kanedit」「kanfont」「kanzip」を制作中です。
+ 「L:Tsv」でどのようなアプリが作れるのかの想定として「LTsv10kanedit(tsvtool10)」にて「kanedit」「kanfont」「kanzip」「kanmap」などを制作中です。
  その他のアプリでも「/LTsv」フォルダの同梱と「sys.path.append("LTsv")」の一行追加で簡単に「L:Tsv」モジュールを扱えるようになる予定です。
  各アプリの概要は[README.md]を参考。
 
@@ -1645,12 +1658,6 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
       Welcome to Python.org
       https://www.python.org/
-
- Ｑ．[LTsv_gui.py]をダブルクリックしても起動しない。[kanedit.py][kanfont.py][kanzip.py]とか[LTsv_glyph.py]は起動する。
- Ａ．「gtk_init()」と「gtk_main()」の途中にに「print()」や「LTsv_libc_printf()」があるとGUIが表示されないようです。
-     回避するには「LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))」をコメントアウトするか、
-     ターミナルから「# ./LTsv_gui.py」とコマンド起動してみてください。
-     コメントアウトしなくても「Geany」からF5でも起動できるはずです。
 
  Ｑ．[kanedit.py]が未完成だ。
  Ａ．[kanedit.py]も[kanfont.py]が未完成です。

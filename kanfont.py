@@ -475,7 +475,7 @@ if len(LTsv_GUI) > 0:
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
         kanfont_dictype_canvasW[dictype_cnt]=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5
         kanfont_dictype_canvas[dictype_cnt]=LTsv_editcanvas_new(kanfont_window,event_b=kanfont_dictype_inputed_shell(dictype_cnt),kbd_k=kanfont_dictype_inputed_shell(dictype_cnt),clip_c=kanfont_dictype_copy,clip_v=kanfont_dictype_paste,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,event_w=50)
-        LTsv_editcanvas_fontsize(kanfont_dictype_canvas[dictype_cnt],US=kanfont_fontsize_entry,TS=kanfont_fontsize_entry)
+        LTsv_editcanvas_font(kanfont_dictype_canvas[dictype_cnt],US=kanfont_fontsize_entry,TS=kanfont_fontsize_entry)
     kanfont_clipboard=LTsv_clipboard_new(kanfont_window)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
