@@ -867,7 +867,6 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
                 LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
             editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
             LTsv_editcanvasKT[editcanvas]=LTsv_puttimerstartgoal()
-            print("LTsv_editcanvasKM[editcanvas]",LTsv_editcanvasKM[editcanvas])
     def editcanvas_motion(window_objvoid=None,window_objptr=None):
         global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
@@ -878,7 +877,6 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
                 if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
             if LTsv_editcanvasKM[editcanvas] == "Umove":
                 LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
-                print(LTsv_editcanvasKT[editcanvas]-LTsv_puttimerlap(),)
                 if clip_v != None:
                     if len(LTsv_editcanvasUK[editcanvas]) == 0:
                         if LTsv_puttimerlap()-LTsv_editcanvasKT[editcanvas] > 1.0:
@@ -1059,16 +1057,20 @@ def LTsv_evaltext(calc_value=""):
             calc_A=LTsv_utf2xml(calc_Q)
     elif calc_K == "探":
         for calc_F in calc_Q:
-            calc_EX=""
-            calc_EXdic=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'異')+ \
-              LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'簡')+ \
-              LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'繁')+ \
-              LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'代')
-            for calc_e in calc_EXdic:
-                calc_EX=calc_EX if ord(calc_e) < 128 else calc_EX+calc_e
             if LTsv_glyph_kbdfind(calc_F) >= 0:
                 calc_A=calc_F
                 break
+        if len(calc_A) == 0:
+            for calc_F in calc_Q:
+                calc_EXdic=LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'異')+ \
+                  LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'簡')+ \
+                  LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'繁')+ \
+                  LTsv_pickdatalabel(LTsv_readlinerest(LTsv_glyph_kandic,calc_F),'代')
+                for calc_EX in calc_EXdic:
+                    if LTsv_glyph_kbdfind(calc_EX) >= 0:
+                        calc_A=calc_EX
+                        break
+                if len(calc_A) > 0: break;
     elif calc_K == "今":
         LTsv_putdaytimenow(overhour=LTsv_glyph_overhour)
         calc_Q=calc_Q.replace("今",LTsv_glyph_now)

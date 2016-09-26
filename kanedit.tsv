@@ -4,18 +4,18 @@ enter	LF
 tab	4
 program	kantray
 LTsvver	20160718M003911
-modify	20160925U224535
+modify	20160926M135813
 |L:Tsv]
 
 [kanedit|
-window_size	width:640	height:480
+window_size	width:638	height:479
 edit_colors	font:#000000	bg:#FFF9FA
 edit_fontsize	12
 edit_fontstyle	漫
 edit_last	/mnt/sda2/github/LTsv10kanedit/kanedit.tsv
 memo_colors	font:#000000	bg:#FFFFF3
 memo_fontsize	12
-memo_entry	開発中ですが、漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書は使用できます。
+memo_entry	
 memo_fontstyle	漫
 |kanedit]
 #memo_entry	開発中ですが、漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書は使用できます。
