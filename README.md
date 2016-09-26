@@ -1,6 +1,6 @@
 # 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装です。
 
-前作「[https://github.com/ooblog/LTsv9kantray](https://github.com/ooblog/LTsv9kantray "LTsv9kantray")」のキーフック方式の代わりに漢直キーボードを各アプリに搭載する作戦が「LTsv10kanedit(tsvtool10)」のコンセプトです。  
+前作「[LTsv9kantray](https://github.com/ooblog/LTsv9kantray "LTsv9kantray")」のキーフック方式の代わりに漢直キーボードを各アプリに搭載する作戦が「LTsv10kanedit」のコンセプトです。  
 
 
 ## 「kanedit」は漢直エディタです&#40;開発中&#41;。NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字を直接入力します。
@@ -47,7 +47,7 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 
 ## 動作環境。
 
-Python 2.7.6&#40;Tahrpup6.0.5)およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。  
+Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。  
 
 
 ## ライセンス・著作権など。
