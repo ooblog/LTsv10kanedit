@@ -1,5 +1,5 @@
 「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
-version(branch) 20160718M003911
+version(branch) 20160927T004545
 
 目次
 

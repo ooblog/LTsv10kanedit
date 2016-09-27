@@ -3,8 +3,8 @@ code	UTF-8
 enter	LF
 tab	4
 program	LTsv_kbd.py
-LTsvver	20160718M003911
-modify	20160927T002937
+LTsvver	20160927T004545
+modify	20160928W000805
 |L:Tsv]
 
 [kanglyph|
@@ -31,7 +31,7 @@ eval_branch	@000y@0m@0dm@wdec@0h@0n@0s
 eval_overhour	30
 eval_worddicname	../kanword.tsv
 eval_zipdicname		../kanzip
-last_alpha	ぷ
+last_alpha	｀
 last_dic	代
 kbdTAG	kanglyphkbd
 fontcolor	black

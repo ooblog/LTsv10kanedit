@@ -3,16 +3,16 @@ code	UTF-8
 enter	LF
 tab	4
 program	kanfont
-LTsvver	20160718M003911
-modify	20160927T002933
+LTsvver	20160927T004545
+modify	20160928W000805
 |L:Tsv]
 
 [kanfont|
-seek	ぱ
-grid	50
+seek	Ｘ
+grid	25
 inner	0
 lineseg	1
-gothic	1
+gothic	0
 gridimage	kanfont_grid25_5x5.png
 refer		Noto Sans Japanese Regular
 refergrid	1

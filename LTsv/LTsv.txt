@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch) 20160718M003911
+version(branch) 20160927T004545
 
 目次
 
@@ -168,9 +168,6 @@ version(branch) 20160718M003911
  LTsv_ink2utf(LTsv_text)
   上記の「UTF-8点字」をUTF-8に戻す。
   データ破損を補完する機能はないので注意。
-
- LTsv_printf_ver()
-   [LTsv_printf.py]のバージョン表示(20160718M003911)。
 
  LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)
   ターミナルにコマンドを送る。実行結果も取得できる。
@@ -366,7 +363,7 @@ version(branch) 20160718M003911
   Pythonの辞書「{"label":data,"label":data,…}」をラベル有りLTSV「label:data	label:data	…」に。dataは文字列化。
 
  LTsv_file_ver()
-  [LTsv_file.py]のバージョン表示(20160718M003911)。
+  [LTsv_file.py]のバージョン表示(20160927T004545)。
 
  LTsv_issue():
   「/etc/issue」を開いてLinuxのディストリビューションを探る。詳細なバージョン確認方法はディストリ毎に異なる予感。
@@ -376,7 +373,7 @@ version(branch) 20160718M003911
 
  日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・20160718M003911形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
+ ・20160927T004545形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -413,7 +410,7 @@ version(branch) 20160718M003911
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)
-  「LTsv_time_ver()」などの「20160718M003911」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの「20160927T004545」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimenow(overhour=None,diffminute=None)
@@ -1692,10 +1689,6 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
 ３-2． 漢直キーボードのＦＡＱ
 
- Ｑ．目的の漢字がどこにあるかわからない。
- Ａ．漢字の配列や字引入力の詳細などは「kanedit」の[kanedit.txt]に記載予定です。「kanedit」そのものもまだ制作中です。
-     他のアプリの開発に使われた「LTsv」フォルダのモジュール群のみ入手した人は文末記載のGitHubリポジトリから「LTsv10kanedit」入手すると参考。
-
  Ｑ．なんでマウスボタンを押下(クリック)ではなく押上のタイミングで入力なんですか？
  Ａ．将来的に入力デバイスはタッチパネルに収束する恐れがあると判断しました。
      例えば拡大縮小ジェスチャーなど指を２本以上使うタッチパネルではマウスカーソルの概念自体が希薄になると思います。
@@ -1704,6 +1697,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  Ｑ．なんで中途半端にVimっぽい操作方法なんですか？
  Ａ．上下左右([Up][Down][Left][Right])キーと[Space]キーと[Tab]キーが他のGUIで使用されるからです。
      「kanfont」などでスケールやラジオボタンなど十字キーでフォーカスが移動するGUIも使うので漢直キーボードは使えるキーが限られます。
+
+ Ｑ．目的の漢字がどこにあるかわからない。
+ Ａ．漢字の配列や字引入力の詳細などは「kanedit」の[kanedit.txt]に記載してます。「kanedit」そのものはまだ制作中です。
+     「LTsv」フォルダのモジュール群のみ入手した人はGitHubリポジトリから「LTsv10kanedit」を改めて入手すると参考。
 
 
 ４．   作者について、例えば連絡先。

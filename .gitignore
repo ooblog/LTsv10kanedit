@@ -90,24 +90,19 @@ ENV/
 
 
 # git push github:ooblog/LTsv10kanedit.git master
-# git push github:ooblog/LTsv10kanedit.git 20160718M003911
+# git push github:ooblog/LTsv10kanedit.git 20160927T004545
 # git log
 # git ls-files
 # git commit -a -m ""
 # git branch
 # git checkout master
-# git merge 20160718M003911
-# git branch -d 20160718M003911
-# git push github:ooblog/LTsv10kanedit.git :20160718M003911
+# git merge 20160927T004545
+# git branch -d 20160927T004545
+# git push github:ooblog/LTsv10kanedit.git :20160927T004545
 kan5x5.svg
-kan5x5.tsv
 kanmap.png
+kanzip.tsv
 LTsv/testfile/
 LTsv/kanpickle.bin
-LTsv/kanpickleGTK.bin
-LTsv/kanpickleTkinter.bin
-kanpickle.bin
-kanfont.svg
-kanzip.tsv
 kanzip/
 kanmap/
