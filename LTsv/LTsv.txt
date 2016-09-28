@@ -1523,7 +1523,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   Ｎ　１２３４５６７８９０－＾　Ｘ　Ｎ　1 2 3 4 5 6 7 8 9 0 - ^ 　Ｘ
   　　ｑｗｅｒｔｙｕｉｏｐ＠［　　　　　q w e r t y u i o p @ [ 　　
   　　ａｓｄｆｇｈｊｋｌ；：］　　　　　a s d f g h j k l ; : ] 　　
-  ＠　ｚｘｃｖｂｎｍ，．／＼￥　英　￥　z x c v b n m , . / \ \ 　英
+  ＠　ｚｘｃｖｂｎｍ，．／＼￥　英　￥　z x c v b n m , . / \ ¥ 　英
 
   Ｎ　！”＃＄％＆’（）　＝～　Ｘ　Ｎ　! " # $ % & ' ( )    = ~ 　Ｘ
   　　ＱＷＥＲＴＹＵＩＯＰ｀｛　　　　　Q W E R T Y U I O P ` { 　　

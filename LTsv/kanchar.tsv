@@ -61,7 +61,7 @@
 ∵	英:because		名:なぜならば		音:		訓:		送:		異:∴	俗:根拠
 ∴	英:therefore		名:すなわち/ゆえに	音:		訓:		送:		異:∵	俗:茶畑/史跡
 ＾	英:wide circumflex	名:サーカムフレックス(全角)	音:	訓:		送:	異:⊕	逆:^	俗:排他的論理和/冪乗	活:M 400,1000 600,1000 1000,600 1000,300 900,300 500,700 100,300 0,300 0,600 z
-^	英:circumflex	名:サーカムフレックス(半角)	俗:排他的論理和/冪乗	逆:^	漫:[COEOGQGSESERDQCRCSASAQ]	幅:624	活:[67dc][1287][89fe]
+^	英:circumflex	名:サーカムフレックス(半角)	俗:排他的論理和/冪乗	逆:^	漫:[COEOGQGSESERDQCRCSASAQ]	幅:624	活:[03fe87dc]
 ⊕	英:exclusive or		名:排他的論理和		音:		訓:		送:	異:＾		俗:XOR
 ∫	英:integral symbol	名:積分記号		音:		訓:		送:		異:∬	俗:
 ∬	英:double integral symbol	名:二重積分記号	音:		訓:		送:		異:∫	俗:
@@ -78,15 +78,15 @@
 ＆	英:wide ampersand 	名:アンパサンド(全角)	俗:etc.	逆:&	活:[7824ghnmsrxvpoij][stzy][8ef9][flmg][jpqk]	漫:M 200,800 400,1000 800,1000 800,600 650,450 700,400 800,500 800,600 1000,600 1000,400 850,250 900,200 1000,200 1000,0 800,0 700,100 600,0 200,0 0,200 0,400 200,600 z M 400,700 400,600 500,600 600,700 600,800 500,800 z M 300,400 200,300 300,200 500,200 550,250 400,400 z
 &	英:ampersand	名:アンパサンド(半角)	俗:etc.	逆:＆	活:[13feqrxuijdc67][7de8]	漫:[COEOGQGSEUGWGYAYAUBTASAQ][DQCRDSER][CVCWDW]	幅:624
 ；	英:wide semicolon 	名:セミコロン(全角)	逆:;	活:[24ge][kmywrq]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYEYGWEWEV]
-;	英:semicolon		名:セミコロン(半角)	音:		訓:		送:	異:	逆:；	俗:	活:M 200,800 400,800 400,600 200,600 z M 200,400 400,400 400,200 200,0 0,0 200,200 z	幅:624
+;	英:semicolon	名:セミコロン(半角)	逆:；	活:[78ed][jkwuop]	漫:[78ed][CUEUEXDYAYCW]	幅:624
 ：	英:wide colon 	名:コロン(全角)	逆::	活:[24ge][kmyw]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYFYEXEV]
-:	英:colon		名:コロン(半角)		音:		訓:		送:	異:	逆:：	俗:	活:M 200,800 400,800 400,600 200,600 z M 200,400 400,400 400,200 200,200 z	幅:624
+:	英:colon	名:コロン(半角)	逆:：	活:[78ed][jkqp]	幅:624
 　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
  	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
 ，	英:wide comma 		名:コンマ(全角)		音:		訓:		送:	異:、	逆:,	俗:桁区切り	活:M 0,600 400,600 400,0 0,0 200,200 0,200 z
-,	英:comma		名:コンマ(半角)		音:		訓:		送:	異:､	逆:，	俗:桁区切り	活:M 200,400 400,400 400,200 200,0 0,0 200,200 z	幅:624
+,	英:comma	名:コンマ(半角)	異:､	俗:桁区切り	逆:，	漫:[jkqvup]	幅:624	活:[jkqwuop]
 ．	英:wide period 		名:ピリオド(全角)	音:		訓:		送:	異:。	逆:.	俗:小数点	活:M 0,400 400,400 400,0 0,0 z
-.	英:period		名:ピリオド(半角)	音:		訓:		送:	異:｡	逆:．	俗:小数点	活:M 200,200 400,200 400,0 200,0 z	幅:624
+.	英:period		名:ピリオド(半角)	音:		訓:		送:	異:｡	逆:．	俗:小数点	活:[pqwv]	幅:624
 ＃	英:wide number sign	名:ナンバーサイン(全角)	異:井	俗:井桁/ハッシュ	逆:#	非:♯	活:[67128934abhgmntsyxrqwvpoijdc][eklf]
 #	英:number sign	名:ナンバーサイン(半角)	異:井	俗:井桁/ハッシュ	逆:＃	非:♯	活:[017823xwqpvu][djke]	漫:[AOCOCQEQEOGOGSFTGUGYEYEWCWCYAYAUBTAS][djke]	幅:624
 ♯	英:sharp		名:シャープ		音:		訓:		送:		異:	俗:嬰記号	非:＃
@@ -99,20 +99,20 @@
 ＋	英:addition/wide plus	名:たす/プラス(全角)	俗:加/足/和	逆:+	活:[23fhnlxwkice]
 +	英:addition/plus	名:たす/プラス(半角)	音:		訓:		送:	異:	逆:＋	俗:加/足/和	活:[12eflkwvjicd]	幅:624
 －	英:subtraction/wide hyphen-minus	名:ひく/ハイフンマイナス(全角)	音:	訓:	送:	異:	逆:-	俗:減/引/差	非:ー/―		活:M 0,600 1000,600 1000,400 0,400 z
--	英:subtraction/hyphen-minus	名:ひく/ハイフンマイナス(半角)		音:	訓:	送:	異:	逆:－	俗:減/引/差	非:ｰ		活:M 0,600 600,600 600,400 0,400 z	幅:624
+-	英:subtraction/hyphen-minus	名:ひく/ハイフンマイナス(半角)		音:	訓:	送:	異:	逆:－	俗:減/引/差	非:ｰ		活:[cfli]	幅:624
 ×	英:multiplication/cross	名:かける	異:＊	俗:乗/掛/積/縦×横/幅×高/攻×受/バツ	顔:✖	非:✓	活:[0176][78ed][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 500,700 800,1000 1000,1000 1000,800 700,500 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 300,500 0,800 z M 500,650 350,500 500,350 650,500 z
 ✖	英:heavy multiplication x	名:バツ(絵文字)	音:		訓:		送:		異:×	俗:	非:✓	活:[9agf][lmsr][eflk][78ed][jkqp]
 ✓	英:check mark		名:チェックマーク	音:		訓:		送:		異:	俗:	非:×	顔:✔
 ✔	英:heavy check mark	名:チェックマーク(絵文字)	音:		訓:		送:		異:	俗:	非:×
 ＊	英:wide asterisk	名:アスタリスク(全角)	異:×	俗:ポインタ	非:Ж/ж	活:[23fgmlxwkjde][abhg][mnts][67dc][ijpo]	漫:[AQCQESEOGOGSIQKQKSJSITJUKUKWIWGUGYEYEUCWAWAUBUCTBSAS]
 *	英:asterisk	名:アスタリスク(半角	異:×	俗:ポインタ	非:Ж/ж	活:[671289feklrqwvpoijdc][7de8][jpqk]	漫:M 0,950 200,750 200,1000 400,1000 400,750 600,950 600,700 400,500 600,300 600,50 400,250 400,0 200,0 200,250 0,50 0,300 200,500 0,700 z M 300,700 200,600 300,500 400,600 z M 300,500 200,400 300,300 400,400 z	幅:624
-÷	英:division		名:わる			音:		訓:		送:		異:／	俗:除/割/商	活:[chni][2398][qrxw]
-／	英:division/solidus/slash	名:スラッシュ(全角)	異:÷	逆:/	活:[45ba][9agf][eflk][jkqp][opvu]	漫:[45bvuo]
-/	英:division/solidus/slash	名:スラッシュ(半角)	音:	訓:		送:	異:	逆:／	俗:	活:M 400,1000 600,1000 600,700 200,300 200,0 0,0 0,400 400,800 z	幅:624
-＼	英:reverse solidus/back slash	名:バックスラッシュ(全角)	異:￥	俗:エスケープ文字/&#92;	逆:\	活:[0176][78ed][eflk][lmsr][stzy]	漫:[01tzy6]
-￥	英:wide yen symbol		名:円(全角)		音:	訓:		送:	異:円	逆:\	俗:JPY/バックスラッシュ/＼/&yen;/&#165;	活:M 600,800 600,900 700,1000 800,1000 800,800 1000,800 1000,600 600,600 600,400 1000,400 1000,200 600,200 600,0 400,0 400,200 0,200 0,400 400,400 400,600 0,600 0,800 200,800 200,1000 300,1000 400,900 400,800 z
-\	英:back slash	名:円(半角)/バックスラッシュ(半角)	異:円	俗:JPY/バックスラッシュ/＼/&yen;/&#165;	逆:＼	活:[01dc][dekj][klxw]	漫:[AOCOCQGUGYEYEVAR]	幅:624
-¥	英:yen symbol			名:円(ユニコード)	音:	訓:		送:	異:円	逆:	俗:JPY/バックスラッシュ/￥/&yen;/&#165;	活:M 0,1000 200,800 400,800 600,1000 600,600 400,600 400,400 600,400 600,200 400,200 400,0 200,0 200,200 0,200 0,400 200,400 200,600 0,600 z	幅:624
+÷	英:division		名:わる		異:/	代:／	俗:除/割/商		活:[chni][2398][qrxw]
+／	英:division/solidus/slash	名:スラッシュ(全角)	異:÷	逆:/	非:＼	活:[45ba][9agf][eflk][jkqp][opvu]	漫:[45bvuo]
+＼	英:reverse solidus/back slash	名:バックスラッシュ(全角)	異:￥	俗:エスケープ文字/&#92;	逆:\	非:／	代:	活:[0176][78ed][eflk][lmsr][stzy]	漫:[01tzy6]
+/	英:division/solidus/slash	名:スラッシュ(半角)	異:÷	逆:／	代:¥	漫:[EOGOGRCVCYAYAUEQ]	幅:624	活:[23fe][dekj][ijvu]
+\	英:back slash	名:円(半角)/バックスラッシュ(半角)		俗:JPY/バックスラッシュ/＼/&yen;/&#165;	逆:＼	代:¥	非:\	活:[01dc][dekj][klxw]	漫:[AOCOCQGUGYEYEVAR]	幅:624
+¥	英:yen symbol	名:円(ユニコード)	異:円	俗:JPY/バックスラッシュ/￥/&yen;/&#165;	逆:￥	代:\	非:/	漫:[0783feklrqwvpoijdc]	幅:624	活:[017823feklrqwvpoijdc]
+￥	英:wide yen symbol	名:円(全角)	異:円	俗:JPY/バックスラッシュ/＼/&yen;/&#165;	逆:¥	代:／	漫:[AQCQCODOEPEQGQGPHOIOIQKQKSGSGUKUKWGWGYEYEWAWAUEUESAS]	活:[67128934abhflntrxwqoikec]
 ＄	英:wide dollarsymbol	名:ドル(全角)	異:弗	俗:USD	逆:$	活:[15b9fgmntsyuoqkjdc67][7de8][lrsm]	漫:[15b9fgntyuoqkjc6][DQCRDSESEQ][GUGWHWIVHU]
 弗	英:			名:			音:		訓:		送:		異:	俗:
 $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQGQGSESEUFUGVGXFYAYAWCWCUBUATARBQCQ]	幅:624
@@ -127,7 +127,7 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQ
 ₽	英:ruble symbol		名:ルーブル		音:		訓:		送:		異:留	俗:RUB
 留	英:stationary/attention/holding/detain/abroad	名:とめる	音:リュウ/ル	訓:とめる/どめ	送:留学/留守/繋ぎ留める/局留め	異:₽	俗:ルーブル
 ＝	英:wide equals		名:等号/イコール(全角)	音:		訓:		送:	異:=	逆:	俗:	活:[into][6bhc]
-=	英:equals		名:等号/イコール(半角)	音:		訓:		送:	異:＝	逆:	俗:	活:[69fc][ilro]	幅:624
+=	英:equals	名:等号/イコール(半角)	異:＝	活:[69fc][ilro]	幅:624
 ≒	英:approximation	名:近似			音:		訓:		送:		異:	俗:
 ≠	英:negation		名:等号否定		音:		訓:		送:		異:	俗:<>
 ＞	英:wide inequality/is greater than	名:不等号/大なり(全角)	逆:>	活:[0286][8age][ghnm][kmsq][oqwu]	漫:[AOEOGQIQKSKUIWGWEYAYAWDWFUHUITHSFSDQAQ]
@@ -196,25 +196,25 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 Ⅺ	英:roman eleven 	名:ローマ数字11		音:		訓:		送:		異:	俗:
 Ⅻ	英:roman twelve 	名:ローマ数字12		音:		訓:		送:		異:	俗:
 ０	英:wide zero	名:０(全角)	異:零	俗:零	活:[14abtsyvpo67][7jkef9][flkqsg]	漫:[14btyvo6][DQCRCVHQ][ISEWHWIV]
-0	英:zero			名:0(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 400,1000 400,800 200,800 200,200 0,200 z M 400,800 600,800 600,0 200,0 200,200 400,200 z	漫:M 0,1000 400,1000 600,800 600,0 200,0 0,200 z M 200,800 200,300 300,200 400,200 400,700 300,800 z	幅:624
+0	英:zero			名:0(半角)		音:		訓:		送:	異:	逆:	俗:	活:[0287po][89xvpq]	漫:[029xvo][CQCVDWEWERDQ]	幅:624
 １	英:wide one		名:１(全角)		音:		訓:		送:	異:一	逆:	俗:壱	活:[7823rsyvpqed]	漫:[723rsyvpqed]
-1	英:one			名:1(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,800 200,800 200,1000 400,1000 400,0 200,0 200,600 0,600 z	漫:M 200,1000 400,1000 400,0 200,0 200,600 0,600 0,800 100,800 200,900 z	幅:624
+1	英:one			名:1(半角)		音:		訓:		送:	異:	逆:	俗:	活:[6712wvdc]	漫:[COEOEYCYCSASAQBQCP]	幅:624
 ２	英:wide two	名:２(全角)	異:二	俗:弐	活:[67dc][14a7][dgabnj][ijptzu]	漫:[AQCOIOKQKUCUCWKWKYAYAUCSISIRHQDQCRCSAS]
-2	英:two			名:2(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 600,1000 600,600 400,600 400,800 0,800 z M 0,400 200,400 200,200 600,200 600,0 0,0 z M 200,600 400,600 400,400 200,400 z	漫:M 0,900 100,1000 500,1000 600,900 600,600 200,200 600,200 600,0 0,0 0,300 400,700 400,800 0,800 z	幅:624
+2	英:two			名:2(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][ijprxu][dekj]	漫:[APBOFOGPGSCWGWGYAYAVEREQAQ]	幅:624
 ３	英:wide three	名:３(全角)	異:三	俗:参	顔:( ㊤皿㊤)３ゲットロボだよ「顔３」で漢直できる丸いやつだよ	非:З/з	活:[67dc][14a7][abhg][egmk][mnts][psyv][ijpo]	漫:[AQCOIOKQKSJTKUKWIYCYAWAUCUCVDWHWIVHUEUESHSIRHQDQCRCSAS]
-3	英:three		名:3(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 600,1000 600,600 400,600 400,800 0,800 z M 0,600 400,600 400,400 0,400 z M 400,400 600,400 600,0 0,0 0,200 400,200 z	漫:M 0,1000 500,1000 600,900 600,600 500,500 600,400 600,100 500,0 0,0 0,200 400,200 400,300 300,400 0,400 0,600 300,600 400,700 400,800 0,800 z	幅:624
+3	英:three		名:3(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][ceki][klxuoq]	漫:[AOFOGPGSFTGUGXFYAYAWEWEVDUAUASDSEREQAQ]	幅:624
 ４	英:wide four	名:４(全角)	異:四	俗:肆	活:[01jk89lntrxwqo]
-4	英:four			名:4(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 400,1000 600,1000 600,0 400,0 400,200 0,200 0,600 200,600 200,600 200,800 400,800 z M 200,600 200,400 400,400 400,600 z	漫:M 600,1000 600,0 400,0 400,200 0,200 0,600 400,1000 z M 400,700 200,500 200,400 400,400 z	幅:624
+4	英:four			名:4(半角)		音:		訓:		送:	異:	逆:	俗:	活:[7823xwqocdd][djke]	漫:[c23xwqo][ERCTCUEU]	幅:624
 ５	英:wide five		名:５(全角)		音:		訓:		送:	異:五	逆:	俗:伍	活:[05b7dgmi][mnts][psyv]	漫:[AOKOKQCQCSISKUKWIYAYAWHWIVHUAU]
-5	英:five			名:5(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 600,1000 600,800 200,800 200,600 600,600 600,0 0,0 0,200 400,200 400,400 0,400 z	漫:M 0,1000 600,1000 600,800 200,800 200,600 500,600 600,500 600,100 500,0 0,0 0,200 400,200 400,400 0,400 z	幅:624
+5	英:five			名:5(半角)		音:		訓:		送:	異:	逆:	俗:	活:[0397dfxuoqki]	漫:[AOGOGQCQCSFSGTGXFYAYAWEWEUAU]	幅:624
 ６	英:wide six	名:６(全角)	異:六	俗:陸	活:[14a7][67dgmntsyvpo][jpsm]	漫:[AQCOHOHQDQCRCSISKUKWIYCYAW][CUCVDWHWIVHU]
-6	英:wide six		名:6(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 200,1000 600,1000 600,800 200,800 z M 0,800 200,800 200,600 600,600 600,0 0,0 z M 200,400 200,200 400,200 400,400 z	漫:M 200,1000 600,1000 600,800 200,800 200,600 500,600 600,500 600,100 500,0 100,0 0,100 0,800 z M 200,400 200,200 400,200 400,400 z	幅:624
+6	英:wide six		名:6(半角)		音:		訓:		送:	異:	逆:	俗:	活:[1397][67dfxu][jpqk]	漫:[COGOGQCQCSFSGTGXFYBYAXAQ][jpqk]	幅:624
 ７	英:wide seven	名:７(全角)	異:七	俗:漆	活:[05hga7dc][fgml][klxw]	漫:[AOKOKRGVGYEYEUIQCQCSAS]
-7	英:seven		名:7(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 600,1000 600,600 400,600 400,800 0,800 z M 200,600 400,600 400,0 200,0 z	漫:M 0,1000 600,1000 600,700 400,500 400,0 200,0 200,600 400,800 0,800 z	幅:624
+7	英:seven		名:7(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][dewv]	漫:[AOGOGRETEYCYCSEQAQ]	幅:624
 ８	英:wide eight	名:８(全角)	異:八	俗:捌	活:[14abhgmntsyvpoijdc67][7dga][jpsm]	漫:[COIOKQKSJTKUKWIYCYAWAUBTASAQ][DQCRDSHSIRHQ][DUCVDWHWIVHU]
-8	英:eight		名:8(半角)		音:		訓:		送:	異:	逆:	俗:	活:M 0,1000 600,1000 600,600 400,600 400,800 200,800 200,600 0,600 z M 200,400 200,200 400,200 400,400 600,400 600,0 0,0 0,400 z M 200,600 400,600 400,400 200,400 z	漫:M 100,1000 500,1000 600,900 600,600 500,500 600,400 600,100 500,0 100,0 0,100 0,400 100,500 0,600 0,900 z M 200,800 200,700 300,600 400,700 400,800 z M 300,400 200,300 200,200 400,200 400,300 z	幅:624
+8	英:eight		名:8(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe87dc][ijpqklxu][dekj]	漫:[BOFOGPGSFTGUGXFYBYAXAUBTASAP][CQCRDSEREQ][DUCVCWEWEV]	幅:624
 ９	英:wide nine	名:９(全角)	異:九	俗:玖	逆:9	活:[14abtsmjdc67][psyv][7dga]	漫:[COIOKQKWIYCYCWHWIVIUCUASAQ][DQCRDSISIRHQ]
-9	英:nine			名:9(半角)		音:		訓:		送:	異:	逆:９	俗:	活:M 0,1000 600,1000 600,0 400,0 400,400 200,400 200,600 200,600 0,600 z M 200,800 200,600 400,600 400,800 z	漫:M 100,1000 600,1000 600,0 400,0 400,400 200,400 0,600 0,900 z M 200,700 300,600 400,600 400,800 200,800 z	幅:624
+9	英:nine			名:9(半角)		音:		訓:		送:	異:	逆:９	俗:	活:[03rqkjddc][7de8][pqwv]	漫:[BOGOGWEYCYCXEVEUCUASAP][CQCRDSESEQ]	幅:624
 ＠	英:wide atmark	名:アットマーク(全角)	俗:(a)	逆:@	非:a	活:[14abtsyvpo67][7pqef9][flmg]	漫:[14btyvo6][DQCRCVDWEWESGQ][GTGUIUISHS]
 @	英:atmark	名:アットマーク(半角)	俗:(a)	逆:＠	非:ａ	活:[03xuijde86][jpqk]	漫:[AOFOGPGXFYBYAXAUCSESEQAQ][DUCVCWEWEU]	幅:624
 ａ	英:wide a		名:エイ(小文字全角)	音:		訓:		送:		異:Ａ	俗:	非:α/а	代:a	活:M 200,1000 800,1000 800,200 1000,200 1000,0 200,0 0,200 0,800 z M 300,800 200,700 200,300 300,200 600,200 600,800 z
@@ -267,8 +267,8 @@ l	英:l	名:エル(小文字半角)	異:L	代:ｌ	活:[12qrxv]	幅:624
 L	英:L			名:エル(大文字半角)	音:		訓:		送:		異:l	俗:	代:Ｌ	活:[01prxu]	幅:624
 ｍ	英:wide m		名:エム(小文字全角)	音:		訓:		送:		異:Ｍ	俗:	非:μ/м	代:m	活:M 200,800 400,800 500,700 600,800 800,800 1000,600 1000,0 800,0 800,500 700,600 600,500 600,0 400,0 400,500 300,600 200,500 200,0 0,0 0,600 z
 Ｍ	英:wide M	名:エム(大文字全角)	異:ｍ	代:M	非:Μ/М	活:[0178edvu][eflk][9a45zygf]	漫:[AOCOFRIOKOKYIYIRFUCRCYAY]
-m	英:m	名:エム(小文字半角)	異:M	代:ｍ	活:[AQCQCRDQEQESGSGYEYEUDVCVCYAY]	幅:624	漫:[678efxwkjvu]
-M	英:M	名:エム(大文字半角)	異:m	代:Ｍ	漫:[AOCOCPDQEPEOGOGYEYETDUCTCYAY]	幅:624	活:[017823xwkjvu]
+m	英:m	名:エム(小文字半角)	異:M	代:ｍ	活:[678efxwkjvu]	漫:[AQCQCRDQEQESGSGYEYEUDVCVCYAY]	幅:624
+M	英:M	名:エム(大文字半角)	異:m	代:Ｍ	漫:[AOCODPEOGOGYEYETDUCTCYAY]	幅:624	活:[03xwkjvu]
 ｎ	英:wide n		名:エヌ(小文字全角)	音:		訓:		送:		異:Ｎ	俗:	非:ν/и	代:n	活:M 0,800 800,800 1000,600 1000,0 800,0 800,500 700,600 200,600 200,0 0,0 z
 Ｎ	英:wide N	名:エヌ(大文字全角)	異:ｎ	代:N	非:Ν/И	活:[0178edvu][eflk][45zysrlm]	漫:[AOCOIUIOKOKYJYCRCYAY]
 n	英:n	名:エヌ(小文字半角)	異:N	代:ｎ	漫:[AQCQCRDQEQGSGYEYETDSCSCYAY]	幅:624	活:[68edvu][efxw]
