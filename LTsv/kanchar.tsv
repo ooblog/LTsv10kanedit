@@ -3,9 +3,9 @@
 ℗	英:phonogram right	名:原盤権	異:(p)	俗:許諾を得ないレコードの複製からのレコード製作者の保護に関する条約	活:[05bamkqtzuop76]
 ™	英:trademark	名:商品商標	異:TM	活:[0398ehzysrxwkj76]
 ℠	英:service mark	名:役務商標	異:SM	活:[1398ehzysrxwkicd]
-⇔	英:equivalence		名:同値			音:		訓:		送:		異:≡	俗:等価	活:[239agd78][ghnm][cdji][jmsrxwqp]	漫:[FOKTFYAT][DSCTDUHUITHS]
+⇔	英:equivalence		名:同値			音:		訓:		送:		異:≡	俗:等価	活:[78239agd][ghnm][cdji][jmsrxwqp]	漫:[FOKTFYAT][DSCTDUHUITHS]
 ⇒	英:implication		名:論理包含		音:		訓:		送:		異:	俗:PならばQ
-≡	英:identical		名:合同			音:		訓:		送:		異:⇔	俗:モジュロ
+≡	英:identical	名:合同	異:⇔	俗:モジュロ	活:[05b6][chni][otzu]
 '	英:single quotation	名:シングルクォート(半角)	俗:引用符	逆:’	活:[12ed]	漫:[COEOESCSDRCQ]	幅:624
 ‘	英:wide single quotation	名:シングルクォート(全角)	異:’	俗:引用符(開始記号)	漫:[GQIOKOKPIRISJSKTKVJWHWGV]	活:[45ba][9aghtr]
 ’	英:wide single quotation	名:シングルクォート(全角)	異:‘	俗:引用符(終了記号)	逆:'	活:[02kjdc][ijpo]	漫:[APBODOEPEUCWAWAVCTCSBSAR]
@@ -17,15 +17,15 @@
 」	英:square bracket	名:かぎ括弧(全角)	音:		訓:		送:	異:「	逆:｣	代:』	俗:鈎括弧閉	代:れ	活:[34yuor]
 『	英:square bracket	名:二重かぎ括弧		音:		訓:		送:	異:』	逆:｢	代:「	俗:二重鈎括弧開	代:リ	活:[04mlxu][7pqef9]
 』	英:square bracket	名:二重かぎ括弧	異:『	俗:二重鈎括弧閉	代:」	逆:｣	活:[25zvde][9lkqsa]
-｢	英:square bracket	名:かぎ括弧(半角)	音:		訓:		送:	異:｣	逆:「	俗:半角鈎括弧開		活:M 200,1000 600,1000 600,800 400,800 400,200 200,200 z	幅:624
-｣	英:square bracket	名:かぎ括弧(半角)	音:		訓:		送:	異:｢	逆:｣	俗:半角鈎括弧閉		活:M 200,800 400,800 400,0 0,0 0,200 200,200 z	幅:624
+｢	英:square bracket	名:かぎ括弧(半角)	音:		訓:		送:	異:｣	逆:「	俗:半角鈎括弧開		活:[1398qp]	幅:624
+｣	英:square bracket	名:かぎ括弧(半角)	音:		訓:		送:	異:｢	逆:｣	俗:半角鈎括弧閉		活:[78wuop]	幅:624
 ｛	英:wide curly bracket	名:波括弧(全角)	俗:波括弧開	逆:{	異:｝	活:[14a8ed][jkqsyv][cdji]	漫:[COIOIQEQESDTEUEWIWIYCYCVATCR]
 {	英:curly bracket	名:波括弧(半角)	俗:波括弧開	逆:｛	異:}	活:[1398ed][cdji][jkqrxv]	漫:[COGOGQEQESDSCTDUEUEWGWGYCYCWAUASCQ]	幅:624
-｝	英:wide curly bracket	名:波括弧(全角)	俗:波括弧閉	逆:}	異:｛	活:[14gf97][ghnm][prlmyv]	漫:M 200,1000 800,1000 800,700 1000,500 800,300 800,0 200,0 200,200 600,200 600,400 700,500 600,600 600,800 200,800 z
+｝	英:wide curly bracket	名:波括弧(全角)	俗:波括弧閉	逆:}	異:｛	活:[14gf97][ghnm][prlmyv]	漫:[COIOIRKTIVIYCYCWGWGUHTGSGQCQ]
 }	英:curly bracket	名:波括弧(半角)	俗:波括弧閉	逆:｝	異:{	活:[02ed76][eflk][jkwuop]	漫:[AOEOEQGSGUEWEYAYAWCWCUDUETDSCSCQAQ]	幅:624
-［	英:wide bracket	名:角括弧(全角)		音:		訓:		送:	異:］	逆:[	俗:角括弧開	活:M 200,1000 800,1000 800,800 400,800 400,200 800,200 800,0 200,0 z
+［	英:wide bracket	名:角括弧(全角)		音:		訓:		送:	異:］	逆:[	俗:角括弧開	活:[14a8qsyv]
 [	英:bracket	名:角括弧(半角)		音:		訓:		送:	異:]	逆:［	俗:角括弧開	活:[1398qrxv]	幅:624
-］	英:wide bracket	名:角括弧(全角)		音:		訓:		送:	異:［	逆:]	俗:角括弧閉	活:M 200,1000 800,1000 800,0 200,0 200,200 600,200 600,800 200,800 z
+］	英:wide bracket	名:角括弧(全角)	異:［	俗:角括弧閉	逆:]	活:[14yvpr97]
 ]	英:bracket	名:角括弧(半角)		音:		訓:		送:	異:[	逆:］	俗:角括弧閉	活:[02wuop76]	幅:624
 （	英:wide parenthesis	名:丸括弧(全角)	俗:丸丸括弧開括弧開	逆:(	活:[24a8][78qp][qsyw]	漫:[CQEOIOIQFQEREVFWIWIYEYCW]
 (	英:parenthesis	名:丸括弧(半角)	俗:丸括弧開	逆:（	活:[1287][67po][pqwv]	漫:[AQCOEOEQDQCRCVDWEWEYCYAW]	幅:624
@@ -40,7 +40,7 @@
 `	英:grave accent	名:グレイヴ・アクセント(半角)	逆:｀	活:[0176][78ed]	漫:[018ed6]	幅:624
 ・	英:interpunct	名:中黒(全角)	俗:一点リーダー	代:ね	逆:･	活:[7asp]	漫:[89gmrqjd]
 ･	英:interpunct	名:中黒(半角)	俗:一点リーダー	代:ね	逆:・	活:[dekj]	幅:624
-‥	英:two dot leader	名:二点リーダー		音:		訓:		送:		異:…	俗:ざわ‥	代:の	活:M 200,600 400,600 400,400 200,400 z M 600,600 800,600 800,400 600,400 z
+‥	英:two dot leader	名:二点リーダー		音:		訓:		送:		異:…	俗:ざわ‥	代:の	活:[dekj][fgml]
 …	英:horizontal ellipsis	名:三点リーダー		音:		訓:		送:		異:‥	俗:除算の余り	代:ノ	活:[cdji][eflk][ghnm]
 ′	英:prime		名:プライム		音:		訓:		送:		異:″	俗:分
 ″	英:double prime		名:ダブルプライム	音:		訓:		送:		異:′	俗:秒
@@ -63,7 +63,7 @@
 ∞	英:infinity		名:無限			音:		訓:		送:		異:	俗:インフィニティ/アンリミテッド
 ∵	英:because		名:なぜならば		音:		訓:		送:		異:∴	俗:根拠
 ∴	英:therefore		名:すなわち/ゆえに	音:		訓:		送:		異:∵	俗:茶畑/史跡
-＾	英:wide circumflex	名:サーカムフレックス(全角)	音:	訓:		送:	異:⊕	逆:^	俗:排他的論理和/冪乗	活:M 400,1000 600,1000 1000,600 1000,300 900,300 500,700 100,300 0,300 0,600 z
+＾	英:wide circumflex	名:サーカムフレックス(全角)	異:⊕	俗:排他的論理和/冪乗	逆:^	活:[cdji][78ed][2398][9agf][ghnm]	漫:[EOGOKSKVJVFRBVAVAS]
 ^	英:circumflex	名:サーカムフレックス(半角)	俗:排他的論理和/冪乗	逆:^	漫:[COEOGQGSESERDQCRCSASAQ]	幅:624	活:[03fe87dc]
 ⊕	英:exclusive or		名:排他的論理和		音:		訓:		送:	異:＾		俗:XOR
 ∫	英:integral symbol	名:積分記号		音:		訓:		送:		異:∬	俗:
@@ -80,15 +80,15 @@
 %	英:‎percent	名:パーセント(半角)	活:[0176][qrxw][ijpo][dekj][89fe]	漫:M 400,800 600,800 600,600 200,200 0,200 0,400 100,400 400,700 z M 0,1000 200,1000 200,800 0,800 z M 400,200 600,200 600,0 400,0 z M 100,950 50,900 100,850 150,900 z M 500,150 500,150 500,150 450,100 500,50 550,100 z	幅:624
 ＆	英:wide ampersand 	名:アンパサンド(全角)	俗:etc.	逆:&	活:[7824ghnmsrxvpoij][stzy][8ef9][flmg][jpqk]	漫:M 200,800 400,1000 800,1000 800,600 650,450 700,400 800,500 800,600 1000,600 1000,400 850,250 900,200 1000,200 1000,0 800,0 700,100 600,0 200,0 0,200 0,400 200,600 z M 400,700 400,600 500,600 600,700 600,800 500,800 z M 300,400 200,300 300,200 500,200 550,250 400,400 z
 &	英:ampersand	名:アンパサンド(半角)	俗:etc.	逆:＆	活:[13feqrxuijdc67][7de8]	漫:[COEOGQGSEUGWGYAYAUBTASAQ][DQCRDSER][CVCWDW]	幅:624
-；	英:wide semicolon 	名:セミコロン(全角)	逆:;	活:[24ge][kmywrq]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYEYGWEWEV]
+；	英:wide semicolon 	名:セミコロン(全角)	逆:;	活:[24ge][kmyxrq]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYEYGWEWEV]
 ;	英:semicolon	名:セミコロン(半角)	逆:；	活:[78ed][jkwuop]	漫:[78ed][CUEUEXDYAYCW]	幅:624
 ：	英:wide colon 	名:コロン(全角)	逆::	活:[24ge][kmyw]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYFYEXEV]
 :	英:colon	名:コロン(半角)	逆:：	活:[78ed][jkqp]	幅:624
 　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
  	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
-，	英:wide comma 		名:コンマ(全角)		音:		訓:		送:	異:、	逆:,	俗:桁区切り	活:M 0,600 400,600 400,0 0,0 200,200 0,200 z
+，	英:wide comma 	名:コンマ(全角)	異:、	俗:桁区切り	逆:,	活:[cewvpo]	漫:[BSDSETEYBYCXCWBWAVAT]
 ,	英:comma	名:コンマ(半角)	異:､	俗:桁区切り	逆:，	漫:[jkqvup]	幅:624	活:[jkqwuop]
-．	英:wide period 		名:ピリオド(全角)	音:		訓:		送:	異:。	逆:.	俗:小数点	活:M 0,400 400,400 400,0 0,0 z
+．	英:wide period 	名:ピリオド(全角)	異:。	俗:小数点	逆:.	活:[ikwu]	漫:[BUDUEVEXDYBYAXAV]
 .	英:period		名:ピリオド(半角)	音:		訓:		送:	異:｡	逆:．	俗:小数点	活:[pqwv]	幅:624
 ＃	英:wide number sign	名:ナンバーサイン(全角)	異:井	俗:井桁/ハッシュ	逆:#	非:♯	活:[67128934abhgmntsyxrqwvpoijdc][eklf]
 #	英:number sign	名:ナンバーサイン(半角)	異:井	俗:井桁/ハッシュ	逆:＃	非:♯	活:[017823xwqpvu][djke]	漫:[AOCOCQEQEOGOGSFTGUGYEYEWCWCYAYAUBTAS][djke]	幅:624
@@ -142,7 +142,7 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQ
 √	英:square root		名:根号			音:		訓:		送:		異:	俗:ルート/radical symbol	活:M 200,1000 1000,1000 1000,800 400,800 400,0 200,0 0,200 0,400 200,400 z
 ￣	英:overline		名:オーバーライン	音:		訓:		送:		異:	俗:
 ‐	英:hyphen		名:ハイフン		音:		訓:		送:		異:	俗:
-＿	英:wide underscore	名:アンダースコア(全角)	音:		訓:		送:	異:	逆:_	俗:アンダーバー	代:🌝	顔:🌝	活:[otzu]
+＿	英:wide underscore	名:アンダースコア(全角)	俗:アンダーバー	顔:🌝	代:🌝	逆:_	活:[otzu]
 _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:＿	俗:アンダーバー					活:[orxu]	幅:624
 🌝	英:fullmoon with face	名:顔付き満月	代:＿	俗:写植記号BA-90/ぽげムたマーク/アンダーバー
 ⊇	英:subset		名:部分集合		音:		訓:		送:		異:	俗:
@@ -164,8 +164,8 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ∃	英:existential quantifier	名:存在記号	音:		訓:		送:		異:	俗:
 ∂	英:del/partial d/rounded d	名:デル/パーシャルディー/ラウンドディー	音:	訓:	送:	異:	俗:ヤコビ行列
 ∇	英:nabla		名:ナブラ記号		音:		訓:		送:		異:	俗:
-◎	英:a double circle	名:二重丸		音:		訓:		送:		異:	俗:市役所/区役所/曇り
-⓪	英:circled zero		名:丸0			音:		訓:		送:		異:〇	俗:零	活:
+◎	英:a double circle	名:二重丸	俗:市役所/区役所/曇り	活:[14abtsyvpo67][7psa][eflk]
+⓪	英:circled zero	名:丸0	異:〇	俗:零	活:[05b9fgstzuoqkj76][eklf]
 ①	英:circled one	名:丸1	異:一	俗:Ⅰ	活:[05b9rtzuoqed76]
 ②	英:circled two	名:丸2	異:二	俗:Ⅱ	顔:2get ｽﾞｻｰc⌒っﾟДﾟ)っ	活:[05b9lmstzuoqed76]
 ③	英:circled three	名:丸3	異:三	俗:Ⅲ	顔:( ③皿③)３ゲットロボだよ「顔③」で漢直できる③のやつだよ	活:[05bastzuopjked76]
@@ -224,104 +224,104 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 Ａ	英:wide A		名:エイ(大文字全角)	音:		訓:		送:		異:ａ	俗:	非:Α/А	代:A	活:[2398][78kl9amnzyspvuij]	漫:[CRFOIRIUKWKYIYIXHWDWCXCYAYAWCU][ESEUGUGSFR]
 a	英:a	名:エイ(小文字半角)	異:Ａ	代:ａ	漫:[CQGQGVFWGWGYCYAWAS][DSCTCVDWEWES]	幅:624	活:[CQGQGVGYCYCWAWASCS][dpqe]
 A	英:A	名:エイ(大文字半角)	異:ａ	代:Ａ	非:Å	漫:[129xwkjvu6][DQCRCSESER]	幅:624	活:[671289xwkjvu][7de8]
-ｂ	英:wide b	名:ビー(小文字全角)	異:Ｂ	代:b	非:β/в	活:[017aghtsyu][dpsg]	漫:[017ahtyu][CSCWHWIVITHS]
+ｂ	英:wide b	名:ビー(小文字全角)	異:Ｂ	代:b	非:β/в	活:[01dgmntsyu][jpsm]	漫:[01dgntyu][CUCWHWIVIVHU]
 Ｂ	英:wide B		名:ビー(大文字全角)	音:		訓:		送:		異:ｂ	俗:	非:Β/В	代:B	活:[04abhgmntsyu][7dddga][jpsm]	漫:[AOIOKQKSJTKUKWIYAY][CQCSCSCSHSIRHQ][CUCWHWIVHU]
 b	英:b	名:ビー(小文字半角)	異:B	代:ｂ	漫:[01delrwu][CUCWDWEVDU]	幅:624	活:[01deklrqwu][jpqk]
 B	英:B	名:ビー(大文字半角)	異:b	代:Ｂ	活:[0289feklrqwu][7de8][jpqk]	漫:[AOEOGQGSFTGUGWEYAY][CQCSDSERDQ][CUCWDWEVDU]	幅:624
-ｃ	英:wide c		名:シー(小文字全角)	音:		訓:		送:		異:Ｃ	俗:炭素	非:¢/с	代:c	活:M 200,800 1000,800 1000,600 300,600 200,500 200,300 300,200 1000,200 1000,0 200,0 0,200 0,600 z
+ｃ	英:wide c	名:シー(小文字全角)	異:Ｃ	俗:炭素	代:c	非:¢/с	活:[7bhd][cdpo][ptzv]	漫:[CQKQKSDSCTCVDWKWKYCYAWAS]
 Ｃ	英:wide C	名:シー(大文字全角)	異:ｃ	俗:炭素	代:C	非:￠/С	活:[abhg][14a7][67po][psyv][mnts]	漫:[COIOKQKSISIRHQDQCRCVDWHWIVIUKUKWIYCYAWAQ]
 c	英:c	名:シー(小文字半角)	異:C	俗:炭素	代:ｃ	漫:[CQGQGSDSCTCVDWGWGYCYAWAS]	幅:624	活:[79fd][cdpo][prxv]
 C	英:C	名:シー(大文字半角)	異:c	俗:炭素	代:Ｃ	非:℃	活:[1397][67po][prxv]	漫:[COGOGQDQCRCVDWGWGYCYAWAQ]	幅:624
-ｄ	英:wide d		名:ディー(小文字全角)	音:		訓:		送:		異:Ｄ	俗:	代:d	活:M 800,1000 1000,1000 1000,0 200,0 0,200 0,600 200,800 800,800 z M 800,600 300,600 200,500 200,300 300,200 800,200 z
+ｄ	英:wide d	名:ディー(小文字全角)	異:Ｄ	代:d	活:[7a45zvpocd][dpsg]	漫:[7a45zvoc][DSCTCVDWIWIS]
 Ｄ	英:wide D	名:ディー(大文字全角)	異:ｄ	代:D	活:[04abtsyu][7psa]	漫:[04btyu][CQCWHWIVIRHQ]
 d	英:d	名:ディー(小文字半角)	異:D	代:ｄ	漫:[EOGOGYBYAXAUCSES][DUCVCWEWEU]	幅:624	活:[23xuijde][jpqk]
 D	英:D	名:ディー(大文字半角)	異:d	代:Ｄ	漫:[029rwu][CQCWDWEVERDQ]	幅:624	活:[0289rqwu][7pq8]
-ｅ	英:wide e		名:イー(小文字全角)	音:		訓:		送:		異:Ｅ	俗:	非:ε/е	代:e	活:M 200,1000 800,1000 1000,800 1000,400 200,400 200,300 300,200 900,200 900,0 200,0 0,200 0,800 z M 300,800 200,700 200,600 800,600 800,700 700,800 z
+ｅ	英:wide e	名:イー(小文字全角)	異:Ｅ	代:e	非:ε/е	活:[14abnjpo67][7dga][psyv]	漫:[COIOKQKUCUCVDWIWIYCYAWAQ][DQCRCSISIRHQ]
 Ｅ	英:wide E		名:イー(大文字全角)	音:		訓:		送:		異:ｅ	俗:	非:Ε/Е	代:E	活:[05b7dgmjptzu]
 e	英:e	名:イー(小文字半角)	異:E	代:ｅ	漫:[BQEQGSGUCUCVDWGWGYCYAWAR][CSDTDS]	幅:624	活:[678efljpoc][prxv]
 E	英:E			名:イー(大文字半角)	音:		訓:		送:		異:e	俗:	代:Ｅ	活:[0397dekjprxu]	幅:624
-ｆ	英:wide f		名:エフ(小文字全角)	音:		訓:		送:		異:Ｆ	俗:	代:f	活:M 600,1000 1000,1000 1000,800 700,800 600,700 600,600 1000,600 1000,400 600,400 600,0 400,0 400,400 0,400 0,600 400,600 400,800 z
+ｆ	英:wide f	名:エフ(小文字全角)	異:Ｆ	代:f	活:[ce89fhnlxwki][35b9]	漫:[ASESEQGOKOKQHQGRGSKSKUGUGYEYEUAU]
 Ｆ	英:wide F		名:エフ(大文字全角)	音:		訓:		送:		異:ｆ	俗:	代:F	活:[05b7dgmjvu]
 f	英:f			名:エフ(小文字半角)	音:		訓:		送:		異:F	俗:	代:ｆ	活:[78eflkwvjicd][2398]	幅:624	漫:[CQEOGOGQFQERESGSGUEUEYCYCUAUASCS]
 F	英:F			名:エフ(大文字半角)	音:		訓:		送:		異:f	俗:	非:℉	代:Ｆ	活:[00397dekjvu]	幅:624
-ｇ	英:wide g		名:ジー(小文字全角)	音:		訓:		送:		異:Ｇ	俗:	代:g	活:M 200,1000 1000,1000 1000,200 800,0 0,0 0,200 700,200 800,300 800,400 200,400 0,550 0,800 z M 300,800 200,700 300,600 800,600 800,800 z
+ｇ	英:wide g	名:ジー(小文字全角)	異:Ｇ	代:g	活:[15tsmjdc67][osyu][7dga]	漫:[COKOKWIYAYAWHWIVIUCUASAQ][DQCRDSISIQ]
 Ｇ	英:wide G	名:ジー(大文字全角)	異:ｇ	代:G	活:[15b7][67po][psyv][ehtsmk]	漫:[COKOKQDQCRCVDWHWIVIUEUESKSKWIYCYAWAQ]
 g	英:g	名:ジー(小文字半角)	異:G	代:ｇ	漫:[COGOGXFYCYCWEWEUCUASAQ][DQCRDSESEQ]	幅:624	活:[13xvpqki67][7de8]
 G	英:G	名:ジー(大文字半角)	異:g	代:Ｇ	活:[1397][67po][efxvpq]	漫:[COGOGQDQCRCVDWEWEUDTESGSGYCYAWAQ]	幅:624
-ｈ	英:wide h		名:エイチ(小文字全角)	音:		訓:		送:		異:Ｈ	俗:水素	非:η/н	代:h	活:M 0,1000 200,1000 200,600 800,600 1000,400 1000,0 800,0 800,300 700,400 200,400 200,0 0,0 z
+ｈ	英:wide h	名:エイチ(小文字全角)	異:Ｈ	俗:水素	代:h	非:η/н	活:[01dgmjvu][mnzy]	漫:[AOCOCSISKUKYIYIVHUCUCYAY]
 Ｈ	英:wide H	名:エイチ(大文字全角)	異:ｈ	俗:水素	代:H	非:Η/Н	活:[01dg45zymjvu]
 h	英:h	名:エイチ(小文字半角)	異:H	俗:水素	代:ｈ	活:[01dekjvu][klxw]	漫:[AOCOCSESGUGYEYEVDUCVCYAY]	幅:624
 H	英:H			名:エイチ(大文字半角)	音:		訓:		送:		異:h	俗:水素	代:Ｈ	活:[01de23xwkjvu]	幅:624
-ｉ	英:wide i		名:アイ(小文字全角)	音:		訓:		送:		異:Ｉ	俗:	非:ι	代:i	活:M 400,1000 600,1000 600,800 400,800 z M 400,600 600,600 600,200 800,0 200,0 400,200 z
+ｉ	英:wide i	名:アイ(小文字全角)	異:Ｉ	代:i	非:ι	活:[2398][efrsyvpq]	漫:[2398][efryvq]
 Ｉ	英:wide I	名:アイ(大文字全角)	異:ｉ	代:I	非:Ι	活:[05b9rsyvpq86]	漫:[05a9rsyvpq87]
 i	英:i			名:アイ(小文字半角)	音:		訓:		送:		異:I	俗:	代:ｉ	活:[1287][dewv]	幅:624
 I	英:I	名:アイ(大文字半角)	異:i	代:Ｉ	漫:[AOGOGQEQDRCQAQ][DRESEWGWGYAYAWCWCS]	幅:624	活:[0398qrxuop76]
-ｊ	英:wide j		名:ジェイ(小文字全角)	音:		訓:		送:		異:Ｊ	俗:	代:j	活:M 800,1000 1000,1000 1000,800 800,800 z M 800,600 1000,600 1000,200 800,0 200,0 0,200 0,400 200,400 200,300 300,200 700,200 800,300 z
+ｊ	英:wide j	名:ジェイ(小文字全角)	異:Ｊ	代:j	活:[45ba][ghts][psyv][ijpo]	漫:[45ba][AUCUCVDWHWIVISKSKWIYCYAW]
 Ｊ	英:wide J	名:ジェイ(大文字全角)	異:ｊ	代:J	活:[45ts][psyv][cdpo]	漫:[ASCSCVDWHWIVIOKOKWIYCYAW]
 j	英:j	名:ジェイ(小文字半角)	異:J	代:ｊ	漫:[2398][ESGSGWEYCYAWAUCUCVDWEV]	幅:624	活:[2398][efrqq][pqwv][ijpo]
 J	英:J	名:ジェイ(大文字半角)	異:j	代:Ｊ	漫:[EOGOGWEYCYAWASCSCVDWEV]	幅:624	活:[23rq][pqwv][cdpo]
-ｋ	英:wide k		名:ケイ(小文字全角)	音:		訓:		送:		異:Ｋ	俗:	非:κ/ｋ	代:k	活:M 0,1000 200,1000 200,400 600,800 1000,800 1000,600 700,600 600,500 900,200 1000,200 1000,0 800,0 450,350 200,100 200,0 0,0 z
+ｋ	英:wide k	名:ケイ(小文字全角)	異:Ｋ	代:k	非:κ/ｋ	活:[01jkqpvu][eflk][9bhf][lmsr][stzy]	漫:M 0,1000 200,1000 200,400 600,800 1000,800 1000,600 700,600 600,500 900,200 1000,200 1000,0 800,0 450,350 200,100 200,0 0,0 z
 Ｋ	英:wide K	名:ケイ(大文字全角)	異:ｋ	代:K	非:Κ/Ｋ	活:[01dfljvu][9agf][45ba][lmsr][stzy]	漫:[AOCOCSESIOKOKPGTKXKYIYEUCUCYAY]
 k	英:k	名:ケイ(小文字半角)	異:K	代:ｋ	活:[01deqpvu][qrxw][89fe]	漫:[AOCOCSEQGQGSFSETEVFWGWGYEYCWCYAY]	幅:624
 K	英:K	名:ケイ(大文字半角)	異:k	代:Ｋ	活:[01dekjvu][23fe][klxw]	漫:M 0,1000 200,1000 200,600 400,800 400,1000 600,1000 600,600 450,450 600,300 600,0 400,0 400,200 200,400 200,0 0,0 z	幅:624
-ｌ	英:wide l		名:エル(小文字全角)	音:		訓:		送:		異:Ｌ	俗:	代:l	活:M 400,1000 600,1000 600,400 1000,0 400,0 z
+ｌ	英:wide l	名:エル(小文字全角)	異:Ｌ	代:l	漫:[23lzw]	活:[23lmstzw]
 Ｌ	英:wide L		名:エル(大文字全角)	音:		訓:		送:		異:ｌ	俗:	代:L	活:[01ptzu]
 l	英:l	名:エル(小文字半角)	異:L	代:ｌ	活:[12qrxv]	幅:624
 L	英:L			名:エル(大文字半角)	音:		訓:		送:		異:l	俗:	代:Ｌ	活:[01prxu]	幅:624
-ｍ	英:wide m		名:エム(小文字全角)	音:		訓:		送:		異:Ｍ	俗:	非:μ/м	代:m	活:M 200,800 400,800 500,700 600,800 800,800 1000,600 1000,0 800,0 800,500 700,600 600,500 600,0 400,0 400,500 300,600 200,500 200,0 0,0 0,600 z
+ｍ	英:wide m	名:エム(小文字全角)	異:Ｍ	代:m	非:μ/м	活:[cdvu][78ed][efxw][9agf][ghzy]	漫:[CQEQFRGQIQKSKYIYITHSGTGYEYETDSCTCYAYAS]
 Ｍ	英:wide M	名:エム(大文字全角)	異:ｍ	代:M	非:Μ/М	活:[0178edvu][eflk][9a45zygf]	漫:[AOCOFRIOKOKYIYIRFUCRCYAY]
 m	英:m	名:エム(小文字半角)	異:M	代:ｍ	活:[678efxwkjvu]	漫:[AQCQCRDQEQESGSGYEYEUDVCVCYAY]	幅:624
 M	英:M	名:エム(大文字半角)	異:m	代:Ｍ	漫:[AOCODPEOGOGYEYETDUCTCYAY]	幅:624	活:[03xwkjvu]
-ｎ	英:wide n		名:エヌ(小文字全角)	音:		訓:		送:		異:Ｎ	俗:	非:ν/и	代:n	活:M 0,800 800,800 1000,600 1000,0 800,0 800,500 700,600 200,600 200,0 0,0 z
+ｎ	英:wide n	名:エヌ(小文字全角)	異:Ｎ	代:n	非:ν/и	活:[6agdvu][ghzy]	漫:[AQIQKSKYIYITHSCSCYAY]
 Ｎ	英:wide N	名:エヌ(大文字全角)	異:ｎ	代:N	非:Ν/И	活:[0178edvu][eflk][45zysrlm]	漫:[AOCOIUIOKOKYJYCRCYAY]
 n	英:n	名:エヌ(小文字半角)	異:N	代:ｎ	漫:[AQCQCRDQEQGSGYEYETDSCSCYAY]	幅:624	活:[68edvu][efxw]
 N	英:N	名:エヌ(大文字半角)	異:n	代:Ｎ	活:[0289xwedvu]	幅:624	漫:[029xwedvu]
-ｏ	英:wide o		名:オー(小文字全角)	音:		訓:		送:		異:Ｏ	俗:酸素	非:ο/о	代:o	活:M 200,700 800,700 1000,500 1000,200 800,0 200,0 0,200 0,500 z M 300,500 200,400 200,300 300,200 700,200 800,300 800,400 700,500 z
+ｏ	英:wide o	名:オー(小文字全角)	異:Ｏ	俗:酸素	代:o	非:ο/о	活:[CRIRITKTKWIWIYCYCWAWATCT][CTCWIWIT]	漫:[CRIRKTKWIYCYAWAT][DTCUCVDWHWIVIUHT]
 Ｏ	英:wide O	名:オー(大文字全角)	異:ｏ	俗:酸素	代:O	非:Ο/О	活:[14abtsyvpo67][7psa]	漫:[14btyvo6][DQCRCVDWHWIVIRHQ]
 o	英:o	名:オー(小文字半角)	異:O	俗:酸素	代:ｏ	漫:[CQEQGSGXFYBYAXAS][DSCTCWEWET]	幅:624	活:[78efrxuocd][dpqe]
 O	英:O	名:オー(大文字半角)	異:o	俗:酸素	代:Ｏ	漫:[6129xu][DQCRCWEWER]	幅:624	活:[671289xu][7pq8]
-ｐ	英:wide p		名:ピー(小文字全角)	音:		訓:		送:		異:Ｐ	俗:	非:ρ/р	代:p	活:M 200,800 800,800 1000,600 1000,400 800,200 200,200 200,0 0,0 0,600 z M 200,500 200,400 700,400 800,500 700,600 300,600 z
+ｐ	英:wide p	名:ピー(小文字全角)	異:Ｐ	代:p	非:ρ/р	活:[7aghnmspvucd][djmg]	漫:[7ahnspvuc][DSCTCUHUITHS]
 Ｐ	英:wide P	名:ピー(大文字全角)	異:ｐ	代:P	非:Ρ/Р	活:[04abhgmjvu][7dga]	漫:[04bhmjvu][CQCSHSIRHQ]
 p	英:p	名:ピー(小文字半角)	異:P	代:ｐ	活:[678efrpvu][djke]	漫:[AQCQCRDQEQGSGUEWCWCYAY][CSCUDUETDS]	幅:624
 P	英:P	名:ピー(大文字半角)	異:p	代:Ｐ	漫:[029lqpvu][CQCUDUETERDQ]	幅:624	活:[03lkqpvu][7jk8]
-ｑ	英:wide q		名:キュー(小文字全角)	音:		訓:		送:		異:Ｑ	俗:	代:q	活:[614bzyspi][DQCRCTDUIUIRHQ]
+ｑ	英:wide q	名:キュー(小文字全角)	異:Ｑ	代:q	活:[04abzyspji][7jma]	漫:[APBOIOKQKYIYIWCWAU][CQCTDUIUIRHQ]
 Ｑ	英:wide Q	名:キュー(大文字全角)	異:ｑ	代:Q	活:[14abnmsrxvpo67][stzy][7prlma][eflk]	漫:M 200,1000 800,1000 1000,800 1000,400 900,300 1000,200 1000,0 800,0 800,100 750,150 600,0 200,0 0,200 0,800 z M 300,800 200,700 200,300 300,200 500,200 600,300 500,400 400,400 400,600 600,600 750,450 800,500 800,700 700,800 z
 q	英:q	名:キュー(小文字半角)	異:Q	代:ｑ	漫:[AQCODOEPEOGOGYEYEUAU][DQCRCSESEQ]	幅:624	活:[6713xwki][7de8]
 Q	英:Q	名:キュー(大文字半角)	異:q	代:Ｑ	活:[1289lrxvji67][7jk8]	漫:[COEOGQGUFVGWGYFYEXDYCYCWAUAQ][DQCRCTDUETER]	幅:624
-ｒ	英:wide r		名:アール(小文字全角)	音:		訓:		送:		異:Ｒ	俗:	非:я	代:r	活:M 0,1000 200,1000 200,800 400,1000 1000,1000 1000,800 500,800 200,500 200,0 0,0 z
+ｒ	英:wide r	名:アール(小文字全角)	異:Ｒ	代:r	非:я	活:[0178edvu][25b8]	漫:[AOCOCQEOKOKQFQCTCYAY]
 Ｒ	英:wide R	名:アール(大文字全角)	異:ｒ	代:R	非:Я	活:[04abhgsrljvu][stzy][7dga]	漫:[AOIOKQKSIUIVJWKWKYIYGWGUCUCYAY][CQCSHSIRHQ]
 r	英:r	名:アール(小文字半角)	異:R	代:ｒ	漫:[AQCQCSEQGQGSFSCVCYAY]	幅:624	活:[67dekjvu][89fe]
 R	英:R	名:アール(大文字半角)	異:r	代:Ｒ	活:[0289lkqpvu][qrxw][7jk8]	漫:M 0,1000 400,1000 600,800 600,400 450,250 500,200 600,200 600,0 400,0 200,200 200,0 0,0 z M 200,800 200,400 300,400 400,500 400,700 300,800 z	幅:624
-ｓ	英:wide s		名:エス(小文字全角)	音:		訓:		送:		異:Ｓ	俗:	代:s	活:M 200,800 1000,800 1000,600 600,600 1000,200 800,0 0,0 0,200 500,200 550,250 400,400 100,400 0,500 0,600 z
+ｓ	英:wide s	名:エス(小文字全角)	異:Ｓ	代:s	活:[7bhflicd][orlntsyu]	漫:M 200,800 1000,800 1000,600 600,600 1000,200 800,0 0,0 0,200 500,200 550,250 400,400 100,400 0,500 0,600 z
 Ｓ	英:wide S	名:エス(大文字全角)	異:ｓ	代:S	活:[15b7][67dc][dgmj][mnts][osyu]	漫:[COKOKQDQCRDSISKUKWIYAYAWHWIVHUCUASAQ]
 s	英:s	名:エス(小文字半角)	異:S	代:ｓ	漫:[CQGQGSCSGWGXFYAYAWDWATAS]	幅:624	活:[79fd][cdji][jlxuop]
 S	英:S	名:エス(大文字半角)	異:s	代:Ｓ	活:[1397][67dc][dekj][klrq][oqwu]	漫:[COGOGQDQCRDSESGUGWEYAYAWDWEVDUCUASAQ]	幅:624
-ｔ	英:wide t		名:ティー(小文字全角)	音:		訓:		送:		異:Ｔ	俗:	非:τ/т	代:t	活:M 400,1000 600,1000 600,800 1000,800 1000,600 600,600 600,300 800,100 800,0 600,0 400,200 400,600 0,600 0,800 400,800 z
+ｔ	英:wide t		名:ティー(小文字全角)	音:		訓:		送:		異:Ｔ	俗:	非:τ/т	代:t	活:[68239bhfrqec][rsyx]	漫:[AQEQEOGOGQKQKSGSGVIXIYGYEWESAS]
 Ｔ	英:wide T		名:ティー(大文字全角)	音:		訓:		送:		異:ｔ	俗:	非:Τ/Т	代:T	活:[05b9xw86]
 t	英:t	名:ティー(小文字半角)	異:T	代:ｔ	漫:[COEOEQGQGSESEWGWGYDYCXCSASAQCQ]	幅:624	活:[1289feqrxvdc67]
 T	英:T	名:ティー(大文字半角)	異:t	代:Ｔ	活:[0398wv76]	幅:624
-ｕ	英:wide u		名:ユー(小文字全角)	音:		訓:		送:		異:Ｕ	俗:	代:u	活:M 500,200 600,200 800,400 800,800 1000,800 1000,0 800,0 800,100 700,0 400,0 0,400 0,800 200,800 200,500 z
+ｕ	英:wide u	名:ユー(小文字全角)	異:Ｕ	代:u	活:[67ji][jkqp][abzwqs]	漫:[AQCQCTFWGWIUIQKQKYIYIXHYEYAU]
 Ｕ	英:wide U	名:ユー(大文字全角)	異:u	代:U	活:[01po][psyv][45ts]	漫:[AOCOCVDWHWIVIOKOKWIYCYAW]
 u	英:u	名:ユー(小文字半角)	異:U	代:ｕ	活:[67po][89xvpq]	漫:[AQCQCVDWEVEQGQGYEYEXDYCYAW]	幅:624
 U	英:U	名:ユー(大文字半角)	異:u	代:Ｕ	漫:[AOCOCWEWEOGOGXFYBYAX]	幅:624	活:[01pq23xu]
-ｖ	英:wide v		名:ヴィ(小文字全角)	音:		訓:		送:		異:Ｖ	俗:	代:v	活:M 0,800 200,800 200,500 500,200 800,500 800,800 1000,800 1000,400 600,0 400,0 0,400 z
+ｖ	英:wide v	名:ヴィ(小文字全角)	異:Ｖ	代:v	活:[67ji][jkqp][qrxw][lmsr][abnm]	漫:[AQCQCTFWITIQKQKUGYEYAU]
 Ｖ	英:wide V	名:ヴィ(大文字全角)	異:ｖ	代:V	活:[01ji][jkqp][qrxw][45nm][lmsr]	漫:[AOCOCTFWITIOKOKUGYEYAU]
 v	英:v	名:ヴィ(小文字半角)	異:v	代:ｖ	活:[67po][pqwv][89rq]	漫:[AQCQCVDWEVEQGQGWEYCYAW]	幅:624
 V	英:V	名:ヴィ(大文字半角)	異:V	代:Ｖ	活:[01po][23rq][pqwv]	漫:[AOCOCVDWEVEOGOGWEYCYAW]	幅:624
-ｗ	英:wide w		名:ダブルユー(小文字全角)	音:		訓:		送:		異:Ｗ	俗:	代:w	活:M 0,800 200,800 200,300 300,200 400,300 400,600 600,600 600,300 700,200 800,300 800,800 1000,800 1000,200 800,0 600,0 500,100 400,0 200,0 0,200 z
+ｗ	英:wide w	名:ダブルユー(小文字全角)	異:Ｗ	代:w	活:[67po][efrsyvpq][abts]	漫:[AQCQCVDWEVESGSGVHWIVIQKQKWIYGYFXEYCYAW]
 Ｗ	英:wide W	名:ダブルユー(大文字全角)	異:ｗ	代:W	活:[01pqwu][efrq][45zxrs]	漫:[AOCOCVDWEVESGSGVHWIVIOKOKYGYFXEYAY]
 w	英:w	名:ダブルユー(小文字半角)	異:W	代:ｗ	活:[67jk89xu]	漫:[AQCQCVDUEVEQGQGXFYEYDXCYBYAX]	幅:624
 W	英:W	名:ダブルユー(大文字半角)	異:w	代:Ｗ	活:[01de23xwqpvu]	漫:[AOCOCTDSETEOGOGYEYEXDWCXCYAY]	幅:624
-ｘ	英:wide x		名:エックス(小文字全角)	音:		訓:		送:		異:Ｘ	俗:	非:χ/х	代:x	活:M 0,800 200,800 500,500 800,800 1000,800 1000,600 900,600 700,400 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 50,200 300,400 100,600 0,600 z
+ｘ	英:wide x	名:エックス(小文字全角)	異:Ｘ	代:x	非:χ/х	活:[67dc][dgsp][abhg][stzy][opvu]	漫:[AQCQFTIQKQKSJSHUJWKWKYIYFVCYAYAWBWDUBSAS]
 Ｘ	英:wide X	名:エックス(大文字全角)	異:ｘ	代:X	非:Χ/Х	活:[0176][78ed][eflk][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 200,900 500,600 800,900 800,1000 1000,1000 1000,800 650,450 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 100,200 350,450 0,800 z
 x	英:x			名:エックス(小文字半角)	音:		訓:		送:		異:X	俗:	代:ｘ	活:[67dc][89fe][deqp][opvu][qrxw]	幅:624	漫:[AQCQCRDSEREQGQGSEUGWGYEYEXDWCXCYAYAWCUAS]
 X	英:X	名:エックス(大文字半角)	異:x	代:Ｘ	活:[01dc][23fe][dekj][ijvu][klxw]	漫:[AOCOCQDREQEOGOGRETGVGYEYEWDVCWCYAYAVCTAR]	幅:624
-ｙ	英:wide y		名:ワイ(小文字全角)	音:		訓:		送:		異:Ｙ	俗:	非:υ/у		代:y	活:M 0,1000 200,1000 500,700 800,1000 1000,1000 1000,800 900,800 600,500 600,200 400,0 200,0 200,200 300,200 400,300 400,500 100,800 0,800 z
+ｙ	英:wide y	名:ワイ(小文字全角)	異:Ｙ	代:y	非:υ/у	活:[0176][78ed][efrq][45ba][9agf][pqwv]	漫:[AOCOFRIOKOKQJQGTGWEYCYCWDWEVETBQAQ]
 Ｙ	英:wide Y		名:ワイ(大文字全角)	音:		訓:		送:		異:ｙ	俗:	非:Υ/У/丫	代:Y	活:[01dc][dekj][45hg][fgml][klxw]	漫:[AOCOCQFTIQIOKOKRGVGYEYEVAR]
 丫	英:bifurcation/fork	名:あげまき		音:ヤ		訓:あげまき	送:丫叉/丫結び	異:	俗:揚巻	非:Ｙ	地:南丫島
 y	英:y	名:ワイ(小文字半角)	異:Y	代:ｙ	漫:[AOCOCSESEOGOGWEYAYAWDWEVETDUCUAS]	幅:624	活:[01dc][23rqkjde][oqwu]
 Y	英:Y	名:ワイ(大文字半角)	異:y	代:Ｙ	活:[01ji][23lk][jkwv]	漫:[AOCOCSDTESEOGOGTEVEYCYCVAT]	幅:624
-ｚ	英:wide z		名:ゼット(小文字全角)	音:		訓:		送:		異:Ｚ	俗:	非:ζ	代:z	活:M 0,800 1000,800 1000,600 800,400 600,400 400,200 1000,200 1000,0 0,0 0,200 200,400 300,400 550,600 0,600 z
+ｚ	英:wide z	名:ゼット(小文字全角)	異:Ｚ	代:z	非:ζ	活:[6bhgmkec][jkqtzuop]	漫:[AQKQKSIUGUEWKWKYAYAWCUDUFSAS]
 Ｚ	英:wide Z	名:ゼット(大文字全角)	異:ｚ	代:Z	非:Ζ	活:[05bagf96][eflk][jkqtzuop]	漫:[AOKOKPDWKWKYAYAWGQAQ]
 z	英:z	名:ゼット(小文字半角)	異:Z	代:ｚ	漫:[AQGQGTDWGWGYAYAWESAS]	幅:624	活:[69lkec][jkqrxuop]
 Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]	漫:[AOGOGRCVCWGWGYAYAUEQAQ]	幅:624
@@ -484,10 +484,10 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ←	英:left arrow	名:左矢印	異:左	俗:左/西	逆:→	活:[78ehnkqpjicd][2398][qrxw]
 →	英:right arrow	名:右矢印	異:右	俗:右/東	逆:←	活:[cf9aghnmsrli][2398][qrxw]
 🎮	英:video game		名:ゲームPAD		音:		訓:		送:		異:	俗:	活:[14a7][abzxrs][67pqwu][klrq]	漫:M 200,1000 800,1000 800,800 200,800 z M 800,800 1000,800 1000,0 600,0 600,200 800,200 z M 0,800 200,800 200,200 400,200 400,0 0,0 z M 400,400 600,400 600,200 400,200 z M 300,700 400,700 400,600 500,600 500,500 400,500 400,400 300,400 300,500 200,500 200,600 300,600 z M 600,700 700,700 700,600 600,600 z M 700,600 800,600 800,500 700,500 z
-↖	英:north west arrow	名:左上矢印		音:		訓:		送:		異:	俗:左上/西北	逆:↘	活:[05b8edvu][eflk][lmsr][stzy]
-↗	英:north east arrow	名:右上矢印		音:		訓:		送:		異:	俗:右上/東北	逆:↙	非:⤴	活:[05zygf96][eflk][jkqp][opvu]
+↖	英:north west arrow	名:左上矢印		音:		訓:		送:		異:	俗:左上/西北	逆:↘	活:[04a8edpo][eflk][lmsr]
+↗	英:north east arrow	名:右上矢印		音:		訓:		送:		異:	俗:右上/東北	逆:↙	非:⤴	活:[15tsgf97][eflk][jkqp]
 ⤴	英:upwards arrow	名:上昇矢印		音:		訓:		送:		異:	俗:右上/東北		非:↗
-↘	英:south east arrow	名:右下矢印		音:		訓:		送:		異:	俗:右下/東南	逆:↖	非:⤵	活:[orlm45zu][eflk][78ed][0176]
+↘	英:south east arrow	名:右下矢印		音:		訓:		送:		異:	俗:右下/東南	逆:↖	非:⤵	活:[eflk][78ed][abzvprlm]
 ⤵	英:downwards arrow	名:下降矢印		音:		訓:		送:		異:	俗:右下/東南		非:↘
 ↙	英:south west arrow	名:左下矢印		音:		訓:		送:		異:	俗:左下/西南	逆:↗	活:[67jkqsyu][eflk][9agf]
 ゛	英:plosive mark		名:濁点(全角)		音:		訓:		送:		異:゜	俗:濁音		逆:ﾞ	活:[01ji][23lk]
@@ -495,9 +495,9 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ゜	英:bilabial plosive mark	名:半濁点(全角)	異:゛	俗:半濁音	逆:ﾟ	活:[03li][7de8]
 ﾟ	英:bilabial plosive mark	名:半濁点(半角)	異:゛	俗:半濁音	逆:゜	活:[1289fekjdc67][7de8]	漫:[129fkjc6][7de8]	幅:624
 、	英:comma		名:読点(全角)		音:		訓:		送:		異:，	俗:	代:ね/ネ	逆:､	活:[cdji][jkqp][qrxw]	漫:[cdrxwi]
-､	英:comma		名:読点(半角)		音:		訓:		送:		異:，	俗:	代:ね/ネ	逆:、	活:M 200,0 0,200 0,400 200,400 400,200 400,0 z	幅:624
+､	英:comma	名:読点(半角)	異:，	代:ね/ネ	逆:、	活:[ijpqwu]	漫:[ijqwvo]	幅:624
 。	英:period	名:句点(全角)	異:．	代:る/ル	逆:｡	活:[cfxu][jpqk]	漫:[BSFSGTGXFYBYAXAT][jpqk]
-｡	英:period		名:句点(半角)		音:		訓:		送:		異:．	俗:	代:る/ル	逆:。	活:M 50,400 200,550 400,550 550,400 550,200 400,50 200,50 50,200 z M 250,400 200,350 200,250 250,200 350,200 400,250 400,350 350,400 z	幅:624
+｡	英:period	名:句点(半角)	異:．	代:る/ル	逆:。	活:[deflrxwvpoij][jpqk]	漫:[CSFSGTGXFYCYAWAU][jpqk]	幅:624
 〃	英:iteration mark	名:ノノ字点		音:		訓:		送:		異:仝	俗:	活:M 400,800 600,800 600,600 400,400 200,400 200,600 z M 400,200 600,400 800,400 800,200 600,0 400,0 z
 々	英:iteration mark	名:同の字点		音:		訓:		送:		異:	俗:ノマ	活:M 200,1000 400,1000 400,800 800,800 1000,600 1000,400 800,200 800,0 600,0 600,100 500,200 400,200 400,400 600,400 650,350 800,500 700,600 400,600 200,400 0,400 0,600 100,600 200,700 z
 ゝ	英:iteration mark	名:一の字点(平仮名清音)	音:		訓:		送:		異:	俗:	活:M 200,800 400,800 800,400 800,200 600,0 400,0 300,100 400,200 500,200 600,300 300,600 200,600 100,700 z
@@ -509,38 +509,38 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ア	英:A Japanese katakana vowel	名:ア	異:あ	俗:清音/母音	代:ァ	逆:ｱ	非:ァ	活:[05hnlrqega6][oqwu]	漫:[AOKOKSIUGUGWEYAYAWDWEVESHSIRIQAQ]
 ァ	英:a Japanese katakana semivowel	名:ァ	異:ぁ	俗:拗音/半母音	代:ア	逆:ｧ	非:ア	活:[6btrxuoqkmgc]	漫:[AQKQKVJWGWGXFYAYAWDWEWFVFUIUISAS]
 ｱ	英:A Japanese half-katakana vowel	名:ｱ	異:ア	俗:清音/母音	代:ｧ	逆:ア	非:ｧ	漫:[AOGOGSEUEWCYAYAWBWCVCSESEQAQ]	幅:624	活:[03lkqpde86][opvu]
-ｧ	英:A Japanese half-katakana semivowel		名:ｧ	音:	訓:		送:		異:ァ	俗:拗音/半母音	非:ｱ	代:ｱ	逆:ァ	活:M 0,1000 600,1000 600,600 400,600 400,700 500,800 400,800 400,200 200,0 0,0 0,200 100,200 200,300 200,800 0,800 z	幅:624
+ｧ	英:A Japanese half-katakana semivowel	名:ｧ	異:ァ	俗:拗音/半母音	代:ｱ	逆:ァ	非:ｱ	活:[03lkqpde86][opvu]	漫:[AOGOGTFUEUEWCYAYAWBWCVCTEREQAQ]	幅:624
 い	英:I Japanese hiragana vowel	名:い	異:イ	俗:清音/母音	代:ぃ	逆:ｲ	非:ぃ	活:[01po][pqwv][34a9][abzy]	漫:[01pqwvo][34bzya9]
 ぃ	英:i Japanese hiragana semivowel	名:ぃ	異:ィ	俗:拗音/半母音	代:い	逆:ｨ	非:い	活:[67po][pqwv][9agf][ghts]	漫:[67pqwvo][9ahtsgf]
 イ	英:I Japanese katakana vowel	名:イ	異:い	俗:清音/母音	代:ィ	逆:ｲ	非:ィ	活:[45ba][9agf][cfxwki]	漫:[ASESIOKOKQJQGTGYEYEUAU]
 ィ	英:i Japanese katakana semivowel	名:ィ	異:ぃ	俗:拗音/半母音	代:イ	逆:ｨ	非:イ	活:[iklxwqo][fgml][abhg]	漫:[AUEUIQKQKSJSGVGYEYEWAW]
-ｲ	英:I Japanese half-katakana vowel		名:ｲ	音:	訓:		送:		異:イ	俗:清音/母音	非:ｨ	代:ｨ	逆:イ	活:M 300,1000 600,1000 600,900 400,700 400,0 200,0 200,600 100,500 0,500 0,700 z	幅:624
-ｨ	英:i Japanese half-katakana semivowel		名:ｨ	音:	訓:		送:		異:ィ	俗:拗音/半母音	非:ｲ	代:ｲ	逆:ィ	活:M 400,800 600,800 600,600 400,400 400,0 200,0 200,200 0,200 0,400 100,400 400,700 z	幅:624
+ｲ	英:I Japanese half-katakana vowel	名:ｲ	異:イ	俗:清音/母音	代:ｨ	逆:イ	非:ｨ	活:[2398][78wvjicd]	漫:[DOGOGPEREYCYCSBTATAR]	幅:624
+ｨ	英:i Japanese half-katakana semivowel	名:ｨ	異:ィ	俗:拗音/半母音	代:ｲ	逆:ィ	非:ｲ	活:[dewvpoij][89fe]	漫:[EQGQGSEUEYCYCWAWAUBUER]	幅:624
 う	英:U Japanese hiragana vowel			名:う	音:	訓:		送:		異:ウ	俗:清音/母音	非:ぅ/ゔ	代:ぅ	逆:ｳ	活:[14a7][cgmi][mnts][osyu]	漫:[14a7][cgntyuosmi]
 ぅ	英:u Japanese hiragana semivowel	名:ぅ	異:ゥ	俗:拗音/半母音	代:う	逆:ｩ	非:う/ゔ	活:[7amicd][mnts][psyv]	漫:[CQIQIRHSISKUKWIYCYCWIWIUAUASDSCR]
 ゔ	英:V Japanese katakana consonant		名:ヴ	音:	訓:		送:		異:ヴ	俗:濁音/子音	非:ぅ/う	代:ぬ	逆:ｳﾞ	活:[1397][45ba][cgmi][mnts][psyv]	漫:[1397][45ba][cgntyvpsmi]
 ウ	英:U Japanese katakana vowel	名:ウ	異:う	俗:清音/母音	代:ゥ	逆:ｳ	非:ゥ/ヴ	活:[68239btsgdji][qsyw]	漫:[AQEQEOGOGQKQKVHYEYEWGWIUISCSCUAU]
 ゥ	英:u Japanese katakana semivowel		名:ゥ	音:	訓:		送:		異:ぅ	俗:拗音/半母音	非:ウ/ヴ	代:ウ	逆:ｩ	活:[ce89fhtsmjpo][qsyw]	漫:[ASESEQGQGSKSKWIYEYEWHWIVIUCUCWAW]
 ヴ	英:V Japanese katakana consonant	名:ヴ	異:ゔ	俗:濁音/子音	代:ヌ	逆:ｳﾞ	非:ゥ/ウ	活:[68239a45btsgdji][qsyw]	漫:[AQEQEOGOGQIQIOKOKQKVHYEYEWGWIUISCSCUAU][0]
-ｳ	英:U Japanese half-katakana vowel		名:ｳ	音:	訓:		送:		異:ウ	俗:清音/母音	非:ｩ	代:ｩ	逆:ウ	活:M 200,1000 400,1000 400,800 600,800 600,200 400,0 200,0 200,200 400,200 400,600 200,600 200,400 0,400 0,800 200,800 z	幅:624
-ｩ	英:u Japanese half-katakana semivowel		名:ｩ	音:	訓:		送:		異:ゥ	俗:拗音/半母音	非:ｳ	代:ｳ	逆:ゥ	活:M 200,800 400,800 400,600 600,600 600,0 300,0 400,100 400,400 200,400 200,200 0,200 0,600 200,600 z	幅:624
+ｳ	英:U Japanese half-katakana vowel	名:ｳ	異:ウ	俗:清音/母音	代:ｩ	逆:ウ	非:ｩ	活:[1289rqedji67][pqwv]	漫:[1289rwvpqedji67]	幅:624
+ｩ	英:u Japanese half-katakana semivowel	名:ｩ	異:ゥ	俗:拗音/半母音	代:ｳ	逆:ゥ	非:ｳ	活:[78efxwkjpocd]	漫:[CQEQESGSGYDYEXEUCUCWAWASCS]	幅:624
 え	英:E Japanese hiragana vowel			名:え	音:	訓:		送:		異:エ	俗:清音/母音	非:ぇ	代:ぇ	逆:ｴ	活:[14a7][chnmstzxrppji][opvu]	漫:[14a7][chmstzyrpvuoji]
 ぇ	英:e Japanese hiragana semivowel	名:ぇ	異:ェ	俗:拗音/半母音	代:え	逆:ｪ	非:え	活:[7aghnmstzxrpjicd][opvu]	漫:[CQIQIRHSKSIUIWKWKYIYGWCWCYAYAWCUAUASDSCR]
 エ	英:E Japanese katakana vowel	名:エ	異:え	俗:清音/母音	代:ェ	逆:ｴ	非:ェ	活:[05b9rtzuoq86]
 ェ	英:e Japanese katakana semivowel	名:ェ	異:ぇ	俗:拗音/半母音	代:エ	逆:ｪ	非:エ	活:[6bhfrtzuoqec]
-ｴ	英:E Japanese half-katakana vowel		名:ｴ	音:	訓:		送:		異:エ	俗:清音/母音	非:ｪ	代:ｪ	逆:エ	活:M 0,1000 600,1000 600,800 400,800 400,200 600,200 600,0 0,0 0,200 200,200 200,800 0,800 z	幅:624
-ｪ	英:e Japanese half-katakana semivowel		名:ｪ	音:	訓:		送:		異:ェ	俗:拗音/半母音	非:ｴ	代:ｴ	逆:ェ	活:M 0,800 600,800 600,600 400,600 400,200 600,200 600,0 0,0 0,200 200,200 200,600 0,600 z	幅:624
+ｴ	英:E Japanese half-katakana vowel		名:ｴ	音:	訓:		送:		異:エ	俗:清音/母音	非:ｪ	代:ｪ	逆:エ	活:[0398qrxuop76]	幅:624
+ｪ	英:e Japanese half-katakana semivowel		名:ｪ	音:	訓:		送:		異:ェ	俗:拗音/半母音	非:ｴ	代:ｴ	逆:ェ	活:[69feqrxuopdc]	幅:624
 お	英:O Japanese hiragana vowel			名:お	音:	訓:		送:		異:オ	俗:清音/母音	非:ぉ	代:ぉ	逆:ｵ	活:[68239a45hgmlrqwvpoijdc][jpqk][mnzy]	漫:[68239a45hgnzymlrwvoidc][jpqk]
 ぉ	英:o Japanese hiragana semivowel		名:ぉ	音:	訓:		送:		異:ォ	俗:拗音/半母音	非:お/を	代:お	逆:ｵ	活:[ce89fgabzysrxvji]	漫:[ce89fgabnmtzysrwvoji][DVCWDXEW]
 オ	英:O Japanese katakana vowel	名:オ	異:お	俗:清音/母音	代:ォ	逆:ｵ	非:ォ	活:[6934abhgyxlkec][jkqp][opvu]	漫:[AQGQGOIOIQKQKSISIYGYGUCYAYAWBWFSAS]
 ォ	英:o Japanese katakana semivowel	名:ォ	異:ぉ	俗:拗音/半母音	代:オ	逆:ｫ	非:オ/ヲ	活:[cf9aghnmyxrqki][oqwu]	漫:[ASGSGQIQISKSKUIUIYGYGVDYAYAWCWEUAU]
-ｵ	英:O Japanese half-katakana vowel		名:ｵ	音:	訓:		送:		異:オ	俗:清音/母音	非:ｫ	代:ｫ	逆:オ	活:M 200,1000 400,1000 400,800 600,800 600,600 400,600 400,0 200,0 200,300 100,200 0,200 0,400 200,600 0,600 0,800 200,800 z	幅:624
-ｫ	英:o Japanese half-katakana semivowel		名:ｫ	音:	訓:		送:		異:ォ	俗:拗音/半母音	非:ｵ	代:ｵ	逆:ォ	活:M 200,800 400,800 400,600 600,600 600,400 400,400 400,0 200,0 200,200 0,200 0,300 100,400 0,400 0,600 200,600 z	幅:624
+ｵ	英:O Japanese half-katakana vowel	名:ｵ	異:オ	俗:清音/母音	代:ｫ	逆:オ	非:ｫ	活:[1289fewvpoijdc67]	漫:[COEOEQGQGSESEYCYCVBWAWAUCSASAQCQ]	幅:624
+ｫ	英:o Japanese half-katakana semivowel	名:ｫ	異:ォ	俗:拗音/半母音	代:ｵ	逆:ォ	非:ｵ	活:[78eflkwvpocd]	漫:[CQEQESGSGUEUEYCYCWAWAVBUAUASCS]	幅:624
 か	英:KA Japanese hiragana	名:か	異:カ	俗:清音	代:が	逆:ｶ	非:が/ヵ	活:[671289feqpdc][45hg][fgsr][qrxw][opvu]	漫:[671289gsxwqrfeqvupdc][45hg]
 が	英:GA Japanese hiragana	名:が	異:ガ	俗:濁音	代:か	逆:ｶﾞ	非:か/ヶ	活:[78ehtrxwqpjicd][opvu][2398][45ba][kqrl]	漫:[2398][45ba][78efmghtsxwqrlkqvupjicd]
 カ	英:KA Japanese katakana				名:カ	音:	訓:		送:		異:か	俗:清音		非:ガ/ヵ	代:ガ	逆:ｶ	活:[68239bzygflkec][jkwv]	漫:[AQEQEOGOGQKQKYIYISGSGUEWEYCYCVETESAS]
 ガ	英:GA Japanese katakana	名:ガ	異:が	俗:濁音	代:カ	逆:ｶﾞ	非:カ/ヶ	活:[68239a45bzygflkec][jkwv]	漫:[AQEQEOGOGQIQIOKOKQKYIYISGSGUEWEYCYCVETESAS]
-ｶ	英:KA Japanese half-katakana			名:ｶ	音:	訓:		送:		異:カ	俗:清音		非:	代:	逆:カ	活:M 0,800 200,800 200,1000 400,1000 400,800 600,800 600,0 400,0 400,400 200,200 200,0 0,0 0,300 200,500 200,600 0,600 z	幅:624
+ｶ	英:KA Japanese half-katakana	名:ｶ	異:カ	俗:清音	逆:カ	活:[671289xwkjdc][ijvu]	漫:[AQCQCOEOEQGQGYEYEUCWCYAYAVCTCSAS]	幅:624
 ヶ	英:ga,ka Japanese katakana nasal consonant	名:が	訓:か゚(が)/か	送:鯵ヶ沢/酸ヶ湯	異:ヵ/ケ	俗:鼻濁音/子音	代:ヵ	逆:ｶ	非:ガ	活:[78ehnmsrlkj][qrxw][ijpo]	漫:[CQEQESKSKUIUIWGYEYEWFWGVGUEUCWAWAUBUCT]
 ヵ	英:kka Japanese katakana consonant	名:か	訓:か	送:一ヵ月	異:ヶ	俗:子音/ヵ→ヶ	代:ヶ	逆:ｹ	非:か	活:[ce89fhzymlrqki][pqwv]	漫:[ASESEQGQGSKSKYIYIUGUGWEYCYCWDWEVEUAU]
 き	英:KI Japanese hiragana				名:き	音:	訓:		送:		異:キ	俗:清音		非:ぎ	代:ぎ	逆:ｷ	活:[68239bnjdc][ijpo][ptzv]	漫:[68239bghmjptzvoidc]
@@ -552,60 +552,60 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ぐ	英:GU Japanese hiragana	名:ぐ	異:グ	俗:濁音	代:く	逆:ｸﾞ	非:く	活:[24a8][78ed][cdji][jkqp][qsyw][abhg][fgml]	漫:[ASEOKOIQFQCTFWIWKYEYAU][abhg][fgml]
 ク	英:KU Japanese katakana	名:ク	異:く	俗:清音	代:グ	逆:ｸ	非:グ	活:[15nma7][67dc][lmsr][prxv]	漫:[COKOKUGYCYCWFWITIQDQCRCSASAQ]
 グ	英:GU Japanese katakana				名:グ	音:	訓:		送:		異:ぐ	俗:濁音		非:ク	代:ク	逆:ｸﾞ	活:[78239a45nmgd][cdji][lmsr][prxv]	漫:[CQEQEOGOGQIQIOKOKUGYCYCWFWITISDSCTCUAUAS]
-ｸ	英:KU Japanese half-katakana			名:ｸ	音:	訓:		送:		異:ク	俗:清音		非:	代:	逆:ク	活:M 200,1000 600,1000 600,300 300,0 0,0 0,200 200,200 400,400 400,800 300,800 200,700 200,600 0,600 0,800 z	幅:624
+ｸ	英:KU Japanese half-katakana	名:ｸ	異:ク	俗:清音	逆:ク	活:[67dc][13lk87][jkqp][opvu]	漫:[COGOGVDYAYAWCWEUEQDQCRCSASAQ]	幅:624
 け	英:KE Japanese hiragana	名:け	異:ケ	俗:清音	代:げ	逆:ｹ	非:げ	活:[017934abhgsrfdvu][qrxw]	漫:[01pu][7934abhgsxwqrfe]
 げ	英:GE Japanese hiragana	名:げ	異:ゲ	俗:濁音	代:け	逆:ｹﾞ	非:け	活:[67df9aghnmsrljvu][qrxw][45ba][2398]	漫:[2398][45ba][67pu][df9aghnmsxwqrlk]
 ケ	英:KE Japanese katakana	名:ケ	異:け/ヶ	俗:清音	代:ゲ	逆:ｹ	非:ゲ	活:[128bhgsrfed][cdji][qrxw]	漫:[COEOEQKQKSISIWGYEYEWFWGVGSESCUAUASBSCR]
 ゲ	英:GE Japanese katakana				名:ゲ	音:	訓:		送:		異:げ	俗:濁音		非:ケ	代:ケ	逆:ｹﾞ	活:[139a45hgsrfed][cdji][qrxw]	漫:[COEOEOGOGQJQKRJSISIWGYEYEWFWGVGSESCUAUASBSCR][IOKOKQJQIP][EPEQFQ]
-ｹ	英:KE Japanese half-katakana			名:ｹ	音:	訓:		送:		異:ケ	俗:清音		非:	代:	逆:ケ	活:M 0,1000 200,1000 200,800 600,800 600,600 500,600 600,500 600,200 400,0 200,0 200,200 400,200 400,600 200,600 200,400 0,400 z	幅:624
+ｹ	英:KE Japanese half-katakana	名:ｹ	異:ケ	俗:清音	逆:ケ	活:[0179rqedji][pqwv]	漫:[AOCOCQGQGSFSGTGWEYCYCWEWESCSCUAU]	幅:624
 こ	英:KO Japanese hiragana	名:こ	異:コ	俗:清音	代:ご	逆:ｺ	非:ご	活:[14a7][abhg][ijpo][ptzv]	漫:[14bhga7][ijptzvo]
 ご	英:GO Japanese hiragana	名:ご	異:ゴ	俗:濁音	代:こ	逆:ｺﾞ	非:こ	活:[78239agd][45ba][ghnm][ijpo][ptzv]	漫:[7ahnmgd][78239ahnmgd][ijptzvo][45ba]
 コ	英:KO Japanese katakana	名:コ	異:こ	俗:清音	代:ゴ	逆:ｺ	非:ゴ	活:[05zuosa6]
 ゴ	英:GO Japanese katakana	名:ゴ	異:ご	俗:濁音	代:コ	逆:ｺﾞ	非:コ	活:[68239a45zuosgc]
-ｺ	英:KO Japanese half-katakana			名:ｺ	音:	訓:		送:		異:コ	俗:清音		非:	代:	逆:コ	活:M 0,1000 600,1000 600,0 0,0 0,200 400,200 400,800 0,800 z	幅:624
+ｺ	英:KO Japanese half-katakana	名:ｺ	異:コ	俗:清音	逆:コ	活:[03xuoq86]	幅:624
 さ	英:SA Japanese hiragana	名:さ	異:サ	俗:清音	代:ざ	逆:ｻ	非:ざ	活:[68239bhgmjdc][ijpo][prxv]	漫:[68239bhgljprxvoidc]
 ざ	英:ZA Japanese hiragana	名:ざ	異:ザ	俗:濁音	代:さ	逆:ｻﾞ	非:さ	活:[68239a45hfljdc][ijpo][prxv]	漫:[68239a45hgljprxvoidc]
 サ	英:SA Japanese katakana	名:サ	異:さ	俗:清音	代:ザ	逆:ｻ	非:ザ	活:[128934abhgsrfekjdc67][qrxw]	漫:[COEOEQGQGOIOIQKQKSISIWGYEYEWFWGVGSESEUCUCSASAQCQ]
 ザ	英:ZA Japanese katakana	名:ザ	異:ざ	俗:濁音	代:サ	逆:ｻﾞ	非:サ	活:[78239aghnmywqpjicd][45ba][EUEWGWGVGU][8ef9]	漫:[78239aghnmsxwqpjicd][45ba][8ef9][EUEWFWGVGU]
-ｻ	英:SA Japanese half-katakana			名:ｻ	音:	訓:		送:		異:サ	俗:清音		非:	代:	逆:サ	活:M 0,1000 200,1000 200,800 400,800 400,1000 600,1000 600,200 400,0 0,0 0,200 300,200 400,300 400,600 200,600 200,400 0,400 z	幅:624
+ｻ	英:SA Japanese half-katakana	名:ｻ	異:サ	俗:清音	逆:サ	活:[017823rqedji][oqwu]	漫:[AOCOCQEQEOGOGWEYAYAWDWEVESCSCUAU]	幅:624
 し	英:SHI Japanese hiragana	名:し	異:シ	俗:清音	代:じ	逆:ｼ	非:じ	活:[01po][prxv][lmsr][ghnm]	漫:[01jqrhnxvo]
 じ	英:JI Japanese hiragana	名:じ	異:ジ	俗:濁音	代:し	逆:ｼﾞ	非:し	活:[2398][45ba][67po][prxv][lmsr][ghnm]	漫:[67jqrhnxwvo][2398][45ba]
 シ	英:SHI Japanese katakana	名:シ	異:し	俗:清音	代:ジ	逆:ｼ	非:ジ	漫:[0396][cfli][AWFWITIQKQKUGYAY]	活:[0396][cfli][abnm][lmsr][orxu]
 ジ	英:JI Japanese katakana	名:ジ	異:じ	俗:濁音	代:シ	逆:ｼﾞ	非:シ	活:[0396][45ba][cfli][orxu][ghnm][lmsr]	漫:[0396][45ba][cfli][AWFWITISKSKUGYAY]
-ｼ	英:SHI Japanese half-katakana			名:ｼ	音:	訓:		送:		異:シ	俗:清音		非:	代:	逆:シ	活:M 0,1000 400,1000 400,800 0,800 z M 0,600 400,600 400,500 300,400 0,400 z M 0,200 300,200 400,300 400,400 600,400 600,200 400,0 0,0 z	幅:624
+ｼ	英:SHI Japanese half-katakana	名:ｼ	異:シ	俗:清音	逆:シ	活:[0286][ceki][klrq][oqwu]	漫:[0286][ASESETDUAU][EUGUGWEYAYAWDWEV]	幅:624
 す	英:SU Japanese hiragana	名:す	異:ス	俗:清音	代:ず	逆:ｽ	非:ず	活:[6934abhgsrxuopdc][kqrl]	漫:[693334abhgsxuopjec][kqrl]
 ず	英:ZU Japanese hiragana				名:ず	音:	訓:		送:		異:ズ	俗:濁音		非:す	代:す	逆:ｽﾞ	活:[cf9aghnmsrxuopji][2398][45ba][kqrl]	漫:[cf9aghnmsxuopji][2398][45ba][kqrl]
 ス	英:SU Japanese katakana	名:ス	異:す	俗:清音	代:ス	逆:ｽ	非:ス	活:[05bagf96][eflk][jkqp][opvu][lmsr][stzy]	漫:M 0,1000 1000,1000 1000,800 650,450 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 100,200 700,800 0,800 z
 ズ	英:ZU Japanese katakana	名:ズ	異:ず	俗:濁音	代:ズ	逆:ｽﾞ	非:ズ	活:[68239a45nmgc][kmsq][stzy][oqwu]	漫:M 0,800 400,800 400,1000 600,1000 600,800 800,800 800,1000 1000,1000 1000,600 750,350 900,200 1000,200 1000,0 800,0 600,200 400,0 0,0 0,200 300,200 700,600 0,600 z
-ｽ	英::SU Japanese half-katakana			名:ｽ	音:	訓:		送:		異:ス	俗:清音		非:	代:	逆:ス	活:M 0,1000 600,1000 600,600 450,450 600,300 600,0 400,0 400,200 300,300 200,200 200,0 0,0 0,300 400,700 400,800 0,800 z	幅:624
+ｽ	英::SU Japanese half-katakana	名:ｽ	異:ス	俗:清音	逆:ス	活:[03fe86][dekj][ijvu][klxw]	漫:M 0,1000 600,1000 600,600 450,450 600,300 600,0 400,0 400,200 300,300 200,200 200,0 0,0 0,300 400,700 400,800 0,800 z	幅:624
 せ	英:SE Japanese hiragana	名:せ	異:セ	俗:清音	代:ぜ	逆:ｾ	非:ぜ	活:[128934abhgmlfeqpdc67][qtzw]	漫:[128934abhgmlfeqtzwpdc67]
 ぜ	英:ZE Japanese hiragana				名:ぜ	音:	訓:		送:		異:ゼ	俗:濁音		非:せ	代:せ	逆:ｾﾞ	活:[45ba][78239aghnmstzwqpjicd][8ef9][kqrl]	漫:[IOKOKQJQIQ][CQEQEOGOGQIQISKSKUIUIVHWKWKYEYCWCUAUASCS][EUEWHWGVGU][8ef9]
 セ	英:SE Japanese katakana	名:セ	異:せ	俗:清音	代:ゼ	逆:ｾ	非:ゼ	活:[128bnmgeqpdc67][qtzw]	漫:[COEOEQKQKUIUISESEVFWKWKYEYCWCSASAQCQ]
 ゼ	英:ZE Japanese katakana	名:ゼ	異:ぜ	俗:濁音	代:セ	逆:ｾﾞ	非:セ	活:[AQCQEQFQFOHOHQIQIOKOKUIUISESEWCWCSAS][qtzw]	漫:[AQCQDPEQFQFOHOHQIQIOKOKUIUISESEVFWKWKYEYCWCSAS]
-ｾ	英:SE Japanese half-katakana			名:ｾ	音:	訓:		送:		異:セ	俗:清音		非:	代:	逆:セ	活:M 0,1000 200,1000 200,800 600,800 600,400 400,400 400,600 200,600 200,300 300,200 600,200 600,0 200,0 0,200 0,500 100,600 0,600 z	幅:624
+ｾ	英:SE Japanese half-katakana	名:ｾ	異:セ	俗:清音	逆:セ	活:[0179lkedpo][prxv]	漫:[AOCOCQGQGUEUESCSCVDWGWGYCYAWATBSAS]	幅:624
 そ	英:SO Japanese hiragana	名:そ	異:ソ	俗:清音	代:ぞ	逆:ｿ	非:ぞ	活:[67128934abhflkqsyvpdc]	漫:[AQCQCOEOEQGQGOIOIQKQISHSGTGUEUEWIWIYDYCXCSAS]
 ぞ	英:ZO Japanese hiragana	名:ぞ	異:ゾ	俗:濁音	代:そ	逆:ｿﾞ	非:そ	活:[45ba][78239aghnkqsyvjicd][8ef9]	漫:[2398][45ba][CQEQESGSGQIQISKSIUFUEVEWIWIYDYCXCVDUAUASCS]
 ソ	英:SO Japanese katakana	名:ソ	異:そ	俗:清音	代:ゾ	逆:ｿ	非:ゾ	活:[0176][78kj][45ts][psyv]	漫:[AOCOEQEUCUCRBQAQ][IOKOKWIYCYCWHWIV]
 ゾ	英:ZO Japanese katakana	名:ゾ	異:ぞ	俗:濁音	代:ソ	逆:ｿﾞ	非:ソ	活:[67dc][dekj][abts][qsyw][1287][34a9]	漫:[AQCQESEUCUCTBSAS][CWHWIVIQKQKWIYCY][COEOEQDQCP][34a9]
-ｿ	英:SO Japanese half-katakana			名:ｿ	音:	訓:		送:		異:ソ	俗:清音		非:	代:	逆:ソ	活:M 0,1000 200,1000 200,900 400,700 400,1000 600,1000 600,400 200,0 0,0 0,200 100,200 400,500 400,600 300,500 0,800 z	幅:624
+ｿ	英:SO Japanese half-katakana	名:ｿ	異:ソ	俗:清音	逆:ソ	活:[0176][7823lked][jkqp][opvu]	漫:[AOCOCPEREOGOGUCYAYAWBWETESDTAQ]	幅:624
 た	英:TA Japanese hiragana	名:た	異:タ	俗:清音	代:だ	逆:ﾀ	非:だ	活:[128bhnlfekjdc67][ijvu][qtzw]	漫:[128bghnlfejvuidc67][qtzw]
 だ	英:DA Japanese hiragana	名:だ	異:ダ	俗:濁音	代:た	逆:ﾀﾞ	非:た	活:[68239a45nlfekjdc][ijvu][qtzw]	漫:[AQCQDPEQEPEOGOGQIQIOKOKQISKSKUGUGSESCUCYAYAUCSAS][qtzw]
 タ	英:TA Japanese katakana				名:タ	音:	訓:		送:		異:た	俗:清音		非:ダ	代:ダ	逆:ﾀ	活:[6715nmsrlkec][prxv][8eflma]	漫:M 0,800 100,800 200,900 200,1000 1000,1000 1000,400 600,0 200,0 200,200 500,200 550,250 250,600 0,600 z M 350,750 700,400 800,500 800,800 400,800 z
 ダ	英:DA Japanese katakana	名:ダ	異:だ	俗:濁音	代:タ	逆:ﾀﾞ	非:タ	活:[78239a45nmsrxvpqkicd][ekmg]	漫:M 200,800 400,800 400,1000 600,1000 600,800 800,800 800,1000 1000,1000 1000,800 1000,400 600,0 200,0 200,200 400,200 200,400 0,400 0,600 100,600 200,700 z M 400,600 350,550 600,300 800,500 800,600 z
-ﾀ	英:TA Japanese half-katakana			名:ﾀ	音:	訓:		送:		異:タ	俗:清音		非:	代:	逆:タ	活:M 200,1000 600,1000 600,400 200,0 0,0 0,200 100,200 300,400 200,400 200,600 400,600 400,800 300,800 200,700 200,600 0,600 0,800 z	幅:624
+ﾀ	英:TA Japanese half-katakana	名:ﾀ	異:タ	俗:清音	逆:タ	活:[6713lkqpdc][opvu][7de8]	漫:[COGOGUCYAYAWBWDUCUCSASAQ][DQCRCSESEQ]	幅:624
 ち	英:CHI Japanese hiragana	名:ち	異:チ	俗:清音	代:ぢ	逆:ﾁ	非:ぢ	活:[128bhgmjdc67][mnts][qsyw]	漫:[128bhgntywqsmjdc67]
 ぢ	英:JI Japanese hiragana	名:ぢ	異:ヂ	俗:濁音	代:ち	逆:ﾁﾞ	非:ち	活:[671239a45hgmjdc][mnts][qsyw]	漫:[671239a45hgntywqsmjdc][EPEQFQ]
 チ	英:CHI Japanese katakana	名:チ	異:ち	俗:清音	代:ヂ	逆:ﾁ	非:ヂ	活:[05b9fhnlrqkice86][pqwv]	漫:[AOKOKQGQGSKSKUGUGWEYCYCWDWEVEUAUASESEQAQ]
 ヂ	英:JI Japanese katakana	名:ヂ	異:ぢ	俗:濁音	代:チ	逆:ﾁﾞ	非:チ	活:[68239agflntqwvpoikec][45ba]	漫:[AQEQEOGOGQIQISGSGUKUKWGWEYCYCXDWAWAUEUESAS][45ba]
-ﾁ	英:CHI Japanese half-katakana			名:ﾁ	音:	訓:		送:		異:チ	俗:清音		非:	代:	逆:チ	活:M 100,1000 600,1000 600,800 400,800 400,600 600,600 600,400 400,400 400,200 200,0 0,0 0,200 100,200 200,300 200,400 0,400 0,600 200,600 200,800 0,800 0,900 z	幅:624
+ﾁ	英:CHI Japanese half-katakana	名:ﾁ	異:チ	俗:清音	逆:チ	活:[0398eflkqpjicd76][opvu]	幅:624	漫:[AOGOGQEQESGSGUEUEWCYAYAWBWCVCUAUASCSCQAQ]
 つ	英:THU Japanese hiragana	名:つ	異:ツ	俗:清音	代:づ	逆:ﾂ	非:づ/っ	活:[67dc][14a7][abts][qsyw]	漫:[14btywqsa7c6]
 づ	英:ZU Japanese hiragana				名:づ	音:	訓:		送:		異:ヅ	俗:濁音		非:つ/っ	代:つ	逆:ﾂﾞ	活:[cdji][78239agd][ghts][qsyw][45ba]	漫:[45ba][78239ahtywqsgdic]
 っ	英:tthu Japanese hiragana geminate consonant	名:っ	異:ッ	俗:促音	代:に	逆:ｯ	非:つ/づ	漫:[7ahtywqsgdic]	活:[cdji][7agd][ghts][qsyw]
 ツ	英:THU Japanese katakana	名:ツ	異:つ	俗:清音	代:ヅ	逆:ﾂ	非:ヅ/ッ	活:[01ji][23lk][45ts][psyv]	漫:[01ji][23lk][IOKOKWIYCYCWHWIV]
 ヅ	英:ZU Japanese katakana	名:ヅ	異:づ	俗:濁音	代:ツ	逆:ﾂﾞ	非:ツ/ッ	活:[67ji][89lk8][abtsa][psyv][1287][34a9]	漫:[67ji][89lk][CWHWIVIQKQKWIYCY][34a9][1287]
 ッ	英:tthu Japanese hiragana geminate consonant	名:ッ	異:ツ	俗:促音	代:ニ	逆:ｯ	非:ツ/ヅ	活:[67ji][89lk][ghts][psyv]	漫:[67ji][89lk][CWHWIVISKSKWIYCY]
-ﾂ	英:THU Japanese half-katakana				名:ﾂ	音:	訓:	送:		異:ツ	俗:清音		非:	代:	逆:ツ	活:M 0,1000 100,1000 200,900 200,1000 300,1000 400,900 400,1000 600,1000 600,200 400,0 0,0 0,200 300,200 400,300 400,400 300,400 200,500 200,400 100,400 0,500 z	幅:624
-ｯ	英:tthu Japanese half-katakana geminate consonant	名:ｯ	音:	訓:	送:		異:ッ	俗:清音		非:	代:	逆:ッ	活:M 0,800 100,800 200,700 200,800 300,800 400,700 400,800 600,800 600,200 400,0 0,0 0,200 300,200 400,300 400,500 300,500 200,600 200,500 100,500 0,600 z	幅:624
+ﾂ	英:THU Japanese half-katakana	名:ﾂ	異:ツ	俗:清音	逆:ツ	活:[03rqki][oqwu]	漫:[AOBOCPCODOEPEOGOGWEYAYAWDWEVEUDUCTCUBUAT]	幅:624
+ｯ	英:tthu Japanese half-katakana geminate consonant	名:ｯ	異:ッ	俗:清音	逆:ッ	活:[AQGQGWEYAYAWDWEVETAT]	漫:[AQBQCRCQDQEREQGQGWEYAYAWDWEVETDTCSCTBTAS]	幅:624
 て	英:TE Japanese hiragana	名:て	異:テ	俗:清音	代:で	逆:ﾃ	非:で	活:[05bagee86][deqp][qsyw]	漫:[05bgeqtzwpd86]
 で	英:DE Japanese hiragana	名:で	異:デ	俗:濁音	代:て	逆:ﾃﾞ	非:て	活:[AQGQIQIPIOKOKSISIUEUESAS][jkqp][qtzw]	漫:[6a45hmkqtzwpjec]
 テ	英:TE Japanese katakana	名:テ	異:て	俗:清音	代:デ	逆:ﾃ	非:デ	活:[05b6][chnlrqki][pqwv]	漫:[05b6][ASKSKUGUGWEYCYCWDWEVEUAU]
@@ -615,13 +615,13 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ど	英:DO Japanese hiragana	名:ど	異:デ	俗:濁音	代:と	逆:ﾄﾞ	非:と	活:[78ehnj][2398][45ba][ijpo][ptzv]	漫:[78ehnjptzvoid][2398][45ba]
 ト	英:TO Japanese katakana	名:ト	異:て	俗:清音	代:ド	逆:ﾄ	非:ド	活:[12ehnkwv]
 ド	英:DO Japanese katakana	名:ド	異:で	俗:濁音	代:ト	逆:ﾄﾞ	非:ト	活:[12ehnkwv][35b9]	漫:[12ehnkwv][GOKOKQJQIPIQHQGP]
-ﾄ	英:TO Japanese half-katakana			名:ﾄ	音:	訓:		送:		異:ト	俗:清音		非:	代:	逆:ト	活:M 0,1000 200,1000 200,600 600,600 600,400 200,400 200,0 0,0 z	幅:624
+ﾄ	英:TO Japanese half-katakana			名:ﾄ	音:	訓:		送:		異:ト	俗:清音		非:	代:	逆:ト	活:[01dfljvu]	幅:624
 な	英:NA Japanese hiragana	名:な	異:ナ	俗:清音	代:ゐ	逆:ﾅ	活:[128bhgmntsywklfekjdc67][ijvu]	漫:[128bghmntsywklfejvuidc67][GVFWGXHW]
 ナ	英:NA Japanese katakana				名:ナ	音:	訓:		送:		異:な	俗:清音		非:	代:ヰ	逆:ﾅ	活:[6934abhgsrfc][prxv]	漫:[AQGQGOIOIQKQKSISIWGYCYCWFWGVGSAS]
-ﾅ	英:NA Japanese half-katakana			名:ﾅ	音:	訓:		送:		異:ナ	俗:清音		非:	代:	逆:ナ	活:M 200,1000 400,1000 400,800 600,800 600,600 400,600 400,200 200,0 0,0 0,200 100,200 200,300 200,600 0,600 0,800 200,800 z	幅:624
+ﾅ	英:NA Japanese half-katakana	名:ﾅ	異:ナ	俗:清音	逆:ナ	活:[1289feqpdc67][opvu]	漫:[COEOEQGQGSESEWCYAYAWBWCVCSASAQCQ]	幅:624
 に	英:NI Japanese hiragana	名:に	異:ニ	俗:清音	代:っ	逆:ﾆ	活:[01vu][8bnmge][klrq][rtzx]	漫:[01vu][8bnmge][klrtzxq]
 ニ	英:NI Japanese katakana	名:ニ	異:に	俗:清音	代:ッ	逆:ﾆ	非:二	活:[05b6][otzu]
-ﾆ	英:NI Japanese half-katakana			名:ﾆ	音:	訓:		送:		異:ニ	俗:清音		非:	代:	逆:ニ	活:[1397][orxu]	幅:624
+ﾆ	英:NI Japanese half-katakana	名:ﾆ	異:ニ	俗:清音	逆:ニ	活:[1397][orxu]	幅:624
 ぬ	英:NU Japanese hiragana				名:ぬ	音:	訓:		送:		異:ヌ	俗:清音		非:	代:ゔ	逆:ﾇ	活:[128934ghzxrqwvpocd][eklf][jpqk][lrsm]	漫:[128934ahzxrsmwvoc7][eqlf][jpq][IWIXJXJW]
 ヌ	英:NU Japanese katakana	名:ヌ	異:ぬ	俗:清音	代:ヴ	逆:ﾇ	活:[05hga6][fgsqkl][dekj][stzy][oqwu]	漫:M 0,1000 1000,1000 1000,500 800,300 900,200 1000,200 1000,0 800,0 650,150 500,0 0,0 0,200 400,200 500,300 400,400 200,400 200,600 500,600 650,450 800,600 800,800 0,800 z
 ﾇ	英:NU Japanese half-katakana	名:ﾇ	異:ヌ	俗:清音	逆:ヌ	活:[03lk86][jkqp][opvu][cdji][qrxw]	漫:M 0,1000 600,1000 600,400 450,250 500,200 600,200 600,0 400,0 300,100 200,0 0,0 0,200 100,200 150,250 0,400 0,600 200,600 200,500 300,400 400,500 400,800 0,800 z	幅:624
@@ -630,88 +630,88 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ﾈ	英:NE Japanese half-katakana	名:ﾈ	異:ネ	俗:清音	逆:ネ	非:礻	活:[671289rqwvpoikec]	漫:[COEOEQGQGXFWEWEYCYCWBWAXAVBUEUESASAQCQ]	幅:624
 の	英:NO Japanese hiragana	名:の	異:ノ	俗:清音	代:…	逆:ﾉ	活:[14a9rqwvpo67][abzy][7pq8]	漫:[14bzya9xvo6][7pq8]
 ノ	英:NO Japanese katakana	名:ノ	異:の	俗:清音	代:‥	逆:ﾉ	活:[45nm][lmsr][orxu]	漫:[IOKOKUGYAYAWFWIT]
-ﾉ	英:NO Japanese half-katakana			名:ﾉ	音:	訓:		送:		異:ノ	俗:清音		非:	代:	逆:ノ	活:M 400,1000 600,1000 600,400 200,0 0,0 0,200 100,200 400,500 z	幅:624
+ﾉ	英:NO Japanese half-katakana	名:ﾉ	異:ノ	俗:清音	逆:ノ	活:[23lk][jkqp][opvu]	漫:[EOGOGUCYAYAWBWET]	幅:624
 は	英:HA Japanese hiragana	名:は	異:ハ	俗:清音	代:ば	逆:ﾊ	非:ば/ぱ	活:[017934abhgmntsywqpvu][kqrl][djke]	漫:[AOCOCQGQGOIOIQKQKSISIUKUKWIWIXHYEYCWCUESCSCYAY][kqrl]
 ば	英:BA Japanese hiragana				名:ば	音:	訓:		送:		異:バ	俗:濁音		非:は/ぱ	代:は	逆:ﾊﾞ	活:[68239a45hflntsywqpvu][djke][kqrl]	漫:[BPCQEQEOGOGQIQIOKOKQKSGSIUKUKWIWIXHYEYCWCUESCSCYAYAQ][kqrl][JY]
 ぱ	英:PA Japanese hiragana	名:ぱ	異:パ	俗:半濁音	代:ま	逆:ﾊﾟ	非:は/ば	活:[6825hgmntsywqpvu][djke][kqrl][9fga9]	漫:[AQEQGOIOKQKSIUKUKWIWIXHYEYCWCYAY][kqrl][9fga][dje]
 ハ	英:HA Japanese katakana	名:ハ	異:は	俗:清音	代:バ	逆:ﾊ	非:バ/パ	活:[12ed][cdvu][34gf][ghzy]	漫:[COEOESCUCYAYATCR][GOIOIRKTKYIYIUGS]
 バ	英:BA Japanese katakana	名:バ	異:ば	俗:濁音	代:ハ	逆:ﾊﾞ	非:ハ/パ	活:[2398][45ba][78kj][9aml][ijvu][mnzy]	漫:[2398][45ba][CQEQEUCWCYAYAVCT][GQIQITKVKYIYIWGU]
 パ	英:PA Japanese katakana	名:パ	異:ぱ	俗:半濁音	代:マ	逆:ﾊﾟ	非:ハ/バ	活:[8935zymlfe][9fga][dekj][ijvu]	漫:M 200,800 400,800 600,1000 800,1000 1000,800 1000,600 850,450 1000,300 1000,0 800,0 800,200 400,600 400,400 200,200 200,0 0,0 0,300 200,500 z M 600,800 600,600 800,600 800,800 z
-ﾊ	英:HA Japanese half-katakana			名:ﾊ	音:	訓:		送:		異:ハ	俗:清音		非:	代:	逆:ハ	活:M 200,1000 400,1000 600,800 600,0 400,0 400,700 300,800 200,800 z M 0,600 200,600 200,0 0,0 z	幅:624
+ﾊ	英:HA Japanese half-katakana	名:ﾊ	異:ハ	俗:清音	逆:ハ	活:[cdvu][1287][89xw]	漫:[COEOGQGYEYERDQCQ][cdvu]	幅:624
 ひ	英:HI Japanese hiragana	名:ひ	異:ヒ	俗:清音	代:び	逆:ﾋ	非:び/ぴ	活:[02ed76][cdpo][prxv][34abhgsr]	漫:[AOEOERCTCWGWGOIOKQKSISIWGYCYAWASCQAQ]
 び	英:BI Japanese hiragana	名:び	異:ビ	俗:濁音	代:ひ	逆:ﾋﾞ	非:ひ/ぴ	活:[2398][45ba][68kjdc][ijpo][prxv][9aghnmsr]	漫:[2398][45ba][AQEQETCVCWGWGQIQKSKUIUIWGYCYAWAUCSAS]
 ぴ	英:PI Japanese hiragana	名:ぴ	異:ピ	俗:半濁音	代:み	逆:ﾋﾟ	非:ひ/び	活:[6825hgsrxvpoijdc][9fga][ekjprf]	漫:[6834bhmsxvoidc][9fga][ESETCVDWFWGVGU]
 ヒ	英:HI Japanese katakana	名:ヒ	異:ひ	俗:清音	代:ビ	逆:ﾋ	非:ビ/ピ	活:[01dfljpo][ptzv][9bhf]	漫:[AOCOCSESGQKQKSHSFUCUCVDWKWKYCYAW]
 ビ	英:BI Japanese katakana				名:ビ	音:	訓:		送:		異:び	俗:濁音		非:ヒ/ピ	代:ヒ	逆:ﾋﾞ	活:[01dfljpo][ptzv][9a45hf][2398]	漫:[AOCOCSESGQIQIOKOKSHSFUCUCVDWKWKYCYAW][2398]
 ピ	英:PI Japanese katakana	名:ピ	異:ぴ	俗:半濁音	代:ミ	逆:ﾋﾟ	非:ヒ/ビ	活:[01de89345bhgmjpo][ptzv][9fga]	漫:M 0,1000 200,1000 200,600 400,600 400,800 600,1000 800,1000 1000,800 1000,600 800,400 600,400 550,450 500,400 200,400 200,300 300,200 1000,200 1000,0 200,0 0,200 z M 600,800 600,600 800,600 800,800 z
-ﾋ	英:HI Japanese half-katakana			名:ﾋ	音:	訓:		送:		異:ヒ	俗:清音		非:	代:	逆:ヒ	活:M 0,1000 200,1000 200,800 600,800 600,600 200,600 200,300 300,200 600,200 600,0 200,0 0,200 z	幅:624
+ﾋ	英:HI Japanese half-katakana	名:ﾋ	異:ヒ	俗:清音	逆:ヒ	活:[0179fdpo][prxv]	漫:[AOCOCQGQGSCSCVDWGWGYCYAW]	幅:624
 ふ	英:FU Japanese hiragana				名:ふ	音:	訓:		送:		異:フ	俗:清音		非:ぶ/ぷ	代:ぶ	逆:ﾌ	活:[cdpoc][14abnmyvprlkef97][flmg]	漫:[14afmsxvprk87][cdpo][ahtm]
 ぶ	英:BU Japanese hiragana	名:ぶ	異:ブ	俗:濁音	代:ふ	逆:ﾌﾞ	非:ふ/ぷ	活:[13lk87][lmghtr][prxv][cdpo][45ba]	漫:[13fmsxvprk87][cdpo][ahtm][45ba]
 ぷ	英:PU Japanese hiragana	名:ぷ	異:プ	俗:半濁音	代:む	逆:ﾌﾟ	非:ふ/ぶ	活:[15trlk87][9fga][prxv][cdpo]	漫:[14btmsxvprk87][cdpo][9fga]
 フ	英:FU Japanese katakana	名:フ	異:ふ	俗:清音	代:ブ	逆:ﾌ	非:ブ/プ	活:[05nma6][lmsr][prxv]	漫:[AOKOKUGYCYCWFWITIQAQ]
 ブ	英:BU Japanese katakana	名:ブ	異:ぶ	俗:濁音	代:フ	逆:ﾌﾞ	非:フ/プ	活:[AQEQEOGOGQIQIOKOKQKUGYCYCWFWITISAS]	漫:[68239a45bnmgc][prxv][lmsr]
 プ	英:PU Japanese katakana	名:プ	異:ぷ	俗:半濁音	代:ム	逆:ﾌﾟ	非:フ/ブ	活:[6935hgsrlkec][prxv][9fga]	漫:[AQEQGOIOKQKSKUGYCYCWFWHUGUESAS][9fga]
-ﾌ	英:FU Japanese half-katakana			名:ﾌ	音:	訓:		送:		異:フ	俗:清音		非:	代:	逆:フ	活:M 0,1000 600,1000 600,400 200,0 0,0 0,200 100,200 400,500 400,800 0,800 z	幅:624
+ﾌ	英:FU Japanese half-katakana	名:ﾌ	異:フ	俗:清音	逆:フ	活:[03lk86][jkqp][opvu]	漫:[AOGOGUCYAYAWBWETEQAQ]	幅:624
 へ	英:HE Japanese hiragana	名:へ	異:ヘ	俗:清音	代:べ	逆:ﾍ	非:べ/ぺ	活:[1397][67ji][9agf][ghts]	漫:[COGOKSKWIWITFQCQCVAVAQ]
 べ	英:BE Japanese hiragana				名:べ	音:	訓:		送:		異:ベ	俗:濁音		非:へ/ぺ	代:へ	逆:ﾍﾞ	活:[45ba][cdpo][7823fd][fgml][mnzy]	漫:[CQEQEOGOGQKUKYIYIVFSCSCWAWAS][45ba]
 ぺ	英:PE Japanese hiragana	名:ぺ	異:ペ	俗:半濁音	代:め	逆:ﾍﾟ	非:へ/べ	活:[7825hgmnzymlfd][cdpo][9fga]	漫:[CQEQGOIOKQKSJTKUKYIYIVHUGUESCSCWAWAS][9fga]
 ヘ	英:HE Japanese katakana	名:ヘ	異:へ	俗:清音	代:ベ	逆:ﾍ	非:ベ/ペ	活:[cdji][79fd][fgml][mnts]	漫:[CQGQKUKWIWIVFSDSCTCUAUAS]
 ベ	英:BE Japanese katakana	名:ベ	異:べ	俗:濁音	代:ヘ	逆:ﾍﾞ	非:ヘ/ペ	活:[45ba][ijpo][dflj][lmsr][stzy][2398]	漫:[CSGSKWKYIYIXFUDUCVCWAWAU][2398][45ba]
 ペ	英:PE Japanese katakana	名:ペ	異:ぺ	俗:半濁音	代:メ	逆:ﾍﾟ	非:ヘ/ベ	活:[de8935hgsrlj][ijpo][stzy][9fga]	漫:[CSESEQGOIOKQKSIUKWKYIYIXFUDUCVCWAWAU][9fga]
-ﾍ	英:HE Japanese half-katakana			名:ﾍ	音:	訓:		送:		異:ヘ	俗:清音		非:	代:	逆:ヘ	活:M 0,800 200,1000 400,1000 600,800 600,200 400,200 400,700 300,800 200,700 200,400 0,400 z	幅:624
+ﾍ	英:HE Japanese half-katakana	名:ﾍ	異:ヘ	俗:清音	逆:ヘ	活:[67ji][1287][89rq]	漫:[AQCOEOGQGWEWERDQCRCUAU]	幅:624
 ほ	英:HO Japanese hiragana	名:ほ	異:ホ	俗:清音	代:ぼ	逆:ﾎ	非:ぼ/ぽ	活:[05bhgmntsyxwqpvu][kqrl][djke]	漫:[07vu][15abhgmntsxwpjed87][kqrl]
 ぼ	英:BO Japanese hiragana	名:ぼ	異:ボ	俗:濁音	代:ほ	逆:ﾎﾞ	非:ほ/ぽ	活:[45ba][0178239amntsywqpvu][kqrl][djke]	漫:[AOCQEQEOGOGQIQJRIRJSISIUKUKWIWGYEYCWCYAY][45ba][kqrl][CRCUESDS][CQCRDR]
 ぽ	英:PO Japanese hiragana	名:ぽ	異:ポ	俗:半濁音	代:も	逆:ﾎﾟ	非:ほ/ぼ	活:[005hgmntsywqpvu][kqrl][9fga][djke]	漫:[04bhmntsxwpvu][9fga][kqrl][dje]
 ホ	英:HO Japanese katakana	名:ホ	異:ほ	俗:清音	代:ボ	逆:ﾎ	非:ボ/ポ	活:[68239bhfxwec][ijvu][mnzy]
 ボ	英:BO Japanese katakana	名:ボ	異:ぼ	俗:濁音	代:ホ	逆:ﾎﾞ	非:ホ/ポ	活:[68239a45bhfxwec][ijvu][mnzy]
 ポ	英:PO Japanese katakana	名:ポ	異:ぽ	俗:半濁音	代:モ	逆:ﾎﾟ	非:ホ/ボ	活:[6935bhgmlxwec][ijvu][mnzy][9fga]	漫:[6834bhmlxwec][ijvu][mnzy][9fga]
-ﾎ	英:HO Japanese half-katakana			名:ﾎ	音:	訓:		送:		異:ホ	俗:清音		非:	代:	逆:ホ	活:M 0,800 200,800 200,1000 400,1000 400,800 600,800 600,600 400,600 400,300 500,400 600,400 600,0 500,0 400,100 400,0 200,0 200,100 100,0 0,0 0,400 100,400 200,300 200,600 0,600 z	幅:624
+ﾎ	英:HO Japanese half-katakana	名:ﾎ	異:ホ	俗:清音	逆:ホ	活:[671289feklxuijdc]	漫:[AQCQCOEOEQGQGSESEUGUGYFYEXEYCYCXBYAYAUCUCSAS]	幅:624
 ま	英:MA Japanese hiragana				名:ま	音:	訓:		送:		異:マ	俗:清音		非:	代:ぱ	逆:ﾏ	活:[05hflmsrxvpoiked76][stzy]	漫:[05abhflmtzysrxvoikec76][DWEXEW]
 マ	英:MA Japanese katakana	名:マ	異:ま	俗:清音	代:パ	逆:ﾏ	活:[05nlrqefga6][rtzx]	漫:[AOKOKSHVIWKWKYHYEVESGSGTIRIQAQ]
-ﾏ	英:MA Japanese half-katakana			名:ﾏ	音:	訓:		送:		異:マ	俗:清音		非:	代:	逆:マ	活:M 0,1000 600,1000 600,400 450,250 500,200 600,200 600,0 400,0 0,400 0,600 200,600 200,500 300,400 400,500 400,800 0,800 z	幅:624
+ﾏ	英:MA Japanese half-katakana	名:ﾏ	異:マ	俗:清音	逆:マ	活:[03lk86][cdji][jkqp][qrxw]	漫:M 0,1000 600,1000 600,400 450,250 500,200 600,200 600,0 400,0 0,400 0,600 200,600 200,500 300,400 400,500 400,800 0,800 z	幅:624
 み	英:MI Japanese hiragana	名:み	異:ミ	俗:清音	代:ぴ	逆:ﾐ	活:[03fg45zymlrxwuijde86][jpqk]	漫:[AOGOGSISIOKOKYIYIUGUGXFYBYAXAUCSESEQAQ][jpqk]
-ミ	英:MI Japanese katakana				名:ミ	音:	訓:		送:		異:み	俗:清音		非:	代:ピ	逆:ﾐ	活:[05b6][chni][otzu]
-ﾐ	英:MI Japanese half-katakana			名:ﾐ	音:	訓:		送:		異:ミ	俗:清音		非:	代:	逆:ミ	活:M 0,1000 600,1000 600,800 0,800 z M 200,600 600,600 600,400 200,400 z M 0,200 600,200 600,0 0,0 z	幅:624
+ミ	英:MI Japanese katakana				名:ミ	音:	訓:		送:		異:み	俗:清音		非:	代:ピ	逆:ﾐ	活:[05b6][dhnj][otzu]
+ﾐ	英:MI Japanese half-katakana			名:ﾐ	音:	訓:		送:		異:ミ	俗:清音		非:	代:	逆:ミ	活:[0396][dflj][orxu]	幅:624
 む	英:MU Japanese hiragana	名:む	異:ム	俗:清音	代:ぷ	逆:ﾑ	活:[1289feqsyvpoijdc67][mnts][abhg]	漫:[1289feqsmntyvoidc67][abhg][CUBVCW]
 ム	英:MU Japanese katakana	名:ム	異:む	俗:清音	代:プ	逆:ﾑ	活:[2398][78kj][ijpsmnzu][fgml]	漫:[CQEOGOGQFQERETCVCWIWIVHUGUGSISKUKYAYAUCS]
-ﾑ	英:MU Japanese half-katakana			名:ﾑ	音:	訓:		送:		異:ム	俗:清音		非:	代:	逆:ム	活:M 200,1000 400,1000 400,700 200,500 200,200 400,200 400,400 600,400 600,0 0,0 0,600 200,800 z	幅:624
+ﾑ	英:MU Japanese half-katakana	名:ﾑ	異:ム	俗:清音	逆:ム	活:[12ed][cdpqklxu]	漫:[COEOERCTCWEWEUGUGYAYASCQ]	幅:624
 め	英:ME Japanese hiragana	名:め	異:メ	俗:清音	代:ぺ	逆:ﾒ	活:[128934ghzymlrqwvpocd][jpqk][eklf]	漫:[128934ahzymwvoc7][eqjpqlf]
 メ	英:ME Japanese katakana	名:メ	異:め	俗:清音	代:ぺ	逆:ﾒ	活:[45ba][9agf][eflk][jkqp][opvu][78ed][lmsr][stzy]	漫:M 200,800 400,800 400,700 500,600 800,900 800,1000 1000,1000 1000,800 650,450 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 100,200 350,450 200,600 z
-ﾒ	英:ME Japanese half-katakana			名:ﾒ	音:	訓:		送:		異:メ	俗:清音		非:	代:	逆:メ	活:M 400,1000 600,1000 600,600 450,450 500,400 600,400 600,200 400,200 300,300 200,200 200,0 0,0 0,300 150,450 0,600 0,800 200,800 200,700 300,600 400,700 z	幅:624
+ﾒ	英:ME Japanese half-katakana	名:ﾒ	異:メ	俗:清音	逆:メ	活:[23fe][dekj][ijvu][67dc][klrq]	漫:M 0,800 200,800 200,700 300,600 400,700 400,1000 600,1000 600,600 450,450 500,400 600,400 600,200 400,200 300,300 200,200 200,0 0,0 0,300 150,450 0,600 z	幅:624
 も	英:MO Japanese hiragana	名:も	異:モ	俗:清音	代:ぽ	逆:ﾓ	活:[04a8eflkqpjicd76][qsyw][ghts]	漫:[AOHOHQEQESGSGUEUEWIWISKSKWIYEYCWCUAUASCSCQAQ]
 モ	英:MO Japanese katakana	名:モ	異:も	俗:清音	代:ポ	逆:ﾓ	活:[05b9fhnlrqkice86][rtzx]	漫:[AOKOKQGQGSKSKUGUGVHWKWKYGYEWEUAUASESEQAQ]
-ﾓ	英:MO Japanese half-katakana			名:ﾓ	音:	訓:		送:		異:モ	俗:清音		非:	代:	逆:モ	活:M 0,1000 600,1000 600,800 400,800 400,600 600,600 600,400 400,400 400,200 600,200 600,0 300,0 200,100 200,400 0,400 0,600 200,600 200,800 0,800 z	幅:624
+ﾓ	英:MO Japanese half-katakana	名:ﾓ	異:モ	俗:清音	逆:モ	活:[0398eflkqrxvjicd76]	漫:[AOGOGQEQESGSGUEUEWGWGYDYCXCUAUASCSCQAQ]	幅:624
 や	英:YA Japanese hiragana				名:や	音:	訓:		送:		異:ヤ	俗:清音		非:ゃ	代:ゃ	逆:ﾔ	活:[128934abtrxwkicd][ekmg]	漫:[COEOEQGQGOIOIQJQKRKVJWHWGVGVGYEYEVCTCUAUASCQ][ESETGVGUIUIS]
 ゃ	英:ya Japanese hiragana diphthong consonant	名:ゃ	異:ャ	俗:拗音	代:や	逆:ｬ	非:や	活:[78ef9aghtsyxrqkj][ijpo][lrsm]	漫:M 200,800 400,800 400,600 600,600 600,800 800,800 800,600 900,600 1000,500 1000,300 800,100 800,400 500,400 800,100 800,0 600,0 250,350 200,300 200,200 0,200 0,400 200,600 z
 ヤ	英:YA Japanese katakana	名:ヤ	異:や	俗:清音	代:ャ	逆:ﾔ	非:ャ	活:[128btsgfxwkicd]	漫:[COEOEQKQKWIWISFSFTGUGYEYEVDUAUASCS]
 ャ	英:ya Japanese katakana diphthong consonant	名:ャ	音:	訓:		送:		異:ゃ	俗:拗音		非:ヤ	代:ヤ	逆:ｬ	活:[CQEQESKSKWIWIUFUFVGWGYEYEXDWAWAUCU]
-ﾔ	英:YA Japanese half-katakana			名:ﾔ	音:	訓:		送:		異:ヤ	俗:清音		非:	代:	逆:ヤ	活:M 200,1000 400,1000 400,800 600,800 600,400 400,400 400,500 500,600 400,600 400,0 200,0 200,600 0,600 0,800 200,800 z	幅:624
-ｬ	英:ya Japanese half-katakana			名:ｬ	音:	訓:		送:		異:ャ	俗:清音		非:	代:	逆:ャ	活:M 200,800 400,800 400,600 600,600 600,200 400,200 400,300 500,400 400,400 400,0 200,0 200,400 0,400 0,600 200,600 z	幅:624
+ﾔ	英:YA Japanese half-katakana	名:ﾔ	異:ヤ	俗:清音	逆:ヤ	活:[1289lkwvdc67]	漫:[1289lkwvdc67][ESETFS]	幅:624
+ｬ	英:ya Japanese half-katakana	名:ｬ	異:ャ	俗:清音	逆:ャ	活:[78efrqwvjicd]	漫:[78efrqwvjicd][EUEVFU]	幅:624
 ゆ	英:YU Japanese hiragana	名:ゆ	異:ユ	俗:清音	代:ゅ	逆:ﾕ	非:ゅ	活:[67de239aghtrxvpqkjpo][flmg]	漫:[AQCQCSDSEREOGOGQIQKSKUIWGWGYCYEWEUCUCWAW][flmg]
 ゅ	英:yu Japanese hiragana diphthong consonant	名:ゅ	異:ュ	俗:拗音	代:ゆ	逆:ｭ	非:ゆ	活:[cdjk89fgmntsyvpo][lrsm]	漫:[ASCSCUEUEQGQGSISKUKWIYCYCXDWCWAY][lrsm]
 ユ	英:YU Japanese katakana	名:ユ	異:ゆ	俗:清音	代:ュ	逆:ﾕ	非:ュ	活:[04stzuor96]
 ュ	英:yu Japanese katakana diphthong consonant	名:ュ	音:	訓:		送:		異:ゅ	俗:拗音		非:ユ	代:ユ	逆:ｭ	活:[6astzuorfc]
-ﾕ	英:YU Japanese half-katakana			名:ﾕ	音:	訓:		送:		異:ユ	俗:清音		非:	代:	逆:ユ	活:M 0,1000 400,1000 400,200 600,200 600,0 0,0 0,200 200,200 200,800 0,800 z	幅:624
-ｭ	英:yu Japanese half-katakana			名:ｭ	音:	訓:		送:		異:ュ	俗:清音		非:	代:	逆:ュ	活:M 0,800 400,800 400,200 600,200 600,0 0,0 0,200 200,200 200,600 0,600 z	幅:624
+ﾕ	英:YU Japanese half-katakana			名:ﾕ	音:	訓:		送:		異:ユ	俗:清音		非:	代:	逆:ユ	活:[02qrxuop76]	幅:624
+ｭ	英:yu Japanese half-katakana			名:ｭ	音:	訓:		送:		異:ュ	俗:清音		非:	代:	逆:ュ	活:[68qrxuopdc]	幅:624
 𛀁	英:YE Japanese hiragana				名:や行え	音:	訓:	送:		異:江	俗:拗音		非:ゑ	代:	逆:	活:M 200,1000 200,800 400,1000 800,1000 1000,800 1000,500 700,200 1000,200 1000,0 400,0 400,200 800,600 800,700 700,800 500,800 200,500 200,0 0,0 0,1000 z
 よ	英:YO Japanese hiragana	名:よ	異:ヨ	俗:清音	代:ょ	逆:ﾖ	非:ょ	活:[239bhgmlxvpoijde][mnts][jpqk]	漫:[239bhgntsmlxvoide][jpqk]
 ょ	英:yo Japanese hiragana diphthong consonant	名:ょ	異:ョ	俗:拗音	代:よ	逆:ｮ	非:よ	活:[89fhnmsrxvpoijde][jpqk]	漫:[EQGQGSKSKUHUIVIWGWGYCYAWAUCSES][jpqk]
 ヨ	英:YO Japanese katakana	名:ヨ	異:よ	俗:清音	代:ョ	逆:ﾖ	非:ョ	活:[05zuosmicga6]
 ョ	英:yo Japanese katakana diphthong consonant	名:ョ	異:ょ	俗:拗音	代:ヨ	逆:ｮ	非:ヨ	活:[6bzuosmjdc]	漫:[6bzuosmjec]
-ﾖ	英:YO Japanese half-katakana			名:ﾖ	音:	訓:		送:		異:ヨ	俗:清音		非:	代:	逆:ヨ	活:M 0,1000 600,1000 600,0 0,0 0,200 400,200 400,400 0,400 0,600 400,600 400,800 0,800 z	幅:624
-ｮ	英:yo Japanese half-katakana diphthong consonant	名:ｮ	音:	訓:	送:		異:ョ	俗:清音		非:	代:	逆:ョ	活:M 0,800 600,800 600,0 0,0 0,200 400,200 400,400 200,400 200,500 300,600 0,600 z	幅:624
+ﾖ	英:YO Japanese half-katakana			名:ﾖ	音:	訓:		送:		異:ヨ	俗:清音		非:	代:	逆:ヨ	活:[03xuoqkice86]	幅:624
+ｮ	英:yo Japanese half-katakana diphthong consonant	名:ｮ	異:ョ	俗:清音	逆:ョ	活:[69xuoqkjdc]	漫:[AQGQGYAYAWEWEUCUCTDSAS]	幅:624
 ら	英:RA Japanese hiragana	名:ら	異:ラ	俗:清音	代:ゑ	逆:ﾗ	活:[14a7][67dgmi][mnts][psyv]	漫:[14a7dgntyvpsmi6]
 ラ	英:RA Japanese katakana	名:ラ	異:ら	俗:清音	代:ヱ	逆:ﾗ	活:[05b6][chtsmi][qsyw]	漫:[05b6][ASKSKWIYEYEWHWIVIUAU]
-ﾗ	英:RA Japanese half-katakana			名:ﾗ	音:	訓:		送:		異:ラ	俗:清音		非:	代:	逆:ラ	活:M 0,1000 600,1000 600,800 0,800 z M 0,600 600,600 600,200 400,0 200,0 200,200 300,200 400,300 400,400 0,400 z	幅:624
+ﾗ	英:RA Japanese half-katakana	名:ﾗ	異:ラ	俗:清音	逆:ラ	活:[0396][cfrqki][pqwv]	漫:[0396][ASGSGWEYCYCWDWEVEUAU]	幅:624
 り	英:RI Japanese hiragana	名:り	異:リ	俗:清音	代:「	逆:ﾘ	活:[01deki][35nma9][lmsr][qrxw]	漫:[01deki][GOKOKUGYEYEWFWITIQGQ]
 リ	英:RI Japanese katakana	名:リ	異:り	俗:清音	代:『	逆:ﾘ	活:[01ji][45nm][lmsr][qrxw]	漫:[01ji][IOKOKUGYEYEWFWIT]
-ﾘ	英:RI Japanese half-katakana			名:ﾘ	音:	訓:		送:		異:リ	俗:清音		非:	代:	逆:リ	活:M 0,1000 200,1000 200,400 0,400 z M 400,1000 600,1000 600,200 400,0 200,0 200,200 300,200 400,300 z	幅:624
+ﾘ	英:RI Japanese half-katakana	名:ﾘ	異:リ	俗:清音	逆:リ	活:[01ji][23rq][pqwv]	漫:[01ji][EOGOGWEYCYCWDWEV]	幅:624
 る	英:RU Japanese hiragana	名:る	異:ル	俗:清音	代:。	逆:ﾙ	活:[05bagd76][cdji][kmghtsyw]	漫:[05bahtywkmgdjic76][GVFWGXHW]
 ル	英:RU Japanese katakana	名:ル	異:る	俗:清音	代:。	逆:ﾙ	活:[12qp][opvu][34stzx]	漫:[COEOEWCYAYAWBWCV][34stzx]
-ﾙ	英:RU Japanese half-katakana	名:ﾙ	異:ル	俗:清音	逆:ル	活:[12qrxucd]	漫:M 200,1000 400,1000 400,200 600,200 600,0 300,0 200,100 200,0 0,0 0,600 200,600 z	幅:624
+ﾙ	英:RU Japanese half-katakana	名:ﾙ	異:ル	俗:清音	逆:ル	活:[12qrxucd]	漫:[COEOEWGWGYDYCXCYAYASCS]	幅:624
 れ	英:RE Japanese hiragana	名:れ	異:レ	俗:清音	代:」	逆:ﾚ	活:[128astzxfewvpoijdc67]	漫:[128astzxfewvpoidc67]
 レ	英:RE Japanese katakana				名:レ	音:	訓:		送:		異:れ	俗:清音		非:	代:』	逆:ﾚ	活:[01pqwu][klrq][fgml][abhg]	漫:[AOCOCWDWIRIQKQKSEYAY]
-ﾚ	英:RE Japanese half-katakana			名:ﾚ	音:	訓:		送:		異:レ	俗:清音		非:	代:	逆:レ	活:M 200,1000 200,200 300,200 400,300 400,500 600,500 600,200 400,0 0,0 0,1000 z	幅:624
+ﾚ	英:RE Japanese half-katakana	名:ﾚ	異:レ	俗:清音	逆:レ	活:[01pqwu][ETGTGWEW]	漫:[AOCOCWDWEVETGTGWEYAY]	幅:624
 ろ	英:RO Japanese hiragana	名:ろ	異:ロ	俗:清音	代:〜	逆:ﾛ	活:[05bage86][dekj][ghts][psyv]	漫:[AOKOKQIQKSKWIYDYDWIWISGSEUCUCSEQAQ]
 ロ	英:RO Japanese katakana	名:ロ	異:ろ	俗:清音	代:ー	逆:ﾛ	活:[05zu][7psa]
 ﾛ	英:RO Japanese half-katakana	名:ﾛ	異:ロ	俗:清音	逆:ロ	活:[03xu][7pq8]	幅:624
@@ -719,14 +719,14 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ゎ	英:wa Japanese hiragana diphthong consonant	名:ゎ	異:ヮ	俗:拗音/半母音	代:ん	非:わ	活:[78egmkwvpocd][mnts][rsyx]	漫:[CQEQESISKUKWIYGYGWIWIUEUEYCYCWAWAVBUAUASCS]
 ワ	英:WA Japanese katakana	名:ワ	異:わ	俗:清音	代:ヲ	逆:ﾜ	非:ヮ	活:[05zyxrsa7dc]	漫:[AOKOKWIYGYGWHWIVIQCQCSAS]
 ヮ	英:wa Japanese katakana diphthong consonant	名:ヮ	異:ゎ	俗:拗音/半母音	代:ン	非:ワ	活:[6bzxrsgdji]	漫:[AQKQKWIYGYGWHWIVISCSCUAU]
-ﾜ	英:WA Japanese half-katakana			名:ﾜ	音:	訓:		送:		異:	俗:清音		非:	代:	逆:ワ	活:M 0,1000 600,1000 600,400 200,0 0,0 0,200 100,200 400,500 400,800 200,800 200,600 0,600 z	幅:624
+ﾜ	英:WA Japanese half-katakana	名:ﾜ	俗:清音	逆:ワ	活:[03lk87dc][jkqp][opvu]	漫:[AOGOGUCYAYAWBWETEQCQCSAS]	幅:624
 ゐ	英:WI Japanese hiragana	名:ゐ	異:ヰ	俗:鼻濁音	代:な	非:い	活:[039aghzxrqwvpocd76][dpqe][frsg]	漫:[039ahzxrwvoc76][dpqe][IWIXJXJW][frsg]
 ヰ	英:WI Japanese katakana				名:ヰ	音:	訓:		送:		異:ゐ	俗:鼻濁音	非:イ	代:ナ	逆:	活:[6934abhgmntsyxroijdc][eklf]
 ゑ	英:WE Japanese hiragana	名:ゑ	異:ヱ	俗:鼻濁音	代:ら	非:え	活:[04abnmspdf96][opvu][stzy][flmg]	漫:[AOIOIQJQKRKUIWKWKYIYGWFXEWCYAYAWCWCSGSGQAQ][ETDUEVFU][flmg]
 ヱ	英:WE Japanese katakana	名:ヱ	異:ゑ	俗:鼻濁音	代:ラ	非:エ	活:[05hga6][egmlrtzuoq]	漫:[AOKOKSIUGSHSIRIQAQ][efrtzuoq]
 を	英:WO Japanese hiragana	名:を	異:ヲ	俗:鼻濁音	代:わ	逆:ｦ	非:お	漫:[AQEQEOGOGQKQKSISIUHUGVFUFWKWKYDYBWAWAUCSAS]	活:[AQEQEOGOGQKQKSISIUFUFWKWKYCYCWAWAUCUCSAS]
 ヲ	英:WO Japanese katakana	名:ヲ	異:を	俗:鼻濁音	代:ワ	逆:ｦ	非:オ	活:[05nmsrljdga6][prxv]	漫:[AOKOKUGYDYDWFWHUCUCSISIQAQ]
-ｦ	英:WO Japanese half-katakana			名:ｦ	音:	訓:		送:		異:ヲ	俗:清音		非:	代:	逆:ヲ	活:M 0,1000 600,1000 600,200 400,0 200,0 200,200 300,200 400,300 400,400 200,400 200,600 400,600 400,800 0,800 z	幅:624
+ｦ	英:WO Japanese half-katakana	名:ｦ	異:ヲ	俗:清音	逆:ヲ	活:[03rqkjde86][pqwv]	漫:[AOGOGWEYCYCWDWEVEUCUCSESEQAQ]	幅:624
 ん	英:N(nn,n',m,ng) Japanese hiragana nasal	名:ん	異:ン	俗:撥音/子音	顔:(ヽ´ん`)	代:ゎ	逆:ﾝ	活:[12efrqkjd][ijvu][rsyx][ghts]	漫:[COEOESGSGWIWISKSKWIYGYEWEUDUCVCYAYAUCS]
 ン	英:N(nn,n',m,ng) Japanese hiragana nasal	名:ン	音:	訓:		送:		異:ん	俗:撥音/子音	非:	代:ヮ	逆:ﾝ	活:[0286][89fe][ghnm][lmsr][orxu]	漫:[AODOFQGQGSESCQAQ][AWFWITIQKQKUGYAY]
 ﾝ	英:N(nn,n',m,ng) Japanese half-katakana	名:ﾝ	異:ン	俗:清音	逆:ン	漫:[0286][ETGTGWEYAYAWDWEV]	幅:624	活:[0286][oqwu][klrq]
@@ -2128,3 +2128,4 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
+ﾠ	
