@@ -396,7 +396,7 @@ def kanfont_configload():
     kanfont_fontgrid=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"grid",str(kanfont_fontgrid))),10),100)
     kanfont_gridinner=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"inner",str(kanfont_gridinner))),0),1)
     kanfont_lineseg=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"lineseg",str(kanfont_lineseg))),0),1)
-    kanfont_gothic=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"gothic",str(kanfont_gothic))),0),1)
+    kanfont_gothic=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"gothic",str(kanfont_gothic))),0),len(LTsv_global_glyphtype())-1)
     kanfont_gridimage=LTsv_readlinerest(kanfont_config,"gridimage",kanfont_gridimage)
     kanfont_refer=LTsv_readlinerest(kanfont_config,"refer",kanfont_refer)
     kanfont_refergrid=min(max(LTsv_intstr0x(LTsv_readlinerest(kanfont_config,"refergrid",str(kanfont_refergrid))),0),1)
