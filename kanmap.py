@@ -36,6 +36,8 @@ def LTsv_kanmap_drawKBD(irohaalpha_count):
     for kbd_xy in range(LTsv_glyph_None):
         LTsv_draw_glyphskbd(draw_t=LTsv_glyph_kbdchars[kbd_xy],draw_x=kbd_x+LTsv_glyph_fontX[kbd_xy],draw_y=kbd_y+LTsv_glyph_fontY[kbd_xy],draw_f=LTsv_glyph_fontG[kbd_xy],draw_g=LTsv_glyph_kbdtype[kbd_xy])
     kbd_y+=kanmap_NH
+    if irohaalpha_count > len(LTsv_global_irohaalpha())-4:
+        kbd_x,kbd_y=kbd_x+LTsv_glyph_kbdW*9,kbd_y-kanmap_kbdNH*7
     LTsv_glyph_kbdchars[0:LTsv_glyph_irohamax]=LTsv_glyph_kanmapX[LTsv_global_irohaalpha()[irohaalpha_count]][0:LTsv_glyph_irohamax]; LTsv_glyph_kbdchars[LTsv_glyph_irohamax]=LTsv_global_irohaalphaX()[irohaalpha_count]
     for kbd_xy in range(LTsv_glyph_None):
         LTsv_draw_glyphskbd(draw_t=LTsv_glyph_kbdchars[kbd_xy],draw_x=kbd_x+LTsv_glyph_fontX[kbd_xy],draw_y=kbd_y+LTsv_glyph_fontY[kbd_xy],draw_f=LTsv_glyph_fontG[kbd_xy],draw_g=LTsv_glyph_kbdtype[kbd_xy])
@@ -63,7 +65,7 @@ if len(LTsv_GUI) > 0:
     LTsv_glyph_kbdtype=tuple(["活" if t < LTsv_glyph_irohamax else "漫" for t in range(LTsv_glyph_None)])
     kanmap_kbdNH=LTsv_glyph_kbdH+LTsv_glyph_kbdF*2
     kanmap_NH=kanmap_kbdNH*(4+3)
-    kanmap_canvasW,kanmap_canvasH=LTsv_glyph_kbdW*12,kanmap_NH*2
+    kanmap_canvasW,kanmap_canvasH=LTsv_glyph_kbdW*12,kanmap_NH*2-kanmap_kbdNH*1
     kanmapW,kanmapH=kanmap_canvasW,kanmap_canvasH
     kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmapW,widget_h=kanmapH,event_k=None,event_y=None)
     kanmap_canvas=LTsv_canvas_new(kanmap_window,widget_x=0,widget_y=0,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,

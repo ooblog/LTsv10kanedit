@@ -1748,6 +1748,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 燈	英:lamp/lights		名:ともしび	音:トウ/チン	訓:ともしび	送:蛍光灯/提灯/風前の灯	異:灯	俗:鬼灯(ほおずき)/九蓮宝燈(チューレンポウトー)	活:M 200,1000 800,1000 800,800 1000,800 1000,0 400,0 400,200 200,200 200,0 0,0 0,200 200,200 200,400 0,400 0,800 200,800 z M 400,800 400,600 600,600 600,800 z M 600,400 600,200 800,200 800,400 z
 蝀	英:rainbow		名:トウ			音:トウ		訓:		送:螮蝀泉	異:	俗:	活:[15baghtsyxrqwuopji67][8edjkef9]
 港	英:port/harbor	名:みなと	音:みなと	訓:コウ	送:港町/空港	地:香港	活:[0176][cdji][opvu][239a45hgstzw]
+璧	名:ヘキ	非:壁	漫:[028934abhgmnzuopji][7de8][eklf]
+壁	名:かべ	非:璧	漫:[028934abhgstzuopji][7de8][eklf]
 鷲	俗:北楽天ゴールデンイーグルス
 鴎	英:			名:			音:		訓:		送:		異:	俗:千葉ロッテマリーンズ
 檻	英:			名:			音:		訓:		送:		異:	俗:オリックスバファローズ
@@ -1833,8 +1835,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 領	活:[67128935baghzysrxvji][7de8]
 域	活:[67128935hgsrxuopdc][stzy][eklf]
 曜	活:[6825nmstzwqo][8ef9]
-咖	俗:咖喱(カレー)	活:[6935zwqo][lrsm][eklf]
-喱	俗:咖喱(カレー)	活:[6825bastzwqo]
+咖	俗:咖喱(カレー)	活:[6934abtsywqo][eqrf]
+喱	俗:咖喱(カレー)	活:[6825nmstzwqo]
 市	活:[68239bhflnzysrxwqpvuikec]
 町	活:[25baywqr98][68qo]
 村	活:[67128934abzxrsgflkwvpoijdc]
@@ -1930,8 +1932,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ⠿	英:braille(U+283f)	名:点字「⠿」	俗:base64風6点字「.」	活:[68qo][9asr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
 ⣿	英:braille(U+28ff)	名:点字「⣿」	俗:UTF-8点字	俗:	活:[68wu][9ayx]	幅:824	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][BWDWEXDYBYAX][GRHQIRHS][GTHSITHU][HUIVHWGV][HWIXHYGX]
 
-麺	英:noodle/flour/dough 	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麵/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopjicd76][8efrsgf9]
-麵	英:noodle/flour/dough	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麺/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopji][8efrsgf9]
+麺	英:noodle/flour/dough 	名:むぎのこ	音:メン	送:拉麺(ラーメン)	異:麵/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopjicd76][8ef9][frsg]
+麵	英:noodle/flour/dough	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麺/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopji][8ef9][frsg]
 麪	英:noodle/flour/dough	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麺/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopji][8ef9][kqsm]
 餅	英:ricecake		名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餠	俗:	活:[139a45zysrxwu67][flmg][jpqk]
 餠	英:ricecake		名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餅	俗:	活:[139a45zysqwu67][flmg][jpqk]
@@ -2146,3 +2148,4 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
+麭	活:[039bzuopjicd76][flmg][kqrl]

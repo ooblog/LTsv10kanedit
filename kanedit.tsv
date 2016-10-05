@@ -2,20 +2,20 @@
 code	UTF-8
 enter	LF
 tab	4
-program	kantray
+program	kanedit
 LTsvver	20160927T004545
-modify	20161004T010220
+modify	20161006R001421
 |L:Tsv]
 
 [kanedit|
-window_size	width:638	height:479
+window_size	width:640	height:480
 edit_colors	font:#000000	bg:#FFF9FA
 edit_fontsize	12
 edit_fontstyle	漫
 edit_last	kanedit.tsv
 memo_colors	font:#000000	bg:#FFFFF3
 memo_fontsize	12
-memo_entry	
+memo_entry	汎カレーパン⇔咖喱麺麭
 memo_fontstyle	漫
 |kanedit]
 #memo_entry	開発中ですが、漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書は使用できます。

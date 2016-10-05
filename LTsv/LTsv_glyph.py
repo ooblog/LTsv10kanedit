@@ -281,7 +281,7 @@ def LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g
             if glyphcode == '\n':
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
             if glyphcode == '\t':
-                draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
+                draw_xf=int(math.ceil((draw_xf+draw_f)/(draw_f*4))*(draw_f*4))+draw_w
             continue
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist in LTsv_glyphnote:
@@ -300,7 +300,7 @@ def LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,dr
             if glyphcode == '\n':
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
             if glyphcode == '\t':
-                draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
+                draw_xf=int(math.ceil((draw_xf+draw_f)/(draw_f*4))*(draw_f*4))+draw_w
             continue
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
@@ -333,7 +333,7 @@ def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,d
             if glyphcode == '\n':
                 draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
             if glyphcode == '\t':
-                draw_xf=int(math.ceil(draw_xf/(draw_f*4))*(draw_f*4))+draw_w
+                draw_xf=int(math.ceil((draw_xf+draw_f)/(draw_f*4))*(draw_f*4))+draw_w
             continue
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         if draw_cL <= draw_t_pos <= draw_cR:
