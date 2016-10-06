@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	kanfont
 LTsvver	20160927T004545
-modify	20161006R001412
+modify	20161006R223837
 |L:Tsv]
 
 [kanfont|
@@ -12,6 +12,7 @@ seek	ぱ
 grid	50
 inner	0
 lineseg	1
+piece	1
 gothic	1
 gridimage	kanfont_grid25_5x5.png
 refer		Noto Sans Japanese Regular

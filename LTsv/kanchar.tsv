@@ -1927,16 +1927,22 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 🀆	英:Mahjong WhiteDragon	名:白(麻雀牌)	音:ハク	俗:パイパン	代:白	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
 点	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:點	活:[239bhgsrxwqpde][opvu][stzy][eklf]
 點	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:点	俗:點點…(無言)	漫:[039bhgsrxwqpji][opvu][stzy][eklf]
-⠀	英:braille(U+2800)	名:点字「⠀」	俗:base64風6点字「_」	活:[ouysyu]	幅:824
-⠾	英:braille(U+283e)	名:点字「⠾」	俗:base64風6点字「9」	活:[68qo][9asr]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠿	英:braille(U+283f)	名:点字「⠿」	俗:base64風6点字「.」	活:[68qo][9asr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⣿	英:braille(U+28ff)	名:点字「⣿」	俗:UTF-8点字	俗:	活:[68wu][9ayx]	幅:824	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][BWDWEXDYBYAX][GRHQIRHS][GTHSITHU][HUIVHWGV][HWIXHYGX]
+⠀	英:braille(U+2800)	名:点字「⠀」	俗:base64風6点字「_」	難:点字	活:[ouysyu]	幅:824
+⠹	英:braille(U+283b)	名:点字「⠹」	俗:base64風6点字「4」	難:点字	活:[ceki][9asr]	漫:[BSESFTEUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠺	英:braille(U+283b)	名:点字「⠺」	俗:base64風6点字「5」	難:点字	活:[ceki][9asr]	漫:[BSESFTEUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠻	英:braille(U+283c)	名:点字「⠻」	俗:base64風6点字「6」	難:点字	活:[68ki][9asr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠼	英:braille(U+283c)	名:点字「⠼」	俗:base64風6点字「7」	難:点字	活:[ikqo][9asr]	漫:[BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠽	英:braille(U+283d)	名:点字「⠽」	俗:base64風6点字「8」	難:点字	活:[68ec][ikqo][9asr]	漫:[BQEQFRESBSAR][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠾	英:braille(U+283e)	名:点字「⠾」	俗:base64風6点字「9」	難:点字	活:[9asr][ceqo]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠿	英:braille(U+283f)	名:点字「⠿」	俗:base64風6点字「.」	難:点字	活:[9asr][68qo]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⣿	英:braille(U+28ff)	名:点字「⣿」	俗:UTF-8点字	俗:	難:点字	活:[9ayx][68wu]	幅:824	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][BWDWEXDYBYAX][GRHQIRHS][GTHSITHU][HUIVHWGV][HWIXHYGX]
 
 麺	英:noodle/flour/dough 	名:むぎのこ	音:メン	送:拉麺(ラーメン)	異:麵/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopjicd76][8ef9][frsg]
 麵	英:noodle/flour/dough	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麺/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopji][8ef9][frsg]
 麪	英:noodle/flour/dough	名:むぎのこ		音:メン		訓:		送:拉麺(ラーメン)	異:麺/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopji][8ef9][kqsm]
-餅	英:ricecake		名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餠	俗:	活:[139a45zysrxwu67][flmg][jpqk]
-餠	英:ricecake		名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餅	俗:	活:[139a45zysqwu67][flmg][jpqk]
+麭	英:glutinous/sticky/ricecake	名:こなもち	俗:麺麭(パン)	活:[039bzuopjicd76][flmg][kqrl]
+餅	英:ricecake	名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餠	俗:	活:[139a45zysrxwu67][flmg][jpqk]
+餠	英:ricecake	名:もち			音:ヘイ/ベイ/ペイ	訓:もち	送:画餅/煎餅/月餅/餅肌	異:餅	俗:	活:[139a45zysqwu67][flmg][jpqk]
 蝦	英:shrimp/prawn/lobster	名:えび			音:カ		訓:えび		送:蝦で鯛を釣る	異:蛯/鰕	俗:海老	活:[128935zysrxwqpvuopji67][7de8][9fga]
 蛯	英:shrimp/prawn/lobster	名:えび			音:カ		訓:えび		送:蝦で鯛を釣る	異:蝦/鰕	俗:海老	活:[128935hgmntsyuopji67][7de8][lrsm]
 鰕	英:shrimp/prawn/lobster	名:えび			音:カ		訓:えび		送:蝦で鯛を釣る	異:蛯/蝦	俗:海老	活:[028935zysrxwqpvucd76][9fga]
@@ -2148,4 +2154,3 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
-麭	活:[039bzuopjicd76][flmg][kqrl]
