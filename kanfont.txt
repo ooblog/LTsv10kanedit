@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタです。単漢字辞書「kanchar.tsv」を編集します。
-version(branch) 20160927T004545
+version(branch) 20161011T163105
 
 目次
 
