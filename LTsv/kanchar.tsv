@@ -1928,40 +1928,49 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 点	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:點	活:[239bhgsrxwqpde][opvu][stzy][eklf]
 點	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:点	俗:點點…(無言)	漫:[039bhgsrxwqpji][opvu][stzy][eklf]
 ⠀	英:braille(U+2800)	名:点字「⠀」	俗:base64風6点字「_」	難:点字	活:[ouysyu]	幅:824
-⠞	英:braille(U+281e)	名:点字「⠞」	俗:base64風6点字「D」	難:点字	活:[ceqo][9aml]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU]	幅:824
-⠟	英:braille(U+281f)	名:点字「⠟」	俗:base64風6点字「E」	難:点字	活:[68qo][9aml]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU]	幅:824
+⠕	英:braille(U+2816)	名:点字「⠕」	俗:base64風6点字「u」	難:点字	活:[ceqo][fgml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠖	英:braille(U+2817)	名:点字「⠖」	俗:base64風6点字「v」	難:点字	活:[ceqo][fgml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠗	英:braille(U+2818)	名:点字「⠗」	俗:base64風6点字「w」	難:点字	活:[68qo][fgml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠘	英:braille(U+2819)	名:点字「⠘」	俗:base64風6点字「x」	難:点字	活:[9aml]	漫:[GRHQIRHS][GTHSITHU]	幅:824
+⠙	英:braille(U+281a)	名:点字「⠙」	俗:base64風6点字「y」	難:点字	活:[68ec][9aml]	漫:[BQDQERDSBSAR][GRHQIRHS][GTHSITHU]	幅:824
+⠚	英:braille(U+281a)	名:点字「⠚」	俗:base64風6点字「z」	難:点字	活:[ceki][9aml]	漫:[BSDSETDUBUAT][GRHQIRHS][GTHSITHU]	幅:824
+⠛	英:braille(U+281b)	名:点字「⠛」	俗:base64風6点字「A」	難:点字	活:[68ki][9aml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][GRHQIRHS][GTHSITHU]	幅:824
+⠜	英:braille(U+281c)	名:点字「⠜」	俗:base64風6点字「B」	難:点字	活:[ikqo][9aml]	漫:[BUDUEVDWBWAV][GRHQIRHS][GTHSITHU]	幅:824
+⠝	英:braille(U+281d)	名:点字「⠝」	俗:base64風6点字「C」	難:点字	活:[68ec][ikqo][9aml]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU]	幅:824
+⠞	英:braille(U+281e)	名:点字「⠞」	俗:base64風6点字「D」	難:点字	活:[ceqo][9aml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU]	幅:824
+⠟	英:braille(U+281f)	名:点字「⠟」	俗:base64風6点字「E」	難:点字	活:[68qo][9aml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU]	幅:824
 ⠠	英:braille(U+2820)	名:点字「⠡」	俗:base64風6点字「F」	難:点字	活:[lmsr]	漫:[HUIVHWGV]	幅:824
-⠡	英:braille(U+2821)	名:点字「⠡」	俗:base64風6点字「G」	難:点字	活:[68ec][lmsr]	漫:[BQEQFRESBSAR][HUIVHWGV]	幅:824
-⠢	英:braille(U+2822)	名:点字「⠢」	俗:base64風6点字「H」	難:点字	活:[68ki][lmsr]	漫:[BSESFTEUBUAT][HUIVHWGV]	幅:824
-⠣	英:braille(U+2823)	名:点字「⠣」	俗:base64風6点字「 I」	難:点字	活:[68ki][lmsr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][HUIVHWGV]	幅:824
-⠤	英:braille(U+2824)	名:点字「⠤」	俗:base64風6点字「J」	難:点字	活:[ikqo][lmsr]	漫:[BUEUFVEWBWAV][HUIVHWGV]	幅:824
-⠥	英:braille(U+2825)	名:点字「⠥」	俗:base64風6点字「K」	難:点字	活:[68ec][ikqo][lmsr]	漫:[BQEQFRESBSAR][BUEUFVEWBWAV][HUIVHWGV]	幅:824
-⠦	英:braille(U+2826)	名:点字「⠦」	俗:base64風6点字「L」	難:点字	活:[ceqo][lmsr]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][HUIVHWGV]	幅:824
-⠧	英:braille(U+2827)	名:点字「⠧」	俗:base64風6点字「M」	難:点字	活:[68qo][lmsr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][HUIVHWGV]	幅:824
+⠡	英:braille(U+2821)	名:点字「⠡」	俗:base64風6点字「G」	難:点字	活:[68ec][lmsr]	漫:[BQDQERDSBSAR][HUIVHWGV]	幅:824
+⠢	英:braille(U+2822)	名:点字「⠢」	俗:base64風6点字「H」	難:点字	活:[68ki][lmsr]	漫:[BSDSETDUBUAT][HUIVHWGV]	幅:824
+⠣	英:braille(U+2823)	名:点字「⠣」	俗:base64風6点字「 I」	難:点字	活:[68ki][lmsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][HUIVHWGV]	幅:824
+⠤	英:braille(U+2824)	名:点字「⠤」	俗:base64風6点字「J」	難:点字	活:[ikqo][lmsr]	漫:[BUDUEVDWBWAV][HUIVHWGV]	幅:824
+⠥	英:braille(U+2825)	名:点字「⠥」	俗:base64風6点字「K」	難:点字	活:[68ec][ikqo][lmsr]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][HUIVHWGV]	幅:824
+⠦	英:braille(U+2826)	名:点字「⠦」	俗:base64風6点字「L」	難:点字	活:[ceqo][lmsr]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][HUIVHWGV]	幅:824
+⠧	英:braille(U+2827)	名:点字「⠧」	俗:base64風6点字「M」	難:点字	活:[68qo][lmsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][HUIVHWGV]	幅:824
 ⠨	英:braille(U+2828)	名:点字「⠨」	俗:base64風6点字「N」	難:点字	活:[9agf][lmsr]	漫:[GRHQIRHS][HUIVHWGV]	幅:824
-⠩	英:braille(U+2829)	名:点字「⠩」	俗:base64風6点字「O」	難:点字	活:[68ec][9agf][lmsr]	漫:[BQEQFRESBSAR][GRHQIRHS][HUIVHWGV]	幅:824
-⠪	英:braille(U+282a)	名:点字「⠪」	俗:base64風6点字「P」	難:点字	活:[ceki][9agf][lmsr]	漫:[BSESFTEUBUAT][GRHQIRHS][HUIVHWGV]	幅:824
-⠫	英:braille(U+282b)	名:点字「⠫」	俗:base64風6点字「Q」	難:点字	活:[68ki][9agf][lmsr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][GRHQIRHS][HUIVHWGV]	幅:824
-⠬	英:braille(U+282c)	名:点字「⠬」	俗:base64風6点字「R」	難:点字	活:[ikqo][9agf][lmsr]	漫:[BUEUFVEWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
-⠭	英:braille(U+282d)	名:点字「⠭」	俗:base64風6点字「S」	難:点字	活:[68ec][ikqo][9agf][lmsr]	漫:[BQEQFRESBSAR][BUEUFVEWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
-⠮	英:braille(U+282e)	名:点字「⠮」	俗:base64風6点字「T」	難:点字	活:[ceqo][9agf][lmsr]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
-⠯	英:braille(U+282f)	名:点字「⠯」	俗:base64風6点字「U」	難:点字	活:[68qo][9agf][lmsr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
+⠩	英:braille(U+2829)	名:点字「⠩」	俗:base64風6点字「O」	難:点字	活:[68ec][9agf][lmsr]	漫:[BQDQERDSBSAR][GRHQIRHS][HUIVHWGV]	幅:824
+⠪	英:braille(U+282a)	名:点字「⠪」	俗:base64風6点字「P」	難:点字	活:[ceki][9agf][lmsr]	漫:[BSDSETDUBUAT][GRHQIRHS][HUIVHWGV]	幅:824
+⠫	英:braille(U+282b)	名:点字「⠫」	俗:base64風6点字「Q」	難:点字	活:[68ki][9agf][lmsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][GRHQIRHS][HUIVHWGV]	幅:824
+⠬	英:braille(U+282c)	名:点字「⠬」	俗:base64風6点字「R」	難:点字	活:[ikqo][9agf][lmsr]	漫:[BUDUEVDWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
+⠭	英:braille(U+282d)	名:点字「⠭」	俗:base64風6点字「S」	難:点字	活:[68ec][ikqo][9agf][lmsr]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
+⠮	英:braille(U+282e)	名:点字「⠮」	俗:base64風6点字「T」	難:点字	活:[ceqo][9agf][lmsr]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
+⠯	英:braille(U+282f)	名:点字「⠯」	俗:base64風6点字「U」	難:点字	活:[68qo][9agf][lmsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][HUIVHWGV]	幅:824
 ⠰	英:braille(U+2830)	名:点字「⠰」	俗:base64風6点字「V」	難:点字	活:[fgsr]	漫:[GTHSITHU][HUIVHWGV]	幅:824
 ⠱	英:braille(U+2831)	名:点字「⠱」	俗:base64風6点字「W」	難:点字	活:[68ec][fgsr]	漫:[BQDQERDSBSAR][GTHSITHU][HUIVHWGV]	幅:824
-⠲	英:braille(U+2832)	名:点字「⠲」	俗:base64風6点字「X」	難:点字	活:[ceki][fgsr]	漫:[BSESFTEUBUAT][GTHSITHU][HUIVHWGV]	幅:824
-⠳	英:braille(U+2833)	名:点字「⠳」	俗:base64風6点字「Y」	難:点字	活:[68ki][fgsr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][GTHSITHU][HUIVHWGV]	幅:824
+⠲	英:braille(U+2832)	名:点字「⠲」	俗:base64風6点字「X」	難:点字	活:[ceki][fgsr]	漫:[BSDSETDUBUAT][GTHSITHU][HUIVHWGV]	幅:824
+⠳	英:braille(U+2833)	名:点字「⠳」	俗:base64風6点字「Y」	難:点字	活:[68ki][fgsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][GTHSITHU][HUIVHWGV]	幅:824
 ⠴	英:braille(U+2834)	名:点字「⠴」	俗:base64風6点字「Z」	難:点字	活:[ikqo][fgsr]	漫:[BUDUEVDWBWAV][GTHSITHU][HUIVHWGV]	幅:824
 ⠵	英:braille(U+2835)	名:点字「⠵」	俗:base64風6点字「0」	難:点字	活:[68ec][ikqo][fgsr]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][GTHSITHU][HUIVHWGV]	幅:824
 ⠶	英:braille(U+2836)	名:点字「⠶」	俗:base64風6点字「1」	難:点字	活:[ceqo][fgsr]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU][HUIVHWGV]	幅:824
 ⠷	英:braille(U+2837)	名:点字「⠷」	俗:base64風6点字「2」	難:点字	活:[68qo][fgsr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU][HUIVHWGV]	幅:824
 ⠸	英:braille(U+2838)	名:点字「⠸」	俗:base64風6点字「3」	難:点字	活:[9asr]	漫:[GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠹	英:braille(U+2839)	名:点字「⠹」	俗:base64風6点字「4」	難:点字	活:[68ec][9asr]	漫:[BQEQFRESBSAR][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠺	英:braille(U+283a)	名:点字「⠺」	俗:base64風6点字「5」	難:点字	活:[ceki][9asr]	漫:[BSESFTEUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠻	英:braille(U+283b)	名:点字「⠻」	俗:base64風6点字「6」	難:点字	活:[68ki][9asr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠼	英:braille(U+283c)	名:点字「⠼」	俗:base64風6点字「7」	難:点字	活:[ikqo][9asr]	漫:[BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠽	英:braille(U+283d)	名:点字「⠽」	俗:base64風6点字「8」	難:点字	活:[68ec][ikqo][9asr]	漫:[BQEQFRESBSAR][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠾	英:braille(U+283e)	名:点字「⠾」	俗:base64風6点字「9」	難:点字	活:[ceqo][9asr]	漫:[BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
-⠿	英:braille(U+283f)	名:点字「⠿」	俗:base64風6点字「.」	難:点字	活:[68qo][9asr]	漫:[BQEQFRESBSAR][BSESFTEUBUAT][BUEUFVEWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠹	英:braille(U+2839)	名:点字「⠹」	俗:base64風6点字「4」	難:点字	活:[68ec][9asr]	漫:[BQDQERDSBSAR][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠺	英:braille(U+283a)	名:点字「⠺」	俗:base64風6点字「5」	難:点字	活:[ceki][9asr]	漫:[BSDSETDUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠻	英:braille(U+283b)	名:点字「⠻」	俗:base64風6点字「6」	難:点字	活:[68ki][9asr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠼	英:braille(U+283c)	名:点字「⠼」	俗:base64風6点字「7」	難:点字	活:[ikqo][9asr]	漫:[BUDUEVDWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠽	英:braille(U+283d)	名:点字「⠽」	俗:base64風6点字「8」	難:点字	活:[68ec][ikqo][9asr]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠾	英:braille(U+283e)	名:点字「⠾」	俗:base64風6点字「9」	難:点字	活:[ceqo][9asr]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
+⠿	英:braille(U+283f)	名:点字「⠿」	俗:base64風6点字「.」	難:点字	活:[68qo][9asr]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GRHQIRHS][GTHSITHU][HUIVHWGV]	幅:824
 ⣿	英:braille(U+28ff)	名:点字「⣿」	俗:UTF-8点字	俗:	難:点字	活:[68wu][9ayx]	幅:824	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][BWDWEXDYBYAX][GRHQIRHS][GTHSITHU][HUIVHWGV][HWIXHYGX]
 
 麺	英:noodle/flour/dough 	名:むぎのこ	音:メン	送:拉麺(ラーメン)	異:麵/麪	俗:小麦粉/麺麭(パン)	活:[05baghzuopjicd76][8ef9][frsg]
@@ -2181,3 +2190,4 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
+⡇	

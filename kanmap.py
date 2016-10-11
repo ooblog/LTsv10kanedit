@@ -69,15 +69,25 @@ def LTsv_kanmap_drawDICCount(window_objvoid=None,window_objptr=None):
     else:
         LTsv_widget_settext(kanmap_window,"kanmap")
 
+LTsv_mapcursorBF,LTsv_mapcursorAF=0,0
+def LTsv_kanmap_cursor():
+    global LTsv_mapcursorBF,LTsv_mapcursorAF
+    LTsv_draw_selcanvas(kanmap_canvas)
+    mouseX,mouseY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+
 def LTsv_kanmap_mousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
-        pass
+        LTsv_kanmap_cursor()
 
 def LTsv_kanmap_mousemotion(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_mousemotion(kanmap_canvas,kanmap_kbdX,kanmap_kbdY)
+    global LTsv_mapcursorBF,LTsv_mapcursorAF
+    if LTsv_glyph_mousemotion(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
+        LTsv_kanmap_cursor()
+#        if LTsv_glyph_dicY
 
 def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_mouserelease(kanmap_canvas,kanmap_kbdX,kanmap_kbdY)
+    if LTsv_glyph_mouserelease(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
+        LTsv_kanmap_cursor()
 
 def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_glyph_picklesave()

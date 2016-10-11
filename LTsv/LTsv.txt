@@ -864,6 +864,9 @@ version(branch) 20160927T004545
  LTsv_global_canvascolor(); LTsv_global_canvasbgcolor();
   「canvas」上の色を取得。
 
+ LTsv_global_canvasTAG(TkinterTAG=None)
+  「Tkinter」専用。描画図形に添付するタグを取得。または変更。
+
  LTsv_global_pictureOBJ(LTsv_objid): LTsv_global_pictureW(LTsv_objid): LTsv_global_pictureH(LTsv_objid):
   「canvas」用の画像を管理。解説は「LTsv_draw_picture_load()」を参照。
   LTsv_global_pictureOBJ()がNoneを返す場合、画像の読み込みに失敗してる。
@@ -1108,6 +1111,10 @@ def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_
   「GTK2」だと長方形を上描き描画して図形を消去する。
   「Tkinter」ではタグ(初期値は「LTsv_draw_tkTAG」)が付けられた図形を消去する。
   ここで図形の消去に使った色は後述の「LTsv_drawGTK_glyph()」「LTsv_drawTkinter_glyph()」のフォントグリフの穴空けにも使う。
+
+def LTsv_drawTkinter_deleteTAG(TkinterTAG=None):
+  「Tkinter」専用。特定タグの描画図形だけを削除。タグも変更される。
+  タグ変更のみが欲しい場合「LTsv_global_canvasTAG()」を使う。
 
  LTsv_drawGTK_color(draw_c=""); LTsv_drawTkinter_color(draw_c=""); LTsv_draw_color_shell(LTsv_GUI)
   「canvas」内のポリゴン等の色指定。

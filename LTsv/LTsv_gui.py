@@ -115,7 +115,10 @@ def LTsv_global_canvasmotionY():                    return LTsv_canvas_motion_Y
 def LTsv_global_canvasmotionZ():                    return LTsv_canvas_motion_Z
 def LTsv_global_canvascolor():                    return LTsv_canvascolor
 def LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor
-#def LTsv_global_widgetgetltsv():                    return LTsv_widgetLTSV
+def LTsv_global_canvasTAG(TkinterTAG=None):
+    global LTsv_Tkintercanvas_TAG
+    LTsv_Tkintercanvas_TAG=LTsv_Tkintercanvas_TAG if TkinterTAG == None else TkinterTAG
+    return LTsv_Tkintercanvas_TAG
 def LTsv_global_widgetltsv(new_LTSV=None):
     global LTsv_widgetLTSV
     LTsv_widgetLTSV=LTsv_widgetLTSV if new_LTSV == None else new_LTSV
@@ -1224,6 +1227,11 @@ def LTsv_drawTkinter_delete(draw_c="white"):
     LTsv_drawTkinter_color(draw_c)
     LTsv_drawTkinter_bgcolor(draw_c)
     LTsv_Tkintercanvas_o.delete(LTsv_Tkintercanvas_TAG)
+
+def LTsv_drawTkinter_deleteTAG(TkinterTAG=None):
+    global LTsv_TkintercanvasPAGE,LTsv_Tkintercanvas_o,LTsv_Tkintercanvas_TAG
+    LTsv_Tkintercanvas_TAG=LTsv_Tkintercanvas_TAG if TkinterTAG == None else TkinterTAG
+    LTsv_Tkintercanvas_o.delete(TkinterTAG)
 
 def LTsv_draw_delete_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_delete
