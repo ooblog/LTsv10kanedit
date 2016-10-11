@@ -462,18 +462,18 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Ю	英:Cyrillic Yu		名:ユー(大文字)		音:		訓:		送:		異:ю	俗:
 я	英:Cyrillic Ya		名:ヤー(小文字)		音:		訓:		送:		異:Я	俗:	非:ｒ
 Я	英:Cyrillic Ya		名:ヤー(大文字)		音:		訓:		送:		異:я	俗:	非:Ｒ
-☆	英:white star		名:白星			音:		訓:		送:		異:	俗:
-★	英:black star		名:黒星			音:		訓:		送:		異:	俗:
+☆	英:white star	名:白星	活:[68239bhgmstzxrqwuopdc][8kl9]
+★	英:black star	名:黒星	活:[68239bhgmstzxrqwuopdc]
 ○	英:white circle	名:白丸	活:[14abtsyvpo67][7psgf9]	漫:[14btyvo6][DQCRCVDWHWIVISGQ]
 ●	英:black circle		名:黒丸			音:		訓:		送:		異:	俗:	活:[14abtsyvpo67]	漫:[14btyvo6]
-◇	英:white lozenge	名:白菱形		音:		訓:		送:		異:	俗:
-◆	英:black lozenge	名:黒菱形		音:		訓:		送:		異:	俗:
+◇	英:white lozenge	名:白菱形	活:[78239aghnmsrxwqpjicd][8edjkqrlmgf9]	漫:[FOKTFYAT][FQCTFWIT]
+◆	英:black lozenge	名:黒菱形	活:[78239aghnmsrxwqpjicd]	漫:[FOKTFYAT]
 □	英:white square	名:白四角	活:[04abzu][7psa]	漫:[04bzu][CQCWIWIRHQ]
 ■	英:black square	名:黒四角	活:[04abzu]	漫:[04bzu]
 △	英:white triangle	名:白三角		音:		訓:		送:		異:	俗:	活:[78239aghzucd][8edpsgf9]	漫:[23hzuc][CTCWIWITFQ]
 ▲	英:black triangle	名:黒三角		音:		訓:		送:		異:	俗:	活:[78239aghzucd]	漫:[23hzuc]
-▽	英:white down triangle	名:逆白三角		音:		訓:		送:		異:	俗:
-▼	英:black down triangle	名:逆黒三角		音:		訓:		送:		異:	俗:
+▽	英:white down triangle	名:逆白三角	活:[05hgsrxwqpdc][7deqrfga]	漫:[AOKOKTFYAT][CQCSFVISIQ]
+▼	英:black down triangle	名:逆黒三角	活:[05hgsrxwqpdc]	漫:[AOKOKTFYAT]
 ♠	英:black spade suit	名:スペード(トランプ)	活:[14abtsmlrsyvpqkjpo67]
 ♣	英:black club suit	名:クラブ(トランプ)	活:[14abnlrsyvpqki67]
 ♥	英:black heart suit	名:ハート(トランプ)	異:❤	活:[028935nmsrxwqpji]
@@ -649,7 +649,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ぶ	英:BU Japanese hiragana	名:ぶ	異:ブ	俗:濁音	代:ふ	逆:ﾌﾞ	非:ふ/ぷ	活:[13lk87][lmghtr][prxv][cdpo][45ba]	漫:[13fmsxvprk87][cdpo][ahtm][45ba]
 ぷ	英:PU Japanese hiragana	名:ぷ	異:プ	俗:半濁音	代:む	逆:ﾌﾟ	非:ふ/ぶ	活:[15trlk87][9fga][prxv][cdpo]	漫:[14btmsxvprk87][cdpo][9fga]
 フ	英:FU Japanese katakana	名:フ	異:ふ	俗:清音	代:ブ	逆:ﾌ	非:ブ/プ	活:[05nma6][lmsr][prxv]	漫:[AOKOKUGYCYCWFWITIQAQ]
-ブ	英:BU Japanese katakana	名:ブ	異:ぶ	俗:濁音	代:フ	逆:ﾌﾞ	非:フ/プ	活:[AQEQEOGOGQIQIOKOKQKUGYCYCWFWITISAS]	漫:[68239a45bnmgc][prxv][lmsr]
+ブ	英:BU Japanese katakana	名:ブ	異:ぶ	俗:濁音	代:フ	逆:ﾌﾞ	非:フ/プ	活:[68239a45bnmgc][prxv][lmsr]	漫:[AQEQEOGOGQIQIOKOKQKUGYCYCWFWITISAS]
 プ	英:PU Japanese katakana	名:プ	異:ぷ	俗:半濁音	代:ム	逆:ﾌﾟ	非:フ/ブ	活:[6935hgsrlkec][prxv][9fga]	漫:[AQEQGOIOKQKSKUGYCYCWFWHUGUESAS][9fga]
 ﾌ	英:FU Japanese half-katakana	名:ﾌ	異:フ	俗:清音	逆:フ	活:[03lk86][jkqp][opvu]	漫:[AOGOGUCYAYAWBWETEQAQ]	幅:624
 へ	英:HE Japanese hiragana	名:へ	異:ヘ	俗:清音	代:べ	逆:ﾍ	非:べ/ぺ	活:[1397][67ji][9agf][ghts]	漫:[COGOKSKWIWITFQCQCVAVAQ]
@@ -684,7 +684,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 や	英:YA Japanese hiragana				名:や	音:	訓:		送:		異:ヤ	俗:清音		非:ゃ	代:ゃ	逆:ﾔ	活:[128934abtrxwkicd][ekmg]	漫:[COEOEQGQGOIOIQJQKRKVJWHWGVGVGYEYEVCTCUAUASCQ][ESETGVGUIUIS]
 ゃ	英:ya Japanese hiragana diphthong consonant	名:ゃ	異:ャ	俗:拗音	代:や	逆:ｬ	非:や	活:[78ef9aghtsyxrqkj][ijpo][lrsm]	漫:M 200,800 400,800 400,600 600,600 600,800 800,800 800,600 900,600 1000,500 1000,300 800,100 800,400 500,400 800,100 800,0 600,0 250,350 200,300 200,200 0,200 0,400 200,600 z
 ヤ	英:YA Japanese katakana	名:ヤ	異:や	俗:清音	代:ャ	逆:ﾔ	非:ャ	活:[128btsgfxwkicd]	漫:[COEOEQKQKWIWISFSFTGUGYEYEVDUAUASCS]
-ャ	英:ya Japanese katakana diphthong consonant	名:ャ	音:	訓:		送:		異:ゃ	俗:拗音		非:ヤ	代:ヤ	逆:ｬ	活:[CQEQESKSKWIWIUFUFVGWGYEYEXDWAWAUCU]
+ャ	英:ya Japanese katakana diphthong consonant	名:ャ	異:ゃ	俗:拗音	代:ヤ	逆:ｬ	非:ヤ	活:[78ehtsmlxwqoij]	漫:[CQEQESKSKWIWIUFUFVGWGYEYEXDWAWAUCU]
 ﾔ	英:YA Japanese half-katakana	名:ﾔ	異:ヤ	俗:清音	逆:ヤ	活:[1289lkwvdc67]	漫:[1289lkwvdc67][ESETFS]	幅:624
 ｬ	英:ya Japanese half-katakana	名:ｬ	異:ャ	俗:清音	逆:ャ	活:[78efrqwvjicd]	漫:[78efrqwvjicd][EUEVFU]	幅:624
 ゆ	英:YU Japanese hiragana	名:ゆ	異:ユ	俗:清音	代:ゅ	逆:ﾕ	非:ゅ	活:[67de239aghtrxvpqkjpo][flmg]	漫:[AQCQCSDSEREOGOGQIQKSKUIWGWGYCYEWEUCUCWAW][flmg]
@@ -1928,11 +1928,12 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 点	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:點	活:[239bhgsrxwqpde][opvu][stzy][eklf]
 點	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:点	俗:點點…(無言)	漫:[039bhgsrxwqpji][opvu][stzy][eklf]
 ⠀	英:braille(U+2800)	名:点字「⠀」	俗:base64風6点字「_」	難:点字	活:[ouysyu]	幅:824
-⠕	英:braille(U+2816)	名:点字「⠕」	俗:base64風6点字「u」	難:点字	活:[ceqo][fgml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
-⠖	英:braille(U+2817)	名:点字「⠖」	俗:base64風6点字「v」	難:点字	活:[ceqo][fgml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
-⠗	英:braille(U+2818)	名:点字「⠗」	俗:base64風6点字「w」	難:点字	活:[68qo][fgml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
-⠘	英:braille(U+2819)	名:点字「⠘」	俗:base64風6点字「x」	難:点字	活:[9aml]	漫:[GRHQIRHS][GTHSITHU]	幅:824
-⠙	英:braille(U+281a)	名:点字「⠙」	俗:base64風6点字「y」	難:点字	活:[68ec][9aml]	漫:[BQDQERDSBSAR][GRHQIRHS][GTHSITHU]	幅:824
+⠔	英:braille(U+2814)	名:点字「⠔」	俗:base64風6点字「t」	難:点字	活:[ikqo][fgml]	漫:[BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠕	英:braille(U+2815)	名:点字「⠕」	俗:base64風6点字「u」	難:点字	活:[68ec][ikqo][fgml]	漫:[BQDQERDSBSAR][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠖	英:braille(U+2816)	名:点字「⠖」	俗:base64風6点字「v」	難:点字	活:[ceqo][fgml]	漫:[BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠗	英:braille(U+2817)	名:点字「⠗」	俗:base64風6点字「w」	難:点字	活:[68qo][fgml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][BUDUEVDWBWAV][GTHSITHU]	幅:824
+⠘	英:braille(U+2818)	名:点字「⠘」	俗:base64風6点字「x」	難:点字	活:[9aml]	漫:[GRHQIRHS][GTHSITHU]	幅:824
+⠙	英:braille(U+2819)	名:点字「⠙」	俗:base64風6点字「y」	難:点字	活:[68ec][9aml]	漫:[BQDQERDSBSAR][GRHQIRHS][GTHSITHU]	幅:824
 ⠚	英:braille(U+281a)	名:点字「⠚」	俗:base64風6点字「z」	難:点字	活:[ceki][9aml]	漫:[BSDSETDUBUAT][GRHQIRHS][GTHSITHU]	幅:824
 ⠛	英:braille(U+281b)	名:点字「⠛」	俗:base64風6点字「A」	難:点字	活:[68ki][9aml]	漫:[BQDQERDSBSAR][BSDSETDUBUAT][GRHQIRHS][GTHSITHU]	幅:824
 ⠜	英:braille(U+281c)	名:点字「⠜」	俗:base64風6点字「B」	難:点字	活:[ikqo][9aml]	漫:[BUDUEVDWBWAV][GRHQIRHS][GTHSITHU]	幅:824

@@ -30,7 +30,7 @@ version(branch) 20161011T163105
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
- 「/LTsv/kanmap.tsv」の編集機能は欲しい。
+ 「LTsv/kanmap.tsv」の編集機能を追加予定。
 
 
 １．    使い方
@@ -42,19 +42,22 @@ version(branch) 20161011T163105
 
 ２．    ＦＡＱ
 
+ Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」の漢字が保存されるのですか？
+ Ａ．若干質問が曖昧です。グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。
+     漢直キーボードの漢字配列「LTsv/kanmap.tsv」だけでなく単漢字辞書「LTsv/kanchar.tsv」の両方のグリフ座標データを「LTsv/kanpickle.bin」に積み込みます。
+
+ Ｑ．「kanmap.py」の動作が重いです。と文句付けようと思ったら軽くなりました。
+ Ａ．「LTsv/kanpickle.bin」にグリフ座標データを一旦積み込むまではテキストのパスデータをPythonのリスト配列に変換する処理が発生するためです。
+
  Ｑ．「kanmap.png」が保存されないのですが？
  Ａ．「Tkinter」のキャンパスを画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。
-
- Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」の漢字が保存されるのですか？
- Ａ．質問には「ハイ(「LTsv/kanmap.tsv」の漢字を表示するのが「kanmap」)」ですが、「LTsv/kanmap.tsv」以外にも漢字やグリフがあります。
-     「LTsv/kanchar.tsv」には「LTsv/kanmap.tsv」で扱ってない異体字などが収録されてるはずです。
 
  Ｑ．「kanmap.png」の空白が多い気がします。
  Ａ．普通に「LTsv/kanchar.tsv」のグリフデータが不足しているためです。「kanfont」でグリフデータは追加できます。
 
  Ｑ．「kanfont」で追加したはずのグリフが「kanedit」に反映されない。
  Ｑ．「LTsv/kanchar.tsv」を直接編集したので一括で「kanedit」に反映させたい。
- Ａ．リセット機能は無いので「LTsv/kanpickle.bin」を手動で削除して「kanmap.py」を起動。
+ Ａ．リセット機能は無いので「LTsv/kanpickle.bin」を手動で削除して「kanmap.py」をもう一度起動。
 
 
 ３．   作者について、例えば連絡先。

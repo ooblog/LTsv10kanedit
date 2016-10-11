@@ -19,7 +19,7 @@ def LTsv_kanmap_drawline(kanmap_linecount):
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_color("black"); LTsv_draw_bgcolor("white")
     drawline_y=kanmap_linecount*LTsv_glyph_kbdF
     for map_xy in range(kanmap_charsW):
-        LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_linecount][map_xy][0:1],draw_x=map_xy*LTsv_glyph_kbdF,draw_y=drawline_y)
+        LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_linecount][map_xy][:1],draw_x=map_xy*LTsv_glyph_kbdF,draw_y=drawline_y)
     LTsv_draw_queue()
 
 kanmap_linecount=0
@@ -86,6 +86,12 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mouserelease(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
         pass
 
+def LTsv_kanmap_kbdinput(kbdinput):
+    kbdinputchar=kbdinput[:1]
+    LTsv_widget_settext(kanmap_clipboard,kbdinputchar)
+    print(kbdinputchar)
+
+
 def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_glyph_picklesave()
     LTsv_draw_canvas_save(kanmap_canvas,"kanmap.png")
@@ -118,6 +124,7 @@ if len(LTsv_GUI) > 0:
     kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=None,event_y=None)
     kanmap_canvas=LTsv_canvas_new(kanmap_window,widget_x=0,widget_y=0,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,
      event_p=LTsv_kanmap_mousepress,event_m=LTsv_kanmap_mousemotion,event_r=LTsv_kanmap_mouserelease,event_e=None,event_l=None,event_w=50)
+    kanmap_clipboard=LTsv_clipboard_new(kanmap_window)
     LTsv_widget_showhide(kanmap_window,True)
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
@@ -126,6 +133,7 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
+    LTsv_glyph_tapcallback_shell(kanmap_canvas,LTsv_kanmap_kbdinput)
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_delete(); LTsv_draw_queue();
     LTsv_glyph_kbddelete(kanmap_canvas)
     LTsv_glyph_kbddraw(kanmap_canvas,kanmap_kbdX,kanmap_kbdY); LTsv_draw_queue();
