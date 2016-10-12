@@ -141,7 +141,7 @@ if len(LTsv_GUI) > 0:
     kanmap_charsW,kanmap_charsH=LTsv_glyph_kbdW*12//LTsv_glyph_kbdF,LTsv_glyph_kbdH*(6*2+1)//LTsv_glyph_kbdF
     kanmap_charsY=kanmap_charsH+1; kanmap_dicY=kanmap_charsY*LTsv_glyph_kbdF
     LTsv_glyph_kandic=LTsv_global_kandic(); kanmap_dicsplits=LTsv_glyph_kandic.rstrip('\n').split('\n')
-    kandic_charsH=len(kanmap_dicsplits)//kanmap_charsW
+    kandic_charsH=int(math.ceil(len(kanmap_dicsplits)/kanmap_charsW))
     kandic_charsdicH=kanmap_charsH+1+kandic_charsH
     kanmap_chars=[["" for x in range(kanmap_charsW)] for y in range(kandic_charsdicH)]
 #    print(kanmap_charsW,kanmap_charsH,kandic_charsH,kanmap_charsW*(kandic_charsdicH))
