@@ -19,18 +19,20 @@ def LTsv_kanmap_drawline(kanmap_linecount):
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_color("black"); LTsv_draw_bgcolor("white")
     drawline_y=kanmap_linecount*LTsv_glyph_kbdF
     for map_xy in range(kanmap_charsW):
+        LTsv_global_canvasTAG(TkinterTAG="kanmap{0:04}{1:04}".format(map_xy,kanmap_linecount))
         LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_linecount][map_xy][:1],draw_x=map_xy*LTsv_glyph_kbdF,draw_y=drawline_y)
     LTsv_draw_queue()
 
 kanmap_linecount=0
+kanmap_linefix=False
 def kanmap_KBDstart():
     LTsv_widget_settext(kanmap_window,"kanmap:pickling kanmap.tsv")
     for map_xy in range(len(LTsv_global_irohaalpha())):
-        map_x,map_y=kanmap_irohaalphaNX[map_xy]//LTsv_glyph_kbdF+2,kanmap_irohaalphaNY[map_xy]//LTsv_glyph_kbdF-2
+        map_x,map_y=kanmap_irohaalphaNX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaNY[map_xy]//LTsv_glyph_kbdF-2
         for kbd_xy in range(len(LTsv_global_irohatype())):
             kbd_x,kbd_y=map_x+(kbd_xy%12),map_y+(kbd_xy//12)
             kanmap_chars[kbd_y][kbd_x]=LTsv_glyph_kanmapN[LTsv_global_irohaalpha()[map_xy]][kbd_xy]
-        map_x,map_y=kanmap_irohaalphaXX[map_xy]//LTsv_glyph_kbdF+2,kanmap_irohaalphaXY[map_xy]//LTsv_glyph_kbdF-2
+        map_x,map_y=kanmap_irohaalphaXX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaXY[map_xy]//LTsv_glyph_kbdF-2
         for kbd_xy in range(len(LTsv_global_irohatype())):
             kbd_x,kbd_y=map_x+(kbd_xy%12),map_y+(kbd_xy//12)
             kanmap_chars[kbd_y][kbd_x]=LTsv_glyph_kanmapX[LTsv_global_irohaalpha()[map_xy]][kbd_xy]
@@ -48,8 +50,8 @@ def kanmap_KBDcount(window_objvoid=None,window_objptr=None):
 
 def kanmap_KBDfinishDICstart():
     for map_xy in range(len(LTsv_global_irohaalpha())):
-        LTsv_draw_glyphskbd(draw_t=LTsv_global_irohaalphaN()[map_xy],draw_x=kanmap_irohaalphaNX[map_xy],draw_y=kanmap_irohaalphaNY[map_xy],draw_f=10,draw_g="漫")
-        LTsv_draw_glyphskbd(draw_t=LTsv_global_irohaalphaX()[map_xy],draw_x=kanmap_irohaalphaXX[map_xy],draw_y=kanmap_irohaalphaXY[map_xy],draw_f=10,draw_g="漫")
+        LTsv_draw_glyphskbd(draw_t=LTsv_global_irohaalphaN()[map_xy],draw_x=kanmap_irohaalphaNX[map_xy]-LTsv_glyph_kbdF*2,draw_y=kanmap_irohaalphaNY[map_xy],draw_f=10,draw_g="漫")
+        LTsv_draw_glyphskbd(draw_t=LTsv_global_irohaalphaX()[map_xy],draw_x=kanmap_irohaalphaXX[map_xy]-LTsv_glyph_kbdF*2,draw_y=kanmap_irohaalphaXY[map_xy],draw_f=10,draw_g="漫")
     LTsv_draw_polygonfill(LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2,kanmap_canvasW-LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2,kanmap_canvasW-LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2-1,LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2-1)
     LTsv_draw_queue()
     LTsv_widget_settext(kanmap_window,"kanmap:pickling LTsv/kanchar.tsv")
@@ -65,26 +67,56 @@ def kanmap_KBDfinishDICstart():
 def kanmap_DICcount(window_objvoid=None,window_objptr=None):
     global kanmap_linecount
     LTsv_kanmap_drawline(kanmap_linecount); kanmap_linecount+=1
-    if kanmap_linecount < kanmap_charsH+1+kandic_charsH:
+    if kanmap_linecount < kandic_charsdicH:
         LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=10)
     else:
         kanmap_DICfinish()
 
 def kanmap_DICfinish():
+    global kanmap_linefix
     LTsv_widget_settext(kanmap_window,"kanmap")
+    kanmap_linefix=True
+
+kanmap_cursorAX,kanmap_cursorAY=0,0; kanmap_cursorBX,kanmap_cursorBY=kanmap_cursorAX,kanmap_cursorAY
+def LTsv_kanmap_mousecursor():
+    global kanmap_cursorAX,kanmap_cursorAY,kanmap_cursorBX,kanmap_cursorBY
+    kanmap_cursorBX,kanmap_cursorBY=kanmap_cursorAX,kanmap_cursorAY
+    LTsv_draw_selcanvas(kanmap_canvas)
+    mouseX,mouseY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    kanmap_cursorAX,kanmap_cursorAY=min(max(mouseX//LTsv_glyph_kbdF,0),kanmap_charsW),min(max(mouseY//LTsv_glyph_kbdF,0),kandic_charsdicH)
 
 def LTsv_kanmap_mousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
-        pass
+        if kanmap_linefix:
+            LTsv_kanmap_mousecursor()
+#            LTsv_widget_settext(kanmap_window,"{0:04}{1:04}{2}".format(kanmap_cursorAX,kanmap_cursorAY,kanmap_chars[kanmap_cursorAY][kanmap_cursorAX]))
 
 def LTsv_kanmap_mousemotion(window_objvoid=None,window_objptr=None):
-    global LTsv_mapcursorBF,LTsv_mapcursorAF
+    global kanmap_cursorAX,kanmap_cursorAY,kanmap_cursorBX,kanmap_cursorBY
     if LTsv_glyph_mousemotion(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
-        pass
+        LTsv_kanmap_mousecursor()
+        if kanmap_linefix == True and (kanmap_cursorBX != kanmap_cursorAX or kanmap_cursorBY != kanmap_cursorAY):
+#            LTsv_widget_settext(kanmap_window,"{0:04}{1:04}{2}".format(kanmap_cursorAX,kanmap_cursorAY,kanmap_chars[kanmap_cursorAY][kanmap_cursorAX]))
+            LTsv_widget_settext(kanmap_window,"{0:04}{1:04}".format(kanmap_cursorAX,kanmap_cursorAY))
+            if LTsv_GUI == LTsv_GUI_GTK2:
+                LTsv_draw_color("white"); LTsv_draw_bgcolor("white")
+                draw_x,draw_y=kanmap_cursorBX*LTsv_glyph_kbdF,kanmap_cursorBY*LTsv_glyph_kbdF
+                LTsv_draw_polygonfill(*tuple([draw_x,draw_y,draw_x+LTsv_glyph_kbdF,draw_y,draw_x+LTsv_glyph_kbdF,draw_y+LTsv_glyph_kbdF,draw_x,draw_y+LTsv_glyph_kbdF]))
+            if LTsv_GUI == LTsv_GUI_Tkinter:
+                LTsv_deleteTAG("kanmap{0:04}{1:04}".format(kanmap_cursorBX,kanmap_cursorBY))
+            LTsv_draw_color("black"); LTsv_draw_bgcolor("black")
+            LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_cursorBY][kanmap_cursorBX][:1],draw_x=kanmap_cursorBX*LTsv_glyph_kbdF,draw_y=kanmap_cursorBY*LTsv_glyph_kbdF)
+            LTsv_global_canvasTAG(TkinterTAG="kanmap{0:04}{1:04}".format(kanmap_cursorAX,kanmap_cursorAY))
+            draw_x,draw_y=kanmap_cursorAX*LTsv_glyph_kbdF,kanmap_cursorAY*LTsv_glyph_kbdF
+            LTsv_draw_polygonfill(*tuple([draw_x,draw_y,draw_x+LTsv_glyph_kbdF,draw_y,draw_x+LTsv_glyph_kbdF,draw_y+LTsv_glyph_kbdF,draw_x,draw_y+LTsv_glyph_kbdF]))
+            LTsv_draw_color("white"); LTsv_draw_bgcolor("white")
+            LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_cursorAY][kanmap_cursorAX][:1],draw_x=kanmap_cursorAX*LTsv_glyph_kbdF,draw_y=kanmap_cursorAY*LTsv_glyph_kbdF)
+            LTsv_draw_queue()
 
 def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mouserelease(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
-        pass
+        if kanmap_linefix:
+            LTsv_kanmap_mousecursor()
 
 def LTsv_kanmap_kbdinput(kbdinput):
     kbdinputchar=kbdinput[:1]
@@ -108,18 +140,19 @@ if len(LTsv_GUI) > 0:
     kanmap_charsY=kanmap_charsH+1; kanmap_dicY=kanmap_charsY*LTsv_glyph_kbdF
     LTsv_glyph_kandic=LTsv_global_kandic(); kanmap_dicsplits=LTsv_glyph_kandic.rstrip('\n').split('\n')
     kandic_charsH=len(kanmap_dicsplits)//kanmap_charsW
-    kanmap_chars=[["" for x in range(kanmap_charsW)] for y in range(kanmap_charsH+1+kandic_charsH)]
-#    print(kanmap_charsW,kanmap_charsH,kandic_charsH,kanmap_charsW*(kanmap_charsH+1+kandic_charsH))
-    kanmap_canvasW,kanmap_canvasH=LTsv_glyph_kbdF*kanmap_charsW,LTsv_glyph_kbdF*(kanmap_charsH+1+kandic_charsH)
+    kandic_charsdicH=kanmap_charsH+1+kandic_charsH
+    kanmap_chars=[["" for x in range(kanmap_charsW)] for y in range(kandic_charsdicH)]
+#    print(kanmap_charsW,kanmap_charsH,kandic_charsH,kanmap_charsW*(kandic_charsdicH))
+    kanmap_canvasW,kanmap_canvasH=LTsv_glyph_kbdF*kanmap_charsW,LTsv_glyph_kbdF*(kandic_charsdicH)
     kanmap_kbdX,kanmap_kbdY=LTsv_glyph_kbdW*5,LTsv_glyph_kbdH*6
     kanmap_irohaalphaNX,kanmap_irohaalphaNY=[0]*len(LTsv_global_irohaalpha()),[0]*len(LTsv_global_irohaalpha())
     kanmap_irohaalphaXX,kanmap_irohaalphaXY=[0]*len(LTsv_global_irohaalpha()),[0]*len(LTsv_global_irohaalpha())
     for map_xy in range(len(LTsv_global_irohaalpha())):
         if map_xy < len(LTsv_global_irohaalpha())-3:
-            kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12),LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
+            kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12)+LTsv_glyph_kbdF*2,LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
             kanmap_irohaalphaXX[map_xy],kanmap_irohaalphaXY[map_xy]=kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]+LTsv_glyph_kbdH*7
         else:
-            kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12),LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
+            kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12)+LTsv_glyph_kbdF*2,LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
             kanmap_irohaalphaXX[map_xy],kanmap_irohaalphaXY[map_xy]=kanmap_irohaalphaNX[map_xy]+LTsv_glyph_kbdW*9,kanmap_irohaalphaNY[map_xy]+LTsv_glyph_kbdH*0
     kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=None,event_y=None)
     kanmap_canvas=LTsv_canvas_new(kanmap_window,widget_x=0,widget_y=0,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,
@@ -133,6 +166,7 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
+    LTsv_deleteTAG=LTsv_draw_deleteTAG_shell(LTsv_GUI)
     LTsv_glyph_tapcallback_shell(kanmap_canvas,LTsv_kanmap_kbdinput)
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_delete(); LTsv_draw_queue();
     LTsv_glyph_kbddelete(kanmap_canvas)

@@ -1228,14 +1228,18 @@ def LTsv_drawTkinter_delete(draw_c="white"):
     LTsv_drawTkinter_bgcolor(draw_c)
     LTsv_Tkintercanvas_o.delete(LTsv_Tkintercanvas_TAG)
 
-def LTsv_drawTkinter_deleteTAG(TkinterTAG=None):
-    global LTsv_TkintercanvasPAGE,LTsv_Tkintercanvas_o,LTsv_Tkintercanvas_TAG
-    LTsv_Tkintercanvas_TAG=LTsv_Tkintercanvas_TAG if TkinterTAG == None else TkinterTAG
-    LTsv_Tkintercanvas_o.delete(TkinterTAG)
-
 def LTsv_draw_delete_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_delete
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_delete
+
+def LTsv_drawTkinter_deleteTAG(TkinterTAG=None):
+    global LTsv_TkintercanvasPAGE,LTsv_Tkintercanvas_o,LTsv_Tkintercanvas_TAG
+    LTsv_Tkintercanvas_TAG=LTsv_Tkintercanvas_TAG if TkinterTAG == None else TkinterTAG
+    LTsv_Tkintercanvas_o.delete(LTsv_Tkintercanvas_TAG)
+
+def LTsv_draw_deleteTAG_shell(LTsv_GUI):
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_window_none
+    if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_deleteTAG
 
 def LTsv_drawGTK_color(draw_c=""):
     global LTsv_canvascolor,LTsv_canvasbgcolor

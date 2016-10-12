@@ -1112,7 +1112,7 @@ def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_
   「Tkinter」ではタグ(初期値は「LTsv_draw_tkTAG」)が付けられた図形を消去する。
   ここで図形の消去に使った色は後述の「LTsv_drawGTK_glyph()」「LTsv_drawTkinter_glyph()」のフォントグリフの穴空けにも使う。
 
-def LTsv_drawTkinter_deleteTAG(TkinterTAG=None):
+def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_GUI)
   「Tkinter」専用。特定タグの描画図形だけを削除。タグも変更される。
   タグ変更のみが欲しい場合「LTsv_global_canvasTAG()」を使う。
 
