@@ -5,7 +5,8 @@ version(branch) 20161011T163105
 
  ０-0． ライセンス及びソフトの使用の補足ガイドライン
  ０-1． 現在わかっている不具合や今後の課題。
- １．    使い方
+ １-0． 使い方(初回起動・表示編)
+ １-1． 使い方(漢字配列編集編)
  ２．    ＦＡＱ
  ３．   作者について、例えば連絡先。
 
@@ -33,11 +34,20 @@ version(branch) 20161011T163105
  「LTsv/kanmap.tsv」の編集機能を追加予定。
 
 
-１．    使い方
+１-0． 使い方(初回起動・表示編)
 
- 「kanmap.py」を起動すると「LTsv/kanmap.tsv」で定義した漢字配列を読み込んで表示します(PNGの生成はGTKのみ)。
- 「kanmap.py」を終了すると「LTsv/kanpickle.bin」と「kanmap.png」を保存します。
  「LTsv/kanpickle.bin」にグリフを積み込む事で「kanedit」「kanfont」の動作がスムーズになります。
+ 「kanmap.py」を起動すると漢字配列「LTsv/kanmap.tsv」と単漢字辞書「LTsv/kanchar.tsv」を表示します。
+ 「kanmap」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。
+
+
+１-1． 使い方(漢字配列編集編)
+
+  文字の上でタップ          カーソル点灯。
+  文字が無い場所でタップ    カーソル消灯。
+  update☐                  ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。
+  rewrite☐                 ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップで漢字配列の文字を上書き(予定)。
+  swap☐                    ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。
 
 
 ２．    ＦＡＱ

@@ -3,8 +3,12 @@
 ℗	英:phonogram right	名:原盤権	異:(p)	俗:許諾を得ないレコードの複製からのレコード製作者の保護に関する条約	活:[05bamkqtzuop76]
 ™	英:trademark	名:商品商標	異:TM	活:[0398ehzysrxwkj76]
 ℠	英:service mark	名:役務商標	異:SM	活:[1398ehzysrxwkicd]
+半	英:half	名:ハン	音:ハン		訓:なかば		送:半分/教うるは学ぶの半ば	活:[0178239a45hflntrxwqoikec]
+ 	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
+全	英:full/all/total/entire/wholly/indeed	名:ゼン	音:ゼン		訓:すべて/まったく	送:全部/全てを推し量る/全くの偶然	活:[14abnmstzuopji67][7dga]
+　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
 ⇔	英:equivalence		名:同値			音:		訓:		送:		異:≡	俗:等価	活:[78239agd][ghnm][cdji][jmsrxwqp]	漫:[FOKTFYAT][DSCTDUHUITHS]
-⇒	英:implication		名:論理包含		音:		訓:		送:		異:	俗:PならばQ
+⇒	英:implication	名:論理包含	俗:PならばQ	活:[68239agc][ghnm][imsrxwqo]	漫:[AQFQFOKTFYFWAWAUHUITHSAS]
 ≡	英:identical	名:合同	異:⇔	俗:モジュロ	活:[05b6][chni][otzu]
 '	英:single quotation	名:シングルクォート(半角)	俗:引用符	逆:’	活:[12ed]	漫:[COEOESCSDRCQ]	幅:624
 ‘	英:wide single quotation	名:シングルクォート(全角)	異:’	俗:引用符(開始記号)	漫:[GQIOKOKPIRISJSKTKVJWHWGV]	活:[45ba][9aghtr]
@@ -57,7 +61,7 @@
 ※	英:supplementary information symbol	名:米印	俗:但し～	代:米	活:[78239aghnmsrxwqpjicd][45ba][stzy][opvu][0176][eklf]
 †	英:dagger		名:短剣符		音:		訓:		送:		異:‡	俗:R.I.P./日曜休日/脚注用語解説
 ‡	英:double dagger	名:二重短剣符		音:		訓:		送:		異:†	俗:脚注用語解説
-〓	英:geta mark		名:下駄記号		音:		訓:		送:		異:	俗:
+〓	英:geta mark	名:下駄記号	活:[05hc][inzu]
 ∽	英:similarity		名:相似記号		音:		訓:		送:		異:∝	俗:
 ∝	英:proportion		名:比例記号		音:		訓:		送:		異:∽	俗:
 ∞	英:infinity		名:無限			音:		訓:		送:		異:	俗:インフィニティ/アンリミテッド
@@ -84,8 +88,6 @@
 ;	英:semicolon	名:セミコロン(半角)	逆:；	活:[78ed][jkwuop]	漫:[78ed][CUEUEXDYAYCW]	幅:624
 ：	英:wide colon 	名:コロン(全角)	逆::	活:[24ge][kmyw]	漫:[EPFOHOIPIRHSFSER][FUHUIVIXHYFYEXEV]
 :	英:colon	名:コロン(半角)	逆:：	活:[78ed][jkqp]	幅:624
-　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
- 	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
 ，	英:wide comma 	名:コンマ(全角)	異:、	俗:桁区切り	逆:,	活:[cewvpo]	漫:[BSDSETEYBYCXCWBWAVAT]
 ,	英:comma	名:コンマ(半角)	異:､	俗:桁区切り	逆:，	漫:[jkqvup]	幅:624	活:[jkqwuop]
 ．	英:wide period 	名:ピリオド(全角)	異:。	俗:小数点	逆:.	活:[ikwu]	漫:[BUDUEVEXDYBYAXAV]
@@ -134,8 +136,8 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQ
 留	英:stationary/attention/holding/detain/abroad	名:とめる	音:リュウ/ル	訓:とめる/どめ	送:留学/留守/繋ぎ留める/局留め	異:₽	俗:ルーブル
 ＝	英:wide equals		名:等号/イコール(全角)	音:		訓:		送:	異:=	逆:	俗:	活:[into][6bhc]
 =	英:equals	名:等号/イコール(半角)	異:＝	活:[69fc][ilro]	幅:624
-≒	英:approximation	名:近似			音:		訓:		送:		異:	俗:
-≠	英:negation		名:等号否定		音:		訓:		送:		異:	俗:<>
+≒	英:approximation	名:近似	活:[67128bhc][intsyxro]
+≠	英:negation	名:等号否定	俗:<>	活:[6934abhflntqwvpoikec]
 ＞	英:wide inequality/is greater than	名:不等号/大なり(全角)	逆:>	活:[0286][8age][ghnm][kmsq][oqwu]	漫:[AOEOGQIQKSKUIWGWEYAYAWDWFUHUITHSFSDQAQ]
 >	英:inequality/is greater than	名:不等号/大なり(半角)	逆:＞	活:[0176][78ed][eflk][jkqp][opvu]	漫:[AOCOGSGUCYAYAXETAP]	幅:624
 ＜	英:wide :inequality/is less than	名不等号/小なり:(全角)	音:	訓:	送:	異:	逆:<	俗:	活:[35b9][79fd][cdji][jlrp][rtzx]	漫:[CQEQGOKOKQHQFSDSCTDUFUHWKWKYGYEWCWAUAS]
@@ -143,8 +145,8 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQ
 ≧	英:greater-than or equal to	名:以上/大なりイコール	音:	訓:		送:		異:	俗:
 ≦	英:less-than or equal to	名:以下/小なりイコール	音:	訓:		送:		異:	俗:
 √	英:square root	名:根号	俗:ルート/radical symbol	活:[15b8wvpoij]	漫:[15b8wvoij]
-￣	英:overline		名:オーバーライン	音:		訓:		送:		異:	俗:
-‐	英:hyphen		名:ハイフン		音:		訓:		送:		異:	俗:
+￣	英:overline	名:オーバーライン	活:[05b6]
+‐	英:hyphen	名:ハイフン	活:[jmsp]
 ＿	英:wide underscore	名:アンダースコア(全角)	俗:アンダーバー	顔:🌝	代:🌝	逆:_	活:[otzu]
 _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:＿	俗:アンダーバー					活:[orxu]	幅:624
 🌝	英:fullmoon with face	名:顔付き満月	俗:写植記号BA-90/ぽげムたマーク/アンダーバー	代:＿	活:M 100,800 200,900 400,1000 600,1000 800,900 900,800 1000,600 1000,400 900,200 800,100 600,0 400,0 200,100 100,200 0,400 0,600 z M 250,850 150,750 50,600 50,400 150,250 250,150 400,50 600,50 750,150 850,250 950,400 950,600 850,750 750,850 600,950 400,950 z M 250,750 300,800 400,800 450,750 z M 200,600 300,650 400,600 z M 600,600 700,650 800,600 z M 500,700 600,800 700,800 750,750 650,750 550,700 600,450 550,400 450,400 350,450 550,450 z M 300,400 350,400 300,300 300,200 250,250 250,300 z M 650,400 700,400 750,300 750,250 700,200 700,300 z M 350,300 500,300 650,300 600,200 500,150 400,200 z M 400,250 450,200 550,200 600,250 550,250 z
@@ -159,14 +161,14 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ￢	英:not			名:否定記号		音:		訓:		送:		異:	俗:
 ∧	英:logical conjunction	名:論理積		音:		訓:		送:		異:∩	俗:
 ∨	英:logical disjunction	名:論理和		音:		訓:		送:		異:∪	俗:
-∠	英:angle sign		名:角記号		音:		訓:		送:		異:	俗:
-∟	英:right angle sign	名:直角記号		音:		訓:		送:		異:	俗:
-⊥	英:perpendicular sign	名:垂直記号		音:		訓:		送:		異:	俗:
-⌒	英:arc			名:弧			音:		訓:		送:		異:	俗:タイ
-∀	英:universal quantifier	名:全称記号		音:		訓:		送:		異:	俗:
-∃	英:existential quantifier	名:存在記号	音:		訓:		送:		異:	俗:
-∂	英:del/partial d/rounded d	名:デル/パーシャルディー/ラウンドディー	音:	訓:	送:	異:	俗:ヤコビ行列
-∇	英:nabla		名:ナブラ記号		音:		訓:		送:		異:	俗:
+∠	英:angle sign	名:角記号	活:[jkqtzuop][eflk][9agf]	漫:[GQIQIRDWKWKYAYAW]
+∟	英:right angle sign	名:直角記号	活:[67ptzu]
+⊥	英:perpendicular sign	名:垂直記号	活:[89rtzuoq]
+⌒	英:arc	名:弧	俗:タイ	活:[14a7][67dc][abhg]	漫:[COIOKQKSISIRHQDQCRCSASAQ]
+∀	英:universal quantifier	名:全称記号	活:[017a45hgmlrqkjdc][eklf]	漫:[AOCOCQIQIOKOKRFWAR][DSFUHS]
+∃	英:existential quantifier	名:存在記号	活:[25zvpsmjdga8]
+∂	英:del/partial d/rounded d	名:デル/パーシャルディー/ラウンドディー	俗:ヤコビ行列	活:[0397dc][ef9asrxvjk][kqrl]	漫:[03asxvjef97dc][kqrl]
+∇	英:nabla	名:ナブラ記号	活:[05nmsrxwqpji][8kma]	漫:[AOKOKTFYAT][8kma]
 ◎	英:a double circle	名:二重丸	俗:市役所/区役所/曇り	活:[14abtsyvpo67][7psa][eflk]
 ⓪	英:circled zero	名:丸0	異:〇	俗:零	活:[05b9fgstzuoqkj76][eklf]
 ①	英:circled one	名:丸1	異:一	俗:Ⅰ	代:🀐	活:[05b9rtzuoqed76]
@@ -1807,10 +1809,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 字	英:	活:[68239btrxvpo][flmg]
 印	英:	活:[15trxu67][9lma][7de8][jpqk]
 版	英:	活:[017825b9fhnmsrxwqpvu][stzy]
-半	英:	活:[0178239a45hflntrxwqoikec]
 平	英:	活:[05baghnlxwkicd76]
 今	英:	活:[78239aghnmsrlicd][qrxw]
-全	英:	活:[14abnmstzuopji67][7dga]
 清	英:	活:[0176][cdji][opvu][8934abzysrxw]
 濁	英:	活:[0176][cdji][opvu][25b9fhzw][lrsm]
 沼	活:[0176][cdji][opvu][25zwef98][lrsm]
@@ -2265,3 +2265,5 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
+貌	
+娩	

@@ -49,7 +49,7 @@ def kanmap_KBDcount(window_objvoid=None,window_objptr=None):
         kanmap_KBDfinishDICstart()
 
 def kanmap_checkboxdraw():
-    for map_xy in range(kanmap_checkboxlen):
+    for map_xy in range(len(kanmap_checkboxL)):
         draw_x,draw_y=kanmap_checkboxX[map_xy],kanmap_checkboxY[map_xy]
         LTsv_draw_color("white"); LTsv_draw_bgcolor("white")
         LTsv_draw_glyphsfill(draw_t=kanmap_checkboxT[map_xy][1],draw_x=draw_x+LTsv_glyph_kbdF,draw_y=draw_y+LTsv_glyph_kbdF,draw_f=10,draw_g="漫")
@@ -137,25 +137,40 @@ def LTsv_kanmap_mousemotion(window_objvoid=None,window_objptr=None):
 
 def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
     global kanmap_cursorMX,kanmap_cursorMY,kanmap_cursorDX,kanmap_cursorDY
+    global kanmap_chars
     if LTsv_glyph_mouserelease(kanmap_canvas,kanmap_kbdX,kanmap_kbdY) == LTsv_global_kbdcursorNone():
         if kanmap_linefix:
             LTsv_kanmap_mousecursorXY()
             LTsv_kanmap_mousecursordraw(kanmap_cursorAX,kanmap_cursorAY,kanmap_cursorBX,kanmap_cursorBY)
+            check_x,check_y=(kanmap_cursorAX*LTsv_glyph_kbdF)//LTsv_glyph_kbdW,(kanmap_cursorAY*LTsv_glyph_kbdF)//LTsv_glyph_kbdH
             if len(kanmap_chars[kanmap_cursorAY][kanmap_cursorAX]) > 0:
                 LTsv_widget_settext(kanmap_clipboard,kanmap_chars[kanmap_cursorAY][kanmap_cursorAX][:1])
+            else:
+                if ( check_x in kanmap_checkboxL ) and check_y == 6:
+                    for map_xy in kanmap_checkboxL:
+                        if map_xy == check_x:
+                            kanmap_checkboxC[kanmap_checkboxL.index(map_xy)]=1 if kanmap_checkboxC[kanmap_checkboxL.index(map_xy)] == 0 else 0
+                        else:
+                            kanmap_checkboxC[kanmap_checkboxL.index(map_xy)]=0
+                    kanmap_checkboxdraw()
             if kanmap_cursorAY < kanmap_charsH:
                 cursorMX,cursorMY=kanmap_cursorMX,kanmap_cursorMY
                 kanmap_cursorMX,kanmap_cursorMY=kanmap_cursorAX,kanmap_cursorAY
-                LTsv_kanmap_mousecursordraw(kanmap_cursorAX,kanmap_cursorAY,cursorMX,cursorMY)
-                check_x,check_y=(kanmap_cursorAX*LTsv_glyph_kbdF)//LTsv_glyph_kbdW,(kanmap_cursorAY*LTsv_glyph_kbdF)//LTsv_glyph_kbdH
-                if ( check_x == 3 or check_x == 7 ) and check_y == 6:
-                    kanmap_checkboxC[check_x//4]=1 if kanmap_checkboxC[check_x//4] == 0 else 0
-                    kanmap_checkboxC[1 if check_x//4 == 0 else 0]=0
-                    kanmap_checkboxdraw()
+                LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
+                if kanmap_checkboxC[2] != 0:
+                    if len(kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]) > 0 and len(kanmap_chars[cursorMY][cursorMX]) > 0:
+                        kanmap_chars[kanmap_cursorMY][kanmap_cursorMX],kanmap_chars[cursorMY][cursorMX]=kanmap_chars[cursorMY][cursorMX],kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]
+                        LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
+                        kanmap_cursorMX,kanmap_cursorMY=0,0
+                        LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
             if kanmap_cursorAY >= kanmap_charsH:
                 cursorDX,cursorDY=kanmap_cursorDX,kanmap_cursorDY
                 kanmap_cursorDX,kanmap_cursorDY=kanmap_cursorAX,kanmap_cursorAY
-                LTsv_kanmap_mousecursordraw(kanmap_cursorAX,kanmap_cursorAY,cursorDX,cursorDY)
+                LTsv_kanmap_mousecursordraw(kanmap_cursorDX,kanmap_cursorDY,cursorDX,cursorDY)
+                if kanmap_checkboxC[1] != 0:
+                    if len(kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]) > 0 and len(kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]) > 0:
+                        kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]=kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]
+                        LTsv_kanmap_mousecursordraw(kanmap_cursorDX,kanmap_cursorDY,kanmap_cursorMX,kanmap_cursorMY)
 
 def LTsv_kanmap_kbdinput(kbdinput):
     kbdinputchar=kbdinput[:1]
@@ -192,10 +207,10 @@ if len(LTsv_GUI) > 0:
         else:
             kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12)+LTsv_glyph_kbdF*2,LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
             kanmap_irohaalphaXX[map_xy],kanmap_irohaalphaXY[map_xy]=kanmap_irohaalphaNX[map_xy]+LTsv_glyph_kbdW*9,kanmap_irohaalphaNY[map_xy]+LTsv_glyph_kbdH*0
-    kanmap_checkboxlen=2; kanmap_checkboxX,kanmap_checkboxY=[0]*kanmap_checkboxlen,[0]*kanmap_checkboxlen
-    for map_xy in range(kanmap_checkboxlen):
-        kanmap_checkboxX[map_xy],kanmap_checkboxY[map_xy]=LTsv_glyph_kbdW*(3+map_xy*4),LTsv_glyph_kbdH*6
-    kanmap_checkboxT=[["rewrite☐","rewrite☑"],["swap☐","swap☑"]]; kanmap_checkboxC=[0]*kanmap_checkboxlen
+    kanmap_checkboxL=[3,7,8]; kanmap_checkboxT=[["update☐","update☑"],["rewrite☐","rewrite☑"],["swap☐","swap☑"]]
+    kanmap_checkboxX,kanmap_checkboxY,kanmap_checkboxC=[0]*len(kanmap_checkboxL),[0]*len(kanmap_checkboxL),[0]*len(kanmap_checkboxL)
+    for map_xy in range(len(kanmap_checkboxL)):
+        kanmap_checkboxX[map_xy],kanmap_checkboxY[map_xy]=kanmap_checkboxL[map_xy]*LTsv_glyph_kbdW,LTsv_glyph_kbdH*6
     kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=None,event_y=None)
     kanmap_canvas=LTsv_canvas_new(kanmap_window,widget_x=0,widget_y=0,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,
      event_p=LTsv_kanmap_mousepress,event_m=LTsv_kanmap_mousemotion,event_r=LTsv_kanmap_mouserelease,event_e=None,event_l=None,event_w=50)
