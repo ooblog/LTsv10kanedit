@@ -107,6 +107,9 @@
 ✖	英:heavy multiplication x	名:バツ(絵文字)	異:×	俗:	代:×	非:✔	活:[9agf][lmsr][eflk][78ed][jkqp]
 ✓	英:check mark	名:チェックマーク	代:✔	非:×	活:[klrq][67dc][dekj][fgml][45hg]	漫:[AQBQFUIRIOKOKSFXAS]
 ✔	英:heavy check mark	名:チェックマーク(太字)	代:✓	非:✖	漫:[AQBQFUIRIOKOKTFYAT]	活:[67deklfg45nmsrxwqpji]
+☐	英:ballot box	名:チェックボックス空(投票箱)	逆:☑	活:[0287psa935zu]	漫:[AOEOEPBPBXJXJPGPGOKOKYAY]
+☑	英:ballot box with check	名:チェックボックスチェック(投票箱)	逆:☐	非:☒	活:[0287deklfga935zu][jpqk][lrsm]	漫:[AOEOEPBPBXJXJPGPGOKOKYAY][CSFVISIUGWEWCU]
+☒	英:ballot box with X	名:チェックボックスバツ(投票箱)	逆:☐	非:☑	活:[02ef35zu][flmg][kqrl][djke]	漫:[AOEOEPBPBXJXJPGPGOKOKYAY][CQDQFSHQIQIRGTIVIWHWFUDWCWCVETCR]
 ＊	英:wide asterisk	名:アスタリスク(全角)	異:×	俗:ポインタ	非:Ж/ж	活:[23fgmlxwkjde][abhg][mnts][67dc][ijpo]	漫:[AQCQESEOGOGSIQKQKSJSITJUKUKWIWGUGYEYEUCWAWAUBUCTBSAS]
 *	英:asterisk	名:アスタリスク(半角)	異:×	俗:ポインタ	非:Ж/ж	活:[671289feklrqwvpoijdc][7de8][jpqk]	漫:M 0,950 200,750 200,1000 400,1000 400,750 600,950 600,700 400,500 600,300 600,50 400,250 400,0 200,0 200,250 0,50 0,300 200,500 0,700 z M 300,700 200,600 300,500 400,600 z M 300,500 200,400 300,300 400,400 z	幅:624
 ÷	英:division		名:わる		異:/	代:／	俗:除/割/商		活:[chni][2398][qrxw]
@@ -166,15 +169,15 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ∇	英:nabla		名:ナブラ記号		音:		訓:		送:		異:	俗:
 ◎	英:a double circle	名:二重丸	俗:市役所/区役所/曇り	活:[14abtsyvpo67][7psa][eflk]
 ⓪	英:circled zero	名:丸0	異:〇	俗:零	活:[05b9fgstzuoqkj76][eklf]
-①	英:circled one	名:丸1	異:一	俗:Ⅰ	活:[05b9rtzuoqed76]
-②	英:circled two	名:丸2	異:二	俗:Ⅱ	顔:2get ｽﾞｻｰc⌒っﾟДﾟ)っ	活:[05b9lmstzuoqed76]
-③	英:circled three	名:丸3	異:三	俗:Ⅲ	顔:( ③皿③)３ゲットロボだよ「顔③」で漢直できる③のやつだよ	活:[05bastzuopjked76]
-④	英:circled four	名:丸4	異:四	俗:Ⅳ	活:[05b8egmlrtzuoqkj76]
-⑤	英:circled five	名:丸5	異:五	俗:Ⅴ	活:[05bagfrtzuopjk86]
-⑥	英:circled six	名:丸6	異:六	俗:Ⅵ	活:[05b8egstzuop76]
-⑦	英:circled seven	名:丸7	異:七	俗:Ⅶ	活:[05bastzuorfekj76]
-⑧	英:circled eight	名:丸8	異:八	俗:Ⅷ	活:[05b9fgstzuoqkj76]
-⑨	英:circled nine	名:丸9			音:		訓:		送:		異:九	俗:Ⅸ	活:[05bastzuoprlj76]
+①	英:circled one	名:丸1	異:一	俗:Ⅰ	代:🀐	活:[05b9rtzuoqed76]
+②	英:circled two	名:丸2	異:二	俗:Ⅱ	代:🀑	顔:2get ｽﾞｻｰc⌒っﾟДﾟ)っ	活:[05b9lmstzuoqed76]
+③	英:circled three	名:丸3	異:三	俗:Ⅲ	代:🀒	顔:( ③皿③)３ゲットロボだよ「顔③」で漢直できる③のやつだよ	活:[05bastzuopjked76]
+④	英:circled four	名:丸4	異:四	俗:Ⅳ	代:🀓	活:[05b8egmlrtzuoqkj76]
+⑤	英:circled five	名:丸5	異:五	俗:Ⅴ	代🀔:	活:[05bagfrtzuopjk86]
+⑥	英:circled six	名:丸6	異:六	俗:Ⅵ	代:🀕	活:[05b8egstzuop76]
+⑦	英:circled seven	名:丸7	異:七	俗:Ⅶ	代:🀖	活:[05bastzuorfekj76]
+⑧	英:circled eight	名:丸8	異:八	俗:Ⅷ	代:🀗	活:[05b9fgstzuoqkj76]
+⑨	英:circled nine	名:丸9			音:	訓:		送:		異:九	俗:Ⅸ	代:🀘	活:[05bastzuoprlj76]
 ⑩	英:circled ten	名:丸10	異:十	俗:Ⅹ	活:[05baghzu][7pqrlk8][flmg]
 ⑪	英:circled eleven	名:丸11	俗:Ⅺ	活:[05bastzu][7pr9]
 ⑫	英:circled twelve	名:丸12			音:		訓:		送:		異:	俗:Ⅻ	活:[05bamnzu][7prfe8]
@@ -198,26 +201,26 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 Ⅹ	英:roman ten		名:ローマ数字10		音:		訓:		送:		異:	俗:
 Ⅺ	英:roman eleven 	名:ローマ数字11		音:		訓:		送:		異:	俗:
 Ⅻ	英:roman twelve 	名:ローマ数字12		音:		訓:		送:		異:	俗:
-０	英:wide zero	名:０(全角)	異:零	俗:零	活:[14abtsyvpo67][7jkef9][flkqsg]	漫:[14btyvo6][DQCRCVHQ][ISEWHWIV]
-0	英:zero			名:0(半角)		音:		訓:		送:	異:	逆:	俗:	活:[0287po][89xvpq]	漫:[029xvo][CQCVDWEWERDQ]	幅:624
-１	英:wide one		名:１(全角)		音:		訓:		送:	異:一	逆:	俗:壱	活:[7823rsyvpqed]	漫:[723rsyvpqed]
-1	英:one			名:1(半角)		音:		訓:		送:	異:	逆:	俗:	活:[6712wvdc]	漫:[COEOEYCYCSASAQBQCP]	幅:624
-２	英:wide two	名:２(全角)	異:二	俗:弐	活:[67dc][14a7][dgabnj][ijptzu]	漫:[AQCOIOKQKUCUCWKWKYAYAUCSISIRHQDQCRCSAS]
-2	英:two			名:2(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][ijprxu][dekj]	漫:[APBOFOGPGSCWGWGYAYAVEREQAQ]	幅:624
-３	英:wide three	名:３(全角)	異:三	俗:参	顔:( ㊤皿㊤)３ゲットロボだよ「顔３」で漢直できる丸いやつだよ	非:З/з	活:[67dc][14a7][abhg][egmk][mnts][psyv][ijpo]	漫:[AQCOIOKQKSJTKUKWIYCYAWAUCUCVDWHWIVHUEUESHSIRHQDQCRCSAS]
-3	英:three		名:3(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][ceki][klxuoq]	漫:[AOFOGPGSFTGUGXFYAYAWEWEVDUAUASDSEREQAQ]	幅:624
-４	英:wide four	名:４(全角)	異:四	俗:肆	活:[01jk89lntrxwqo]
-4	英:four			名:4(半角)		音:		訓:		送:	異:	逆:	俗:	活:[7823xwqocdd][djke]	漫:[c23xwqo][ERCTCUEU]	幅:624
-５	英:wide five		名:５(全角)		音:		訓:		送:	異:五	逆:	俗:伍	活:[05b7dgmi][mnts][psyv]	漫:[AOKOKQCQCSISKUKWIYAYAWHWIVHUAU]
-5	英:five			名:5(半角)		音:		訓:		送:	異:	逆:	俗:	活:[0397dfxuoqki]	漫:[AOGOGQCQCSFSGTGXFYAYAWEWEUAU]	幅:624
-６	英:wide six	名:６(全角)	異:六	俗:陸	活:[14a7][67dgmntsyvpo][jpsm]	漫:[AQCOHOHQDQCRCSISKUKWIYCYAW][CUCVDWHWIVHU]
-6	英:wide six		名:6(半角)		音:		訓:		送:	異:	逆:	俗:	活:[1397][67dfxu][jpqk]	漫:[COGOGQCQCSFSGTGXFYBYAXAQ][jpqk]	幅:624
-７	英:wide seven	名:７(全角)	異:七	俗:漆	活:[05hga7dc][fgml][klxw]	漫:[AOKOKRGVGYEYEUIQCQCSAS]
-7	英:seven		名:7(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe86][dewv]	漫:[AOGOGRETEYCYCSEQAQ]	幅:624
-８	英:wide eight	名:８(全角)	異:八	俗:捌	活:[14abhgmntsyvpoijdc67][7dga][jpsm]	漫:[COIOKQKSJTKUKWIYCYAWAUBTASAQ][DQCRDSHSIRHQ][DUCVDWHWIVHU]
-8	英:eight		名:8(半角)		音:		訓:		送:	異:	逆:	俗:	活:[03fe87dc][ijpqklxu][dekj]	漫:[BOFOGPGSFTGUGXFYBYAXAUBTASAP][CQCRDSEREQ][DUCVCWEWEV]	幅:624
-９	英:wide nine	名:９(全角)	異:九	俗:玖	逆:9	活:[14abtsmjdc67][psyv][7dga]	漫:[COIOKQKWIYCYCWHWIVIUCUASAQ][DQCRDSISIRHQ]
-9	英:nine			名:9(半角)		音:		訓:		送:	異:	逆:９	俗:	活:[03rqkjddc][7de8][pqwv]	漫:[BOGOGWEYCYCXEVEUCUASAP][CQCRDSESEQ]	幅:624
+０	英:wide zero	名:０(全角)	訓:れい	異:零	俗:零	逆:0	代:	活:[14abtsyvpo67][7jkef9][flkqsg]	漫:[14btyvo6][DQCRCVHQ][ISEWHWIV]
+0	英:zero		名:0(半角)	訓:れい	異:	俗:	逆:０	活:[0287po][89xvpq]	漫:[029xvo][CQCVDWEWERDQ]	幅:624
+１	英:wide one	名:１(全角)	訓:いち	異:一	逆:	俗:壱	逆:1	代:🀙	活:[7823rsyvpqed]	漫:[723rsyvpqed]
+1	英:one			名:1(半角)	訓:いち	異:	逆:	俗:	逆:１	活:[6712wvdc]	漫:[COEOEYCYCSASAQBQCP]	幅:624
+２	英:wide two	名:２(全角)	訓:に	異:二	俗:弐	逆:2	代:🀚	活:[67dc][14a7][dgabnj][ijptzu]	漫:[AQCOIOKQKUCUCWKWKYAYAUCSISIRHQDQCRCSAS]
+2	英:two			名:2(半角)	訓:に	異:	逆:	俗:	逆:２	活:[03fe86][ijprxu][dekj]	漫:[APBOFOGPGSCWGWGYAYAVEREQAQ]	幅:624
+３	英:wide three	名:３(全角)	訓:さん	異:三	俗:参	逆:3	顔:( ㊤皿㊤)３ゲットロボだよ「顔３」で漢直できる丸いやつだよ	非:З/з	代:🀛	活:[67dc][14a7][abhg][egmk][mnts][psyv][ijpo]	漫:[AQCOIOKQKSJTKUKWIYCYAWAUCUCVDWHWIVHUEUESHSIRHQDQCRCSAS]
+3	英:three		名:3(半角)	訓:さん	異:	逆:	俗:	逆:３	活:[03fe86][ceki][klxuoq]	漫:[AOFOGPGSFTGUGXFYAYAWEWEVDUAUASDSEREQAQ]	幅:624
+４	英:wide four	名:４(全角)	訓:よん	異:四	俗:肆	逆:4	代:🀜	活:[01jk89lntrxwqo]
+4	英:four		名:4(半角)	訓:よん	異:	俗:	逆:４	活:[7823xwqocdd][djke]	漫:[c23xwqo][ERCTCUEU]	幅:624
+５	英:wide five	名:５(全角)	訓:ご	異:五	逆:5	俗:伍	代:🀝	活:[05b7dgmi][mnts][psyv]	漫:[AOKOKQCQCSISKUKWIYAYAWHWIVHUAU]
+5	英:five			名:5(半角)	訓:ご	異:	逆:５	俗:	活:[0397dfxuoqki]	漫:[AOGOGQCQCSFSGTGXFYAYAWEWEUAU]	幅:624
+６	英:wide six	名:６(全角)	訓:ろく	異:六	俗:陸	逆:6	代:🀞	活:[14a7][67dgmntsyvpo][jpsm]	漫:[AQCOHOHQDQCRCSISKUKWIYCYAW][CUCVDWHWIVHU]
+6	英:wide six	名:6(半角)	訓:ろく	異:	逆:６	俗:	活:[1397][67dfxu][jpqk]	漫:[COGOGQCQCSFSGTGXFYBYAXAQ][jpqk]	幅:624
+７	英:wide seven	名:７(全角)	訓:なな	異:七	俗:漆	逆:7	代:🀟	活:[05hga7dc][fgml][klxw]	漫:[AOKOKRGVGYEYEUIQCQCSAS]
+7	英:seven		名:7(半角)	訓:なな	異:	逆:７	俗:	活:[03fe86][dewv]	漫:[AOGOGRETEYCYCSEQAQ]	幅:624
+８	英:wide eight	名:８(全角)	訓:はち	異:八	俗:捌	逆:8	代:🀠	活:[14abhgmntsyvpoijdc67][7dga][jpsm]	漫:[COIOKQKSJTKUKWIYCYAWAUBTASAQ][DQCRDSHSIRHQ][DUCVDWHWIVHU]
+8	英:eight		名:8(半角)	訓:はち	異:	俗:	逆:８	活:[03fe87dc][ijpqklxu][dekj]	漫:[BOFOGPGSFTGUGXFYBYAXAUBTASAP][CQCRDSEREQ][DUCVCWEWEV]	幅:624
+９	英:wide nine	名:９(全角)	訓:きゅう	異:九	俗:	俗:	逆:9	俗:玖	代:🀡	活:[14abtsmjdc67][psyv][7dga]	漫:[COIOKQKWIYCYCWHWIVIUCUASAQ][DQCRDSISIRHQ]
+9	英:nine			名:9(半角)	訓:きゅう	異:	俗:	逆:９	活:[03rqkjddc][7de8][pqwv]	漫:[BOGOGWEYCYCXEVEUCUASAP][CQCRDSESEQ]	幅:624
 ＠	英:wide atmark	名:アットマーク(全角)	俗:(a)	逆:@	非:a	活:[14abtsyvpo67][7pqef9][flmg]	漫:[14btyvo6][DQCRCVDWEWESGQ][GTGUIUISHS]
 @	英:atmark	名:アットマーク(半角)	俗:(a)	逆:＠	非:ａ	活:[03xuijde86][jpqk]	漫:[AOFOGPGXFYBYAXAUCSESEQAQ][DUCVCWEWEU]	幅:624
 ａ	英:wide a	名:エイ(小文字全角)	異:Ａ	代:a	非:α/а	活:[14stzvpo67][7pr9]	漫:[14stzvo6][DQCRCVDWGWGQ]
@@ -762,7 +765,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ⼊	英:radical 11		名:ニュウブ		音:		訓:		送:		異:入	俗:入部		熙:入部
 入	英:insert/enter		名:にゅう	音:ニュウ	訓:いれる/はいる	送:入門/入れる/入る	異:	俗:	熙:⼊
 ⼋	英:radical 12		名:ハチブ		音:		訓:		送:		異:八	俗:八部		熙:八部
-八	英:eight	名:はち	音:ハチ/ハッ	訓:やつ/やっつ	送:尺八/八卦/八ツ橋/八つ	異:捌	俗:8	熙:⼋	地:八戸	活:[2398][9agf][ghzy][cdvu]
+八	英:eight	名:はち	音:ハチ/ハッ	訓:やつ/やっつ	送:尺八/八卦/八ツ橋/八つ	異:捌	俗:8	代:🀎	熙:⼋	地:八戸	活:[2398][9agf][ghzy][cdvu]
 ⼌	英:radical 13		名:ケイブ		音:		訓:		送:		異:冂	俗:冂部		熙:冂部
 冂	英:down box		名:けいがまえ		音:ケイ		訓:		送:		異:	俗:どうがまえ/えんがまえ	熙:⼌
 ⼍	英:radical 14		名:ベキブ		音:		訓:		送:		異:冖	俗:冖部		熙:冖部
@@ -1363,18 +1366,18 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 〇	英:zero	名:ゼロ	音:レイ/ゼロ	異:零	俗:0	活:[6714abtsa7prxvpo]
 壱	英:one			名:いち			音:イチ		訓:		送:壱萬円	異:一	俗:壹/弌/1
 弐	英:two			名:ニ			音:ニ		訓:		送:弐萬円	異:二	俗:貮/貳/2
-三	英:three	名:さん	音:サン/ザン/ゾウ	訓:み/みつ	送:三角形/三昧/伊丹十三/三度/丑三つ	異:参	俗:ミ/叁/3	地:三重	顔:[ ㊤皿㊤]３ゲットロボだよ「顔三」で漢直できる角張ったやつだよ	顔:	活:[05b6][dgmj][otzu]
+三	英:three	名:さん	音:サン/ザン/ゾウ	訓:み/みつ	送:三角形/三昧/伊丹十三/三度/丑三つ	異:参	俗:ミ/叁/3	地:三重	代:🀉	顔:[ ㊤皿㊤]３ゲットロボだよ「顔三」で漢直できる角張ったやつだよ	顔:	活:[05b6][dgmj][otzu]
 参	英:three/visit/refer	名:まいる	音:サン	訓:まいり/まいる	送:参照/宮参り/参る	異:三	俗:3	活:[67128934abhgmntrxvpoijdc][jpqk]
-四	英:four	名:よん	音:シ	訓:よん	送:五人揃って四天王/ミニ四駆	異:肆	俗:4	地:四国	活:[05zu][9fga][jpsm]
-肆	英:four/shop		名:シ			音:シ		訓:よん		送:酒肆/肆萬円	異:四	俗:4
+四	英:four	名:よん	音:シ	訓:よん	送:五人揃って四天王/ミニ四駆	異:肆	俗:4	地:四国	代:🀊	活:[05zu][9fga][jpsm]
+肆	英:four/shop		名:シ			音:シ		訓:よん		送:酒肆/肆萬円	異:四	代:🀋	俗:4
 五	英:five	名:ご	音:ゴ	訓:いつつ	送:五輪/五つ子	異:伍	俗:5	地:五所川原	活:[05b8egstzuopjicd76][kqrl]
 伍	英:five			名:ゴ			音:ゴ		訓:		送:伍萬円	異:五	俗:5
-六	英:six	名:ろく	音:ロク/ロ/ロッ	訓:む	送:双六/廿六木/五臓六腑/蛙ピョコピョコ六ピョコピョコ	異:陸	俗:6	地:六ヶ所村	活:[68239bhc][lmsr][stzy][jkqp][opvu]
+六	英:six	名:ろく	音:ロク/ロ/ロッ	訓:む	送:双六/廿六木/五臓六腑/蛙ピョコピョコ六ピョコピョコ	異:陸	俗:6	代:🀌	地:六ヶ所村	活:[68239bhc][lmsr][stzy][jkqp][opvu]
 陸	英:six/land/shore/coast	名:リク			音:リク/ロク	訓:		送:陸上/陸萬円	異:六	俗:6
-七	英:seven		名:なな		音:シチ		訓:なな		送:七人の侍/七転び八起き	異:漆	俗:柒/漆/質	活:[128bheqtzvdc67]
+七	英:seven		名:なな		音:シチ		訓:なな		送:七人の侍/七転び八起き	異:漆	俗:柒/漆/質	俗:７	代:🀍	活:[128bheqtzvdc67]
 漆	英:seven/japan lacquer 	名:うるし	音:シチ/シツ/シッ	訓:うるし	送:漆萬円/雷陳膠漆/漆器/漆塗り	異:七	俗:柒/漆/質/7
 捌	英:eight/drain/vent/footwork	名:はけ		音:ハチ	訓:はけ/さばき	送:捌萬円/水捌け/足捌き	異:八	俗:8
-九	英:nine			名:きゅう	音:ク/キュウ	訓:ここのつ	送:第九/九官鳥/九つ	異:玖	俗:9	地:九州	活:[128astzxfewvdc67]
+九	英:nine			名:きゅう	音:ク/キュウ	訓:ここのつ	送:第九/九官鳥/九つ	異:玖	俗:9	代:🀏	地:九州	活:[128astzxfewvdc67]
 玖	英:nine			名:キュウ		音:		訓:		送:玖萬円	異:九	俗:9
 拾	英:ten		名:ひろう	音:シュウ/ジュウ	訓:ひろい/ひろう	送:収拾/拾萬円/命拾い/火中の栗を拾う	異:十	俗:10^1/10
 廿	英:twenty	名:にじゅう	訓:にじゅう/はつ/はた/とど	送:本朝廿四孝/廿日/廿枝/廿六木	異:卄	俗:弐拾/貳拾/20	活:[128934abhgyvdc67][eqrf]
@@ -1928,45 +1931,54 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 撥	英:			名:			音:		訓:		送:撥弦/撥水	異:		俗:撥条(バネ/ゼンマイ/薇)		代:
 醗	英:			名:かもす	音:		訓:		送:				異:醱		俗	代:	代:
 醱	英:			名:かもす	音:		訓:		送:				異:醗		俗	代:	代:
-梅	英:			名:			音:		訓:		送:				異:發	俗:		代:🀢
-蘭	英:			名:			音:		訓:		送:				異:發	俗:		代:🀣
-竹	英:			名:			音:		訓:		送:				異:發	俗:		代:🀤
+梅	英:plum			名:			音:		訓:		送:				異:發	俗:		代:🀢
+蘭	英:orchid			名:			音:		訓:		送:				異:發	俗:		代:🀣
+菊	英:chrysanthemum			名:			音:		訓:		送:				異:發	俗:		代:🀥
 搭	英:			名:			音:		訓:		送:				異:發	俗:		代:🀪
-🀀	英:Mahjong EastWind	名:東(麻雀牌)	音:トン	俗:	代:東	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀁	英:Mahjong SouthWind	名:南(麻雀牌)	音:ナン	俗:	代:南	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀂	英:Mahjong WestWind	名:西(麻雀牌)	音:シャア	俗:	代:西	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀃	英:Mahjong NorthWind	名:北(麻雀牌)	音:ペー	俗:	代:北	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀄	英:Mahjong RedDragon	名:中(麻雀牌)	音:チュン	俗:紅中(フォンチュン)	代:中	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z M 150,700 650,700 650,400 150,400 z M 200,650 200,450 600,450 600,650 z M 350,850 450,850 500,800 450,750 450,300 450,200 300,150 350,250 350,500 z	幅:824
-🀅	英:Mahjong GreenDragon	名:發(麻雀牌)	音:ハツ	俗:緑發(リューファ)	代:發	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀆	英:Mahjong WhiteDragon	名:白(麻雀牌)	音:ハク	俗:白板(パイパン)	代:白	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
-🀇	英:Mahjong	名:一萬(麻雀牌)	音:	俗:	代:一	難:麻雀牌	筆:
-🀈	英:Mahjong	名:二萬(麻雀牌)	音:	俗:	代:二	難:麻雀牌	筆:
-🀉	英:Mahjong	名:三萬(麻雀牌)	音:	俗:	代:三	難:麻雀牌	筆:
-🀊	英:Mahjong	名:四萬(麻雀牌)	音:	俗:	代:四	難:麻雀牌	筆:
-🀋	英:Mahjong	名:五萬(麻雀牌)	音:	俗:	代:五	難:麻雀牌	筆:
-🀌	英:Mahjong	名:六萬(麻雀牌)	音:	俗:	代:六	難:麻雀牌	筆:
-🀍	英:Mahjong	名:七萬(麻雀牌)	音:	俗:	代:七	難:麻雀牌	筆:
-🀎	英:Mahjong	名:八萬(麻雀牌)	音:	俗:	代:八	難:麻雀牌	筆:
-🀏	英:Mahjong	名:九萬(麻雀牌)	音:	俗:	代:九	難:麻雀牌	筆:
-🀐	英:Mahjong	名:一索(麻雀牌)	音:	俗:	代:①	難:麻雀牌	筆:
-🀑	英:Mahjong	名:二索(麻雀牌)	音:	俗:	代:②	難:麻雀牌	筆:
-🀒	英:Mahjong	名:三索(麻雀牌)	音:	俗:	代:③	難:麻雀牌	筆:
-🀓	英:Mahjong	名:四索(麻雀牌)	音:	俗:	代:④	難:麻雀牌	筆:
-🀔	英:Mahjong	名:五索(麻雀牌)	音:	俗:	代:⑤	難:麻雀牌	筆:
-🀕	英:Mahjong	名:六索(麻雀牌)	音:	俗:	代:⑥	難:麻雀牌	筆:
-🀖	英:Mahjong	名:七索(麻雀牌)	音:	俗:	代:⑦	難:麻雀牌	筆:
-🀗	英:Mahjong	名:八索(麻雀牌)	音:	俗:	代:⑧	難:麻雀牌	筆:
-🀘	英:Mahjong	名:九索(麻雀牌)	音:	俗:	代:⑨	難:麻雀牌	筆:
-🀙	英:Mahjong	名:一筒(麻雀牌)	音:	俗:	代:１	難:麻雀牌	筆:
-🀚	英:Mahjong	名:二筒(麻雀牌)	音:	俗:	代:２	難:麻雀牌	筆:
-🀛	英:Mahjong	名:三筒(麻雀牌)	音:	俗:	代:３	難:麻雀牌	筆:
-🀜	英:Mahjong	名:四筒(麻雀牌)	音:	俗:	代:４	難:麻雀牌	筆:
-🀝	英:Mahjong	名:五筒(麻雀牌)	音:	俗:	代:５	難:麻雀牌	筆:
-🀞	英:Mahjong	名:六筒(麻雀牌)	音:	俗:	代:６	難:麻雀牌	筆:
-🀟	英:Mahjong	名:七筒(麻雀牌)	音:	俗:	代:７	難:麻雀牌	筆:
-🀠	英:Mahjong	名:八筒(麻雀牌)	音:	俗:	代:８	難:麻雀牌	筆:
-🀡	英:Mahjong	名:九筒(麻雀牌)	音:	俗:	代:９	難:麻雀牌	筆:
-🀫	英:Mahjong Back	名:裏(麻雀牌)	代:牌	難:麻雀牌	幅:824	筆:[APBOHOIPIXHYBYAX]
+🀀	英:Mahjong EastWind	名:東(麻雀牌)	音:トン	俗:風牌	代:東	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
+🀁	英:Mahjong SouthWind	名:南(麻雀牌)	音:ナン	俗:風牌	代:南	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z M 150,700 350,700 350,800 450,800 450,700 650,700 650,600 450,600 450,550 650,550 650,200 500,200 550,250 550,450 450,450 450,350 500,350 500,250 450,250 450,200 350,200 350,250 300,250 300,350 350,350 350,450 250,450 250,200 150,200 150,550 350,550 350,600 150,600 z	幅:824
+🀂	英:Mahjong WestWind	名:西(麻雀牌)	音:シャア	俗:風牌	代:西	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z M 150,800 650,800 650,700 550,700 550,600 650,600 650,200 150,200 150,600 250,600 250,700 150,700 z M 350,700 350,600 450,600 450,700 z M 350,500 350,400 250,350 250,300 550,300 550,400 450,400 450,500 z	幅:824
+🀃	英:Mahjong NorthWind	名:北(麻雀牌)	音:ペー	俗:風牌	代:北	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z M 250,800 350,800 350,200 250,200 250,300 150,300 150,400 250,400 250,550 150,550 150,650 250,650 z M 450,800 550,800 550,650 700,650 650,550 550,550 550,300 700,300 700,200 550,200 450,200 z	幅:824
+🀄	英:Mahjong RedDragon	名:中(麻雀牌)	音:チュン	俗:三元牌/紅中(フォンチュン)	代:中	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z M 150,650 350,650 350,800 450,800 450,650 650,650 650,350 450,350 450,250 350,200 350,350 150,350 z M 250,550 250,450 350,450 350,550 z M 450,550 450,450 550,450 550,550 z	幅:824
+🀅	英:Mahjong GreenDragon	名:發(麻雀牌)	音:ハツ	俗:三元牌/緑發(リューファ)	代:發	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
+🀆	英:Mahjong WhiteDragon	名:白(麻雀牌)	音:ハク	俗:三元牌/白板(パイパン)	代:白	難:麻雀牌	筆:M 100,1000 700,1000 800,900 800,100 700,0 100,0 0,100 0,900 z M 150,950 50,850 50,150 150,50 650,50 750,150 750,850 650,950 z	幅:824
+🀇	英:Mahjong 1Character	名:一萬(麻雀牌)	音:イーワン	俗:萬子(マンズ)	代:一	難:麻雀牌	筆:
+🀈	英:Mahjong 2Character	名:二萬(麻雀牌)	音:リャンワン	俗:萬子(マンズ)	代:二	難:麻雀牌	筆:
+🀉	英:Mahjong 3Character	名:三萬(麻雀牌)	音:サンワン	俗:萬子(マンズ)	代:三	難:麻雀牌	筆:
+🀊	英:Mahjong 4Character	名:四萬(麻雀牌)	音:スーワン	俗:萬子(マンズ)	代:四	難:麻雀牌	筆:
+🀋	英:Mahjong 5Character	名:五萬(麻雀牌)	音:ウーワン	俗:萬子(マンズ)	代:五	難:麻雀牌	筆:
+🀌	英:Mahjong 6Character	名:六萬(麻雀牌)	音:ローワン	俗:萬子(マンズ)	代:六	難:麻雀牌	筆:
+🀍	英:Mahjong 7Character	名:七萬(麻雀牌)	音:チーワン	俗:萬子(マンズ)	代:七	難:麻雀牌	筆:
+🀎	英:Mahjong 8Character	名:八萬(麻雀牌)	音:パーワン	俗:萬子(マンズ)	代:八	難:麻雀牌	筆:
+🀏	英:Mahjong 9Character	名:九萬(麻雀牌)	音:キューワン	俗:萬子(マンズ)	代:九	難:麻雀牌	筆:
+🀐	英:Mahjong 1Circle	名:一索(麻雀牌)	音:イーソー	俗:索子(ソーズ)	代:①	難:麻雀牌	筆:
+🀑	英:Mahjong 2Circle	名:二索(麻雀牌)	音:リャンソー	俗:索子(ソーズ)	代:②	難:麻雀牌	筆:
+🀒	英:Mahjong 3Circle	名:三索(麻雀牌)	音:サンソー	俗:索子(ソーズ)	代:③	難:麻雀牌	筆:
+🀓	英:Mahjong 4Circle	名:四索(麻雀牌)	音:スーソー	俗:索子(ソーズ)	代:④	難:麻雀牌	筆:
+🀔	英:Mahjong 5Circle	名:五索(麻雀牌)	音:ウーソー	俗:索子(ソーズ)	代:⑤	難:麻雀牌	筆:
+🀕	英:Mahjong 6Circle	名:六索(麻雀牌)	音:ローソー	俗:索子(ソーズ)	代:⑥	難:麻雀牌	筆:
+🀖	英:Mahjong 7Circle	名:七索(麻雀牌)	音:チーソー	俗:索子(ソーズ)	代:⑦	難:麻雀牌	筆:
+🀗	英:Mahjong 8Circle	名:八索(麻雀牌)	音:パーソー	俗:索子(ソーズ)	代:⑧	難:麻雀牌	筆:
+🀘	英:Mahjong 9Circle	名:九索(麻雀牌)	音:キューソー	俗:索子(ソーズ)	代:⑨	難:麻雀牌	筆:
+🀙	英:Mahjong 1Bamboo	名:一筒(麻雀牌)	音:イーピン	俗:筒子(ピンズ)	代:１	難:麻雀牌	筆:
+🀚	英:Mahjong 2Bamboo	名:二筒(麻雀牌)	音:リャンピン	俗:筒子(ピンズ)	代:２	難:麻雀牌	筆:
+🀛	英:Mahjong 3Bamboo	名:三筒(麻雀牌)	音:サンピン	俗:筒子(ピンズ)	代:３	難:麻雀牌	筆:
+🀜	英:Mahjong 4Bamboo	名:四筒(麻雀牌)	音:スーピン	俗:筒子(ピンズ)	代:４	難:麻雀牌	筆:
+🀝	英:Mahjong 5Bamboo	名:五筒(麻雀牌)	音:ウーピン	俗:筒子(ピンズ)	代:５	難:麻雀牌	筆:
+🀞	英:Mahjong 6Bamboo	名:六筒(麻雀牌)	音:ローピン	俗:筒子(ピンズ)	代:６	難:麻雀牌	筆:
+🀟	英:Mahjong 7Bamboo	名:七筒(麻雀牌)	音:チーピン	俗:筒子(ピンズ)	代:７	難:麻雀牌	筆:
+🀠	英:Mahjong 8Bamboo	名:八筒(麻雀牌)	音:パーピン	俗:筒子(ピンズ)	代:８	難:麻雀牌	筆:
+🀡	英:Mahjong 9Bamboo	名:九筒(麻雀牌)	音:キューピン	俗:筒子(ピンズ)	代:９	難:麻雀牌	筆:
+🀢	英:Mahjong Plum	名:梅(麻雀牌)	音:	俗:花牌(ファパイ)	代:梅	難:麻雀牌	筆:
+🀣	英:Mahjong Orchid	名:蘭(麻雀牌)	音:	俗:花牌(ファパイ)	代:蘭	難:麻雀牌	筆:
+🀤	英:Mahjong Bamboo	名:竹(麻雀牌)	音:	俗:花牌(ファパイ)	代:竹	難:麻雀牌	筆:
+🀥	英:Mahjong Chrysanthemum	名:菊(麻雀牌)	音:	俗:花牌(ファパイ)	代:菊	難:麻雀牌	筆:
+🀦	英:Mahjong Spring	名:春(麻雀牌)	音:	俗:花牌(ファパイ)	代:春	難:麻雀牌	筆:
+🀧	英:Mahjong Summer	名:夏(麻雀牌)	音:	俗:花牌(ファパイ)	代:夏	難:麻雀牌	筆:
+🀨	英:Mahjong Autumn	名:秋(麻雀牌)	音:	俗:花牌(ファパイ)	代:秋	難:麻雀牌	筆:
+🀩	英:Mahjong Winter	名:冬(麻雀牌)	音:	俗:花牌(ファパイ)	代:冬	難:麻雀牌	筆:
+🀪	英:Mahjong Joker	名:百搭(麻雀牌)	音:	俗:	代:	難:麻雀牌	筆:
+🀫	英:Mahjong Back	名:裏(麻雀牌)	代:裏	難:麻雀牌	幅:824	筆:[APBOHOIPIXHYBYAX]
 点	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:點	活:[239bhgsrxwqpde][opvu][stzy][eklf]
 點	英:point/dot/punctum/mark/score/piece/item/view/spot/light 	名:てん	音:テン	送:点字,点灯,百点満点,品物数点,一点凝視	異:点	俗:點點…(無言)	漫:[039bhgsrxwqpji][opvu][stzy][eklf]
 ⠀	英:braille(U+2800)	名:点字「⠀」	俗:base64風6点字「_」	難:点字	活:[ouysyu]	幅:824
