@@ -379,14 +379,14 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Ψ	英:psi	名:プサイ(大文字)	異:ψ	活:[23lmsrxwqpjk][01ji][45nm]	漫:[AOCOCTDUETEOGOGTHUITIOKOKUIWGWGYEYEWCWAU]
 ω	英:omega	名:オメガ(小文字)	異:Ω	活:[1287][34a9][67po][abts][efrq][pqwv][rsyx]	漫:[AQCOEOEQDQCRCVDWEVESGSGVHWIVIRHQGQGOIOKQKWIYGYFXEYCYAW]
 Ω	英:omega	名:オメガ(大文字)	異:ω	俗:オーム(電気抵抗)	活:[jkwuop][67ji][14a7][abnm][lmstzx]	漫:[COIOKQKTIVIWKWKYGYGUISIRHQDQCRCSEUEYAYAWCWCVATAQ]
-а	英:Cyrillic A		名:アー(小文字)		音:		訓:		送:		異:А	俗:	非:ａ
-А	英:Cyrillic A		名:アー(大文字)		音:		訓:		送:		異:а	俗:	非:Ａ
-б	英:Cyrillic Be		名:ベー(小文字)		音:		訓:		送:		異:Б	俗:
-Б	英:Cyrillic Be		名:ベー(大文字)		音:		訓:		送:		異:б	俗:
-в	英:Cyrillic Ve		名:ヴェー(小文字)	音:		訓:		送:		異:В	俗:	非:ｂ
-В	英:Cyrillic Ve		名:ヴェー(大文字)	音:		訓:		送:		異:в	俗:	非:Ｂ
-г	英:Cyrillic Ge		名:ゲー(小文字)		音:		訓:		送:		異:Г	俗:		代:ґ
-Г	英:Cyrillic Ge		名:ゲー(大文字)		音:		訓:		送:		異:г	俗:		代:Ґ
+а	英:Cyrillic A	名:アー(小文字)	異:А	非:ａ	活:[24a8][egabzwqpjk][kqsm]	漫:[0][EOIOKQKYEYCWCUESHSIRHQEQ][FUEVFWIWIU]
+А	英:Cyrillic A	名:アー(大文字)	異:а	非:Ａ	活:[78239aghzyspvucd][djmg]	漫:[FOKTKYIYIWCWCYAYAT][ejmf]
+б	英:Cyrillic Be	名:ベー(小文字)	異:Б	活:[8935baghtsywqpde][eqsg]	漫:[d35bahtywp][eqsg]
+Б	英:Cyrillic Be	名:ベー(大文字)	異:б	活:[04a7dgmntsyvpo][jpsm]	漫:[04a7dgntyvo][CUCVDWHWIVHU]
+в	英:Cyrillic Ve	名:ヴェー(小文字)	異:В	非:ｂ	活:[14abhgmntsyv][kqsm][8ef9]	漫:[14bgntyv][EUEWHWIVHU][EQESFSHQ]
+В	英:Cyrillic Ve		名:ヴェー(大文字)	音:		訓:		送:		異:в	俗:	非:Ｂ	活:[04abhgmntsyu][jpsm][7df9]	漫:[04bgntyu][CUCWHWIVHU][CQCSFSHQ]
+г	英:Cyrillic Ge	名:ゲー(小文字)	異:Г	代:ґ	活:[15b9fewv]
+Г	英:Cyrillic Ge	名:ゲー(大文字)	異:г	代:Ґ	活:[05b8edvu]
 ґ	英:Cyrillic Ghe with upturn	名:鉤のゲー(小文字)	音:	訓:		送:		異:Ґ	俗:ウクライナ	代:г
 Ґ	英:Cyrillic Ghe with upturn	名:鉤のゲー(大文字)	音:	訓:		送:		異:ґ	俗:ウクライナ	代:Г
 д	英:Cyrillic De		名:デー(大文字)		音:		訓:		送:		異:Д	俗:	顔:(ﾟдﾟ)	代:ѓ
@@ -408,7 +408,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 ѝ	英:Cyrillic I with grave	名:イーグレイヴ(小文字)	音:	訓:		送:		異:Ѝ	俗:ブルガリア/マケドニア	代:и
 Ѝ	英:Cyrillic I with grave	名:イーグレイヴ(大文字)	音:	訓:		送:		異:ѝ	俗:ブルガリア/マケドニア	代:И
 й	英:Cyrillic Short I	名:イークラートコエ(小文字)	音:	訓:		送:		異:Й	俗:
-Й	英:Cyrillic Short I	名:イークラートコエ(大文字)	音:	訓:		送:		異:й	俗:
+Й	英:Cyrillic Short I	名:イークラートコエ(大文字)	異:й
 к	英:Cyrillic Ka		名:カー(小文字)		音:		訓:		送:		異:К	俗:	非:ｋ	代:ќ
 К	英:Cyrillic Ka		名:カー(大文字)		音:		訓:		送:		異:к	俗:	非:Ｋ	代:Ќ
 ќ	英:Cyrillic Kje		名:チェー(小文字)	音:		訓:		送:		異:Ќ	俗:マケドニア	代:к
@@ -1386,10 +1386,12 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 廿	英:twenty	名:にじゅう	訓:にじゅう/はつ/はた/とど	送:本朝廿四孝/廿日/廿枝/廿六木	異:卄	俗:弐拾/貳拾/20	活:[128934abhgyvdc67][eqrf]
 卅	英:thirty		名:さんじゅう		音:		訓:		送:卅		異:晦	俗:丗/参拾/30
 晦	英:thirty/month end/disappear/blind	名:みそ	音:カイ	訓:みそ/くらます	送:隠晦曲折/大晦日/行方を晦ます	異:卅	俗:参拾/30
-百	英:hundred	名:ひゃく	音:ヒャク/ビャク	訓:もも/どど/どう/お	送:百人力/三百代言/百重/百々目鬼/百目鬼/八百屋	異:陌	俗:10^2/100/桃	活:[05b8ehzucd76][kqsm]
-陌	英:hundred/road/street/north-south	名:ハク		音:ヒャク/ハク/パク	訓:	送:陌萬円/紫陌/阡陌	異:百	俗:10^2/100/佰/東西
-千	英:thousand	名:せん	音:セン	訓:ち	送:千載一遇/千代に八千代に	異:阡	俗:10^3/1,000	地:千葉	顔:	活:[15b9fhnlxwkice87]
-阡	英:thousand/footpath/east-west		名:セン		音:セン		訓:	送:阡萬円	異:千	俗:10^3/1,000/仟/南北
+百	英:hundred	名:ひゃく	音:ヒャク/ビャク	訓:もも/どど/どう/お	送:百人力/三百代言/百重/百々目鬼/百目鬼/八百屋	異:陌	代:佰	俗:10^2/100/桃	活:[05b8ehzucd76][kqsm]
+陌	英:hundred/road/street/north-south	名:ハク		音:ヒャク/ハク/パク	訓:	送:陌萬円/紫陌/阡陌	異:百	代:佰	俗:10^2/100/佰/東西
+佰	英:hundred	名:ハク	音:ヒャク/ハク/パク	送:陌萬円/紫陌/阡陌	異:百	俗:10^2/100/佰/東西	代:陌	活:[15bamntsyvjicd][8ef9][lrsm]
+千	英:thousand	名:せん	音:セン	訓:ち	送:千載一遇/千代に八千代に	異:阡	代:仟	俗:10^3/1,000	地:千葉	顔:	活:[15b9fhnlxwkice87]
+阡	英:thousand/footpath/east-west		名:セン		音:セン		訓:	送:阡萬円	異:千	代:仟	俗:10^3/1,000/仟/南北
+仟	英:thousand	名:セン	音:セン	送:阡萬円	異:千	俗:10^3/1,000/仟/南北	代:阡	活:[15baghnmyxlkwvjicd][8ef9]
 万	英:ten thousand		名:まん		音:マン/バン	訓:よろず	送:壱萬円/万能/萬屋	異:萬	俗:10^4/10,000	活:[05b9fhzxrsmk86][jkqp][opvu]
 萬	英:ten thousand		名:マン		音:マン/バン	訓:よろず	送:壱萬円/万能/萬屋	異:万	俗:10^4/10,000
 億	英:hundred million	名:おく			音:オク		訓:		送:億万長者	異:	俗:10^8/100,000,000	活:[128934abzxrqwvjicd][lrsm]
@@ -1485,8 +1487,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 萊	英:goosefoot/wasteland/	名:ライ			音:ライ		訓:		送:蓬莱		異:莱	俗:藜
 険	英:precipitous/rugged	名:けわしい		音:ケン		訓:けわしい	送:危険/険しい	異:險	俗:
 險	英:precipitous/rugged	名:けわしい		音:ケン		訓:けわしい	送:危険/険しい	異:険	俗:
-輝	英:shine		名:かがやく		音:キ	訓:かがやく/かがやき	送:		異:暉	俗:
-暉	英:shine		名:かがやく		音:キ	訓:かがやく/かがやき	送:		異:輝	俗:
+輝	英:shine	名:かがやく	音:キ	訓:かがやく/かがやき	異:暉
+暉	英:shine	名:かがやく	音:キ	訓:かがやく/かがやき	異:輝	活:[6825tsyxrqwu][9fga]
 粛	英:solemnly/silently	名:			音:シュク	訓:		送:厳粛		異:肅	俗:
 肅	英:solemnly/silently	名:			音:シュク	訓:		送:厳粛		異:粛	俗:
 繍	英:embroidery		名:			音:シュウ	訓:		送:刺繍		異:繡	俗:
@@ -1514,7 +1516,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 蒋	英:Zizania latifolia	名:まこも		音:ショウ	訓:まこも	送:蔣介石/蒋	異:蔣	俗:真菰
 蔣	英:Zizania latifolia	名:まこも		音:ショウ	訓:まこも	送:蔣介石/蒋	異:蒋	俗:真菰
 籤	英:sortition		名:くじ			音:セン		訓:くじ		送:抽籤/貧乏籤	異:鬮	俗:
-鬮	英:sortition		名:くじ			音:		訓:くじ		送:鬮改め	異:籤	俗:
+鬮	英:sortition	名:くじ	訓:くじ	送:鬮改め	異:籤	活:[028935zwqpvu][djke][9lma][kqrl]
 蝉	英:cicada		名:せみ			音:		訓:せみ/ぜみ	送:蝉丸/素数蝉	異:蟬	俗:
 蟬	英:cicada		名:せみ			音:		訓:せみ/ぜみ	送:蝉丸/素数蝉	異:蝉	俗:
 蝋	英:wax/candle/paraffin	名:ロウ			音:ロウ		訓:		送:蝋燭		異:蠟	俗:
@@ -1527,8 +1529,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 鰺	英:horse mackerel	名:あじ			音:		訓:あじ		送:鰺ヶ沢/鯵ヶ沢	異:鯵	俗:	地:鰺ヶ沢	活:[02qpvucd76][8934abtsywqrlk][a]
 亘	英:extend/over/cover/range	名:わたる	音:コウ		訓:		送:綿亘		異:亙	俗:
 亙	英:extend/over/cover/range	名:わたる	音:コウ		訓:		送:綿亘		異:亘	俗:
-哈	英:laugh/breath/respiration/yawn	名:ハ	音:ハ	訓:	送:哈瓦納辣椒(ハバネロ)/哈哈鏡(マジックミラー)	異:咍	俗:HAHAHA/ｗｗｗ/哈哈哈
-咍	英:laugh/deride/ridicule		名:カイ	音:カイ		訓:		送:咍々		異:哈	俗:咳
+哈	英:laugh/breath/respiration/yawn	名:ハ	音:ハ	送:哈瓦納辣椒(ハバネロ)/哈哈鏡(マジックミラー)	異:咍	俗:HAHAHA/ｗｗｗ/哈哈哈	活:[6934abhgmnzwqo][9fga][eklf][lrsm]
+咍	英:laugh/deride/ridicule	名:カイ	音:カイ	送:咍々	異:哈	俗:咳	活:[6934abhgmnzwqo][9fga][eklf][lrsm]
 凛	英:dignified/imposing/bracing	名:リン		音:リン		訓:		送:凛々しい	異:凜	俗:
 凜	英:dignified/imposing/bracing	名:リン		音:リン		訓:		送:凛々しい	異:凛	俗:
 尭	英:Emperor Yao		名:ギョウ		音:ギョウ	訓:		送:尭鼓舜木	異:堯	俗:
@@ -1754,9 +1756,12 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 燈	英:lamp/lights		名:ともしび	音:トウ/チン	訓:ともしび	送:蛍光灯/提灯/風前の灯	異:灯	俗:鬼灯(ほおずき)/九蓮宝燈(チューレンポウトー)	活:M 200,1000 800,1000 800,800 1000,800 1000,0 400,0 400,200 200,200 200,0 0,0 0,200 200,200 200,400 0,400 0,800 200,800 z M 400,800 400,600 600,600 600,800 z M 600,400 600,200 800,200 800,400 z
 蝀	英:rainbow		名:トウ			音:トウ		訓:		送:螮蝀泉	異:	俗:	活:[15baghtsyxrqwuopji67][8edjkef9]
 港	英:port/harbor	名:みなと	音:みなと	訓:コウ	送:港町/空港	地:香港	活:[0176][cdji][opvu][239a45hgstzw]
-璧	名:ヘキ	非:壁	漫:[028934abhgmnzuopji][7de8][eklf]
-壁	名:かべ	非:璧	漫:[028934abhgstzuopji][7de8][eklf]
-鷲	俗:北楽天ゴールデンイーグルス
+璧	英:	名:ヘキ	非:壁	漫:[028934abhgmnzuopji][7de8][eklf]
+壁	英:	名:かべ	非:璧	漫:[028934abhgstzuopji][7de8][eklf]
+戍	英:			名:			音:		訓:		送:		異:	非:戌/戊	活:[68239bhgmnzysrfekjvu][qrxw]
+戌	英:			名:			音:		訓:		送:		俗:戊戌の政変	非:戌/戊	活:[6935hgmnzysrfdjkqpvu][qrxw]
+戊	英:			名:			音:		訓:		送:		異:	非:戍/戌	俗:戊戌の政変	活:[6935hgmnzysrfdvu][qrxw]
+鷲	英:	名:	俗:北楽天ゴールデンイーグルス
 鴎	英:			名:			音:		訓:		送:		異:	俗:千葉ロッテマリーンズ
 檻	英:			名:			音:		訓:		送:		異:	俗:オリックスバファローズ
 鯉	英:			名:			音:		訓:		送:		異:	俗:広島東洋カープ
@@ -1930,6 +1935,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 発	英:			名:			音:		訓:		送:				異:發	俗:		代:🀅
 發	英:			名:			音:		訓:		送:				異:発	俗:		代:🀅
 撥	英:			名:			音:		訓:		送:撥弦/撥水	異:		俗:撥条(バネ/ゼンマイ/薇)		代:
+弦	英:			名:			音:		訓:		送:				異:絃	活:[028934abhflntzvuopjicd76][djke][kqrl]
+絃	英:			名:			音:		訓:		送:				異:弦	活:[017934abhflnzvpoijdc][kqrl]
 醗	英:			名:かもす	音:		訓:		送:				異:醱	俗	代:
 醱	英:			名:かもす	音:		訓:		送:				異:醗	俗	代:
 梅	英:plum	名:			音:		訓:		送:				異:		代:🀢	活:[128bhgmnzxrqwvpoijdc67]
@@ -2185,7 +2192,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 氣	英:air/indicatio/atmosphere/flavor/smell/spirit/mind/heart/brave	名:キ	音:キ/ケ		訓:	送:気力/気配	異:気	俗:	簡:气
 祈	英:pray/wish		名:いのり	音:キ	訓:いのる/いのり	送:合格祈願/無事を祈る/平和への祈り	異:祈	俗:
 祈	英:pray/wish		名:いのり	音:キ	訓:いのる/いのり	送:合格祈願/無事を祈る/平和への祈り	異:祈	俗:
-器	英:container/vessel/tool/instrument/implement	名:うつわ	音:キ	訓:うつわ	送:食器,什器,計器/水は方円の器に随う	異:器	俗:UTSUWA
+器	英:container/vessel/tool/instrument/implement	名:うつわ	音:キ	訓:うつわ	送:食器,什器,計器/水は方円の器に随う	異:器	俗:UTSUWA	活:[028935zxrqwu][7de8][9fga][jpqk][lrsm]
 器	英:container/vessel/tool/instrument/implement	名:うつわ	音:キ	訓:うつわ	送:食器,什器,計器/水は方円の器に随う	異:器	俗:UTSUWA
 偽	英:lie/false/fake/pretend	名:いつわり	音:ギ	訓:にせ/いつわり/いつわる	送:偽証罪/看板に偽り無し/年齢を偽る	異:僞	俗:
 僞	英:lie/false/fake/pretend	名:いつわり	音:ギ	訓:にせ/いつわり/いつわる	送:偽証罪/看板に偽り無し/年齢を偽る	異:偽	俗:
@@ -2258,7 +2265,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 泣	英:weep/whimper		名:なく			音:キュウ	訓:		送:泣く子と地頭には勝てぬ/号泣		異:	非:涙/啼/哭	俗:
 鳴	英:chirp/honk/echo/moan	名:なく			音:		訓:		送:鳴く猫は鼠を捕らぬ,鳴くまで待とう時鳥	異:	非:泣/啼/哭	俗:
 啼	英:bark/moan/cry		名:なく			音:テイ		訓:		送:啼鳥/					異:	非:涙/泣/哭	俗:
-哭	英:moan/cry/shrieking		名:なげく		音:コク		訓:		送:慟哭/鬼哭啾啾				異:	非:涙/泣/啼	俗:ロストワンの号哭
+哭	英:moan/cry/shrieking	名:なげく	音:コク	送:慟哭/鬼哭啾啾	俗:ロストワンの号哭	非:涙/泣/啼	活:[028935nmstzxrqki][oqwu][7de8][9fga]
 嘆	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
 嘆	英:lament/deplore//suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
 歎	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:	代:嘆	俗:
@@ -2266,6 +2273,3 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
-貌	
-娩	
-𞿿	

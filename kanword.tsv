@@ -1014,6 +1014,8 @@ base64		ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 ナカムラ			中村
 ムロト			室戸
 イノ			伊野
+アキ※高知		安芸
+ヤナセ			魚梁瀬
 きゅうしゅう		九州
 ふくおか			福岡
 アキヅキ			秋月
@@ -2615,6 +2617,7 @@ base64		ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 リッポウクク		立方九九
 ゴワサン		御破算
 しょうぎ		将棋
+ショウギノコマ 歩と香杏桂圭銀全金角馬飛竜玉王☗☖
 フ※将棋		歩
 フヒョウ		歩兵
 トキン			と金
@@ -2630,7 +2633,7 @@ base64		ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 ヒシャ			飛車
 リュウオウ		竜王
 オウショウ		王将
-ギョクショウ		玉将
+ギョクショウ	玉将
 ナリゴマ		成駒
 フナリ			不成
 ナラズ			不成
@@ -3708,6 +3711,34 @@ base64		ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 アラヤ			阿頼耶
 アマラ			阿摩羅
 ネハンジャクジョウ	涅槃寂静
+たんい			単位
+めーとる		米
+マイクロメートル	粆
+ミリメートル	粍
+センチメートル	糎
+デシメートル	粉
+デカメートル	籵
+ヘクトメートル	粨
+キロメートル	粁
+ぐらむ			瓦
+ミリグラム		瓱
+センチグラム	甅
+デシグラム		瓰
+デカグラム		瓧
+ヘクトグラム	瓸
+キログラム		瓩
+トン			瓲
+りっとる		立
+ミリリットル	竓
+センチリットル	竰
+デシリットル	竕
+デカリットル	竍
+ヘクトリットル	竡
+キロリットル	竏
+まいる			哩
+カイリ			浬
+
+
 ようび			日月火水木金土
 すらんぐ			スラング
 サーバー			鯖
@@ -3795,3 +3826,6 @@ base64		ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=
 キコクシュウシュウ	鬼哭啾啾
 シュレンテクダ		手練手管
 センジュウカイシ	先従隗始
+チョウリョウバッコ		跳梁跋扈
+
+
