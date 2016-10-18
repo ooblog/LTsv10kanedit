@@ -154,7 +154,7 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                     cursorMX,cursorMY=kanmap_cursorMX,kanmap_cursorMY
                     kanmap_cursorMX,kanmap_cursorMY=kanmap_cursorAX,kanmap_cursorAY
                     LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
-                    if kanmap_checkboxC[2] != 0:
+                    if kanmap_checkboxC[kanmap_checkboxN["swap"]] != 0:
                         if len(kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]) > 0 and len(kanmap_chars[cursorMY][cursorMX]) > 0:
                             kanmap_chars[kanmap_cursorMY][kanmap_cursorMX],kanmap_chars[cursorMY][cursorMX]=kanmap_chars[cursorMY][cursorMX],kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]
                             LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
@@ -164,7 +164,7 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                     cursorDX,cursorDY=kanmap_cursorDX,kanmap_cursorDY
                     kanmap_cursorDX,kanmap_cursorDY=kanmap_cursorAX,kanmap_cursorAY
                     LTsv_kanmap_mousecursordraw(kanmap_cursorDX,kanmap_cursorDY,cursorDX,cursorDY)
-                    if kanmap_checkboxC[1] != 0:
+                    if kanmap_checkboxC[kanmap_checkboxN["rewrite"]] != 0:
                         if len(kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]) > 0 and len(kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]) > 0:
                             kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]=kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]
                             LTsv_kanmap_mousecursordraw(kanmap_cursorDX,kanmap_cursorDY,kanmap_cursorMX,kanmap_cursorMY)
@@ -182,7 +182,8 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
 def LTsv_kanmap_kbdinput(kbdinput):
     kanmap_clipfind=kbdinput[:1]
     LTsv_widget_settext(kanmap_clipboard,kanmap_clipfind)
-    LTsv_kanmap_find()
+    if kanmap_checkboxC[kanmap_checkboxN["kbdfind"]] != 0:
+        LTsv_kanmap_find()
 
 def LTsv_kanmap_find():
     global kanmap_cursorMX,kanmap_cursorMY,kanmap_cursorDX,kanmap_cursorDY
@@ -208,8 +209,9 @@ def LTsv_kanmap_find():
 def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_glyph_picklesave()
     LTsv_draw_canvas_save(kanmap_canvas,"kanmap.png")
+    if kanmap_checkboxC[kanmap_checkboxN["update"]] != 0:
+        pass
     LTsv_window_exit()
-
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
@@ -235,8 +237,9 @@ if len(LTsv_GUI) > 0:
         else:
             kanmap_irohaalphaNX[map_xy],kanmap_irohaalphaNY[map_xy]=LTsv_glyph_kbdW*(map_xy%12)+LTsv_glyph_kbdF*2,LTsv_glyph_kbdH*(map_xy//12)+LTsv_glyph_kbdF*2
             kanmap_irohaalphaXX[map_xy],kanmap_irohaalphaXY[map_xy]=kanmap_irohaalphaNX[map_xy]+LTsv_glyph_kbdW*9,kanmap_irohaalphaNY[map_xy]+LTsv_glyph_kbdH*0
-    kanmap_checkboxL=[3,7,8]; kanmap_checkboxT=[["update☐","update☑"],["rewrite☐","rewrite☑"],["swap☐","swap☑"]]
+    kanmap_checkboxL=[3,4,7,8]; kanmap_checkboxT=[["update☐","update☑"],["kbdfind☐","kbdfind☑"],["rewrite☐","rewrite☑"],["swap☐","swap☑"]]; kanmap_checkboxN={"update":0,"kbdfind":1,"rewrite":2,"swap":3}
     kanmap_checkboxX,kanmap_checkboxY,kanmap_checkboxC=[0]*len(kanmap_checkboxL),[0]*len(kanmap_checkboxL),[0]*len(kanmap_checkboxL)
+    kanmap_checkboxC[kanmap_checkboxN["kbdfind"]]=1
     for map_xy in range(len(kanmap_checkboxL)):
         kanmap_checkboxX[map_xy],kanmap_checkboxY[map_xy]=kanmap_checkboxL[map_xy]*LTsv_glyph_kbdW,LTsv_glyph_kbdH*6
     kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=None,event_y=None)

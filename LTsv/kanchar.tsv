@@ -3,10 +3,6 @@
 ℗	英:phonogram right	名:原盤権	異:(p)	俗:許諾を得ないレコードの複製からのレコード製作者の保護に関する条約	活:[05bamkqtzuop76]
 ™	英:trademark	名:商品商標	異:TM	活:[0398ehzysrxwkj76]
 ℠	英:service mark	名:役務商標	異:SM	活:[1398ehzysrxwkicd]
-半	英:half	名:ハン	音:ハン		訓:なかば		送:半分/教うるは学ぶの半ば	活:[0178239a45hflntrxwqoikec]
- 	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
-全	英:full/all/total/entire/wholly/indeed	名:ゼン	音:ゼン		訓:すべて/まったく	送:全部/全てを推し量る/全くの偶然	活:[14abnmstzuopji67][7dga]
-　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
 ⇔	英:equivalence		名:同値			音:		訓:		送:		異:≡	俗:等価	活:[78239agd][ghnm][cdji][jmsrxwqp]	漫:[FOKTFYAT][DSCTDUHUITHS]
 ⇒	英:implication	名:論理包含	俗:PならばQ	活:[68239agc][ghnm][imsrxwqo]	漫:[AQFQFOKTFYFWAWAUHUITHSAS]
 ≡	英:identical	名:合同	異:⇔	俗:モジュロ	活:[05b6][chni][otzu]
@@ -17,6 +13,10 @@
 ＂	英:wide double quotation(U+ff02)	名:ダブルクォート(全角)	俗:二重引用符	逆:"	代:“	活:[12kj][34ml]	漫:[COEOEUCUDTCS][GOIOIUGUHTGS]
 ”	英:Right double quotation mark(U+201d)	名:右ダブルクォート(全角)	異:“	代:＂	俗:右二重引用符(終了記号)	逆:"	活:[04mlfekjdc][ijpo][klrq]	漫:[BODOEPFOHOIPIUGWEWEVGTGSFSEREUCWAWAVCTCSBSARAP]
 “	英:Left double quotation mark(U+201c)	名:左ダブルクォート(全角)	異:”	俗:左二重引用符(開始記号)	漫:[CQEOGOGPERESFSGTGQIOKOKPIRISJSKTKVJWHWGVFWDWCV]	活:[45ba][2398][78ef9aghtp]
+半	英:half	名:ハン	音:ハン		訓:なかば		送:半分/教うるは学ぶの半ば	活:[0178239a45hflntrxwqoikec]
+ 	英:space	名:スペース(半角)	俗:半角空白	逆:　	活:[ouxrxu]	幅:624
+全	英:full/all/total/entire/wholly/indeed	名:ゼン	音:ゼン		訓:すべて/まったく	送:全部/全てを推し量る/全くの偶然	活:[14abnmstzuopji67][7dga]
+　	英:ideographic space/wide space	名:和字間隔(全角)/全角スペース	俗:全角空白/全角アキ	逆: 	活:[ouztzu]
 「	英:square bracket	名:かぎ括弧(全角)	音:		訓:		送:	異:」	逆:｢	代:『	俗:鈎括弧開	代:り	活:[15b8wv]
 」	英:square bracket	名:かぎ括弧(全角)	音:		訓:		送:	異:「	逆:｣	代:』	俗:鈎括弧閉	代:れ	活:[34yuor]
 『	英:square bracket	名:二重かぎ括弧		音:		訓:		送:	異:』	逆:｢	代:「	俗:二重鈎括弧開	代:リ	活:[04mlxu][7pqef9]
@@ -37,50 +37,50 @@
 )	英:parenthesis	名:丸括弧(半角)	俗:丸括弧閉	逆:）	活:[1287][89rq][pqwv]	漫:[COEOGQGWEYCYCWDWEVERDQCQ]	幅:624
 【	英:lenticular brackets	名:墨付き括弧	異:】	活:[25bagflmstzw]	漫:[25flzw]
 】	英:lenticular brackets	名:墨付き括弧	異:【	活:[03xuopjked76]	漫:[03xuke]
-¨	英:umlaut/diaeresis	名:ウムラウト/トレマ	音:		訓:		送:		異:	俗:前舌母音/分音記号
-＇	英:apostrophe	名:アポストロフィー	俗:ローマ字表記で「ん」「っ」
-´	英:acute accent		名:アキュート・アクセント	音:	訓:		送:		異:｀	俗:声調記号
+¨	英:umlaut/diaeresis	名:ウムラウト/トレマ	俗:前舌母音/分音記号	活:[02ec][35hf]
+＇	英:apostrophe	名:アポストロフィー	俗:ローマ字表記で「ん」「っ」	活:[14a9fe87]
+´	英:acute accent	名:アキュート・アクセント	異:｀	俗:声調記号	活:[2398][78ed]
 ｀	英:wide grave accent	名:グレイヴ・アクセント(全角)	俗:バッククォート	逆:`	活:[1287][89fe]	漫:[129fe7]
 `	英:grave accent	名:グレイヴ・アクセント(半角)	逆:｀	活:[0176][78ed]	漫:[018ed6]	幅:624
 ・	英:interpunct	名:中黒(全角)	俗:一点リーダー	代:ね	逆:･	活:[7asp]	漫:[89gmrqjd]
 ･	英:interpunct	名:中黒(半角)	俗:一点リーダー	代:ね	逆:・	活:[dekj]	幅:624
 ‥	英:two dot leader	名:二点リーダー		音:		訓:		送:		異:…	俗:ざわ‥	代:の	活:[dekj][fgml]
 …	英:horizontal ellipsis	名:三点リーダー		音:		訓:		送:		異:‥	俗:除算の余り	代:ノ	活:[cdji][eflk][ghnm]
-′	英:prime		名:プライム		音:		訓:		送:		異:″	俗:分
-″	英:double prime		名:ダブルプライム	音:		訓:		送:		異:′	俗:秒
-°	英:degree		名:度			音:		訓:		送:		異:℃	俗:時
-℃	英:degree Celsius	名:摂氏温度		音:		訓:		送:		異:°	俗:ケルビン−273.15
-℉	英:degrees Fahrenheit	名:華氏温度		音:		訓:		送:		異:°	俗:32 deg F
-Å	英:ångström		名:オングストローム	音:		訓:		送:		異:Å	俗:10^-10m
-♂	英:muscular		名:雄記号		音:		訓:		送:		異:♀	俗:火星
-♀	英:feminine		名:雌記号		音:		訓:		送:		異:♂	俗:金星
+′	英:prime	名:プライム	異:″	俗:分	活:[01dc]
+″	英:double prime	名:ダブルプライム	異:′	俗:秒	活:[0178kjdc]
+°	英:degree	名:度	異:℃	俗:時	活:[03ro][7jk8]	漫:[6129lqpi][CRCTDUETERDQ]
+℃	英:degree Celsius	名:摂氏温度	異:°	俗:ケルビン−273.15	非:℉	活:[039bhfrtzwqo][7jk8]
+℉	英:degrees Fahrenheit	名:華氏温度	異:°	俗:32 deg F	非:℃	活:[039bhflntrxwqo][7jk8]
+Å	英:ångström	名:オングストローム	異:Å	俗:10^-10m	活:[14mj][8ef9][mnzy][ijvu]
+♂	英:muscular	名:雄記号	異:♀	俗:火星	活:[125nmgfxuce87][jpqk]
+♀	英:feminine	名:雌記号	異:♂	俗:金星	活:[14ghnlxwkicd][8ef9]
 ～	英:wide tilde	名:チルダ(全角)	俗:範囲	代:ろ	逆:~	非:～	活:[67ji][1287][89fe][fgml][45hg]	漫:[COEOGQGRHSIRIOKOKSIUGUESERDQCRCUAUAQ]
 ~	英:tilde	名:チルダ(半角)	逆:～	活:[1398ec67]	漫:[AQCQCPDOGOGQDQERESAS]	幅:624
-§	英:section sign		名:節記号		音:		訓:		送:		異:¶	俗:シムオリオン
-¶	英:paragraph mark	名:段落記号		音:		訓:		送:		異:§	俗:pilcrow/alinea
+§	英:section sign	名:節記号	異:¶	俗:シムオリオン	活:[7824a9fgsrxwvpqkj][eklf]
+¶	英:paragraph mark	名:段落記号	異:§	俗:pilcrow/alinea	活:[15zya9xwqpji67]
 ※	英:supplementary information symbol	名:米印	俗:但し～	代:米	活:[78239aghnmsrxwqpjicd][45ba][stzy][opvu][0176][eklf]
-†	英:dagger		名:短剣符		音:		訓:		送:		異:‡	俗:R.I.P./日曜休日/脚注用語解説
-‡	英:double dagger	名:二重短剣符		音:		訓:		送:		異:†	俗:脚注用語解説
+†	英:dagger	名:短剣符	異:‡	俗:R.I.P./日曜休日/脚注用語解説	活:[78239bhfxwed]
+‡	英:double dagger	名:二重短剣符	異:†	俗:脚注用語解説	活:[78239bhflntrxwqpjked]
 〓	英:geta mark	名:下駄記号	活:[05hc][inzu]
-∽	英:similarity		名:相似記号		音:		訓:		送:		異:∝	俗:
-∝	英:proportion		名:比例記号		音:		訓:		送:		異:∽	俗:
-∞	英:infinity		名:無限			音:		訓:		送:		異:	俗:インフィニティ/アンリミテッド
-∵	英:because		名:なぜならば		音:		訓:		送:		異:∴	俗:根拠
-∴	英:therefore		名:すなわち/ゆえに	音:		訓:		送:		異:∵	俗:茶畑/史跡
+∽	英:similarity	名:相似記号	異:∝	活:[68eflkqo][9btsgf][djke]
+∝	英:proportion	名:比例記号	異:∽	活:[68eflkqo][9bhf][lntr][djke]
+∞	英:infinity	名:無限	俗:インフィニティ/アンリミテッド	活:[68ef9btrlkqo][djke][flmg]
+∵	英:because	名:なぜならば	異:∴	俗:根拠	活:[78ed][qrxw][9agf]
+∴	英:therefore	名:すなわち/ゆえに	異:∵	俗:茶畑/史跡	活:[pqwv][89fe][rsyx]
 ＾	英:wide circumflex	名:サーカムフレックス(全角)	異:⊕	俗:排他的論理和/冪乗	逆:^	活:[cdji][78ed][2398][9agf][ghnm]	漫:[EOGOKSKVJVFRBVAVAS]
 ^	英:circumflex	名:サーカムフレックス(半角)	俗:排他的論理和/冪乗	逆:^	漫:[COEOGQGSESERDQCRCSASAQ]	幅:624	活:[03fe87dc]
-⊕	英:exclusive or		名:排他的論理和		音:		訓:		送:	異:＾		俗:XOR
-∫	英:integral symbol	名:積分記号		音:		訓:		送:		異:∬	俗:
-∬	英:double integral symbol	名:二重積分記号	音:		訓:		送:		異:∫	俗:
-〆	英:binding/closing	名:締め			音:		訓:		送:		異:	俗:〆切
-仝	英:"as above" mark	名:同上記号		音:		訓:		送:		異:〃	俗:成香
+⊕	英:exclusive or	名:排他的論理和	異:＾	俗:XOR	活:[14abtsyvpo67][7de8][9fga][jpqk][lrsm]
+∫	英:integral symbol	名:積分記号	異:∬	非:ʃ	活:[24a9xvpq]
+∬	英:double integral symbol	名:二重積分記号	異:∫	活:[15bayuop][8qr9]
+〆	英:binding/closing	名:締め	俗:〆切	活:[45ba][9agf][lmsr][78eflkqpvucd][djke]
+仝	英:"as above" mark	名:同上記号	異:〃	俗:成香	活:[14abhgmlrtzuoqkjdc67][7dga]
 ！	英:wide exclamation mark	名:感嘆符(全角)	音:		訓:		送:	異:	逆:!	俗:	活:[78239amj][qrxw]	漫:[CQEOGOIQITHUGUFVEUDUCT][qrxw]
 !	英:exclamation mark	名:感嘆符(半角)	逆:！	活:[12kj][pppqwv]	漫:[COEOEUDVCU][pppqwv]	幅:624
 ？	英:wide question mark	名:疑問符(全角)	逆:?	漫:[COIOKQKSIUGUFVEUETFSHSIRHQDQCRCSASAQ][qrxw]	活:[67dc][14a7][abhg][egmk][qrxw]
 ?	英:question mark	名:疑問符(半角)	逆:？	活:[pqwv][0286][89fe][dekj]	漫:[APBOEOGQGSDVCUCTERDQCQBRAQ][pqwv]	幅:624
 ％	英:wide ‎percent	名:パーセント(全角)	俗:分	活:[lnzx][02ec][45ba][9agf][eflk][jkqp][opvu]	漫:[o45bvu][HUJUKVKXJYHYGXGV][BODOEPERDSBSARAP][IVHWIXJW][CPBQCRDQ]
-‰	英:‎permille		名:パーミル		音:		訓:		送:		異:	俗:厘	活:
-‱	英:basis point		名:パーミリアド/ベーシスポイント	音:	訓:		送:		異:	俗:毛	活:
+‰	英:‎permille	名:パーミル	俗:厘	活:[02ec][45ba][9agf][eflnzxwqpjk][opvu]
+‱	英:basis point	名:パーミリアド/ベーシスポイント	俗:毛	活:[01dc][23fe][dekj][ijvu][knzw]
 %	英:‎percent	名:パーセント(半角)	活:[0176][qrxw][ijpo][dekj][89fe]	漫:M 400,800 600,800 600,600 200,200 0,200 0,400 100,400 400,700 z M 0,1000 200,1000 200,800 0,800 z M 400,200 600,200 600,0 400,0 z M 100,950 50,900 100,850 150,900 z M 500,150 500,150 500,150 450,100 500,50 550,100 z	幅:624
 ＆	英:wide ampersand 	名:アンパサンド(全角)	俗:etc.	逆:&	活:[7824ghnmsrxvpoij][stzy][8ef9][flmg][jpqk]	漫:M 200,800 400,1000 800,1000 800,600 650,450 700,400 800,500 800,600 1000,600 1000,400 850,250 900,200 1000,200 1000,0 800,0 700,100 600,0 200,0 0,200 0,400 200,600 z M 400,700 400,600 500,600 600,700 600,800 500,800 z M 300,400 200,300 300,200 500,200 550,250 400,400 z
 &	英:ampersand	名:アンパサンド(半角)	俗:etc.	逆:＆	活:[13feqrxuijdc67][7de8]	漫:[COEOGQGSEUGWGYAYAUBTASAQ][DQCRDSER][CVCWDW]	幅:624
@@ -94,18 +94,18 @@
 .	英:period		名:ピリオド(半角)	音:		訓:		送:	異:｡	逆:．	俗:小数点	活:[pqwv]	幅:624
 ＃	英:wide number sign	名:ナンバーサイン(全角)	異:井	俗:井桁/ハッシュ	逆:#	非:♯	活:[67128934abhgmntsyxrqwvpoijdc][eklf]
 #	英:number sign	名:ナンバーサイン(半角)	異:井	俗:井桁/ハッシュ	逆:＃	非:♯	活:[017823xwqpvu][djke]	漫:[AOCOCQEQEOGOGSFTGUGYEYEWCWCYAYAUBTAS][djke]	幅:624
-♯	英:sharp		名:シャープ		音:		訓:		送:		異:	俗:嬰記号	非:＃
-♭	英:flat			名:フラット		音:		訓:		送:		異:	俗:変記号
-♮	英:natural		名:ナチュラル		音:		訓:		送:		異:	俗:
-♪	英:note			名:音符			音:		訓:		送:		異:	俗:4分音符/ノート
+♯	英:sharp	名:シャープ	俗:嬰記号	非:＃	活:[128935baghnmyxrqwuopjicd][eklf]
+♭	英:flat	名:フラット	俗:変記号	活:[12ef9aghtsyv][kqsmgfl]
+♮	英:natural	名:ナチュラル	活:[128ayxrp][eklf]
+♪	英:note	名:音符	俗:4分音符/ノート	活:[24a9xuik][abnm]
 ｜	英:wide vertical bar	名:バーティカルバー(全角)	音:		訓:		送:	異:￤	逆:|	俗:OR	活:[23xw]
 |	英:vertical bar		名:バーティカルバー(半角)	音:		訓:		送:		逆:｜	俗:OR	活:[12wv]	幅:624
-￤	英:broken bar		名:ブロークンバー	音:		訓:		送:	異:｜		俗:
+￤	英:broken bar	名:ブロークンバー	異:｜	活:[23fe][klxw]
 ＋	英:addition/wide plus	名:たす/プラス(全角)	俗:加/足/和	逆:+	活:[23fhnlxwkice]
 +	英:addition/plus	名:たす/プラス(半角)	音:		訓:		送:	異:	逆:＋	俗:加/足/和	活:[12eflkwvjicd]	幅:624
 －	英:subtraction/wide hyphen-minus	名:ひく/ハイフンマイナス(全角)	音:	訓:	送:	異:	逆:-	俗:減/引/差	非:ー/―		活:[chni]
 -	英:subtraction/hyphen-minus	名:ひく/ハイフンマイナス(半角)		音:	訓:	送:	異:	逆:－	俗:減/引/差	非:ｰ		活:[cfli]	幅:624
-×	英:multiplication/cross	名:かける	異:＊	俗:乗/掛/積/縦×横/幅×高/攻×受/バツ	代:✖	顔:✖	非:✓	活:[0176][78ed][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 500,700 800,1000 1000,1000 1000,800 700,500 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 300,500 0,800 z M 500,650 350,500 500,350 650,500 z
+×	英:multiplication/cross	名:かける	異:＊	俗:乗/掛/積/縦×横/幅×高/攻×受/バツ/大穴	代:✖	顔:✖	非:✓	活:[0176][78ed][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 500,700 800,1000 1000,1000 1000,800 700,500 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 300,500 0,800 z M 500,650 350,500 500,350 650,500 z
 ✖	英:heavy multiplication x	名:バツ(絵文字)	異:×	俗:	代:×	非:✔	活:[9agf][lmsr][eflk][78ed][jkqp]
 ✓	英:check mark	名:チェックマーク	代:✔	非:×	活:[klrq][67dc][dekj][fgml][45hg]	漫:[AQBQFUIRIOKOKSFXAS]
 ✔	英:heavy check mark	名:チェックマーク(太字)	代:✓	非:✖	漫:[AQBQFUIRIOKOKTFYAT]	活:[67deklfg45nmsrxwqpji]
@@ -117,23 +117,23 @@
 ÷	英:division		名:わる		異:/	代:／	俗:除/割/商		活:[chni][2398][qrxw]
 ／	英:division/solidus/slash	名:スラッシュ(全角)	異:÷	逆:/	非:＼	活:[45ba][9agf][eflk][jkqp][opvu]	漫:[45bvuo]
 ＼	英:reverse solidus/back slash	名:バックスラッシュ(全角)	異:￥	俗:エスケープ文字/&#92;	逆:\	非:／	代:	活:[0176][78ed][eflk][lmsr][stzy]	漫:[01tzy6]
-/	英:division/solidus/slash	名:スラッシュ(半角)	異:÷	逆:／	代:¥	漫:[EOGOGRCVCYAYAUEQ]	幅:624	活:[23fe][dekj][ijvu]
+/	英:division/solidus/slash	名:スラッシュ(半角)	異:÷	逆:／	代:¥	漫:[EOGOGRCVCYAYAUEQ]	活:[23fe][dekj][ijvu]	幅:624
 \	英:back slash	名:円(半角)/バックスラッシュ(半角)		俗:JPY/バックスラッシュ/＼/&yen;/&#165;	逆:＼	代:¥	非:\	活:[01dc][dekj][klxw]	漫:[AOCOCQGUGYEYEVAR]	幅:624
 ¥	英:yen symbol	名:円(ユニコード)	異:円	俗:JPY/バックスラッシュ/￥/&yen;/&#165;	逆:￥	代:\	非:/	漫:[0783feklrqwvpoijdc]	幅:624	活:[017823feklrqwvpoijdc]
 ￥	英:wide yen symbol	名:円(全角)	異:円	俗:JPY/バックスラッシュ/＼/&yen;/&#165;	逆:¥	代:／	漫:[AQCQCODOEPEQGQGPHOIOIQKQKSGSGUKUKWGWGYEYEWAWAUEUESAS]	活:[67128934abhflntrxwqoikec]
 ＄	英:wide dollarsymbol	名:ドル(全角)	異:弗	俗:USD	逆:$	活:[15b9fgmntsyuoqkjdc67][7de8][lrsm]	漫:[15b9fgntyuoqkjc6][DQCRDSESEQ][GUGWHWIVHU]
-弗	英:			名:			音:		訓:		送:		異:	俗:
+弗	活:[67128934abtsywqpvuijdc][eklf]
 $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQGQGSESEUFUGVGXFYAYAWCWCUBUATARBQCQ]	幅:624
-￠	英:cent sign		名:セント(全角)		音:		訓:		送:		異:仙	俗:銭	非:Ｃ
-¢	英:cent sign		名:セント		音:		訓:		送:		異:仙	俗:銭	非:ｃ
-仙	英:	名	異:￠	俗:セント	地:仙台
-￡	英:pound/lira		名:ポンド/リラ		音:		訓:		送:		異:磅	俗:€
+￠	英:cent sign	名:セント(全角)	異:仙	俗:銭	非:Ｃ	活:[114abhflkkqsyvpo67][mnts][7jkef9]
+¢	英:cent sign	名:セント	異:仙	俗:銭	非:ｃ	活:[1289feklrqwvpo67]	幅:624
+仙	異:￠	俗:セント	地:仙台	活:[12ef34ghzvjicd]
+￡	英:pound/lira	名:ポンド/リラ	異:磅	俗:€	活:[7824abhgmlrqwuij][rtzx][jpqk][8ega]
 磅	英:pound/mass/existence	名:ポンド(通貨)		音:ボウ		訓:		送:磅礴		異:￡	非:听	俗:ポンド
 听	英:pound/hear/heard			名:ポンド(質量)		音:キン		訓:		送:听説		異:￡	非:磅	俗:ポンド
-€	英:euro symbol		名:ユーロ		音:		訓:		送:		異:欧	俗:EUR
+€	英:euro symbol	名:ユーロ	異:欧	俗:EUR	活:[25b8][78egstzwqocd]
 欧	英:Europe		名:オウ			音:オウ		訓:		送:欧米		異:€	俗:ユーロ
-₽	英:ruble symbol		名:ルーブル		音:		訓:		送:		異:留	俗:RUB
-留	英:stationary/attention/holding/detain/abroad	名:とめる	音:リュウ/ル	訓:とめる/どめ	送:留学/留守/繋ぎ留める/局留め	異:₽	俗:ルーブル
+₽	英:ruble symbol	名:ルーブル	異:留	俗:RUB	活:[139agflmsqwvpocd][8ef9]
+留	英:stationary/attention/holding/detain/abroad	名:とめる	音:リュウ/ル	訓:とめる/どめ	送:留学/留守/繋ぎ留める/局留め	異:₽	俗:ルーブル	活:[15nmyvji67][7de8][9lma]
 ＝	英:wide equals		名:等号/イコール(全角)	音:		訓:		送:	異:=	逆:	俗:	活:[into][6bhc]
 =	英:equals	名:等号/イコール(半角)	異:＝	活:[69fc][ilro]	幅:624
 ≒	英:approximation	名:近似	活:[67128bhc][intsyxro]
@@ -150,14 +150,14 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289feklxuopji67]	漫:[COEOEQ
 ＿	英:wide underscore	名:アンダースコア(全角)	俗:アンダーバー	顔:🌝	代:🌝	逆:_	活:[otzu]
 _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:＿	俗:アンダーバー					活:[orxu]	幅:624
 🌝	英:fullmoon with face	名:顔付き満月	俗:写植記号BA-90/ぽげムたマーク/アンダーバー	代:＿	活:M 100,800 200,900 400,1000 600,1000 800,900 900,800 1000,600 1000,400 900,200 800,100 600,0 400,0 200,100 100,200 0,400 0,600 z M 250,850 150,750 50,600 50,400 150,250 250,150 400,50 600,50 750,150 850,250 950,400 950,600 850,750 750,850 600,950 400,950 z M 250,750 300,800 400,800 450,750 z M 200,600 300,650 400,600 z M 600,600 700,650 800,600 z M 500,700 600,800 700,800 750,750 650,750 550,700 600,450 550,400 450,400 350,450 550,450 z M 300,400 350,400 300,300 300,200 250,250 250,300 z M 650,400 700,400 750,300 750,250 700,200 700,300 z M 350,300 500,300 650,300 600,200 500,150 400,200 z M 400,250 450,200 550,200 600,250 550,250 z
-⊇	英:subset		名:部分集合		音:		訓:		送:		異:	俗:
-⊆	英:subset		名:部分集合		音:		訓:		送:		異:	俗:
-⊂	英:proper subset	名:真部分集合		音:		訓:		送:		異:	俗:
-⊃	英:proper subset	名:真部分集合		音:		訓:		送:		異:	俗:
-∈	英:element		名:元(要素)		音:		訓:		送:		異:	俗:
-∋	英:element		名:元(要素)		音:		訓:		送:		異:	俗:
-∩	英:intersection		名:積集合		音:		訓:		送:		異:∧	俗:
-∪	英:union		名:和集合		音:		訓:		送:		異:∨	俗:
+⊇	英:subset	名:部分集合	活:[14a7][abhg][cgmi][otzu]
+⊆	英:subset	名:部分集合	活:[14a7][67dc][dhnj][otzu]
+⊂	英:proper subset	名:真部分集合	活:[14a7][67po][ptzv]
+⊃	英:proper subset	名:真部分集合	活:[14a7][abts][osyu]
+∈	英:element	名:元(要素)	活:[14a7][67dhnjpo][ptzv]
+∋	英:element	名:元(要素)	活:[14a7][cgabtsmi][osyu]
+∩	英:intersection	名:積集合	異:∧	活:[14a7][abts][67po]
+∪	英:union	名:和集合	異:∨	活:[67po][abts][psyv]
 ￢	英:not			名:否定記号		音:		訓:		送:		異:	俗:
 ∧	英:logical conjunction	名:論理積		音:		訓:		送:		異:∩	俗:
 ∨	英:logical disjunction	名:論理和		音:		訓:		送:		異:∪	俗:
@@ -169,7 +169,75 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ∃	英:existential quantifier	名:存在記号	活:[25zvpsmjdga8]
 ∂	英:del/partial d/rounded d	名:デル/パーシャルディー/ラウンドディー	俗:ヤコビ行列	活:[0397dc][ef9asrxvjk][kqrl]	漫:[03asxvjef97dc][kqrl]
 ∇	英:nabla	名:ナブラ記号	活:[05nmsrxwqpji][8kma]	漫:[AOKOKTFYAT][8kma]
-◎	英:a double circle	名:二重丸	俗:市役所/区役所/曇り	活:[14abtsyvpo67][7psa][eflk]
+│	英:ruled line	名:罫線	難:罫線	活:[23xw]
+┃	英:ruled line	名:罫線	難:罫線	活:[24yw]
+─	英:ruled line	名:罫線	難:罫線	活:[chni]
+━	英:ruled line	名:罫線	難:罫線	活:[chto]
+┌	英:ruled line	名:罫線	難:罫線	活:[ehnlxw]
+┍	英:ruled line	名:罫線	難:罫線	活:[ehtrxw]
+┎	英:ruled line	名:罫線	難:罫線	活:[ehnmyw]
+┏	英:ruled line	名:罫線	難:罫線	活:[ehtsyw]
+┐	英:ruled line	名:罫線	難:罫線	活:[cfxwki]
+┑	英:ruled line	名:罫線	難:罫線	活:[cfxwqo]
+┒	英:ruled line	名:罫線	難:罫線	活:[cfxvji]
+┓	英:ruled line	名:罫線	難:罫線	活:[cgywqo]
+└	英:ruled line	名:罫線	難:罫線	活:[23fhnk]
+┕	英:ruled line	名:罫線	難:罫線	活:[23fhtq]
+┖	英:ruled line	名:罫線	難:罫線	活:[24ghnk]
+┗	英:ruled line	名:罫線	難:罫線	活:[24ghtq]
+┘	英:ruled line	名:罫線	難:罫線	活:[ce23li]
+┙	英:ruled line	名:罫線	難:罫線	活:[23roce]
+┚	英:ruled line	名:罫線	難:罫線	活:[24mice]
+┛	英:ruled line	名:罫線	難:罫線	活:[ce24so]
+├	英:ruled line	名:罫線	難:罫線	活:[23fhnlxw]
+┝	英:ruled line	名:罫線	難:罫線	活:[23fhtrxw]
+┞	英:ruled line	名:罫線	難:罫線	活:[24ghnlxw]
+┟	英:ruled line	名:罫線	難:罫線	活:[23fhnmyw]
+┠	英:ruled line	名:罫線	難:罫線	活:[24ghnmyw]
+┡	英:ruled line	名:罫線	難:罫線	活:[24ghtrxw]
+┢	英:ruled line	名:罫線	難:罫線	活:[23fhtsyw]
+┣	英:ruled line	名:罫線	難:罫線	活:[24ghtsyw]
+┤	英:ruled line	名:罫線	難:罫線	活:[23xwkice]
+┥	英:ruled line	名:罫線	難:罫線	活:[23xwqoce]
+┦	英:ruled line	名:罫線	難:罫線	活:[ce24gfxwki]
+┧	英:ruled line	名:罫線	難:罫線	活:[23lmywkice]
+┨	英:ruled line	名:罫線	難:罫線	活:[ce24ywki]
+┩	英:ruled line	名:罫線	難:罫線	活:[ce24mlxwqo]
+┪	英:ruled line	名:罫線	難:罫線	活:[23lmywqoce]
+┫	英:ruled line	名:罫線	難:罫線	活:[ce24ywqo]
+┬	英:ruled line	名:罫線	難:罫線	活:[chnlxwki]
+┭	英:ruled line	名:罫線	難:罫線	活:[chnlxwqo]
+┮	英:ruled line	名:罫線	難:罫線	活:[chtrxwki]
+┯	英:ruled line	名:罫線	難:罫線	活:[chtrxwqo]
+┰	英:ruled line	名:罫線	難:罫線	活:[chnmywki]
+┱	英:ruled line	名:罫線	難:罫線	活:[chnmywqo]
+┲	英:ruled line	名:罫線	難:罫線	活:[chtsywki]
+┳	英:ruled line	名:罫線	難:罫線	活:[chtsywqo]
+┴	英:ruled line	名:罫線	難:罫線	活:[23fhnice]
+┵	英:ruled line	名:罫線	難:罫線	活:[ce23fhnkqo]
+┶	英:ruled line	名:罫線	難:罫線	活:[ce23fhtrli]
+┷	英:ruled line	名:罫線	難:罫線	活:[ce23fhto]
+┸	英:ruled line	名:罫線	難:罫線	活:[ce24ghni]
+┹	英:ruled line	名:罫線	難:罫線	活:[ce24ghnkqo]
+┺	英:ruled line	名:罫線	難:罫線	活:[24ghtrlice]
+┻	英:ruled line	名:罫線	難:罫線	活:[ce24ghto]
+┼	英:ruled line	名:罫線	難:罫線	活:[23fhnlxwkice]
+┽	英:ruled line	名:罫線	難:罫線	活:[ce23fhnlxwqo]
+┾	英:ruled line	名:罫線	難:罫線	活:[ce23fhtrxwki]
+┿	英:ruled line	名:罫線	難:罫線	活:[ce23fhtrxwqo]
+╀	英:ruled line	名:罫線	難:罫線	活:[ce24ghnlxwki]
+╁	英:ruled line	名:罫線	難:罫線	活:[ce23fhnmywki]
+╂	英:ruled line	名:罫線	難:罫線	活:[ce24ghnmywki]
+╃	英:ruled line	名:罫線	難:罫線	活:[ce24ghnlxwqo]
+╄	英:ruled line	名:罫線	難:罫線	活:[24ghtrxwkice]
+╅	英:ruled line	名:罫線	難:罫線	活:[23fhnmywkice]
+╆	英:ruled line	名:罫線	難:罫線	活:[23fhtsywkice]
+╇	英:ruled line	名:罫線	難:罫線	活:[ce24ghnlxwqo]
+╈	英:ruled line	名:罫線	難:罫線	活:[ce23fhtsywki]
+╉	英:ruled line	名:罫線	難:罫線	活:[24ghnmywqoce]
+╊	英:ruled line	名:罫線	難:罫線	活:[24ghtsywkice]
+╋	英:ruled line	名:罫線	難:罫線	活:[ce24ghtsywqo]
+◎	英:a double circle	名:二重丸	俗:市役所/区役所/曇り/本命	活:[14abtsyvpo67][7psa][eflk]
 ⓪	英:circled zero	名:丸0	異:〇	俗:零	活:[05b9fgstzuoqkj76][eklf]
 ①	英:circled one	名:丸1	異:一	俗:Ⅰ	代:🀐	活:[05b9rtzuoqed76]
 ②	英:circled two	名:丸2	異:二	俗:Ⅱ	代:🀑	顔:2get ｽﾞｻｰc⌒っﾟДﾟ)っ	活:[05b9lmstzuoqed76]
@@ -179,7 +247,7 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ⑥	英:circled six	名:丸6	異:六	俗:Ⅵ	代:🀕	活:[05b8egstzuop76]
 ⑦	英:circled seven	名:丸7	異:七	俗:Ⅶ	代:🀖	活:[05bastzuorfekj76]
 ⑧	英:circled eight	名:丸8	異:八	俗:Ⅷ	代:🀗	活:[05b9fgstzuoqkj76]
-⑨	英:circled nine	名:丸9			音:	訓:		送:		異:九	俗:Ⅸ	代:🀘	活:[05bastzuoprlj76]
+⑨	英:circled nine	名:丸9			音:	訓:		送:		異:九	俗:Ⅸ/チルノ	代:🀘	活:[05bastzuoprlj76]
 ⑩	英:circled ten	名:丸10	異:十	俗:Ⅹ	活:[05baghzu][7pqrlk8][flmg]
 ⑪	英:circled eleven	名:丸11	俗:Ⅺ	活:[05bastzu][7pr9]
 ⑫	英:circled twelve	名:丸12			音:		訓:		送:		異:	俗:Ⅻ	活:[05bamnzu][7prfe8]
@@ -221,115 +289,115 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 7	英:seven		名:7(半角)	訓:なな	異:	逆:７	俗:	活:[03fe86][dewv]	漫:[AOGOGRETEYCYCSEQAQ]	幅:624
 ８	英:wide eight	名:８(全角)	訓:はち	異:八	俗:捌	逆:8	代:🀠	活:[14abhgmntsyvpoijdc67][7dga][jpsm]	漫:[COIOKQKSJTKUKWIYCYAWAUBTASAQ][DQCRDSHSIRHQ][DUCVDWHWIVHU]
 8	英:eight		名:8(半角)	訓:はち	異:	俗:	逆:８	活:[03fe87dc][ijpqklxu][dekj]	漫:[BOFOGPGSFTGUGXFYBYAXAUBTASAP][CQCRDSEREQ][DUCVCWEWEV]	幅:624
-９	英:wide nine	名:９(全角)	訓:きゅう	異:九	俗:	俗:	逆:9	俗:玖	代:🀡	活:[14abtsmjdc67][psyv][7dga]	漫:[COIOKQKWIYCYCWHWIVIUCUASAQ][DQCRDSISIRHQ]
+９	英:wide nine	名:９(全角)	訓:きゅう	異:九	逆:9	俗:玖	代:🀡	活:[14abtsmjdc67][psyv][7dga]	漫:[COIOKQKWIYCYCWHWIVIUCUASAQ][DQCRDSISIRHQ]
 9	英:nine			名:9(半角)	訓:きゅう	異:	俗:	逆:９	活:[03rqkjddc][7de8][pqwv]	漫:[BOGOGWEYCYCXEVEUCUASAP][CQCRDSESEQ]	幅:624
 ＠	英:wide atmark	名:アットマーク(全角)	俗:(a)	逆:@	非:a	活:[14abtsyvpo67][7pqef9][flmg]	漫:[14btyvo6][DQCRCVDWEWESGQ][GTGUIUISHS]
 @	英:atmark	名:アットマーク(半角)	俗:(a)	逆:＠	非:ａ	活:[03xuijde86][jpqk]	漫:[AOFOGPGXFYBYAXAUCSESEQAQ][DUCVCWEWEU]	幅:624
-ａ	英:wide a	名:エイ(小文字全角)	異:Ａ	代:a	非:α/а	活:[14stzvpo67][7pr9]	漫:[14stzvo6][DQCRCVDWGWGQ]
-Ａ	英:wide A		名:エイ(大文字全角)	音:		訓:		送:		異:ａ	俗:	非:Α/А	代:A	活:[2398][78kl9amnzyspvuij]	漫:[CRFOIRIUKWKYIYIXHWDWCXCYAYAWCU][ESEUGUGSFR]
-a	英:a	名:エイ(小文字半角)	異:Ａ	代:ａ	漫:[CQGQGVFWGWGYCYAWAS][DSCTCVDWEWES]	幅:624	活:[CQGQGVGYCYCWAWASCS][dpqe]
-A	英:A	名:エイ(大文字半角)	異:ａ	代:Ａ	非:Å	漫:[129xwkjvu6][DQCRCSESER]	幅:624	活:[671289xwkjvu][7de8]
-ｂ	英:wide b	名:ビー(小文字全角)	異:Ｂ	代:b	非:β/в	活:[01dgmntsyu][jpsm]	漫:[01dgntyu][CUCWHWIVIVHU]
-Ｂ	英:wide B		名:ビー(大文字全角)	音:		訓:		送:		異:ｂ	俗:	非:Β/В	代:B	活:[04abhgmntsyu][7dddga][jpsm]	漫:[AOIOKQKSJTKUKWIYAY][CQCSCSCSHSIRHQ][CUCWHWIVHU]
-b	英:b	名:ビー(小文字半角)	異:B	代:ｂ	漫:[01delrwu][CUCWDWEVDU]	幅:624	活:[01deklrqwu][jpqk]
-B	英:B	名:ビー(大文字半角)	異:b	代:Ｂ	活:[0289feklrqwu][7de8][jpqk]	漫:[AOEOGQGSFTGUGWEYAY][CQCSDSERDQ][CUCWDWEVDU]	幅:624
-ｃ	英:wide c	名:シー(小文字全角)	異:Ｃ	俗:炭素	代:c	非:¢/с	活:[7bhd][cdpo][ptzv]	漫:[CQKQKSDSCTCVDWKWKYCYAWAS]
-Ｃ	英:wide C	名:シー(大文字全角)	異:ｃ	俗:炭素	代:C	非:￠/С	活:[abhg][14a7][67po][psyv][mnts]	漫:[COIOKQKSISIRHQDQCRCVDWHWIVIUKUKWIYCYAWAQ]
-c	英:c	名:シー(小文字半角)	異:C	俗:炭素	代:ｃ	漫:[CQGQGSDSCTCVDWGWGYCYAWAS]	幅:624	活:[79fd][cdpo][prxv]
-C	英:C	名:シー(大文字半角)	異:c	俗:炭素	代:Ｃ	非:℃	活:[1397][67po][prxv]	漫:[COGOGQDQCRCVDWGWGYCYAWAQ]	幅:624
-ｄ	英:wide d	名:ディー(小文字全角)	異:Ｄ	代:d	活:[7a45zvpocd][dpsg]	漫:[7a45zvoc][DSCTCVDWIWIS]
-Ｄ	英:wide D	名:ディー(大文字全角)	異:ｄ	代:D	活:[04abtsyu][7psa]	漫:[04btyu][CQCWHWIVIRHQ]
-d	英:d	名:ディー(小文字半角)	異:D	代:ｄ	漫:[EOGOGYBYAXAUCSES][DUCVCWEWEU]	幅:624	活:[23xuijde][jpqk]
-D	英:D	名:ディー(大文字半角)	異:d	代:Ｄ	漫:[029rwu][CQCWDWEVERDQ]	幅:624	活:[0289rqwu][7pq8]
-ｅ	英:wide e	名:イー(小文字全角)	異:Ｅ	代:e	非:ε/е	活:[14abnjpo67][7dga][psyv]	漫:[COIOKQKUCUCVDWIWIYCYAWAQ][DQCRCSISIRHQ]
-Ｅ	英:wide E		名:イー(大文字全角)	音:		訓:		送:		異:ｅ	俗:	非:Ε/Е	代:E	活:[05b7dgmjptzu]
-e	英:e	名:イー(小文字半角)	異:E	代:ｅ	漫:[BQEQGSGUCUCVDWGWGYCYAWAR][CSDTDS]	幅:624	活:[678efljpoc][prxv]
-E	英:E			名:イー(大文字半角)	音:		訓:		送:		異:e	俗:	代:Ｅ	活:[0397dekjprxu]	幅:624
-ｆ	英:wide f	名:エフ(小文字全角)	異:Ｆ	代:f	活:[ce89fhnlxwki][35b9]	漫:[ASESEQGOKOKQHQGRGSKSKUGUGYEYEUAU]
-Ｆ	英:wide F		名:エフ(大文字全角)	音:		訓:		送:		異:ｆ	俗:	代:F	活:[05b7dgmjvu]
-f	英:f			名:エフ(小文字半角)	音:		訓:		送:		異:F	俗:	代:ｆ	活:[78eflkwvjicd][2398]	幅:624	漫:[CQEOGOGQFQERESGSGUEUEYCYCUAUASCS]
-F	英:F			名:エフ(大文字半角)	音:		訓:		送:		異:f	俗:	非:℉	代:Ｆ	活:[00397dekjvu]	幅:624
-ｇ	英:wide g	名:ジー(小文字全角)	異:Ｇ	代:g	活:[15tsmjdc67][osyu][7dga]	漫:[COKOKWIYAYAWHWIVIUCUASAQ][DQCRDSISIQ]
-Ｇ	英:wide G	名:ジー(大文字全角)	異:ｇ	代:G	活:[15b7][67po][psyv][ehtsmk]	漫:[COKOKQDQCRCVDWHWIVIUEUESKSKWIYCYAWAQ]
-g	英:g	名:ジー(小文字半角)	異:G	代:ｇ	漫:[COGOGXFYCYCWEWEUCUASAQ][DQCRDSESEQ]	幅:624	活:[13xvpqki67][7de8]
-G	英:G	名:ジー(大文字半角)	異:g	代:Ｇ	活:[1397][67po][efxvpq]	漫:[COGOGQDQCRCVDWEWEUDTESGSGYCYAWAQ]	幅:624
-ｈ	英:wide h	名:エイチ(小文字全角)	異:Ｈ	俗:水素	代:h	非:η/н	活:[01dgmjvu][mnzy]	漫:[AOCOCSISKUKYIYIVHUCUCYAY]
-Ｈ	英:wide H	名:エイチ(大文字全角)	異:ｈ	俗:水素	代:H	非:Η/Н	活:[01dg45zymjvu]
-h	英:h	名:エイチ(小文字半角)	異:H	俗:水素	代:ｈ	活:[01dekjvu][klxw]	漫:[AOCOCSESGUGYEYEVDUCVCYAY]	幅:624
-H	英:H			名:エイチ(大文字半角)	音:		訓:		送:		異:h	俗:水素	代:Ｈ	活:[01de23xwkjvu]	幅:624
-ｉ	英:wide i	名:アイ(小文字全角)	異:Ｉ	代:i	非:ι	活:[2398][efrsyvpq]	漫:[2398][efryvq]
-Ｉ	英:wide I	名:アイ(大文字全角)	異:ｉ	代:I	非:Ι	活:[05b9rsyvpq86]	漫:[05a9rsyvpq87]
-i	英:i			名:アイ(小文字半角)	音:		訓:		送:		異:I	俗:	代:ｉ	活:[1287][dewv]	幅:624
-I	英:I	名:アイ(大文字半角)	異:i	代:Ｉ	漫:[AOGOGQEQDRCQAQ][DRESEWGWGYAYAWCWCS]	幅:624	活:[0398qrxuop76]
-ｊ	英:wide j	名:ジェイ(小文字全角)	異:Ｊ	代:j	活:[45ba][ghts][psyv][ijpo]	漫:[45ba][AUCUCVDWHWIVISKSKWIYCYAW]
-Ｊ	英:wide J	名:ジェイ(大文字全角)	異:ｊ	代:J	活:[45ts][psyv][cdpo]	漫:[ASCSCVDWHWIVIOKOKWIYCYAW]
-j	英:j	名:ジェイ(小文字半角)	異:J	代:ｊ	漫:[2398][ESGSGWEYCYAWAUCUCVDWEV]	幅:624	活:[2398][efrqq][pqwv][ijpo]
-J	英:J	名:ジェイ(大文字半角)	異:j	代:Ｊ	漫:[EOGOGWEYCYAWASCSCVDWEV]	幅:624	活:[23rq][pqwv][cdpo]
-ｋ	英:wide k	名:ケイ(小文字全角)	異:Ｋ	代:k	非:κ/ｋ	活:[01jkqpvu][eflk][9bhf][lmsr][stzy]	漫:M 0,1000 200,1000 200,400 600,800 1000,800 1000,600 700,600 600,500 900,200 1000,200 1000,0 800,0 450,350 200,100 200,0 0,0 z
-Ｋ	英:wide K	名:ケイ(大文字全角)	異:ｋ	代:K	非:Κ/Ｋ	活:[01dfljvu][9agf][45ba][lmsr][stzy]	漫:[AOCOCSESIOKOKPGTKXKYIYEUCUCYAY]
-k	英:k	名:ケイ(小文字半角)	異:K	代:ｋ	活:[01deqpvu][qrxw][89fe]	漫:[AOCOCSEQGQGSFSETEVFWGWGYEYCWCYAY]	幅:624
-K	英:K	名:ケイ(大文字半角)	異:k	代:Ｋ	活:[01dekjvu][23fe][klxw]	漫:M 0,1000 200,1000 200,600 400,800 400,1000 600,1000 600,600 450,450 600,300 600,0 400,0 400,200 200,400 200,0 0,0 z	幅:624
-ｌ	英:wide l	名:エル(小文字全角)	異:Ｌ	代:l	漫:[23lzw]	活:[23lmstzw]
-Ｌ	英:wide L		名:エル(大文字全角)	音:		訓:		送:		異:ｌ	俗:	代:L	活:[01ptzu]
-l	英:l	名:エル(小文字半角)	異:L	代:ｌ	活:[12qrxv]	幅:624
-L	英:L			名:エル(大文字半角)	音:		訓:		送:		異:l	俗:	代:Ｌ	活:[01prxu]	幅:624
-ｍ	英:wide m	名:エム(小文字全角)	異:Ｍ	代:m	非:μ/м	活:[cdvu][78ed][efxw][9agf][ghzy]	漫:[CQEQFRGQIQKSKYIYITHSGTGYEYETDSCTCYAYAS]
-Ｍ	英:wide M	名:エム(大文字全角)	異:ｍ	代:M	非:Μ/М	活:[0178edvu][eflk][9a45zygf]	漫:[AOCOFRIOKOKYIYIRFUCRCYAY]
-m	英:m	名:エム(小文字半角)	異:M	代:ｍ	活:[678efxwkjvu]	漫:[AQCQCRDQEQESGSGYEYEUDVCVCYAY]	幅:624
-M	英:M	名:エム(大文字半角)	異:m	代:Ｍ	漫:[AOCODPEOGOGYEYETDUCTCYAY]	幅:624	活:[03xwkjvu]
-ｎ	英:wide n	名:エヌ(小文字全角)	異:Ｎ	代:n	非:ν/и	活:[6agdvu][ghzy]	漫:[AQIQKSKYIYITHSCSCYAY]
-Ｎ	英:wide N	名:エヌ(大文字全角)	異:ｎ	代:N	非:Ν/И	活:[0178edvu][eflk][45zysrlm]	漫:[AOCOIUIOKOKYJYCRCYAY]
-n	英:n	名:エヌ(小文字半角)	異:N	代:ｎ	漫:[AQCQCRDQEQGSGYEYETDSCSCYAY]	幅:624	活:[68edvu][efxw]
-N	英:N	名:エヌ(大文字半角)	異:n	代:Ｎ	活:[0289xwedvu]	幅:624	漫:[029xwedvu]
-ｏ	英:wide o	名:オー(小文字全角)	異:Ｏ	俗:酸素	代:o	非:ο/о	活:[CRIRITKTKWIWIYCYCWAWATCT][CTCWIWIT]	漫:[CRIRKTKWIYCYAWAT][DTCUCVDWHWIVIUHT]
-Ｏ	英:wide O	名:オー(大文字全角)	異:ｏ	俗:酸素	代:O	非:Ο/О	活:[14abtsyvpo67][7psa]	漫:[14btyvo6][DQCRCVDWHWIVIRHQ]
-o	英:o	名:オー(小文字半角)	異:O	俗:酸素	代:ｏ	漫:[CQEQGSGXFYBYAXAS][DSCTCWEWET]	幅:624	活:[78efrxuocd][dpqe]
-O	英:O	名:オー(大文字半角)	異:o	俗:酸素	代:Ｏ	漫:[6129xu][DQCRCWEWER]	幅:624	活:[671289xu][7pq8]
-ｐ	英:wide p	名:ピー(小文字全角)	異:Ｐ	代:p	非:ρ/р	活:[7aghnmspvucd][djmg]	漫:[7ahnspvuc][DSCTCUHUITHS]
-Ｐ	英:wide P	名:ピー(大文字全角)	異:ｐ	代:P	非:Ρ/Р	活:[04abhgmjvu][7dga]	漫:[04bhmjvu][CQCSHSIRHQ]
-p	英:p	名:ピー(小文字半角)	異:P	代:ｐ	活:[678efrpvu][djke]	漫:[AQCQCRDQEQGSGUEWCWCYAY][CSCUDUETDS]	幅:624
-P	英:P	名:ピー(大文字半角)	異:p	代:Ｐ	漫:[029lqpvu][CQCUDUETERDQ]	幅:624	活:[03lkqpvu][7jk8]
-ｑ	英:wide q	名:キュー(小文字全角)	異:Ｑ	代:q	活:[04abzyspji][7jma]	漫:[APBOIOKQKYIYIWCWAU][CQCTDUIUIRHQ]
-Ｑ	英:wide Q	名:キュー(大文字全角)	異:ｑ	代:Q	活:[14abnmsrxvpo67][stzy][7prlma][eflk]	漫:M 200,1000 800,1000 1000,800 1000,400 900,300 1000,200 1000,0 800,0 800,100 750,150 600,0 200,0 0,200 0,800 z M 300,800 200,700 200,300 300,200 500,200 600,300 500,400 400,400 400,600 600,600 750,450 800,500 800,700 700,800 z
-q	英:q	名:キュー(小文字半角)	異:Q	代:ｑ	漫:[AQCODOEPEOGOGYEYEUAU][DQCRCSESEQ]	幅:624	活:[6713xwki][7de8]
-Q	英:Q	名:キュー(大文字半角)	異:q	代:Ｑ	活:[1289lrxvji67][7jk8]	漫:[COEOGQGUFVGWGYFYEXDYCYCWAUAQ][DQCRCTDUETER]	幅:624
-ｒ	英:wide r	名:アール(小文字全角)	異:Ｒ	代:r	非:я	活:[0178edvu][25b8]	漫:[AOCOCQEOKOKQFQCTCYAY]
-Ｒ	英:wide R	名:アール(大文字全角)	異:ｒ	代:R	非:Я	活:[04abhgsrljvu][stzy][7dga]	漫:[AOIOKQKSIUIVJWKWKYIYGWGUCUCYAY][CQCSHSIRHQ]
-r	英:r	名:アール(小文字半角)	異:R	代:ｒ	漫:[AQCQCSEQGQGSFSCVCYAY]	幅:624	活:[67dekjvu][89fe]
-R	英:R	名:アール(大文字半角)	異:r	代:Ｒ	活:[0289lkqpvu][qrxw][7jk8]	漫:M 0,1000 400,1000 600,800 600,400 450,250 500,200 600,200 600,0 400,0 200,200 200,0 0,0 z M 200,800 200,400 300,400 400,500 400,700 300,800 z	幅:624
-ｓ	英:wide s	名:エス(小文字全角)	異:Ｓ	代:s	活:[7bhflicd][orlntsyu]	漫:M 200,800 1000,800 1000,600 600,600 1000,200 800,0 0,0 0,200 500,200 550,250 400,400 100,400 0,500 0,600 z
-Ｓ	英:wide S	名:エス(大文字全角)	異:ｓ	代:S	活:[15b7][67dc][dgmj][mnts][osyu]	漫:[COKOKQDQCRDSISKUKWIYAYAWHWIVHUCUASAQ]
-s	英:s	名:エス(小文字半角)	異:S	代:ｓ	漫:[CQGQGSCSGWGXFYAYAWDWATAS]	幅:624	活:[79fd][cdji][jlxuop]
-S	英:S	名:エス(大文字半角)	異:s	代:Ｓ	活:[1397][67dc][dekj][klrq][oqwu]	漫:[COGOGQDQCRDSESGUGWEYAYAWDWEVDUCUASAQ]	幅:624
-ｔ	英:wide t		名:ティー(小文字全角)	音:		訓:		送:		異:Ｔ	俗:	非:τ/т	代:t	活:[68239bhfrqec][rsyx]	漫:[AQEQEOGOGQKQKSGSGVIXIYGYEWESAS]
-Ｔ	英:wide T		名:ティー(大文字全角)	音:		訓:		送:		異:ｔ	俗:	非:Τ/Т	代:T	活:[05b9xw86]
-t	英:t	名:ティー(小文字半角)	異:T	代:ｔ	漫:[COEOEQGQGSESEWGWGYDYCXCSASAQCQ]	幅:624	活:[1289feqrxvdc67]
-T	英:T	名:ティー(大文字半角)	異:t	代:Ｔ	活:[0398wv76]	幅:624
-ｕ	英:wide u	名:ユー(小文字全角)	異:Ｕ	代:u	活:[67ji][jkqp][abzwqs]	漫:[AQCQCTFWGWIUIQKQKYIYIXHYEYAU]
-Ｕ	英:wide U	名:ユー(大文字全角)	異:u	代:U	活:[01po][psyv][45ts]	漫:[AOCOCVDWHWIVIOKOKWIYCYAW]
-u	英:u	名:ユー(小文字半角)	異:U	代:ｕ	活:[67po][89xvpq]	漫:[AQCQCVDWEVEQGQGYEYEXDYCYAW]	幅:624
-U	英:U	名:ユー(大文字半角)	異:u	代:Ｕ	漫:[AOCOCWEWEOGOGXFYBYAX]	幅:624	活:[01pq23xu]
-ｖ	英:wide v	名:ヴィ(小文字全角)	異:Ｖ	代:v	活:[67ji][jkqp][qrxw][lmsr][abnm]	漫:[AQCQCTFWITIQKQKUGYEYAU]
-Ｖ	英:wide V	名:ヴィ(大文字全角)	異:ｖ	代:V	活:[01ji][jkqp][qrxw][45nm][lmsr]	漫:[AOCOCTFWITIOKOKUGYEYAU]
-v	英:v	名:ヴィ(小文字半角)	異:v	代:ｖ	活:[67po][pqwv][89rq]	漫:[AQCQCVDWEVEQGQGWEYCYAW]	幅:624
-V	英:V	名:ヴィ(大文字半角)	異:V	代:Ｖ	活:[01po][23rq][pqwv]	漫:[AOCOCVDWEVEOGOGWEYCYAW]	幅:624
-ｗ	英:wide w	名:ダブルユー(小文字全角)	異:Ｗ	代:w	活:[67po][efrsyvpq][abts]	漫:[AQCQCVDWEVESGSGVHWIVIQKQKWIYGYFXEYCYAW]
-Ｗ	英:wide W	名:ダブルユー(大文字全角)	異:ｗ	代:W	活:[01pqwu][efrq][45zxrs]	漫:[AOCOCVDWEVESGSGVHWIVIOKOKYGYFXEYAY]
-w	英:w	名:ダブルユー(小文字半角)	異:W	代:ｗ	活:[67jk89xu]	漫:[AQCQCVDUEVEQGQGXFYEYDXCYBYAX]	幅:624
-W	英:W	名:ダブルユー(大文字半角)	異:w	代:Ｗ	活:[01de23xwqpvu]	漫:[AOCOCTDSETEOGOGYEYEXDWCXCYAY]	幅:624
-ｘ	英:wide x	名:エックス(小文字全角)	異:Ｘ	代:x	非:χ/х	活:[67dc][dgsp][abhg][stzy][opvu]	漫:[AQCQFTIQKQKSJSHUJWKWKYIYFVCYAYAWBWDUBSAS]
-Ｘ	英:wide X	名:エックス(大文字全角)	異:ｘ	代:X	非:Χ/Х	活:[0176][78ed][eflk][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 200,900 500,600 800,900 800,1000 1000,1000 1000,800 650,450 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 100,200 350,450 0,800 z
-x	英:x			名:エックス(小文字半角)	音:		訓:		送:		異:X	俗:	代:ｘ	活:[67dc][89fe][deqp][opvu][qrxw]	幅:624	漫:[AQCQCRDSEREQGQGSEUGWGYEYEXDWCXCYAYAWCUAS]
-X	英:X	名:エックス(大文字半角)	異:x	代:Ｘ	活:[01dc][23fe][dekj][ijvu][klxw]	漫:[AOCOCQDREQEOGOGRETGVGYEYEWDVCWCYAYAVCTAR]	幅:624
-ｙ	英:wide y	名:ワイ(小文字全角)	異:Ｙ	代:y	非:υ/у	活:[0176][78ed][efrq][45ba][9agf][pqwv]	漫:[AOCOFRIOKOKQJQGTGWEYCYCWDWEVETBQAQ]
-Ｙ	英:wide Y		名:ワイ(大文字全角)	音:		訓:		送:		異:ｙ	俗:	非:Υ/У/丫	代:Y	活:[01dc][dekj][45hg][fgml][klxw]	漫:[AOCOCQFTIQIOKOKRGVGYEYEVAR]
+ａ	英:wide a	名:エイ(小文字全角)	異:Ａ	逆:a	非:α/а	活:[14stzvpo67][7pr9]	漫:[14stzvo6][DQCRCVDWGWGQ]
+Ａ	英:wide A		名:エイ(大文字全角)	異:ａ	俗:	非:Α/А	逆:A	活:[2398][78kl9amnzyspvuij]	漫:[CRFOIRIUKWKYIYIXHWDWCXCYAYAWCU][ESEUGUGSFR]
+a	英:a	名:エイ(小文字半角)	異:Ａ	逆:ａ	俗:非円唇前舌広母音	漫:[CQGQGVFWGWGYCYAWAS][DSCTCVDWEWES]	幅:624	活:[CQGQGVGYCYCWAWASCS][dpqe]
+A	英:A	名:エイ(大文字半角)	異:ａ	逆:Ａ	非:Å	幅:624	活:[671289xwkjvu][7de8]	漫:[129xwkjvu6][DQCRCSESER]
+ｂ	英:wide b	名:ビー(小文字全角)	異:Ｂ	逆:b	非:β/в	活:[01dgmntsyu][jpsm]	漫:[01dgntyu][CUCWHWIVIVHU]
+Ｂ	英:wide B		名:ビー(大文字全角)	異:ｂ	俗:	非:Β/В	逆:B	活:[04abhgmntsyu][7dddga][jpsm]	漫:[AOIOKQKSJTKUKWIYAY][CQCSCSCSHSIRHQ][CUCWHWIVHU]
+b	英:b	名:ビー(小文字半角)	異:B	逆:ｂ	俗:有声両唇破裂音	活:[01deklrqwu][jpqk]	漫:[01delrwu][CUCWDWEVDU]	幅:624
+B	英:B	名:ビー(大文字半角)	異:b	逆:Ｂ	活:[0289feklrqwu][7de8][jpqk]	漫:[AOEOGQGSFTGUGWEYAY][CQCSDSERDQ][CUCWDWEVDU]	幅:624
+ｃ	英:wide c	名:シー(小文字全角)	異:Ｃ	俗:炭素	逆:c	非:¢/с	活:[7bhd][cdpo][ptzv]	漫:[CQKQKSDSCTCVDWKWKYCYAWAS]
+Ｃ	英:wide C	名:シー(大文字全角)	異:ｃ	俗:炭素	逆:C	非:￠/С	活:[abhg][14a7][67po][psyv][mnts]	漫:[COIOKQKSISIRHQDQCRCVDWHWIVIUKUKWIYCYAWAQ]
+c	英:c	名:シー(小文字半角)	異:C	俗:炭素	逆:ｃ	活:[79fd][cdpo][prxv]	漫:[CQGQGSDSCTCVDWGWGYCYAWAS]	幅:624
+C	英:C	名:シー(大文字半角)	異:c	俗:炭素	逆:Ｃ	非:℃	活:[1397][67po][prxv]	漫:[COGOGQDQCRCVDWGWGYCYAWAQ]	幅:624
+ｄ	英:wide d	名:ディー(小文字全角)	異:Ｄ	逆:d	活:[7a45zvpocd][dpsg]	漫:[7a45zvoc][DSCTCVDWIWIS]
+Ｄ	英:wide D	名:ディー(大文字全角)	異:ｄ	逆:D	活:[04abtsyu][7psa]	漫:[04btyu][CQCWHWIVIRHQ]
+d	英:d	名:ディー(小文字半角)	異:D	逆:ｄ	俗:有声歯茎破裂音	活:[23xuijde][jpqk]	漫:[EOGOGYBYAXAUCSES][DUCVCWEWEU]	幅:624
+D	英:D	名:ディー(大文字半角)	異:d	逆:Ｄ	漫:[029rwu][CQCWDWEVERDQ]	活:[0289rqwu][7pq8]	幅:624
+ｅ	英:wide e	名:イー(小文字全角)	異:Ｅ	逆:e	非:ε/е	活:[14abnjpo67][7dga][psyv]	漫:[COIOKQKUCUCVDWIWIYCYAWAQ][DQCRCSISIRHQ]
+Ｅ	英:wide E	名:イー(大文字全角)	異:ｅ	俗:	非:Ε/Е	逆:E	活:[05b7dgmjptzu]
+e	英:e	名:イー(小文字半角)	異:E	代:ｅ	俗:非円唇前舌半狭母音	活:[678efljpoc][prxv]	漫:[BQEQGSGUCUCVDWGWGYCYAWAR][CSDTDS]	幅:624
+E	英:E	名:イー(大文字半角)	異:e	俗:	逆:Ｅ	活:[0397dekjprxu]	幅:624
+ｆ	英:wide f	名:エフ(小文字全角)	異:Ｆ	逆:f	活:[ce89fhnlxwki][35b9]	漫:[ASESEQGOKOKQHQGRGSKSKUGUGYEYEUAU]
+Ｆ	英:wide F	名:エフ(大文字全角)	異:ｆ	俗:	逆:F	活:[05b7dgmjvu]
+f	英:f	名:エフ(小文字半角)	異:F	俗:無声唇歯摩擦音	逆:ｆ	活:[78eflkwvjicd][2398]	漫:[CQEOGOGQFQERESGSGUEUEYCYCUAUASCS]	幅:624
+F	英:F	名:エフ(大文字半角)	異:f	俗:	非:℉	逆:Ｆ	活:[00397dekjvu]	幅:624
+ｇ	英:wide g	名:ジー(小文字全角)	異:Ｇ	逆:g	活:[15tsmjdc67][osyu][7dga]	漫:[COKOKWIYAYAWHWIVIUCUASAQ][DQCRDSISIQ]
+Ｇ	英:wide G	名:ジー(大文字全角)	異:ｇ	逆:G	活:[15b7][67po][psyv][ehtsmk]	漫:[COKOKQDQCRCVDWHWIVIUEUESKSKWIYCYAWAQ]
+g	英:g	名:ジー(小文字半角)	異:G	逆:ｇ	非:ɡ	活:[13xvpqki67][7de8]	漫:[COGOGXFYCYCWEWEUCUASAQ][DQCRDSESEQ]	幅:624
+G	英:G	名:ジー(大文字半角)	異:g	逆:Ｇ	活:[1397][67po][efxvpq]	漫:[COGOGQDQCRCVDWEWEUDTESGSGYCYAWAQ]	幅:624
+ｈ	英:wide h	名:エイチ(小文字全角)	異:Ｈ	俗:水素	代:h	非:η/н	逆:h	活:[01dgmjvu][mnzy]	漫:[AOCOCSISKUKYIYIVHUCUCYAY]
+Ｈ	英:wide H	名:エイチ(大文字全角)	異:ｈ	俗:水素	代:H	非:Η/Н	逆:H	活:[01dg45zymjvu]
+h	英:h	名:エイチ(小文字半角)	異:H	俗:水素	代:ｈ	逆:ｈ	俗:無声声門摩擦音	活:[01dekjvu][klxw]	漫:[AOCOCSESGUGYEYEVDUCVCYAY]	幅:624
+H	英:H	名:エイチ(大文字半角)	異:h	俗:水素	代:Ｈ	逆:Ｈ	活:[01de23xwkjvu]	幅:624
+ｉ	英:wide i	名:アイ(小文字全角)	異:Ｉ	逆:i	非:ι	活:[2398][efrsyvpq]	漫:[2398][efryvq]
+Ｉ	英:wide I	名:アイ(大文字全角)	異:ｉ	逆:I	非:Ι	活:[05b9rsyvpq86]	漫:[05a9rsyvpq87]
+i	英:i			名:アイ(小文字半角)	異:I		俗:非円唇前舌狭母音	逆:ｉ	活:[1287][dewv]	幅:624
+I	英:I	名:アイ(大文字半角)	異:i		逆:Ｉ	活:[0398qrxuop76]	漫:[AOGOGQEQDRCQAQ][DRESEWGWGYAYAWCWCS]	幅:624
+ｊ	英:wide j	名:ジェイ(小文字全角)	異:Ｊ	逆:j	活:[45ba][ghts][psyv][ijpo]	漫:[45ba][AUCUCVDWHWIVISKSKWIYCYAW]
+Ｊ	英:wide J	名:ジェイ(大文字全角)	異:ｊ	逆:J	活:[45ts][psyv][cdpo]	漫:[ASCSCVDWHWIVIOKOKWIYCYAW]
+j	英:j	名:ジェイ(小文字半角)	異:J	逆:ｊ	俗:硬口蓋接近音	漫:[2398][ESGSGWEYCYAWAUCUCVDWEV]	活:[2398][efrqq][pqwv][ijpo]	幅:624
+J	英:J	名:ジェイ(大文字半角)	異:j	逆:Ｊ	漫:[EOGOGWEYCYAWASCSCVDWEV]	活:[23rq][pqwv][cdpo]	幅:624
+ｋ	英:wide k	名:ケイ(小文字全角)	異:Ｋ	逆:k	非:κ/ｋ	活:[01jkqpvu][eflk][9bhf][lmsr][stzy]	漫:M 0,1000 200,1000 200,400 600,800 1000,800 1000,600 700,600 600,500 900,200 1000,200 1000,0 800,0 450,350 200,100 200,0 0,0 z
+Ｋ	英:wide K	名:ケイ(大文字全角)	異:ｋ	逆:K	非:Κ/Ｋ	活:[01dfljvu][9agf][45ba][lmsr][stzy]	漫:[AOCOCSESIOKOKPGTKXKYIYEUCUCYAY]
+k	英:k	名:ケイ(小文字半角)	異:K	逆:ｋ	俗:無声軟口蓋破裂音	活:[01deqpvu][qrxw][89fe]	漫:[AOCOCSEQGQGSFSETEVFWGWGYEYCWCYAY]	幅:624
+K	英:K	名:ケイ(大文字半角)	異:k	逆:Ｋ	活:[01dekjvu][23fe][klxw]	漫:M 0,1000 200,1000 200,600 400,800 400,1000 600,1000 600,600 450,450 600,300 600,0 400,0 400,200 200,400 200,0 0,0 z	幅:624
+ｌ	英:wide l	名:エル(小文字全角)	異:Ｌ	逆:l		活:[23lmstzw]漫:[23lzw]
+Ｌ	英:wide L	名:エル(大文字全角)	異:ｌ	俗:	逆:L	活:[01ptzu]
+l	英:l	名:エル(小文字半角)	異:L	逆:ｌ	活:[12qrxv]	幅:624
+L	英:L	名:エル(大文字半角)	異:l	俗:	逆:Ｌ	非:ʟ	活:[01prxu]	幅:624
+ｍ	英:wide m	名:エム(小文字全角)	異:Ｍ	逆:m	非:μ/м	活:[cdvu][78ed][efxw][9agf][ghzy]	漫:[CQEQFRGQIQKSKYIYITHSGTGYEYETDSCTCYAYAS]
+Ｍ	英:wide M	名:エム(大文字全角)	異:ｍ	逆:M	非:Μ/М	活:[0178edvu][eflk][9a45zygf]	漫:[AOCOFRIOKOKYIYIRFUCRCYAY]
+m	英:m	名:エム(小文字半角)	異:M	逆:ｍ	俗:両唇鼻音	活:[678efxwkjvu]	漫:[AQCQCRDQEQESGSGYEYEUDVCVCYAY]	幅:624
+M	英:M	名:エム(大文字半角)	異:m	逆:Ｍ	活:[03xwkjvu]	漫:[AOCODPEOGOGYEYETDUCTCYAY]	幅:624
+ｎ	英:wide n	名:エヌ(小文字全角)	異:Ｎ	逆:n	非:ν/и	活:[6agdvu][ghzy]	漫:[AQIQKSKYIYITHSCSCYAY]
+Ｎ	英:wide N	名:エヌ(大文字全角)	異:ｎ	逆:N	非:Ν/И	活:[0178edvu][eflk][45zysrlm]	漫:[AOCOIUIOKOKYJYCRCYAY]
+n	英:n	名:エヌ(小文字半角)	異:N	逆:ｎ	俗:歯茎鼻音	活:[68edvu][efxw]	漫:[AQCQCRDQEQGSGYEYETDSCSCYAY]	幅:624
+N	英:N	名:エヌ(大文字半角)	異:n	逆:Ｎ	活:[0289xwedvu]		漫:[029xwedvu]		幅:624
+ｏ	英:wide o	名:オー(小文字全角)	異:Ｏ	逆:o	俗:酸素	代:o	非:ο/о	活:[CRIRITKTKWIWIYCYCWAWATCT][CTCWIWIT]	漫:[CRIRKTKWIYCYAWAT][DTCUCVDWHWIVIUHT]
+Ｏ	英:wide O	名:オー(大文字全角)	異:ｏ	逆:O	俗:酸素	代:O	非:Ο/О	活:[14abtsyvpo67][7psa]	漫:[14btyvo6][DQCRCVDWHWIVIRHQ]
+o	英:o	名:オー(小文字半角)	異:O	逆:ｏ	俗:酸素/円唇後舌半狭母音	代:ｏ	活:[78efrxuocd][dpqe]	漫:[CQEQGSGXFYBYAXAS][DSCTCWEWET]	幅:624
+O	英:O	名:オー(大文字半角)	異:o	逆:Ｏ	俗:酸素	代:Ｏ	活:[671289xu][7pq8]	漫:[6129xu][DQCRCWEWER]	幅:624
+ｐ	英:wide p	名:ピー(小文字全角)	異:Ｐ	逆:p	非:ρ/р	活:[7aghnmspvucd][djmg]	漫:[7ahnspvuc][DSCTCUHUITHS]
+Ｐ	英:wide P	名:ピー(大文字全角)	異:ｐ	逆:P	非:Ρ/Р	活:[04abhgmjvu][7dga]	漫:[04bhmjvu][CQCSHSIRHQ]
+p	英:p	名:ピー(小文字半角)	異:P	逆:ｐ	俗:無声両唇破裂音	活:[678efrpvu][djke]	漫:[AQCQCRDQEQGSGUEWCWCYAY][CSCUDUETDS]	幅:624
+P	英:P	名:ピー(大文字半角)	異:p	逆:Ｐ		活:[03lkqpvu][7jk8]漫:[029lqpvu][CQCUDUETERDQ]	幅:624
+ｑ	英:wide q	名:キュー(小文字全角)	異:Ｑ	逆:q	活:[04abzyspji][7jma]	漫:[APBOIOKQKYIYIWCWAU][CQCTDUIUIRHQ]
+Ｑ	英:wide Q	名:キュー(大文字全角)	異:ｑ	逆:Q	活:[14abnmsrxvpo67][stzy][7prlma][eflk]	漫:M 200,1000 800,1000 1000,800 1000,400 900,300 1000,200 1000,0 800,0 800,100 750,150 600,0 200,0 0,200 0,800 z M 300,800 200,700 200,300 300,200 500,200 600,300 500,400 400,400 400,600 600,600 750,450 800,500 800,700 700,800 z
+q	英:q	名:キュー(小文字半角)	異:Q	逆:ｑ	活:[6713xwki][7de8]	漫:[AQCODOEPEOGOGYEYEUAU][DQCRCSESEQ]	幅:624
+Q	英:Q	名:キュー(大文字半角)	異:q	逆:Ｑ	活:[1289lrxvji67][7jk8]	漫:[COEOGQGUFVGWGYFYEXDYCYCWAUAQ][DQCRCTDUETER]	幅:624
+ｒ	英:wide r	名:アール(小文字全角)	異:Ｒ	逆:r	非:я	活:[0178edvu][25b8]	漫:[AOCOCQEOKOKQFQCTCYAY]
+Ｒ	英:wide R	名:アール(大文字全角)	異:ｒ	逆:R	非:Я	活:[04abhgsrljvu][stzy][7dga]	漫:[AOIOKQKSIUIVJWKWKYIYGWGUCUCYAY][CQCSHSIRHQ]
+r	英:r	名:アール(小文字半角)	異:R	逆:ｒ	活:[67dekjvu][89fe]	漫:[AQCQCSEQGQGSFSCVCYAY]	幅:624
+R	英:R	名:アール(大文字半角)	異:r	逆:Ｒ	活:[0289lkqpvu][qrxw][7jk8]	漫:M 0,1000 400,1000 600,800 600,400 450,250 500,200 600,200 600,0 400,0 200,200 200,0 0,0 z M 200,800 200,400 300,400 400,500 400,700 300,800 z	幅:624
+ｓ	英:wide s	名:エス(小文字全角)	異:Ｓ	逆:s	活:[7bhflicd][orlntsyu]	漫:M 200,800 1000,800 1000,600 600,600 1000,200 800,0 0,0 0,200 500,200 550,250 400,400 100,400 0,500 0,600 z
+Ｓ	英:wide S	名:エス(大文字全角)	異:ｓ	逆:S	活:[15b7][67dc][dgmj][mnts][osyu]	漫:[COKOKQDQCRDSISKUKWIYAYAWHWIVHUCUASAQ]
+s	英:s	名:エス(小文字半角)	異:S	逆:ｓ	俗:無声歯茎摩擦音	活:[79fd][cdji][jlxuop]	漫:[CQGQGSCSGWGXFYAYAWDWATAS]	幅:624
+S	英:S	名:エス(大文字半角)	異:s	逆:Ｓ	活:[1397][67dc][dekj][klrq][oqwu]	漫:[COGOGQDQCRDSESGUGWEYAYAWDWEVDUCUASAQ]	幅:624
+ｔ	英:wide t	名:ティー(小文字全角)	異:Ｔ	俗:	非:τ/т	逆:t	活:[68239bhfrqec][rsyx]	漫:[AQEQEOGOGQKQKSGSGVIXIYGYEWESAS]
+Ｔ	英:wide T	名:ティー(大文字全角)	異:ｔ	俗:	非:Τ/Т	逆:T	活:[05b9xw86]
+t	英:t	名:ティー(小文字半角)	異:T	逆:ｔ	活:[1289feqrxvdc67]	漫:[COEOEQGQGSESEWGWGYDYCXCSASAQCQ]	幅:624
+T	英:T	名:ティー(大文字半角)	異:t	逆:Ｔ	活:[0398wv76]	幅:624
+ｕ	英:wide u	名:ユー(小文字全角)	異:Ｕ	逆:u	活:[67ji][jkqp][abzwqs]	漫:[AQCQCTFWGWIUIQKQKYIYIXHYEYAU]
+Ｕ	英:wide U	名:ユー(大文字全角)	異:u	逆:U	活:[01po][psyv][45ts]	漫:[AOCOCVDWHWIVIOKOKWIYCYAW]
+u	英:u	名:ユー(小文字半角)	異:U	逆:ｕ	俗:円唇後舌狭母音	活:[67po][89xvpq]	漫:[AQCQCVDWEVEQGQGYEYEXDYCYAW]	幅:624
+U	英:U	名:ユー(大文字半角)	異:u	逆:Ｕ	活:[01pq23xu]	漫:[AOCOCWEWEOGOGXFYBYAX]	幅:624
+ｖ	英:wide v	名:ヴィ(小文字全角)	異:Ｖ	逆:v	活:[67ji][jkqp][qrxw][lmsr][abnm]	漫:[AQCQCTFWITIQKQKUGYEYAU]
+Ｖ	英:wide V	名:ヴィ(大文字全角)	異:ｖ	逆:V	活:[01ji][jkqp][qrxw][45nm][lmsr]	漫:[AOCOCTFWITIOKOKUGYEYAU]
+v	英:v	名:ヴィ(小文字半角)	異:v	逆:ｖ	俗:有声唇歯摩擦音	活:[67po][pqwv][89rq]	漫:[AQCQCVDWEVEQGQGWEYCYAW]	幅:624
+V	英:V	名:ヴィ(大文字半角)	異:V	逆:Ｖ	活:[01po][23rq][pqwv]	漫:[AOCOCVDWEVEOGOGWEYCYAW]	幅:624
+ｗ	英:wide w	名:ダブルユー(小文字全角)	異:Ｗ	逆:w	活:[67po][efrsyvpq][abts]	漫:[AQCQCVDWEVESGSGVHWIVIQKQKWIYGYFXEYCYAW]
+Ｗ	英:wide W	名:ダブルユー(大文字全角)	異:ｗ	逆:W	活:[01pqwu][efrq][45zxrs]	漫:[AOCOCVDWEVESGSGVHWIVIOKOKYGYFXEYAY]
+w	英:w	名:ダブルユー(小文字半角)	異:W	逆:ｗ 俗:有声両唇軟口蓋接近音	活:[67jk89xu]	漫:[AQCQCVDUEVEQGQGXFYEYDXCYBYAX]	幅:624
+W	英:W	名:ダブルユー(大文字半角)	異:w	逆:Ｗ	活:[01de23xwqpvu]	漫:[AOCOCTDSETEOGOGYEYEXDWCXCYAY]	幅:624
+ｘ	英:wide x	名:エックス(小文字全角)	異:Ｘ	逆:x	非:χ/х	活:[67dc][dgsp][abhg][stzy][opvu]	漫:[AQCQFTIQKQKSJSHUJWKWKYIYFVCYAYAWBWDUBSAS]
+Ｘ	英:wide X	名:エックス(大文字全角)	異:ｘ	逆:X	非:Χ/Х	活:[0176][78ed][eflk][lmsr][stzy][45ba][9agf][jkqp][opvu]	漫:M 0,1000 200,1000 200,900 500,600 800,900 800,1000 1000,1000 1000,800 650,450 900,200 1000,200 1000,0 800,0 500,300 200,0 0,0 0,200 100,200 350,450 0,800 z
+x	英:x	名:エックス(小文字半角)	異:X	俗:	逆:ｘ	活:[67dc][89fe][deqp][opvu][qrxw]	漫:[AQCQCRDSEREQGQGSEUGWGYEYEXDWCXCYAYAWCUAS]	幅:624
+X	英:X	名:エックス(大文字半角)	異:x	逆:Ｘ	活:[01dc][23fe][dekj][ijvu][klxw]	漫:[AOCOCQDREQEOGOGRETGVGYEYEWDVCWCYAYAVCTAR]	幅:624
+ｙ	英:wide y	名:ワイ(小文字全角)	異:Ｙ	逆:y	非:υ/у	活:[0176][78ed][efrq][45ba][9agf][pqwv]	漫:[AOCOFRIOKOKQJQGTGWEYCYCWDWEVETBQAQ]
+Ｙ	英:wide Y		名:ワイ(大文字全角)	異:ｙ	俗:	非:Υ/У/丫	逆:Y	活:[01dc][dekj][45hg][fgml][klxw]	漫:[AOCOCQFTIQIOKOKRGVGYEYEVAR]
 丫	英:bifurcation/fork	名:あげまき		音:ヤ		訓:あげまき	送:丫叉/丫結び	異:	俗:揚巻	非:Ｙ	地:南丫島
-y	英:y	名:ワイ(小文字半角)	異:Y	代:ｙ	漫:[AOCOCSESEOGOGWEYAYAWDWEVETDUCUAS]	幅:624	活:[01dc][23rqkjde][oqwu]
-Y	英:Y	名:ワイ(大文字半角)	異:y	代:Ｙ	活:[01ji][23lk][jkwv]	漫:[AOCOCSDTESEOGOGTEVEYCYCVAT]	幅:624
-ｚ	英:wide z	名:ゼット(小文字全角)	異:Ｚ	代:z	非:ζ	活:[6bhgmkec][jkqtzuop]	漫:[AQKQKSIUGUEWKWKYAYAWCUDUFSAS]
-Ｚ	英:wide Z	名:ゼット(大文字全角)	異:ｚ	代:Z	非:Ζ	活:[05bagf96][eflk][jkqtzuop]	漫:[AOKOKPDWKWKYAYAWGQAQ]
-z	英:z	名:ゼット(小文字半角)	異:Z	代:ｚ	漫:[AQGQGTDWGWGYAYAWESAS]	幅:624	活:[69lkec][jkqrxuop]
-Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]	漫:[AOGOGRCVCWGWGYAYAUEQAQ]	幅:624
+y	英:y	名:ワイ(小文字半角)	異:Y	逆:ｙ	活:[01dc][23rqkjde][oqwu]	漫:[AOCOCSESEOGOGWEYAYAWDWEVETDUCUAS]	幅:624
+Y	英:Y	名:ワイ(大文字半角)	異:y	逆:Ｙ	活:[01ji][23lk][jkwv]	漫:[AOCOCSDTESEOGOGTEVEYCYCVAT]	幅:624
+ｚ	英:wide z	名:ゼット(小文字全角)	異:Ｚ	逆:z	非:ζ	活:[6bhgmkec][jkqtzuop]	漫:[AQKQKSIUGUEWKWKYAYAWCUDUFSAS]
+Ｚ	英:wide Z	名:ゼット(大文字全角)	異:ｚ	逆:Z	非:Ζ	活:[05bagf96][eflk][jkqtzuop]	漫:[AOKOKPDWKWKYAYAWGQAQ]
+z	英:z	名:ゼット(小文字半角)	異:Z	逆:ｚ 俗:有声歯茎摩擦音	活:[69lkec][jkqrxuop]	漫:[AQGQGTDWGWGYAYAWESAS]	幅:624
+Z	英:Z	名:ゼット(大文字半角)	異:z	逆:Ｚ	活:[039fe86][dekj][ijprxu]	漫:[AOGOGRCVCWGWGYAYAUEQAQ]	幅:624
 α	英:alpha	名:アルファ(小文字)	異:Α	非:ａ	活:[45ba][78239amlrqwvpocd][rtzx][8edpqkl9]	漫:M 400,1000 600,1000 700,900 800,900 800,1000 1000,1000 1000,800 800,650 800,400 700,300 800,200 1000,200 1000,0 600,0 500,100 400,0 200,0 0,200 0,600 z M 500,800 200,500 200,300 300,200 600,500 600,700 z
 Α	英:alpha	名:アルファ(大文字)	異:α	非:Ａ	活:[78239aghzyspvucd][8edjmgf9]	漫:[23hzyspvuc][FQCTCUIUIT]
 β	英:beta			名:ベータ(小文字)	音:		訓:		送:		異:Β	俗:	非:ｂ	活:[7824ghtsywqp][opvu][8qsml9]	漫:[CQEOIOISKSKWIYEYEWCYAYAWBWCV][EREWGWHWIVIUGUGQFQ]
@@ -344,7 +412,7 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Ζ	英:zeta	名:ゼータ(大文字)	異:ζ	非:Ｚ	活:[15bagf97][eflk][jkqtzuop]	漫:[COKOKPDWKWKYAYAWGQCQ]
 η	英:eta	名:エータ(小文字)	異:Η	非:ｈ	活:[0286][89fe][deqp][34a9][abnm][lmyx]	漫:M 0,1000 400,1000 500,900 600,1000 800,1000 1000,800 1000,500 800,300 800,0 600,0 600,400 800,600 800,700 700,800 400,500 400,200 200,200 200,600 350,750 300,800 0,800 z
 Η	英:eta	名:エータ(大文字)	異:η	非:Ｈ	活:[12eg45zymjvucd]	漫:[COEOESISIOKOKYIYIUDUCVCYAYAUCS]
-θ	英:theta	名:テータ(小文字)	異:Θ	活:[7824abhgmsrxvpoijd][8ega][jprl]	漫:[724bhmsxvoid][ERESHSIRHQFQ][DUCVDWFWGVGU]
+θ	英:theta	名:テータ(小文字)	異:Θ 俗:無声歯摩擦音	活:[7824abhgmsrxvpoijd][8ega][jprl]	漫:[724bhmsxvoid][ERESHSIRHQFQ][DUCVDWFWGVGU]
 Θ	英:theta	名:テータ(大文字)	異:θ	活:[14abtsyvpo67][7dga][jpsm]	漫:[14btyvo6][DQCRCSISIRHQ][CUCVDWHWIVIU]
 ι	英:iota	名:イオタ(小文字)	異:Ι	非:ｉ	活:[89fe][deqp][qrxw][lmsr]	漫:[EQGQGSFSETEVFWGVGUIUIWGYEYCWCS]
 Ι	英:iota	名:イオタ(大文字)	異:ι	非:Ｉ	活:[25bagf98][efrsyvpq]	漫:[EOKOKQIQISGUGWIWIYCYCWEWETGRGQEQ]
@@ -371,8 +439,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Τ	英:tau			名:タウ(大文字)		音:		訓:		送:		異:τ	俗:	非:Ｔ	活:[15b9xw87]
 υ	英:ypsilon	名:イプシロン(小文字)	異:Υ	非:ｙ	活:[02ed76][cdpo][prxv][fgsr][abhg]	漫:[AOEOESCUCVDWFWGVGTIRIQKQKSIUIWGYCYAWATCRCQAQ]
 Υ	英:ypsilon	名:イプシロン(大文字)	異:υ	非:Ｙ	活:[12ed][efxw][9agf][45ba]	漫:[COEOERFSIPIOKOKQGUGYEYEUCS]
-φ	英:phi	名:ファイ(小文字)	異:Φ	非:ø/φ	活:[7934aghnmsqwvpjicd][djke][flmg]	漫:M 200,800 600,800 600,1000 800,1000 800,800 1000,600 1000,400 800,200 400,200 400,0 200,0 200,200 0,400 0,600 z M 300,600 200,500 300,400 500,600 z M 600,400 700,400 800,500 750,550 z
-Φ	英:phi	名:ファイ(大文字)	異:φ	非:Ø/Φ	活:[78239aghnmsrxwqpjicd][djke][flmg]	漫:[78239ahnsrxwqpic][DSCTDUEUES][GSGUHUITHS]
+φ	英:phi	名:ファイ(小文字)	異:Φ	非:ø/ф	活:[7934aghnmsqwvpjicd][djke][flmg]	漫:M 200,800 600,800 600,1000 800,1000 800,800 1000,600 1000,400 800,200 400,200 400,0 200,0 200,200 0,400 0,600 z M 300,600 200,500 300,400 500,600 z M 600,400 700,400 800,500 750,550 z
+Φ	英:phi	名:ファイ(大文字)	異:φ	非:Ø/Ф	活:[78239aghnmsrxwqpjicd][djke][flmg]	漫:[78239ahnsrxwqpic][DSCTDUEUES][GSGUHUITHS]
 χ	英:chi	名:カイ(小文字)	異:Χ	俗:Χmas	非:ｘ	活:[1397][45ba][9agf][efrpjk][opvu][rtzx]	漫:M 200,1000 600,1000 700,900 800,1000 1000,1000 1000,800 900,800 600,500 600,300 700,200 1000,200 1000,0 600,0 400,200 400,300 200,100 200,0 0,0 0,200 550,750 500,800 200,800 z
 Χ	英:chi	名:カイ(大文字)	異:χ	俗:Χmas	非:Ｘ	活:[45ba][ef9asrlk][jkqp][opvu][12ed][stzy]	漫:[COEOERFSIPIOKOKQHTKWKYIYIXFUCXCYAYAWDTCS]
 ψ	英:psi	名:プサイ(小文字)	異:Ψ	活:[89lmsqwvpjk][67ji][34a9][ghnm]	漫:[AQCQCTDUEUEQGOIOIQHQGRGUHUITISKSKUIWFWEXEYCYCWAU]
@@ -389,11 +457,11 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Г	英:Cyrillic Ge	名:ゲー(大文字)	異:г	代:Ґ	活:[05b8edvu]
 ґ	英:Cyrillic Ghe with upturn	名:鉤のゲー(小文字)	音:	訓:		送:		異:Ґ	俗:ウクライナ	代:г
 Ґ	英:Cyrillic Ghe with upturn	名:鉤のゲー(大文字)	音:	訓:		送:		異:ґ	俗:ウクライナ	代:Г
-д	英:Cyrillic De		名:デー(大文字)		音:		訓:		送:		異:Д	俗:	顔:(ﾟдﾟ)	代:ѓ
-Д	英:Cyrillic De		名:デー(小文字)		音:		訓:		送:		異:д	俗:	顔:( Д) ﾟ ﾟ	代:Ѓ
+д	英:Cyrillic De	名:デー(大文字)	異:Д	顔:(ﾟдﾟ)	代:ѓ	活:[7amnzysp][opvu][eklf]
+Д	英:Cyrillic De	名:デー(小文字)	異:д	顔:( Д) ﾟ ﾟ	代:Ѓ	活:[14mnzysp][opvu][8kl9]
 ѓ	英:Cyrillic Gje		名:ジェー(大文字)	音:		訓:		送:		異:Ѓ	俗:マケドニア		代:д
 Ѓ	英:Cyrillic Gje		名:ジェー(小文字)	音:		訓:		送:		異:ѓ	俗:マケドニア		代:Д
-е	英:Cyrillic Ye		名:ィエー(小文字)	音:		訓:		送:		異:Е	俗:	非:Ｅ	代:ѐ
+е	英:Cyrillic Ye	名:ィエー(小文字)	異:Е	代:ѐ	非:Ｅ
 Е	英:Cyrillic Ye		名:ィエー(大文字)	音:		訓:		送:		異:е	俗:	非:ｅ	代:Ѐ
 ѐ	英:Cyrillic Ye with grave	名:ィエーグレイヴ(小文字)	音:	訓:		送:		異:Ѐ	俗:マケドニア	代:е
 Ѐ	英:Cyrillic Ye with grave	名:ィエーグレイヴ(大文字)	音:	訓:		送:		異:ѐ	俗:マケドニア	代:Е
@@ -437,8 +505,8 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 У	英:Cyrillic U		名:ウー(大文字)		音:		訓:		送:		異:у	俗:	非:Ｙ	代:Ў
 ў	英:Cyrillic Short U	名:ウークラトカヤ(小文字)	音:		訓:		送:		異:Ў	俗:ベラルーシ	代:у
 Ў	英:Cyrillic Short U	名:ウークラトカヤ(大文字)	音:		訓:		送:		異:ў	俗:ベラルーシ	代:У
-ф	英:Cyrillic Ef		名:エフ(小文字)		音:		訓:		送:		異:Ф	俗:	非:φ
-Ф	英:Cyrillic Ef		名:エフ(大文字)		音:		訓:		送:		異:ф	俗:	非:Φ
+ф	英:Cyrillic Ef	名:エフ(小文字)	異:Ф	非:ø/φ	活:[7934ghnmsqwvjicd][flmg]
+Ф	英:Cyrillic Ef	名:エフ(大文字)	異:ф	非:Ø/Φ	活:[78239aghnmsrxwqpjicd][flmg]
 х	英:Cyrillic Kha		名:ハー(小文字)		音:		訓:		送:		異:Х	俗:	非:ｘ
 Х	英:Cyrillic Kha		名:ハー(大文字)		音:		訓:		送:		異:х	俗:	非:Ｘ
 ц	英:Cyrillic Tse		名:ツェー(小文字)	音:		訓:		送:		異:Ц	俗:				代:џ
@@ -467,16 +535,80 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 Ю	英:Cyrillic Yu		名:ユー(大文字)		音:		訓:		送:		異:ю	俗:
 я	英:Cyrillic Ya		名:ヤー(小文字)		音:		訓:		送:		異:Я	俗:	非:ｒ
 Я	英:Cyrillic Ya		名:ヤー(大文字)		音:		訓:		送:		異:я	俗:	非:Ｒ
+ә	英:Cyrillic Schwa	名:シュワー(小文字)	異:Ә	俗:中舌中央母音(シュワー)
+Ә	英:Cyrillic Schwa	名:シュワー(大文字)	異:ә	俗:中舌中央母音(シュワー)
+á	英:Latin acute a	名:アキュートアクセント・エー(小文字)	異:Á	俗:	活:	幅:624
+Á	英:Latin acute A	名:アキュートアクセント・エー(大文字)	異:á	俗:	活:	幅:624
+é	英:Latin acute e	名:アキュートアクセント・イー(小文字)	異:É	俗:Pokémon(ポケモン)	活:[7823ljpocd][prxv]	幅:624
+É	英:Latin acute E	名:アキュートアクセント・イー(大文字)	異:é	俗:Pokémon(ポケモン)	活:	幅:624
+í	英:Latin acute i	名:アキュートアクセント・アイ(小文字)	異:Í 	俗:	活:	幅:624
+í	英:Latin acute i	名:アキュートアクセント・アイ(大文字)	異:Í 	俗:	活:	幅:624
+ó	英:Latin acute o	名:アキュートアクセント・オー(小文字)	異:Ó	俗:	活:	幅:624
+Ó	英:Latin acute O	名:アキュートアクセント・オー(大文字)	異:ó	俗:	活:	幅:624
+ú	英:Latin acute u	名:アキュートアクセント・オー(小文字)	異:Ú	俗:	活:	幅:624
+Ú	英:Latin acute U	名:アキュートアクセント・オー(大文字)	異:ú	俗:	活:	幅:624
+ý	英:Latin acute y	名:アキュートアクセント・ワイ(小文字)	異:Ý	俗:	活:	幅:624
+Ý	英:Latin acute Y	名:アキュートアクセント・ワイ(大文字)	異:ý	俗:	活:	幅:624
+à	英:Latin grave a	名:グレイヴアクセント・エー(小文字)	異:À	俗:	活:	幅:624
+À	英:Latin grave A	名:グレイヴアクセント・エー(大文字)	異:à	俗:	活:	幅:624
+ô	英:Latin circumflex o	名:サーカムフレックス・オー(小文字)	俗:Fantôme(宇多田ヒカル「Fantôme」)	異:Ô	俗:	活:	幅:624
+Ô	英:Latin circumflex O	名:サーカムフレックス・オー(大文字)	俗:Fantôme(宇多田ヒカル「Fantôme」)	異:ô	俗:	活:	幅:624
+ä	英:Latin umlaut,diaeresis a	名:ウムラウト,トレマ・エー(小文字)	異:Ä	俗:	活:	幅:624
+Ä	英:Latin umlaut,diaeresis A	名:ウムラウト,トレマ・エー(大文字)	異:ä	俗:	活:	幅:624
+ø	英:slashed o	名:ストローク付きオー(小文字)	異:Ø	非:ф/φ	幅:624	活:[13rqwu67][jpqk][7de8]
+Ø	英:slashed O	名:ストローク付きオー(大文字)	異:ø	非:ф/Φ	俗:円唇前舌半狭母音	幅:624	活:[03xu][jpqk][7de8]
+ɔ	英:Arpabet AO/Arpabet OY(ɔɪ)/Arpabet AOR(ɔr)	名:円唇後舌半広母音
+ɑ	英:Arpabet AA/Arpabet AAR(ɑr)/Arpabet AWR(aʊr)	名:非円唇後舌広母音
+i	英:Arpabet IY/Arpabet IHR or IYR(ɪr)	名:非円唇前舌狭母音
+u	英:Arpabet UW	名:円唇後舌狭母音
+ɛ	英:Arpabet EH/Arpabet EHR(ɛr)	名:非円唇前舌半広母音
+ɪ	英:Arpabet IH		名:非円唇前舌め広めの狭母音
+ʊ	英:Arpabet UH/Arpabet UHR(ʊr)	名:円唇後舌め広めの狭母音
+ʌ	英:Arpabet AH	名:非円唇後舌半広母音
+ə	英:Arpabet AX/Arpabet AXR(ə˞,ɚ)	名:中舌中央母音(シュワー)	俗:R音性母音
+æ	英:Arpabet AE	名:非円唇前舌狭めの広母音
+e	英:Arpabet EY(eɪ)	名:非円唇前舌半狭母音
+a	英:Arpabet AY(aɪ)/Arpabet AW(aʊ)	名:非円唇前舌広母音	俗:R音性母音
+o	英:Arpabet OW(oʊ)	名:円唇後舌半狭母音
+ɜ	英:Arpabet ER(ɜ˞,ɝ)	名:非円唇中舌半広母音	俗:R音性母音
+p	英:Arpabet P	名:無声両唇破裂音
+b	英:Arpabet B	名:有声両唇破裂音
+t	英:Arpabet T/Arpabet CH(tʃ)	名:無声歯茎破裂音
+d	英:Arpabet D/Arpabet JH(tʃ)	名:有声歯茎破裂音
+k	英:Arpabet K	名:無声軟口蓋破裂音
+ɡ	英:Arpabet G	名:有声軟口蓋破裂音	非:g
+f	英:Arpabet F	名:無声唇歯摩擦音
+v	英:Arpabet V	名:有声唇歯摩擦音
+θ	英:Arpabet TH	名:無声歯摩擦音
+ð	英:Arpabet DH	名:有声歯摩擦音
+s	英:Arpabet S	名:無声歯茎摩擦音
+z	英:Arpabet Z	名:有声歯茎摩擦音
+ʃ	英:Arpabet SH	名:無声後部歯茎摩擦音	非:∫
+ʒ	英:Arpabet ZH	名:有声後部歯茎摩擦音
+h	英:Arpabet HH	名:無声声門摩擦音
+m	英:Arpabet M/Arpabet EM(m̩)	名:両唇鼻音
+n	英:Arpabet N/Arpabet EN(n̩)	名:歯茎鼻音
+ŋ	英:Arpabet NG/rpabet ENG(ŋ̍)	名:軟口蓋鼻音
+ɫ	英:Arpabet L/Arpabet EL(ɫ̩)	名:軟口蓋歯茎側面接近音	逆:ʟ	俗:dark L(暗いL)
+ʟ	英:voiced velar lateral approximant	名:軟口蓋側面接近音	非:L	逆:ɫ	俗:clear L(明確なL)
+r	英:Arpabet R	名:歯茎ふるえ音
+ɹ	英:Arpabet R	名:歯茎接近音
+ɾ	英:Arpabet DX/Arpabet NX(ɾ̃)	名:歯茎はじき音
+j	英:Arpabet Y	名:硬口蓋接近音
+w	英:Arpabet W	名:有声両唇軟口蓋接近音
+ʔ	英:Arpabet Q	名:声門破裂音
+ʍ	英:none Arpabet(when)	名:無声両唇軟口蓋摩擦音
+◌	英:dotted circle	名:丸印(結合文字表示用途)
 ☆	英:white star	名:白星	活:[68239bhgmstzxrqwuopdc][8kl9]
 ★	英:black star	名:黒星	活:[68239bhgmstzxrqwuopdc]
-○	英:white circle	名:白丸	活:[14abtsyvpo67][7psgf9]	漫:[14btyvo6][DQCRCVDWHWIVISGQ]
-●	英:black circle		名:黒丸			音:		訓:		送:		異:	俗:	活:[14abtsyvpo67]	漫:[14btyvo6]
+○	英:white circle	名:白丸	俗:白星/対抗	活:[14abtsyvpo67][7psgf9]	漫:[14btyvo6][DQCRCVDWHWIVISGQ]
+●	英:black circle	名:黒丸	俗:黒星	活:[14abtsyvpo67]	漫:[14btyvo6]
 ◇	英:white lozenge	名:白菱形	活:[78239aghnmsrxwqpjicd][8edjkqrlmgf9]	漫:[FOKTFYAT][FQCTFWIT]
 ◆	英:black lozenge	名:黒菱形	活:[78239aghnmsrxwqpjicd]	漫:[FOKTFYAT]
 □	英:white square	名:白四角	活:[04abzu][7psa]	漫:[04bzu][CQCWIWIRHQ]
 ■	英:black square	名:黒四角	活:[04abzu]	漫:[04bzu]
-△	英:white triangle	名:白三角		音:		訓:		送:		異:	俗:	活:[78239aghzucd][8edpsgf9]	漫:[23hzuc][CTCWIWITFQ]
-▲	英:black triangle	名:黒三角		音:		訓:		送:		異:	俗:	活:[78239aghzucd]	漫:[23hzuc]
+△	英:white triangle	名:白三角		音:		訓:		送:		異:	俗:さんカッケー/連下(複穴)	活:[78239aghzucd][8edpsgf9]	漫:[23hzuc][CTCWIWITFQ]
+▲	英:black triangle	名:黒三角		音:		訓:		送:		異:	俗:単穴	活:[78239aghzucd]	漫:[23hzuc]
 ▽	英:white down triangle	名:逆白三角	活:[05hgsrxwqpdc][7deqrfga]	漫:[AOKOKTFYAT][CQCSFVISIQ]
 ▼	英:black down triangle	名:逆黒三角	活:[05hgsrxwqpdc]	漫:[AOKOKTFYAT]
 ♠	英:black spade suit	名:スペード(トランプ)	活:[14abtsmlrsyvpqkjpo67]
@@ -2120,6 +2252,17 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 煉	英:knead/compounding/preparation/blending/briquette/brick	名:レン	音:レン	訓:ね		送:煉獄,煉瓦,煉炭/手薬煉	異:	非:練/鍊	俗:火柬	活:[15hgmntsyxrpvuopji67][opvu][eklf]
 櫟	英:oak	名:くぬぎ	音:レキ	訓:くぬぎ	送:樗櫟/櫟炭	異:檪	俗:あららぎ/いちのき	活:[139aghnmstzvpoijdc67][45ba]
 檪	英:oak	名:くぬぎ	音:レキ	訓:くぬぎ	送:樗櫟/櫟炭	異:櫟	俗:あららぎ/いちのき	活:[139aghnmstzvpoijdc67][45ba][8ef9]
+涙	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:淚	非:泣	代:泪/涕	俗:	活:M 200,1000 200,800 0,800 0,1000 z M 0,600 200,600 200,400 0,400 z M 0,200 200,200 200,0 0,0 z M 400,1000 1000,1000 1000,800 600,800 600,600 1000,600 1000,400 800,400 800,200 1000,200 1000,0 800,0 800,200 600,200 600,0 400,0 z
+淚	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:涙	非:泣	代:泪/涕	俗:
+泪	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:	非:泣	代:涙/涕	俗:	活:M 0,1000 200,1000 200,800 0,800 z M 0,600 200,600 200,400 0,400 z M 0,200 200,200 200,0 0,0 z M 400,1000 1000,1000 1000,0 400,0 z M 600,800 800,800 800,600 600,600 z M 600,400 800,400 800,200 600,200 z
+涕	英:tears		名:なみだ		音:		訓:		送:		異:	非:泣	代:涙/泪	俗:
+泣	英:weep/whimper		名:なく			音:キュウ	訓:		送:泣く子と地頭には勝てぬ/号泣		異:	非:涙/啼/哭	俗:
+鳴	英:chirp/honk/echo/moan	名:なく			音:		訓:		送:鳴く猫は鼠を捕らぬ,鳴くまで待とう時鳥	異:	非:泣/啼/哭	俗:
+啼	英:bark/moan/cry		名:なく			音:テイ		訓:		送:啼鳥					異:	非:涙/泣/哭	俗:
+哭	英:moan/cry/shrieking	名:なげく	音:コク	送:慟哭/鬼哭啾啾	俗:ロストワンの号哭	非:涙/泣/啼	活:[028935nmstzxrqki][oqwu][7de8][9fga]
+嘆	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
+嘆	英:lament/deplore//suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
+歎	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:	代:嘆	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
@@ -2259,24 +2402,20 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	代:Ｚ	活:[039fe86][dekj][ijprxu]
 関	英:entrance/connection/barrier/gateway	名:かかわる	音:カン	訓:かかわる/せき/ぜき			送:玄関/沽券に関わる/関所/大関		異:關	俗:			非:係/拘
 關	英:entrance/connection/barrier/gateway	名:かかわる	音:カン	訓:かかわる/せき/ぜき			送:玄関/沽券に関わる/関所/大関		異:関	俗:			非:係/拘
 拘	英:stick/dwell/particular	名:こだわる		音:コウ	訓:かかわる/こだわる/こだわり		送:拘束,拘泥/拘わる/拘る/拘り		異:	俗:			非:係/関
-架	英:				名:かける	音:		訓:		送:担架		異:	俗:	非:懸/掛/架
-賭	英:				名:かける	音:		訓:		送:		異:	俗:
+架	英:rack/‎bridge/‎stretcher	名:かける	音:カ	訓:かける	送:担架,架橋/橋を架ける	異:	俗:	非:懸/掛/架
+賭	英:gamble/bet/ante			名:かける	音:ト	訓:かける	送:賭博/一縷の望みに賭ける		異:	俗:
+倹	英:			名:			音:		訓:		送:		異:儉	俗:
+儉	英:			名:			音:		訓:		送:		異:倹	俗:
+剣	英:			名:			音:		訓:		送:		異:劍	俗:
+劍	英:			名:			音:		訓:		送:		異:剣	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
-涙	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:淚	非:泣	代:泪/涕	俗:	活:M 200,1000 200,800 0,800 0,1000 z M 0,600 200,600 200,400 0,400 z M 0,200 200,200 200,0 0,0 z M 400,1000 1000,1000 1000,800 600,800 600,600 1000,600 1000,400 800,400 800,200 1000,200 1000,0 800,0 800,200 600,200 600,0 400,0 z
-淚	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:涙	非:泣	代:泪/涕	俗:
-泪	英:tears		名:なみだ		音:ルイ		訓:なみだ	送:涙腺		異:	非:泣	代:涙/涕	俗:	活:M 0,1000 200,1000 200,800 0,800 z M 0,600 200,600 200,400 0,400 z M 0,200 200,200 200,0 0,0 z M 400,1000 1000,1000 1000,0 400,0 z M 600,800 800,800 800,600 600,600 z M 600,400 800,400 800,200 600,200 z
-涕	英:tears		名:なみだ		音:		訓:		送:		異:	非:泣	代:涙/泪	俗:
-泣	英:weep/whimper		名:なく			音:キュウ	訓:		送:泣く子と地頭には勝てぬ/号泣		異:	非:涙/啼/哭	俗:
-鳴	英:chirp/honk/echo/moan	名:なく			音:		訓:		送:鳴く猫は鼠を捕らぬ,鳴くまで待とう時鳥	異:	非:泣/啼/哭	俗:
-啼	英:bark/moan/cry		名:なく			音:テイ		訓:		送:啼鳥/					異:	非:涙/泣/哭	俗:
-哭	英:moan/cry/shrieking	名:なげく	音:コク	送:慟哭/鬼哭啾啾	俗:ロストワンの号哭	非:涙/泣/啼	活:[028935nmstzxrqki][oqwu][7de8][9fga]
-嘆	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
-嘆	英:lament/deplore//suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:嘆	代:歎	俗:
-歎	英:lament/deplore/suspire	名:なげく		音:タン		訓:		送:嘆願,髀肉の嘆		異:	代:嘆	俗:
+	英:			名:			音:		訓:		送:		異:	俗:
+	英:			名:			音:		訓:		送:		異:	俗:
+	英:			名:			音:		訓:		送:		異:	俗:
+	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 
-沢	
