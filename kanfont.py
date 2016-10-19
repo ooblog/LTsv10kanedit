@@ -350,7 +350,7 @@ def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
     LTsv_widget_settext(kanfont_svg_button,"make:{0}".format(kanfont_svgname))
     LTsv_window_after(kanfont_window,event_b=kanfont_svgmake,event_i="kanfont_svgmake",event_w=10)
 
-kanfont_glyphtypeswap={"活":"活漫筆","漫":"漫活筆","筆":"筆活漫"}
+kanfont_glyphtypeswap={"活":"活","漫":"漫活筆","筆":"筆漫活"}
 def kanfont_svgmake(window_objvoid=None,window_objptr=None):
     global kanfont_dicname,kanfont_svgname,kanfont_fontwidths,kanfont_autosave,kanfont_savetime
     global kanfont_fontname,kanfont_glyphtype
@@ -374,7 +374,7 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
         )
         for kanline in kanchar:
             for typeswap in kanfont_glyphtypeswap[glyphtype]:
-                kanpath= LTsv_glyphSVG5x10x(LTsv_pickdatalabel(kanline,typeswap))
+                kanpath=LTsv_glyphSVG5x10x(LTsv_pickdatalabel(kanline,typeswap))
                 if len(kanpath): break;
             if len(kanpath):
                 kanwide=LTsv_pickdatalabel(kanline,"幅"); kanwide=kanwide if len(kanwide) else "1024"

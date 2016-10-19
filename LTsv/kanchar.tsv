@@ -260,7 +260,7 @@ _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:�
 ⑲	英:circled nineteen	名:丸19			音:		訓:		送:		異:	俗:	活:[05zu][7psmk8]
 ⑳	英:circled twenty	名:丸20			音:		訓:		送:		異:廿	俗:	活:[05baghzuopdc][flmg]
 Ⅰ	英:roman one		名:ローマ数字1		音:		訓:		送:		異:	俗:
-Ⅱ	英:roman two		名:ローマ数字2		音:		訓:		送:		異:	俗:	顔:
+Ⅱ	英:roman two		名:ローマ数字2		音:		訓:		送:		異:	俗:	顔:今だ！２ゲットォォオ⊂(ﾟДﾟ∩ｳｫｵｵｵ
 Ⅲ	英:roman three		名:ローマ数字3		音:		訓:		送:		異:	俗:	顔:[ ㊦皿㊦]３ゲットロボだよ「顔Ⅲ」で漢直できる阻止ロボの方だよ
 Ⅳ	英:roman four		名:ローマ数字4		音:		訓:		送:		異:	俗:
 Ⅴ	英:roman five		名:ローマ数字5		音:		訓:		送:		異:	俗:
@@ -356,7 +356,7 @@ O	英:O	名:オー(大文字半角)	異:o	逆:Ｏ	俗:酸素	代:Ｏ	活:[671289
 ｐ	英:wide p	名:ピー(小文字全角)	異:Ｐ	逆:p	非:ρ/р	活:[7aghnmspvucd][djmg]	漫:[7ahnspvuc][DSCTCUHUITHS]
 Ｐ	英:wide P	名:ピー(大文字全角)	異:ｐ	逆:P	非:Ρ/Р	活:[04abhgmjvu][7dga]	漫:[04bhmjvu][CQCSHSIRHQ]
 p	英:p	名:ピー(小文字半角)	異:P	逆:ｐ	俗:無声両唇破裂音	活:[678efrpvu][djke]	漫:[AQCQCRDQEQGSGUEWCWCYAY][CSCUDUETDS]	幅:624
-P	英:P	名:ピー(大文字半角)	異:p	逆:Ｐ		活:[03lkqpvu][7jk8]漫:[029lqpvu][CQCUDUETERDQ]	幅:624
+P	英:P	名:ピー(大文字半角)	異:p	逆:Ｐ	活:[03lkqpvu][7jk8]	漫:[029lqpvu][CQCUDUETERDQ]	幅:624
 ｑ	英:wide q	名:キュー(小文字全角)	異:Ｑ	逆:q	活:[04abzyspji][7jma]	漫:[APBOIOKQKYIYIWCWAU][CQCTDUIUIRHQ]
 Ｑ	英:wide Q	名:キュー(大文字全角)	異:ｑ	逆:Q	活:[14abnmsrxvpo67][stzy][7prlma][eflk]	漫:M 200,1000 800,1000 1000,800 1000,400 900,300 1000,200 1000,0 800,0 800,100 750,150 600,0 200,0 0,200 0,800 z M 300,800 200,700 200,300 300,200 500,200 600,300 500,400 400,400 400,600 600,600 750,450 800,500 800,700 700,800 z
 q	英:q	名:キュー(小文字半角)	異:Q	逆:ｑ	活:[6713xwki][7de8]	漫:[AQCODOEPEOGOGYEYEUAU][DQCRCSESEQ]	幅:624
@@ -400,7 +400,7 @@ z	英:z	名:ゼット(小文字半角)	異:Z	逆:ｚ 俗:有声歯茎摩擦音	�
 Z	英:Z	名:ゼット(大文字半角)	異:z	逆:Ｚ	活:[039fe86][dekj][ijprxu]	漫:[AOGOGRCVCWGWGYAYAUEQAQ]	幅:624
 α	英:alpha	名:アルファ(小文字)	異:Α	非:ａ	活:[45ba][78239amlrqwvpocd][rtzx][8edpqkl9]	漫:M 400,1000 600,1000 700,900 800,900 800,1000 1000,1000 1000,800 800,650 800,400 700,300 800,200 1000,200 1000,0 600,0 500,100 400,0 200,0 0,200 0,600 z M 500,800 200,500 200,300 300,200 600,500 600,700 z
 Α	英:alpha	名:アルファ(大文字)	異:α	非:Ａ	活:[78239aghzyspvucd][8edjmgf9]	漫:[23hzyspvuc][FQCTCUIUIT]
-β	英:beta			名:ベータ(小文字)	音:		訓:		送:		異:Β	俗:	非:ｂ	活:[7824ghtsywqp][opvu][8qsml9]	漫:[CQEOIOISKSKWIYEYEWCYAYAWBWCV][EREWGWHWIVIUGUGQFQ]
+β	英:beta	名:ベータ(小文字)	異:Β	俗:	非:ｂ/ß	活:[7824ghtsywqp][opvu][8qsml9]	漫:[CQEOIOISKSKWIYEYEWCYAYAWBWCV][EREWGWHWIVIUGUGQFQ]
 Β	英:beta	名:ベータ(大文字)	異:β	非:Ｂ	活:[14abhgmntsyucd][8ega][jpsm]	漫:[COIOKQKSJTKUKWIYAYAUCS][EQESHSIRHQ][DUCVCWHWIVHU]
 γ	英:gamma	名:ガンマ(小文字)	異:Γ	活:[0286][8agfxw][45ba]	漫:[AOEOGQGRIPIOKOKQGUGYEYERDQAQ]
 Γ	英:gamma	名:ガンマ(大文字)	異:γ	活:[15b8ed][cdvu]	漫:[COKOKQEQERCTCYAYASCQ]
@@ -447,12 +447,12 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	逆:Ｚ	活:[039fe86][dekj][ijprxu]
 Ψ	英:psi	名:プサイ(大文字)	異:ψ	活:[23lmsrxwqpjk][01ji][45nm]	漫:[AOCOCTDUETEOGOGTHUITIOKOKUIWGWGYEYEWCWAU]
 ω	英:omega	名:オメガ(小文字)	異:Ω	活:[1287][34a9][67po][abts][efrq][pqwv][rsyx]	漫:[AQCOEOEQDQCRCVDWEVESGSGVHWIVIRHQGQGOIOKQKWIYGYFXEYCYAW]
 Ω	英:omega	名:オメガ(大文字)	異:ω	俗:オーム(電気抵抗)	活:[jkwuop][67ji][14a7][abnm][lmstzx]	漫:[COIOKQKTIVIWKWKYGYGUISIRHQDQCRCSEUEYAYAWCWCVATAQ]
-а	英:Cyrillic A	名:アー(小文字)	異:А	非:ａ	活:[24a8][egabzwqpjk][kqsm]	漫:[0][EOIOKQKYEYCWCUESHSIRHQEQ][FUEVFWIWIU]
+а	英:Cyrillic A	名:アー(小文字)	異:А	非:ａ	活:[24a8][egabzwqpjk][kqsm]	漫:[EOIOKQKYEYCWCUESHSIRHQEQ][FUEVFWIWIU]
 А	英:Cyrillic A	名:アー(大文字)	異:а	非:Ａ	活:[78239aghzyspvucd][djmg]	漫:[FOKTKYIYIWCWCYAYAT][ejmf]
 б	英:Cyrillic Be	名:ベー(小文字)	異:Б	活:[8935baghtsywqpde][eqsg]	漫:[d35bahtywp][eqsg]
 Б	英:Cyrillic Be	名:ベー(大文字)	異:б	活:[04a7dgmntsyvpo][jpsm]	漫:[04a7dgntyvo][CUCVDWHWIVHU]
 в	英:Cyrillic Ve	名:ヴェー(小文字)	異:В	非:ｂ	活:[14abhgmntsyv][kqsm][8ef9]	漫:[14bgntyv][EUEWHWIVHU][EQESFSHQ]
-В	英:Cyrillic Ve		名:ヴェー(大文字)	音:		訓:		送:		異:в	俗:	非:Ｂ	活:[04abhgmntsyu][jpsm][7df9]	漫:[04bgntyu][CUCWHWIVHU][CQCSFSHQ]
+В	英:Cyrillic Ve	名:ヴェー(大文字)	異:в	俗:	非:Ｂ	活:[04abhgmntsyu][jpsm][7df9]	漫:[04bgntyu][CUCWHWIVHU][CQCSFSHQ]
 г	英:Cyrillic Ge	名:ゲー(小文字)	異:Г	代:ґ	活:[15b9fewv]
 Г	英:Cyrillic Ge	名:ゲー(大文字)	異:г	代:Ґ	活:[05b8edvu]
 ґ	英:Cyrillic Ghe with upturn	名:鉤のゲー(小文字)	音:	訓:		送:		異:Ґ	俗:ウクライナ	代:г
@@ -537,67 +537,125 @@ Z	英:Z	名:ゼット(大文字半角)	異:z	逆:Ｚ	活:[039fe86][dekj][ijprxu]
 Я	英:Cyrillic Ya		名:ヤー(大文字)		音:		訓:		送:		異:я	俗:	非:Ｒ
 ә	英:Cyrillic Schwa	名:シュワー(小文字)	異:Ә	俗:中舌中央母音(シュワー)
 Ә	英:Cyrillic Schwa	名:シュワー(大文字)	異:ә	俗:中舌中央母音(シュワー)
-á	英:Latin acute a	名:アキュートアクセント・エー(小文字)	異:Á	俗:	活:	幅:624
-Á	英:Latin acute A	名:アキュートアクセント・エー(大文字)	異:á	俗:	活:	幅:624
-é	英:Latin acute e	名:アキュートアクセント・イー(小文字)	異:É	俗:Pokémon(ポケモン)	活:[7823ljpocd][prxv]	幅:624
-É	英:Latin acute E	名:アキュートアクセント・イー(大文字)	異:é	俗:Pokémon(ポケモン)	活:	幅:624
-í	英:Latin acute i	名:アキュートアクセント・アイ(小文字)	異:Í 	俗:	活:	幅:624
-í	英:Latin acute i	名:アキュートアクセント・アイ(大文字)	異:Í 	俗:	活:	幅:624
-ó	英:Latin acute o	名:アキュートアクセント・オー(小文字)	異:Ó	俗:	活:	幅:624
-Ó	英:Latin acute O	名:アキュートアクセント・オー(大文字)	異:ó	俗:	活:	幅:624
-ú	英:Latin acute u	名:アキュートアクセント・オー(小文字)	異:Ú	俗:	活:	幅:624
-Ú	英:Latin acute U	名:アキュートアクセント・オー(大文字)	異:ú	俗:	活:	幅:624
-ý	英:Latin acute y	名:アキュートアクセント・ワイ(小文字)	異:Ý	俗:	活:	幅:624
-Ý	英:Latin acute Y	名:アキュートアクセント・ワイ(大文字)	異:ý	俗:	活:	幅:624
-à	英:Latin grave a	名:グレイヴアクセント・エー(小文字)	異:À	俗:	活:	幅:624
-À	英:Latin grave A	名:グレイヴアクセント・エー(大文字)	異:à	俗:	活:	幅:624
-ô	英:Latin circumflex o	名:サーカムフレックス・オー(小文字)	俗:Fantôme(宇多田ヒカル「Fantôme」)	異:Ô	俗:	活:	幅:624
-Ô	英:Latin circumflex O	名:サーカムフレックス・オー(大文字)	俗:Fantôme(宇多田ヒカル「Fantôme」)	異:ô	俗:	活:	幅:624
-ä	英:Latin umlaut,diaeresis a	名:ウムラウト,トレマ・エー(小文字)	異:Ä	俗:	活:	幅:624
-Ä	英:Latin umlaut,diaeresis A	名:ウムラウト,トレマ・エー(大文字)	異:ä	俗:	活:	幅:624
-ø	英:slashed o	名:ストローク付きオー(小文字)	異:Ø	非:ф/φ	幅:624	活:[13rqwu67][jpqk][7de8]
-Ø	英:slashed O	名:ストローク付きオー(大文字)	異:ø	非:ф/Φ	俗:円唇前舌半狭母音	幅:624	活:[03xu][jpqk][7de8]
-ɔ	英:Arpabet AO/Arpabet OY(ɔɪ)/Arpabet AOR(ɔr)	名:円唇後舌半広母音
-ɑ	英:Arpabet AA/Arpabet AAR(ɑr)/Arpabet AWR(aʊr)	名:非円唇後舌広母音
-i	英:Arpabet IY/Arpabet IHR or IYR(ɪr)	名:非円唇前舌狭母音
-u	英:Arpabet UW	名:円唇後舌狭母音
-ɛ	英:Arpabet EH/Arpabet EHR(ɛr)	名:非円唇前舌半広母音
-ɪ	英:Arpabet IH		名:非円唇前舌め広めの狭母音
-ʊ	英:Arpabet UH/Arpabet UHR(ʊr)	名:円唇後舌め広めの狭母音
-ʌ	英:Arpabet AH	名:非円唇後舌半広母音
-ə	英:Arpabet AX/Arpabet AXR(ə˞,ɚ)	名:中舌中央母音(シュワー)	俗:R音性母音
-æ	英:Arpabet AE	名:非円唇前舌狭めの広母音
-e	英:Arpabet EY(eɪ)	名:非円唇前舌半狭母音
-a	英:Arpabet AY(aɪ)/Arpabet AW(aʊ)	名:非円唇前舌広母音	俗:R音性母音
-o	英:Arpabet OW(oʊ)	名:円唇後舌半狭母音
-ɜ	英:Arpabet ER(ɜ˞,ɝ)	名:非円唇中舌半広母音	俗:R音性母音
-p	英:Arpabet P	名:無声両唇破裂音
-b	英:Arpabet B	名:有声両唇破裂音
-t	英:Arpabet T/Arpabet CH(tʃ)	名:無声歯茎破裂音
-d	英:Arpabet D/Arpabet JH(tʃ)	名:有声歯茎破裂音
-k	英:Arpabet K	名:無声軟口蓋破裂音
-ɡ	英:Arpabet G	名:有声軟口蓋破裂音	非:g
-f	英:Arpabet F	名:無声唇歯摩擦音
-v	英:Arpabet V	名:有声唇歯摩擦音
-θ	英:Arpabet TH	名:無声歯摩擦音
-ð	英:Arpabet DH	名:有声歯摩擦音
-s	英:Arpabet S	名:無声歯茎摩擦音
-z	英:Arpabet Z	名:有声歯茎摩擦音
-ʃ	英:Arpabet SH	名:無声後部歯茎摩擦音	非:∫
-ʒ	英:Arpabet ZH	名:有声後部歯茎摩擦音
-h	英:Arpabet HH	名:無声声門摩擦音
-m	英:Arpabet M/Arpabet EM(m̩)	名:両唇鼻音
-n	英:Arpabet N/Arpabet EN(n̩)	名:歯茎鼻音
-ŋ	英:Arpabet NG/rpabet ENG(ŋ̍)	名:軟口蓋鼻音
-ɫ	英:Arpabet L/Arpabet EL(ɫ̩)	名:軟口蓋歯茎側面接近音	逆:ʟ	俗:dark L(暗いL)
-ʟ	英:voiced velar lateral approximant	名:軟口蓋側面接近音	非:L	逆:ɫ	俗:clear L(明確なL)
-r	英:Arpabet R	名:歯茎ふるえ音
-ɹ	英:Arpabet R	名:歯茎接近音
-ɾ	英:Arpabet DX/Arpabet NX(ɾ̃)	名:歯茎はじき音
-j	英:Arpabet Y	名:硬口蓋接近音
-w	英:Arpabet W	名:有声両唇軟口蓋接近音
-ʔ	英:Arpabet Q	名:声門破裂音
-ʍ	英:none Arpabet(when)	名:無声両唇軟口蓋摩擦音
+á	英:Latin acute a	名:アキュートアクセント・エー(小文字)	異:Á	非:a	俗:	活:	幅:624
+Á	英:Latin acute A	名:アキュートアクセント・エー(大文字)	異:á	非:A	俗:	活:	幅:624
+é	英:Latin acute e	名:アキュートアクセント・イー(小文字)	異:É	非:e	俗:Pokémon(ポケモン)	活:[7823ljpocd][prxv]	幅:624
+É	英:Latin acute E	名:アキュートアクセント・イー(大文字)	異:é	非:E	俗:Pokémon(ポケモン)	活:	幅:624
+í	英:Latin acute i	名:アキュートアクセント・アイ(小文字)	異:Í 	非:i		俗:	活:	幅:624
+í	英:Latin acute I	名:アキュートアクセント・アイ(大文字)	異:Í 	非:I		俗:	活:	幅:624
+ó	英:Latin acute o	名:アキュートアクセント・オー(小文字)	異:Ó	非:o	俗:	活:	幅:624
+Ó	英:Latin acute O	名:アキュートアクセント・オー(大文字)	異:ó	非:O	俗:	活:	幅:624
+ú	英:Latin acute u	名:アキュートアクセント・ユー(小文字)	異:Ú	非:u	俗:	活:	幅:624
+Ú	英:Latin acute U	名:アキュートアクセント・ユー(大文字)	異:ú	非:U	俗:	活:	幅:624
+ý	英:Latin acute y	名:アキュートアクセント・ワイ(小文字)	異:Ý	非:y	俗:	活:	幅:624
+Ý	英:Latin acute Y	名:アキュートアクセント・ワイ(大文字)	異:ý	非:Y	俗:	活:	幅:624
+à	英:Latin grave a	名:グレイヴアクセント・エー(小文字)	異:À	非:a	俗:	活:	幅:624
+À	英:Latin grave A	名:グレイヴアクセント・エー(大文字)	異:à	非:A	俗:	活:	幅:624
+è	英:Latin grave a	名:グレイヴアクセント・イー(小文字)	異:È	非:e	俗:	活:	幅:624
+È	英:Latin grave A	名:グレイヴアクセント・イー(大文字)	異:è	非:E	俗:	活:	幅:624
+ìì	英:Latin grave i	名:グレイヴアクセント・アイ(小文字)	異:Ì	非:i		俗:	活:	幅:624
+Ì	英:Latin grave I	名:グレイヴアクセント・アイ(大文字)	異:ì		非:I		俗:	活:	幅:624
+ò	英:Latin grave o	名:グレイヴアクセント・オー(小文字)	異:Ò	非:o	俗:	活:	幅:624
+Ò	英:Latin grave O	名:グレイヴアクセント・オー(大文字)	異:ò	非:O	俗:	活:	幅:624
+ù	英:Latin grave u	名:グレイヴアクセント・ユー(小文字)	異:Ù	非:u	俗:	活:	幅:624
+Ù	英:Latin grave U	名:グレイヴアクセント・ユー(大文字)	異:ù	非:U	俗:	活:	幅:624
+â	英:Latin circumflex a	名:サーカムフレックス・エー(小文字)	異:Â	非:a	俗:	活:	幅:624
+Â	英:Latin circumflex A	名:サーカムフレックス・エー(大文字)	異:â	非:A	俗:	活:	幅:624
+ê	英:Latin circumflex e	名:サーカムフレックス・イー(小文字)	異:Ê	非:e	俗:	活:	幅:624
+Ê	英:Latin circumflex E	名:サーカムフレックス・イー(大文字)	異:ê	非:E	俗:	活:	幅:624
+î	英:Latin circumflex i		名:サーカムフレックス・アイ(小文字)	異:Î	非:i		俗:	活:	幅:624
+Î	英:Latin circumflex I		名:サーカムフレックス・アイ(大文字)	異:î		非:I		俗:	活:	幅:624
+ô	英:Latin circumflex o	名:サーカムフレックス・オー(小文字)	異:Ô	非:o	俗:Fantôme(宇多田ヒカル「Fantôme」)	俗:	活:	幅:624
+Ô	英:Latin circumflex O	名:サーカムフレックス・オー(大文字)	異:ô	非:O	俗:Fantôme(宇多田ヒカル「Fantôme」)	俗:	活:	幅:624
+û	英:Latin circumflex u	名:サーカムフレックス・ユー(小文字)	異:Û	非:u	俗:	活:	幅:624
+Û	英:Latin circumflex U	名:サーカムフレックス・ユー(大文字)	異:û	非:U	俗:	活:	幅:624
+ä	英:Latin umlaut,diaeresis a	名:ウムラウト,トレマ・エー(小文字)	異:Ä	非:a	俗:	活:	幅:624
+Ä	英:Latin umlaut,diaeresis A	名:ウムラウト,トレマ・エー(大文字)	異:ä	非:A	俗:	活:	幅:624
+ë	英:Latin umlaut,diaeresis e	名:ウムラウト,トレマ・イー(小文字)	異:Ë	非:e	俗:	活:	幅:624
+Ë	英:Latin umlaut,diaeresis E	名:ウムラウト,トレマ・イー(大文字)	異:ë	非:E	俗:	活:	幅:624
+ï	英:Latin umlaut,diaeresis i	名:ウムラウト,トレマ・アイ(小文字)	異:Ï	非:i		俗:	活:	幅:624
+Ï	英:Latin umlaut,diaeresis I	名:ウムラウト,トレマ・アイ(大文字)	異:ï	非:I		俗:	活:	幅:624
+ö	英:Latin umlaut,diaeresis o	名:ウムラウト,トレマ・オー(小文字)	異:Ö	非:o	俗:	活:	幅:624
+Ö	英:Latin umlaut,diaeresis O	名:ウムラウト,トレマ・オー(大文字)	異:ö	非:O	俗:	活:	幅:624
+ü	英:Latin umlaut,diaeresis u	名:ウムラウト,トレマ・ユー(小文字)	異:Ü	非:u	俗:	活:	幅:624
+Ü	英:Latin umlaut,diaeresis U	名:ウムラウト,トレマ・ユー(大文字)	異:ü	非:U	俗:	活:	幅:624
+ÿ	英:Latin umlaut,diaeresis y	名:ウムラウト,トレマ・ワイ(小文字)	異:Ÿ	非:y	俗:	活:	幅:624
+Ÿ	英:Latin umlaut,diaeresis Y	名:ウムラウト,トレマ・ワイ(大文字)	異:ÿ	非:Y	俗:	活:	幅:624
+ç	英:Latin cedilla c	名:セディーユ・シー(小文字)	異:Ç	非:c	俗:	活:	幅:624
+Ç	英:Latin cedilla C	名:セディーユ・シー(大文字)	異:ç	非:C	俗:	活:	幅:624
+ş	英:Latin cedilla s	名:セディーユ・エス(小文字)	異:Ş	非:s	俗:	活:	幅:624
+Ş	英:Latin cedilla S	名:セディーユ・エス(大文字)	異:ş	非:S	俗:	活:	幅:624
+ą	英:Latin tilde a	名:ティルデ・エー(小文字)	異:Ą	非:a	俗:	活:	幅:624
+Ą	英:Latin tilde A	名:ティルデ・エー(大文字)	異:ą	非:A	俗:	活:	幅:624
+õ	英:Latin tilde o	名:ティルデ・オー(小文字)	異:Õ	非:o	俗:	活:	幅:624
+Õ	英:Latin tilde O	名:ティルデ・オー(大文字)	異:õ	非:O	俗:	活:	幅:624
+ñ	英:Latin tilde n	名:ティルデ・エヌ(小文字)	異:Ñ	非:n	俗:	活:	幅:624
+Ñ	英:Latin tilde N	名:ティルデ・エヌ(大文字)	異:ñ	非:N	俗:	活:	幅:624
+ą	英:Latin ogonek a	名:オゴネク・エー(小文字)	異:Ą	非:a	俗:	活:	幅:624
+Ą	英:Latin ogonek A	名:オゴネク・エー(大文字)	異:ą	非:A	俗:	活:	幅:624
+ę	英:Latin ogonek e	名:オゴネク・イー(小文字)	異:Ę	非:e	俗:	活:	幅:624
+Ę	英:Latin ogonek E	名:オゴネク・イー(大文字)	異:ę	非:E	俗:	活:	幅:624
+į	英:Latin ogonek i		名:オゴネク・アイ(小文字)	異:Į	非:i		俗:	活:	幅:624
+Į	英:Latin ogonek I		名:オゴネク・アイ(大文字)	異:į		非:I		俗:	活:	幅:624
+ų	英:Latin ogonek u	名:オゴネク・ユー(小文字)	異:Ų	非:u	俗:	活:	幅:624
+Ų	英:Latin ogonek U	名:オゴネク・ユー(大文字)	異:ų	非:U	俗:	活:	幅:624
+æ	英:ligature a and e	名:aとeの合字(小文字)	異:Æ	代:ae	俗:非円唇前舌狭めの広母音	活:
+Æ	英:ligature A and E	名:AとEの合字(大文字)	異:æ	代:AE	俗:	活:
+œ	英:ligature c and e	名:cとeの合字(小文字)	異:Œ	代:ce	俗:	活:
+Œ	英:ligature C and E	名:CとEの合字(大文字)	異:œ	代:CE	俗:	活:
+ø	英:slashed o(ligature o and e)	名:ストローク付きオー(小文字)	異:Ø	非:ф/φ	幅:624	活:[13rqwu67][jpqk][7de8]
+Ø	英:slashed O(ligature O and E)	名:ストローク付きオー(大文字)	異:ø	非:ф/Φ	俗:円唇前舌半狭母音	幅:624	活:[03xu][jpqk][7de8]
+ĳ	英:ligature i and j	名:iとjの合字(小文字)	異:Ĳ	代:ij	俗:	活:
+Ĳ	英:ligature I and J	名:IとJの合字(大文字)	異:ĳ	代:IJ	俗:	活:
+ß	英:Eszett/scharfes S/sharp s(ligature s and z,s and s)	名:鋭いエス(小文字)	異:ẞ	非:β	代:sz/ss	俗:	活:
+ẞ	英:Eszett/scharfes S/sharp S(ligature S and Z,S and S)	名:鋭いエス(大文字)	異:ß	非:β	代:SZ/SS	俗:	活:
+þ	英:Old English thorn	名:ソーン(小文字)	異:Þ	非:p/ϸ	代:sz/ss	俗:	難:ルーン文字:	活:
+Þ	英:Old English Old English thorn	名:ソーン(大文字)	異:þ	非:p/Ϸ	代:SZ/SS	俗:	難:ルーン文字:	活:
+ϸ	英:Greek sho	名:ショー(小文字)	異:Þ	非:þ	俗:	難:ギリシア文字(バクトリア語)	活:
+Ϸ	英:Greek sho	名:ショー(大文字)	異:þ	非:Þ	俗:	難:ギリシア文字(バクトリア語)	活:
+ƿ	英:Old English Wynn	名:ウィン(小文字)	異:Ƿ	非:P	俗:	難:ルーン文字	活:
+Ƿ	英:Old English Wynn	名:ウィン(大文字)	異:ƿ	非:P	俗:	難:ルーン文字	活:
+ɔ	英:Arpabet AO/Arpabet OY(ɔɪ)/Arpabet AOR(ɔr)	名:円唇後舌半広母音	難:IPA国際音声記号
+ɑ	英:Arpabet AA/Arpabet AAR(ɑr)/Arpabet AWR(aʊr)	名:非円唇後舌広母音	難:IPA国際音声記号
+i	英:Arpabet IY/Arpabet IHR or IYR(ɪr)	名:非円唇前舌狭母音	難:IPA国際音声記号
+u	英:Arpabet UW	名:円唇後舌狭母音	難:IPA国際音声記号
+ɛ	英:Arpabet EH/Arpabet EHR(ɛr)	名:非円唇前舌半広母音	難:IPA国	難:IPA国際音声記号際音声記号
+ɪ	英:Arpabet IH		名:非円唇前舌め広めの狭母音	難:IPA国際音声記号
+ʊ	英:Arpabet UH/Arpabet UHR(ʊr)	名:円唇後舌め広めの狭母音	難:IPA国際音声記号
+ʌ	英:Arpabet AH	名:非円唇後舌半広母音	難:IPA国際音声記号
+ə	英:Arpabet AX/Arpabet AXR(ə˞,ɚ)	名:中舌中央母音(シュワー)	俗:R音性母音	難:IPA国際音声記号
+æ	英:Arpabet AE	名:非円唇前舌狭めの広母音	難:IPA国際音声記号
+e	英:Arpabet EY(eɪ)	名:非円唇前舌半狭母音	難:IPA国際音声記	難:IPA国際音声記号号
+a	英:Arpabet AY(aɪ)/Arpabet AW(aʊ)	名:非円唇前舌広母音	俗:R音性母音	難:IPA国際音声記号
+o	英:Arpabet OW(oʊ)	名:円唇後舌半狭母音	難:IPA	難:IPA国際音声記号国際音声記号
+ɜ	英:Arpabet ER(ɜ˞,ɝ)	名:非円唇中舌半広母音	俗:R音性母音	難:IPA国際音声記号
+p	英:Arpabet P	名:無声両唇破裂音	難:IPA国際音声記号
+b	英:Arpabet B	名:有声両唇破裂音	難:IPA国際音声記号
+t	英:Arpabet T/Arpabet CH(tʃ)	名:無声歯茎破裂音	難:IPA国際音声記号
+d	英:Arpabet D/Arpabet JH(tʃ)	名:有声歯茎破裂音	難:IPA国際音声記号
+k	英:Arpabet K	名:無声軟口蓋破裂音	難:IPA国際音声記号
+ɡ	英:Arpabet G	名:有声軟口蓋破裂音	非:g	難:IPA国際音声記号
+f	英:Arpabet F	名:無声唇歯摩擦音	難:IPA国際音声記号
+v	英:Arpabet V	名:有声唇歯摩擦音	難:IPA国際音声記号
+θ	英:Arpabet TH	名:無声歯摩擦音	難:IPA国際音声記号
+ð	英:Arpabet DH	名:有声歯摩擦音	難:IPA国際音声記号
+s	英:Arpabet S	名:無声歯茎摩擦音	難:IPA国際音声記号
+z	英:Arpabet Z	名:有声歯茎摩擦音	難:IPA国際音声記号
+ʃ	英:Arpabet SH	名:無声後部歯茎摩擦音	非:∫	難:IPA国際音声記号
+ʒ	英:Arpabet ZH	名:有声後部歯茎摩擦音	難:IPA国際音声記号
+h	英:Arpabet HH	名:無声声門摩擦音	難:IPA国際音声記号
+m	英:Arpabet M/Arpabet EM(m̩)	名:両唇鼻音	難:IPA国際音声記号
+n	英:Arpabet N/Arpabet EN(n̩)	名:歯茎鼻音	難:IPA国際音声記号
+ŋ	英:Arpabet NG/rpabet ENG(ŋ̍)	名:軟口蓋鼻音	難:IPA国際音声記号
+ɫ	英:Arpabet L/Arpabet EL(ɫ̩)	名:軟口蓋歯茎側面接近音	逆:ʟ	俗:dark L(暗いL)	難:IPA国際音声記号
+ʟ	英:voiced velar lateral approximant	名:軟口蓋側面接近音	非:L	逆:ɫ	俗:clear L(明確なL)	難:IPA国際音声記号
+r	英:Arpabet R	名:歯茎ふるえ音	難:IPA国際音声記号
+ɹ	英:Arpabet R	名:歯茎接近音	難:IPA国際音声記号
+ɾ	英:Arpabet DX/Arpabet NX(ɾ̃)	名:歯茎はじき音	難:IPA国際音声記号
+j	英:Arpabet Y	名:硬口蓋接近音	難:IPA国際音声記号
+w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
+ʔ	英:Arpabet Q	名:声門破裂音	難:IPA国際音声記号
+ʍ	英:none Arpabet(when)	名:無声両唇軟口蓋摩擦音	難:IPA国際音声記号
 ◌	英:dotted circle	名:丸印(結合文字表示用途)
 ☆	英:white star	名:白星	活:[68239bhgmstzxrqwuopdc][8kl9]
 ★	英:black star	名:黒星	活:[68239bhgmstzxrqwuopdc]
@@ -659,7 +717,7 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 ゔ	英:V Japanese katakana consonant		名:ヴ	音:	訓:		送:		異:ヴ	俗:濁音/子音	非:ぅ/う	代:ぬ	逆:ｳﾞ	活:[1397][45ba][cgmi][mnts][psyv]	漫:[1397][45ba][cgntyvpsmi]
 ウ	英:U Japanese katakana vowel	名:ウ	異:う	俗:清音/母音	代:ゥ	逆:ｳ	非:ゥ/ヴ	活:[68239btsgdji][qsyw]	漫:[AQEQEOGOGQKQKVHYEYEWGWIUISCSCUAU]
 ゥ	英:u Japanese katakana semivowel		名:ゥ	音:	訓:		送:		異:ぅ	俗:拗音/半母音	非:ウ/ヴ	代:ウ	逆:ｩ	活:[ce89fhtsmjpo][qsyw]	漫:[ASESEQGQGSKSKWIYEYEWHWIVIUCUCWAW]
-ヴ	英:V Japanese katakana consonant	名:ヴ	異:ゔ	俗:濁音/子音	代:ヌ	逆:ｳﾞ	非:ゥ/ウ	活:[68239a45btsgdji][qsyw]	漫:[AQEQEOGOGQIQIOKOKQKVHYEYEWGWIUISCSCUAU][0]
+ヴ	英:V Japanese katakana consonant	名:ヴ	異:ゔ	俗:濁音/子音	代:ヌ	逆:ｳﾞ	非:ゥ/ウ	活:[68239a45btsgdji][qsyw]	漫:[AQEQEOGOGQIQIOKOKQKVHYEYEWGWIUISCSCUAU]
 ｳ	英:U Japanese half-katakana vowel	名:ｳ	異:ウ	俗:清音/母音	代:ｩ	逆:ウ	非:ｩ	活:[1289rqedji67][pqwv]	漫:[1289rwvpqedji67]	幅:624
 ｩ	英:u Japanese half-katakana semivowel	名:ｩ	異:ゥ	俗:拗音/半母音	代:ｳ	逆:ゥ	非:ｳ	活:[78efxwkjpocd]	漫:[CQEQESGSGYDYEXEUCUCWAWASCS]	幅:624
 え	英:E Japanese hiragana vowel			名:え	音:	訓:		送:		異:エ	俗:清音/母音	非:ぇ	代:ぇ	逆:ｴ	活:[14a7][chnmstzxrppji][opvu]	漫:[14a7][chmstzyrpvuoji]
@@ -872,39 +930,39 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 ー	英:long vowel mark/macron/prolonged mark	名:長音符	異:〜	俗:長音/セーラームーン/オーバーロード	代:ロ	逆:ｰ	非:－	活:[67dhni]	漫:[BQDSKSKUBUATAR]
 ―	英:dash			名:ダッシュ		音:		訓:		送:	異:〜	逆:ｰ	俗:					非:－/－	代:〜	逆:
 ｰ	英:long vowel mark/macron/prolonged mark	名:長音符	異:ー	俗:長音/ｰﾗｰﾑｰﾝ/ｵｰﾊﾞｰﾛｰﾄﾞ	逆:ー	非:-	活:[67dfli]	漫:[BQCRCSGSGUAUAR]	幅:624
-乁	英:float		名:ながれる		音:イ		訓:ながれる	送:		異:	俗:
-乀	英:make right		名:ふつ			音:フツ		訓:まがる	送:		異:	俗:右はらい
-⼀	英:radical 1		名:イチブ		音:		訓:		送:		異:一	俗:一部		熙:一部
-一	英:one			名:いち			音:イチ		訓:ひとつ	送:一番/一つ	異:壱	俗:壹/弌/はじめ/にのまえ/1	代:🀇	熙:⼀	活:[cgabni]
-⼁	英:radical 2		名:コンブ		音:		訓:		送:		異:丨	俗:コン部	熙:丨部
-丨	英:vertical dash	名:たてぼう		音:		訓:		送:		異:	俗:ー	熙:⼁
-⼂	英:radical 3		名:チュブ		音:		訓:		送:		異:丶	俗:丶部		熙:丶部
-丶	英:dot			名:てん			音:		訓:		送:		異:	俗:点	熙:⼂
-⼃	英:radical 4		名:ヘツブ		音:		訓:		送:		異:丿	俗:丿部		熙:丿部
-丿	英:make left		名:はらいぼう		音:		訓:		送:		異:	俗:左はらい
-⼄	英:radical 5		名:オツブ		音:		訓:		送:		異:乙	俗:乙部		熙:乙部
-乙	英:stylish/lank B	名:おつ/きのと		音:おつ		訓:おと		送:乙姫		異:	俗:いちおつ/うぽつ/わこつ
-乚	英:latent		名:つりばり		音:いん		訓:かくれる	送:		異:隠	俗:
-⼅	英:radical 6		名:ケツブ		音:		訓:		送:		異:亅	俗:亅部		熙:亅部
-亅	英:hook			名:はねぼう		音:ケツ		訓:かぎ		送:		異:鉤	俗:かぎ	熙:⼅
-⼆	英:radical 7		名:ニブ			音:		訓:		送:		異:二	俗:二部		熙:二部	顔:今だ！２ゲットォォオ⊂(ﾟДﾟ∩ｳｫｵｵｵ
-二	英:two			名:に			音:ニ/ジ	訓:ふたつ/ふたたび	送:二つ/二度	異:弐	非:ニ	俗:ニ/貮/貳/2	代:🀈	顔:今だ！2ｹﾞｯﾄｫｰｰ!!⊂(ﾟДﾟ⊂⌒つ≡ｽﾞｻﾞｰｰｯ		熙:⼆	活:[6a45hc][otzu]
-⼇	英:radical 8		名:トウブ		音:		訓:		送:		異:亠	俗:亠部		熙:亠部
-亠	英:kettle lid		名:けいさんかんむり	音:トウ		訓:		送:		異:	俗:なべぶた/卦算冠	熙:⼇
-⼈	英:radical 9		名:ジンブ		音:		訓:		送:		異:人	俗:人部		熙:人部
-人	英:person		名:ひと			音:ジン/ニン	訓:ひと	送:偉人/人間/人々	異:	俗:	熙:⼈
-亻	英:person		名:にんべん		音:		訓:		送:		異:	俗:イ
-𠆢	英:person		名:ひとやね		音:		訓:		送:		異:	俗:
-⼉	英:radical 10		名:ジンブ		音:		訓:		送:		異:儿	俗:儿部		熙:儿部
-儿	英:legs			名:にんにょう		音:		訓:		送:		異:	俗:ひとあし	熙:⼉
-⼊	英:radical 11		名:ニュウブ		音:		訓:		送:		異:入	俗:入部		熙:入部
-入	英:insert/enter		名:にゅう	音:ニュウ	訓:いれる/はいる	送:入門/入れる/入る	異:	俗:	熙:⼊
-⼋	英:radical 12		名:ハチブ		音:		訓:		送:		異:八	俗:八部		熙:八部
+乁	英:float	名:ながれる	音:イ	訓:ながれる	活:[03lk86][lmsr][stzy]
+乀	英:make right	名:ふつ	音:フツ	訓:まがる	俗:右はらい	活:[67dc][13lk87][lmsr][stzy]
+⼀	英:radical 1	名:イチブ	異:一	俗:一部	熙:一部	活:[cgabnjpo]	漫:M 0,600 800,600 800,800 1000,800 1000,400 200,400 200,200 0,200 z M 50,550 50,250 150,250 150,450 950,450 950,750 850,750 850,550 z
+一	英:one	名:いち	音:イチ	訓:ひとつ	送:一番/一つ	異:壱	俗:壹/弌/はじめ/にのまえ/1	熙:⼀	代:🀇	活:[cgabni]
+⼁	英:radical 2	名:コンブ	異:丨	俗:コン部	熙:丨部	活:[24gfxw]	漫:M 400,1000 800,1000 800,600 600,600 600,0 400,0 z M 450,950 450,50 550,50 550,650 750,650 750,950 z
+丨	英:vertical dash	名:たてぼう	俗:ー	熙:⼁	活:[24a9xw]
+⼂	英:radical 3	名:チュブ	異:丶	俗:丶部	熙:丶部	活:[egmntsrlk]	漫:M 400,600 800,600 800,400 1000,400 1000,200 800,200 600,200 600,400 400,400 z M 450,550 450,450 650,450 650,250 950,250 950,350 750,350 750,550 z
+丶	英:dot	名:てん	俗:点	熙:⼂	活:[egsrlk]
+⼃	英:radical 4	名:ヘツブ	異:丿	俗:丿部	熙:丿部		漫:M 400,1000 600,1000 600,200 400,200 400,0 200,0 200,400 400,400 z M 450,950 450,350 250,350 250,50 350,50 350,250 550,250 550,950 z	活:[pqwv][23rqwvjk]
+丿	英:make left	名:はらいぼう	俗:左はらい	活:[23rq][pqwv]
+⼄	英:radical 5	名:オツブ	異:乙	俗:乙部	熙:乙部	活:[04a9fe86][dekj][ijpsmnzu]	漫:M 0,1000 800,1000 800,800 600,800 600,600 400,600 400,800 0,800 z M 200,600 400,600 400,400 200,400 z M 0,400 200,400 200,200 800,200 800,400 1000,400 1000,0 0,0 z M 50,950 50,850 450,850 450,650 550,650 550,850 750,850 750,950 z M 250,550 250,450 350,450 350,550 z M 50,350 50,50 950,50 950,350 850,350 850,150 150,150 150,350 z
+乙	英:stylish/lank B	名:おつ/きのと	音:おつ	訓:おと	送:乙姫	俗:いちおつ/うぽつ/わこつ	活:[psmnzv][04a9fe86][dekj][ijpo]
+乚	英:latent	名:つりばり	音:いん	訓:かくれる	異:隠	活:[12qsmnzv]
+⼅	英:radical 6	名:ケツブ	異:亅	俗:亅部	熙:亅部		漫:M 400,1000 600,1000 600,0 200,0 200,400 400,400 z M 450,950 450,350 250,350 250,50 550,50 550,950 z	活:[23xvjk]
+亅	英:hook	名:はねぼう	音:ケツ	訓:かぎ	異:鉤	俗:かぎ	熙:⼅	活:[23xvpq]
+⼆	英:radical 7	名:ニブ	異:二	俗:二部	熙:二部	活:[6a45hc][ijptzu]	漫:M 0,800 800,800 800,1000 1000,1000 1000,600 0,600 z M 0,400 200,400 200,200 1000,200 1000,0 0,0 z M 50,750 50,650 950,650 950,950 850,950 850,750 z M 50,350 50,50 950,50 950,150 150,150 150,350 z
+二	英:two	名:に	音:ニ/ジ	訓:ふたつ/ふたたび	送:二つ/二度	異:弐	俗:ニ/貮/貳/2	熙:⼆	顔:今だ！2ｹﾞｯﾄｫｰｰ!!⊂(ﾟДﾟ⊂⌒つ≡ｽﾞｻﾞｰｰｯ	代:🀈	非:ニ	活:[6a45hc][otzu]
+⼇	英:radical 8	名:トウブ	異:亠	俗:亠部	熙:亠部	漫:M 200,800 600,800 600,600 1000,600 1000,400 0,400 0,600 200,600 z M 250,750 250,550 50,550 50,450 950,450 950,550 550,550 550,750 z	活:[79fhnicd]
+亠	英:kettle lid	名:けいさんかんむり	音:トウ	俗:なべぶた/卦算冠	熙:⼇	活:[ce89fhni]
+⼈	英:radical 9	名:ジンブ	異:人	俗:人部	熙:人部	活:[24a9lk][jkqp][opvu][lmsr][stzy]	漫:M 400,1000 800,1000 800,800 600,800 600,400 400,400 z M 200,400 400,400 400,200 200,200 z M 0,200 200,200 200,0 0,0 z M 600,400 800,400 800,200 600,200 z M 800,200 1000,200 1000,0 800,0 z M 450,950 450,450 550,450 550,850 750,850 750,950 z M 250,350 250,250 350,250 350,350 z M 50,150 50,50 150,50 150,150 z M 650,350 650,250 750,250 750,350 z M 850,150 850,50 950,50 950,150 z
+人	英:person	名:ひと	音:ジン/ニン	訓:ひと	送:偉人/人間/人々	熙:⼈	活:[23lk][jkqp][opvu][lmsr][stzy]
+亻	英:person	名:にんべん	俗:イ	活:[34a9][89xwkjde][ijpo]
+𠆢	英:person	名:ひとやね	活:[78239agd][cdji][ghnm]
+⼉	英:radical 10	名:ジンブ	異:儿	俗:儿部	熙:儿部	活:[34mnzx][12wuop]	漫:M 600,1000 800,1000 800,400 1000,400 1000,0 600,0 z M 200,1000 400,1000 400,0 0,0 0,200 200,200 z M 250,950 250,150 50,150 50,50 350,50 350,950 z M 650,950 650,50 950,50 950,350 750,350 750,950 z
+儿	英:legs	名:にんにょう	俗:ひとあし	熙:⼉	活:[34mnzx][12qp][opvu]
+⼊	英:radical 11	名:ニュウブ	異:入	俗:入部	熙:入部	活:[13lmspjk87][opvu][stzy]	漫:M 200,1000 600,1000 600,400 800,400 800,200 200,200 200,400 400,400 400,800 200,800 z M 0,200 200,200 200,0 0,0 z M 800,200 1000,200 1000,0 800,0 z M 250,950 250,850 450,850 450,350 250,350 250,250 750,250 750,350 550,350 550,950 z M 50,150 50,50 150,50 150,150 z M 850,150 850,50 950,50 950,150 z
+入	英:insert/enter	名:にゅう	音:ニュウ	訓:いれる/はいる	送:入門/入れる/入る	熙:⼊	活:[13lk87][jkqp][opvu][lmsr][stzy]
+⼋	英:radical 12	名:ハチブ	異:八	俗:八部	熙:八部	活:[deqp][opvu][24sr98][stzy]	漫:M 200,600 400,600 400,200 200,200 z M 0,200 200,200 200,0 0,0 z M 400,1000 800,1000 800,200 600,200 600,800 400,800 z M 800,200 1000,200 1000,0 800,0 z M 450,950 450,850 650,850 650,250 750,250 750,950 z M 250,550 250,250 350,250 350,550 z M 50,150 50,50 150,50 150,150 z M 850,150 850,50 950,50 950,150 z
 八	英:eight	名:はち	音:ハチ/ハッ	訓:やつ/やっつ	送:尺八/八卦/八ツ橋/八つ	異:捌	俗:8	代:🀎	熙:⼋	地:八戸	活:[2398][9agf][ghzy][cdvu]
-⼌	英:radical 13		名:ケイブ		音:		訓:		送:		異:冂	俗:冂部		熙:冂部
-冂	英:down box		名:けいがまえ		音:ケイ		訓:		送:		異:	俗:どうがまえ/えんがまえ	熙:⼌
-⼍	英:radical 14		名:ベキブ		音:		訓:		送:		異:冖	俗:冖部		熙:冖部
-冖	英:wa crown		名:わかんむり		音:		訓:		送:		異:	俗:べきかんむり	非:ワ	熙:⼍
+⼌	英:radical 13	名:ケイブ	異:冂	俗:冂部	熙:冂部	漫:M 0,1000 1000,1000 1000,0 600,0 600,200 800,200 800,800 200,800 200,200 0,200 z M 50,950 50,250 150,250 150,850 850,850 850,150 650,150 650,50 950,50 950,950 z	活:[05zxrsa7po]
+冂	英:down box	名:けいがまえ	音:ケイ	俗:どうがまえ/えんがまえ	熙:⼌	漫:[05zxrsa7vu]
+⼍	英:radical 14	名:ベキブ	異:冖	俗:冖部	熙:冖部	活:[05hga7dc][fgml]	漫:M 0,1000 1000,1000 1000,600 800,600 800,800 200,800 200,600 0,600 z M 600,600 800,600 800,400 600,400 z M 50,950 50,650 150,650 150,850 850,850 850,650 950,650 950,950 z M 650,550 650,450 750,450 750,550 z
+冖	英:wa crown	名:わかんむり	俗:べきかんむり	熙:⼍	非:ワ	活:[05hga7dc]
 ⼎	英:radical 15		名:ヒョウブ		音:		訓:		送:		異:冫	俗冫部:		熙:冫部
 冫	英:freezing		名:にすい		音:		訓:		送:		異:冰	俗:氷	熙:⼎
 ⼏	英:radical 16		名:キブ			音:		訓:		送:		異:几	俗:几部		熙:几部
@@ -1388,7 +1446,7 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 龟	英:turtle		名:かめ			音:		訓:		送:		異:亀	俗:
 ⿕	英:radical 214		名:ヤクブ		音:		訓:		送:		異:龠	俗:龠部		熙:龠部
 龠	英:flute		名:やく			音:		訓:		送:		異:	俗:
-氫	英:hydrogen		名:水素			音:ハイドロゲン	訓:すいそ	送:		異:水素	俗:H
+氫	英:hydrogen	名:水素	音:ハイドロゲン	訓:すいそ	異:水素	俗:H	活:[15bagflkqrxuopji67][ghzy][djke]
 氦	英:helium		名:ヘリウム		音:ヘリウム	訓:		送:		異:	俗:He
 鋰	英:lithium		名:リチウム		音:リチウム	訓:		送:		異:	俗:Li
 鈹	英:beryllium		名:ベリリウム		音:ベリリウム	訓:		送:		異:	俗:Be
@@ -1908,7 +1966,7 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 兎	英:			名:			音:		訓:		送:		異:	俗:読売ジャイアンツ
 虎	英:			名:			音:		訓:		送:		異:	俗:阪神タイガース
 燕	英:			名:			音:		訓:		送:		異:	俗:東京ヤクルトスワローズ
-道	英:			名:			音:		訓:		送:		異:	俗:	活:[0][0176][239a45zucdpq][flmg]
+道	英:			名:			音:		訓:		送:		異:	俗:	活:[0176][239a45zucdpq][flmg]
 森	英:	活:[68239bhgmntsyxrqwvpoijdc]
 葉	英:	活:[67128934abhgmnzysrxwqpdc][opvu][eklf]
 良	英:	活:[68239bnmstzxrqwu][dpqkmg]
@@ -1928,7 +1986,7 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 異	英:	活:[14ghnmspjicd][opvu][stzy][eklf]
 俗	英:	活:[128934abhgmnzvjicd][9fga][eklf][lrsm]
 熙	英:	活:[05hflnzysrxwqpvu][7de8]
-簡	英:	活:[0][028935zxrqklrsgdvu]
+簡	英:	活:[028935zxrqklrsgdvu]
 顔	英:	活:[15baghzysrxwqpvu67][8ef9]
 満	英:	活:[0176][cdji][opvu][25baghzysrxw]
 写	英:	活:[04abhgmntsywqoijdc][9fga]
@@ -1953,37 +2011,42 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音
 字	英:	活:[68239btrxvpo][flmg]
 印	英:	活:[15trxu67][9lma][7de8][jpqk]
 版	英:	活:[017825b9fhnmsrxwqpvu][stzy]
+部	英:	漫:[67128935nmyuic][jpqk][7de8]
 平	英:	活:[05baghnlxwkicd76]
 今	英:	活:[78239aghnmsrlicd][qrxw]
 清	英:	活:[0176][cdji][opvu][8934abzysrxw]
 濁	英:	活:[0176][cdji][opvu][25b9fhzw][lrsm]
-沼	活:[0176][cdji][opvu][25zwef98][lrsm]
-濡	活:[0176][cdji][opvu][25hgmnzysrxwklfe]
-糠	活:[0176][7934abhgsrxwqpjicd][opvu][stzy]
-鵺	活:[67128934abhgmnzwqpvuoijdc]
-汎	活:[0176][cdji][opvu][25zymlxw][9fga]
-漫	活:[0176][cdji][opvu][25nmsrlk][stzy][qrxw]
-筆	活:[028935hgmntrxwqoij76]
-開	活:[0287dga935zxrqwu]
-発	活:[0176][2398][45ba][78kl9aghnmstzxrpjicd][opvu]
-引	活:[03fe86][dekj][klxuoq][45zy]
-数	活:[78239bnmsrxwqpjicd][stzy][0176][opvu][kqrl][flmg]
-電	活:[05hgmnzwqpdc][7de8][9fga][eklf][lrsm]
-卓	活:[239bhgmntrxwqoijde][eklf]
-時	活:[6934abzxro][lrsm]
-得	活:[6715zxrqwvpoijdc][7de8][9fga]
-易	活:[14ghzxrqwvpoijd][8ef9][jpqk][lrsm]
-辞	活:[67128934abhgmntsyxrqwuijdc][jpqk][9fga]
-使	活:[128934ghnmsrxvjicd][stzy][kqrl][flmg]
-私	活:[02efrsghzvpoijdc][34gf]
-領	活:[67128935baghzysrxvji][7de8]
-域	活:[67128935hgsrxuopdc][stzy][eklf]
-曜	活:[6825nmstzwqo][8ef9]
-咖	俗:咖喱(カレー)	活:[6934abtsywqo][eqrf]
-喱	俗:咖喱(カレー)	活:[6825nmstzwqo]
-市	活:[68239bhflnzysrxwqpvuikec]
-町	活:[25baywqr98][68qo]
-村	活:[67128934abzxrsgflkwvpoijdc]
+沼	英	活:[0176][cdji][opvu][25zwef98][lrsm]
+濡	英	活:[0176][cdji][opvu][25hgmnzysrxwklfe]
+糠	英	活:[0176][7934abhgsrxwqpjicd][opvu][stzy]
+鵺	英	活:[67128934abhgmnzwqpvuoijdc]
+汎	英	活:[0176][cdji][opvu][25zymlxw][9fga]
+漫	英	活:[0176][cdji][opvu][25nmsrlk][stzy][qrxw]
+筆	英	活:[028935hgmntrxwqoij76]
+開	英	活:[0287dga935zxrqwu]
+発	英	活:[0176][2398][45ba][78kl9aghnmstzxrpjicd][opvu]
+引	英	活:[03fe86][dekj][klxuoq][45zy]
+数	英	活:[78239bnmsrxwqpjicd][stzy][0176][opvu][kqrl][flmg]
+電	英	活:[05hgmnzwqpdc][7de8][9fga][eklf][lrsm]
+卓	英	活:[239bhgmntrxwqoijde][eklf]
+時	英	英	活:[6934abzxro][lrsm]
+得	英	活:[6715zxrqwvpoijdc][7de8][9fga]
+易	英	活:[14ghzxrqwvpoijd][8ef9][jpqk][lrsm]
+辞	英	活:[67128934abhgmntsyxrqwuijdc][jpqk][9fga]
+使	英	活:[128934ghnmsrxvjicd][stzy][kqrl][flmg]
+私	英	活:[02efrsghzvpoijdc][34gf]
+領	英	活:[67128935baghzysrxvji][7de8]
+域	英	活:[67128935hgsrxuopdc][stzy][eklf]
+康	英	活:[68239bnmsrxu][stzy][flmg][jpqk]
+典	英	活:[128934abzyspvu67]
+元	英	活:[14a7][chnmstzxlkqpji][opvu]
+素	英	活:[68239bnlxwqpji][opvu][stzy]
+曜	英	活:[6825nmstzwqo][8ef9]
+咖	英	俗:咖喱(カレー)	活:[6934abtsywqo][eqrf]
+喱	英	俗:咖喱(カレー)	活:[6825nmstzwqo]
+市	英	活:[68239bhflnzysrxwqpvuikec]
+町	英	活:[25baywqr98][68qo]
+村	英	英	活:[67128934abzxrsgflkwvpoijdc]
 〒	英:Japanese postal mark		名:郵便記号	異:〠	顔:〠	活:[05b6][chnlxwki]
 〠	英:Japanese postal pictograph	名:顔郵便マーク	異:〒		筆:M 0,1000 1000,1000 1000,900 0,900 z M 0,800 1000,800 1000,700 550,700 550,300 450,300 450,700 0,700 z M 250,350 300,350 300,300 400,200 600,200 700,300 700,350 750,350 750,250 650,150 350,150 250,250 z M 650,550 700,600 800,600 850,550 850,450 800,400 700,400 650,450 z M 700,500 750,450 800,500 750,550 z M 250,600 350,600 400,550 400,450 350,400 250,400 200,450 200,550 z M 300,550 250,500 300,450 350,500 z M 50,600 100,600 100,550 50,500 50,450 100,400 100,200 200,100 500,50 800,100 900,200 900,400 950,450 950,500 900,550 900,600 950,600 1000,550 1000,400 950,350 950,150 850,50 500,0 150,50 50,150 50,350 0,400 0,550 z	漫:M 0,1000 1000,1000 1000,900 0,900 z M 0,800 1000,800 1000,700 550,700 550,300 450,300 450,700 0,700 z M 250,350 300,350 300,300 400,200 600,200 700,300 700,350 750,350 750,250 650,150 350,150 250,250 z M 650,550 700,600 800,600 850,550 850,450 800,400 700,400 650,450 z M 700,500 750,450 800,500 750,550 z M 250,600 350,600 400,550 400,450 350,400 250,400 200,450 200,550 z M 300,550 250,500 300,450 350,500 z M 50,600 100,600 100,550 50,500 50,450 100,400 100,200 200,100 500,50 800,100 900,200 900,400 950,450 950,500 900,550 900,600 950,600 1000,550 1000,400 950,350 950,150 850,50 500,0 150,50 50,150 50,350 0,400 0,550 z
 	英:&#61568;(0xf080)	名:北海道アイコン(私用領域)	代:北	俗:北海道	難:私用領域	筆:M 320,880 340,920 380,940 400,960 500,840 560,740 640,680 680,640 780,620 820,580 860,580 960,680 960,660 920,540 960,500 960,440 980,440 1020,460 980,400 920,400 900,360 880,380 860,360 800,360 780,380 680,300 620,220 620,180 600,120 560,160 460,220 360,280 320,280 240,220 200,260 180,280 140,280 120,240 120,200 160,160 180,180 240,120 260,100 240,80 180,100 160,80 140,80 140,40 100,0 60,20 60,40 100,120 60,160 20,200 40,220 40,300 80,300 100,340 120,320 160,380 120,400 120,440 140,460 200,420 260,400 300,440 280,540 300,560 340,580 340,660 360,760 z M 680,640 700,620 740,620 z M 260,900 280,880 280,860 260,860 z M 220,940 240,940 240,900 z M 280,700 300,700 280,680 z

@@ -212,7 +212,7 @@ def LTsv_glyphSVG5x10x(LTsv_glyph_path):
 
 def LTsv_glyphSVG(LTsv_glyph_path):
     LTsv_glyph_pathZ=LTsv_glyphSVG5x10x(LTsv_glyph_path)
-    LTsv_glyph_pathZ=LTsv_glyph_pathZ.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_path) else []
+    LTsv_glyph_pathZ=LTsv_glyph_pathZ.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_pathZ) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
         LTsv_glyphdata=LTsv_glyphline.split(' '); LTsv_glyphpointlist=[]
