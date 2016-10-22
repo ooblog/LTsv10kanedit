@@ -850,23 +850,28 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
         if LTsv_glyph_mousepress(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-            motionX=LTsv_global_canvasmotionX()
+            motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
             for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
                 if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
             LTsv_editcanvasUM[editcanvas]=UP
             LTsv_editcanvasKM[editcanvas]=""
-            if LTsv_editcanvasUL[editcanvas] <= LTsv_editcanvasUM[editcanvas] <= LTsv_editcanvasUR[editcanvas]:
-                LTsv_editcanvasKM[editcanvas]="Umove"
-                LTsv_editcanvasUK[editcanvas]=LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:LTsv_editcanvasUR[editcanvas]+1]
-                if len(LTsv_editcanvasUK[editcanvas]) > 0:
-                    if clip_c != None: clip_c(LTsv_editcanvasUK[editcanvas])
-                LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]+1:]
-                LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUR[editcanvas]
-            else:
-                LTsv_editcanvasKM[editcanvas]="Uselect"
-                LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
-            editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-            LTsv_editcanvasKT[editcanvas]=LTsv_puttimerstartgoal()
+            if motionY > LTsv_editcanvasKY[editcanvas]:
+                LTsv_editcanvasKT[editcanvas]=LTsv_puttimerstartgoal()
+                print(motionY,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasUY[editcanvas])
+                if motionY > LTsv_editcanvasUY[editcanvas]:
+                    if LTsv_editcanvasUL[editcanvas] <= LTsv_editcanvasUM[editcanvas] <= LTsv_editcanvasUR[editcanvas]:
+                        LTsv_editcanvasKM[editcanvas]="Umove"
+                        LTsv_editcanvasUK[editcanvas]=LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:LTsv_editcanvasUR[editcanvas]+1]
+                        if len(LTsv_editcanvasUK[editcanvas]) > 0:
+                            if clip_c != None: clip_c(LTsv_editcanvasUK[editcanvas])
+                        LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]+1:]
+                        LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUR[editcanvas]
+                    else:
+                        LTsv_editcanvasKM[editcanvas]="Uselect"
+                        LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
+                    editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
+                else:
+                    LTsv_editcanvasKM[editcanvas]="Uslide"
     def editcanvas_motion(window_objvoid=None,window_objptr=None):
         global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
@@ -884,6 +889,9 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
             elif LTsv_editcanvasKM[editcanvas] == "Uselect":
                 if LTsv_editcanvasUM[editcanvas] < UP: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUM[editcanvas],UP
                 else: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,LTsv_editcanvasUM[editcanvas]
+            elif LTsv_editcanvasKM[editcanvas] == "Uslide":
+                pass
+#                LTsv_editcanvasUX[editcanvas]=int(LTsv_puttimerlap()*100)
             editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
 #            if len(LTsv_editcanvasKM[editcanvas]) > 0: LTsv_editcanvasKX[editcanvas]=0 if LTsv_global_canvasmotionX() > widget_w//2 else widget_w-LTsv_glyph_kbdW
     def editcanvas_release(window_objvoid=None,window_objptr=None):

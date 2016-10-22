@@ -57,13 +57,13 @@ version(branch) 20161011T163105
 
  Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」の漢字が保存されるのですか？
  Ａ．若干質問が曖昧です。グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。
-     漢直キーボードの漢字配列「LTsv/kanmap.tsv」だけでなく単漢字辞書「LTsv/kanchar.tsv」の両方のグリフ座標データを「LTsv/kanpickle.bin」に積み込みます。
-
- Ｑ．「kanmap.py」の動作が重いです。と文句付けようと思ったら軽くなりました。
- Ａ．「LTsv/kanpickle.bin」にグリフ座標データを一旦積み込むまではテキストのパスデータをPythonのリスト配列に変換する処理が発生するためです。
+     漢直鍵盤の漢字配列「LTsv/kanmap.tsv」だけでなく単漢字辞書「LTsv/kanchar.tsv」の両方のグリフ座標データを「LTsv/kanpickle.bin」に積み込みます。
 
  Ｑ．「kanmap.png」が保存されないのですが？
  Ａ．「Tkinter」のキャンパスを画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。
+
+ Ｑ．「kanmap.py」の動作が重いです。と文句付けようと思ったら軽くなりました。
+ Ａ．「LTsv/kanpickle.bin」にグリフ座標データを一旦積み込むまではテキストのパスデータをPythonのリスト配列に変換する処理が発生するためです。
 
  Ｑ．「kanmap.png」の空白が多い気がします。
  Ａ．普通に「LTsv/kanchar.tsv」のグリフデータが不足しているためです。「kanfont」でグリフデータは追加できます。

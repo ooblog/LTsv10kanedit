@@ -21,14 +21,14 @@ version(branch) 20161011T163105
  １-6b．[LTsv_kbd.tsv]のタグ解説
  １-7a．[LTsv_gui.py]の関数一覧
  １-8a．[LTsv_glyph.py]の関数一覧
- １-8b．漢直キーボードの操作方法(マウス)
- １-8c．漢直キーボードの操作方法(物理キーボード)
+ １-8b．漢直鍵盤の操作方法(マウス)
+ １-8c．漢直鍵盤の操作方法(PCキーボード)
  １-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
  １-8e．[LTsv_glyph.tsv]のタグ解説
  ２-0． 「L:Tsv」を用いるアプリケーションの作り方
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
- ３-2． 漢直キーボードのＦＡＱ
+ ３-2． 漢直鍵盤のＦＡＱ
  ４．   作者について、例えば連絡先。
 
 
@@ -74,7 +74,7 @@ version(branch) 20161011T163105
  [kanchar.tsv]に異体字を移管して[kanmap.tsv]を圧縮していく作業は当分続く。現在人名に使える漢字の異体字の字引入力中心に作業中。
  Windowsのエディタで[kanchar.tsv]を開くと3バイト以上の文字が「?」に置き換えられる恐れがある。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
  「LTsv_editcanvas_new()」の「電卓」でスクロールが実装されてない。「メモ帳」の方もテキスト編集ができない。
  ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。
 
@@ -91,7 +91,7 @@ version(branch) 20161011T163105
 
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理を加えたり、Python2,3のprint関数のバージョン違いを吸収させたりと、
  LTSVパーサに雑多な拡張を重ねていったモジュール群が今の「L:Tsv」です。
- 「LTsv10kanedit(tsvtool10)」では漢直キーボードをGUIの部品として扱えるようになりました。
+ 「LTsv10kanedit(tsvtool10)」では漢直鍵盤をGUIの部品として扱えるようになりました。
 
 
 １-0b．「L:Tsv」ファイルの構造。
@@ -686,9 +686,9 @@ version(branch) 20161011T163105
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。[LTsv_kbd.tsv]で調整。
  ・[LTsv_kbd.py]では仮想キーに独自のキー名称を使ってます。特にかな入力用にひらがなキー名称が使えます。
  ・[LTsv_kbd.py]単独では「GetAsyncKeyState」が動かないのでWindows環境では「LTsv_gui.py」で動作確認。
- ・[LTsv_gui.py]で作成できる漢直キーボードの初期設定なども[LTsv_kbd.py]の管轄。
+ ・[LTsv_gui.py]で作成できる漢直鍵盤の初期設定なども[LTsv_kbd.py]の管轄。
  ・マウスのボタンを取得する手段は用意してますが、マウスデバイスを調べる方法が確立してないので「LTsv_kbdinit(LTsv_initmouse=False)」とマウスは不使用を推奨。
- ・単体風テストではキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。
+ ・単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。
 
  LTsv_kbdreset(path="LTsv_kbd.tsv")
   [LTsv_kbd.tsv]からモジュールの初期設定や、キーコード($00?$FF)に名付けたキー名称を読み込む。詳細は「１-6b．[LTsv_kbd.tsv]のタグ解説」。
@@ -706,40 +706,40 @@ version(branch) 20161011T163105
   ひらがなキー名称をキーコード($00?$FF)に変換。ひらがな以外のキー名称も使用可能。
 
  LTsv_kbdexit()
-  キーボードの変数初期化です。Linuxではデバイスをクローズします。
+  PCキーボードの変数初期化です。Linuxではデバイスをクローズします。
 
  LTsv_kbdinit(LTsv_initmouse=False)
-  キーボードの初期化です。Linuxではデバイスをオープンします。
+  PCキーボードの初期化です。Linuxではデバイスをオープンします。
   LTsv_initmouseでマウスの仕様許可は出せますが、マウスデバイスを適切に指定する必要があります(適切な手段が今の所ありません)。
 
  LTsv_kbdEVIOCGRAB(LTsv_grabflag)
-  ※Linux専用命令です。キーボードの入力をターミナルやテキストエリアなどに出力しないようにします。
-  漢直とかでキーボードのアルファベット入力を漢字出力に置き換える用途です。
+  ※Linux専用命令です。PCキーボードの入力をターミナルやテキストエリアなどに出力しないようにします。
+  漢直とかでPCキーボードのアルファベット入力を漢字出力に置き換える用途です。
   Windowsのキーフックとすり合わせる過程で別の名前になる可能性があります。
 
  LTsv_kbdwrite(LTsv_code,LTsv_value)
-  ※Linux専用命令です。キーボードを入力した事にします。
+  ※Linux専用命令です。PCキーボードを入力した事にします。
 
  LTsv_kbdwriteCtrl(LTsv_ganastsv)
   ※Linux専用命令です。「Ctrl」など複数のキーを押しながら入力みたいな動作を再現します。
 
  LTsv_setkbddata(LTsv_kbdstacks,LTsv_mousestacks)
-  キーボードの状態を読み込む。
+  PCキーボードの状態を読み込む。
   LTsv_kbdstacksとLTsv_mousestacksはLinuxでそれぞれのデバイスから一度に読み込む量の指定です。
   LTsv_kbdkeepリストを直接受け取れる事は可能。
 
  LTsv_getkbdlabels(kbdformat=LTsv_defkbdformat)
-  押されたキーボードから使う分だけのラベル一覧のtsvをLTsv_defkbdformatに渡すとdata部分に状態が書かれたLTSVが帰ってくる。
+  押されたPCキーボードから使う分だけのラベル一覧のtsvをLTsv_defkbdformatに渡すとdata部分に状態が書かれたLTSVが帰ってくる。
   例えば「LTsv_getkbdlabels("MouseL\tMouseR\tMouseC")」とすると「MouseL:0	MouseR:0	MouseC:0」とかが帰ってくる。
 
  LTsv_getkbdnames()
-  押されたキーボードのキー名称を返す。キーコード($00?$FF)にキー名称が付けられる必要がある。
+  押されたPCキーボードのキー名称を返す。キーコード($00?$FF)にキー名称が付けられる必要がある。
 
  LTsv_getkbdcodes()
-  押されたキーボードのキーコード($00?$FF)を返す。
+  押されたPCキーボードのキーコード($00?$FF)を返す。
 
  LTsv_getkbdkanas()
-  押されたキーボードのかな文字を返す。かな以外だと押されたキーボードのキーコード($00?$FF)を返す。
+  押されたPCキーボードのかな文字を返す。かな以外だと押されたPCキーボードのキーコード($00?$FF)を返す。
 
  LTsv_keyboard_iroha_guide()
   タプル(LTsv_keyboard_irohamax,LTsv_keyboard_alphapos,LTsv_keyboard_guidepos,LTsv_keyboard_dicinppos,LTsv_keyboard_dicselpos,LTsv_keyboard_iroha,LTsv_keyboard_guideN,LTsv_keyboard_guideX,LTsv_keyboard_guideK,LTsv_keyboard_guideKN,LTsv_keyboard_guideKX)を返す。
@@ -794,7 +794,7 @@ version(branch) 20161011T163105
  １-6b．[LTsv_kbd.tsv]のタグ解説
 
   [LTsv_deviceL|                      Linuxのデバイス指定。
-   kbd                                初期設定は「/dev/input/event?」(dmesgコマンドで調べる)。キーボードデバイスの位置は環境毎の差異があるので「dmesg | grep keyboard | grep device」で確認。
+   kbd                                初期設定は「/dev/input/event?」(dmesgコマンドで調べる)。PCキーボードデバイスの位置は環境毎の差異があるので「dmesg | grep keyboard | grep device」で確認。
    mouse                              初期想定は「/dev/input/event?」(/proc/bus/input/devicesで調べる)。マウスデバイスの位置は環境毎の差異があるかもなので「"cat /proc/bus/input/devices | grep mouse0」で確認。
   [LTsv_mouse_EV_KEY|                 マウスボタンなどの入力をWindowsのGetAsyncKeyStateの1,2,4みたいにキーコード($00?$FF)風に処理するための仮想キーコードの設定。
    BTN_LEFT:0x110	unused:250    マウスのボタン１(いわゆる左クリック「MouseL」)をキーコード250に設定する。
@@ -808,9 +808,9 @@ version(branch) 20161011T163105
   [LTsv_EV_REL|                       マウスホイールなどの入力を処理する予定のための設定枠(未実装)。
   [LTsv_EV_ABS|                       その他の入力を処理する予定のための設定枠(未定)。
   [LTsv_typenameW|                    Windowsの「キー名称:キーコード($00?$FF)」の組み合わせを記述。だがWineとWindowsでGetAsyncKeyStateの返り値が違う様子。
-  [WineVK|                            Wineで得られる「キー名称:キーコード($00?$FF)」の組み合わせ解説用。キーボードの種類によって変化する怖れ。
-  [WindowsVK|                         Windowsの「キー名称:キーコード($00?$FF)」の組み合わせ解説用。キーボードの種類によって変化する怖れ。
-  [LTsv_typenameL|                    Linuxの「キー名称:キーコード($00?$FF)」の組み合わせを記述。キーボードの種類によって変化する怖れ。
+  [WineVK|                            Wineで得られる「キー名称:キーコード($00?$FF)」の組み合わせ解説用。PCキーボードの種類によって変化する怖れ。
+  [WindowsVK|                         Windowsの「キー名称:キーコード($00?$FF)」の組み合わせ解説用。PCキーボードの種類によって変化する怖れ。
+  [LTsv_typenameL|                    Linuxの「キー名称:キーコード($00?$FF)」の組み合わせを記述。PCキーボードの種類によって変化する怖れ。
   [LTsv_typegana|                     OS依存を軽減した「ひらがなキー名称:キー名称」の組み合わせを記述。
   [keydefault|                        「LTsv_getkbdstr()」のLTsv_defkbdformatの初期値設定。項目の解説は「LTsv_getkbdstr()」も参照。
   [keyboard_iroha|                     かな鍵盤の空白を含める項目。
@@ -840,7 +840,7 @@ version(branch) 20161011T163105
  ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。
  ・通知タスクトレイ(Notify)関連は「Tkinter」で使えないので注意。他にも「Tkinter」で動かない命令はいくつか。
  ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
- ・単体風テストではGUIはもちろん、キーボードやジョイスティック(ゲームPAD)、日時フォーマットや電卓フォーマットなどの挙動確認もできます。
+ ・単体風テストではGUIはもちろん、PCキーボードやジョイスティック(ゲームPAD)、日時フォーマットや電卓フォーマットなどの挙動確認もできます。
 
  LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)
   「LTsv_guiinit()」で使う「libgtk-x11-2.0.so.?」などの「?」の部分を探索。
@@ -947,7 +947,7 @@ version(branch) 20161011T163105
    editcanvas_geturi(kbd_u)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄「電卓」文字列取得コールバック関数。
    editcanvas_‎keyenter(kbd_k)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
 def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
-  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」キーボードA~Z用。
+  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」PCキーボードA~Z用。
    editcanvas_copy(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードコピー処理コールバック関数。
    editcanvas_open(clip_o)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルオープン処理コールバック関数。
    editcanvas_‎paste(clip_c)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
@@ -1202,17 +1202,17 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
   時計回りの判定は簡易的(角度のみ面積無視)なので８の字にねじった形状や十字手裏剣のような凹みのある形状を扱う場合注意。
 
  LTsv_keyboard_size(keyboard_fontsize=12)
-  漢直キーボードのサイズをフォントサイズから計算する。
+  漢直鍵盤のサイズをフォントサイズから計算する。
 
  LTsv_keyboard_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,event_w=50,keyboard_getkey=None,keyboard_setkey=None,widget_f="kan5x5comic,12")
-  GUIオブジェクト「canvas」に漢直キーボードの機能をオーバーライドする。複数設置は想定していない。
+  GUIオブジェクト「canvas」に漢直鍵盤の機能をオーバーライドする。複数設置は想定していない。
   鍵盤のマウス操作は「５-1b．基本操作方法」の「鍵盤のフリック操作」を参考。「kantray」「kanfont」ほぼ共通。
 
    keyboard_getkey                    マウスボタンの状態を漢直鍵盤に渡すコールバック関数。
    keyboard_setkey                    漢直鍵盤の文字入力を受けとるコールバック関数。
 
  LTsv_keyboard_find(LTsv_widgetPAGENAME,find_t="",find_min=1,find_max=65535,dic_t="",alpha_t="",NX_t="")
-  漢直キーボードに文字があるか検索する、もしくは特定の鍵盤を指定して表示する。
+  漢直鍵盤に文字があるか検索する、もしくは特定の鍵盤を指定して表示する。
 
    find_t                             検索文字一覧。１文字目が見つからなかったら２文字目という仕様なので文字列は検索できない。
    find_min,find_max                  TkinterのBMP(基本多言語面0xffff)制限に配慮するため検索文字のコード範囲を指定する。「GTK2」の場合「kantray_max=0x2ffff」を指定できる。
@@ -1221,7 +1221,7 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
    NX_t                               ひらがなカタカナ大文字小文字など鍵盤を名指しで指定する。[LTsv_kbd.py]の「LTsv_keyboard_guideKN」「LTsv_keyboard_guideKX」参考。
 
  LTsv_keyboard_dicinput()
-  漢直キーボードの字引入力鍵盤の更新処理。
+  漢直鍵盤の字引入力鍵盤の更新処理。
 
  LTsv_icon_load(LTsv_picturepath)
   Windows用。通知タスクトレイ(Notify)に使うアイコン[*.ico]またはアイコンDLL[*.icl]を読込。「canvas」の画像とは別に管理。
@@ -1278,18 +1278,18 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
   単体風テスト専用。ラジオボタン「radio」の動作確認。
 
  debug_keypress(window_objvoid=None,window_objptr=None)
-  単体風テスト専用。キーボード入力(押下)の動作検証。「Tkinter」のみ動作確認。
+  単体風テスト専用。PCキーボード入力(押下)の動作検証。「Tkinter」のみ動作確認。
 
  debug_keyrelease(window_objvoid=None,window_objptr=None)
-  単体風テスト専用。キーボード入力(押上)の動作検証。「Tkinter」のみ動作確認。
+  単体風テスト専用。PCキーボード入力(押上)の動作検証。「Tkinter」のみ動作確認。
 
 
 １-8a．[LTsv_glyph.py]の関数一覧
 
- 「canvas」上でフォントグリフを描画するモジュールです。漢直キーボード関連も扱います。
+ 「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。
  ・「LTsv_draw_font_shell()」「LTsv_draw_text_shell()」との違いはフォントを用いずにグリフを描画することです。
  ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱います。
- ・単体風テストとして漢直キーボードでリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。
+ ・単体風テストとして漢直鍵盤でリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。
  ・「活(5x5)」「漫(comic)」の使い分け未実装。
  ・ LTsv9系の関数は置き換え削除の予定。
 
@@ -1297,10 +1297,10 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
  フォントグリフの初期化です。設定ファイル「LTsv/kanglyph.tsv」に基づいて色々と各種ファイルの読み込みなど準備。
 
  LTsv_global_kandic(new_kandic=None)
-  漢直キーボードの単漢字辞書「LTsv/kanchar.tsv」を取得できます。
+  漢直鍵盤の単漢字辞書「LTsv/kanchar.tsv」を取得できます。
 
  LTsv_global_kanmap(); LTsv_global_kanmapN(); LTsv_global_kanmapX();
-  漢直キーボードの漢字配列「LTsv/kanmap.tsv」を取得できます。
+  漢直鍵盤の漢字配列「LTsv/kanmap.tsv」を取得できます。
 
  LTsv_global_kanpickle()
   フォントグリフの座標データpickleを取得できます。
@@ -1312,7 +1312,7 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
  LTsv_global_irohaalpha(); LTsv_global_irohaalphaN(); LTsv_global_irohaalphaX();
  LTsv_global_glyphkbdH(); LTsv_global_glyphkbdW(); LTsv_global_glyphkbdF();
  LTsv_global_kbdcursorNone();
-  漢直キーボードのデータを取得。
+  漢直鍵盤のデータを取得。
 
  LTsv_glyphSVG5x10x(LTsv_glyph_path)
   フォントグリフの圧縮された座標データをSVGパスに伸張。
@@ -1337,7 +1337,7 @@ def LTsv_drawTkinter_deleteTAG(TkinterTAG=None); LTsv_draw_deleteTAG_shell(LTsv_
   事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
  LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
-  「LTsv_draw_glyphsfill()」を１文字分。改行処理などを省いた高速描画用。漢直キーボードなど等幅表示想定。
+  「LTsv_draw_glyphsfill()」を１文字分。改行処理などを省いた高速描画用。漢直鍵盤など等幅表示想定。
   「canvas」にフォントグリフ(ポリゴン)の描画(塗り潰し)。事前に「LTsv_draw_bgcolor()」でドーナツの穴の色指定を推奨。
 
  LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False)
@@ -1376,46 +1376,46 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   メモリ上の単漢字辞書を更新する。
 
  LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)
-  漢直キーボードのどのキーの上にマウスカーソルがあるか調べる。
-  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
-  キーボードの上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。
+  漢直鍵盤のどのキーの上にマウスカーソルがあるか調べる。
+  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直鍵盤の表示位置。
+  漢直鍵盤の上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。
 
  LTsv_glyph_kbdselect(choice):
-  漢直キーボードの表示鍵盤を鍵盤名で変更する。鍵盤名の一覧は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」あたりを参考。
+  漢直鍵盤の表示鍵盤を鍵盤名で変更する。鍵盤名の一覧は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」あたりを参考。
 
  LTsv_glyph_choiceNX(choice):
-  漢直キーボードの鍵盤名から鍵盤番号的な数値に変換。
+  漢直鍵盤の鍵盤名から鍵盤番号的な数値に変換。
 
  LTsv_glyph_kbdfind(find_t):
-  漢直キーボードの表示鍵盤を盤面上の文字を検索して変更する。
+  漢直鍵盤の表示鍵盤を盤面上の文字を検索して変更する。
 
  LTsv_glyph_tapcallback_shell(kbd_canvas,callback)
-  漢直キーボードの文字入力を受けとる関数の指定。
+  漢直鍵盤の文字入力を受けとる関数の指定。
   kbd_canvasでキャンバス、callbackで呼び出す関数。呼び出される関数は文字列引数を用意する。
 
  LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y);
-  「canvas」の「event_p=*_mousepress」「event_m=*_mousemotion」「event_r=*_mouserelease」系の関数内にそれぞれ配置する事で、「canvas」の任意の位置に漢直キーボードを出現。
-  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直キーボードの表示位置。
-  キーボードの上にマウスが無い場合は「LTsv_glyph_kbdcursor()」と同様に「LTsv_global_kbdcursorNone()」を返す。「debug_mousepress()」も参考。も参考。
+  「canvas」の「event_p=*_mousepress」「event_m=*_mousemotion」「event_r=*_mouserelease」系の関数内にそれぞれ配置する事で、「canvas」の任意の位置に漢直鍵盤を出現。
+  kbd_canvasでキャンバス、kbd_x,kbd_yで漢直鍵盤の表示位置。
+  漢直鍵盤の上にマウスが無い場合は「LTsv_glyph_kbdcursor()」と同様に「LTsv_global_kbdcursorNone()」を返す。「debug_mousepress()」も参考。も参考。
   キャンバス描画のタイミング調整や「LTsv_draw_queue()」などのタイミングは「LTsv_kbdentry_new()」も参考。
-  漢直キーボードのマウス操作は「１-8b．漢直キーボードの操作方法(マウス)」を参考。
+  漢直鍵盤のマウス操作は「１-8b．漢直鍵盤の操作方法(マウス)」を参考。
 
  LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y); LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y);
-  「windows」の「event_k=*_keypress」「event_y=*_keyrelease」系の関数内にそれぞれ配置する事で、漢直キーボードへの物理キーボードからの入力受付。
+  「windows」の「event_k=*_keypress」「event_y=*_keyrelease」系の関数内にそれぞれ配置する事で、漢直鍵盤へのPCキーボードからの入力受付。
 
  LTsv_glyph_kbddelete(kbd_canvas,kbd_x,kbd_y)
-  漢直キーボードの消去。「Tkinter」では描画したオブジェクトは消す必要があるので注意。
+  漢直鍵盤の消去。「Tkinter」では描画したオブジェクトは消す必要があるので注意。
 
  LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y)
-  漢直キーボードの描画。「Tkinter」では描画したオブジェクトは消す必要があるので「LTsv_glyph_kbddelete()」と歩調を合わせる必要。
+  漢直鍵盤の描画。「Tkinter」では描画したオブジェクトは消す必要があるので「LTsv_glyph_kbddelete()」と歩調を合わせる必要。
   通常は「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも描画されるはず。
 
  LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
 
  LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=None,clip_c=None,clip_v=None,clip_o=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50)
-  漢直キーボードに加えテキスト入力欄も一体化した「editcanvas」を設置。
-  widget_w,widget_hは漢直キーボードの「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
+  漢直鍵盤に加えテキスト入力欄も一体化した「editcanvas」を設置。
+  widget_w,widget_hは漢直鍵盤の「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
   event_bで「editcanvas」からマウスを外した時のコールバック関数。kbd_kは[Enter]押した時のコールバック関数。
   clip_c,clip_vはクリップボード処理のコールバック関数。
   clip_oはファイルダイアログのコールバック関数。
@@ -1425,16 +1425,16 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
 
  LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None)
-  「editcanvas」で漢直キーボードの表示位置を変更。テキスト入力欄も移動。
+  「editcanvas」で漢直鍵盤の表示位置を変更。テキスト入力欄も移動。
 
  LTsv_editcanvas_color(editcanvas,UF=None,UB=None,TF=None,TB=None)
-  「editcanvas」で漢直キーボードのテキスト入力欄の文字色背景色を変更。
+  「editcanvas」で漢直鍵盤のテキスト入力欄の文字色背景色を変更。
 
  LTsv_editcanvas_font(editcanvas,US=None,TS=None,UG=None,TG=None)
-  「editcanvas」で漢直キーボードのテキスト入力欄のフォントサイズを変更。
+  「editcanvas」で漢直鍵盤のテキスト入力欄のフォントサイズを変更。
 
  LTsv_kbdentry_evaltext(calc_value=""):
-  ほぼ「kanedit」用。文字列から漢直キーボードの検索をしたり電卓機能などを使う。
+  ほぼ「kanedit」用。文字列から漢直鍵盤の検索をしたり電卓機能などを使う。
   「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
 
  debug_mousepress(window_objvoid=None,window_objptr=None)
@@ -1443,7 +1443,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  debug_mousemotion(window_objvoid=None,window_objptr=None); debug_mouserelease(window_objvoid=None,window_objptr=None);
   単体風テスト専用。リバーシの盤面操作のクリック以外。
-  直キーボードの「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」を呼び出すだけ。
+  漢直鍵盤の「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」を呼び出すだけ。
 
  debug_milklid_check(xy,bw)
   単体風テスト専用。リバーシでxy升にbw石が置けるか(裏返せる石があるか)チェック。
@@ -1471,10 +1471,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  debug_configsave_exit(window_objvoid=None,window_objptr=None)
   単体風テスト専用。「LTsv/kanglyph.tsv」に棋譜を保存するだけでなく、
-  漢直キーボードのォントグリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。
+  漢直鍵盤のォントグリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。
 
 
-１-8b．漢直キーボードの操作方法(マウス)
+１-8b．漢直鍵盤の操作方法(マウス)
 
   ※四隅のＮＸ等は実際には縦横２倍の大きさです。
 
@@ -1512,9 +1512,9 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   １秒入力欄を押し続ける    文字選択されてない状態で入力欄を押し続ける事でクリップボードから引用できる。
 
 
-１-8c．漢直キーボードの操作方法(物理キーボード)
+１-8c．漢直鍵盤の操作方法(PCキーボード)
 
- [Space]キーの左右に[NFER(無変換)]キーと[XFER(変換)]キーが存在するキーボードを使います。
+ [Space]キーの左右に[NFER(無変換)]キーと[XFER(変換)]キーが存在するPCキーボードを使います。
  字引入力では[XFER(変換)]キーの右隣[KANA(カタカナひらがなローマ字)]キーも使います。
 
   [NFER]+[ぬ〜ろ￥]                   NFER鍵盤切替(青)。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。
@@ -1596,7 +1596,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
   先頭文字が「⑩」先頭文字列が「0x」  16進数を10進数に変換。
                                      「⑩FFFF⇔65535」「0xFFFF⇔65535」。
   先頭文字が「英」「名」「音」「訓」「送」「異」「俗」「熙」「簡」「繁」「越」「地」「顔」「鍵」「代」「逆」「非」
-                                     単漢字辞書「LTsv/kanchar.tsv」から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。先述のキーボード漢直操作「[KANA]」項目を参考。
+                                     単漢字辞書「LTsv/kanchar.tsv」から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。先述のPCキーボード漢直操作「[KANA]」項目を参考。
   先頭文字が「難」                   漢字の難読レベル(小学校N学年・常用漢字・人名・地名・など)を設定予定。難読の定義が不明瞭なので放置中。
   先頭文字が「活」「漫」「筆」       「kant5x5comic」のグリフデータ。「kanfont」で編集可能。「活」では独自形式で圧縮される。
   先頭文字が「幅」                   単漢字辞書[kanchar.tsv]上のデータの「kan5x5comic」のフォントの幅を表示。全角(1024)の場合省略できる。半角(624)と麻雀牌(824)しか種類はないはず。
@@ -1614,7 +1614,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
   [kanglyph|                         「LTsv/LTsv_glyph.py」の設定。
    dicname                           単漢字辞書を指定。初期値は「kanchar.tsv」。
-   mapname                           漢直キーボードの漢字配列を指定。初期値は「kanmap.tsv」。
+   mapname                           漢直鍵盤の漢字配列を指定。初期値は「kanmap.tsv」。
    picklename                        フォントグリフの座標パイクルを指定。初期値は「kanpickle.bin」。
    irohatype                         「kanmap.tsv」の縦軸ラベル。初期値は「ぬふあうえおやゆよわほへたていすかんなにらせ゛゜ちとしはきくまのりれけむつさそひこみもねるめろ￥」(一文字置きにタブ)。
    irohatypeN                        NEFR鍵盤名。初期値は「ぬふあうえおやゆよわほへたていすかんなにらせ＠ぷちとしはきくまのりれけむつさそひこみもねるめろ￥」(一文字置きにタブ)。
@@ -1639,7 +1639,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    kbdTAG                            kanglyphkbd
    fontcolor                         black
    bgcolor                           #DAFFF0
-   kbddefsize                        キーボードの拡大倍率を指定できなくもないが「LTsv_kbdentry_new()」を使う場合は実質変更不可。初期設定は「1」。
+   kbddefsize                        PCキーボードの拡大倍率を指定できなくもないが「LTsv_kbdentry_new()」を使う場合は実質変更不可。初期設定は「1」。
    last_alpha                        α鍵盤を記録。
    last_dic                          単漢字辞書の項目を記録。
   [reversi|                         「LTsv_glyph.py」単体風テストのリバーシ設定。
@@ -1694,7 +1694,7 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
      文末記載のGitHubリポジトリへのリンク貼っておけば変な誤解は事故らないと思います。
 
 
-３-2． 漢直キーボードのＦＡＱ
+３-2． 漢直鍵盤のＦＡＱ
 
  Ｑ．なんでマウスボタンを押下(クリック)ではなく押上のタイミングで入力なんですか？
  Ａ．将来的に入力デバイスはタッチパネルに収束する恐れがあると判断しました。
@@ -1703,11 +1703,15 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
 
  Ｑ．なんで中途半端にVimっぽい操作方法なんですか？
  Ａ．上下左右([Up][Down][Left][Right])キーと[Space]キーと[Tab]キーが他のGUIで使用されるからです。
-     「kanfont」などでスケールやラジオボタンなど十字キーでフォーカスが移動するGUIも使うので漢直キーボードは使えるキーが限られます。
+     「kanfont」などでスケールやラジオボタンなど十字キーでフォーカスが移動するGUIも使うので漢直鍵盤は使えるキーが限られます。
 
  Ｑ．目的の漢字がどこにあるかわからない。
  Ａ．漢字の配列や字引入力の詳細などは「kanedit」の[kanedit.txt]に記載してます。「kanedit」そのものはまだ制作中です。
      「LTsv」フォルダのモジュール群のみ入手した人はGitHubリポジトリから「LTsv10kanedit」を改めて入手すると参考。
+
+ Ｑ．描画が重くてフリーズしとるで。
+ Ａ．「LTsv_editcanvas_new()」に代わる新しいエディタの開発予定。
+     電卓部分も漢直鍵盤同様GUI部品から描画命令に手直しの予定。
 
 
 ４．   作者について、例えば連絡先。
