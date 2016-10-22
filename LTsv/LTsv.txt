@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch) 20161011T163105
+version(branch) 20161023U011852
 
 目次
 
@@ -363,7 +363,7 @@ version(branch) 20161011T163105
   Pythonの辞書「{"label":data,"label":data,…}」をラベル有りLTSV「label:data	label:data	…」に。dataは文字列化。
 
  LTsv_file_ver()
-  [LTsv_file.py]のバージョン表示(20161011T163105)。
+  [LTsv_file.py]のバージョン表示(20161023U011852)。
 
  LTsv_issue():
   「/etc/issue」を開いてLinuxのディストリビューションを探る。詳細なバージョン確認方法はディストリ毎に異なる予感。
@@ -373,7 +373,7 @@ version(branch) 20161011T163105
 
  日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・20161011T163105形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
+ ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -410,7 +410,7 @@ version(branch) 20161011T163105
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)
-  「LTsv_time_ver()」などの「20161011T163105」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの「20161023U011852」形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 
  LTsv_putdaytimenow(overhour=None,diffminute=None)
