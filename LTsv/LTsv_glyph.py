@@ -857,7 +857,6 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
             LTsv_editcanvasKM[editcanvas]=""
             if motionY > LTsv_editcanvasKY[editcanvas]:
                 LTsv_editcanvasKT[editcanvas]=LTsv_puttimerstartgoal()
-                print(motionY,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasUY[editcanvas])
                 if motionY > LTsv_editcanvasUY[editcanvas]:
                     if LTsv_editcanvasUL[editcanvas] <= LTsv_editcanvasUM[editcanvas] <= LTsv_editcanvasUR[editcanvas]:
                         LTsv_editcanvasKM[editcanvas]="Umove"
@@ -1127,18 +1126,20 @@ def debug_editcanvasmouserelease(window_objvoid=None,window_objptr=None):
 
 LTsv_calculatorUX,LTsv_calculatorUY,LTsv_calculatorUW,LTsv_calculatorUH,LTsv_calculatorUC={},{},{},{},{}
 LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTL,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG={},{},{},{},{},{},{}
-LTsv_calculatorKX,LTsv_calculatorKY,LTsv_calculatorKM={},{},{}
+LTsv_calculatorKX,LTsv_calculatorKY={},{}
+LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK={},{},{}
 def LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorT=""):
     global LTsv_calculatorUX,LTsv_calculatorUY,LTsv_calculatorUW,LTsv_calculatorUH,LTsv_calculatorUC
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTL,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
-    global LTsv_calculatorKX,LTsv_calculatorKY,LTsv_calculatorKM
-    LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUW[calc_canvas],LTsv_calculatorUH[calc_canvas]=calculatorX,calculatorY,calculatorW,calculatorH
+    global LTsv_calculatorKX,LTsv_calculatorKY
+    global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
+    LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUW[calc_canvas],LTsv_calculatorUH[calc_canvas]=calculatorX,calculatorY,calculatorW-LTsv_global_glyphkbdW(),calculatorH
     LTsv_calculatorUC[calc_canvas]=calculatorC; LTsv_glyph_tapcallback_shell(calc_canvas,LTsv_calculatorUC[calc_canvas])
     LTsv_calculatorTT[calc_canvas]=calculatorT
     LTsv_calculatorTF[calc_canvas],LTsv_calculatorTG[calc_canvas]=15,"漫"
     LTsv_calculatorTX[calc_canvas],LTsv_calculatorTY[calc_canvas],LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=0,LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas],0,0
-    LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW(),LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH()
-    LTsv_calculatorKM[calc_canvas]=""
+    LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH()
+    LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas],LTsv_calculatorMK[calc_canvas]=0,0,""
     LTsv_glyph_widecache(LTsv_calculatorTT[calc_canvas],draw_x=LTsv_calculatorTX[calc_canvas],draw_y=LTsv_calculatorTY[calc_canvas],draw_f=LTsv_calculatorTF[calc_canvas],draw_w=1,draw_g=LTsv_calculatorTG[calc_canvas])
     LTsv_draw_selcanvas(calc_canvas)
     LTsv_glyph_calcdelete(calc_canvas); LTsv_glyph_calcdraw(calc_canvas)
@@ -1148,7 +1149,7 @@ def LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LT
 def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None):
     global LTsv_calculatorUX,LTsv_calculatorUY,LTsv_calculatorUW,LTsv_calculatorUH,LTsv_calculatorUC
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTL,LTsv_calculatorTR,LTsv_calculatorTT
-    global LTsv_calculatorKX,LTsv_calculatorKY,LTsv_calculatorKM
+    global LTsv_calculatorKX,LTsv_calculatorKY
     LTsv_calculatorUX[calc_canvas]=LTsv_calculatorUX[calc_canvas] if calculatorX == None else calculatorX
     LTsv_calculatorUY[calc_canvas]=LTsv_calculatorUY[calc_canvas] if calculatorY == None else calculatorY
     LTsv_calculatorUW[calc_canvas]=LTsv_calculatorUW[calc_canvas] if calculatorW == None else calculatorW
@@ -1199,27 +1200,42 @@ def LTsv_glyph_glyphsincalc():
 #    print(LTsv_glyph_widecachetempX)
 
 def LTsv_glyph_calcpress(calc_canvas):
-    return False
+    global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
+    motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    if motionY < LTsv_calculatorTY[calc_canvas]:
+        LTsv_calculatorMK[calc_canvas]="slide"
+    else:
+        LTsv_calculatorMK[calc_canvas]=""
+    LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas]=motionX,motionY
+
 def LTsv_glyph_calcmotion(calc_canvas):
-    return False
+    global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
+    global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTL,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
+    motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    if LTsv_calculatorMK[calc_canvas]=="slide":
+        LTsv_glyph_calcdelete(calc_canvas)
+        LTsv_calculatorTX[calc_canvas]+=motionX-LTsv_calculatorMX[calc_canvas]
+        LTsv_glyph_widecache(LTsv_calculatorTT[calc_canvas],draw_x=LTsv_calculatorTX[calc_canvas],draw_y=LTsv_calculatorTY[calc_canvas],draw_f=LTsv_calculatorTF[calc_canvas],draw_w=1,draw_g=LTsv_calculatorTG[calc_canvas])
+        LTsv_glyph_calcdraw(calc_canvas)
+        LTsv_draw_queue()
+    LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas]=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+
 def LTsv_glyph_calcrelease(calc_canvas):
-    return False
+    global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
+    LTsv_calculatorMK[calc_canvas]=""
+
 
 def debug_calculatormousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
-        pass
-    elif LTsv_glyph_calcpress(debug_calculator_canvas):
-        pass
+        LTsv_glyph_calcpress(debug_calculator_canvas)
+
 def debug_calculatormousemotion(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousemotion(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
-        pass
-    elif LTsv_glyph_calcmotion(debug_calculator_canvas):
-        pass
+        LTsv_glyph_calcmotion(debug_calculator_canvas)
+
 def debug_calculatormouserelease(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mouserelease(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
-        pass
-    elif LTsv_glyph_calcrelease(debug_calculator_canvas):
-        pass
+        LTsv_glyph_calcrelease(debug_calculator_canvas)
 
 
 def debug_keypress(window_objvoid=None,window_objptr=None):
