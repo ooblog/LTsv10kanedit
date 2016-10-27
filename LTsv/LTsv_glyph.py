@@ -1207,10 +1207,16 @@ def LTsv_glyph_glyphsincalc(calc_canvas):
     for cachetext_pos,glyphcode in enumerate(LTsv_glyph_widecachetext):
         LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
         if LTsv_glyph_widecachetempX[cachetext_pos] < calculatorUX or calculatorTW < LTsv_glyph_widecachetempX[cachetext_pos+1]: continue;
-        for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-            LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
-            LTsv_glyphpointresize=[xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempY if odd%2 else xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempX[cachetext_pos] for odd,xy in enumerate(LTsv_glyphpointlist)]
-            LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
+        if LTsv_calculatorTL[calc_canvas] <= cachetext_pos <= LTsv_calculatorTR[calc_canvas]:
+            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+                LTsv_draw_color(canvascolor)
+                LTsv_glyphpointresize=[xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempY if odd%2 else xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempX[cachetext_pos] for odd,xy in enumerate(LTsv_glyphpointlist)]
+                LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
+        else:
+            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
+                LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
+                LTsv_glyphpointresize=[xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempY if odd%2 else xy*LTsv_glyph_widecachetempF//LTsv_PSchar_ZW+LTsv_glyph_widecachetempX[cachetext_pos] for odd,xy in enumerate(LTsv_glyphpointlist)]
+                LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
 #    print(LTsv_glyph_widecachetempX)
 #LTsv_draw_glyphsentry
 
@@ -1226,7 +1232,15 @@ def LTsv_glyph_calcpress(calc_canvas):
             if motionY < LTsv_calculatorTY[calc_canvas]:
                 LTsv_calculatorMK[calc_canvas]="slide"
             else:
-                LTsv_calculatorMK[calc_canvas]=""
+                for cachetext_pos in range(len(LTsv_glyph_widecachetempX)-1):
+                    if LTsv_glyph_widecachetempX[cachetext_pos] <= motionX < LTsv_glyph_widecachetempX[cachetext_pos+1]: break;
+                if motionX < LTsv_glyph_widecachetempX[cachetext_pos]:
+                    LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=0,0
+                else:
+                    LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=cachetext_pos,cachetext_pos
+                LTsv_calculatorMK[calc_canvas]="select"
+                LTsv_glyph_calcdelete(calc_canvas)
+                LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
             LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas]=motionX,motionY
         return True
     else:
@@ -1241,9 +1255,11 @@ def LTsv_glyph_calcmotion(calc_canvas):
             if LTsv_calculatorMK[calc_canvas]=="slide":
                 LTsv_glyph_calcdelete(calc_canvas)
                 LTsv_calculatorTX[calc_canvas]=LTsv_calculatorTX[calc_canvas]+motionX-LTsv_calculatorMX[calc_canvas]
-                LTsv_calculator_resize(calc_canvas)
-                LTsv_glyph_calcdraw(calc_canvas)
-                LTsv_draw_queue()
+                if abs(motionX-LTsv_calculatorMX[calc_canvas]) > 1:
+                    LTsv_calculatorMT[calc_canvas]=LTsv_puttimerstartgoal()
+                elif LTsv_puttimerlap()-LTsv_calculatorMT[calc_canvas] > 1.0:
+                    LTsv_calculatorTX[calc_canvas]=0
+                LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
             LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas]=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
     else:
         LTsv_glyph_calcrelease(calc_canvas)
@@ -1253,9 +1269,7 @@ def LTsv_glyph_calcrelease(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
     LTsv_calculatorMK[calc_canvas]=""
     LTsv_glyph_calcdelete(calc_canvas)
-    LTsv_calculator_resize(calc_canvas)
-    LTsv_glyph_calcdraw(calc_canvas)
-    LTsv_draw_queue()
+    LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
     motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
         if LTsv_glyph_mouserelease(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
