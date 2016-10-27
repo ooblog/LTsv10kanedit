@@ -497,7 +497,7 @@ def LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗"):
 
 def LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y):
     LTsv_draw_selcanvas(kbd_canvas,draw_g=LTsv_glyph_kbdTAG)
-    mouseX,mouseY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    mouseX,mouseY=LTsv_global_canvasmotionX(kbd_canvas),LTsv_global_canvasmotionY(kbd_canvas)
     LTsv_kbdcursor=LTsv_glyph_None
     for kbd_xy in range(LTsv_glyph_None):
         if abs(kbd_x+LTsv_glyph_mouseX[kbd_xy]-mouseX) <= LTsv_glyph_mouseC[kbd_xy] and abs(kbd_y+LTsv_glyph_mouseY[kbd_xy]-mouseY) <= LTsv_glyph_mouseC[kbd_xy]:
@@ -823,7 +823,7 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
         LTsv_draw_color(LTsv_editcanvasUF[editcanvas]); LTsv_editcanvasUP[editcanvas]=LTsv_draw_glyphsentry(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_cL=LTsv_editcanvasUL[editcanvas],draw_cR=LTsv_editcanvasUR[editcanvas],draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
         if LTsv_editcanvasKM[editcanvas] == "Umove":
             LTsv_draw_color(LTsv_editcanvasUF[editcanvas])
-            LTsv_draw_glyphs(draw_t=LTsv_editcanvasUK[editcanvas],draw_x=LTsv_global_canvasmotionX(),draw_y=LTsv_global_canvasmotionY(),draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
+            LTsv_draw_glyphs(draw_t=LTsv_editcanvasUK[editcanvas],draw_x=LTsv_global_canvasmotionX(editcanvas),draw_y=LTsv_global_canvasmotionY(editcanvas),draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
         else:
             LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUL[editcanvas] if UL == None else UL
             LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUR[editcanvas] if UR == None else UR
@@ -850,7 +850,7 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
         if LTsv_glyph_mousepress(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-            motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+            motionX,motionY=LTsv_global_canvasmotionX(editcanvas),LTsv_global_canvasmotionY(editcanvas)
             for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
                 if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
             LTsv_editcanvasUM[editcanvas]=UP
@@ -876,7 +876,7 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
         if LTsv_glyph_mousemotion(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-            motionX=LTsv_global_canvasmotionX()
+            motionX=LTsv_global_canvasmotionX(editcanvas)
             for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
                 if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
             if LTsv_editcanvasKM[editcanvas] == "Umove":
@@ -898,7 +898,7 @@ def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=Non
         global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
         global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
         if LTsv_glyph_mouserelease(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-            motionX=LTsv_global_canvasmotionX()
+            motionX=LTsv_global_canvasmotionX(editcanvas)
             for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
                 if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
             if LTsv_editcanvasKM[editcanvas] == "Umove":
@@ -1111,7 +1111,7 @@ def LTsv_evaltext(calc_value=""):
 
 def debug_editcanvasmousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
-        keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(),0),debug_reversi_H)
+        keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(debug_reversi_canvas),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(debug_reversi_canvas),0),debug_reversi_H)
         if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
             for xy in debug_milklid_range:
                 if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
@@ -1271,7 +1271,7 @@ def LTsv_glyph_calcpress(calc_canvas):
 def LTsv_glyph_calcmotion(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
-    motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    motionX,motionY=LTsv_global_canvasmotionX(calc_canvas),LTsv_global_canvasmotionY(calc_canvas)
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
         if LTsv_glyph_mousemotion(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
             if LTsv_calculatorMK[calc_canvas] == "slide":
@@ -1306,8 +1306,6 @@ def LTsv_glyph_calcmotion(calc_canvas):
                 LTsv_calculatorTL[calc_canvas],LTsv_calculatorTC[calc_canvas],LTsv_calculatorTR[calc_canvas]=cachetext_pos,cachetext_pos,cachetext_pos
                 LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
             LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas]=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
-        else:
-            LTsv_glyph_calcrelease(calc_canvas)
         return True
     else:
         LTsv_glyph_calcrelease(calc_canvas)
@@ -1315,7 +1313,7 @@ def LTsv_glyph_calcmotion(calc_canvas):
 
 def LTsv_glyph_calcrelease(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
-    motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    motionX,motionY=LTsv_global_canvasmotionX(calc_canvas),LTsv_global_canvasmotionY(calc_canvas)
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
         if LTsv_glyph_mouserelease(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
             if LTsv_calculatorMK[calc_canvas] == "move":
@@ -1552,7 +1550,7 @@ if __name__=="__main__":
         debug_entryfont="kan5x5comic,{0}".format(debug_kbdH//4)
         debug_buttonfont="kan5x5comic,5".format(5)
         debug_reversi_X,debug_reversi_Y,debug_reversi_W,debug_reversi_H=debug_milklid_W*7,debug_milklid_H*1,debug_milklid_W*(2+20+2),debug_milklid_H*(2+8+2)
-        debug_kbdX,debug_kbdY=debug_reversi_W-LTsv_global_glyphkbdW(),debug_reversi_H-LTsv_global_glyphkbdH()*3//2
+        debug_kbdX,debug_kbdY=debug_reversi_W-LTsv_global_glyphkbdW()-LTsv_global_glyphkbdH()*3//2,debug_reversi_H-LTsv_global_glyphkbdH()*3//2
         debug_milklidLen=(10*10)
         debug_milklidX,debug_milklidY,debug_milkAI,debug_milkMAP=[0]*debug_milklidLen,[0]*debug_milklidLen,[0]*debug_milklidLen,[0]*debug_milklidLen
         for xy in range(debug_milklidLen):

@@ -110,9 +110,17 @@ def LTsv_global_WinAPI():                           return LTsv_GUI_WinAPI
 def LTsv_global_libgtk():                           return LTsv_libgtk
 def LTsv_global_libgdk():                           return LTsv_libgdk
 def LTsv_global_libobj():                           return LTsv_libobj
-def LTsv_global_canvasmotionX():                    return LTsv_canvas_motion_X
-def LTsv_global_canvasmotionY():                    return LTsv_canvas_motion_Y
 def LTsv_global_canvasmotionZ():                    return LTsv_canvas_motion_Z
+def LTsv_global_canvasmotionX(motionZ=None):
+    global LTsv_canvas_motion_X
+    if (motionZ != None):
+        LTsv_canvas_motion_X=LTsv_canvas_motion_X if motionZ == LTsv_canvas_motion_Z else -1
+    return LTsv_canvas_motion_X
+def LTsv_global_canvasmotionY(motionZ=None):
+    global LTsv_canvas_motion_Y
+    if (motionZ != None):
+        LTsv_canvas_motion_Y=LTsv_canvas_motion_Y if motionZ == LTsv_canvas_motion_Z else -1
+    return LTsv_canvas_motion_Y
 def LTsv_global_canvascolor():                    return LTsv_canvascolor
 def LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor
 def LTsv_global_canvasTAG(TkinterTAG=None):
@@ -1151,9 +1159,9 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
         global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         global canvas_CBKafter,LTsv_canvasCBKpagename
         canvas_CBKafter[LTsv_widgetPAGENAME]=False; LTsv_canvas_motion_Z=""
+        LTsv_canvas_motion_X,LTsv_canvas_motion_Y=-1,-1
         if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
             LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLleave[LTsv_widgetPAGENAME],event_i="{0}_leave".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
-        LTsv_canvas_motion_X,LTsv_canvas_motion_Y=-1,-1
         return 0
     canvas_EMLenter[LTsv_widgetPAGENAME],canvas_EMLmotion[LTsv_widgetPAGENAME],canvas_EMLleave[LTsv_widgetPAGENAME]=event_e,event_m,event_l
     canvas_CBKenter[LTsv_widgetPAGENAME],canvas_CBKmotion[LTsv_widgetPAGENAME],canvas_CBKleave[LTsv_widgetPAGENAME]=LTsv_canvas_enter,LTsv_canvas_motion,LTsv_canvas_leave
@@ -1713,7 +1721,7 @@ def debug_canvas(window_objvoid=None,window_objptr=None):
     LTsv_draw_delete("white")
     LTsv_draw_font(debug_font_entry)
     LTsv_draw_color("#fffff0"); LTsv_draw_polygonfill(0,0,debug_canvas_W,0,debug_canvas_W,debug_canvas_H,0,debug_canvas_H)
-    mouse_x,mouse_y=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    mouse_x,mouse_y=LTsv_global_canvasmotionX(debug_keysetup_canvas),LTsv_global_canvasmotionY(debug_keysetup_canvas)
     LTsv_draw_color(debug_scaleRGB); LTsv_draw_text("mouseX,Y\n[{0},{1}]".format(mouse_x,mouse_y),draw_x=mouse_x,draw_y=mouse_y)
     LTsv_putdaytimenow(); LTsv_checkFPS()
     LTsv_draw_color("black"); LTsv_draw_text(LTsv_getdaytimestr(LTsv_widget_gettext(debug_keysetup_timentry)),draw_x=0,draw_y=0)
@@ -1776,7 +1784,7 @@ def debug_activewindow(callback_void=None,callback_ptr=None):
 
 def debug_canvas_press(callback_void=None,callback_ptr=None):
     global debug_polygonpointlist
-    mouse_x,mouse_y=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    mouse_x,mouse_y=LTsv_global_canvasmotionX(debug_keysetup_canvas),LTsv_global_canvasmotionY(debug_keysetup_canvas)
     LTsv_setkbddata(0,25); debug_getkbdstr=LTsv_getkbdlabels("MouseL\tMouseR\tMouseC")
     cursorLCR="{0}{1}{2}".format(LTsv_pickdatalabel(debug_getkbdstr,"MouseL"),LTsv_pickdatalabel(debug_getkbdstr,"MouseC"),LTsv_pickdatalabel(debug_getkbdstr,"MouseR"))
     if cursorLCR == "100" or cursorLCR == "000":

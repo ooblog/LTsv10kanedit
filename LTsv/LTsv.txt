@@ -854,12 +854,12 @@ version(branch) 20161023U011852
   LTsv_global_widgetOBJ(LTsv_objid); LTsv_global_iconOBJ(LTsv_objid); LTsv_global_notifyOBJ(LTsv_objid); LTsv_global_popupmenuOBJ(LTsv_objid);
   global系はモジュール内の変数に直接アクセスする場合に使用。
 
- LTsv_global_canvasmotionX(); LTsv_global_canvasmotionY();
-  「canvas」上のマウスの座標を取得。「canvas」の解説は「LTsv_canvas_new()」を参照。
-  「canvas」の外に出ると正しい値は取得できなくなるので「LTsv_canvas_leave()」系の対策は必須。
-
  LTsv_global_canvasmotionZ()
   マウスはそもそもどの「canvas」上に存在しているのかを取得。
+
+ LTsv_global_canvasmotionX(motionZ=None); LTsv_global_canvasmotionY(motionZ=None);
+  「canvas」上のマウスの座標を取得。「canvas」の解説は「LTsv_canvas_new()」を参照。
+  motionZで「canvas」を指定しなくても座標は取得できるが、隣接してる「canvas」間を移動する際に正しくない値を拾う場合がある。
 
  LTsv_global_canvascolor(); LTsv_global_canvasbgcolor();
   「canvas」上の色を取得。
