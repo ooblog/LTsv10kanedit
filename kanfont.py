@@ -178,7 +178,7 @@ def kanfont_layerD_shell(window_objvoid=None,window_objptr=None):
 
 def kanfont_glyph_grid():
     global kanfont_gridX,kanfont_gridY,kanfont_gridP,kanfont_gridQ,kanfont_catchP,kanfont_catchQ,kanfont_catchZ,kanfont_catchX,kanfont_catchY
-    kanfont_mouseX,kanfont_mouseY=min(max(LTsv_global_canvasmotionX(),0),PSchar_ZW//2),min(max(LTsv_global_canvasmotionY(),0),PSchar_ZW//2)
+    kanfont_mouseX,kanfont_mouseY=min(max(LTsv_global_canvasmotionX(kanfont_glyph_canvas),0),PSchar_ZW//2),min(max(LTsv_global_canvasmotionY(kanfont_glyph_canvas),0),PSchar_ZW//2)
     kanfont_gridX,kanfont_gridY=kanfont_mouseX,kanfont_mouseY
     if kanfont_gridinner:
         kanfont_gridX=(kanfont_gridX//kanfont_fontgrid)*kanfont_fontgrid if kanfont_gridX//(kanfont_fontgrid//2)%2 == 0 else (kanfont_gridX//kanfont_fontgrid+1)*kanfont_fontgrid-1

@@ -1335,7 +1335,6 @@ def LTsv_glyph_calcrelease(calc_canvas):
 
 def LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
-    print(glyph_calcrinput)
     LTsv_glyph_calcdelete(calc_canvas)
     if glyph_calcrinput in "":
         if glyph_calcrinput in "":
@@ -1347,6 +1346,31 @@ def LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput):
         if glyph_calcrinput in "":
             LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+LTsv_clippaste+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
             LTsv_calculatorTR[calc_canvas]+=len(LTsv_clippaste)-1
+        if glyph_calcrinput in "":
+            if LTsv_calculatorUC[calc_canvas] != None:
+                LTsv_widget_settext(LTsv_calculatorUC[calc_canvas],LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:LTsv_calculatorTR[calc_canvas]+1])
+        if glyph_calcrinput in "":
+            if LTsv_calculatorTL[calc_canvas] == LTsv_calculatorTR[calc_canvas]:
+                if 0 < LTsv_calculatorTL[calc_canvas]:
+                    LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]-1]+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
+            else:
+                glyph_calcrinput=""
+        if glyph_calcrinput in "":
+            LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTR[calc_canvas]+1:]
+        if glyph_calcrinput in "":
+            LTsv_calculatorTL[calc_canvas]=max(0,LTsv_calculatorTL[calc_canvas]-1) if not glyph_calcrinput in "" else 0
+        if glyph_calcrinput in "":
+            LTsv_calculatorTL[calc_canvas]=min(LTsv_calculatorTL[calc_canvas]+1,len(LTsv_calculatorTT[calc_canvas]))
+            LTsv_calculatorTR[calc_canvas]=max(LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas])
+        if glyph_calcrinput in "":
+            LTsv_calculatorTR[calc_canvas]=min(LTsv_calculatorTR[calc_canvas]+1,len(LTsv_calculatorTT[calc_canvas])) if not glyph_calcrinput in "" else len(LTsv_calculatorTT[calc_canvas])
+        if glyph_calcrinput in "":
+             LTsv_calculatorTR[calc_canvas]=max(0,LTsv_calculatorTR[calc_canvas]-1)
+             LTsv_calculatorTL[calc_canvas]=min(LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas])
+        if glyph_calcrinput in "":
+            LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTL[calc_canvas]
+        if glyph_calcrinput in "":
+            LTsv_calculatorTL[calc_canvas]=LTsv_calculatorTR[calc_canvas]
     else:
         LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+glyph_calcrinput+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
         LTsv_calculatorTL[calc_canvas]+=1; LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTL[calc_canvas]
