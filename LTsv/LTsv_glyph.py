@@ -1135,11 +1135,11 @@ def LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LT
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK,LTsv_calculatorMT
     LTsv_calculatorUB[calc_canvas],LTsv_calculatorUC[calc_canvas]=calculatorB,calculatorC; LTsv_glyph_tapcallback_shell(calc_canvas,LTsv_calculatorUB[calc_canvas])
     LTsv_calculatorTF[calc_canvas],LTsv_calculatorTG[calc_canvas],LTsv_calculatorKF[calc_canvas]=15,"漫",10
-    LTsv_calculatorTT[calc_canvas]=calculatorT
+    LTsv_calculatorTT[calc_canvas]=calculatorT; LTsv_calculatorTC[calc_canvas]=len(LTsv_calculatorTT[calc_canvas])
+    LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTC[calc_canvas],LTsv_calculatorTC[calc_canvas]
     LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas],LTsv_calculatorMK[calc_canvas],LTsv_calculatorMT[calc_canvas]=0,0,"",0
     LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUW[calc_canvas],LTsv_calculatorUH[calc_canvas]=calculatorX,calculatorY,calculatorW,calculatorH
     LTsv_calculatorTX[calc_canvas],LTsv_calculatorTY[calc_canvas]=0,LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas]
-    LTsv_calculatorTL[calc_canvas],LTsv_calculatorTC[calc_canvas],LTsv_calculatorTR[calc_canvas]=0,0,0
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW()
     LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas],LTsv_calculatorKT[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH(),""
     LTsv_calculator_resize(calc_canvas)
@@ -1230,8 +1230,6 @@ def LTsv_glyph_glyphsincalc(calc_canvas):
                 LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+LTsv_calculatorUY[calc_canvas] if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
                 LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+1
-#    print(LTsv_glyph_widecachetempX)
-#LTsv_draw_glyphsentry
 
 def LTsv_glyph_calcpress(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
@@ -1377,7 +1375,11 @@ def LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput):
     LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
     return glyph_calcrinput
 
-LTsv_glyph_ctrlAZ={"か":"","ち":"","と":"","つ":"","さ":"","そ":"","ひ":""}
+#たていすかんなにらせちとしはきくまのりれけむつさそひこみもねるめろ
+#
+LTsv_glyph_ctrlAZ={"た":"","て":"","い":"","す":"","か":"","ん":"","な":"","に":"","ら":"","せ":"",
+"ち":"","と":"","し":"","は":"","き":"","く":"","ま":"","の":"","り":"","れ":"","け":"","む":"",
+"つ":"","さ":"","そ":"","ひ":"","こ":"","み":"","も":"","ね":"","る":"","め":"","ろ":""}
 def LTsv_glyph_calctype(calc_canvas):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     glyph_calcrinput=""
@@ -1411,7 +1413,6 @@ def LTsv_glyph_calctype(calc_canvas):
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
             elif LTsv_glyph_kbdchars[LTsv_glyph_KANA] in LTsv_glyph_irohaalphaX:
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
-    LTsv_glyph_kbddelete(calc_canvas); LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
     if "Tab" in glyphtype_getkbdnames: glyph_calcrinput=LTsv_glyph_calcinput(calc_canvas,"");
     if "BS" in glyphtype_getkbdnames: glyph_calcrinput=LTsv_glyph_calcinput(calc_canvas,"")
     if "DEL" in glyphtype_getkbdnames: glyph_calcrinput=LTsv_glyph_calcinput(calc_canvas,"")
@@ -1428,9 +1429,24 @@ def LTsv_glyph_calctype(calc_canvas):
         for ctrlAZ_key,ctrlAZ_data in LTsv_glyph_ctrlAZ.items():
             if ctrlAZ_key in glyphtype_getkbdkanas: glyph_calcrinput=LTsv_glyph_calcinput(calc_canvas,ctrlAZ_data);
     else:
-        pass
+        for kbdkanas in glyphtype_getkbdkanas.split('\t') if len(glyphtype_getkbdkanas) > 0 else []:
+            if kbdkanas in LTsv_glyph_irohatype:
+                LTsv_kbdcursor=LTsv_glyph_irohatype.index(kbdkanas)
+                if LTsv_glyph_NXKSaf == LTsv_glyph_None or LTsv_glyph_NXKSaf == LTsv_glyph_KANA:
+                    glyph_calcrinput=LTsv_glyph_calcinput(calc_canvas,LTsv_glyph_kbdchars[LTsv_kbdcursor])
+                elif LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
+                    LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_kbdcursor])
+                elif LTsv_glyph_NXKSaf == LTsv_glyph_XFER:
+                    LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_kbdcursor])
+                elif LTsv_glyph_NXKSaf == LTsv_glyph_SandS:
+                    if LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_dictype:
+                        LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
+                    elif LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_irohaalphaN+LTsv_glyph_irohaalphaX:
+                        LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
+    LTsv_glyph_kbddelete(calc_canvas); LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
     LTsv_draw_queue()
     return glyph_calcrinput
+
 
 def debug_calculatormousepress(window_objvoid=None,window_objptr=None):
     if not LTsv_glyph_calcpress(debug_calculator_canvas):
