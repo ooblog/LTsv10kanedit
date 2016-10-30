@@ -358,6 +358,7 @@ def kanfont_dictype_inputed_shell(dictype_cnt):
         return LTsv_kbdentry_edit
     return kanfont_dictype_kernel
 
+kanfont_calculatorenterBF,kanfont_calculatorenterAF={},{}
 def kanfont_calculatormouseinput_enter(calculator_canvas):
     LTsv_kbdentry_edit=LTsv_calculator_resize(calculator_canvas)
     dictype_cnt=kanfont_dictype_canvas.index(calculator_canvas)
@@ -412,7 +413,10 @@ kanfont_calculatormouseleave={}
 def kanfont_calculatormouseleave_shell(calculator_canvas):
     global kanfont_calculatormouseleave
     def kanfont_calculatormouseleave_kernel(window_objvoid=None,window_objptr=None):
-        kanfont_calculatormouseinput_enter(calculator_canvas)
+        global kanfont_calculatorenterBF,kanfont_calculatorenterAF
+        kanfont_calculatorenterAF[calculator_canvas]=LTsv_calculator_resize(calculator_canvas)
+        if kanfont_calculatorenterAF[calculator_canvas] != kanfont_calculatorenterBF[calculator_canvas]:
+            kanfont_calculatormouseinput_enter(calculator_canvas)
         LTsv_glyph_calcleave(calculator_canvas)
     kanfont_calculatormouseleave[calculator_canvas]=kanfont_calculatormouseleave_kernel
     return kanfont_calculatormouseleave_kernel
@@ -421,7 +425,9 @@ kanfont_calculatormouseenter={}
 def kanfont_calculatormouseenter_shell(calculator_canvas):
     global kanfont_calculatormouseenter
     def kanfont_calculatormouseenter_kernel(window_objvoid=None,window_objptr=None):
-        LTsv_glyph_calcenter(calculator_canvas)
+        global kanfont_calculatorenterBF,kanfont_calculatorenterAF
+        kanfont_calculatorenterBF[calculator_canvas]=LTsv_glyph_calcenter(calculator_canvas)
+        kanfont_calculatorenterAF[calculator_canvas]=kanfont_calculatorenterBF[calculator_canvas]
     kanfont_calculatormouseenter[calculator_canvas]=kanfont_calculatormouseenter_kernel
     return kanfont_calculatormouseenter_kernel
 
@@ -579,7 +585,7 @@ if len(LTsv_GUI) > 0:
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
-        LTsv_calculator_setup(kanfont_dictype_canvas[dictype_cnt],calculatorX=0,calculatorY=0,calculatorW=kanfont_dictype_canvasW[dictype_cnt],calculatorH=kanfont_entry_H,calculatorC=kanfont_clipboard,calculatorB=kanfont_calculatormouseinput_shell(kanfont_dictype_canvas[dictype_cnt]),calculatorT="")
+        LTsv_calculator_setup(kanfont_dictype_canvas[dictype_cnt],calculatorX=0,calculatorY=kanfont_entry_H-LTsv_global_glyphkbdH(),calculatorW=kanfont_dictype_canvasW[dictype_cnt],calculatorH=LTsv_global_glyphkbdH(),calculatorC=kanfont_clipboard,calculatorB=kanfont_calculatormouseinput_shell(kanfont_dictype_canvas[dictype_cnt]),calculatorT="")
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)

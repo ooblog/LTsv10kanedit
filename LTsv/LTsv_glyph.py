@@ -1349,17 +1349,20 @@ def LTsv_glyph_calcenter(calc_canvas):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     if not calc_canvas in LTsv_calculatorUX: return False
     LTsv_glyph_calcdelete(calc_canvas)
-    LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW()
-    LTsv_glyph_calcdraw(calc_canvas)
+    LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas)
+    LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
+    LTsv_draw_queue()
+    return LTsv_calculatorTT[calc_canvas]
 
 def LTsv_glyph_calcleave(calc_canvas):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     if not calc_canvas in LTsv_calculatorUX: return False
-    LTsv_glyph_calcdelete(calc_canvas)
     LTsv_glyph_kbddelete(calc_canvas)
+    LTsv_glyph_calcdelete(calc_canvas)
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]
-    LTsv_glyph_calcdrawplane(calc_canvas,"white")
+    LTsv_glyph_calcdrawplane(calc_canvas,"white"); LTsv_draw_queue()
+    return LTsv_calculatorTT[calc_canvas]
 
 def LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
