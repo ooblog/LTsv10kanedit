@@ -1135,20 +1135,18 @@ def LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LT
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK,LTsv_calculatorMT
     LTsv_calculatorUB[calc_canvas],LTsv_calculatorUC[calc_canvas]=calculatorB,calculatorC; LTsv_glyph_tapcallback_shell(calc_canvas,LTsv_calculatorUB[calc_canvas])
     LTsv_calculatorTF[calc_canvas],LTsv_calculatorTG[calc_canvas],LTsv_calculatorKF[calc_canvas]=15,"漫",10
-    LTsv_calculatorTT[calc_canvas]=calculatorT; LTsv_calculatorTC[calc_canvas]=len(LTsv_calculatorTT[calc_canvas])
+    LTsv_calculatorTT[calc_canvas]=calculatorT
+    LTsv_calculatorTC[calc_canvas]=len(LTsv_calculatorTT[calc_canvas])
     LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTC[calc_canvas],LTsv_calculatorTC[calc_canvas]
     LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas],LTsv_calculatorMK[calc_canvas],LTsv_calculatorMT[calc_canvas]=0,0,"",0
     LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUW[calc_canvas],LTsv_calculatorUH[calc_canvas]=calculatorX,calculatorY,calculatorW,calculatorH
     LTsv_calculatorTX[calc_canvas],LTsv_calculatorTY[calc_canvas]=0,LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas]
-    LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW()
+    LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]
     LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas],LTsv_calculatorKT[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH(),""
     LTsv_calculator_resize(calc_canvas)
-    LTsv_draw_selcanvas(calc_canvas)
-    LTsv_glyph_calcdelete(calc_canvas); LTsv_glyph_calcdraw(calc_canvas)
-    LTsv_glyph_kbddelete(calc_canvas); LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
-    LTsv_draw_queue()
+    LTsv_glyph_calcleave(calc_canvas)
 
-def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None):
+def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None):
     global LTsv_calculatorUX,LTsv_calculatorUY,LTsv_calculatorUW,LTsv_calculatorUH,LTsv_calculatorUB,LTsv_calculatorUC
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTL,LTsv_calculatorTR,LTsv_calculatorTT
     global LTsv_calculatorKX,LTsv_calculatorKY,LTsv_calculatorKT,LTsv_calculatorKF
@@ -1160,6 +1158,10 @@ def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calcula
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW()
     LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH()
     LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas] if calculatorT == None else calculatorT
+    LTsv_calculatorTX[calc_canvas]=LTsv_calculatorTX[calc_canvas] if calculatorTX == None else calculatorTX
+    if calculatorTC != None:
+        LTsv_calculatorTC[calc_canvas]=calculatorTC
+        LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTC[calc_canvas],LTsv_calculatorTC[calc_canvas]
     LTsv_glyph_widecache(LTsv_calculatorTT[calc_canvas],draw_x=LTsv_calculatorTX[calc_canvas],draw_y=LTsv_calculatorTY[calc_canvas],draw_f=LTsv_calculatorTF[calc_canvas],draw_w=1,draw_g=LTsv_calculatorTG[calc_canvas])
     calculatorUX,calculatorTW=LTsv_calculatorUX[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas]
     if len(LTsv_glyph_widecachetempX) > 3:  # len(LTsv_calculatorTT[calc_canvas]) > 0
@@ -1169,6 +1171,7 @@ def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calcula
             LTsv_calculatorTX[calc_canvas]=calculatorUX-LTsv_glyph_widecachetempX[len(LTsv_glyph_widecachetempX)-3]+LTsv_glyph_widecachetempX[0]
     else:
         LTsv_calculatorTX[calc_canvas]=calculatorUX
+    return LTsv_calculatorTT[calc_canvas]
 
 def LTsv_glyph_calcdelete(calc_canvas):
     if LTsv_global_GUI() == "GTK2":
@@ -1183,6 +1186,14 @@ def LTsv_glyph_calcdraw(calc_canvas):
     LTsv_draw_polygonfill(LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas],LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas])
     LTsv_draw_color(LTsv_glyph_kbdfontcolor); LTsv_draw_bgcolor(LTsv_glyph_kbdbgcolor);
     LTsv_glyph_glyphsincalc(calc_canvas)
+    LTsv_draw_queue()
+
+def LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None):
+    LTsv_draw_selcanvas(calc_canvas,draw_g=LTsv_glyph_calcTAG)
+    LTsv_draw_color("white" if calc_canvascolor == None else calc_canvascolor)
+    LTsv_draw_polygonfill(LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas],LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas])
+    LTsv_draw_color(LTsv_glyph_kbdfontcolor); LTsv_draw_bgcolor(LTsv_glyph_kbdbgcolor);
+    LTsv_draw_glyphsfill(draw_t=LTsv_calculatorTT[calc_canvas],draw_x=LTsv_calculatorTX[calc_canvas],draw_y=LTsv_calculatorTY[calc_canvas],draw_f=LTsv_calculatorTF[calc_canvas],draw_g=LTsv_calculatorTG[calc_canvas])
     LTsv_draw_queue()
 
 LTsv_glyph_widecachetext,LTsv_glyph_widecachetempX,LTsv_glyph_widecachetempY,LTsv_glyph_widecachetempF,LTsv_glyph_widecachetempG="",[],0,15,""
@@ -1238,10 +1249,11 @@ def LTsv_glyph_calcpress(calc_canvas):
     LTsv_calculatorMT[calc_canvas]=LTsv_puttimerstartgoal()
     LTsv_calculatorMK[calc_canvas],LTsv_calculatorKT[calc_canvas]="",""
     motionX,motionY=LTsv_global_canvasmotionX(),LTsv_global_canvasmotionY()
+    if not calc_canvas in LTsv_calculatorUX: return False
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
         if LTsv_calculatorTL[calc_canvas] > LTsv_calculatorTR[calc_canvas]:
             LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTR[calc_canvas],LTsv_calculatorTL[calc_canvas]
-        if LTsv_glyph_mousepress(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
+        if LTsv_glyph_mousepress(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]) == LTsv_global_kbdcursorNone():
             if motionY < LTsv_calculatorTY[calc_canvas]:
                 LTsv_calculatorMK[calc_canvas]="slide"
             else:
@@ -1270,8 +1282,9 @@ def LTsv_glyph_calcmotion(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     motionX,motionY=LTsv_global_canvasmotionX(calc_canvas),LTsv_global_canvasmotionY(calc_canvas)
+    if not calc_canvas in LTsv_calculatorUX: return False
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
-        if LTsv_glyph_mousemotion(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
+        if LTsv_glyph_mousemotion(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]) == LTsv_global_kbdcursorNone():
             if LTsv_calculatorMK[calc_canvas] == "slide":
                 LTsv_glyph_calcdelete(calc_canvas)
                 LTsv_calculatorTX[calc_canvas]=LTsv_calculatorTX[calc_canvas]+motionX-LTsv_calculatorMX[calc_canvas]
@@ -1312,8 +1325,9 @@ def LTsv_glyph_calcmotion(calc_canvas):
 def LTsv_glyph_calcrelease(calc_canvas):
     global LTsv_calculatorMX,LTsv_calculatorMY,LTsv_calculatorMK
     motionX,motionY=LTsv_global_canvasmotionX(calc_canvas),LTsv_global_canvasmotionY(calc_canvas)
+    if not calc_canvas in LTsv_calculatorUX: return False
     if LTsv_calculatorUX[calc_canvas] <= motionX < LTsv_calculatorUX[calc_canvas]+LTsv_calculatorUW[calc_canvas] and LTsv_calculatorUY[calc_canvas] <= motionY < LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]:
-        if LTsv_glyph_mouserelease(debug_calculator_canvas,LTsv_calculatorKX[debug_calculator_canvas],LTsv_calculatorKY[debug_calculator_canvas]) == LTsv_global_kbdcursorNone():
+        if LTsv_glyph_mouserelease(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]) == LTsv_global_kbdcursorNone():
             if LTsv_calculatorMK[calc_canvas] == "move":
                 LTsv_glyph_calcdelete(calc_canvas)
                 for cachetext_pos in range(len(LTsv_glyph_widecachetempX)-1):
@@ -1330,6 +1344,22 @@ def LTsv_glyph_calcrelease(calc_canvas):
         LTsv_calculatorMK[calc_canvas],LTsv_calculatorKT[calc_canvas]="",""
         LTsv_glyph_calcdelete(calc_canvas); LTsv_calculator_resize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
         return False
+
+def LTsv_glyph_calcenter(calc_canvas):
+    global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
+    if not calc_canvas in LTsv_calculatorUX: return False
+    LTsv_glyph_calcdelete(calc_canvas)
+    LTsv_glyph_kbddraw(calc_canvas,LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas])
+    LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]-LTsv_global_glyphkbdW()
+    LTsv_glyph_calcdraw(calc_canvas)
+
+def LTsv_glyph_calcleave(calc_canvas):
+    global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
+    if not calc_canvas in LTsv_calculatorUX: return False
+    LTsv_glyph_calcdelete(calc_canvas)
+    LTsv_glyph_kbddelete(calc_canvas)
+    LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]
+    LTsv_glyph_calcdrawplane(calc_canvas,"white")
 
 def LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
@@ -1447,6 +1477,56 @@ def LTsv_glyph_calctype(calc_canvas):
     LTsv_draw_queue()
     return glyph_calcrinput
 
+def LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y):
+    global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
+    glyph_calcrinput=""
+    LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
+    LTsv_glyph_NXKSbf=LTsv_glyph_None
+    if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+        if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
+        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_NFER
+        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_XFER
+        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
+        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+            LTsv_glyph_kbdselect("σ")
+        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+            LTsv_glyph_kbdselect("Σ")
+    if LTsv_glyph_NXKSaf != LTsv_glyph_NXKSbf:
+        LTsv_glyph_NXKSaf=LTsv_glyph_SandS if LTsv_glyph_NXKSaf == LTsv_glyph_SandS and (LTsv_glyph_NXKSbf == LTsv_glyph_NFER or LTsv_glyph_NXKSbf == LTsv_glyph_XFER) else LTsv_glyph_NXKSbf
+        if LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
+            LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+        elif LTsv_glyph_NXKSaf == LTsv_glyph_XFER:
+            LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+        elif LTsv_glyph_NXKSaf == LTsv_glyph_SandS:
+            if LTsv_glyph_kbdchars[LTsv_glyph_KANA] in LTsv_glyph_irohaalphaN:
+                LTsv_glyph_kbdchars[0:LTsv_glyph_irohamax]=LTsv_glyph_choiceN[0:LTsv_glyph_irohamax]
+            elif LTsv_glyph_kbdchars[LTsv_glyph_KANA] in LTsv_glyph_irohaalphaX:
+                LTsv_glyph_kbdchars[0:LTsv_glyph_irohamax]=LTsv_glyph_choiceX[0:LTsv_glyph_irohamax]
+        elif LTsv_glyph_NXKSaf == LTsv_glyph_KANA:
+            LTsv_glyph_kbdchar_SandS=LTsv_glyph_kbdchars[LTsv_glyph_SandS]
+            LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]=[LTsv_pickdic(LTsv_glyph_kandic,kbd_c,LTsv_glyph_kbdchar_SandS)[:1] for kbd_c in LTsv_glyph_kbdchars[:LTsv_glyph_irohamax]]
+        elif LTsv_glyph_NXKSaf == LTsv_glyph_None:
+            if LTsv_glyph_kbdchars[LTsv_glyph_KANA] in LTsv_glyph_irohaalphaN:
+                LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+            elif LTsv_glyph_kbdchars[LTsv_glyph_KANA] in LTsv_glyph_irohaalphaX:
+                LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
+    for kbdkanas in glyphtype_getkbdkanas.split('\t') if len(glyphtype_getkbdkanas) > 0 else []:
+        if kbdkanas in LTsv_glyph_irohatype:
+            LTsv_kbdcursor=LTsv_glyph_irohatype.index(kbdkanas)
+            if LTsv_glyph_NXKSaf == LTsv_glyph_None or LTsv_glyph_NXKSaf == LTsv_glyph_KANA:
+                glyph_calcrinput=LTsv_glyph_kbdchars[LTsv_kbdcursor]
+            elif LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
+                LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaN[LTsv_kbdcursor])
+            elif LTsv_glyph_NXKSaf == LTsv_glyph_XFER:
+                LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_kbdcursor])
+            elif LTsv_glyph_NXKSaf == LTsv_glyph_SandS:
+                if LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_dictype:
+                    LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
+                elif LTsv_glyph_kbdchars[LTsv_kbdcursor] in LTsv_glyph_irohaalphaN+LTsv_glyph_irohaalphaX:
+                    LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_glyph_kbdchars[LTsv_kbdcursor]
+    LTsv_glyph_kbddelete(calc_canvas); LTsv_glyph_kbddraw(calc_canvas,kbd_x,kbd_y)
+    LTsv_draw_queue()
+    return glyph_calcrinput
 
 def debug_calculatormousepress(window_objvoid=None,window_objptr=None):
     if not LTsv_glyph_calcpress(debug_calculator_canvas):
@@ -1460,6 +1540,12 @@ def debug_calculatormouserelease(window_objvoid=None,window_objptr=None):
     if not LTsv_glyph_calcrelease(debug_calculator_canvas):
         pass
 
+def debug_calculatormouseleave(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_calcleave(debug_calculator_canvas)
+
+def debug_calculatormouseenter(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_calcenter(debug_calculator_canvas)
+
 def debug_calculatormouseinput(calculatormouseinput):
     LTsv_glyph_calcinput(debug_calculator_canvas,calculatormouseinput)
     return calculatormouseinput
@@ -1467,7 +1553,9 @@ def debug_calculatormouseinput(calculatormouseinput):
 def debug_keypress(window_objvoid=None,window_objptr=None):
     motionZ=LTsv_global_canvasmotionZ()
     if motionZ == debug_reversi_canvas:
-        LTsv_glyph_typepress(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+#        LTsv_glyph_typepress(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        glyph_calcrinput=LTsv_glyph_calctypelimited(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+        if len(glyph_calcrinput): debug_milkAI_add(glyph_calcrinput);
     elif motionZ == debug_editcanvas:
         LTsv_glyph_typepress(debug_editcanvas,debug_kbdX,debug_kbdY)
     elif motionZ == debug_calculator_canvas:
@@ -1686,8 +1774,10 @@ if __name__=="__main__":
         LTsv_widget_seturi(debug_editcanvas,"debug_editcanvas")
         debug_reversi_clipboard=LTsv_clipboard_new(debug_reversi_window)
         debug_calculator_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH(),widget_w=debug_reversi_W,widget_h=LTsv_global_glyphkbdH(),
-         event_p=debug_calculatormousepress,event_m=debug_calculatormousemotion,event_r=debug_calculatormouserelease,event_l=debug_calculatormouserelease,event_w=50)
+         event_p=debug_calculatormousepress,event_m=debug_calculatormousemotion,event_r=debug_calculatormouserelease,event_l=debug_calculatormouseleave,event_e=debug_calculatormouseenter,event_w=50)
         LTsv_widget_showhide(debug_reversi_window,True)
+        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_add)
+        LTsv_calculator_setup(debug_calculator_canvas,calculatorX=0,calculatorY=0,calculatorW=debug_reversi_W,calculatorH=LTsv_global_glyphkbdH(),calculatorC=debug_reversi_clipboard,calculatorB=debug_calculatormouseinput,calculatorT="debug_calculator")
         LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
         LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
         LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)
@@ -1695,11 +1785,9 @@ if __name__=="__main__":
         LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
         LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
         LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-        LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_add)
         debug_milkAI_reset()
         debug_configload()
         debug_milkAI_entry()
-        LTsv_calculator_setup(debug_calculator_canvas,calculatorX=0,calculatorY=0,calculatorW=debug_reversi_W,calculatorH=LTsv_global_glyphkbdH(),calculatorC=debug_reversi_clipboard,calculatorB=debug_calculatormouseinput,calculatorT="debug_calculator")
         LTsv_window_main(debug_reversi_window)
     else:
         LTsv_libc_printf("LTsv_GUI,LTsv_Notify→{0},{1}".format(LTsv_GUI,LTsv_Notify))

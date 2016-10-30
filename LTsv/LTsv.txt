@@ -1713,6 +1713,10 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  Ａ．「LTsv_editcanvas_new()」に代わる新しいエディタの開発予定。
      電卓部分も漢直鍵盤同様GUI部品から描画命令に手直しの予定。
 
+ Ｑ．漢直鍵盤を使ったソフトが起動しない。
+ Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。「kanmap.py」で初期化できます。
+     まれに「kanmap.py」自体がフリーズする場合もありますが、とにかく「LTsv/kanpickle.bin」を削除してから「kanmap.py」を起動。
+
 
 ４．   作者について、例えば連絡先。
 

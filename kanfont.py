@@ -39,6 +39,7 @@ def kanfont_pathadjustment(pathpos=None):
 
 def kanfont_code(pathpos=None):
     global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_piece,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
+    global kanfont_dictype_canvas
     kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
     LTsv_widget_settext(kanfont_code_label,hex(LTsv_widget_getnumber(kanfont_code_scale)).replace("0x","U+"))
     kanfont_pathadjustment(pathpos)
@@ -48,7 +49,10 @@ def kanfont_code(pathpos=None):
     kanfont_pathsel_shell()
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_global_kandic(),kanfont_seek)
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
-        LTsv_widget_seturi(kanfont_dictype_canvas[dictype_cnt],widget_u=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))
+        calc_canvas=kanfont_dictype_canvas[dictype_cnt]
+        LTsv_glyph_calcdelete(calc_canvas); LTsv_calculator_resize(calc_canvas,calculatorT=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split),calculatorTX=0,calculatorTC=len(LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))); LTsv_glyph_calcdrawplane(calc_canvas); LTsv_draw_queue()
+#        LTsv_widget_seturi(kanfont_dictype_canvas[dictype_cnt],widget_u=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))
+#        LTsv_widget_seturi(kanfont_dictype_canvas[dictype_cnt],widget_u=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))
     LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
 
 def kanfont_codespin_shell(window_objvoid=None,window_objptr=None):
@@ -308,19 +312,28 @@ def kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None):
 def kanfont_keypress(window_objvoid=None,window_objptr=None):
     canvasmotionZ=LTsv_global_canvasmotionZ()
     if canvasmotionZ in kanfont_dictype_canvas:
-        canvasmotionZkbd=kanfont_dictype_canvas.index(canvasmotionZ)
-        LTsv_glyph_typepress(kanfont_dictype_canvas[canvasmotionZkbd],kanfont_dictype_canvasW[canvasmotionZkbd]-LTsv_global_glyphkbdW(),kanfont_entry_H-LTsv_global_glyphkbdH())
+#        canvasmotionZkbd=kanfont_dictype_canvas.index(canvasmotionZ)
+#        LTsv_glyph_typepress(kanfont_dictype_canvas[canvasmotionZkbd],kanfont_dictype_canvasW[canvasmotionZkbd]-LTsv_global_glyphkbdW(),kanfont_entry_H-LTsv_global_glyphkbdH())
+        glyph_calcrinput=LTsv_glyph_calctype(canvasmotionZ)
+        if len(glyph_calcrinput):
+            if glyph_calcrinput == "":
+                pass
     elif canvasmotionZ == kanfont_kbd_canvas:
-        LTsv_glyph_typepress(kanfont_kbd_canvas,0,2)
+#        LTsv_glyph_typepress(kanfont_kbd_canvas,0,2)
+        glyph_calcrinput=LTsv_glyph_calctypelimited(canvasmotionZ,0,2)
+        if len(glyph_calcrinput): debug_milkAI_add(glyph_calcrinput);
     pass
 
 def kanfont_keyrelease(window_objvoid=None,window_objptr=None):
-    canvasmotionZ=LTsv_global_canvasmotionZ()
-    if canvasmotionZ in kanfont_dictype_canvas:
-        canvasmotionZkbd=kanfont_dictype_canvas.index(canvasmotionZ)
-        LTsv_glyph_typerelease(kanfont_dictype_canvas[canvasmotionZkbd],kanfont_dictype_canvasW[canvasmotionZkbd]-LTsv_global_glyphkbdW(),kanfont_entry_H-LTsv_global_glyphkbdH())
-    elif canvasmotionZ == kanfont_kbd_canvas:
-        LTsv_glyph_typerelease(kanfont_kbd_canvas,0,2)
+    kanfont_keypress()
+#    canvasmotionZ=LTsv_global_canvasmotionZ()
+#    if canvasmotionZ in kanfont_dictype_canvas:
+#        canvasmotionZkbd=kanfont_dictype_canvas.index(canvasmotionZ)
+#        LTsv_glyph_typerelease(kanfont_dictype_canvas[canvasmotionZkbd],kanfont_dictype_canvasW[canvasmotionZkbd]-LTsv_global_glyphkbdW(),kanfont_entry_H-LTsv_global_glyphkbdH())
+#        LTsv_glyph_calctype(canvasmotionZ)
+#    elif canvasmotionZ == kanfont_kbd_canvas:
+#        LTsv_glyph_typerelease(kanfont_kbd_canvas,0,2)
+#        LTsv_glyph_calctype(canvasmotionZ)
     pass
 
 def kanfont_dictype_paste():
@@ -344,6 +357,73 @@ def kanfont_dictype_inputed_shell(dictype_cnt):
             LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
         return LTsv_kbdentry_edit
     return kanfont_dictype_kernel
+
+def kanfont_calculatormouseinput_enter(calculator_canvas):
+    LTsv_kbdentry_edit=LTsv_calculator_resize(calculator_canvas)
+    dictype_cnt=kanfont_dictype_canvas.index(calculator_canvas)
+    if LTsv_global_dictype()[dictype_cnt] == "幅":
+        LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_calculator_resize(calculator_canvas))
+        LTsv_kbdentry_edit=LTsv_calculator_resize(calculator_canvas,calculatorT=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else "")
+    LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
+    if LTsv_global_dictype()[dictype_cnt] in "活漫筆幅":
+        kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+        LTsv_glyphpath(kanfont_seek)
+        kanfont_glyph_draw()
+        LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
+
+kanfont_calculatormouseinput={}
+def kanfont_calculatormouseinput_shell(calculator_canvas):
+    global kanfont_calculatormouseinput
+    def kanfont_calculatormouseinput_kernel(calculatormouseinput):
+        LTsv_glyph_calcinput(calculator_canvas,calculatormouseinput)
+        if calculatormouseinput == "":
+            kanfont_calculatormouseinput_enter(calculator_canvas)
+    kanfont_calculatormouseinput[calculator_canvas]=kanfont_calculatormouseinput_kernel
+    return kanfont_calculatormouseinput_kernel
+
+kanfont_calculatormousepress={}
+def kanfont_calculatormousepress_shell(calculator_canvas):
+    global kanfont_calculatormousepress
+    def kanfont_calculatormousepress_kernel(window_objvoid=None,window_objptr=None):
+        if not LTsv_glyph_calcpress(calculator_canvas):
+            pass
+    kanfont_calculatormousepress[calculator_canvas]=kanfont_calculatormousepress_kernel
+    return kanfont_calculatormousepress_kernel
+
+kanfont_calculatormousemotion={}
+def kanfont_calculatormousemotion_shell(calculator_canvas):
+    global kanfont_calculatormousemotion
+    def kanfont_calculatormousemotion_kernel(window_objvoid=None,window_objptr=None):
+        if not LTsv_glyph_calcmotion(calculator_canvas):
+            pass
+    kanfont_calculatormousemotion[calculator_canvas]=kanfont_calculatormousemotion_kernel
+    return kanfont_calculatormousemotion_kernel
+
+kanfont_calculatormouserelease={}
+def kanfont_calculatormouserelease_shell(calculator_canvas):
+    global kanfont_calculatormouserelease
+    def kanfont_calculatormouserelease_kernel(window_objvoid=None,window_objptr=None):
+        if not LTsv_glyph_calcrelease(calculator_canvas):
+            pass
+    kanfont_calculatormouserelease[calculator_canvas]=kanfont_calculatormouserelease_kernel
+    return kanfont_calculatormouserelease_kernel
+
+kanfont_calculatormouseleave={}
+def kanfont_calculatormouseleave_shell(calculator_canvas):
+    global kanfont_calculatormouseleave
+    def kanfont_calculatormouseleave_kernel(window_objvoid=None,window_objptr=None):
+        kanfont_calculatormouseinput_enter(calculator_canvas)
+        LTsv_glyph_calcleave(calculator_canvas)
+    kanfont_calculatormouseleave[calculator_canvas]=kanfont_calculatormouseleave_kernel
+    return kanfont_calculatormouseleave_kernel
+
+kanfont_calculatormouseenter={}
+def kanfont_calculatormouseenter_shell(calculator_canvas):
+    global kanfont_calculatormouseenter
+    def kanfont_calculatormouseenter_kernel(window_objvoid=None,window_objptr=None):
+        LTsv_glyph_calcenter(calculator_canvas)
+    kanfont_calculatormouseenter[calculator_canvas]=kanfont_calculatormouseenter_kernel
+    return kanfont_calculatormouseenter_kernel
 
 def kanfont_svgsave_shell(window_objvoid=None,window_objptr=None):
     LTsv_widget_disableenable(kanfont_svg_button,False)
@@ -491,11 +571,15 @@ if len(LTsv_GUI) > 0:
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
         kanfont_dictype_canvasW[dictype_cnt]=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5
-        kanfont_dictype_canvas[dictype_cnt]=LTsv_editcanvas_new(kanfont_window,event_b=kanfont_dictype_inputed_shell(dictype_cnt),kbd_k=kanfont_dictype_inputed_shell(dictype_cnt),clip_c=kanfont_dictype_copy,clip_v=kanfont_dictype_paste,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,event_w=50)
-        LTsv_editcanvas_font(kanfont_dictype_canvas[dictype_cnt],US=kanfont_fontsize_entry,TS=kanfont_fontsize_entry)
+#        kanfont_dictype_canvas[dictype_cnt]=LTsv_editcanvas_new(kanfont_window,event_b=kanfont_dictype_inputed_shell(dictype_cnt),kbd_k=kanfont_dictype_inputed_shell(dictype_cnt),clip_c=kanfont_dictype_copy,clip_v=kanfont_dictype_paste,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,event_w=50)
+#        LTsv_editcanvas_font(kanfont_dictype_canvas[dictype_cnt],US=kanfont_fontsize_entry,TS=kanfont_fontsize_entry)
+        kanfont_dictype_canvas[dictype_cnt]=LTsv_widget_newUUID(); LTsv_canvas_new(kanfont_window,widget_n=False,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,
+         event_p=kanfont_calculatormousepress_shell(kanfont_dictype_canvas[dictype_cnt]),event_m=kanfont_calculatormousemotion_shell(kanfont_dictype_canvas[dictype_cnt]),event_r=kanfont_calculatormouserelease_shell(kanfont_dictype_canvas[dictype_cnt]),event_l=kanfont_calculatormouseleave_shell(kanfont_dictype_canvas[dictype_cnt]),event_e=kanfont_calculatormouseenter_shell(kanfont_dictype_canvas[dictype_cnt]),event_w=50)
     kanfont_clipboard=LTsv_clipboard_new(kanfont_window)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
+    for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
+        LTsv_calculator_setup(kanfont_dictype_canvas[dictype_cnt],calculatorX=0,calculatorY=0,calculatorW=kanfont_dictype_canvasW[dictype_cnt],calculatorH=kanfont_entry_H,calculatorC=kanfont_clipboard,calculatorB=kanfont_calculatormouseinput_shell(kanfont_dictype_canvas[dictype_cnt]),calculatorT="")
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)

@@ -1133,6 +1133,8 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
     def LTsv_canvas_enter(window_objvoid=None,window_objptr=None):
         global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         global canvas_CBKafter
+        LTsv_canvas_motion_X=LTsv_canvas_motion_X if LTsv_canvas_motion_X >= 0 else 0
+        LTsv_canvas_motion_Y=LTsv_canvas_motion_Y if LTsv_canvas_motion_X >= 0 else 0
         if canvas_CBKafter[LTsv_widgetPAGENAME] == False:
             canvas_CBKafter[LTsv_widgetPAGENAME]=True; LTsv_canvas_motion_Z=LTsv_widgetPAGENAME
             if canvas_EMLenter[LTsv_widgetPAGENAME] != None:
@@ -1158,8 +1160,8 @@ def LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widg
     def LTsv_canvas_leave(window_objvoid=None,window_objptr=None):
         global LTsv_canvas_motion_X,LTsv_canvas_motion_Y,LTsv_canvas_motion_Z
         global canvas_CBKafter,LTsv_canvasCBKpagename
-        canvas_CBKafter[LTsv_widgetPAGENAME]=False; LTsv_canvas_motion_Z=""
         LTsv_canvas_motion_X,LTsv_canvas_motion_Y=-1,-1
+        canvas_CBKafter[LTsv_widgetPAGENAME]=False; LTsv_canvas_motion_Z=""
         if canvas_EMLleave[LTsv_widgetPAGENAME] != None:
             LTsv_window_after(LTsv_windowPAGENAME,event_b=canvas_EMLleave[LTsv_widgetPAGENAME],event_i="{0}_leave".format(LTsv_canvasCBKpagename[LTsv_widgetPAGENAME]),event_w=event_w)
         return 0
