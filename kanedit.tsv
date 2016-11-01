@@ -4,11 +4,11 @@ enter	LF
 tab	4
 program	kanedit
 LTsvver	20161023U011852
-modify	20161101T022726
+modify	20161102W001052
 |L:Tsv]
 
 [kanedit|
-window_size	width:800	height:480
+window_size	width:632	height:455
 edit_colors	font:#000000	bg:#FFF9FA
 edit_fontsize	12
 edit_fontstyle	漫

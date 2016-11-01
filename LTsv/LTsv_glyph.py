@@ -1140,7 +1140,7 @@ def LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LT
     LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTC[calc_canvas],LTsv_calculatorTC[calc_canvas]
     LTsv_calculatorMX[calc_canvas],LTsv_calculatorMY[calc_canvas],LTsv_calculatorMK[calc_canvas],LTsv_calculatorMT[calc_canvas]=0,0,"",0
     LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUW[calc_canvas],LTsv_calculatorUH[calc_canvas]=calculatorX,calculatorY,calculatorW,calculatorH
-    LTsv_calculatorTX[calc_canvas],LTsv_calculatorTY[calc_canvas]=0,LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas]
+    LTsv_calculatorTX[calc_canvas],LTsv_calculatorTY[calc_canvas]=0,LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas]-1
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]
     LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas],LTsv_calculatorKT[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH(),""
     LTsv_calculator_resize(calc_canvas)
@@ -1159,6 +1159,7 @@ def LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calcula
     LTsv_calculatorKX[calc_canvas],LTsv_calculatorKY[calc_canvas]=LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_global_glyphkbdH()
     LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas] if calculatorT == None else calculatorT
     LTsv_calculatorTX[calc_canvas]=LTsv_calculatorTX[calc_canvas] if calculatorTX == None else calculatorTX
+    LTsv_calculatorTY[calc_canvas]=LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas]-LTsv_calculatorTF[calc_canvas]-1
     if calculatorTC != None:
         LTsv_calculatorTC[calc_canvas]=calculatorTC
         LTsv_calculatorTL[calc_canvas],LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTC[calc_canvas],LTsv_calculatorTC[calc_canvas]

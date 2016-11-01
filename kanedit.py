@@ -19,9 +19,9 @@ from LTsv_glyph  import *
 kanedit_W,kanedit_H,kanedit_RS=LTsv_global_glyphkbdW(),LTsv_global_glyphkbdH(),False
 kanedit_ltsv,kanedit_config="",""
 kanedit_texteditfilename,kanedit_textvalue="",""
+kanedit_cursorY=0
 #kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle="black","#FFF9FA",10,"漫"
 #kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize,kanmemo_fontstyle="black","FFFFF3",LTsv_global_glyphkbdH()//2,"漫"
-kanedit_cursorY=0
 
 def kanedit_draw():
     LTsv_draw_selcanvas(kanedit_canvas); LTsv_draw_delete(); LTsv_glyph_calcdelete(kanedit_canvas)
@@ -32,7 +32,7 @@ def kanedit_draw():
         if kanedit_pos == kanedit_cursorY:
             LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_lineY,calculatorW=kanedit_W,calculatorT=kanedit_line,calculatorTX=None,calculatorTC=None)
             LTsv_glyph_calcdraw(kanedit_canvas)
-            kanedit_lineY+=LTsv_global_glyphkbdH()  #kanedit_lineY+=15
+            kanedit_lineY+=LTsv_global_glyphkbdH()+1  #kanedit_lineY+=24+1
             LTsv_draw_selcanvas(kanedit_canvas)
         else:
             LTsv_draw_color("black"); LTsv_draw_bgcolor("#FFF9FA")
@@ -82,21 +82,40 @@ def kanedit_calculatormouserelease(window_objvoid=None,window_objptr=None):
         pass
 
 def kanedit_calculatormouseleave(window_objvoid=None,window_objptr=None):
+    global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
+    kanedit_textsplit=kanedit_textvalue.split('\n')
+    kanedit_textsplit[kanedit_cursorY]= LTsv_calculator_resize(kanedit_canvas)
+    kanedit_textvalue="\n".join(kanedit_textsplit)
     LTsv_glyph_calcleave(kanedit_canvas)
 
 def kanedit_calculatormouseenter(window_objvoid=None,window_objptr=None):
     LTsv_glyph_calcenter(kanedit_canvas)
 
 def kanedit_calculatormouseinput(calculatormouseinput):
-    LTsv_glyph_calcinput(kanedit_canvas,calculatormouseinput)
-    return calculatormouseinput
+    kanedit_calculatoredit(LTsv_glyph_calcinput(kanedit_canvas,calculatormouseinput))
 
 def kanedit_keypress(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_calctype(kanedit_canvas)
+    kanedit_calculatoredit(LTsv_glyph_calctype(kanedit_canvas))
 #    LTsv_glyph_typepress(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
 
 def kanedit_keyrelease(window_objvoid=None,window_objptr=None):
     kanedit_keypress()
+
+def kanedit_calculatoredit(calculatormouseinput):
+    global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
+    if calculatormouseinput == "":
+        pass
+    if calculatormouseinput == "":
+        kanedit_cursorY=min(kanedit_cursorY+1,LTsv_readlinedeno(kanedit_textvalue))
+        LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
+        kanedit_draw()
+    if calculatormouseinput == "":
+        kanedit_cursorY=max(kanedit_cursorY-1,0)
+        LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
+        kanedit_draw()
+    if calculatormouseinput == "":
+        evaltext=LTsv_evaltext(LTsv_calculator_resize(kanedit_canvas))
+        LTsv_calculator_resize(kanedit_canvas,calculatorT=evaltext)
 
 def kanedit_filedialog_open():
     print("kanedit_filedialog_open")
@@ -105,11 +124,11 @@ def kanedit_filedialog_open():
 def kanedit_filedialog_response(window_objvoid=None,window_objptr=None):
     kanedit_textload(LTsv_widget_geturi(kanedit_filedialog))
     LTsv_widget_showhide(kanedit_filedialog,False)
-    kanedit_resize(); kanedit_resizeredraw()
+    kanedit_resize(); kanedit_draw()
 
 def kanedit_textload(filename):
 #    global kanedit_window
-    global kanedit_texteditfilename,kanedit_textvalue
+    global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
     kanedit_texteditfilename=filename
     LTsv_widget_settext(kanedit_window,widget_t="kanedit:{0}".format(kanedit_texteditfilename))
     kanedit_textvalue=LTsv_loadfile(kanedit_texteditfilename)
