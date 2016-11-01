@@ -162,11 +162,15 @@ def LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption):
     else:
         return None
 
+#def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
+#  widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
+#  event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
+#  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None, \
+#  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_d=None,kbd_t=None,kbd_u=None,kbd_k=None):
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
-  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None, \
-  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_d=None,kbd_t=None,kbd_u=None,kbd_k=None):
+  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None):
     if widget_o != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"widgetobj",widget_o)
     if widget_k != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgetkind",widget_k)
     if widget_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"widgettext",widget_t)
@@ -201,50 +205,50 @@ def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=Non
     if menu_c   != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"popupmenuclick",menu_c)
     if dialog_t != None:  LTsv_widgetPAGE=LTsv_pushlinerest(LTsv_widgetPAGE,"dialog_type",str(dialog_t))
     if dialog_c != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"dialog_close",dialog_c)
-    if kbd_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_press",kbd_p)
-    if kbd_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_release",kbd_r)
-    if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_motion",kbd_m)
-    if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_enter",kbd_e)
-    if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_leave",kbd_l)
-    if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_input",kbd_i)
-    if kbd_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_settext",kbd_s)
-    if kbd_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_deftext",kbd_d)
-    if kbd_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_gettext",kbd_t)
-    if kbd_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_geturi",kbd_u)
-    if kbd_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_‎keyenter",kbd_k)
+#    if kbd_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_press",kbd_p)
+#    if kbd_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_release",kbd_r)
+#    if kbd_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_motion",kbd_m)
+#    if kbd_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_enter",kbd_e)
+#    if kbd_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_leave",kbd_l)
+#    if kbd_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_input",kbd_i)
+#    if kbd_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_settext",kbd_s)
+#    if kbd_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_deftext",kbd_d)
+#    if kbd_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_gettext",kbd_t)
+#    if kbd_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_geturi",kbd_u)
+#    if kbd_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_‎keyenter",kbd_k)
     return LTsv_widgetPAGE
 
-def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None, \
-    clip_h=None,clip_i=None,clip_j=None,clip_k=None,clip_l=None,clip_m=None,clip_n=None, \
-    clip_o=None,clip_p=None,clip_q=None,clip_r=None,clip_s=None,clip_t=None,clip_u=None, \
-    clip_v=None,clip_w=None,clip_x=None,clip_y=None,clip_z=None):
-    if clip_a    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_A",clip_a)
-    if clip_b    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_V",clip_b)
-    if clip_c    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_copy",clip_c)
-    if clip_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_D",clip_d)
-    if clip_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_R",clip_e)
-    if clip_f    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_find",clip_f)
-    if clip_g    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_G",clip_g)
-    if clip_h    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_H",clip_h)
-    if clip_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_I",clip_i)
-    if clip_j    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_J",clip_j)
-    if clip_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_K",clip_k)
-    if clip_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_L",clip_l)
-    if clip_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_M",clip_m)
-    if clip_n    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_N",clip_n)
-    if clip_o    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_open",clip_o)
-    if clip_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_P",clip_p)
-    if clip_q    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Q",clip_q)
-    if clip_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_R",clip_r)
-    if clip_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_save",clip_s)
-    if clip_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_T",clip_t)
-    if clip_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_U",clip_u)
-    if clip_v    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_‎paste",clip_v)
-    if clip_w    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_W",clip_w)
-    if clip_x    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_cut",clip_x)
-    if clip_y    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Y",clip_y)
-    if clip_z    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Z",clip_z)
-    return LTsv_widgetPAGE
+#def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None, \
+#    clip_h=None,clip_i=None,clip_j=None,clip_k=None,clip_l=None,clip_m=None,clip_n=None, \
+#    clip_o=None,clip_p=None,clip_q=None,clip_r=None,clip_s=None,clip_t=None,clip_u=None, \
+#    clip_v=None,clip_w=None,clip_x=None,clip_y=None,clip_z=None):
+#    if clip_a    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_A",clip_a)
+#    if clip_b    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_V",clip_b)
+#    if clip_c    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_copy",clip_c)
+#    if clip_d    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_D",clip_d)
+#    if clip_e    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_R",clip_e)
+#    if clip_f    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_find",clip_f)
+#    if clip_g    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_G",clip_g)
+#    if clip_h    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_H",clip_h)
+#    if clip_i    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_I",clip_i)
+#    if clip_j    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_J",clip_j)
+#    if clip_k    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_K",clip_k)
+#    if clip_l    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_L",clip_l)
+#    if clip_m    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_M",clip_m)
+#    if clip_n    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_N",clip_n)
+#    if clip_o    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_open",clip_o)
+#    if clip_p    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_P",clip_p)
+#    if clip_q    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Q",clip_q)
+#    if clip_r    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_R",clip_r)
+#    if clip_s    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_save",clip_s)
+#    if clip_t    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_T",clip_t)
+#    if clip_u    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_U",clip_u)
+#    if clip_v    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_‎paste",clip_v)
+#    if clip_w    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_W",clip_w)
+#    if clip_x    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_cut",clip_x)
+#    if clip_y    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Y",clip_y)
+#    if clip_z    != None:  LTsv_widgetPAGE=LTsv_widget_newobj(LTsv_widgetPAGE,"editcanvas_Z",clip_z)
+#    return LTsv_widgetPAGE
 
 def LTsv_fonttuple(LTsv_line):
     LTsv_fontlist=None
@@ -394,8 +398,8 @@ def LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t=""):
                 widget_combo=LTsv_popupmenuOBJ[str(widget_o)].split('\n')
                 widget_s=widget_combo.index(widget_t) if widget_t in widget_combo else 0
                 LTsv_libgtk.gtk_combo_box_set_active(widget_o,widget_s)
-    if widget_k == "editcanvas":
-        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_deftext")](LTsv_widgetPAGENAME,TT=widget_t)
+#    if widget_k == "editcanvas":
+#        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_deftext")](LTsv_widgetPAGENAME,TT=widget_t)
     if widget_k == "filedialog":
         if LTsv_GUI == LTsv_GUI_GTK2:     LTsv_libgtk.gtk_window_set_title(widget_o,widget_t.encode("utf-8","xmlcharrefreplace"))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_t=widget_t)
@@ -466,8 +470,8 @@ def LTsv_widget_gettext(LTsv_widgetPAGENAME):
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=LTsv_readlinerest(LTsv_widgetPAGE,"widgettext")
     if widget_k == "combobox":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_combo_box_text_get_active_text(widget_o)).value.decode("utf-8") if LTsv_libgtk.gtk_tree_model_iter_n_children(LTsv_libgtk.gtk_combo_box_get_model(widget_o),None) > 0 else ""
-    if widget_k == "editcanvas":
-        widget_t=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_gettext")](LTsv_widgetPAGENAME)
+#    if widget_k == "editcanvas":
+#        widget_t=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_gettext")](LTsv_widgetPAGENAME)
     if widget_k == "filedialog":
         if LTsv_GUI == LTsv_GUI_GTK2:     widget_t=ctypes.c_char_p(LTsv_libgtk.gtk_window_get_title(widget_o)).value.decode("utf-8")
     return widget_t
@@ -556,8 +560,8 @@ def LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u=""):
                 widget_o.hIcon=icon_o
                 LTsv_shell32.Shell_NotifyIcon(ctypes.c_ulong(LTsv_ICON_NIM_MODIFY),ctypes.pointer(widget_o))
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_u=widget_u)
-    if widget_k == "editcanvas":
-        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_deftext")](LTsv_widgetPAGENAME,UT=widget_u)
+#    if widget_k == "editcanvas":
+#        LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_deftext")](LTsv_widgetPAGENAME,UT=widget_u)
     if widget_k == "filedialog":
         LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_u=widget_u)
         LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
@@ -572,8 +576,8 @@ def LTsv_widget_geturi(LTsv_widgetPAGENAME):
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
     if widget_k == "notify":
         widget_u=LTsv_readlinerest(LTsv_widgetPAGE,"widgeturi")
-    if widget_k == "editcanvas":
-        widget_u=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_geturi")](LTsv_widgetPAGENAME)
+#    if widget_k == "editcanvas":
+#        widget_u=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_widgetPAGE,"editcanvas_geturi")](LTsv_widgetPAGENAME)
     if widget_k == "filedialog":
         try:
             if LTsv_GUI == LTsv_GUI_GTK2:    widget_u=ctypes.c_char_p(LTsv_libgtk.gtk_file_chooser_get_filename(widget_o)).value.decode("utf-8")
