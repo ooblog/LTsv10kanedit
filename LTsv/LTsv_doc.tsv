@@ -1,0 +1,125 @@
+[L:Tsv|
+code	UTF-8
+enter	LF
+tab	4
+program	LTsv_doc.py
+1st		LTsvDOC_tsv
+LTsvver	20161023U011852
+modify	20161023U011852
+|L:Tsv]
+
+[LTsv_doc|
+window_size	width:600	height:480	wait:10	fontsize:24
+tsvlist	LTsv_doc.tsv	../docs/LTsv_doc_html.tsv	../../ooblog.github.io/yakuyon.tsv
+modify	@000y@0m@0dm@wdec@0h@0n@0s
+|LTsv_doc]
+
+[LTsvDOC_tsv|
+outdir	./
+main	LTsv_doc_main
+outlist	LTsv_doc.txt
+reglist	<@index0-0>	<@index0-1>	<@index0-2>	<@contents0-0>	<@index1-0a>	<@index1-0b>	<@index1-1>	<@contents1-1>
+timlist	<!branch!>
+taglist	
+deflist	LTsv_printf.py	LTsv_file.py	LTsv_time.py	LTsv_calc.py	LTsv_joy.py	LTsv_kbd.py	LTsv_gui.py	LTsv_glyph.py
+|LTsvDOC_tsv]
+
+[<!branch!>|
+LTsv_doc.txt	20161023U011852
+|<!branch!>]
+
+[LTsv_doc_main|
+「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。この「LTsv_doc.txt」も「LTsv_doc.tsv」から生成されてます。
+version(branch) <!branch!>
+
+目次
+
+ <@index0-0>
+ <@index0-1>
+ <@index0-2>
+ <@index1-0a>
+ <@index1-0b>
+ <@index1-1>
+
+<@index0-0>
+
+<@contents0-0>
+
+<@index0-1>
+
+
+<@index0-2>
+
+
+<@index1-0a>
+
+
+<@index1-0b>
+
+
+<@index1-1>
+
+<@contents1-1>
+
+|LTsv_doc_main]
+
+[<@index0-0>|
+.*	０-0． ライセンス及びソフトの使用の補足ガイドライン
+|<@index0-0>]
+[<@contents0-0>|
+.*	<@text0-0>
+|<@contents0-0>]
+[<@text0-0>|
+ ※「MIT License」準拠。
+   MIT License - Choose a License
+   http://choosealicense.com/licenses/mit/
+
+ ※「MIT License」の日本語訳。
+   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
+
+ ※日本語による補足。
+   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。
+   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。
+   ・ソースコードの閲覧やコピーに制限を設けない事。
+
+ ※「kanedit」固有の問題への言及。
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。
+|<@text0-0>]
+
+[<@index0-1>|
+.*	０-1． インストール＆アンインストール方法・その他セットアップ方法
+|<@index0-1>]
+
+[<@index0-2>|
+.*	０-2． その他現在わかっている不具合や今後の課題
+|<@index0-2>]
+
+[<@index1-0a>|
+.*	１-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
+|<@index1-0a>]
+
+[<@index1-0b>|
+.*	１-0b．「L:Tsv」ファイルの構造。
+|<@index1-0b>]
+
+[<@index1-1>|
+.*	１-1． 「LTsv_printf.py」の関数一覧
+|<@index1-1>]
+[<@contents1-1>|
+.*	<@text1-1>
+|<@contents1-1>]
+[<@text1-1>|
+ Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
+ ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
+ ・変換できない文字は数値文字参照に変換されます。
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+
+<LTsv_printf.py>
+|<@text1-1>]
+
+[LTsv_printf.py|
+LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。Pythonのprint関数との誤認に注意。
+|LTsv_printf.py]
+

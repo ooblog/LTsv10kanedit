@@ -1,0 +1,33 @@
+[L:Tsv|
+code	UTF-8
+enter	LF
+tab	4
+program	LTsv_doc.py
+1st		LTsv_doc_html
+LTsvver	20161023U011852
+modify	20161023U011852
+|L:Tsv]
+
+[LTsvDOC_tsv|
+outdir	../docs/
+main	LTsv_doc_main
+outlist	index.html
+reglist	
+timlist	<!branch!>
+taglist	
+deflist	../LTsv/LTsv_printf.py	../LTsv/LTsv_file.py	../LTsv/LTsv_time.py	../LTsv/LTsv_calc.py	../LTsv/LTsv_joy.py	../LTsv/LTsv_kbd.py	../LTsv/LTsv_gui.py	../LTsv/LTsv_glyph.py
+|LTsvDOC_tsv]
+
+[<!branch!>|
+LTsv_doc.txt	20161023U011852
+|<!branch!>]
+
+[LTsv_doc_main|
+<!DOCTYPE html>
+<html lang="ja"><head>
+ <meta charset="UTF-8" />
+ <meta name="description" content="">
+</head><body>
+</body></html>
+|LTsv_doc_main]
+

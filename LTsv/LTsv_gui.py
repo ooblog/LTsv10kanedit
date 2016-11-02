@@ -666,28 +666,38 @@ def LTsv_window_none(window_objvoid=None,window_objptr=None):
     return 0
 LTsv_window_none_cbk=LTsv_CALLBACLTYPE(LTsv_window_none)
 
-def LTsv_screen_w(LTsv_windowPAGENAME):
+def LTsv_screen_w(LTsv_windowPAGENAME=""):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
-    window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    if LTsv_windowPAGE in LTsv_widgetOBJ:
+        window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    else:
+        window_o=None
     screen_w=-1
     if LTsv_GUI == LTsv_GUI_GTK2:
         screen_w=LTsv_libgtk.gdk_screen_get_width(LTsv_libgtk.gdk_screen_get_default())
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        if window_o!=None:
+        if window_o != None:
             screen_w=window_o.winfo_vrootwidth()
+#        else:
+#            screen_w=Tk.root.winfo_screenwidth()
     return screen_w
 
-def LTsv_screen_h(LTsv_windowPAGENAME):
+def LTsv_screen_h(LTsv_windowPAGENAME=""):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
-    window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    if LTsv_windowPAGE in LTsv_widgetOBJ:
+        window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
+    else:
+        window_o=None
     screen_h=-1
     if LTsv_GUI == LTsv_GUI_GTK2:
         screen_h=LTsv_libgtk.gdk_screen_height(LTsv_libgtk.gdk_screen_get_default())
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        if window_o!=None:
+        if window_o != None:
             screen_h=window_o.winfo_vrootheight()
+#        else:
+#            screen_w=Tk.root.winfo_screenheight()
     return screen_h
 
 class LTsv_WINDOW_WIDTH(ctypes.Structure):

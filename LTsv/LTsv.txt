@@ -121,11 +121,11 @@ version(branch) 20161023U011852
   扱えない文字は数値文字参照(「??」が「&#21654;&#21937;」)に変換される。
   「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
 
- LTsv_libc_printcat(LTsv_text)
-  上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
+    LTsv_libc_printcat(LTsv_text)
+     上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
 
- LTsv_libc_printf_type(LTsv_text)
-  Python2では「<type 'str'>」Python3だと「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+    LTsv_libc_printf_type(LTsv_text)
+     Python2では「<type 'str'>」Python3だと「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
 
  LTsv_utf2xml(LTsv_text)
   LTsv_textの文字列を数値文字参照に変換。
