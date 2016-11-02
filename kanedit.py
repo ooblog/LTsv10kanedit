@@ -14,18 +14,15 @@ from LTsv_kbd     import *
 from LTsv_gui     import *
 from LTsv_glyph  import *
 
-#kanedit_window=None
-#kanedit_getkbdnames,kanedit_getkbdkanas="",""
 kanedit_W,kanedit_H,kanedit_RS=LTsv_global_glyphkbdW(),LTsv_global_glyphkbdH(),False
 kanedit_ltsv,kanedit_config="",""
 kanedit_texteditfilename,kanedit_textvalue="",""
 kanedit_cursorY=0
-#kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle="black","#FFF9FA",10,"漫"
-#kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize,kanmemo_fontstyle="black","FFFFF3",LTsv_global_glyphkbdH()//2,"漫"
+kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle="black","#FFF9FA",10,"漫"
 
 def kanedit_draw():
     LTsv_draw_selcanvas(kanedit_canvas); LTsv_draw_delete(); LTsv_glyph_calcdelete(kanedit_canvas)
-    LTsv_draw_color("#FFF9FA"); LTsv_draw_polygonfill(0,0,kanedit_W,0,kanedit_W,kanedit_H,0,kanedit_H)
+    LTsv_draw_color(kanedit_bgcolor); LTsv_draw_polygonfill(0,0,kanedit_W,0,kanedit_W,kanedit_H,0,kanedit_H)
     kanedit_textsplit=kanedit_textvalue.split('\n')
     kanedit_lineY=0
     for kanedit_pos,kanedit_line in enumerate(kanedit_textsplit):
@@ -35,9 +32,9 @@ def kanedit_draw():
             kanedit_lineY+=LTsv_global_glyphkbdH()+1  #kanedit_lineY+=24+1
             LTsv_draw_selcanvas(kanedit_canvas)
         else:
-            LTsv_draw_color("black"); LTsv_draw_bgcolor("#FFF9FA")
-            LTsv_draw_glyphsfill(draw_t=kanedit_line,draw_x=0,draw_y=kanedit_lineY,draw_f=10,draw_g="漫")
-            kanedit_lineY+=10
+            LTsv_draw_color(kanedit_fontcolor); LTsv_draw_bgcolor(kanedit_bgcolor)
+            LTsv_draw_glyphsfill(draw_t=kanedit_line,draw_x=0,draw_y=kanedit_lineY,draw_f=kanedit_fontsize,draw_g=kanedit_fontstyle)
+            kanedit_lineY+=kanedit_fontsize
     LTsv_draw_queue()
 
 def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
@@ -45,7 +42,6 @@ def kanedit_resizeredraw(window_objvoid=None,window_objptr=None):
     window_w,window_h=LTsv_window_wh(kanedit_window)
     if kanedit_W!=window_w or kanedit_H!=window_h:
         kanedit_W,kanedit_H=window_w,window_h
-#        LTsv_editcanvas_kbdXY(kanedit_canvas,kbd_x=kanedit_W-LTsv_global_glyphkbdW(),kbd_y=kanedit_H-LTsv_global_glyphkbdH())
         kanedit_draw()
         LTsv_window_after(kanedit_window,event_b=kanedit_resizeredraw,event_i="kanedit_resizeredraw",event_w=50)
     else:
@@ -57,13 +53,6 @@ def kanedit_resize(callback_void=None,callback_ptr=None):
     if kanedit_RS == False:
         kanedit_RS=True
         kanedit_resizeredraw()
-
-#def kanfont_memo_copy(clippaste):
-#    LTsv_widget_settext(kanedit_clipboard,clippaste)
-
-#def kanedit_memo_paste():
-#    clippaste=LTsv_widget_gettext(kanedit_clipboard)
-#    return clippaste
 
 def kanfont_memo_eval(calc_value):
     calc_V=LTsv_evaltext(calc_value)
@@ -96,7 +85,6 @@ def kanedit_calculatormouseinput(calculatormouseinput):
 
 def kanedit_keypress(window_objvoid=None,window_objptr=None):
     kanedit_calculatoredit(LTsv_glyph_calctype(kanedit_canvas))
-#    LTsv_glyph_typepress(kanedit_canvas,kanedit_W-LTsv_global_glyphkbdW(),kanedit_H-LTsv_global_glyphkbdH())
 
 def kanedit_keyrelease(window_objvoid=None,window_objptr=None):
     kanedit_keypress()
@@ -127,41 +115,31 @@ def kanedit_filedialog_response(window_objvoid=None,window_objptr=None):
     kanedit_resize(); kanedit_draw()
 
 def kanedit_textload(filename):
-#    global kanedit_window
     global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
     kanedit_texteditfilename=filename
     LTsv_widget_settext(kanedit_window,widget_t="kanedit:{0}".format(kanedit_texteditfilename))
     kanedit_textvalue=LTsv_loadfile(kanedit_texteditfilename)
-#    LTsv_widget_settext(kanedit_canvas,widget_t=kanedit_textvalue)
 
 def kanedit_configload():
     global kanedit_W,kanedit_H,kanedit_RS
     global kanedit_ltsv,kanedit_config
     global kanedit_fontcolor,kanedit_bgcolor,kanedit_fontsize,kanedit_fontstyle
-    global kanmemo_fontcolor,kanmemo_bgcolorr,kanmemo_fontsize,kanmemo_fontstyle
     kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
     kanedit_resizeW,kanedit_resizeH=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"window_size"),"width","height"))
     kanedit_W,kanedit_H=min(max(LTsv_intstr0x(kanedit_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w(kanedit_window)),min(max(LTsv_intstr0x(kanedit_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h(kanedit_window))
-#    kanedit_fontcolor,kanedit_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg"))
-##    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"edit_fontsize",str(kanedit_fontsize))),5),100)
-#    kanedit_fontstyle=LTsv_readlinerest(kanedit_config,"edit_fontstyle",kanedit_fontstyle)
+    kanedit_fontcolor,kanedit_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"edit_colors"),"font","bg"))
+    kanedit_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"edit_fontsize",str(kanedit_fontsize))),5),100)
+    kanedit_fontstyle=LTsv_readlinerest(kanedit_config,"edit_fontstyle",kanedit_fontstyle); kanedit_fontstyle=kanedit_fontstyle if kanedit_fontstyle in LTsv_global_glyphtype() else "漫"
     kanedit_texteditfilename=LTsv_readlinerest(kanedit_config,"edit_last","kanedit.txt")
     kanedit_textload(kanedit_texteditfilename)
-#    kanmemo_fontcolor,kanmemo_bgcolor=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(kanedit_config,"memo_colors"),"font","bg"))
-#    kanmemo_fontsize=min(max(LTsv_intstr0x(LTsv_readlinerest(kanedit_config,"memo_fontsize",str(kanedit_fontsize))),5),100)
-#    kanmemo_fontstyle=LTsv_readlinerest(kanedit_config,"memo_fontstyle",kanmemo_fontstyle)
-#    LTsv_editcanvas_color(kanedit_canvas,UF=kanmemo_fontcolor,UB=kanmemo_bgcolor,TF=kanedit_fontcolor,TB=kanedit_bgcolor)
-#    LTsv_editcanvas_font(kanedit_canvas,US=kanmemo_fontsize,TS=kanedit_fontsize,UG=kanmemo_fontstyle,TG=kanedit_fontstyle)
-#    LTsv_widget_seturi(kanedit_canvas,LTsv_readlinerest(kanedit_config,"memo_entry"))
 
 def kanedit_exit_configsave(window_objvoid=None,window_objptr=None):
     global kanedit_ltsv,kanedit_config
     kanedit_ltsv=LTsv_loadfile("kanedit.tsv")
     kanedit_config=LTsv_getpage(kanedit_ltsv,"kanedit")
-    kanedit_config=LTsv_pushlinerest(kanedit_config,"edit_last",kanedit_texteditfilename)
-#    kanedit_config=LTsv_pushlinerest(kanedit_config,"memo_entry",LTsv_widget_geturi(kanedit_canvas))
     kanedit_config=LTsv_pushlinerest(kanedit_config,"window_size","width:{0}\theight:{1}".format(kanedit_W,kanedit_H))
+    kanedit_config=LTsv_pushlinerest(kanedit_config,"edit_last",kanedit_texteditfilename)
     kanedit_ltsv=LTsv_putpage(kanedit_ltsv,"kanedit",kanedit_config)
     LTsv_savefile("kanedit.tsv",kanedit_ltsv)
 #    LTsv_glyph_picklesave()
@@ -173,7 +151,6 @@ if len(LTsv_GUI) > 0:
     LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=True)
     LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI=LTsv_GUI,LTsv_glyph_kbddefsize=1)
     kanedit_window=LTsv_window_new(widget_t="kanedit",event_b=kanedit_exit_configsave,widget_w=kanedit_W,widget_h=kanedit_H,event_z=kanedit_resize,event_k=kanedit_keypress,event_y=kanedit_keyrelease)
-#    kanedit_canvas=LTsv_editcanvas_new(kanedit_window,kbd_k=kanfont_memo_eval,clip_c=kanfont_memo_copy,clip_v=kanedit_memo_paste,clip_o=kanedit_filedialog_open,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),event_w=50)
     kanedit_canvas=LTsv_canvas_new(kanedit_window,widget_x=0,widget_y=0,widget_w=LTsv_screen_w(kanedit_window),widget_h=LTsv_screen_h(kanedit_window),
      event_p=kanedit_calculatormousepress,event_m=kanedit_calculatormousemotion,event_r=kanedit_calculatormouserelease,event_e=kanedit_calculatormouseenter,event_l=kanedit_calculatormouseleave,event_w=50)
     kanedit_configload()
@@ -189,7 +166,6 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_circles,LTsv_draw_circlesfill=LTsv_draw_circles_shell(LTsv_GUI),LTsv_draw_circlesfill_shell(LTsv_GUI)
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
-#    LTsv_editcanvas_kbdXY(kanedit_canvas,kbd_x=kanedit_W-LTsv_global_glyphkbdW(),kbd_y=kanedit_H-LTsv_global_glyphkbdH())
     kanedit_draw()
     LTsv_window_main(kanedit_window)
 else:

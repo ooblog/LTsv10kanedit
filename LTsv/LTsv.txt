@@ -5,8 +5,7 @@ version(branch) 20161023U011852
 
  ０-0． ライセンス及びソフトの使用の補足ガイドライン
  ０-1． インストール＆アンインストール方法・その他セットアップ方法
- ０-2． バージョン「LTsv9kantray(tsvtool9)」から「「LTsv10kanedit(tsvtool10)」への変更予定など。
- ０-3． その他現在わかっている不具合や今後の課題。
+ ０-2． その他現在わかっている不具合や今後の課題。
  １-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
  １-0b．「L:Tsv」ファイルの構造。
  １-1． [LTsv_printf.py]の関数一覧
@@ -25,6 +24,7 @@ version(branch) 20161023U011852
  １-8c．漢直鍵盤の操作方法(PCキーボード)
  １-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
  １-8e．[LTsv_glyph.tsv]のタグ解説
+ １-9．  [LTsv_doc.py]開発中。
  ２-0． 「L:Tsv」を用いるアプリケーションの作り方
  ３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)
  ３-1． 「L:Tsv」のＦＡＱ
@@ -59,13 +59,7 @@ version(branch) 20161023U011852
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「３-0． ＦＡＱ(そもそも起動しないなどの疑問はこちら)」も参考)。
 
 
-０-2．バージョン「LTsv9kantray(tsvtool9)」から「LTsv10kanedit(tsvtool10)」への変更予定など。
-
- 開発環が「Python2.7.3(PuppyLinux571JP)およびPython3.4.3(Wine1.7.18)」から「Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)」に移行。
- 「kanedit」の新しい鍵盤に移行するため「kantray」用に書いたコードのほとんどを整理整頓の予定。
-
-
-０-3． その他現在わかっている不具合や今後の課題。
+０-2． その他現在わかっている不具合や今後の課題。
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
@@ -75,7 +69,6 @@ version(branch) 20161023U011852
  Windowsのエディタで[kanchar.tsv]を開くと3バイト以上の文字が「?」に置き換えられる恐れがある。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
- 「LTsv_editcanvas_new()」の「電卓」でスクロールが実装されてない。「メモ帳」の方もテキスト編集ができない。
  ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。
 
 
@@ -901,7 +894,6 @@ version(branch) 20161023U011852
                                        「LTsv_scale_new()」なら"combobox"。
                                        「LTsv_combobox_new()」なら"canvas"。
                                        「LTsv_notifyicon_new()」なら"notify"。
-                                       「LTsv_editcanvas_new()」なら"editcanvas"。
                                        「LTsv_filedialog_new()」なら"filedialog"。
    widgettext(widget_t)                GUIオブジェクトが保有するテキスト。「window」のタイトルなど。
    widgettext(widget_u)                GUIオブジェクトが保有するURI(URLもしくはファイルパス)。「image」のファイルパスなど。
@@ -935,23 +927,6 @@ version(branch) 20161023U011852
    popupmenuclick(menu_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される通知タスクトレイ(Notify)クリック時のコールバック関数。
    dialog_type(dialog_t)                「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログの種類。
    dialog_close(dialog_c)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルダイアログのgtk_widget_hide_on_delete。
-   editcanvas_press(kbd_p)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押下時コールバック関数。
-   editcanvas_release(kbd_r)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤押上時コールバック関数。
-   editcanvas_motion(kbd_m)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル移動コールバック関数。
-   editcanvas_enter(kbd_e)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠内時コールバック関数。
-   editcanvas_leave(kbd_l)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤マウスカーソル枠外時コールバック関数。
-   editcanvas_input(kbd_i)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」漢直鍵盤文字カーソル
-   editcanvas_settext(kbd_s)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄カーソル付き文字列表示変更のコールバック関数。
-   editcanvas_deftext(kbd_d)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄カーソル省略文字列表示変更のコールバック関数。
-   editcanvas_gettext(kbd_t)            「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄「メモ帳」文字列取得コールバック関数。
-   editcanvas_geturi(kbd_u)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」テキスト入力欄「電卓」文字列取得コールバック関数。
-   editcanvas_‎keyenter(kbd_k)           「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理される「editcanvas」[Enter]キー入力時コールバック関数。
-def LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_a=None,clip_b=None,clip_c=None,clip_d=None,clip_e=None,clip_f=None,clip_g=None,
-  LTsv_widgetLTSVのLTsv_widgetPAGEにGUIオブジェクトの内容を書き込みます。「LTsv_editcanvas_new()」PCキーボードA~Z用。
-   editcanvas_copy(clip_c)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードコピー処理コールバック関数。
-   editcanvas_open(clip_o)              「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるファイルオープン処理コールバック関数。
-   editcanvas_‎paste(clip_c)             「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードペースト処理コールバック関数。
-   editcanvas_cut(clip_c)               「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理されるクリップボードカット処理コールバック関数。
 
  LTsv_fonttuple(LTsv_line)
   「Tkinter」ではフォントはタプルなので、CSV「"kan5x5comic,12"」を「(kan5x5comic,12)」とタプルに変換。
@@ -1413,26 +1388,6 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  LTsv_glyph_picklesave()
   フォントグリフの座標データpickleをセーブします。
 
- LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=None,clip_c=None,clip_v=None,clip_o=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50)
-  漢直鍵盤に加えテキスト入力欄も一体化した「editcanvas」を設置。
-  widget_w,widget_hは漢直鍵盤の「LTsv_global_glyphkbdW()」「LTsv_global_glyphkbdH()」より広くすること。
-  event_bで「editcanvas」からマウスを外した時のコールバック関数。kbd_kは[Enter]押した時のコールバック関数。
-  clip_c,clip_vはクリップボード処理のコールバック関数。
-  clip_oはファイルダイアログのコールバック関数。
-  「メモ帳」と「電卓」の２つのテキスト入力欄が同時に作成される。
-  「メモ帳」とは「LTsv_widget_settext()」「LTsv_widget_gettext()」でテキスト通信。
-  「電卓」とは「LTsv_widget_seturi()」「LTsv_widget_geturi()」でテキスト通信。
-
-
- LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None)
-  「editcanvas」で漢直鍵盤の表示位置を変更。テキスト入力欄も移動。
-
- LTsv_editcanvas_color(editcanvas,UF=None,UB=None,TF=None,TB=None)
-  「editcanvas」で漢直鍵盤のテキスト入力欄の文字色背景色を変更。
-
- LTsv_editcanvas_font(editcanvas,US=None,TS=None,UG=None,TG=None)
-  「editcanvas」で漢直鍵盤のテキスト入力欄のフォントサイズを変更。
-
  LTsv_kbdentry_evaltext(calc_value=""):
   ほぼ「kanedit」用。文字列から漢直鍵盤の検索をしたり電卓機能などを使う。
   「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
@@ -1489,27 +1444,29 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    左下(Ｎの下)からフリック    α鍵盤の選択。もしくは辞書の変更。
    右下(Ｘの下)からフリック    字引入力。単漢字辞書の項目が代入。
 
- α鍵盤の「σ」の特殊なキーはカーソル移動に使います。
+ α鍵盤の「σ」の特殊なキーは電卓入力欄のカーソル移動に使います。
 
-  HJKL        「editcanvas」のカーソル移動。H←,J↓,K↑,L→
-  YUBN        「メモ帳」ではカーソル斜め移動(予定)。「電卓」の場合範囲選択。Y↖,U↗,B↙,N↘
+  HJKL        カーソル移動。H←,J↓,K↑,L→(JK行移動は「kanedit」用途)。
+  YUBN        範囲選択調整。YUで左側、BNで右側。
+  ;(+)       バックスペース。BS。
+  :(*)       カーソルから右の文字デリート。DEL。
   ]          エンターキー。Enter。
-  ;          バックスペース。BS。
-  :          カーソルから右の文字デリート。DEL。
   A          テキスト全選択。Ctrl+A。
   C          テキストをクリップボードにコピー。Ctrl+C。
   X          テキスト切り取り(クリップボードにコピー)。Ctrl+X。
   V          クリップボードからテキスト貼り付け。Ctrl+V。
   T          タブ文字を入力。
   I          半角スペース4文字を入力。
-  O         ファイルを開くダイアログ(「kantray」用途)。
+  O         ファイルを開くダイアログ(「kanedit」用途)。
 
- テキスト入力欄「editcanvas」の操作
+ 電卓入力欄の直接的なマウス操作
 
   テキスト選択              カーソル移動。複数文字選択も可能
   選択文字ドラッグ          選択した文字は移動できる。テキストはクリップボードにもコピー。
   選択文字欄外までドラッグ  選択した文字は削除もできる。
   １秒入力欄を押し続ける    文字選択されてない状態で入力欄を押し続ける事でクリップボードから引用できる。
+  入力欄の上端をスライド    文字の表示位置を移動。
+  入力欄の上端を押し続ける    文字の表示位置をリセット。
 
 
 １-8c．漢直鍵盤の操作方法(PCキーボード)
@@ -1646,6 +1603,11 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
    entry                             リバーシの棋譜。
 
 
+１-9．  [LTsv_doc.py]開発中。
+
+ ソースとドキュメントでAPI情報が乖離するのを防ぐ「LTsv/LTsv.txt」を開発予定。
+
+
 ２-0． 「L:Tsv」を用いるアプリケーションの作り方
 
  「L:Tsv」でどのようなアプリが作れるのかの想定として「LTsv10kanedit(tsvtool10)」にて「kanedit」「kanfont」「kanzip」「kanmap」などを制作中です。
@@ -1708,10 +1670,6 @@ def LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_Z
  Ｑ．目的の漢字がどこにあるかわからない。
  Ａ．漢字の配列や字引入力の詳細などは「kanedit」の[kanedit.txt]に記載してます。「kanedit」そのものはまだ制作中です。
      「LTsv」フォルダのモジュール群のみ入手した人はGitHubリポジトリから「LTsv10kanedit」を改めて入手すると参考。
-
- Ｑ．描画が重くてフリーズしとるで。
- Ａ．「LTsv_editcanvas_new()」に代わる新しいエディタの開発予定。
-     電卓部分も漢直鍵盤同様GUI部品から描画命令に手直しの予定。
 
  Ｑ．漢直鍵盤を使ったソフトが起動しない。
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。「kanmap.py」で初期化できます。

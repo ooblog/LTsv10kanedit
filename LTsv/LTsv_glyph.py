@@ -760,215 +760,6 @@ def LTsv_glyph_picklesave():
     LTsv_glyph_ltsv=LTsv_putpage(LTsv_glyph_ltsv,"kanglyph",LTsv_glyph_config)
     LTsv_savefile(LTsv_glyph_ltsvpath,LTsv_glyph_ltsv)
 
-#LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK={},{},{},{},{},{},{},{},{},{},{},{}
-#LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK={},{},{},{},{},{},{},{},{},{},{},{}
-#LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT={},{},{},{}
-#def LTsv_editcanvas_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,kbd_k=None,clip_c=None,clip_v=None,clip_o=None,widget_x=0,widget_y=0,widget_w=LTsv_glyph_kbdW,widget_h=LTsv_glyph_kbdH,event_w=50):
-#gettext,geturi
-#    global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#    global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#    global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
-#    def editcanvas_input(UC):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        if UC in "":
-#            if UC in "":
-#                if clip_o != None: clip_o()
-#            if UC in "":
-#                if kbd_k != None: LTsv_editcanvasUT[editcanvas]=kbd_k(LTsv_editcanvasUT[editcanvas])
-#            if UC in "":
-#                LTsv_clippaste="\t"
-#            if UC in "":
-#                LTsv_clippaste="    "
-#            if UC in "":
-#                LTsv_clippaste=clip_v() if clip_v != None else ""
-#            if UC in "":
-#                LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_clippaste+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]:]
-#                LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUL[editcanvas]+len(LTsv_clippaste)-1
-#            if UC in "":
-#                if clip_c != None: clip_c(LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:LTsv_editcanvasUR[editcanvas]+1])
-#            if UC in "":
-#                if LTsv_editcanvasUL[editcanvas] == LTsv_editcanvasUR[editcanvas]:
-#                    if 0 < LTsv_editcanvasUL[editcanvas]: LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:max(LTsv_editcanvasUL[editcanvas]-1,0)]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:]
-#                else:
-#                    UC=""
-#            if UC in "":
-#                LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]+1:]
-#            if UC in "":
-#                LTsv_editcanvasUL[editcanvas]=max(0,LTsv_editcanvasUL[editcanvas]-1) if not UC in "" else 0
-#            if UC in "":
-#                LTsv_editcanvasUL[editcanvas]=min(LTsv_editcanvasUL[editcanvas]+1,len(LTsv_editcanvasUT[editcanvas])); LTsv_editcanvasUR[editcanvas]=max(LTsv_editcanvasUR[editcanvas],LTsv_editcanvasUL[editcanvas])
-#            if UC in "":
-#                LTsv_editcanvasUR[editcanvas]=min(LTsv_editcanvasUR[editcanvas]+1,len(LTsv_editcanvasUT[editcanvas])) if not UC in "" else len(LTsv_editcanvasUT[editcanvas])
-#            if UC in "":
-#                LTsv_editcanvasUR[editcanvas]=max(0,LTsv_editcanvasUR[editcanvas]-1); LTsv_editcanvasUL[editcanvas]=min(LTsv_editcanvasUR[editcanvas],LTsv_editcanvasUL[editcanvas])
-#            if UC in "":
-#                LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUL[editcanvas]
-#            if UC in "":
-#                LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUR[editcanvas]
-#        else:
-#            LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+UC+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:]; LTsv_editcanvasUL[editcanvas]+=1; LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUL[editcanvas]
-#        editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-#    def editcanvas_settext(editcanvas,UT=None,TT=None,UL=None,UR=None,TL=None,TR=None):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        LTsv_draw_selcanvas(editcanvas); LTsv_draw_delete();
-#        if TT != None:
-#            LTsv_editcanvasTT[editcanvas]=TT
-#        if UT != None:
-#            LTsv_editcanvasUT[editcanvas]=UT
-#        LTsv_draw_color(LTsv_editcanvasTB[editcanvas]); LTsv_draw_polygonfill(0,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],0,LTsv_editcanvasKY[editcanvas])
-#        LTsv_draw_color(LTsv_editcanvasTF[editcanvas]); LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasTT[editcanvas],draw_x=LTsv_editcanvasTX[editcanvas],draw_y=LTsv_editcanvasTY[editcanvas],draw_f=LTsv_editcanvasTS[editcanvas],draw_g=LTsv_editcanvasTG[editcanvas])
-#        LTsv_draw_color(LTsv_editcanvasUB[editcanvas]); LTsv_draw_polygonfill(0,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH,0,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH)
-#        LTsv_draw_color(LTsv_editcanvasUF[editcanvas]); LTsv_editcanvasUP[editcanvas]=LTsv_draw_glyphsentry(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_cL=LTsv_editcanvasUL[editcanvas],draw_cR=LTsv_editcanvasUR[editcanvas],draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
-#        if LTsv_editcanvasKM[editcanvas] == "Umove":
-#            LTsv_draw_color(LTsv_editcanvasUF[editcanvas])
-#            LTsv_draw_glyphs(draw_t=LTsv_editcanvasUK[editcanvas],draw_x=LTsv_global_canvasmotionX(editcanvas),draw_y=LTsv_global_canvasmotionY(editcanvas),draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
-#        else:
-#            LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUL[editcanvas] if UL == None else UL
-#            LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUR[editcanvas] if UR == None else UR
-#        LTsv_glyph_kbddelete(editcanvas)
-#        LTsv_glyph_kbddraw(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas])
-#        LTsv_draw_queue()
-#    def editcanvas_deftext(editcanvas,UT=None,TT=None):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        if TT != None:
-#            LTsv_editcanvasTT[editcanvas]=TT
-#        if UT != None:
-#            LTsv_editcanvasUT[editcanvas]=UT
-#            LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=len(LTsv_editcanvasUT[editcanvas]),len(LTsv_editcanvasUT[editcanvas])
-#        LTsv_glyph_kbddelete(editcanvas)
-#        LTsv_draw_selcanvas(editcanvas); LTsv_draw_delete();
-#        LTsv_draw_color(LTsv_editcanvasTB[editcanvas]); LTsv_draw_polygonfill(0,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],0,LTsv_editcanvasKY[editcanvas])
-#        LTsv_draw_color(LTsv_editcanvasTF[editcanvas]); LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasTT[editcanvas],draw_x=LTsv_editcanvasTX[editcanvas],draw_y=LTsv_editcanvasTY[editcanvas],draw_f=LTsv_editcanvasTS[editcanvas],draw_g=LTsv_editcanvasTG[editcanvas])
-#        LTsv_draw_color(LTsv_editcanvasUB[editcanvas]); LTsv_draw_polygonfill(0,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH,0,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH)
-#        LTsv_draw_color(LTsv_editcanvasUF[editcanvas]); LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_f=LTsv_editcanvasUS[editcanvas],draw_g=LTsv_editcanvasUG[editcanvas])
-#        LTsv_draw_queue()
-#    def editcanvas_press(window_objvoid=None,window_objptr=None):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
-#        if LTsv_glyph_mousepress(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-#            motionX,motionY=LTsv_global_canvasmotionX(editcanvas),LTsv_global_canvasmotionY(editcanvas)
-#            for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
-#                if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
-#            LTsv_editcanvasUM[editcanvas]=UP
-#            LTsv_editcanvasKM[editcanvas]=""
-#            if motionY > LTsv_editcanvasKY[editcanvas]:
-#                LTsv_editcanvasKT[editcanvas]=LTsv_puttimerstartgoal()
-#                if motionY > LTsv_editcanvasUY[editcanvas]:
-#                    if LTsv_editcanvasUL[editcanvas] <= LTsv_editcanvasUM[editcanvas] <= LTsv_editcanvasUR[editcanvas]:
-#                        LTsv_editcanvasKM[editcanvas]="Umove"
-#                        LTsv_editcanvasUK[editcanvas]=LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUL[editcanvas]:LTsv_editcanvasUR[editcanvas]+1]
-#                        if len(LTsv_editcanvasUK[editcanvas]) > 0:
-#                            if clip_c != None: clip_c(LTsv_editcanvasUK[editcanvas])
-#                        LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]+1:]
-#                        LTsv_editcanvasUL[editcanvas]=LTsv_editcanvasUR[editcanvas]
-#                    else:
-#                        LTsv_editcanvasKM[editcanvas]="Uselect"
-#                        LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
-#                    editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-#                else:
-#                    LTsv_editcanvasKM[editcanvas]="Uslide"
-#    def editcanvas_motion(window_objvoid=None,window_objptr=None):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
-#        if LTsv_glyph_mousemotion(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-#            motionX=LTsv_global_canvasmotionX(editcanvas)
-#            for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
-#                if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
-#            if LTsv_editcanvasKM[editcanvas] == "Umove":
-#                LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,UP
-#                if clip_v != None:
-#                    if len(LTsv_editcanvasUK[editcanvas]) == 0:
-#                        if LTsv_puttimerlap()-LTsv_editcanvasKT[editcanvas] > 1.0:
-#                            LTsv_editcanvasUK[editcanvas]=clip_v()
-#            elif LTsv_editcanvasKM[editcanvas] == "Uselect":
-#                if LTsv_editcanvasUM[editcanvas] < UP: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUM[editcanvas],UP
-#                else: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,LTsv_editcanvasUM[editcanvas]
-#            elif LTsv_editcanvasKM[editcanvas] == "Uslide":
-#                pass
-#                LTsv_editcanvasUX[editcanvas]=int(LTsv_puttimerlap()*100)
-#            editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-#            if len(LTsv_editcanvasKM[editcanvas]) > 0: LTsv_editcanvasKX[editcanvas]=0 if LTsv_global_canvasmotionX() > widget_w//2 else widget_w-LTsv_glyph_kbdW
-#    def editcanvas_release(window_objvoid=None,window_objptr=None):
-#        global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#        global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#        global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
-#        if LTsv_glyph_mouserelease(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas]) == LTsv_glyph_None:
-#            motionX=LTsv_global_canvasmotionX(editcanvas)
-#            for UP in range(len(LTsv_editcanvasUP[editcanvas])-1):
-#                if LTsv_editcanvasUP[editcanvas][UP] <= motionX < LTsv_editcanvasUP[editcanvas][UP+1]: break;
-#            if LTsv_editcanvasKM[editcanvas] == "Umove":
-#                LTsv_editcanvasUT[editcanvas]=LTsv_editcanvasUT[editcanvas][:LTsv_editcanvasUL[editcanvas]]+LTsv_editcanvasUK[editcanvas]+LTsv_editcanvasUT[editcanvas][LTsv_editcanvasUR[editcanvas]:]
-#                LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,max(UP,UP+len(LTsv_editcanvasUK[editcanvas])-1)
-#                LTsv_editcanvasUK[editcanvas]=""
-#            elif LTsv_editcanvasKM[editcanvas] == "Uselect":
-#                if LTsv_editcanvasUM[editcanvas] < UP: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=LTsv_editcanvasUM[editcanvas],UP
-#                else: LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas]=UP,LTsv_editcanvasUM[editcanvas]
-#            editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-#            LTsv_editcanvasKX[editcanvas]=widget_w-LTsv_glyph_kbdW
-#        LTsv_editcanvasKM[editcanvas]=""
-#    def editcanvas_enter(window_objvoid=None,window_objptr=None):
-#        editcanvas_settext(editcanvas,UT=LTsv_editcanvasUT[editcanvas])
-#    def editcanvas_leave(window_objvoid=None,window_objptr=None):
-#        LTsv_editcanvasUK[editcanvas]=""
-#        if event_b != None: LTsv_editcanvasUT[editcanvas]=event_b(LTsv_editcanvasUT[editcanvas])
-#        editcanvas_deftext(editcanvas)
-#    def editcanvas_gettext(editcanvas):
-#        return LTsv_editcanvasTT[editcanvas]
-#    def editcanvas_geturi(editcanvas):
-#        return LTsv_editcanvasUT[editcanvas]
-#    editcanvas=LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=widget_n,widget_x=widget_x,widget_y=widget_y,widget_w=widget_w,widget_h=widget_h,
-#     event_p=editcanvas_press,event_m=editcanvas_motion,event_r=editcanvas_release,event_e=editcanvas_enter,event_l=editcanvas_leave,event_w=event_w)
-#    LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKM[editcanvas],LTsv_editcanvasKT[editcanvas]=widget_w-LTsv_glyph_kbdW,widget_h-LTsv_glyph_kbdH,"",LTsv_puttimerstartgoal()
-#    LTsv_editcanvasUX[editcanvas],LTsv_editcanvasUY[editcanvas],LTsv_editcanvasUT[editcanvas],LTsv_editcanvasUF[editcanvas],LTsv_editcanvasUB[editcanvas],LTsv_editcanvasUS[editcanvas],LTsv_editcanvasUG[editcanvas],LTsv_editcanvasUL[editcanvas],LTsv_editcanvasUR[editcanvas],LTsv_editcanvasUP[editcanvas],LTsv_editcanvasUM[editcanvas],LTsv_editcanvasUK[editcanvas]=0,widget_h-1-LTsv_glyph_kbdH//2,"","black","white",LTsv_glyph_kbdH//2,"漫",0,0,[0],0,""
-#    LTsv_editcanvasTX[editcanvas],LTsv_editcanvasTY[editcanvas],LTsv_editcanvasTT[editcanvas],LTsv_editcanvasTF[editcanvas],LTsv_editcanvasTB[editcanvas],LTsv_editcanvasTS[editcanvas],LTsv_editcanvasTG[editcanvas],LTsv_editcanvasTL[editcanvas],LTsv_editcanvasTR[editcanvas],LTsv_editcanvasTP[editcanvas],LTsv_editcanvasTM[editcanvas],LTsv_editcanvasTK[editcanvas]=0,0,"","black","white",LTsv_glyph_kbdH//2,"漫",0,0,[0],0,""
-#    LTsv_glyph_tapcallback_shell(editcanvas,editcanvas_input)
-#    LTsv_widgetLTSV=LTsv_global_widgetltsv()
-#    LTsv_widgetPAGE=LTsv_getpage(LTsv_widgetLTSV,editcanvas)
-#    LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_k="editcanvas", \
-#     kbd_p=editcanvas_press,kbd_m=editcanvas_motion,kbd_r=editcanvas_release,kbd_e=editcanvas_enter,kbd_l=editcanvas_leave, \
-#     kbd_i=editcanvas_input,kbd_s=editcanvas_settext,kbd_t=editcanvas_gettext,kbd_u=editcanvas_geturi,kbd_d=editcanvas_deftext)
-#    LTsv_widgetPAGE=LTsv_widgetPAGEKBD(LTsv_widgetPAGE,clip_c=clip_c,clip_v=clip_v,clip_o=clip_o)
-#    LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,editcanvas,LTsv_widgetPAGE)
-#    LTsv_global_widgetltsv(LTsv_widgetLTSV)
-#    editcanvas_deftext(editcanvas)
-#    return editcanvas
-
-#def LTsv_editcanvas_kbdXY(editcanvas,kbd_x=None,kbd_y=None):
-#    global LTsv_editcanvasKX,LTsv_editcanvasKY,LTsv_editcanvasKM,LTsv_editcanvasKT
-#    LTsv_editcanvasKX[editcanvas]=LTsv_editcanvasKX[editcanvas] if kbd_x == None else kbd_x
-##    LTsv_editcanvasKY[editcanvas]=LTsv_editcanvasKY[editcanvas] if kbd_y == None else kbd_y
-#    LTsv_editcanvasUY[editcanvas]=LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH-LTsv_editcanvasUS[editcanvas]-1
-#    LTsv_draw_selcanvas(editcanvas); LTsv_draw_delete();
-#    LTsv_draw_color(LTsv_editcanvasTB[editcanvas]); LTsv_draw_polygonfill(0,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,0,LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],0,LTsv_editcanvasKY[editcanvas])
-#    LTsv_draw_color(LTsv_editcanvasTF[editcanvas]); LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasTT[editcanvas],draw_x=LTsv_editcanvasTX[editcanvas],draw_y=LTsv_editcanvasTY[editcanvas],draw_f=LTsv_editcanvasTS[editcanvas],draw_g="漫")
-#    LTsv_draw_color(LTsv_editcanvasUB[editcanvas]); LTsv_draw_polygonfill(0,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas],LTsv_editcanvasKX[editcanvas]+LTsv_glyph_kbdW,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH,0,LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH)
-#    LTsv_draw_color(LTsv_editcanvasUF[editcanvas]); LTsv_draw_glyphsfill(draw_t=LTsv_editcanvasUT[editcanvas],draw_x=LTsv_editcanvasUX[editcanvas],draw_y=LTsv_editcanvasUY[editcanvas],draw_f=LTsv_editcanvasUS[editcanvas],draw_g="漫")
-#    LTsv_glyph_kbddelete(editcanvas)
-#    LTsv_glyph_kbddraw(editcanvas,LTsv_editcanvasKX[editcanvas],LTsv_editcanvasKY[editcanvas])
-#    LTsv_draw_queue()
-
-#def LTsv_editcanvas_color(editcanvas,UF=None,UB=None,TF=None,TB=None):
-#    global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#    global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#    LTsv_editcanvasTB[editcanvas]=LTsv_editcanvasTB[editcanvas] if TB == None else TB
-#    LTsv_editcanvasTF[editcanvas]=LTsv_editcanvasTF[editcanvas] if TF == None else TF
-#    LTsv_editcanvasUB[editcanvas]=LTsv_editcanvasUB[editcanvas] if UB == None else UB
-#    LTsv_editcanvasUF[editcanvas]=LTsv_editcanvasUF[editcanvas] if UF == None else UF
-
-#def LTsv_editcanvas_font(editcanvas,US=None,TS=None,UG=None,TG=None):
-#    global LTsv_editcanvasUX,LTsv_editcanvasUY,LTsv_editcanvasUT,LTsv_editcanvasUF,LTsv_editcanvasUB,LTsv_editcanvasUS,LTsv_editcanvasUG,LTsv_editcanvasUL,LTsv_editcanvasUR,LTsv_editcanvasUP,LTsv_editcanvasUM,LTsv_editcanvasUK
-#    global LTsv_editcanvasTX,LTsv_editcanvasTY,LTsv_editcanvasTT,LTsv_editcanvasTF,LTsv_editcanvasTB,LTsv_editcanvasTS,LTsv_editcanvasTG,LTsv_editcanvasTL,LTsv_editcanvasTR,LTsv_editcanvasTP,LTsv_editcanvasTM,LTsv_editcanvasTK
-#    LTsv_editcanvasUS[editcanvas]=LTsv_editcanvasUS[editcanvas] if US == None else US
-#    LTsv_editcanvasUY[editcanvas]=LTsv_editcanvasKY[editcanvas]+LTsv_glyph_kbdH-LTsv_editcanvasUS[editcanvas]-1
-#    LTsv_editcanvasTS[editcanvas]=LTsv_editcanvasTS[editcanvas] if TS == None else TS
-#    LTsv_editcanvasUG[editcanvas]=LTsv_editcanvasUG[editcanvas] if UG == None else UG
-#    LTsv_editcanvasTG[editcanvas]=LTsv_editcanvasTG[editcanvas] if TG == None else TG
-
 def LTsv_evaltext(calc_value=""):
     global LTsv_glyph_worddicname,LTsv_glyph_zipdicname,LTsv_glyph_worddic,LTsv_glyph_zipdic
     calc_V,calc_K,calc_Q,calc_A=calc_value,"","",""
@@ -1109,7 +900,7 @@ def LTsv_evaltext(calc_value=""):
         calc_V="{0}{1}⇔{2}".format(calc_K,calc_Q,calc_A)
     return calc_V
 
-def debug_editcanvasmousepress(window_objvoid=None,window_objptr=None):
+def debug_reversi_mousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
         keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(debug_reversi_canvas),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(debug_reversi_canvas),0),debug_reversi_H)
         if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
@@ -1117,10 +908,10 @@ def debug_editcanvasmousepress(window_objvoid=None,window_objptr=None):
                 if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
                     debug_milkAI_add(debug_reversi_key[xy])
 
-def debug_editcanvasmousemotion(window_objvoid=None,window_objptr=None):
+def debug_reversi_mousemotion(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mousemotion(debug_reversi_canvas,debug_kbdX,debug_kbdY)
 
-def debug_editcanvasmouserelease(window_objvoid=None,window_objptr=None):
+def debug_reversi_mouserelease(window_objvoid=None,window_objptr=None):
     LTsv_glyph_mouserelease(debug_reversi_canvas,debug_kbdX,debug_kbdY)
 
 
@@ -1557,11 +1348,8 @@ def debug_calculatormouseinput(calculatormouseinput):
 def debug_keypress(window_objvoid=None,window_objptr=None):
     motionZ=LTsv_global_canvasmotionZ()
     if motionZ == debug_reversi_canvas:
-#        LTsv_glyph_typepress(debug_reversi_canvas,debug_kbdX,debug_kbdY)
         glyph_calcrinput=LTsv_glyph_calctypelimited(debug_reversi_canvas,debug_kbdX,debug_kbdY)
         if len(glyph_calcrinput): debug_milkAI_add(glyph_calcrinput);
-    elif motionZ == debug_editcanvas:
-        LTsv_glyph_typepress(debug_editcanvas,debug_kbdX,debug_kbdY)
     elif motionZ == debug_calculator_canvas:
         LTsv_glyph_calctype(debug_calculator_canvas)
 
@@ -1767,17 +1555,14 @@ if __name__=="__main__":
         debug_milklid_range=[y*10+x for y in range(1,9) for x in range(1,9)]
         debug_milklid_colorkey=["green","black","white","back","line","nexr"]
         debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F1F1F1","line":"#00918F","next":"#FFD7F3"}
-        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH()*2,event_z=None,event_k=debug_keypress,event_y=debug_keyrelease)
+        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH(),event_z=None,event_k=debug_keypress,event_y=debug_keyrelease)
+        debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
+         event_p=debug_reversi_mousepress,event_m=debug_reversi_mousemotion,event_r=debug_reversi_mouserelease,event_l=debug_reversi_mousemotion,event_w=50)
         debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=debug_milklid_W*0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)
         debug_reversi_entry=LTsv_entry_new(debug_reversi_window,widget_t="",widget_x=debug_milklid_W*1,widget_y=debug_reversi_H,widget_w=debug_reversi_W-debug_milklid_W*3,widget_h=debug_milklid_H//2,widget_f=debug_entryfont,event_b=debug_milkAI_entry)
         debug_reversi_auto=LTsv_button_new(debug_reversi_window,widget_t="Auto",widget_x=debug_reversi_W-debug_milklid_W*2,widget_y=debug_reversi_H,widget_w=debug_milklid_W*2,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_Auto)
-        debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
-         event_p=debug_editcanvasmousepress,event_m=debug_editcanvasmousemotion,event_r=debug_editcanvasmouserelease,event_l=debug_editcanvasmousemotion,event_w=50)
-#        debug_editcanvas=LTsv_editcanvas_new(debug_reversi_window,event_b=None,kbd_k=None,clip_c=None,clip_v=None,widget_x=0,widget_y=debug_reversi_H+debug_milklid_H//2,widget_w=debug_reversi_W,widget_h=LTsv_global_glyphkbdH(),event_w=50)
-#        LTsv_editcanvas_color(debug_editcanvas,UF="#000000",UB="#FBFFBD")
-#        LTsv_widget_seturi(debug_editcanvas,"debug_editcanvas")
         debug_reversi_clipboard=LTsv_clipboard_new(debug_reversi_window)
-        debug_calculator_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH(),widget_w=debug_reversi_W,widget_h=LTsv_global_glyphkbdH(),
+        debug_calculator_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=debug_reversi_H+debug_milklid_H//2,widget_w=debug_reversi_W,widget_h=LTsv_global_glyphkbdH(),
          event_p=debug_calculatormousepress,event_m=debug_calculatormousemotion,event_r=debug_calculatormouserelease,event_l=debug_calculatormouseleave,event_e=debug_calculatormouseenter,event_w=50)
         LTsv_widget_showhide(debug_reversi_window,True)
         LTsv_glyph_tapcallback_shell(debug_reversi_canvas,debug_milkAI_add)

@@ -4,23 +4,19 @@ enter	LF
 tab	4
 program	kanedit
 LTsvver	20161023U011852
-modify	20161102W013506
+modify	20161102W023732
 |L:Tsv]
 
 [kanedit|
-window_size	width:632	height:455
+window_size	width:705	height:455
+edit_last	kanedit.tsv
 edit_colors	font:#000000	bg:#FFF9FA
 edit_fontsize	12
 edit_fontstyle	漫
-edit_last	kanedit.tsv
-memo_colors	font:#000000	bg:#FFFFF3
-memo_fontsize	12
-memo_entry	汎カレーパン⇔咖喱麺麭
-memo_fontstyle	漫
 |kanedit]
-#memo_entry	汎カレーパン⇔咖喱麺麭
-#memo_entry	開発中ですが、漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書は使用できます。
 
+#memo	汎カレーパン⇔咖喱麺麭
+#memo	開発中ですが、漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書は使用できます。
 #都道府県	北青岩城秋形島茨栃群埼千東神潟富石井梨野岐静知三滋京阪兵奈和鳥根岡広口徳川媛高福佐長熊分宮鹿沖
 #康熙字典	⼀⼁⼂⼃⼄⼅⼆⼇⼈⼉⼊⼋⼌⼍⼎⼏⼐⼑⼒⼓⼔⼕⼖⼗⼘⼙⼚⼛⼜⼝⼞⼟⼠⼡⼢⼣⼤⼥⼦⼧⼨⼩⼪⼫⼬⼭⼮⼯⼰⼱⼲⼳⼴⼵
 #康熙字典	⼶⼷⼸⼹⼺⼻⼼⼽⼾⼿⽀⽁⽂⽃⽄⽅⽆⽇⽈⽉⽊⽋⽌⽍⽎⽏⽐⽑⽒⽓⽔⽕⽖⽗⽘⽙⽚⽛⽜⽝⽞⽟⽠⽡⽢⽣⽤⽥⽦⽧⽨⽩⽪⽫
