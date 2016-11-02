@@ -17,12 +17,15 @@ modify	@000y@0m@0dm@wdec@0h@0n@0s
 [LTsvDOC_tsv|
 outdir	./
 main	LTsv_doc_main
+main_defindent	2
 outlist	LTsv_doc.txt
 reglist	<@index0-0>	<@index0-1>	<@index0-2>	<@contents0-0>	<@index1-0a>	<@index1-0b>	<@index1-1>	<@contents1-1>
 timlist	<!branch!>
 taglist	
 defdir	./
 deflist	LTsv_printf.py	LTsv_file.py	LTsv_time.py	LTsv_calc.py	LTsv_joy.py	LTsv_kbd.py	LTsv_gui.py	LTsv_glyph.py
+deftag	L:<!	R:!>
+defindent	firstL:【	firstR:】	RestL:「	restR:」
 |LTsvDOC_tsv]
 
 [<!branch!>|
@@ -117,7 +120,7 @@ version(branch) <!branch!>
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
 
-<LTsv_printf.py>
+<!LTsv_printf.py!>
 |<@text1-1>]
 
 [LTsv_printf.py|
@@ -247,28 +250,28 @@ LTsv_getkbdkanas()
 [LTsv_gui.py|
 LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	
 LTsv_guiinit(LTsv_guistyle=LTsv_GUI_GTK2,LTsv_libvermin=0,LTsv_libvermax=0)	
-LTsv_global_GUI():                              return LTsv_GUI	
-LTsv_global_Notify():                           return LTsv_Notify	
-LTsv_global_GTK2():                             return LTsv_GUI_GTK2	
-LTsv_global_Tkinter():                           return LTsv_GUI_Tkinter	
-LTsv_global_WinAPI():                           return LTsv_GUI_WinAPI	
-LTsv_global_libgtk():                           return LTsv_libgtk	
-LTsv_global_libgdk():                           return LTsv_libgdk	
-LTsv_global_libobj():                           return LTsv_libobj	
-LTsv_global_canvasmotionZ():                    return LTsv_canvas_motion_Z	
+LTsv_global_GUI()	
+LTsv_global_Notify()	
+LTsv_global_GTK2()	
+LTsv_global_Tkinter()	
+LTsv_global_WinAPI()	
+LTsv_global_libgtk()	
+LTsv_global_libgdk()	
+LTsv_global_libobj()	
+LTsv_global_canvasmotionZ()	
 LTsv_global_canvasmotionX(motionZ=None)	
 LTsv_global_canvasmotionY(motionZ=None)	
-LTsv_global_canvascolor():                    return LTsv_canvascolor	
-LTsv_global_canvasbgcolor():                    return LTsv_canvasbgcolor	
+LTsv_global_canvascolor()	
+LTsv_global_canvasbgcolor()	
 LTsv_global_canvasTAG(TkinterTAG=None)	
 LTsv_global_widgetltsv(new_LTSV=None)	
-LTsv_global_widgetgetpage(LTsv_widgetPAGENAME): return LTsv_getpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME)	
-LTsv_global_widgetOBJ(LTsv_objid):              return LTsv_widgetOBJ[LTsv_objid]	
-LTsv_global_pictureOBJ(LTsv_objid):             return LTsv_pictureOBJ[LTsv_objid]	
-LTsv_global_pictureW(LTsv_objid):               return LTsv_pictureW[LTsv_objid]	
-LTsv_global_pictureH(LTsv_objid):               return LTsv_pictureH[LTsv_objid]	
-LTsv_global_iconOBJ(LTsv_objid):                return LTsv_iconOBJ[LTsv_objid]	
-LTsv_global_popupmenuOBJ(LTsv_objid):           return LTsv_popupmenuOBJ[LTsv_objid]	
+LTsv_global_widgetgetpage(LTsv_widgetPAGENAME)	
+LTsv_global_widgetOBJ(LTsv_objid)	
+LTsv_global_pictureOBJ(LTsv_objid)	
+LTsv_global_pictureW(LTsv_objid)	
+LTsv_global_pictureH(LTsv_objid)	
+LTsv_global_iconOBJ(LTsv_objid)	
+LTsv_global_popupmenuOBJ(LTsv_objid)	
 LTsv_widget_newUUID(LTsv_widgetID=None)	
 LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	
 LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	
@@ -398,30 +401,30 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)
 [LTsv_glyph.py|
 LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	
 LTsv_global_kandic(new_kandic=None)	
-LTsv_global_kanmap():                              return LTsv_glyph_kanmap	
-LTsv_global_kanmapN():                             return LTsv_glyph_kanmapN	
-LTsv_global_kanmapX():                             return LTsv_glyph_kanmapX	
-LTsv_global_kanpickle():                          return LTsv_glyph_kanpickle	
-LTsv_global_irohatype():                          return LTsv_glyph_irohatype	
-LTsv_global_irohatypeN():                         return LTsv_glyph_irohatypeN	
-LTsv_global_irohatypeX():                         return LTsv_glyph_irohatypeX	
-LTsv_global_alphatype():                          return LTsv_glyph_alphatype	
-LTsv_global_alphatypeN():                         return LTsv_glyph_alphatypeN	
-LTsv_global_alphatypeX():                         return LTsv_glyph_alphatypeX	
-LTsv_global_dictype():                             return LTsv_glyph_dictype	
-LTsv_global_glyphtype():                          return LTsv_glyph_glyphtype	
-LTsv_global_choice():                              return LTsv_glyph_choice	
-LTsv_global_choiceN():                             return LTsv_glyph_choiceN	
-LTsv_global_choiceX():                             return LTsv_glyph_choiceX	
-LTsv_global_evaltype():                             return LTsv_glyph_evaltype	
-LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha	
-LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN	
-LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX	
-LTsv_global_kbdchars():                          return LTsv_glyph_kbdchars	
-LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH	
-LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW	
-LTsv_global_glyphkbdF():                           return LTsv_glyph_kbdF	
-LTsv_global_kbdcursorNone():                           return LTsv_glyph_None	
+LTsv_global_kanmap()	
+LTsv_global_kanmapN()	
+LTsv_global_kanmapX()	
+LTsv_global_kanpickle()	
+LTsv_global_irohatype()	
+LTsv_global_irohatypeN()	
+LTsv_global_irohatypeX()	
+LTsv_global_alphatype()	
+LTsv_global_alphatypeN()	
+LTsv_global_alphatypeX()	
+LTsv_global_dictype()	
+LTsv_global_glyphtype()	
+LTsv_global_choice()	
+LTsv_global_choiceN()	
+LTsv_global_choiceX()	
+LTsv_global_evaltype()	
+LTsv_global_irohaalpha()	
+LTsv_global_irohaalphaN()	
+LTsv_global_irohaalphaX()	
+LTsv_global_kbdchars()	
+LTsv_global_glyphkbdH()	
+LTsv_global_glyphkbdW()	
+LTsv_global_glyphkbdF()	
+LTsv_global_kbdcursorNone()	
 LTsv_glyphSVG5x10x(LTsv_glyph_path)	
 LTsv_glyphSVG(LTsv_glyph_path)	
 LTsv_glyphpath(glyphcode)	
@@ -457,13 +460,13 @@ LTsv_glyph_kbddelete(kbd_canvas)
 LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	
 LTsv_glyph_picklesave()	
 LTsv_evaltext(calc_value="")	
-LTsv_calculator_setup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	
-LTsv_calculator_resize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	
+LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	
+LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	
 LTsv_glyph_calcdelete(calc_canvas)	
 LTsv_glyph_calcdraw(calc_canvas)	
 LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None)	
 LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")	
-LTsv_glyph_glyphsincalc(calc_canvas)	
+LTsv_glyph_calcglyphs(calc_canvas)	
 LTsv_glyph_calcpress(calc_canvas)	
 LTsv_glyph_calcmotion(calc_canvas)	
 LTsv_glyph_calcrelease(calc_canvas)	

@@ -27,7 +27,7 @@ def kanedit_draw():
     kanedit_lineY=0
     for kanedit_pos,kanedit_line in enumerate(kanedit_textsplit):
         if kanedit_pos == kanedit_cursorY:
-            LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_lineY,calculatorW=kanedit_W,calculatorT=kanedit_line,calculatorTX=None,calculatorTC=None)
+            LTsv_glyph_calcresize(kanedit_canvas,calculatorY=kanedit_lineY,calculatorW=kanedit_W,calculatorT=kanedit_line,calculatorTX=None,calculatorTC=None)
             LTsv_glyph_calcdraw(kanedit_canvas)
             kanedit_lineY+=LTsv_global_glyphkbdH()+1  #kanedit_lineY+=24+1
             LTsv_draw_selcanvas(kanedit_canvas)
@@ -73,7 +73,7 @@ def kanedit_calculatormouserelease(window_objvoid=None,window_objptr=None):
 def kanedit_calculatormouseleave(window_objvoid=None,window_objptr=None):
     global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
     kanedit_textsplit=kanedit_textvalue.split('\n')
-    kanedit_textsplit[kanedit_cursorY]= LTsv_calculator_resize(kanedit_canvas)
+    kanedit_textsplit[kanedit_cursorY]= LTsv_glyph_calcresize(kanedit_canvas)
     kanedit_textvalue="\n".join(kanedit_textsplit)
     LTsv_glyph_calcleave(kanedit_canvas)
 
@@ -95,15 +95,15 @@ def kanedit_calculatoredit(calculatormouseinput):
         pass
     if calculatormouseinput == "":
         kanedit_cursorY=min(kanedit_cursorY+1,LTsv_readlinedeno(kanedit_textvalue))
-        LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
+        LTsv_glyph_calcresize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
         kanedit_draw()
     if calculatormouseinput == "":
         kanedit_cursorY=max(kanedit_cursorY-1,0)
-        LTsv_calculator_resize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
+        LTsv_glyph_calcresize(kanedit_canvas,calculatorY=kanedit_cursorY*10)
         kanedit_draw()
     if calculatormouseinput == "":
-        evaltext=LTsv_evaltext(LTsv_calculator_resize(kanedit_canvas))
-        LTsv_calculator_resize(kanedit_canvas,calculatorT=evaltext)
+        evaltext=LTsv_evaltext(LTsv_glyph_calcresize(kanedit_canvas))
+        LTsv_glyph_calcresize(kanedit_canvas,calculatorT=evaltext)
 
 def kanedit_filedialog_open():
     print("kanedit_filedialog_open")
@@ -158,7 +158,7 @@ if len(LTsv_GUI) > 0:
     kanedit_clipboard=LTsv_clipboard_new(kanedit_window)
     kanedit_filedialog=LTsv_filedialog_new(kanedit_window,widget_t="File Open",dialog_t=0,event_b=kanedit_filedialog_response)
     LTsv_widget_showhide(kanedit_window,True)
-    LTsv_calculator_setup(kanedit_canvas,calculatorX=0,calculatorY=0,calculatorW=kanedit_W,calculatorH=LTsv_global_glyphkbdH(),calculatorC=kanedit_clipboard,calculatorB=kanedit_calculatormouseinput,calculatorT="debug_calculator")
+    LTsv_glyph_calcsetup(kanedit_canvas,calculatorX=0,calculatorY=0,calculatorW=kanedit_W,calculatorH=LTsv_global_glyphkbdH(),calculatorC=kanedit_clipboard,calculatorB=kanedit_calculatormouseinput,calculatorT="debug_calculator")
     LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue,LTsv_draw_picture=LTsv_draw_selcanvas_shell(LTsv_GUI),LTsv_draw_delete_shell(LTsv_GUI),LTsv_draw_queue_shell(LTsv_GUI),LTsv_draw_picture_shell(LTsv_GUI)
     LTsv_draw_color,LTsv_draw_bgcolor,LTsv_draw_font,LTsv_draw_text=LTsv_draw_color_shell(LTsv_GUI),LTsv_draw_bgcolor_shell(LTsv_GUI),LTsv_draw_font_shell(LTsv_GUI),LTsv_draw_text_shell(LTsv_GUI)
     LTsv_draw_polygon,LTsv_draw_polygonfill=LTsv_draw_polygon_shell(LTsv_GUI),LTsv_draw_polygonfill_shell(LTsv_GUI)

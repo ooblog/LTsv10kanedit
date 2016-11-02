@@ -20,7 +20,7 @@ def LTsvDOCdef_python(LTsvDOClaunch_deffile):
     LTsvDOClaunch_deffile=re.sub(re.compile("^(?!def).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^def ",re.MULTILINE),"",LTsvDOClaunch_deffile)
-    LTsvDOClaunch_deffile=re.sub(re.compile("[:]$",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("[:].*$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     return LTsvDOClaunch_deffile
 
 def LTsvDOClaunch_kernel_plane(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname):
@@ -65,15 +65,22 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOClaunch_ltsv,LTsvDOClaunch_main
                 LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 
-LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname="",""
+def LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_tagname,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR):
+    LTsvDOC_tagdata=LTsvDOC_tagname
+    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
+    print("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR))
+    LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagpage)
+    return LTsvDOClaunch_main
+
+LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_main_defindent="","","",2
 LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir=0,0,"",""
 LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist=[],[],[],[],[]
-LTsvDOClaunch_defpage=""
+LTsvDOClaunch_defpage,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR="","",""
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
-    global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname
+    global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_main_defindent
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
     global LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
-    global LTsvDOClaunch_defpage
+    global LTsvDOClaunch_defpage,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR
     if LTsvDOClaunch_outcount < 0:
         LTsvDOClaunch_tsvname=LTsvDOClaunch_tsvlist[LTsvDOClaunch_kernel_clickID]
         LTsvDOClaunch_ltsv=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_tsvname))
@@ -88,6 +95,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_timlistT=LTsv_readlinerest(LTsvDOClaunch_config,"timlist"); LTsvDOClaunch_timlist=LTsvDOClaunch_timlistT.split('\t') if len(LTsvDOClaunch_timlistT) else []
         LTsvDOClaunch_reglistT=LTsv_readlinerest(LTsvDOClaunch_config,"reglist"); LTsvDOClaunch_reglist=LTsvDOClaunch_reglistT.split('\t') if len(LTsvDOClaunch_reglistT) else []
         LTsvDOClaunch_deflistT=LTsv_readlinerest(LTsvDOClaunch_config,"deflist"); LTsvDOClaunch_deflist=LTsvDOClaunch_deflistT.split('\t') if len(LTsvDOClaunch_deflistT) else []
+        LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag"),"L","R"))
         for LTsvDOC_defcount,LTsvDOC_defname in enumerate(LTsvDOClaunch_deflist):
             LTsvDOClaunch_defnewpage=""
             LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOC_ltsv,LTsvDOC_defname)
@@ -105,13 +113,16 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     if 0 <= LTsvDOClaunch_outcount < len(LTsvDOClaunch_outlist):
         LTsvDOC_outname=LTsvDOClaunch_outlist[LTsvDOClaunch_outcount]
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
-        for LTsvDOC_tagcount,LTsvDOC_tagname in enumerate(LTsvDOClaunch_reglist):
-            LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
-        for LTsvDOC_tagcount,LTsvDOC_tagname in enumerate(LTsvDOClaunch_timlist):
-            LTsvDOClaunch_main=LTsvDOClaunch_kernel_timedata(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
-        for LTsvDOC_tagcount,LTsvDOC_tagname in enumerate(LTsvDOClaunch_taglist):
+        for LTsvDOC_tagname in LTsvDOClaunch_taglist:
             LTsvDOClaunch_main=LTsvDOClaunch_kernel_plane(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
-        LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
+        for LTsvDOC_tagname in LTsvDOClaunch_timlist:
+            LTsvDOClaunch_main=LTsvDOClaunch_kernel_timedata(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
+        for LTsvDOC_tagname in LTsvDOClaunch_reglist:
+            LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
+        for LTsvDOC_defname in LTsvDOClaunch_deflist:
+            LTsvDOClaunch_main=LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_defname,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR)
+        if len(LTsvDOClaunch_deflist) > 0:
+            LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
         LTsvDOClaunch_outcount+=1
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=LTsvDOC_T)
     else:
@@ -121,7 +132,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
 def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
     def LTsvDOClaunch_kernel(window_objvoid=None,window_objptr=None):
         LTsv_putdaytimenow()
-        global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname
+        global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_main_defindent
         global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
         global LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
         LTsvDOClaunch_kernel_clickID=LTsvDOClaunch_tsvcount
