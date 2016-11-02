@@ -900,20 +900,6 @@ def LTsv_evaltext(calc_value=""):
         calc_V="{0}{1}⇔{2}".format(calc_K,calc_Q,calc_A)
     return calc_V
 
-def debug_reversi_mousepress(window_objvoid=None,window_objptr=None):
-    if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
-        keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(debug_reversi_canvas),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(debug_reversi_canvas),0),debug_reversi_H)
-        if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
-            for xy in debug_milklid_range:
-                if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
-                    debug_milkAI_add(debug_reversi_key[xy])
-
-def debug_reversi_mousemotion(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_mousemotion(debug_reversi_canvas,debug_kbdX,debug_kbdY)
-
-def debug_reversi_mouserelease(window_objvoid=None,window_objptr=None):
-    LTsv_glyph_mouserelease(debug_reversi_canvas,debug_kbdX,debug_kbdY)
-
 
 LTsv_calculatorUX,LTsv_calculatorUY,LTsv_calculatorUW,LTsv_calculatorUH,LTsv_calculatorUB,LTsv_calculatorUC={},{},{},{},{},{}
 LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG={},{},{},{},{},{},{},{},{}
@@ -1345,7 +1331,22 @@ def debug_calculatormouseinput(calculatormouseinput):
     LTsv_glyph_calcinput(debug_calculator_canvas,calculatormouseinput)
     return calculatormouseinput
 
-def debug_keypress(window_objvoid=None,window_objptr=None):
+
+def debug_reversi_mousepress(window_objvoid=None,window_objptr=None):
+    if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():
+        keyboard_mouseX,keyboard_mouseY=min(max(LTsv_global_canvasmotionX(debug_reversi_canvas),0),debug_reversi_W),min(max(LTsv_global_canvasmotionY(debug_reversi_canvas),0),debug_reversi_H)
+        if debug_milklidX[11] < keyboard_mouseX < debug_milklidX[99] and debug_milklidY[11] < keyboard_mouseY < debug_milklidY[99]:
+            for xy in debug_milklid_range:
+                if debug_milklidX[xy] < keyboard_mouseX < debug_milklidX[xy+1] and debug_milklidY[xy] < keyboard_mouseY < debug_milklidY[xy+10]:
+                    debug_milkAI_add(debug_reversi_key[xy])
+
+def debug_reversi_mousemotion(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_mousemotion(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+
+def debug_reversi_mouserelease(window_objvoid=None,window_objptr=None):
+    LTsv_glyph_mouserelease(debug_reversi_canvas,debug_kbdX,debug_kbdY)
+
+def debug_reversi_keypress(window_objvoid=None,window_objptr=None):
     motionZ=LTsv_global_canvasmotionZ()
     if motionZ == debug_reversi_canvas:
         glyph_calcrinput=LTsv_glyph_calctypelimited(debug_reversi_canvas,debug_kbdX,debug_kbdY)
@@ -1353,8 +1354,8 @@ def debug_keypress(window_objvoid=None,window_objptr=None):
     elif motionZ == debug_calculator_canvas:
         LTsv_glyph_calctype(debug_calculator_canvas)
 
-def debug_keyrelease(window_objvoid=None,window_objptr=None):
-    debug_keypress()
+def debug_reversi_keyrelease(window_objvoid=None,window_objptr=None):
+    debug_reversi_keypress()
 
 def debug_milklid_check(xy,bw):
     milkcount,milkcountall=0,0
@@ -1555,7 +1556,7 @@ if __name__=="__main__":
         debug_milklid_range=[y*10+x for y in range(1,9) for x in range(1,9)]
         debug_milklid_colorkey=["green","black","white","back","line","nexr"]
         debug_milklid_colordic={"green":"#76DC76","black":"#4E4E4E","white":"#FFF5FD","back":"#F1F1F1","line":"#00918F","next":"#FFD7F3"}
-        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH(),event_z=None,event_k=debug_keypress,event_y=debug_keyrelease)
+        debug_reversi_window=LTsv_window_new(widget_t="reversi",event_b=debug_configsave_exit,widget_w=debug_reversi_W,widget_h=debug_reversi_H+debug_milklid_H//2+LTsv_global_glyphkbdH(),event_z=None,event_k=debug_reversi_keypress,event_y=debug_reversi_keyrelease)
         debug_reversi_canvas=LTsv_canvas_new(debug_reversi_window,widget_x=0,widget_y=0,widget_w=debug_reversi_W,widget_h=debug_reversi_H,
          event_p=debug_reversi_mousepress,event_m=debug_reversi_mousemotion,event_r=debug_reversi_mouserelease,event_l=debug_reversi_mousemotion,event_w=50)
         debug_reversi_back=LTsv_button_new(debug_reversi_window,widget_t="BS",widget_x=debug_milklid_W*0,widget_y=debug_reversi_H,widget_w=debug_milklid_W*1,widget_h=debug_milklid_H//2,widget_f=debug_buttonfont,event_b=debug_milkAI_BS)

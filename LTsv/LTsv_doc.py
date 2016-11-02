@@ -16,6 +16,13 @@ from LTsv_gui     import *
 from LTsv_glyph  import *
 
 
+def LTsvDOCdef_python(LTsvDOClaunch_deffile):
+    LTsvDOClaunch_deffile=re.sub(re.compile("^(?!def).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("^def ",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("[:]$",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    return LTsvDOClaunch_deffile
+
 def LTsvDOClaunch_kernel_plane(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname):
     LTsvDOC_tagdata=LTsvDOC_tagname
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
@@ -59,26 +66,43 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOClaunch_ltsv,LTsvDOClaunch_main
     return LTsvDOClaunch_main
 
 LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname="",""
-LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir=0,0,""
+LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir=0,0,"",""
 LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist=[],[],[],[],[]
+LTsvDOClaunch_defpage=""
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname
-    global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir
+    global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
     global LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
-    if LTsvDOClaunch_outcount == 0:
+    global LTsvDOClaunch_defpage
+    if LTsvDOClaunch_outcount < 0:
         LTsvDOClaunch_tsvname=LTsvDOClaunch_tsvlist[LTsvDOClaunch_kernel_clickID]
         LTsvDOClaunch_ltsv=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_tsvname))
-        LTsvDOClaunch_head=LTsv_getpage(LTsvDOC_ltsv,"L:Tsv")
+        LTsvDOClaunch_head=LTsv_getpage(LTsvDOClaunch_ltsv,"L:Tsv")
         LTsvDOClaunch_config=LTsv_getpage(LTsvDOClaunch_ltsv,LTsv_readlinerest(LTsvDOClaunch_head,"1st","LTsvDOC_tsv"))
         LTsvDOClaunch_outdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"outdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
+        LTsvDOClaunch_defdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"defdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_mainname=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_mainname)
         LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_taglistT=LTsv_readlinerest(LTsvDOClaunch_config,"taglist"); LTsvDOClaunch_taglist=LTsvDOClaunch_taglistT.split('\t') if len(LTsvDOClaunch_taglistT) else []
         LTsvDOClaunch_timlistT=LTsv_readlinerest(LTsvDOClaunch_config,"timlist"); LTsvDOClaunch_timlist=LTsvDOClaunch_timlistT.split('\t') if len(LTsvDOClaunch_timlistT) else []
         LTsvDOClaunch_reglistT=LTsv_readlinerest(LTsvDOClaunch_config,"reglist"); LTsvDOClaunch_reglist=LTsvDOClaunch_reglistT.split('\t') if len(LTsvDOClaunch_reglistT) else []
+        LTsvDOClaunch_deflistT=LTsv_readlinerest(LTsvDOClaunch_config,"deflist"); LTsvDOClaunch_deflist=LTsvDOClaunch_deflistT.split('\t') if len(LTsvDOClaunch_deflistT) else []
+        for LTsvDOC_defcount,LTsvDOC_defname in enumerate(LTsvDOClaunch_deflist):
+            LTsvDOClaunch_defnewpage=""
+            LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOC_ltsv,LTsvDOC_defname)
+            LTsvDOClaunch_deffile=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_defname))
+            LTsvDOClaunch_deffile=LTsvDOCdef_python(LTsvDOClaunch_deffile)
+            LTsvDOC_defcases=LTsvDOClaunch_deffile.split('\n')
+            for LTsvDOC_defcase in LTsvDOC_defcases:
+                LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defcase)
+                LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest)
+            LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_defname,LTsvDOClaunch_defnewpage)
+            LTsv_saveplain(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
+        LTsvDOClaunch_outcount=0
+        LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=LTsvDOC_T)
 #    for LTsvDOC_outcount,LTsvDOC_outname in enumerate(LTsvDOClaunch_outlist):
-    if LTsvDOClaunch_outcount < len(LTsvDOClaunch_outlist):
+    if 0 <= LTsvDOClaunch_outcount < len(LTsvDOClaunch_outlist):
         LTsvDOC_outname=LTsvDOClaunch_outlist[LTsvDOClaunch_outcount]
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
         for LTsvDOC_tagcount,LTsvDOC_tagname in enumerate(LTsvDOClaunch_reglist):
@@ -93,17 +117,16 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     else:
         LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],True)
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}({1})".format(LTsvDOClaunch_tsvname,LTsv_getdaytimestr(LTsvDOClaunch_modify)))
-#        LTsv_saveplain(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
 
 def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
     def LTsvDOClaunch_kernel(window_objvoid=None,window_objptr=None):
         LTsv_putdaytimenow()
         global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname
-        global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir
+        global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
         global LTsvDOClaunch_outlist,LTsvDOClaunch_taglist,LTsvDOClaunch_timlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
         LTsvDOClaunch_kernel_clickID=LTsvDOClaunch_tsvcount
         LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],False)
-        LTsvDOClaunch_outcount=0
+        LTsvDOClaunch_outcount=-1
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=10)
     return LTsvDOClaunch_kernel
 
