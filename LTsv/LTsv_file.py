@@ -449,11 +449,17 @@ def LTsv_tuple2tsv(LTsv_tuple):
 #        LTsv_line="{0}{1}\t".format(LTsv_line,LTsv_data)
 #    return LTsv_line.rstrip('\t')
 
-def LTsv_tsv2list(LTsv_line):
+def LTsv_tsv2list(LTsv_line,LTsv_len=None):
     LTsv_list=LTsv_line.replace('\n','\t').strip('\t').split('\t')
+    if LTsv_len != None:
+        LTsv_listcount=[""]*LTsv_len
+        for LTsv_count,LTsv_data in enumerate(LTsv_list):
+            if LTsv_count >= LTsv_len: break;
+            LTsv_listcount[LTsv_count]=LTsv_data
+        LTsv_list=LTsv_listcount
     return LTsv_list
 
-def LTsv_tsv2tuple(LTsv_line):
+def LTsv_tsv2tuple(LTsv_line,LTsv_count=None):
     LTsv_tuple=tuple(LTsv_tsv2list(LTsv_line))
     return LTsv_tuple
 
@@ -590,6 +596,10 @@ if __name__=="__main__":
     printlog=LTsv_libc_printf("LTsv_tsv2tuple(joylabel)↓\n{0}".format(joytuple),printlog)
     joylist=LTsv_tsv2list(joylabel)
     printlog=LTsv_libc_printf("LTsv_tsv2list(joylabel)↓\n{0}".format(joylist),printlog)
+    unpackX,unpackY,unpackA,unpackB=LTsv_tsv2list(joylabel,4)
+    printlog=LTsv_libc_printf("unpackX,unpackY,unpackA,unpackB=LTsv_tsv2list(joylabel,4)↓\n{0},{1},{2},{3}".format(unpackX,unpackY,unpackA,unpackB),printlog)
+    unpackX,unpackY,unpackA,unpackB,unpackC,unpackZ,unpackL,unpackR,unpackF,unpackJ=LTsv_tsv2list(joylabel,10)
+    printlog=LTsv_libc_printf("unpackX,unpackY,unpackA,unpackB,unpackC,unpackZ,unpackL,unpackR,unpackF,unpackJ=LTsv_tsv2list(joylabel,10)↓\n{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}".format(unpackX,unpackY,unpackA,unpackB,unpackC,unpackZ,unpackL,unpackR,unpackF,unpackJ),printlog)
     joylabel=LTsv_tuple2tsv(joytuple)
     printlog=LTsv_libc_printf("LTsv_tuple2tsv(joytuple)↓\n{0}".format(joylabel),printlog)
     joylabel=LTsv_tuple2tsv(joylist)

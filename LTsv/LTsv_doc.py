@@ -76,6 +76,7 @@ def LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_t
         LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
         LTsvDOC_caserest=LTsvDOC_caserest.split('\t')
         LTsvDOC_tagdata+="{0}{1}{2}\n{3}{4}{5}\n".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserest),LTsvDOClaunch_restR)
+    LTsvDOC_tagdata=LTsvDOC_tagdata.rstrip('\n')
     LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 
@@ -105,7 +106,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_reglistT=LTsv_readlinerest(LTsvDOClaunch_config,"reglist"); LTsvDOClaunch_reglist=LTsvDOClaunch_reglistT.split('\t') if len(LTsvDOClaunch_reglistT) else []
         LTsvDOClaunch_deflistT=LTsv_readlinerest(LTsvDOClaunch_config,"deflist"); LTsvDOClaunch_deflist=LTsvDOClaunch_deflistT.split('\t') if len(LTsvDOClaunch_deflistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag"),"L","R"))
-        LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent"),"firstL","firstR","restL","restC","restR"))
+        LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent"),"firstL","firstR","restL","restC","restR"),5)
         LTsvDOClaunch_firstL=LTsvDOClaunch_firstL.replace('\\n','\n').replace('\\t','\t')
         LTsvDOClaunch_firstR=LTsvDOClaunch_firstR.replace('\\n','\n').replace('\\t','\t')
         LTsvDOClaunch_restL=LTsvDOClaunch_restL.replace('\\n','\n').replace('\\t','\t')
@@ -118,6 +119,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
             LTsvDOClaunch_deffile=LTsvDOCdef_python(LTsvDOClaunch_deffile)
             LTsvDOC_defcases=LTsvDOClaunch_deffile.split('\n')
             for LTsvDOC_defcase in LTsvDOC_defcases:
+                if len(LTsvDOC_defcase) == 0: continue;
                 LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defcase)
                 LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest,)
             LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_defname,LTsvDOClaunch_defnewpage)
