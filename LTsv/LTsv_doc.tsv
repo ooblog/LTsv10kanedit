@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsvDOC_tsv
 LTsvver	20161023U011852
-modify	20161023U011852
+modify	20161103R224551
 |L:Tsv]
 
 [LTsv_doc|
@@ -19,13 +19,13 @@ outdir	./
 main	LTsv_doc_main
 main_defindent	2
 outlist	LTsv_doc.txt
-reglist	<@index0-0>	<@index0-1>	<@index0-2>	<@contents0-0>	<@index1-0a>	<@index1-0b>	<@index1-1>	<@contents1-1>
+reglist	<@index0-0>	<@contents0-0>	<@index0-1>	<@contents0-1>	<@index0-2>	<@contents0-2>	<@index1-0a>	<@contents1-0a>	<@index1-0b>	<@contents1-0b>	<@index1-1>	<@contents1-1>
 timlist	<!branch!>
 taglist	
 defdir	./
 deflist	LTsv_printf.py	LTsv_file.py	LTsv_time.py	LTsv_calc.py	LTsv_joy.py	LTsv_kbd.py	LTsv_gui.py	LTsv_glyph.py
 deftag	L:<!	R:!>
-defindent	firstL:【	firstR:】	RestL:「	restR:」
+defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
 |LTsvDOC_tsv]
 
 [<!branch!>|
@@ -33,7 +33,8 @@ LTsv_doc.txt	20161023U011852
 |<!branch!>]
 
 [LTsv_doc_main|
-「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。この「LTsv_doc.txt」も「LTsv_doc.tsv」から生成されてます。
+「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。この「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。
+「LTsv_doc.txt」は「LTsv10kanedit(tsvtool10)」のモジュール解説と兼用です。
 version(branch) <!branch!>
 
 目次
@@ -51,15 +52,19 @@ version(branch) <!branch!>
 
 <@index0-1>
 
+<@contents0-1>
 
 <@index0-2>
 
+<@contents0-2>
 
 <@index1-0a>
 
+<@contents1-0a>
 
 <@index1-0b>
 
+<@contents1-0b>
 
 <@index1-1>
 
@@ -92,20 +97,82 @@ version(branch) <!branch!>
 |<@text0-0>]
 
 [<@index0-1>|
-.*	０-1． インストール＆アンインストール方法・その他セットアップ方法
+.*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
 |<@index0-1>]
+[<@contents0-1>|
+.*	<@text0-1>
+|<@contents0-1>]
+[<@text0-1>|
+ ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
+ 「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
+ Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<@index3-0>」も参考)。
+|<@text0-1>]
 
 [<@index0-2>|
 .*	０-2． その他現在わかっている不具合や今後の課題
 |<@index0-2>]
+[<@contents0-2>|
+.*	<@text0-2>
+|<@contents0-2>]
+[<@text0-2>|
+ Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
+ フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
+ 「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位は低い。
+ 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar,tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。
+ Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
+ マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。
+|<@text0-2>]
 
 [<@index1-0a>|
-.*	１-0a．「L:Tsv」の解説(このドキュメント「LTsv.txt」は「kantray」ではなく「L:Tsv」をメインに書いてます)。
+.*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い。
 |<@index1-0a>]
+[<@contents1-0a>|
+.*	<@text1-0a>
+|<@contents1-0a>]
+[<@text1-0a>|
+ 素のLTSVファイル自体は単なるログのフォーマットです。
+
+  Labeled Tab-separated Values
+  http://ltsv.org/
+
+  LTSV FAQ - LTSV って何? どういうところが良いの?
+  http://d.hatena.ne.jp/naoya/20130209/1360381374
+
+ 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
+ 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
+ LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
+|<@text1-0a>]
 
 [<@index1-0b>|
 .*	１-0b．「L:Tsv」ファイルの構造。
 |<@index1-0b>]
+[<@contents1-0b>|
+.*	<@text1-0b>
+|<@contents1-0b>]
+[<@text1-0b>|
+ データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
+ 先頭データの事をfirst、
+ 先頭データfirstは縦軸ラベルとして使う場合があります。first以降のデータrestの横軸ラベルは「label:data」の様にデータ前にラベル名とコロン。
+ LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のLTSV等ページを格納しています。
+
+ メタタグでLTSV等と区別(「L:Tsv」ファイルの拡張子も「.ltsv」か「.tsv」)。メタタグが存在しない場合ファイル全体を１つのページとみなす。
+  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでファイルの先頭に。
+   code                       文字コードの宣言で「UTF-8」。
+   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。
+   tab                        半角全角の横幅は形骸化してると思われるが(フォント「kan5x5comic」の半角と全角の幅の比率が約5:3(1024:624))、タブは半角スペース「4」の設定。
+   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。
+   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。
+   LTsvver                    [LTsv_file.py]の「LTsv_file_ver()」。構文解析パーサのバージョン。
+   modify                     tsv自身の更新日時。LTsv_getdaytimestr(overhour=24,diffminute=0)を記録。
+
+ 「L:Tsv」は「LTsv_newfile()」関数でも作成可能。「１-2． [LTsv_file.py]の関数一覧」も参考。
+|<@text1-0b>]
+
 
 [<@index1-1>|
 .*	１-1． 「LTsv_printf.py」の関数一覧
@@ -124,9 +191,9 @@ version(branch) <!branch!>
 |<@text1-1>]
 
 [LTsv_printf.py|
-LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。Pythonのprint関数との誤認に注意。
-LTsv_libc_printcat(LTsv_text)	
-LTsv_libc_printf_type(LTsv_text)	
+LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
+LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
+LTsv_libc_printf_type(LTsv_text)	Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
 LTsv_utf2xml(LTsv_text)	
 LTsv_xml2utf(LTsv_text)	
 LTsv_kanare(LTsv_before,LTsv_recase)	
