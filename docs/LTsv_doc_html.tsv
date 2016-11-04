@@ -9,19 +9,13 @@ modify	20161023U011852
 |L:Tsv]
 
 [LTsv_doc_html|
-outdir	../docs/
 main	LTsv_doc_main
-outlist	index.html
-reglist	
-timlist	<!branch!>
-taglist	
-defdir	../LTsv/
-deflist	LTsv_printf.py	LTsv_file.py	LTsv_time.py	LTsv_calc.py	LTsv_joy.py	LTsv_kbd.py	LTsv_gui.py	LTsv_glyph.py
+outdir	./
+outlist	LTsv_doc.txt
+defdir	./
+deftag	L:<!	R:!>
+defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
 |LTsv_doc_html]
-
-[<!branch!>|
-LTsv_doc.txt	20161023U011852
-|<!branch!>]
 
 [LTsv_doc_main|
 <!DOCTYPE html>
