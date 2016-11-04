@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_tsv
 LTsvver	20161023U011852
-modify	20161105S033953
+modify	20161105S035259
 |L:Tsv]
 
 [LTsv_doc_tsv|
@@ -19,22 +19,13 @@ defdir	./
 deftag	L:<!	R:!>
 defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
 |LTsv_doc_tsv]
-#deflist	LTsv_printf.py	LTsv_file.py	LTsv_time.py	LTsv_calc.py	LTsv_joy.py	LTsv_kbd.py	LTsv_gui.py	LTsv_glyph.py
-
-[<!branch!>|
-LTsv_doc.txt	@000y@0m@0dm@wdec@0h@0n@0s
-*	20161023U011852
-|<!branch!>]
-[<!CP932!>|
-LTsv_doc.txt	CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)
-|<!CP932!>]
 
 [LTsv_doc_main|
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。この「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。
 「LTsv_doc.txt」は「LTsv10kanedit(tsvtool10)」のモジュール解説と兼用です。
-version(branch) <!branch!>
+version(branch) <@branch>
 
-目次?
+目次
 
  <@index0-0>
  <@index0-1>
@@ -190,7 +181,7 @@ version(branch) <!branch!>
 |<@contents1-1a>]
 [<@text1-1a>|
  Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だった<!CP932!>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
+ ・Wine上DOSのエラー要因だった<@CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
  ・変換できない文字は数値文字参照に変換されます。
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
@@ -244,7 +235,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<@contents1-2>]
 [<@text1-2>|
  Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だった<!CP932!>に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。
+ ・Wine上DOSのエラー要因だった<@CP932>に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
 
@@ -255,8 +246,8 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<@index1-0b>」も参考。
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
-LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<!CP932!>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
-LTsv_readlinepages(LTsv_text)	
+LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<@CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
+LTsv_readlinepages(LTsv_text)	LTsv_textテキスト内のタグ「[tag|」一覧を1行のLTSVとして取得する。
 LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	
 LTsv_readlinedeno(LTsv_text)	
 LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
@@ -611,368 +602,11 @@ debug_milkAI_add(addentry)
 debug_configload()	
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
-[LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)|
-LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
-LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
-LTsv_libc_printf_type(LTsv_text)	Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
-LTsv_utf2xml(LTsv_text)	LTsv_textの文字列を数値文字参照に変換。
-LTsv_xml2utf(LTsv_text)	LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
-LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<@index1-1b>」を参考。
-LTsv_utf2ink(LTsv_text)	UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。	点字フォントが表示できる環境にないと動作確認は困難なので注意。
-LTsv_ink2utf(LTsv_text)	上記「UTF-8点字」をUTF-8に戻す。	 データ破損を補完する機能はないので注意。
-LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミナルにコマンドを送る。実行結果も取得できる。	「LTsv_subprocess_shell=True」でより複雑な事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
-|LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)]
-[LTsv_issue()|
-LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<@index1-0b>」も参考。
-LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
-LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
-LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<!CP932!>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
-LTsv_readlinepages(LTsv_text)	
-LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	
-LTsv_readlinedeno(LTsv_text)	
-LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
-LTsv_readlinefirsts(LTsv_text)	
-LTsv_readlinerest(LTsv_text,LTsv_first,LTsv_default=None)	
-LTsv_pickdatadeno(LTsv_line)	
-LTsv_pickdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_split_label_data(LTsv_labeldata,LTsv_seldata=True)	
-LTsv_pickdatas(LTsv_line,LTsv_dataL=0,LTsv_dataR=0)	
-LTsv_pickdatafind(LTsv_line,LTsv_find)	
-LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	
-LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)	
-LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	
-LTsv_sievelabels(LTsv_rest,LTsv_labels="")	
-LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)	
-LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
-LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
-LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)	
-LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)	
-LTsv_putmodify(LTsv_text)	
-LTsv_savedir(LTsv_path)	
-LTsv_savedirs(LTsv_path)	
-LTsv_savefile(LTsv_path,LTsv_default=None)	
-LTsv_saveplain(LTsv_path,LTsv_plain)	
-LTsv_labelzip(LTsv_labels,LTsv_datas)	
-LTsv_unziplabel(LTsv_line)	
-LTsv_unzipdata(LTsv_line)	
-LTsv_unziplabelsdata(LTsv_line,LTsv_labels)	
-LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)	
-LTsv_tuple2tsv(LTsv_tuple)	
-LTsv_tsv2list(LTsv_line,LTsv_len=None)	
-LTsv_tsv2tuple(LTsv_line,LTsv_count=None)	
-LTsv_intstr0x(LTsv_codestr)	
-LTsv_label2dictint(LTsv_line)	
-LTsv_label2dictstr(LTsv_line)	
-LTsv_dict2label(LTsv_dict)	
-LTsv_file_ver()	
-LTsv_issue()	
-|LTsv_issue()]
-[LTsv_gettimerstr(timeformat=None)|
-LTsv_yearleap(LTsv_toyear)	
-LTsv_yearweeks(LTsv_toyear)	
-LTsv_monthleap(LTsv_toyear,LTsv_tomonth)	
-LTsv_beat864(LTsv_tohour,LTsv_tominute,LTsv_tosecond)	
-LTsv_checkFPS()	
-LTsv_setdaytimeshift()	
-LTsv_setdaytimeoption(overhour=None,diffminute=None)	
-LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)	
-LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)	
-LTsv_putdaytimenow(overhour=None,diffminute=None)	
-LTsv_putdaytimeearlier(overhour=None,diffminute=None)	
-LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)	
-LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)	
-LTsv_settimershift()	
-LTsv_settimershiftoption()	
-LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)	
-LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	
-LTsv_puttimerlap()	
-LTsv_gettimerstr(timeformat=None)	
-|LTsv_gettimerstr(timeformat=None)]
-[LTsv_calc_multiplication(LTsv_calcQbase)|
-LTsv_calc_GCM(LTsv_calcL,LTsv_calcR)	
-LTsv_calc_LCM(LTsv_calcL,LTsv_calcR)	
-LTsv_calc_bracketsbalance(LTsv_calcQbase)	
-LTsv_calc_decimalize(LTsv_calcQbase)	
-LTsv_calc_fractalize(LTsv_calcQbase)	
-LTsv_calc(LTsv_calcQbase)	
-LTsv_calc_function(LTsv_calcQbase)	
-LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	
-LTsv_calc_multiplication(LTsv_calcQbase)	
-|LTsv_calc_multiplication(LTsv_calcQbase)]
-[LTsv_joyaxis_label()|
-LTsv_joyreset(LTsv_tsvpath)	
-LTsv_joyexit()	
-LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")	
-LTsv_setjoydata(LTsv_joyid,LTsv_default=None)	
-LTsv_getjoystr(LTsv_joyid,joyformat=None)	
-LTsv_atanscalar(LTsv_atanX,LTsv_atanY)	
-LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)	
-LTsv_joyaxis_label()	
-|LTsv_joyaxis_label()]
-[LTsv_getkbdkanas()|
-LTsv_kbdreset(LTsv_tsvpath)	
-LTsv_kbdgettypename(LTsv_code)	
-LTsv_kbdgettypekana(LTsv_code)	
-LTsv_kbdgettypecode(LTsv_name)	
-LTsv_kbdgettypegana(LTsv_gana)	
-LTsv_kbdexit()	
-LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)	
-LTsv_kbdEVIOCGRAB(LTsv_grabflag)	
-LTsv_kbdwrite(LTsv_code,LTsv_press)	
-LTsv_kbdwriteCtrl(LTsv_ganastsv)	
-LTsv_setkbddata(LTsv_kbdstacks,LTsv_mousestacks)	
-LTsv_getkbdlabels(kbdformat=LTsv_defkbdformat)	
-LTsv_getkbdnames()	
-LTsv_getkbdcodes()	
-LTsv_getkbdkanas()	
-|LTsv_getkbdkanas()]
-[debug_filedialog_response(window_objvoid=None,window_objptr=None)|
-LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	
-LTsv_guiinit(LTsv_guistyle=LTsv_GUI_GTK2,LTsv_libvermin=0,LTsv_libvermax=0)	
-LTsv_global_GUI()	
-LTsv_global_Notify()	
-LTsv_global_GTK2()	
-LTsv_global_Tkinter()	
-LTsv_global_WinAPI()	
-LTsv_global_libgtk()	
-LTsv_global_libgdk()	
-LTsv_global_libobj()	
-LTsv_global_canvasmotionZ()	
-LTsv_global_canvasmotionX(motionZ=None)	
-LTsv_global_canvasmotionY(motionZ=None)	
-LTsv_global_canvascolor()	
-LTsv_global_canvasbgcolor()	
-LTsv_global_canvasTAG(TkinterTAG=None)	
-LTsv_global_widgetltsv(new_LTSV=None)	
-LTsv_global_widgetgetpage(LTsv_widgetPAGENAME)	
-LTsv_global_widgetOBJ(LTsv_objid)	
-LTsv_global_pictureOBJ(LTsv_objid)	
-LTsv_global_pictureW(LTsv_objid)	
-LTsv_global_pictureH(LTsv_objid)	
-LTsv_global_iconOBJ(LTsv_objid)	
-LTsv_global_popupmenuOBJ(LTsv_objid)	
-LTsv_widget_newUUID(LTsv_widgetID=None)	
-LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	
-LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	
-LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \	
-LTsv_fonttuple(LTsv_line)	
-LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	
-LTsv_tkinter_hideondelete_shell(LTsv_windowPAGENAME)	
-LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	
-LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="")	
-LTsv_widget_gettext(LTsv_widgetPAGENAME)	
-LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0)	
-LTsv_widget_getnumber(LTsv_widgetPAGENAME)	
-LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u="")	
-LTsv_widget_geturi(LTsv_widgetPAGENAME)	
-LTsv_widget_showhide(LTsv_widgetPAGENAME,widget_i)	
-LTsv_widget_disableenable(LTsv_widgetPAGENAME,widget_i)	
-LTsv_widget_focus(LTsv_widgetPAGENAME)	
-LTsv_window_main(LTsv_windowPAGENAME)	
-LTsv_window_after(LTsv_windowPAGENAME,event_b=None,event_i="mousemotion",event_w=1000)	
-LTsv_window_foreground()	
-LTsv_window_title(LTsv_window_id)	
-LTsv_window_exit(window_objvoid=None,window_objptr=None)	
-LTsv_window_none(window_objvoid=None,window_objptr=None)	
-LTsv_screen_w(LTsv_windowPAGENAME="")	
-LTsv_screen_h(LTsv_windowPAGENAME="")	
-LTsv_window_wh(LTsv_windowPAGENAME)	
-LTsv_window_w(LTsv_windowPAGENAME)	
-LTsv_window_h(LTsv_windowPAGENAME)	
-LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)	
-LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_logo.png",widget_x=0,widget_y=0)	
-LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None)	
-LTsv_clipmenu_new(widget_o)	
-LTsv_edit_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_edit",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_entry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_entry",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_spin_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_scale_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16)	
-LTsv_scale_adjustment(LTsv_widgetPAGENAME,widget_s=0,widget_e=255,widget_a=1)	
-LTsv_combobox_list(LTsv_widgetPAGENAME,widget_t="")	
-LTsv_combobox_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)	
-LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	
-LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	
-LTsv_draw_selcanvas_shell(LTsv_GUI)	
-LTsv_drawGTK_delete(draw_c="white")	
-LTsv_drawTkinter_delete(draw_c="white")	
-LTsv_draw_delete_shell(LTsv_GUI)	
-LTsv_drawTkinter_deleteTAG(TkinterTAG=None)	
-LTsv_draw_deleteTAG_shell(LTsv_GUI)	
-LTsv_drawGTK_color(draw_c="")	
-LTsv_drawTkinter_color(draw_c="")	
-LTsv_draw_color_shell(LTsv_GUI)	
-LTsv_drawGTK_bgcolor(draw_c="")	
-LTsv_drawTkinter_bgcolor(draw_c="")	
-LTsv_draw_bgcolor_shell(LTsv_GUI)	
-LTsv_drawGTK_gcfcolor()	
-LTsv_drawGTK_gcbcolor()	
-LTsv_drawGTK_polygon(*draw_xy)	
-LTsv_drawTkinter_polygon(*draw_xy)	
-LTsv_draw_polygon_shell(LTsv_GUI)	
-LTsv_drawGTK_polygonfill(*draw_xy)	
-LTsv_drawTkinter_polygonfill(*draw_xy)	
-LTsv_draw_polygonfill_shell(LTsv_GUI)	
-LTsv_drawTkinter_fontfill(*draw_xy)	
-LTsv_drawGTK_squares(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_squares(draw_wh=16,*draw_xy)	
-LTsv_draw_squares_shell(LTsv_GUI)	
-LTsv_drawGTK_squaresfill(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_squaresfill(draw_wh=16,*draw_xy)	
-LTsv_draw_squaresfill_shell(LTsv_GUI)	
-LTsv_drawGTK_circles(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_circles(draw_wh=16,*draw_xy)	
-LTsv_draw_circles_shell(LTsv_GUI)	
-LTsv_drawGTK_circlesfill(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_circlesfill(draw_wh=16,*draw_xy)	
-LTsv_draw_circlesfill_shell(LTsv_GUI)	
-LTsv_drawGTK_points(*draw_xy)	
-LTsv_drawTkinter_points(*draw_xy)	
-LTsv_draw_points_shell(LTsv_GUI)	
-LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_drawTkinter_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_draw_arc_shell(LTsv_GUI)	
-LTsv_drawGTK_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_draw_arcfill_shell(LTsv_GUI)	
-LTsv_drawGTK_font(draw_f="")	
-LTsv_drawTkinter_font(draw_f=None)	
-LTsv_draw_font_shell(LTsv_GUI)	
-LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	
-LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	
-LTsv_draw_text_shell(LTsv_GUI)	
-LTsv_draw_picture_load(LTsv_picturepath)	
-LTsv_draw_picture_celldiv(LTsv_picturepath,picture_divw,picture_divh)	
-LTsv_draw_picture_save(LTsv_pictureoldpath,LTsv_picturenewpath)	
-LTsv_draw_canvas_save(LTsv_canvasPAGENAME,LTsv_picturenewpath)	
-LTsv_drawGTK_picture(draw_t="",draw_x=0,draw_y=0)	
-LTsv_drawTkinter_picture(draw_t="",draw_x=0,draw_y=0)	
-LTsv_draw_picture_shell(LTsv_GUI)	
-LTsv_drawGTK_queue()	
-LTsv_drawTkinter_queue()	
-LTsv_draw_queue_shell(LTsv_GUI)	
-LTsv_clockwise(*draw_xy)	
-LTsv_icon_load(LTsv_picturepath)	
-LTsv_notifyicon_new(LTsv_windowPAGENAME,notify_n=None,widget_t="",widget_u="",menu_b=None,menu_c=None)	
-LTsv_filedialog_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_filedialog",dialog_t=0)	
-debug_canvas(window_objvoid=None,window_objptr=None)	
-debug_timebutton(callback_void=None,callback_ptr=None)	
-debug_calc(callback_void=None,callback_ptr=None)	
-debug_polygonpoints(callback_void=None,callback_ptr=None)	
-debug_activewindow(callback_void=None,callback_ptr=None)	
-debug_canvas_press(callback_void=None,callback_ptr=None)	
-debug_polygonbutton(callback_void=None,callback_ptr=None)	
-debug_color_scale(window_objvoid=None,window_objptr=None)	
-debug_color_combo(window_objvoid=None,window_objptr=None)	
-debug_edit_clip(window_objvoid=None,window_objptr=None)	
-debug_checkbutton_shell(checkNumber)	
-debug_radiobutton_shell(radioNumber)	
-debug_keypress(window_objvoid=None,window_objptr=None)	
-debug_keyrelease(window_objvoid=None,window_objptr=None)	
-debug_filedialog(window_objvoid=None,window_objptr=None)	
-debug_filedialog_response(window_objvoid=None,window_objptr=None)	
-|debug_filedialog_response(window_objvoid=None,window_objptr=None)]
-[debug_configsave_exit(window_objvoid=None,window_objptr=None)|
-LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	
-LTsv_global_kandic(new_kandic=None)	
-LTsv_global_kanmap()	
-LTsv_global_kanmapN()	
-LTsv_global_kanmapX()	
-LTsv_global_kanpickle()	
-LTsv_global_irohatype()	
-LTsv_global_irohatypeN()	
-LTsv_global_irohatypeX()	
-LTsv_global_alphatype()	
-LTsv_global_alphatypeN()	
-LTsv_global_alphatypeX()	
-LTsv_global_dictype()	
-LTsv_global_glyphtype()	
-LTsv_global_choice()	
-LTsv_global_choiceN()	
-LTsv_global_choiceX()	
-LTsv_global_evaltype()	
-LTsv_global_irohaalpha()	
-LTsv_global_irohaalphaN()	
-LTsv_global_irohaalphaX()	
-LTsv_global_kbdchars()	
-LTsv_global_glyphkbdH()	
-LTsv_global_glyphkbdW()	
-LTsv_global_glyphkbdF()	
-LTsv_global_kbdcursorNone()	
-LTsv_glyphSVG5x10x(LTsv_glyph_path)	
-LTsv_glyphSVG(LTsv_glyph_path)	
-LTsv_glyphpath(glyphcode)	
-LTsv_glyphfont_5x5(glyphcode)	
-LTsv_glyphfont_comic(glyphcode)	
-LTsv_glyphfont_brush(glyphcode)	
-LTsv_glyphfont_shell(draw_g="活")	
-LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)	
-LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)	
-LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活")	
-LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False)	
-LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")	
-LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")	
-LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-1,grid_q=-1,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")	
-LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_W="#9F6C00")	
-LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,mouse_x=LTsv_PSchar_ZW//2,mouse_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活")	
-LTsv_glyph_getnote(draw_t="",draw_g="活")	
-LTsv_glyph_pointsrotation(glyphnote=[])	
-LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")	
-LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗")	
-LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_kbdselect(choice)	
-LTsv_glyph_choiceNX(choice)	
-LTsv_glyph_kbdfind(find_t)	
-LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	
-LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_kbddelete(kbd_canvas)	
-LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	
-LTsv_glyph_picklesave()	
-LTsv_evaltext(calc_value="")	
-LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	
-LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	
-LTsv_glyph_calcdelete(calc_canvas)	
-LTsv_glyph_calcdraw(calc_canvas)	
-LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None)	
-LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")	
-LTsv_glyph_calcglyphs(calc_canvas)	
-LTsv_glyph_calcpress(calc_canvas)	
-LTsv_glyph_calcmotion(calc_canvas)	
-LTsv_glyph_calcrelease(calc_canvas)	
-LTsv_glyph_calcenter(calc_canvas)	
-LTsv_glyph_calcleave(calc_canvas)	
-LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput)	
-LTsv_glyph_calctype(calc_canvas)	
-LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)	
-debug_calculatormousepress(window_objvoid=None,window_objptr=None)	
-debug_calculatormousemotion(window_objvoid=None,window_objptr=None)	
-debug_calculatormouserelease(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseleave(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseenter(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseinput(calculatormouseinput)	
-debug_reversi_mousepress(window_objvoid=None,window_objptr=None)	
-debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)	
-debug_reversi_mouserelease(window_objvoid=None,window_objptr=None)	
-debug_reversi_keypress(window_objvoid=None,window_objptr=None)	
-debug_reversi_keyrelease(window_objvoid=None,window_objptr=None)	
-debug_milklid_check(xy,bw)	
-debug_milklid_turn(xy,bw)	
-debug_milkAI_BS(window_objvoid=None,window_objptr=None)	
-debug_milkAI_reset()	
-debug_milkAI_entry(window_objvoid=None,window_objptr=None)	
-debug_milkAI_Auto(window_objvoid=None,window_objptr=None)	
-debug_milkAI_add(addentry)	
-debug_configload()	
-debug_configsave_exit(window_objvoid=None,window_objptr=None)	
-|debug_configsave_exit(window_objvoid=None,window_objptr=None)]
+
+[<@branch>|
+.*	20161023U011852
+|<@branch>]
+
+[<@CP932>|
+.*	CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)
+|<@CP932>]

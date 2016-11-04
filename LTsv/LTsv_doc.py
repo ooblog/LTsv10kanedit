@@ -39,64 +39,6 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname):
                 LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 
-#                LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest)
-#                pass
-#                if len(LTsvDOC_defcase) == 0: continue;
-#                LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defcase)
-#                LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest)
-#            print(LTsvDOClaunch_defnewpage)
-
-#        for LTsvDOC_defcount,LTsvDOC_defname in enumerate(LTsvDOClaunch_deflist):
-#            LTsvDOClaunch_defnewpage=""
-#            LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_defname)
-#            LTsvDOClaunch_deffile=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_defname))
-#            LTsvDOClaunch_deffile=LTsvDOCdef_python(LTsvDOClaunch_deffile)
-#            LTsvDOC_defcases=LTsvDOClaunch_deffile.split('\n')
-#            for LTsvDOC_defcase in LTsvDOC_defcases:
-#                if len(LTsvDOC_defcase) == 0: continue;
-#                LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defcase)
-#                LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest,)
-#            LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_defname,LTsvDOClaunch_defnewpage)
-#            LTsv_savefile(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
-#        for LTsvDOC_defcount,LTsvDOC_defname in enumerate(LTsvDOClaunch_deflist):
-#            LTsvDOClaunch_defnewpage=""
-#            LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_defname)
-#            LTsvDOClaunch_deffile=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_defname))
-#            LTsvDOClaunch_deffile=LTsvDOCdef_python(LTsvDOClaunch_deffile)
-#            LTsvDOC_defcases=LTsvDOClaunch_deffile.split('\n')
-#            for LTsvDOC_defcase in LTsvDOC_defcases:
-#                if len(LTsvDOC_defcase) == 0: continue;
-#                LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defcase)
-#                LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defcase,LTsvDOClaunch_defrest,)
-#            LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_defname,LTsvDOClaunch_defnewpage)
-#            LTsv_savefile(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
-#def LTsvDOCdef_python(LTsvDOClaunch_deffile):
-#    LTsvDOClaunch_deffile=re.sub(re.compile("^(?!def).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
-#    LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
-#    LTsvDOClaunch_deffile=re.sub(re.compile("^def ",re.MULTILINE),"",LTsvDOClaunch_deffile)
-#    LTsvDOClaunch_deffile=re.sub(re.compile("[:].*$",re.MULTILINE),"",LTsvDOClaunch_deffile)
-#    return LTsvDOClaunch_deffile
-
-#root, ext = os.path.splitext(path)
-#def LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_tagname,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR):
-#    global LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR
-#    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
-#    LTsvDOC_tagdata=""
-#    LTsvDOC_tagcases=LTsvDOC_tagpage.split('\n')
-#    for LTsvDOC_tagcase in LTsvDOC_tagcases:
-#        if len(LTsvDOC_tagcase) == 0: continue;
-#        LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
-#        LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
-#        LTsvDOC_caserest=LTsvDOC_caserest.split('\t')
-#        LTsvDOC_tagdata+="{0}{1}{2}\n{3}{4}{5}\n".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserest),LTsvDOClaunch_restR)
-#    LTsvDOC_tagdata=LTsvDOC_tagdata.rstrip('\n')
-#    LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
-#    return LTsvDOClaunch_main
-##                if not LTsvDOC_tagname in LTsvDOClaunch_deflist:
-#                    LTsvDOClaunch_deflist=LTsvDOClaunch_deflist+[LTsvDOC_tagname]
-#                    print(LTsvDOClaunch_deflist)
-##                LTsvDOClaunch_main=LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_tagname,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR)
-
 def LTsvDOCdef_python(LTsvDOClaunch_deffile):
     LTsvDOClaunch_deffile=re.sub(re.compile("^(?!def).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
@@ -123,7 +65,7 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
             for LTsvDOC_defname in LTsvDOC_defcases:
                 LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defname)
                 LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defname,LTsvDOClaunch_defrest)
-            LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_defname,LTsvDOClaunch_defnewpage)
+            LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname,LTsvDOClaunch_defnewpage)
         LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
         LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
         LTsvDOC_tagdata=""
@@ -133,17 +75,6 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
             LTsvDOC_tagdata+="{0}{1}{2}\n{3}{4}{5}\n".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserest),LTsvDOClaunch_restR)
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
     return LTsvDOClaunch_main
-#    LTsvDOC_tagdata=""
-#    LTsvDOC_tagcases=LTsvDOC_tagpage.split('\n')
-#    for LTsvDOC_tagcase in LTsvDOC_tagcases:
-#        if len(LTsvDOC_tagcase) == 0: continue;
-#        LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
-#        LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
-#        LTsvDOC_caserest=LTsvDOC_caserest.split('\t')
-#        LTsvDOC_tagdata+="{0}{1}{2}\n{3}{4}{5}\n".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserest),LTsvDOClaunch_restR)
-#    LTsvDOC_tagdata=LTsvDOC_tagdata.rstrip('\n')
-#    LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
-#    return LTsvDOClaunch_main
 
 def LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main
@@ -153,15 +84,13 @@ def LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname):
 LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main="","",""
 LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir=0,0,"",""
 LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist=[],[],[]
-#LTsvDOClaunch_listfile,LTsvDOClaunch_listdir=[],[]
-#LTsvDOClaunch_defpage,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR="","",""
 LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR="",""
 LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR="【","】","  ","\n  ","\n"
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
-    global LTsvDOClaunch_defpage,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR
+    global LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR
     global LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR
     if LTsvDOClaunch_outcount < 0:
         LTsvDOClaunch_tsvname=LTsvDOClaunch_tsvlist[LTsvDOClaunch_kernel_clickID]
