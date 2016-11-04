@@ -5,16 +5,13 @@ tab	4
 program	LTsv_doc.py
 1st		LTsvDOC_tsv
 LTsvver	20161023U011852
-modify	20161104F203318
+modify	20161104F214130
 |L:Tsv]
 
-[LTsv_doc|
+[LTsvDOC_tsv|
 window_size	width:600	height:480	wait:10	fontsize:24
 tsvlist	LTsv_doc.tsv	../docs/LTsv_doc_html.tsv	../../ooblog.github.io/yakuyon.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
-|LTsv_doc]
-
-[LTsvDOC_tsv|
 outdir	./
 main	LTsv_doc_main
 main_defindent	2
@@ -262,7 +259,6 @@ LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
 LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<!CP932!>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
-LTsv_loadcp932file(LTsv_path,LTsv_default="cp932")	
 LTsv_readlinepages(LTsv_text)	
 LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	
 LTsv_readlinedeno(LTsv_text)	

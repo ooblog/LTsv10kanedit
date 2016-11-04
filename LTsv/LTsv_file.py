@@ -68,34 +68,6 @@ def LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None):  #SJIS:LTs
         if not LTsv_text.endswith('\n'):
             LTsv_text+='\n'
     return LTsv_text
-#def LTsv_loadfile(LTsv_path,LTsv_default=None):
-#    LTsv_text="" if LTsv_default is None else LTsv_default
-#    if os.path.isfile(LTsv_path):
-#        if os.path.getsize(LTsv_path)!=len(LTsv_text.encode('utf-8')):
-#            if sys.version_info.major == 2:
-#                with open(LTsv_path,"r") as LTsv_fobj:
-#                    LTsv_byte=LTsv_fobj.read()
-#                LTsv_text=unicode(LTsv_byte,"utf-8",errors="xmlcharrefreplace")
-#            if sys.version_info.major == 3:
-#                with open(LTsv_path,mode="r",encoding="utf-8",errors="xmlcharrefreplace") as LTsv_fobj:
-#                    LTsv_text=LTsv_fobj.read()
-#            if not LTsv_text.endswith('\n'):
-#                LTsv_text+='\n'
-#    return LTsv_text
-
-def LTsv_loadcp932file(LTsv_path,LTsv_default="cp932"):
-    LTsv_text=""
-    if os.path.isfile(LTsv_path):
-        if sys.version_info.major == 2:
-            with open(LTsv_path,"r") as LTsv_fobj:
-                LTsv_byte=LTsv_fobj.read()
-            LTsv_text=unicode(LTsv_byte,LTsv_default,errors="xmlcharrefreplace")
-        if sys.version_info.major == 3:
-            with open(LTsv_path,mode="r",encoding=LTsv_default,errors="xmlcharrefreplace") as LTsv_fobj:
-                LTsv_text=LTsv_fobj.read()
-        if not LTsv_text.endswith('\n'):
-            LTsv_text+='\n'
-    return LTsv_text
 
 def LTsv_readlinepages(LTsv_text):
     LTsv_line=""

@@ -94,8 +94,18 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     if LTsvDOClaunch_outcount < 0:
         LTsvDOClaunch_tsvname=LTsvDOClaunch_tsvlist[LTsvDOClaunch_kernel_clickID]
         LTsvDOClaunch_ltsv=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_tsvname))
-        LTsvDOClaunch_head=LTsv_getpage(LTsvDOClaunch_ltsv,"L:Tsv")
-        LTsvDOClaunch_config=LTsv_getpage(LTsvDOClaunch_ltsv,LTsv_readlinerest(LTsvDOClaunch_head,"1st","LTsvDOC_tsv"))
+        LTsvDOClaunch_headtag="L:Tsv"
+        LTsvDOClaunch_head=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_headtag)
+        LTsvDOClaunch_configtag=LTsv_readlinerest(LTsvDOClaunch_head,"1st","LTsvDOC_tsv")
+        LTsvDOClaunch_config=LTsv_getpage(LTsvDOClaunch_ltsv,LTsv_readlinerest(LTsvDOClaunch_head,"1st",LTsvDOClaunch_configtag))
+        LTsvDOClaunch_skplistT=LTsv_readlinerest(LTsvDOClaunch_config,"skplist"); LTsvDOClaunch_skplist=LTsvDOClaunch_skplistT.split('\t') if len(LTsvDOClaunch_skplistT) else []
+        LTsvDOClaunch_skplist.extend([LTsvDOClaunch_headtag,LTsvDOClaunch_configtag])
+#        print(LTsvDOClaunch_skplist)
+        LTsvDOClaunch_pages=LTsv_readlinepages(LTsvDOClaunch_ltsv)
+#        print(LTsvDOClaunch_pages)
+        for skplist in LTsvDOClaunch_skplist:
+            LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,skplist))
+#        print("--\n",LTsvDOClaunch_pages)
         LTsvDOClaunch_outdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"outdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_defdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"defdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_mainname=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
@@ -163,7 +173,9 @@ if __name__=="__main__":
     print("")
     LTsv_GUI=LTsv_guiinit()
     if len(LTsv_GUI) > 0:
-        LTsvDOC_ltsv=LTsv_loadfile("LTsv_doc.tsv"); LTsvDOC_config=LTsv_getpage(LTsvDOC_ltsv,"LTsv_doc")
+        LTsvDOC_ltsv=LTsv_loadfile("LTsv_doc.tsv")
+        LTsvDOC_head=LTsv_getpage(LTsvDOClaunch_ltsv,"L:Tsv")
+        LTsvDOC_config=LTsv_getpage(LTsvDOC_ltsv,LTsv_readlinerest(LTsvDOC_head,"1st","LTsvDOC_tsv"))
         LTsvDOC_resizeW,LTsvDOC_resizeH,LTsvDOC_resizeT,LTsvDOC_resizeF=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOC_config,"window_size"),"width","height","wait","fontsize"))
         LTsvDOC_W,LTsvDOC_H=min(max(LTsv_intstr0x(LTsvDOC_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w() if LTsv_screen_w() > 0 else 1024),min(max(LTsv_intstr0x(LTsvDOC_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h() if LTsv_screen_w() > 0 else 768)
         LTsvDOC_T=min(max(LTsv_intstr0x(LTsvDOC_resizeT),10),1000)
