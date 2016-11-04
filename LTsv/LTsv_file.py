@@ -55,20 +55,33 @@ def LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path):
             with open(LTsv_path,'wb') as LTsv_fobj:
                 LTsv_fobj.write(LTsv_ZipFile.read(LTsv_nameLU))
 
-def LTsv_loadfile(LTsv_path,LTsv_default=None):
-    LTsv_text="" if LTsv_default is None else LTsv_default
+def LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None):  #SJIS:LTsv_encoding="cp932"
+    LTsv_text="" if LTsv_default == None else LTsv_default
     if os.path.isfile(LTsv_path):
-        if os.path.getsize(LTsv_path)!=len(LTsv_text.encode('utf-8')):
-            if sys.version_info.major == 2:
-                with open(LTsv_path,"r") as LTsv_fobj:
-                    LTsv_byte=LTsv_fobj.read()
-                LTsv_text=unicode(LTsv_byte,"utf-8",errors="xmlcharrefreplace")
-            if sys.version_info.major == 3:
-                with open(LTsv_path,mode="r",encoding="utf-8",errors="xmlcharrefreplace") as LTsv_fobj:
-                    LTsv_text=LTsv_fobj.read()
-            if not LTsv_text.endswith('\n'):
-                LTsv_text+='\n'
+        if sys.version_info.major == 2:
+            with open(LTsv_path,"r") as LTsv_fobj:
+                LTsv_byte=LTsv_fobj.read()
+            LTsv_text=unicode(LTsv_byte,LTsv_encoding,errors="xmlcharrefreplace")
+        if sys.version_info.major == 3:
+            with open(LTsv_path,mode="r",encoding=LTsv_encoding,errors="xmlcharrefreplace") as LTsv_fobj:
+                LTsv_text=LTsv_fobj.read()
+        if not LTsv_text.endswith('\n'):
+            LTsv_text+='\n'
     return LTsv_text
+#def LTsv_loadfile(LTsv_path,LTsv_default=None):
+#    LTsv_text="" if LTsv_default is None else LTsv_default
+#    if os.path.isfile(LTsv_path):
+#        if os.path.getsize(LTsv_path)!=len(LTsv_text.encode('utf-8')):
+#            if sys.version_info.major == 2:
+#                with open(LTsv_path,"r") as LTsv_fobj:
+#                    LTsv_byte=LTsv_fobj.read()
+#                LTsv_text=unicode(LTsv_byte,"utf-8",errors="xmlcharrefreplace")
+#            if sys.version_info.major == 3:
+#                with open(LTsv_path,mode="r",encoding="utf-8",errors="xmlcharrefreplace") as LTsv_fobj:
+#                    LTsv_text=LTsv_fobj.read()
+#            if not LTsv_text.endswith('\n'):
+#                LTsv_text+='\n'
+#    return LTsv_text
 
 def LTsv_loadcp932file(LTsv_path,LTsv_default="cp932"):
     LTsv_text=""
@@ -532,7 +545,7 @@ if __name__=="__main__":
     newpage=LTsv_pushlinerest(newpage,"tstfile","before:testfile.tsv\tafter:testfile.txt\treadme:readme.txt")
     newfile=LTsv_putpage(newfile,"LTsv10kanedit",newpage)
     LTsv_savefile(tsvpath,newfile); printlog=LTsv_libc_printf("LTsv_savefile('{0}',newfile)".format(tsvpath),printlog)
-    loadfile=LTsv_loadfile(tsvpath,newfile); printlog=LTsv_libc_printf("LTsv_loadfile(tsvpath)↓\n{0}-eof-".format(loadfile),printlog)
+    loadfile=LTsv_loadfile(tsvpath); printlog=LTsv_libc_printf("LTsv_loadfile(tsvpath)↓\n{0}-eof-".format(loadfile),printlog)
     print("")
     pages=LTsv_readlinepages(loadfile); printlog=LTsv_libc_printf("LTsv_readlinepages(loadfile)↓\n{0}".format(pages),printlog)
     getpage=LTsv_getpage(loadfile,"LTsv10kanedit"); printlog=LTsv_libc_printf("LTsv_getpage(loadfile,'LTsv10kanedit')↓\n{0}-eop-".format(getpage),printlog)

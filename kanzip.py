@@ -113,7 +113,7 @@ def kanzip_DL_shell(kanzip_ken):
         if os.path.isfile(kanzip_prefectureTSV[kanzip_ken]):
             pass
         elif os.path.isfile(kanzip_prefectureCSV[kanzip_ken]):
-            kanzip_csv=LTsv_loadcp932file(kanzip_prefectureCSV[kanzip_ken]); kanzip_tsv=""
+            kanzip_csv=LTsv_loadfile(kanzip_prefectureCSV[kanzip_ken],LTsv_encoding="cp932"); kanzip_tsv=""
             kanzip_splits=kanzip_csv.strip('\n').split('\n')
             kantsv_splits=[]; kantsv_splitsfirst=[];
             if kanzip_prefecturesKAN[kanzip_ken] == "事業所":

@@ -132,12 +132,12 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
         for LTsvDOC_tagname in LTsvDOClaunch_taglist:
             LTsvDOClaunch_main=LTsvDOClaunch_kernel_plane(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
-        for LTsvDOC_tagname in LTsvDOClaunch_timlist:
-            LTsvDOClaunch_main=LTsvDOClaunch_kernel_timedata(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
         for LTsvDOC_tagname in LTsvDOClaunch_reglist:
             LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
         for LTsvDOC_defname in LTsvDOClaunch_deflist:
             LTsvDOClaunch_main=LTsvDOClaunch_kernel_deflist(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_defname,LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR)
+        for LTsvDOC_tagname in LTsvDOClaunch_timlist:
+            LTsvDOClaunch_main=LTsvDOClaunch_kernel_timedata(LTsvDOClaunch_ltsv,LTsvDOClaunch_main,LTsvDOC_outname,LTsvDOC_tagname)
         if len(LTsvDOClaunch_deflist) > 0:
             LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
         LTsvDOClaunch_outcount+=1
