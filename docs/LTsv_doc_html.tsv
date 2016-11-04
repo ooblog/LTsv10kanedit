@@ -5,16 +5,16 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_html
 LTsvver	20161023U011852
-modify	20161023U011852
+modify	20161105S043440
 |L:Tsv]
 
 [LTsv_doc_html|
 main	LTsv_doc_main
-outdir	./
-outlist	LTsv_doc.txt
+outdir	../docs/
+outlist	index.html
 defdir	./
-deftag	L:<!	R:!>
-defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
+deftag	L:<?	R:>
+defindent	firstL:<dl><dt>	firstR:</dt>	restL:<dd>	restC:\n	restR:</dd></dl>
 |LTsv_doc_html]
 
 [LTsv_doc_main|
@@ -23,6 +23,7 @@ defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
  <meta charset="UTF-8" />
  <meta name="description" content="">
 </head><body>
+<?LTsv_printf.py>
 </body></html>
 |LTsv_doc_main]
 
@@ -41,8 +42,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)
 LTsv_newfile(LTsv_program,LTsv_default=None)	
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	
-LTsv_loadfile(LTsv_path,LTsv_default=None)	
-LTsv_loadcp932file(LTsv_path,LTsv_default="cp932")	
+LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	
 LTsv_readlinepages(LTsv_text)	
 LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	
 LTsv_readlinedeno(LTsv_text)	
@@ -76,8 +76,8 @@ LTsv_unzipdata(LTsv_line)
 LTsv_unziplabelsdata(LTsv_line,LTsv_labels)	
 LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)	
 LTsv_tuple2tsv(LTsv_tuple)	
-LTsv_tsv2list(LTsv_line)	
-LTsv_tsv2tuple(LTsv_line)	
+LTsv_tsv2list(LTsv_line,LTsv_len=None)	
+LTsv_tsv2tuple(LTsv_line,LTsv_count=None)	
 LTsv_intstr0x(LTsv_codestr)	
 LTsv_label2dictint(LTsv_line)	
 LTsv_label2dictstr(LTsv_line)	

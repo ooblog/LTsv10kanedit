@@ -21,22 +21,25 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagdata=LTsvDOC_tagname
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
-    LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
-    for LTsvDOC_tagcase in LTsvDOC_tagcases:
-        LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
-        LTsvDOC_research=None
-        try:
-            LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
-        except re.error:
-            continue
-        else:
-            if LTsvDOC_research:
-                LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
-                LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
-                LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
-                if len(LTsvDOC_tagdata) == 0:
-                    LTsvDOC_tagdata=LTsvDOC_caseline;
-                LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
+    if '\t' in LTsvDOC_tagpage:
+        LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
+        for LTsvDOC_tagcase in LTsvDOC_tagcases:
+            LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
+            LTsvDOC_research=None
+            try:
+                LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
+            except re.error:
+                continue
+            else:
+                if LTsvDOC_research:
+                    LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
+                    LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
+                    LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
+                    if len(LTsvDOC_tagdata) == 0:
+                        LTsvDOC_tagdata=LTsvDOC_caseline;
+                    LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
+    elif len(LTsvDOC_tagpage) > 0:
+         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagpage)
     return LTsvDOClaunch_main
 
 def LTsvDOCdef_python(LTsvDOClaunch_deffile):
@@ -73,6 +76,7 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
             LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
             LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst); LTsvDOC_caserest=LTsvDOC_caserest.rstrip('\t').split('\t')
             LTsvDOC_tagdata+="{0}{1}{2}\n{3}{4}{5}\n".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserest),LTsvDOClaunch_restR)
+        LTsvDOC_tagdata=LTsvDOC_tagdata.rstrip('\n')
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 

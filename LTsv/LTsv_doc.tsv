@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_tsv
 LTsvver	20161023U011852
-modify	20161105S035915
+modify	20161105S043320
 |L:Tsv]
 
 [LTsv_doc_tsv|
@@ -16,8 +16,8 @@ main	LTsv_doc_main
 outdir	./
 outlist	LTsv_doc.txt
 defdir	./
-deftag	L:<!	R:!>
-defindent	firstL:【	firstR:】	restL:  	restC:\n  	restR:\n
+deftag	L:<?	R:>
+defindent	firstL:【	firstR:】	restL:  	restC:\n  		restR:
 |LTsv_doc_tsv]
 
 [LTsv_doc_main|
@@ -39,7 +39,7 @@ modify <@modify>
 
 <@index0-0>
 
-<@contents0-0>
+<#contents0-0>
 
 <@index0-1>
 
@@ -73,10 +73,7 @@ modify <@modify>
 [<@index0-0>|
 .*	０-0． ライセンス及びソフトの使用の補足ガイドライン
 |<@index0-0>]
-[<@contents0-0>|
-.*	<@text0-0>
-|<@contents0-0>]
-[<@text0-0>|
+[<#contents0-0>|
  ※「MIT License」準拠。
    MIT License - Choose a License
    http://choosealicense.com/licenses/mit/
@@ -92,7 +89,7 @@ modify <@modify>
 
  ※「kanedit」固有の問題への言及。
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。
-|<@text0-0>]
+|<#contents0-0>]
 
 [<@index0-1>|
 .*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
@@ -187,7 +184,7 @@ modify <@modify>
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
 
-<!LTsv_printf.py!>
+<?LTsv_printf.py>
 |<#text1-1a>]
 
 [LTsv_printf.py|
@@ -240,7 +237,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
 
-<!LTsv_file.py!>
+<?LTsv_file.py>
 |<#text1-2>]
 
 [LTsv_file.py|
