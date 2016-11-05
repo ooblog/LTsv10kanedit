@@ -3,28 +3,33 @@ code	UTF-8
 enter	LF
 tab	4
 program	LTsv_doc.py
-1st		LTsv_doc_tsv
+1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161105S043320
+modify	20161106U030535
 |L:Tsv]
 
-[LTsv_doc_tsv|
+[LTsv_doc|
 window_size	width:600	height:480	wait:10	fontsize:24
-tsvlist	LTsv_doc.tsv	../docs/LTsv_doc_html.tsv	../../ooblog.github.io/yakuyon.tsv
+tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 main	LTsv_doc_main
 outdir	./
-outlist	LTsv_doc.txt
+outlist	LTsv_doc.txt	../docs/LTsv_doc.html
 defdir	./
 deftag	L:<?	R:>
-defindent	firstL:【	firstR:】	restL:  	restC:\n  		restR:
-|LTsv_doc_tsv]
+defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:<@restR>
+|LTsv_doc]
 
 [LTsv_doc_main|
-「LTsv_doc」は「<@LTsv>」を用いたドキュメント生成ツールです。この「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。
-「LTsv_doc.txt」は「<@LTsv>」のモジュール解説と兼用です。
-version(branch) <@branch>
-modify <@modify>
+<@LTsv_doc_ext>
+|LTsv_doc_main]
+[<@LTsv_doc_ext>|
+.+\.html?	<#LTsv_doc_html>
+.*	<#LTsv_doc_txt>
+|<@LTsv_doc_ext>]
+
+[<#LTsv_doc_txt>|
+<#summary>
 
 目次
 
@@ -43,93 +48,155 @@ modify <@modify>
 
 <@index0-1>
 
-<@contents0-1>
+<#contents0-1>
 
 <@index0-2>
 
-<@contents0-2>
+<#contents0-2>
 
 <@index1-0a>
 
-<@contents1-0a>
+<#contents1-0a>
 
 <@index1-0b>
 
-<@contents1-0b>
+<#contents1-0b>
 
 <@index1-1a>
 
-<@contents1-1a>
+<#contents1-1a>
 
 <@index1-1b>
 
-<@contents1-1b>
+<#contents1-1b>
 
 <@index1-2>
 
 <@contents1-2>
-|LTsv_doc_main]
+|<#LTsv_doc_txt>]
+
+[<#LTsv_doc_html>|
+<!DOCTYPE html>
+<html lang="ja"><head>
+ <meta charset="UTF-8" />
+ <title><@title></title>
+ <meta name="description" content="">
+</head><body>
+<h1><@title></h1>
+<p>
+<#summary>
+</p>
+
+<h2>目次</h2>
+
+<ul>
+ <li><a href="#index0-0" title="<@index0-0>"><@index0-0></a></li>
+ <li><a href="#index0-1" title="<@index0-1>"><@index0-1></a></li>
+ <li><a href="#index0-2" title="<@index0-2>"><@index0-2></a></li>
+ <li><a href="#index1-0a" title="<@index1-0a>"><@index1-0a></a></li>
+ <li><a href="#index1-0b" title="<@index1-0b>"><@index1-0b></a></li>
+ <li><a href="#index1-1a" title="<@index1-1a>"><@index1-1a></a></li>
+ <li><a href="#index1-1b" title="<@index1-1b>"><@index1-1b></a></li>
+ <li><a href="#index1-2" title="<@index1-2>"><@index1-2></a></li>
+</ul>
+
+<h3><a name="index0-0"><@index0-0></a></h3>
+
+<#contents0-0>
+
+<h3><a name="index0-1"><@index0-1></a></h3>
+
+<#contents0-1>
+
+<h3><a name="index0-2"><@index0-2></a></h3>
+
+<#contents0-2>
+
+<h3><a name="index1-0a"><@index1-0a></a></h3>
+
+<#contents1-0a>
+
+<h3><a name="index1-0b"><@index1-0b></a></h3>
+
+<#contents1-0b>
+
+<h3><a name="index1-1a"><@index1-1a></a></h3>
+
+<#contents1-1a>
+
+<h3><a name="index1-1b"><@index1-1b></a></h3>
+
+<#contents1-1b>
+
+<h3><a name="index1-2"><@index1-2></a></h3>
+
+<@contents1-2>
+
+</body></html>
+|<#LTsv_doc_html>]
+
+[<@title>|
+.*	<@LTsv>モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)
+|<@title>]
+
+[<#summary>|
+「LTsv_doc」は「<@LTsv>」を用いたドキュメント生成ツールです。<@BR>
+このモジュール解説文書「<@outlist>」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。<@BR>
+version(branch) <@branch><@BR>
+modify <@modify><@BR>
+|<#summary>]
 
 [<@index0-0>|
 .*	０-0． ライセンス及びソフトの使用の補足ガイドライン
 |<@index0-0>]
 [<#contents0-0>|
- ※「MIT License」準拠。
-   MIT License - Choose a License
-   http://choosealicense.com/licenses/mit/
-
- ※「MIT License」の日本語訳。
-   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
-   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
-
- ※日本語による補足。
-   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。
-   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。
-   ・ソースコードの閲覧やコピーに制限を設けない事。
-
- ※「kanedit」固有の問題への言及。
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。
+<@P> ※「MIT License」準拠。<@BR>
+   MIT License - Choose a License<@BR>
+   http://choosealicense.com/licenses/mit/<@BR>
+<@/PP>
+ ※「MIT License」の日本語訳。<@BR>
+   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN<@BR>
+   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license<@BR>
+<@/PP>
+ ※日本語による補足。<@BR>
+   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。<@BR>
+   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<@BR>
+   ・ソースコードの閲覧やコピーに制限を設けない事。<@BR>
+<@/PP>
+ ※「kanedit」固有の問題への言及。<@BR>
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<@BR><@/P>
 |<#contents0-0>]
 
 [<@index0-1>|
 .*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
 |<@index0-1>]
-[<@contents0-1>|
-.*	<#text0-1>
-|<@contents0-1>]
-[<#text0-1>|
- ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
- インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
- 「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
- Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<@index3-0>」も参考)。
-|<#text0-1>]
+[<#contents0-1>|
+<@P> ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<@BR>
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<@BR>
+ 「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<@BR>
+ Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。<@BR>
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<@index3-0>」も参考)。<@BR><@/P>
+|<#contents0-1>]
 
 [<@index0-2>|
 .*	０-2． その他現在わかっている不具合や今後の課題
 |<@index0-2>]
-[<@contents0-2>|
-.*	<#text0-2>
-|<@contents0-2>]
-[<#text0-2>|
- Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
- フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
- 「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
- 「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位が低い。
- 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar,tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。
- Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
- マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
- ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。
-|<#text0-2>]
+[<#contents0-2>|
+<@P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<@BR>
+ フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<@BR>
+ 「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<@BR>
+ 「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位が低い。<@BR>
+ 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar,tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。<@BR>
+ Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<@BR>
+ マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<@BR>
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<@BR>
+ ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。<@BR><@/P>
+|<#contents0-2>]
 
 [<@index1-0a>|
 .*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
 |<@index1-0a>]
-[<@contents1-0a>|
-.*	<#text1-0a>
-|<@contents1-0a>]
-[<#text1-0a>|
+[<#contents1-0a>|
  データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。
  素のLTSVファイル自体は単なるログのフォーマットです。
 
@@ -142,15 +209,12 @@ modify <@modify>
  「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
-|<#text1-0a>]
+|<#contents1-0a>]
 
 [<@index1-0b>|
 .*	１-0b．「L:Tsv」ファイルの構造
 |<@index1-0b>]
-[<@contents1-0b>|
-.*	<#text1-0b>
-|<@contents1-0b>]
-[<#text1-0b>|
+[<#contents1-0b>|
  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
  先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。
  firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。
@@ -168,16 +232,12 @@ modify <@modify>
    modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
 
 「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<@index1-2>」も参考。
-|<#text1-0b>]
-
+|<#contents1-0b>]
 
 [<@index1-1a>|
 .*	１-1a．「LTsv_printf.py」の関数一覧
 |<@index1-1a>]
-[<@contents1-1a>|
-.*	<#text1-1a>
-|<@contents1-1a>]
-[<#text1-1a>|
+[<#contents1-1a>|
  Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
  ・Wine上DOSのエラー要因だった<@CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
  ・変換できない文字は数値文字参照に変換されます。
@@ -185,7 +245,7 @@ modify <@modify>
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
 
 <?LTsv_printf.py>
-|<#text1-1a>]
+|<#contents1-1a>]
 
 [LTsv_printf.py|
 LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
@@ -202,10 +262,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 [<@index1-1b>|
 .*	１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 |<@index1-1b>]
-[<@contents1-1b>|
-.*	<#text1-1b>
-|<@contents1-1b>]
-[<#text1-1b>|
+[<#contents1-1b>|
    "Hira2Kata"         ひらがなをカタカナに。
    "Kata2Hira"         カタカナをひらがなに。
    "HiraKana2SeiH"     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。
@@ -223,7 +280,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
    "Alpha2HAN"         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。
    "Alpha2ZENBS"       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。
    "Alpha2ZENYen"      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
-|<#text1-1b>]
+|<#contents1-1b>]
 
 [<@index1-2>|
 .*	１-2． 「LTsv_file.py」の関数一覧
@@ -246,25 +303,25 @@ LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_url�
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
 LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<@CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
 LTsv_readlinepages(LTsv_text)	LTsv_textテキスト内のタグ「[tag|」一覧を1行のLTSVとして取得する。
-LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	
-LTsv_readlinedeno(LTsv_text)	
-LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
-LTsv_readlinefirsts(LTsv_text)	
-LTsv_readlinerest(LTsv_text,LTsv_first,LTsv_default=None)	
-LTsv_pickdatadeno(LTsv_line)	
-LTsv_pickdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_split_label_data(LTsv_labeldata,LTsv_seldata=True)	
-LTsv_pickdatas(LTsv_line,LTsv_dataL=0,LTsv_dataR=0)	
-LTsv_pickdatafind(LTsv_line,LTsv_find)	
-LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	
-LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	
-LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)	
-LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	
-LTsv_sievelabels(LTsv_rest,LTsv_labels="")	
-LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)	
-LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
-LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	
+LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれた範囲のLTSVページを取得。	LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。
+LTsv_readlinedeno(LTsv_text)	LTSVページの行数を数える。LTsv_textに改行が無くても1行とみなす。	LTsv_textの文字列長が0の場合0を返す。
+LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	0から数えた行数でLTSVページから1行読み込む。	LTsv_default(LTsv_line)は読み込めなかった場合の初期値を指定。
+LTsv_readlinefirsts(LTsv_text)	LTSVページのfirst(縦軸ラベル)一覧を1行のLTSVとして取得。
+LTsv_readlinerest(LTsv_text,LTsv_first,LTsv_default=None)	LTSVページからfirst(縦軸ラベル)指定で先頭以下データrestを1行読み込む。first(縦軸ラベル)の取得にはタブ文字が必要。	LTsv_default(LTsv_rest)はrestが読み込めなかった場合の初期値を指定。
+LTsv_pickdatadeno(LTsv_line)	1行のLTSVに含まれるデータ個数を取得(firstも0個目のデータとみなす)。	「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。
+LTsv_pickdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	1行のLTSVから0から数えた項目数指定で1個読み込む(firstも0個目のデータとみなす)。	「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。
+LTsv_split_label_data(LTsv_labeldata,LTsv_seldata=True)	「label:data」からlabelかdataのどちらかを取得。LTsv_seldataがTrueならdata部分を、Falseならlabel部分を返す。
+LTsv_pickdatas(LTsv_line,LTsv_dataL=0,LTsv_dataR=0)	1行のLTSVから0から数えた項目数指定で範囲内の複数データを読み込む(firstも0個目のデータとみなす)。いわゆるスライス操作。	LTsv_dataLとLTsv_dataRが逆(Tsv_dataRの方が小さい)の場合でも関数内で自動的に並び替える。	LTsv_dataLとLTsv_dataRが同じ場合差分が無いので読み込まない。
+LTsv_pickdatafind(LTsv_line,LTsv_find)	LTsv_findが1行のLTSVの何項目にデータがあるか0から数える(firstも0個目のデータとみなす)。
+LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	1行のLTSVのLTsv_datanum項目目にLTsv_default(LTsv_data)を追加する。	LTsv_datanumが0以下の場合先頭firstに追加。項目数以上の場合末尾に追加。	省略もしくは文字列長0の場合は何もしない。
+LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	1行のLTSVのLTsv_datanum項目目にデータLTsv_default(LTsv_data)を上書する。	負数の場合や項目数以上の場合は何もしない。	 LTsv_default(LTsv_data)を省略もしくは文字列長0のデータの場合は項目を削除。
+LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。	LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。
+LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)	「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「LTsv/kanchar.tsv」読込用途。	first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。
+LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。	元LTSVに存在しない横軸ラベル(LTsv_label)の場合末尾に追加。	LTsv_default(LTsv_data)を省略した場合に項目はラベルごと削除。	文字列長0のデータLTsv_default(LTsv_data)であっても省略しなかった場合は横軸ラベル項目を追加もしくは上書き。	上記LTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。
+LTsv_sievelabels(LTsv_rest,LTsv_labels="")	データそのままにラベルを取り替える。	文字列0の「data」(データ数よりラベル数が多い場合を想定)は項目が消えるので注意。
+LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)	「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。
+LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を追加する。	1行追加想定だけど複数行のテキスト挿入も可能。	LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。
+LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を上書する。	1行上書想定だけど複数行のテキスト挿入も可能。	LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。
 LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)	
 LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)	
 LTsv_putmodify(LTsv_text)	
@@ -601,18 +658,56 @@ debug_configload()
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
 
+[<@outlist>|
+.+\.html?	LTsv_doc.html
+.*	LTsv_doc.txt
+|<@outlist>]
 [<@LTsv>|
 .*	LTsv10kanedit(tsvtool10)
 |<@LTsv>]
-
 [<@branch>|
 .*	20161023U011852
 |<@branch>]
-
 [<@modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
 |<@modify>]
-
 [<@CP932>|
 .*	CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)
 |<@CP932>]
+
+[<@P>|
+.+\.html?	<p>\n
+.*	
+|<@P>]
+[<@/PP>|
+.+\.html?	</p><p>
+.*	
+|<@/PP>]
+[<@/P>|
+.+\.html?	\n</p>
+.*	
+|<@/P>]
+[<@BR>|
+.+\.html?	<br />
+.*	
+|<@BR>]
+[<@firstL>|
+.+\.html?	<dl><dt>
+.*	  【
+|<@firstL>]
+[<@firstR>|
+.+\.html?	</dt>
+.*	】
+|<@firstR>]
+[<@restL>|
+.+\.html?	<dd>\n
+.*	  
+|<@restL>]
+[<@restC>|
+.+\.html?	<br />\n
+.*	\n  
+|<@restC>]
+[<@restR>|
+.+\.html?	</dd></dl>
+.*	\n
+|<@restR>]
