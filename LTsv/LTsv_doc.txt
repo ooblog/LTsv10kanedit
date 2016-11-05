@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161106U030534
+modify 20161106U044140
 
 
 目次
@@ -22,7 +22,7 @@ modify 20161106U030534
    http://choosealicense.com/licenses/mit/
 
  ※「MIT License」の日本語訳。
-   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+   MIT License - Choose a License
    https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
 
  ※日本語による補足。
@@ -61,8 +61,9 @@ modify 20161106U030534
  データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。
  素のLTSVファイル自体は単なるログのフォーマットです。
 
-  Labeled Tab-separated Values
-  http://ltsv.org/
+   Labeled Tab-separated Values (LTSV)
+   http://ltsv.org/
+
 
   LTSV FAQ - LTSV って何? どういうところが良いの?
   http://d.hatena.ne.jp/naoya/20130209/1360381374
@@ -330,4 +331,8 @@ modify 20161106U030534
   
 
 
+
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
 

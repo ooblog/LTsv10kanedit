@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
  <meta charset="UTF-8" />
- <title>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</title>
  <meta name="description" content="">
+ <title>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</title>
+ <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
+ <link rel="icon" type="image/png" href="" />
 </head><body>
 <h1>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</h1>
 <p>
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161106U030534<br />
+modify 20161106U044140<br />
 
 </p>
 
@@ -30,13 +32,13 @@ modify 20161106U030534<br />
 
 <p>
  ※「MIT License」準拠。<br />
-   MIT License - Choose a License<br />
-   http://choosealicense.com/licenses/mit/<br />
-</p><p>
+</p>
+<dl><dt>MIT License - Choose a License</dt><dd><a href="http://choosealicense.com/licenses/mit/" title="MIT License - Choose a License">http://choosealicense.com/licenses/mit/</a></dd></dl>
+<p>
  ※「MIT License」の日本語訳。<br />
-   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN<br />
-   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license<br />
-</p><p>
+</p>
+<dl><dt>MIT License - Choose a License</dt><dd><a href="https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license" title="MIT License - Choose a License">https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license</a></dd></dl>
+<p>
  ※日本語による補足。<br />
    ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。<br />
    ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<br />
@@ -75,18 +77,21 @@ modify 20161106U030534<br />
 
 <h3><a name="index1-0a">１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い</a></h3>
 
- データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。
- 素のLTSVファイル自体は単なるログのフォーマットです。
-
-  Labeled Tab-separated Values
-  http://ltsv.org/
-
-  LTSV FAQ - LTSV って何? どういうところが良いの?
-  http://d.hatena.ne.jp/naoya/20130209/1360381374
-
- 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
- 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
- LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
+<p>
+ データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<br />
+ 素のLTSVファイル自体は単なるログのフォーマットです。<br />
+</p>
+</p><p>
+<dl><dt>Labeled Tab-separated Values (LTSV)</dt><dd><a href="http://ltsv.org/" title="Labeled Tab-separated Values (LTSV)">http://ltsv.org/</a></dd></dl>
+</p><p>
+  LTSV FAQ - LTSV って何? どういうところが良いの?<br />
+  http://d.hatena.ne.jp/naoya/20130209/1360381374<br />
+</p>
+</p><p>
+ 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<br />
+ 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<br />
+ LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<br />
+</p>
 
 
 <h3><a name="index1-0b">１-0b．「L:Tsv」ファイルの構造</a></h3>
@@ -349,4 +354,11 @@ LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合�
 
 
 </body></html>
+
+<!--
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+-->
+
 

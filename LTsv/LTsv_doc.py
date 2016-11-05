@@ -34,7 +34,7 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname):
                 if LTsvDOC_research:
                     LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
                     LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
-                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t')
+                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\\\','\\')
                     LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
                     if len(LTsvDOC_tagdata) == 0:
                         LTsvDOC_tagdata=LTsvDOC_caseline;
@@ -114,11 +114,6 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag"),"L","R"))
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<@firstL>\tfirstR:<@firstR>\trestL:<@restL>\trestC:<@restC>\trestR:<@restR>"),"firstL","firstR","restL","restC","restR"),5)
-        LTsvDOClaunch_firstL=LTsvDOClaunch_firstL.replace('\\n','\n').replace('\\t','\t')
-        LTsvDOClaunch_firstR=LTsvDOClaunch_firstR.replace('\\n','\n').replace('\\t','\t')
-        LTsvDOClaunch_restL=LTsvDOClaunch_restL.replace('\\n','\n').replace('\\t','\t')
-        LTsvDOClaunch_restC=LTsvDOClaunch_restC.replace('\\n','\n').replace('\\t','\t')
-        LTsvDOClaunch_restR=LTsvDOClaunch_restR.replace('\\n','\n').replace('\\t','\t')
         LTsvDOClaunch_pages=LTsv_readlinepages(LTsvDOClaunch_ltsv)
         LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,LTsvDOClaunch_mainname))
         for skplist in LTsvDOClaunch_skplist:

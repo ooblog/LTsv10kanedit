@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161106U030535
+modify	20161106U044141
 |L:Tsv]
 
 [LTsv_doc|
@@ -14,7 +14,7 @@ tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 main	LTsv_doc_main
 outdir	./
-outlist	LTsv_doc.txt	../docs/LTsv_doc.html
+outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
 defdir	./
 deftag	L:<?	R:>
 defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:<@restR>
@@ -25,6 +25,7 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 |LTsv_doc_main]
 [<@LTsv_doc_ext>|
 .+\.html?	<#LTsv_doc_html>
+.+\.css	<#LTsv_doc_css>
 .*	<#LTsv_doc_txt>
 |<@LTsv_doc_ext>]
 
@@ -73,14 +74,18 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 <@index1-2>
 
 <@contents1-2>
+
+<@ooblog>
 |<#LTsv_doc_txt>]
 
 [<#LTsv_doc_html>|
 <!DOCTYPE html>
 <html lang="ja"><head>
  <meta charset="UTF-8" />
- <title><@title></title>
  <meta name="description" content="">
+ <title><@title></title>
+ <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
+ <link rel="icon" type="image/png" href="" />
 </head><body>
 <h1><@title></h1>
 <p>
@@ -133,7 +138,30 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 <@contents1-2>
 
 </body></html>
+
+<!--
+<@ooblog>
+-->
+
 |<#LTsv_doc_html>]
+[<#LTsv_doc_css>|
+@charset "utf-8";
+@font-face{
+  font-family: "kan5x5comic";
+  src: url("kan5x5comic.woff") format('woff');
+}
+h1{ font-size: 2.0rem; }
+h2{ font-size: 1.8rem; }
+h3{ font-size: 1.6rem; }
+h4{ font-size: 1.4rem; }
+h5{ font-size: 1.2rem; }
+h6{ font-size: 1.0rem; }
+
+/*
+<@ooblog>
+*/
+
+|<#LTsv_doc_css>]
 
 [<@title>|
 .*	<@LTsv>モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)
@@ -150,15 +178,11 @@ modify <@modify><@BR>
 .*	０-0． ライセンス及びソフトの使用の補足ガイドライン
 |<@index0-0>]
 [<#contents0-0>|
-<@P> ※「MIT License」準拠。<@BR>
-   MIT License - Choose a License<@BR>
-   http://choosealicense.com/licenses/mit/<@BR>
-<@/PP>
- ※「MIT License」の日本語訳。<@BR>
-   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN<@BR>
-   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license<@BR>
-<@/PP>
- ※日本語による補足。<@BR>
+<@P> ※「MIT License」準拠。<@BR><@/P>
+<@http://choosealicense.com/licenses/mit/>
+<@P> ※「MIT License」の日本語訳。<@BR><@/P>
+<@https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>
+<@P> ※日本語による補足。<@BR>
    ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。<@BR>
    ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<@BR>
    ・ソースコードの閲覧やコピーに制限を設けない事。<@BR>
@@ -166,6 +190,26 @@ modify <@modify><@BR>
  ※「kanedit」固有の問題への言及。<@BR>
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<@BR><@/P>
 |<#contents0-0>]
+[<@http://choosealicense.com/licenses/mit/>|
+.+\.html?	<dl><dt><@title:http://choosealicense.com/licenses/mit/></dt><dd><a href="<@url:http://choosealicense.com/licenses/mit/>" title="<@title:http://choosealicense.com/licenses/mit/>"><@url:http://choosealicense.com/licenses/mit/></a></dd></dl>
+.*	   <@title:http://choosealicense.com/licenses/mit/><@BR>\n   <@url:http://choosealicense.com/licenses/mit/><@BR>\n
+|<@http://choosealicense.com/licenses/mit/>]
+[<@url:http://choosealicense.com/licenses/mit/>|
+.*	http://choosealicense.com/licenses/mit/
+|<@url:http://choosealicense.com/licenses/mit/>]
+[<@title:http://choosealicense.com/licenses/mit/>|
+.*	MIT License - Choose a License
+|<@title:http://choosealicense.com/licenses/mit/>]
+[<@https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
+.+\.html?	<dl><dt><@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></dt><dd><a href="<@url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>" title="<@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>"><@url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></a></dd></dl>
+.*	   <@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><@BR>\n   <@url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><@BR>\n
+|<@https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
+[<@url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
+.*	https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
+|<@url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
+[<@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
+.*	MIT License - Choose a License
+|<@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
 
 [<@index0-1>|
 .*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
@@ -197,19 +241,28 @@ modify <@modify><@BR>
 .*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
 |<@index1-0a>]
 [<#contents1-0a>|
- データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。
- 素のLTSVファイル自体は単なるログのフォーマットです。
-
-  Labeled Tab-separated Values
-  http://ltsv.org/
-
-  LTSV FAQ - LTSV って何? どういうところが良いの?
-  http://d.hatena.ne.jp/naoya/20130209/1360381374
-
- 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
- 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
- LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
+<@P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<@BR>
+ 素のLTSVファイル自体は単なるログのフォーマットです。<@BR><@/P>
+<@/PP>
+<@http://ltsv.org/>
+<@/PP>
+  LTSV FAQ - LTSV って何? どういうところが良いの?<@BR>
+  http://d.hatena.ne.jp/naoya/20130209/1360381374<@BR><@/P>
+<@/PP>
+ 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<@BR>
+ 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<@BR>
+ LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<@BR><@/P>
 |<#contents1-0a>]
+[<@http://ltsv.org/>|
+.+\.html?	<dl><dt><@title:http://ltsv.org/></dt><dd><a href="<@url:http://ltsv.org/>" title="<@title:http://ltsv.org/>"><@url:http://ltsv.org/></a></dd></dl>
+.*	   <@title:http://ltsv.org/><@BR>\n   <@url:http://ltsv.org/><@BR>\n
+|<@http://ltsv.org/>]
+[<@url:http://ltsv.org/>|
+.*	http://ltsv.org/
+|<@url:http://ltsv.org/>]
+[<@title:http://ltsv.org/>|
+.*	Labeled Tab-separated Values (LTSV)
+|<@title:http://ltsv.org/>]
 
 [<@index1-0b>|
 .*	１-0b．「L:Tsv」ファイルの構造
@@ -711,3 +764,6 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .+\.html?	</dd></dl>
 .*	\n
 |<@restR>]
+[<@ooblog>|
+.*	# Copyright (c) 2016 ooblog\n# License: MIT\n# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+|<@ooblog>]

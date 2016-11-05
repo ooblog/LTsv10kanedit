@@ -1,0 +1,19 @@
+@charset "utf-8";
+@font-face{
+  font-family: "kan5x5comic";
+  src: url("kan5x5comic.woff") format('woff');
+}
+h1{ font-size: 2.0rem; }
+h2{ font-size: 1.8rem; }
+h3{ font-size: 1.6rem; }
+h4{ font-size: 1.4rem; }
+h5{ font-size: 1.2rem; }
+h6{ font-size: 1.0rem; }
+
+/*
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+*/
+
+
