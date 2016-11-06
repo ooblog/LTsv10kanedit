@@ -11,9 +11,9 @@
 <h1>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</h1>
 <p>
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
-このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<5ttps://github.com/ooblog/LTsv10kanedit>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
+このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<6ttps://github.com/ooblog/LTsv10kanedit>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161107M054303<br />
+modify 20161107M064913<br />
 </p>
 
 <h2>目次</h2>
@@ -385,41 +385,55 @@ LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0で�
 メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。<br />
 「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。</dd></dl>
 <dl><dt>LTsv_savedir(LTsv_path)</dt><dd>
-</dd></dl>
+「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が1個フォルダを必要とする場合、1個フォルダを作成する。<br />
+「os.mkdir()」を使うので、一気に深い階層のフォルダを作ろうとするとエラーになる。<br />
+「LTsv_savefile()」「LTsv_saveplain()」の内部で使用。</dd></dl>
 <dl><dt>LTsv_savedirs(LTsv_path)</dt><dd>
-</dd></dl>
+「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が複数のフォルダを必要とする場合、複数のフォルダを作成する。<br />
+「os.makedirs()」を使って一気に深い階層のフォルダを作れてしまうので取扱い注意。</dd></dl>
 <dl><dt>LTsv_savefile(LTsv_path,LTsv_default=None)</dt><dd>
-</dd></dl>
+ローカルのLTsv_pathに「L:Tsv」ファイル、LTsv_default(LTsv_text)を書き込む。ファイル保存時にメタタグ「L:Tsv」の「modify」の更新。<br />
+「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成。<br />
+LTsv_default(LTsv_text)を省略の場合はファイル削除(フォルダはそのまま)。</dd></dl>
 <dl><dt>LTsv_saveplain(LTsv_path,LTsv_plain)</dt><dd>
-</dd></dl>
+ローカルのLTsv_pathにテキストファイルLTsv_plainを(LTsv_text)書き込む。<br />
+「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成される。</dd></dl>
 <dl><dt>LTsv_labelzip(LTsv_labels,LTsv_datas)</dt><dd>
-</dd></dl>
+LTsv_labelsを横軸ラベル、LTsv_datasをデータとして、<br />
+「label/tlabel/t…」と「data/tdata/t…」を1行のLTSV「label:data/tlabel:data/t…」に束ねる。</dd></dl>
 <dl><dt>LTsv_unziplabel(LTsv_line)</dt><dd>
-</dd></dl>
+1行のLTSV「label:data/tlabel:data/t…」からラベルだけを取り出して「label/tlabel/t…」に。</dd></dl>
 <dl><dt>LTsv_unzipdata(LTsv_line)</dt><dd>
-</dd></dl>
+1行のLTSV「label:data/tlabel:data/t…」からデータだけを取り出して「data/tdata/t…」に。</dd></dl>
 <dl><dt>LTsv_unziplabelsdata(LTsv_line,LTsv_labels)</dt><dd>
-</dd></dl>
+1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。<br />
+LTsv_labelsはtsv形式。</dd></dl>
 <dl><dt>LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)</dt><dd>
-</dd></dl>
+1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。<br />
+LTsv_labelsはPythonのタプル形式。</dd></dl>
 <dl><dt>LTsv_tuple2tsv(LTsv_tuple)</dt><dd>
-</dd></dl>
+Pythonのタプルやリストをtsvに。<br />
+forループよりjoin使った方が速い的なPythonあるある。</dd></dl>
 <dl><dt>LTsv_tsv2list(LTsv_line,LTsv_len=None)</dt><dd>
-</dd></dl>
-<dl><dt>LTsv_tsv2tuple(LTsv_line,LTsv_count=None)</dt><dd>
-</dd></dl>
+tsvをPythonのリストに。<br />
+左辺でunpackする場合受けとる変数の個数をLTsv_lenで指定。<br />
+LTsv_lenがデータ数より多い場合は0文字列が補完される。</dd></dl>
+<dl><dt>LTsv_tsv2tuple(LTsv_line,LTsv_len=None)</dt><dd>
+「LTsv_tsv2list()」のタプルバージョン。</dd></dl>
 <dl><dt>LTsv_intstr0x(LTsv_codestr)</dt><dd>
-</dd></dl>
+"0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。<br />
+<br />
+try節で囲む手間を省きたい場合に便利。</dd></dl>
 <dl><dt>LTsv_label2dictint(LTsv_line)</dt><dd>
-</dd></dl>
+LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。</dd></dl>
 <dl><dt>LTsv_label2dictstr(LTsv_line)</dt><dd>
-</dd></dl>
+LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。</dd></dl>
 <dl><dt>LTsv_dict2label(LTsv_dict)</dt><dd>
-</dd></dl>
+Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。</dd></dl>
 <dl><dt>LTsv_file_ver()</dt><dd>
-</dd></dl>
+「LTsv_file.py」のバージョン表示(20161023U011852)。</dd></dl>
 <dl><dt>LTsv_issue()</dt><dd>
-</dd></dl>
+「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。</dd></dl>
 
 </section>
 

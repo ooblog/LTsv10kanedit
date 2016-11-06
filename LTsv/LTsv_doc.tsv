@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161107M054304
+modify	20161107M064913
 |L:Tsv]
 
 [LTsv_doc|
@@ -196,7 +196,7 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 [<#summary>|
 <@P>「LTsv_doc」は「<@LTsv>」を用いたドキュメント生成ツールです。<@BR>
 このモジュール解説文書「<@outlist>」も「LTsv_doc」を使って「<@github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<@BR>
-version(branch) <@branch><@BR>
+version(branch) <L:Tsv@LTsvver><@BR>
 modify <@modify><@BR><@/P>
 |<#summary>]
 
@@ -468,24 +468,24 @@ LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	LTSVページに0か�
 LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)	LTSVページにfirst(縦軸ラベル)指定でFirstにrest(LTsv_default)を追加する。	LTsv_page内にLTsv_firstが存在しない場合LTsv_page末尾に追加。	LTsv_rest(LTsv_default)を省略した場合に項目を削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。	文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。
 LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)	タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれたLTSVページとしてLTsv_default(LTsv_page)を上書き。	LTsv_text内にLTsv_tagタグが存在しない場合末尾に追加。タグ名が文字列長0の場合は何もしない。	LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。
 LTsv_putmodify(LTsv_text)	メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。	「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。
-LTsv_savedir(LTsv_path)	
-LTsv_savedirs(LTsv_path)	
-LTsv_savefile(LTsv_path,LTsv_default=None)	
-LTsv_saveplain(LTsv_path,LTsv_plain)	
-LTsv_labelzip(LTsv_labels,LTsv_datas)	
-LTsv_unziplabel(LTsv_line)	
-LTsv_unzipdata(LTsv_line)	
-LTsv_unziplabelsdata(LTsv_line,LTsv_labels)	
-LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)	
-LTsv_tuple2tsv(LTsv_tuple)	
-LTsv_tsv2list(LTsv_line,LTsv_len=None)	
-LTsv_tsv2tuple(LTsv_line,LTsv_count=None)	
-LTsv_intstr0x(LTsv_codestr)	
-LTsv_label2dictint(LTsv_line)	
-LTsv_label2dictstr(LTsv_line)	
-LTsv_dict2label(LTsv_dict)	
-LTsv_file_ver()	
-LTsv_issue()	
+LTsv_savedir(LTsv_path)	「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が1個フォルダを必要とする場合、1個フォルダを作成する。	「os.mkdir()」を使うので、一気に深い階層のフォルダを作ろうとするとエラーになる。	「LTsv_savefile()」「LTsv_saveplain()」の内部で使用。
+LTsv_savedirs(LTsv_path)	「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が複数のフォルダを必要とする場合、複数のフォルダを作成する。	「os.makedirs()」を使って一気に深い階層のフォルダを作れてしまうので取扱い注意。
+LTsv_savefile(LTsv_path,LTsv_default=None)	ローカルのLTsv_pathに「L:Tsv」ファイル、LTsv_default(LTsv_text)を書き込む。ファイル保存時にメタタグ「L:Tsv」の「modify」の更新。	「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成。	LTsv_default(LTsv_text)を省略の場合はファイル削除(フォルダはそのまま)。
+LTsv_saveplain(LTsv_path,LTsv_plain)	ローカルのLTsv_pathにテキストファイルLTsv_plainを(LTsv_text)書き込む。	「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成される。
+LTsv_labelzip(LTsv_labels,LTsv_datas)	LTsv_labelsを横軸ラベル、LTsv_datasをデータとして、	「label/tlabel/t…」と「data/tdata/t…」を1行のLTSV「label:data/tlabel:data/t…」に束ねる。
+LTsv_unziplabel(LTsv_line)	1行のLTSV「label:data/tlabel:data/t…」からラベルだけを取り出して「label/tlabel/t…」に。
+LTsv_unzipdata(LTsv_line)	1行のLTSV「label:data/tlabel:data/t…」からデータだけを取り出して「data/tdata/t…」に。
+LTsv_unziplabelsdata(LTsv_line,LTsv_labels)	1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。	LTsv_labelsはtsv形式。
+LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)	1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。	LTsv_labelsはPythonのタプル形式。
+LTsv_tuple2tsv(LTsv_tuple)	Pythonのタプルやリストをtsvに。	forループよりjoin使った方が速い的なPythonあるある。
+LTsv_tsv2list(LTsv_line,LTsv_len=None)	tsvをPythonのリストに。	左辺でunpackする場合受けとる変数の個数をLTsv_lenで指定。	LTsv_lenがデータ数より多い場合は0文字列が補完される。
+LTsv_tsv2tuple(LTsv_line,LTsv_len=None)	「LTsv_tsv2list()」のタプルバージョン。
+LTsv_intstr0x(LTsv_codestr)	"0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。		try節で囲む手間を省きたい場合に便利。
+LTsv_label2dictint(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。
+LTsv_label2dictstr(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。
+LTsv_dict2label(LTsv_dict)	Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
+LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<L:Tsv@LTsvver>)。
+LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
 |LTsv_file.py]
 
 [LTsv_time.py|
@@ -840,9 +840,6 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<@LTsv>|
 .*	LTsv10kanedit(tsvtool10)
 |<@LTsv>]
-[<@branch>|
-.*	20161023U011852
-|<@branch>]
 [<@modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
 |<@modify>]
@@ -901,7 +898,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<@restC>]
 [<@restR>|
 .+\.html?	</dd></dl>\n
-.*	|\n\n
+.*	\n\n
 |<@restR>]
 [<@restRLast>|
 .+\.html?	</dd></dl>

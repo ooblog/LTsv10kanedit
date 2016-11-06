@@ -444,8 +444,8 @@ def LTsv_tsv2list(LTsv_line,LTsv_len=None):
         LTsv_list=LTsv_listcount
     return LTsv_list
 
-def LTsv_tsv2tuple(LTsv_line,LTsv_count=None):
-    LTsv_tuple=tuple(LTsv_tsv2list(LTsv_line))
+def LTsv_tsv2tuple(LTsv_line,LTsv_len=None):
+    LTsv_tuple=tuple(LTsv_tsv2list(LTsv_line,LTsv_len))
     return LTsv_tuple
 
 def LTsv_intstr0x(LTsv_codestr):
