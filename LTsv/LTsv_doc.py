@@ -169,7 +169,7 @@ if __name__=="__main__":
         LTsvDOClaunch_tsvlistT=LTsv_readlinerest(LTsvDOC_config,"tsvlist","LTsv_doc.tsv"); LTsvDOClaunch_tsvlist=LTsvDOClaunch_tsvlistT.split('\t') if len(LTsvDOClaunch_tsvlistT) else []
         LTsvDOClaunch_modify=LTsv_readlinerest(LTsvDOC_config,"modify","@000y@0m@0dm@wdec@0h@0n@0s")
         LTsvDOC_font="{0},{1}".format("kan5x5comic",LTsvDOC_F//2); 
-        LTsvDOC_window=LTsv_window_new(widget_t="LTsv_doc",widget_w=LTsvDOC_W,widget_h=LTsvDOC_H)
+        LTsvDOC_window=LTsv_window_new(widget_t="LTsv_doc",event_b=LTsv_window_exit,widget_w=LTsvDOC_W,widget_h=LTsvDOC_H)
         LTsvDOC_button=[0]*len(LTsvDOClaunch_tsvlist)
         for LTsvDOClaunch_tsvcount,LTsvDOClaunch_tsvname in enumerate(LTsvDOClaunch_tsvlist):
             LTsvDOC_button[LTsvDOClaunch_tsvcount]=LTsv_button_new(LTsvDOC_window,widget_t=LTsvDOClaunch_tsvname,widget_x=0,widget_y=LTsvDOClaunch_tsvcount*LTsvDOC_F,widget_w=LTsvDOC_W,widget_h=LTsvDOC_F,widget_f=LTsvDOC_font,event_b=LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount))

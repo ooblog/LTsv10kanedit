@@ -229,14 +229,19 @@ def LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,w
             LTsv_libgtk.gtk_widget_modify_font(widget_o,LTsv_fontDesc)
         LTsv_libgtk.pango_font_description_free(LTsv_fontDesc)
 
-def LTsv_tkinter_hideondelete_shell(LTsv_windowPAGENAME):
+def LTsv_hideondelete_shell(LTsv_windowPAGENAME):
+    def gtk_hideondelete_kernel(window_objvoid=None,window_objptr=None):
+        LTsv_libgtk.gtk_widget_hide_on_delete
+        return 0
     def tkinter_hideondelete_kernel(window_objvoid=None,window_objptr=None):
         global LTsv_widgetLTSV
         LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
         widget_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
         widget_o.withdraw()
         return 0
-    return tkinter_hideondelete_kernel
+    if LTsv_GUI == LTsv_GUI_GTK2: return gtk_hideondelete_kernel
+    if LTsv_GUI == LTsv_GUI_Tkinter: return tkinter_hideondelete_kernel
+    return None
 
 LTsv_GTK_WINDOW_TOPLEVEL=0
 LTsv_GTK_WIN_POS_CENTER=1
@@ -262,7 +267,9 @@ def LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=2
         LTsv_libgtk.gtk_window_set_position(window_o,LTsv_GTK_WIN_POS_CENTER)
         widget_c=LTsv_libgtk.gtk_fixed_new()
         LTsv_libgtk.gtk_container_add(window_o,widget_c)
-        event_b_cbk=LTsv_CALLBACLTYPE(event_b) if event_b != None else LTsv_libgtk.gtk_widget_hide_on_delete
+#        event_b_cbk=LTsv_CALLBACLTYPE(event_b) if event_b != None else LTsv_libgtk.gtk_widget_hide_on_delete
+#        event_b_cbk=LTsv_CALLBACLTYPE(event_b) if event_b != None else LTsv_hideondelete_shell(LTsv_windowPAGENAME)
+        event_b_cbk=LTsv_CALLBACLTYPE(event_b) if event_b != None else LTsv_window_exit_cbk
         LTsv_libobj.g_signal_connect_data(window_o,"delete-event".encode("utf-8"),event_b_cbk,0,0,0)
         event_z_cbk,event_k_cbk,event_y_cbk=None,None,None
         if event_z:
@@ -282,8 +289,10 @@ def LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=2
         window_o.title(widget_t)
         window_o.minsize(widget_w,widget_h)
         window_o.geometry("{0}x{1}+{2}+{3}".format(widget_w,widget_h,(window_o.winfo_vrootwidth()-widget_w)//2,(window_o.winfo_vrootheight()-widget_h)//2))
-        event_b_cbk=event_b if event_b != None else LTsv_tkinter_hideondelete_shell(LTsv_windowPAGENAME)
-        window_o.protocol("WM_DELETE_WINDOW",event_b_cbk)
+#        event_b_cbk=event_b if event_b != None else LTsv_hideondelete_shell(LTsv_windowPAGENAME)
+#        window_o.protocol("WM_DELETE_WINDOW",event_b_cbk)
+        if event_b != None:
+            window_o.protocol("WM_DELETE_WINDOW",event_b)
         if event_z:
             window_o.maxsize(window_o.winfo_vrootwidth(),window_o.winfo_vrootheight())
             window_o.bind('<Configure>',event_z)
@@ -293,7 +302,7 @@ def LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=2
             window_o.bind('<KeyPress>',event_k)
         if event_y:
             window_o.bind('<KeyRelease>',event_y)
-        LTsv_windowPAGE=LTsv_widgetPAGEXYWH(LTsv_windowPAGE,widget_o=window_o,widget_t=widget_t,event_b=event_b_cbk,event_z=event_z,event_k=event_k,event_y=event_y)
+        LTsv_windowPAGE=LTsv_widgetPAGEXYWH(LTsv_windowPAGE,widget_o=window_o,widget_t=widget_t,event_b=event_b,event_z=event_z,event_k=event_k,event_y=event_y)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_windowPAGENAME,LTsv_windowPAGE)
     return LTsv_windowPAGENAME
 

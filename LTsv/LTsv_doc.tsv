@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161106U044141
+modify	20161106U194300
 |L:Tsv]
 
 [LTsv_doc|
@@ -242,14 +242,11 @@ modify <@modify><@BR>
 |<@index1-0a>]
 [<#contents1-0a>|
 <@P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<@BR>
- 素のLTSVファイル自体は単なるログのフォーマットです。<@BR><@/P>
-<@/PP>
+ 素のLTSVファイル自体は単なるログのフォーマットです。<@BR>
+<@/P>
 <@http://ltsv.org/>
-<@/PP>
-  LTSV FAQ - LTSV って何? どういうところが良いの?<@BR>
-  http://d.hatena.ne.jp/naoya/20130209/1360381374<@BR><@/P>
-<@/PP>
- 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<@BR>
+<@http://d.hatena.ne.jp/naoya/20130209/1360381374>
+<@P> 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<@BR>
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<@BR>
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<@BR><@/P>
 |<#contents1-0a>]
@@ -263,6 +260,16 @@ modify <@modify><@BR>
 [<@title:http://ltsv.org/>|
 .*	Labeled Tab-separated Values (LTSV)
 |<@title:http://ltsv.org/>]
+[<@http://d.hatena.ne.jp/naoya/20130209/1360381374>|
+.+\.html?	<dl><dt><@title:http://d.hatena.ne.jp/naoya/20130209/1360381374></dt><dd><a href="<@url:http://d.hatena.ne.jp/naoya/20130209/1360381374>" title="<@title:http://d.hatena.ne.jp/naoya/20130209/1360381374>"><@url:http://d.hatena.ne.jp/naoya/20130209/1360381374></a></dd></dl>
+.*	   <@title:http://d.hatena.ne.jp/naoya/20130209/1360381374><@BR>\n   <@url:http://d.hatena.ne.jp/naoya/20130209/1360381374><@BR>\n
+|<@http://d.hatena.ne.jp/naoya/20130209/1360381374>]
+[<@url:http://d.hatena.ne.jp/naoya/20130209/1360381374>|
+.*	http://d.hatena.ne.jp/naoya/20130209/1360381374
+|<@url:http://d.hatena.ne.jp/naoya/20130209/1360381374>]
+[<@title:http://d.hatena.ne.jp/naoya/20130209/1360381374>|
+.*	LTSV FAQ - LTSV って何? どういうところが良いの?
+|<@title:http://d.hatena.ne.jp/naoya/20130209/1360381374>]
 
 [<@index1-0b>|
 .*	１-0b．「L:Tsv」ファイルの構造
@@ -492,7 +499,7 @@ LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)
 LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \	
 LTsv_fonttuple(LTsv_line)	
 LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	
-LTsv_tkinter_hideondelete_shell(LTsv_windowPAGENAME)	
+LTsv_hideondelete_shell(LTsv_windowPAGENAME)	
 LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	
 LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="")	
 LTsv_widget_gettext(LTsv_widgetPAGENAME)	

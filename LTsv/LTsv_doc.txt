@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161106U044140
+modify 20161106U194300
 
 
 目次
@@ -64,9 +64,8 @@ modify 20161106U044140
    Labeled Tab-separated Values (LTSV)
    http://ltsv.org/
 
-
-  LTSV FAQ - LTSV って何? どういうところが良いの?
-  http://d.hatena.ne.jp/naoya/20130209/1360381374
+   LTSV FAQ - LTSV って何? どういうところが良いの?
+   http://d.hatena.ne.jp/naoya/20130209/1360381374
 
  「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
