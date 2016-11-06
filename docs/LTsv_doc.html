@@ -6,17 +6,17 @@
  <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
  <link rel="icon" type="image/png" href="" />
 </head><body>
+
+<header>
 <h1>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</h1>
 <p>
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
-このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。<br />
+このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<1ttps://github.com/ooblog/LTsv10kanedit>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161106U194300<br />
-
+modify 20161107M015706<br />
 </p>
 
 <h2>目次</h2>
-
 <ul>
  <li><a href="#index0-0" title="０-0． ライセンス及びソフトの使用の補足ガイドライン">０-0． ライセンス及びソフトの使用の補足ガイドライン</a></li>
  <li><a href="#index0-1" title="０-1． インストール(ダウンロード・アンインストール)＆セットアップ">０-1． インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
@@ -27,9 +27,10 @@ modify 20161106U194300<br />
  <li><a href="#index1-1b" title="１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧">１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a></li>
  <li><a href="#index1-2" title="１-2． 「LTsv_file.py」の関数一覧">１-2． 「LTsv_file.py」の関数一覧</a></li>
 </ul>
+</header>
 
+<section>
 <h3><a name="index0-0">０-0． ライセンス及びソフトの使用の補足ガイドライン</a></h3>
-
 <p>
  ※「MIT License」準拠。<br />
 </p>
@@ -48,20 +49,22 @@ modify 20161106U194300<br />
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<br />
 </p>
 
+</section>
 
+<section>
 <h3><a name="index0-1">０-1． インストール(ダウンロード・アンインストール)＆セットアップ</a></h3>
-
 <p>
- ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
+ ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<br />
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。<br />
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<@index3-0>」も参考)。<br />
 </p>
 
+</section>
 
+<section>
 <h3><a name="index0-2">０-2． その他現在わかっている不具合や今後の課題</a></h3>
-
 <p>
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
@@ -74,9 +77,10 @@ modify 20161106U194300<br />
  ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。<br />
 </p>
 
+</section>
 
+<section>
 <h3><a name="index1-0a">１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い</a></h3>
-
 <p>
  データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<br />
  素のLTSVファイル自体は単なるログのフォーマットです。<br />
@@ -90,35 +94,41 @@ modify 20161106U194300<br />
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<br />
 </p>
 
+</section>
 
+<section>
 <h3><a name="index1-0b">１-0b．「L:Tsv」ファイルの構造</a></h3>
+<p>
+  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<br />
+ 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<br />
+ firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<br />
+ LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。<br />
+ 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<br />
+</p><p>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
+  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<br />
+   code                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<br />
+   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<br />
+   tab                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<br />
+   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。<br />
+   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<br />
+   LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<br />
+   modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<br />
+</p><p>
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「１-2． 「LTsv_file.py」の関数一覧」も参考。<br />
+</p>
 
- データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
- 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。
- firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。
- LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。
- 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。
+</section>
 
- メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
-  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。
-   code                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。
-   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。
-   tab                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。
-   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。
-   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。
-   LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。
-   modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
-
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「１-2． 「LTsv_file.py」の関数一覧」も参考。
-
-
+<section>
 <h3><a name="index1-1a">１-1a．「LTsv_printf.py」の関数一覧</a></h3>
-
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
- ・変換できない文字は数値文字参照に変換されます。
- ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
- ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+<p>
+ Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<br />
+ ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<br />
+ ・変換できない文字は数値文字参照に変換されます。<br />
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<br />
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<br />
+</p>
 
 <dl><dt>LTsv_libc_printf(LTsv_text,LTsv_log=None)</dt>
 <dd>
@@ -155,34 +165,89 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 ターミナルにコマンドを送る。実行結果も取得できる。<br />
 「LTsv_subprocess_shell=True」でより複雑な事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。</dd></dl>
 
+</section>
 
+<section>
 <h3><a name="index1-1b">１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a></h3>
+<dl><dt>
+   "Hira2Kata"</dt><dd>
+         ひらがなをカタカナに。
+</dd></dl>
+<dl><dt>
+   "Kata2Hira"</dt><dd>
+         カタカナをひらがなに。
+</dd></dl>
+<dl><dt>
+   "HiraKana2SeiH"</dt><dd>
+     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2SeiM"</dt><dd>
+     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2DakB"</dt><dd>
+     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2DakP"</dt><dd>
+     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2Han"</dt><dd>
+      ひらがなもカタカナも半角に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2HanKaKe"</dt><dd>
+  ひらがなもカタカナも「ヵヶ」も半角に。
+</dd></dl>
+<dl><dt>
+   "Han2HiraEz"</dt><dd>
+        半角をひらがなに(濁音は分離したまま)。
+</dd></dl>
+<dl><dt>
+   "Han2KataEz"</dt><dd>
+        半角をカタカナに(濁音は分離したまま)。
+</dd></dl>
+<dl><dt>
+   "Han2Hira"</dt><dd>
+          半角をひらがなに(濁音があっても１つの文字に統合)。
+</dd></dl>
+<dl><dt>
+   "Han2Kata"</dt><dd>
+          半角をカタカナに(濁音があっても１つの文字に統合)。
+</dd></dl>
+<dl><dt>
+   "Alpha2BIG"</dt><dd>
+         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。
+</dd></dl>
+<dl><dt>
+   "Alpha2SML"</dt><dd>
+         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。
+</dd></dl>
+<dl><dt>
+   "Alpha2HAN"</dt><dd>
+         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。
+</dd></dl>
+<dl><dt>
+   "Alpha2ZENBS"</dt><dd>
+       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。
+</dd></dl>
+<dl><dt>
+   "Alpha2ZENYen"</dt><dd>
+      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
+</dd></dl>
 
-   "Hira2Kata"         ひらがなをカタカナに。
-   "Kata2Hira"         カタカナをひらがなに。
-   "HiraKana2SeiH"     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。
-   "HiraKana2SeiM"     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。
-   "HiraKana2DakB"     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。
-   "HiraKana2DakP"     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。
-   "HiraKana2Han"      ひらがなもカタカナも半角に。
-   "HiraKana2HanKaKe"  ひらがなもカタカナも「ヵヶ」も半角に。
-   "Han2HiraEz"        半角をひらがなに(濁音は分離したまま)。
-   "Han2KataEz"        半角をカタカナに(濁音は分離したまま)。
-   "Han2Hira"          半角をひらがなに(濁音があっても１つの文字に統合)。
-   "Han2Kata"          半角をカタカナに(濁音があっても１つの文字に統合)。
-   "Alpha2BIG"         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。
-   "Alpha2SML"         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。
-   "Alpha2HAN"         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。
-   "Alpha2ZENBS"       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。
-   "Alpha2ZENYen"      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
+</section>
 
-
+<section>
 <h3><a name="index1-2">１-2． 「LTsv_file.py」の関数一覧</a></h3>
-
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。
- ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
- ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+<p>
+ Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<br />
+ ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。<br />
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<br />
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<br />
+</p>
 
 <dl><dt>LTsv_newfile(LTsv_program,LTsv_default=None)</dt>
 <dd>
@@ -287,13 +352,19 @@ LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を上
 LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。</dd></dl>
 <dl><dt>LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)</dt>
 <dd>
-</dd></dl>
+LTSVページにfirst(縦軸ラベル)指定でFirstにrest(LTsv_default)を追加する。<br />
+LTsv_page内にLTsv_firstが存在しない場合LTsv_page末尾に追加。<br />
+LTsv_rest(LTsv_default)を省略した場合に項目を削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。<br />
+文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。</dd></dl>
 <dl><dt>LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)</dt>
 <dd>
-</dd></dl>
+タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれたLTSVページとしてLTsv_default(LTsv_page)を上書き。<br />
+LTsv_text内にLTsv_tagタグが存在しない場合末尾に追加。タグ名が文字列長0の場合は何もしない。<br />
+LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。</dd></dl>
 <dl><dt>LTsv_putmodify(LTsv_text)</dt>
 <dd>
-</dd></dl>
+メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。<br />
+「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。</dd></dl>
 <dl><dt>LTsv_savedir(LTsv_path)</dt>
 <dd>
 </dd></dl>
@@ -349,13 +420,14 @@ LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合�
 <dd>
 </dd></dl>
 
+</section>
 
+<footer>
+ <p>site generator repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a></p>
+Copyright (c) 2016 ooblog<br />
+# License: MIT<br />
+# <a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE">https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE</a><br />
+
+</footer>
 </body></html>
-
-<!--
-# Copyright (c) 2016 ooblog
-# License: MIT
-# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
--->
-
 

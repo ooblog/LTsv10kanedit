@@ -5,14 +5,14 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161106U194300
+modify	20161107M015706
 |L:Tsv]
 
 [LTsv_doc|
 window_size	width:600	height:480	wait:10	fontsize:24
 tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
-main	LTsv_doc_main
+main	#LTsv_doc_main
 outdir	./
 outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
 defdir	./
@@ -20,9 +20,10 @@ deftag	L:<?	R:>
 defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:<@restR>
 |LTsv_doc]
 
-[LTsv_doc_main|
+[#LTsv_doc_main|
 <@LTsv_doc_ext>
-|LTsv_doc_main]
+|#LTsv_doc_main]
+
 [<@LTsv_doc_ext>|
 .+\.html?	<#LTsv_doc_html>
 .+\.css	<#LTsv_doc_css>
@@ -87,13 +88,11 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
  <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
  <link rel="icon" type="image/png" href="" />
 </head><body>
+
+<header>
 <h1><@title></h1>
-<p>
 <#summary>
-</p>
-
 <h2>目次</h2>
-
 <ul>
  <li><a href="#index0-0" title="<@index0-0>"><@index0-0></a></li>
  <li><a href="#index0-1" title="<@index0-1>"><@index0-1></a></li>
@@ -104,45 +103,53 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
  <li><a href="#index1-1b" title="<@index1-1b>"><@index1-1b></a></li>
  <li><a href="#index1-2" title="<@index1-2>"><@index1-2></a></li>
 </ul>
+</header>
 
+<section>
 <h3><a name="index0-0"><@index0-0></a></h3>
-
 <#contents0-0>
+</section>
 
+<section>
 <h3><a name="index0-1"><@index0-1></a></h3>
-
 <#contents0-1>
+</section>
 
+<section>
 <h3><a name="index0-2"><@index0-2></a></h3>
-
 <#contents0-2>
+</section>
 
+<section>
 <h3><a name="index1-0a"><@index1-0a></a></h3>
-
 <#contents1-0a>
+</section>
 
+<section>
 <h3><a name="index1-0b"><@index1-0b></a></h3>
-
 <#contents1-0b>
+</section>
 
+<section>
 <h3><a name="index1-1a"><@index1-1a></a></h3>
-
 <#contents1-1a>
+</section>
 
+<section>
 <h3><a name="index1-1b"><@index1-1b></a></h3>
-
 <#contents1-1b>
+</section>
 
+<section>
 <h3><a name="index1-2"><@index1-2></a></h3>
-
 <@contents1-2>
+</section>
 
-</body></html>
-
-<!--
+<footer>
+ <p>site generator repository：<@https://github.com/ooblog/LTsv10kanedit></p>
 <@ooblog>
--->
-
+</footer>
+</body></html>
 |<#LTsv_doc_html>]
 [<#LTsv_doc_css>|
 @charset "utf-8";
@@ -150,12 +157,26 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
   font-family: "kan5x5comic";
   src: url("kan5x5comic.woff") format('woff');
 }
-h1{ font-size: 2.0rem; }
-h2{ font-size: 1.8rem; }
-h3{ font-size: 1.6rem; }
-h4{ font-size: 1.4rem; }
-h5{ font-size: 1.2rem; }
-h6{ font-size: 1.0rem; }
+header{
+  border: 1px gray dotted;
+  padding: 1rem;
+}
+section{
+  margin-top: 1rem;
+  border: 2px black solid;
+  padding: 1rem;
+}
+article{
+  margin-top: 0.5rem;
+  border: 1px gray solid;
+  padding: 1rem;
+}
+h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
+h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
+h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }
+h4{ font-size: 1.4rem; margin: 1rem 0.5rem 0.5rem; }
+h5{ font-size: 1.2rem; margin: 1rem 0.5rem 0.5rem; }
+h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 /*
 <@ooblog>
@@ -168,10 +189,10 @@ h6{ font-size: 1.0rem; }
 |<@title>]
 
 [<#summary>|
-「LTsv_doc」は「<@LTsv>」を用いたドキュメント生成ツールです。<@BR>
-このモジュール解説文書「<@outlist>」も「LTsv_doc」を使って「LTsv_doc.tsv」から錬成されてます。<@BR>
+<@P>「LTsv_doc」は「<@LTsv>」を用いたドキュメント生成ツールです。<@BR>
+このモジュール解説文書「<@outlist>」も「LTsv_doc」を使って「<@github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<@BR>
 version(branch) <@branch><@BR>
-modify <@modify><@BR>
+modify <@modify><@BR><@/P>
 |<#summary>]
 
 [<@index0-0>|
@@ -215,7 +236,7 @@ modify <@modify><@BR>
 .*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
 |<@index0-1>]
 [<#contents0-1>|
-<@P> ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<@BR>
+<@P> ダウンロードは「<@https://github.com/ooblog/LTsv10kanedit>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<@BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<@BR>
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<@BR>
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。<@BR>
@@ -275,34 +296,34 @@ modify <@modify><@BR>
 .*	１-0b．「L:Tsv」ファイルの構造
 |<@index1-0b>]
 [<#contents1-0b>|
- データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
- 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。
- firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。
- LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。
- 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。
-
- メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
-  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。
-   code                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。
-   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。
-   tab                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。
-   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。
-   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。
-   LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。
-   modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
-
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<@index1-2>」も参考。
+<@P>  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<@BR>
+ 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<@BR>
+ firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<@BR>
+ LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。<@BR>
+ 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<@BR>
+<@/PP>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<@BR>
+  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<@BR>
+   code                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<@BR>
+   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<@BR>
+   tab                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<@BR>
+   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。<@BR>
+   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<@BR>
+   LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<@BR>
+   modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<@BR>
+<@/PP>
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<@index1-2>」も参考。<@BR><@/P>
 |<#contents1-0b>]
 
 [<@index1-1a>|
 .*	１-1a．「LTsv_printf.py」の関数一覧
 |<@index1-1a>]
 [<#contents1-1a>|
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だった<@CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
- ・変換できない文字は数値文字参照に変換されます。
- ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
- ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+<@P> Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<@BR>
+ ・Wine上DOSのエラー要因だった<@CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<@BR>
+ ・変換できない文字は数値文字参照に変換されます。<@BR>
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<@BR>
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<@BR><@/P>
 
 <?LTsv_printf.py>
 |<#contents1-1a>]
@@ -323,23 +344,23 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 .*	１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 |<@index1-1b>]
 [<#contents1-1b>|
-   "Hira2Kata"         ひらがなをカタカナに。
-   "Kata2Hira"         カタカナをひらがなに。
-   "HiraKana2SeiH"     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。
-   "HiraKana2SeiM"     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。
-   "HiraKana2DakB"     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。
-   "HiraKana2DakP"     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。
-   "HiraKana2Han"      ひらがなもカタカナも半角に。
-   "HiraKana2HanKaKe"  ひらがなもカタカナも「ヵヶ」も半角に。
-   "Han2HiraEz"        半角をひらがなに(濁音は分離したまま)。
-   "Han2KataEz"        半角をカタカナに(濁音は分離したまま)。
-   "Han2Hira"          半角をひらがなに(濁音があっても１つの文字に統合)。
-   "Han2Kata"          半角をカタカナに(濁音があっても１つの文字に統合)。
-   "Alpha2BIG"         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。
-   "Alpha2SML"         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。
-   "Alpha2HAN"         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。
-   "Alpha2ZENBS"       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。
-   "Alpha2ZENYen"      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
+<@DLDT>   "Hira2Kata"<@/DTDD>         ひらがなをカタカナに。<@/DD/DL>
+<@DLDT>   "Kata2Hira"<@/DTDD>         カタカナをひらがなに。<@/DD/DL>
+<@DLDT>   "HiraKana2SeiH"<@/DTDD>     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。<@/DD/DL>
+<@DLDT>   "HiraKana2SeiM"<@/DTDD>     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。<@/DD/DL>
+<@DLDT>   "HiraKana2DakB"<@/DTDD>     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。<@/DD/DL>
+<@DLDT>   "HiraKana2DakP"<@/DTDD>     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。<@/DD/DL>
+<@DLDT>   "HiraKana2Han"<@/DTDD>      ひらがなもカタカナも半角に。<@/DD/DL>
+<@DLDT>   "HiraKana2HanKaKe"<@/DTDD>  ひらがなもカタカナも「ヵヶ」も半角に。<@/DD/DL>
+<@DLDT>   "Han2HiraEz"<@/DTDD>        半角をひらがなに(濁音は分離したまま)。<@/DD/DL>
+<@DLDT>   "Han2KataEz"<@/DTDD>        半角をカタカナに(濁音は分離したまま)。<@/DD/DL>
+<@DLDT>   "Han2Hira"<@/DTDD>          半角をひらがなに(濁音があっても１つの文字に統合)。<@/DD/DL>
+<@DLDT>   "Han2Kata"<@/DTDD>          半角をカタカナに(濁音があっても１つの文字に統合)。<@/DD/DL>
+<@DLDT>   "Alpha2BIG"<@/DTDD>         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。<@/DD/DL>
+<@DLDT>   "Alpha2SML"<@/DTDD>         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。<@/DD/DL>
+<@DLDT>   "Alpha2HAN"<@/DTDD>         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。<@/DD/DL>
+<@DLDT>   "Alpha2ZENBS"<@/DTDD>       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。<@/DD/DL>
+<@DLDT>   "Alpha2ZENYen"<@/DTDD>      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。<@/DD/DL>
 |<#contents1-1b>]
 
 [<@index1-2>|
@@ -349,10 +370,10 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 .*	<#text1-2>
 |<@contents1-2>]
 [<#text1-2>|
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だった<@CP932>に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。
- ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
- ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+<@P> Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<@BR>
+ ・Wine上DOSのエラー要因だった<@CP932>に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。<@BR>
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<@BR>
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<@BR><@/P>
 
 <?LTsv_file.py>
 |<#text1-2>]
@@ -382,9 +403,9 @@ LTsv_sievelabels(LTsv_rest,LTsv_labels="")	データそのままにラベルを�
 LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)	「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。
 LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を追加する。	1行追加想定だけど複数行のテキスト挿入も可能。	LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。
 LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を上書する。	1行上書想定だけど複数行のテキスト挿入も可能。	LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。
-LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)	
-LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)	
-LTsv_putmodify(LTsv_text)	
+LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)	LTSVページにfirst(縦軸ラベル)指定でFirstにrest(LTsv_default)を追加する。	LTsv_page内にLTsv_firstが存在しない場合LTsv_page末尾に追加。	LTsv_rest(LTsv_default)を省略した場合に項目を削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。	文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。
+LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)	タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれたLTSVページとしてLTsv_default(LTsv_page)を上書き。	LTsv_text内にLTsv_tagタグが存在しない場合末尾に追加。タグ名が文字列長0の場合は何もしない。	LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。
+LTsv_putmodify(LTsv_text)	メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。	「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。
 LTsv_savedir(LTsv_path)	
 LTsv_savedirs(LTsv_path)	
 LTsv_savefile(LTsv_path,LTsv_default=None)	
@@ -720,8 +741,46 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 
 [<@outlist>|
 .+\.html?	LTsv_doc.html
+.+\.css	LTsv_doc.css
 .*	LTsv_doc.txt
 |<@outlist>]
+
+[<@ooblog>|
+.+\.html?	<@Copyright><@BR>\n# <@LicenseMIT><@BR>\n# <a href="<@LICENSE>" title="<@LICENSE>"><@LICENSE></a><@BR>\n
+.*	# <@Copyright>\n# <@LicenseMIT>\n# <@LICENSE>
+|<@ooblog>]
+[<@Copyright>|
+.*	Copyright (c) 2016 ooblog
+|<@Copyright>]
+[<@LicenseMIT>|
+.*	License: MIT
+|<@LicenseMIT>]
+[<@LICENSEurl>|
+.+\.html?	<a href="<@LICENSE>" title="<@LICENSE>"><@LICENSE></a>
+.*	   LTsv/LTsv_doc.tsv
+|<@LICENSEurl>]
+[<@LICENSE>|
+.*	<@url:https://github.com/ooblog/LTsv10kanedit>/blob/master/LICENSE
+|<@LICENSE>]
+[<@github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>|
+.+\.html?	<a href="<@url:https://github.com/ooblog/LTsv10kanedit><@LTsv/LTsv_doc_tsv>" title="<@https://github.com/ooblog/LTsv10kanedit><@LTsv/LTsv_doc_tsv>"><@LTsv/LTsv_doc_tsv></a>
+.*	   LTsv/LTsv_doc.tsv
+|<@github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>]
+[<@LTsv/LTsv_doc_tsv>|
+.*	LTsv/LTsv_doc.tsv
+|<@LTsv/LTsv_doc_tsv>]
+
+[<@https://github.com/ooblog/LTsv10kanedit>|
+.+\.html?	<a href="<@url:https://github.com/ooblog/LTsv10kanedit>" title="<@title:https://github.com/ooblog/LTsv10kanedit>"><@url:https://github.com/ooblog/LTsv10kanedit></a>
+.*	<@url:https://github.com/ooblog/LTsv10kanedit>\0
+|<@https://github.com/ooblog/LTsv10kanedit>]
+[<@url:https://github.com/ooblog/LTsv10kanedit>|
+.*	https://github.com/ooblog/LTsv10kanedit
+|<@url:https://github.com/ooblog/LTsv10kanedit>]
+[<@title:https://github.com/ooblog/LTsv10kanedit>|
+.*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:
+|<@title:https://github.com/ooblog/LTsv10kanedit>]
+
 [<@LTsv>|
 .*	LTsv10kanedit(tsvtool10)
 |<@LTsv>]
@@ -747,13 +806,25 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .+\.html?	\n</p>
 .*	
 |<@/P>]
+[<@DLDT>|
+.+\.html?	<dl><dt>\n
+.*	
+|<@DLDT>]
+[<@/DTDD>|
+.+\.html?	</dt><dd>\n
+.*	
+|<@/DTDD>]
+[<@/DD/DL>|
+.+\.html?	\n</dd></dl>
+.*	
+|<@/DD/DL>]
 [<@BR>|
 .+\.html?	<br />
 .*	
 |<@BR>]
 [<@firstL>|
 .+\.html?	<dl><dt>
-.*	  【
+.*	 【
 |<@firstL>]
 [<@firstR>|
 .+\.html?	</dt>
@@ -771,6 +842,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .+\.html?	</dd></dl>
 .*	\n
 |<@restR>]
-[<@ooblog>|
-.*	# Copyright (c) 2016 ooblog\n# License: MIT\n# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
-|<@ooblog>]
+
+# Copyright (c) 2016 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE

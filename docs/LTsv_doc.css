@@ -3,12 +3,26 @@
   font-family: "kan5x5comic";
   src: url("kan5x5comic.woff") format('woff');
 }
-h1{ font-size: 2.0rem; }
-h2{ font-size: 1.8rem; }
-h3{ font-size: 1.6rem; }
-h4{ font-size: 1.4rem; }
-h5{ font-size: 1.2rem; }
-h6{ font-size: 1.0rem; }
+header{
+  border: 1px gray dotted;
+  padding: 1rem;
+}
+section{
+  margin-top: 1rem;
+  border: 2px black solid;
+  padding: 1rem;
+}
+article{
+  margin-top: 0.5rem;
+  border: 1px gray solid;
+  padding: 1rem;
+}
+h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
+h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
+h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }
+h4{ font-size: 1.4rem; margin: 1rem 0.5rem 0.5rem; }
+h5{ font-size: 1.2rem; margin: 1rem 0.5rem 0.5rem; }
+h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 /*
 # Copyright (c) 2016 ooblog

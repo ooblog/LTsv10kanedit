@@ -34,8 +34,8 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname):
                 if LTsvDOC_research:
                     LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
                     LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
-                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\\\','\\')
                     LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
+                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\0','').replace('\\\\','\\')
                     if len(LTsvDOC_tagdata) == 0:
                         LTsvDOC_tagdata=LTsvDOC_caseline;
                     LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
