@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv_doc」を使って「   LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161107M015706
+modify 20161107M054303
 
 
 目次
@@ -12,8 +12,9 @@ modify 20161107M015706
  １-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
  １-0b．「L:Tsv」ファイルの構造
  １-1a．「LTsv_printf.py」の関数一覧
- １-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+ １-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
  １-2． 「LTsv_file.py」の関数一覧
+
 
 ０-0． ライセンス及びソフトの使用の補足ガイドライン
 
@@ -77,7 +78,7 @@ modify 20161107M015706
   データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
  先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。
  firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。
- LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。
+ LTSVを「[tag|」と「|tag]」の様にタグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
  拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。
 
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
@@ -89,6 +90,7 @@ modify 20161107M015706
    1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。
    LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。
    modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
+  |L:Tsv]                    メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 
 「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「１-2． 「LTsv_file.py」の関数一覧」も参考。
 
@@ -105,39 +107,38 @@ modify 20161107M015706
   LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。
   LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。
   扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。
-  「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
+  「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。|
 
  【LTsv_libc_printcat(LTsv_text)】
-  上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
+  上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。|
 
  【LTsv_libc_printf_type(LTsv_text)】
-  Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+  Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。|
 
  【LTsv_utf2xml(LTsv_text)】
-  LTsv_textの文字列を数値文字参照に変換。
+  LTsv_textの文字列を数値文字参照に変換。|
 
  【LTsv_xml2utf(LTsv_text)】
-  LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
+  LTsv_textの文字参照(数値文字参照含む)を文字列に変換。|
 
  【LTsv_kanare(LTsv_before,LTsv_recase)】
   全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。
-  変換辞書LTsv_recaseのパラメータは「１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧」を参考。
+  変換辞書LTsv_recaseのパラメータは「１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧」を参考。|
 
  【LTsv_utf2ink(LTsv_text)】
   UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。
-  点字フォントが表示できる環境にないと動作確認は困難なので注意。
+  点字フォントが表示できる環境にないと動作確認は困難なので注意。|
 
  【LTsv_ink2utf(LTsv_text)】
   上記「UTF-8点字」をUTF-8に戻す。
-   データ破損を補完する機能はないので注意。
+   データ破損を補完する機能はないので注意。|
 
  【LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)】
   ターミナルにコマンドを送る。実行結果も取得できる。
   「LTsv_subprocess_shell=True」でより複雑な事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
 
 
-
-１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 
    "Hira2Kata"         ひらがなをカタカナに。
    "Kata2Hira"         カタカナをひらがなに。
@@ -169,172 +170,171 @@ modify 20161107M015706
   「L:Tsv」ファイルを変数上に作成する。
    LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。
   LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。
-  メタタグについては「<@index1-0b>」も参考。
+  メタタグについては「<@index1-0b>」も参考。|
 
  【LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)】
   ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。
-  ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
+  ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。|
 
  【LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)】
-  ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
+  ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。|
 
  【LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)】
   ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。
   LTsv_encodingにテキストのコード指定。例えばCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を読み込むときは「LTsv_encoding="cp932"」が必要。
-  LTsv_defaultは読み込みできなかった場合の初期値を指定。
+  LTsv_defaultは読み込みできなかった場合の初期値を指定。|
 
  【LTsv_readlinepages(LTsv_text)】
-  LTsv_textテキスト内のタグ「[tag|」一覧を1行のLTSVとして取得する。
+  LTsv_textテキスト内のタグ「[tag|」一覧を1行のLTSVとして取得する。|
 
  【LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)】
   タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれた範囲のLTSVページを取得。
-  LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。
+  LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。|
 
  【LTsv_readlinedeno(LTsv_text)】
   LTSVページの行数を数える。LTsv_textに改行が無くても1行とみなす。
-  LTsv_textの文字列長が0の場合0を返す。
+  LTsv_textの文字列長が0の場合0を返す。|
 
  【LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)】
   0から数えた行数でLTSVページから1行読み込む。
-  LTsv_default(LTsv_line)は読み込めなかった場合の初期値を指定。
+  LTsv_default(LTsv_line)は読み込めなかった場合の初期値を指定。|
 
  【LTsv_readlinefirsts(LTsv_text)】
-  LTSVページのfirst(縦軸ラベル)一覧を1行のLTSVとして取得。
+  LTSVページのfirst(縦軸ラベル)一覧を1行のLTSVとして取得。|
 
  【LTsv_readlinerest(LTsv_text,LTsv_first,LTsv_default=None)】
   LTSVページからfirst(縦軸ラベル)指定で先頭以下データrestを1行読み込む。first(縦軸ラベル)の取得にはタブ文字が必要。
-  LTsv_default(LTsv_rest)はrestが読み込めなかった場合の初期値を指定。
+  LTsv_default(LTsv_rest)はrestが読み込めなかった場合の初期値を指定。|
 
  【LTsv_pickdatadeno(LTsv_line)】
   1行のLTSVに含まれるデータ個数を取得(firstも0個目のデータとみなす)。
-  「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。
+  「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。|
 
  【LTsv_pickdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)】
   1行のLTSVから0から数えた項目数指定で1個読み込む(firstも0個目のデータとみなす)。
-  「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。
+  「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。|
 
  【LTsv_split_label_data(LTsv_labeldata,LTsv_seldata=True)】
-  「label:data」からlabelかdataのどちらかを取得。LTsv_seldataがTrueならdata部分を、Falseならlabel部分を返す。
+  「label:data」からlabelかdataのどちらかを取得。LTsv_seldataがTrueならdata部分を、Falseならlabel部分を返す。|
 
  【LTsv_pickdatas(LTsv_line,LTsv_dataL=0,LTsv_dataR=0)】
   1行のLTSVから0から数えた項目数指定で範囲内の複数データを読み込む(firstも0個目のデータとみなす)。いわゆるスライス操作。
   LTsv_dataLとLTsv_dataRが逆(Tsv_dataRの方が小さい)の場合でも関数内で自動的に並び替える。
-  LTsv_dataLとLTsv_dataRが同じ場合差分が無いので読み込まない。
+  LTsv_dataLとLTsv_dataRが同じ場合差分が無いので読み込まない。|
 
  【LTsv_pickdatafind(LTsv_line,LTsv_find)】
-  LTsv_findが1行のLTSVの何項目にデータがあるか0から数える(firstも0個目のデータとみなす)。
+  LTsv_findが1行のLTSVの何項目にデータがあるか0から数える(firstも0個目のデータとみなす)。|
 
  【LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)】
   1行のLTSVのLTsv_datanum項目目にLTsv_default(LTsv_data)を追加する。
   LTsv_datanumが0以下の場合先頭firstに追加。項目数以上の場合末尾に追加。
-  省略もしくは文字列長0の場合は何もしない。
+  省略もしくは文字列長0の場合は何もしない。|
 
  【LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)】
   1行のLTSVのLTsv_datanum項目目にデータLTsv_default(LTsv_data)を上書する。
   負数の場合や項目数以上の場合は何もしない。
-   LTsv_default(LTsv_data)を省略もしくは文字列長0のデータの場合は項目を削除。
+   LTsv_default(LTsv_data)を省略もしくは文字列長0のデータの場合は項目を削除。|
 
  【LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)】
   1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。
-  LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。
+  LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。|
 
  【LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)】
   「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「LTsv/kanchar.tsv」読込用途。
-  first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。
+  first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。|
 
  【LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)】
   1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。
   元LTSVに存在しない横軸ラベル(LTsv_label)の場合末尾に追加。
   LTsv_default(LTsv_data)を省略した場合に項目はラベルごと削除。
   文字列長0のデータLTsv_default(LTsv_data)であっても省略しなかった場合は横軸ラベル項目を追加もしくは上書き。
-  上記LTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。
+  上記LTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。|
 
  【LTsv_sievelabels(LTsv_rest,LTsv_labels="")】
   データそのままにラベルを取り替える。
-  文字列0の「data」(データ数よりラベル数が多い場合を想定)は項目が消えるので注意。
+  文字列0の「data」(データ数よりラベル数が多い場合を想定)は項目が消えるので注意。|
 
  【LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)】
-  「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。
+  「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。|
 
  【LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)】
   LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を追加する。
   1行追加想定だけど複数行のテキスト挿入も可能。
-  LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。
+  LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。|
 
  【LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)】
   LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を上書する。
   1行上書想定だけど複数行のテキスト挿入も可能。
-  LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。
+  LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。|
 
  【LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)】
   LTSVページにfirst(縦軸ラベル)指定でFirstにrest(LTsv_default)を追加する。
   LTsv_page内にLTsv_firstが存在しない場合LTsv_page末尾に追加。
   LTsv_rest(LTsv_default)を省略した場合に項目を削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。
-  文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。
+  文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。|
 
  【LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)】
   タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれたLTSVページとしてLTsv_default(LTsv_page)を上書き。
   LTsv_text内にLTsv_tagタグが存在しない場合末尾に追加。タグ名が文字列長0の場合は何もしない。
-  LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。
+  LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。|
 
  【LTsv_putmodify(LTsv_text)】
   メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。
-  「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。
+  「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。|
 
  【LTsv_savedir(LTsv_path)】
-  
+  |
 
  【LTsv_savedirs(LTsv_path)】
-  
+  |
 
  【LTsv_savefile(LTsv_path,LTsv_default=None)】
-  
+  |
 
  【LTsv_saveplain(LTsv_path,LTsv_plain)】
-  
+  |
 
  【LTsv_labelzip(LTsv_labels,LTsv_datas)】
-  
+  |
 
  【LTsv_unziplabel(LTsv_line)】
-  
+  |
 
  【LTsv_unzipdata(LTsv_line)】
-  
+  |
 
  【LTsv_unziplabelsdata(LTsv_line,LTsv_labels)】
-  
+  |
 
  【LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)】
-  
+  |
 
  【LTsv_tuple2tsv(LTsv_tuple)】
-  
+  |
 
  【LTsv_tsv2list(LTsv_line,LTsv_len=None)】
-  
+  |
 
  【LTsv_tsv2tuple(LTsv_line,LTsv_count=None)】
-  
+  |
 
  【LTsv_intstr0x(LTsv_codestr)】
-  
+  |
 
  【LTsv_label2dictint(LTsv_line)】
-  
+  |
 
  【LTsv_label2dictstr(LTsv_line)】
-  
+  |
 
  【LTsv_dict2label(LTsv_dict)】
-  
+  |
 
  【LTsv_file_ver()】
-  
+  |
 
  【LTsv_issue()】
   
-
 
 
 # Copyright (c) 2016 ooblog

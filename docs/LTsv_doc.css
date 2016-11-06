@@ -17,6 +17,9 @@ article{
   border: 1px gray solid;
   padding: 1rem;
 }
+dt{
+  font-weight: bold;
+}
 h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
 h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
 h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }

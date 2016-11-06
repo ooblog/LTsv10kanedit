@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161107M015706
+modify	20161107M054304
 |L:Tsv]
 
 [LTsv_doc|
@@ -17,7 +17,7 @@ outdir	./
 outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
 defdir	./
 deftag	L:<?	R:>
-defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:<@restR>
+defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:<@restR>	restRLast:<@restRLast>
 |LTsv_doc]
 
 [#LTsv_doc_main|
@@ -43,6 +43,7 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
  <@index1-1a>
  <@index1-1b>
  <@index1-2>
+
 
 <@index0-0>
 
@@ -74,7 +75,7 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 
 <@index1-2>
 
-<@contents1-2>
+<#contents1-2>
 
 <@ooblog>
 |<#LTsv_doc_txt>]
@@ -94,55 +95,55 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 <#summary>
 <h2>目次</h2>
 <ul>
- <li><a href="#index0-0" title="<@index0-0>"><@index0-0></a></li>
- <li><a href="#index0-1" title="<@index0-1>"><@index0-1></a></li>
- <li><a href="#index0-2" title="<@index0-2>"><@index0-2></a></li>
- <li><a href="#index1-0a" title="<@index1-0a>"><@index1-0a></a></li>
- <li><a href="#index1-0b" title="<@index1-0b>"><@index1-0b></a></li>
- <li><a href="#index1-1a" title="<@index1-1a>"><@index1-1a></a></li>
- <li><a href="#index1-1b" title="<@index1-1b>"><@index1-1b></a></li>
- <li><a href="#index1-2" title="<@index1-2>"><@index1-2></a></li>
+ <li><@index0-0></li>
+ <li><@index0-1></li>
+ <li><@index0-2></li>
+ <li><@index1-0a></li>
+ <li><@index1-0b></li>
+ <li><@index1-1a></li>
+ <li><@index1-1b></li>
+ <li><@index1-2></li>
 </ul>
 </header>
 
 <section>
-<h3><a name="index0-0"><@index0-0></a></h3>
+<h3><a name="index0-0"><@title:index0-0></a></h3>
 <#contents0-0>
 </section>
 
 <section>
-<h3><a name="index0-1"><@index0-1></a></h3>
+<h3><a name="index0-1"><@title:index0-1></a></h3>
 <#contents0-1>
 </section>
 
 <section>
-<h3><a name="index0-2"><@index0-2></a></h3>
+<h3><a name="index0-2"><@title:index0-2></a></h3>
 <#contents0-2>
 </section>
 
 <section>
-<h3><a name="index1-0a"><@index1-0a></a></h3>
+<h3><a name="index1-0a"><@title:index1-0a></a></h3>
 <#contents1-0a>
 </section>
 
 <section>
-<h3><a name="index1-0b"><@index1-0b></a></h3>
+<h3><a name="index1-0b"><@title:index1-0b></a></h3>
 <#contents1-0b>
 </section>
 
 <section>
-<h3><a name="index1-1a"><@index1-1a></a></h3>
+<h3><a name="index1-1a"><@title:index1-1a></a></h3>
 <#contents1-1a>
 </section>
 
 <section>
-<h3><a name="index1-1b"><@index1-1b></a></h3>
+<h3><a name="index1-1b"><@title:index1-1b></a></h3>
 <#contents1-1b>
 </section>
 
 <section>
-<h3><a name="index1-2"><@index1-2></a></h3>
-<@contents1-2>
+<h3><a name="index1-2"><@title:index1-2></a></h3>
+<#contents1-2>
 </section>
 
 <footer>
@@ -151,6 +152,7 @@ defindent	firstL:<@firstL>	firstR:<@firstR>	restL:<@restL>	restC:<@restC>	restR:
 </footer>
 </body></html>
 |<#LTsv_doc_html>]
+
 [<#LTsv_doc_css>|
 @charset "utf-8";
 @font-face{
@@ -170,6 +172,9 @@ article{
   margin-top: 0.5rem;
   border: 1px gray solid;
   padding: 1rem;
+}
+dt{
+  font-weight: bold;
 }
 h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
 h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
@@ -196,8 +201,15 @@ modify <@modify><@BR><@/P>
 |<#summary>]
 
 [<@index0-0>|
-.*	０-0． ライセンス及びソフトの使用の補足ガイドライン
+.+\.html?	<a href="<@url:index0-0>" title="<@title:index0-0>"><@title:index0-0></a>
+.*	<@title:index0-0>\0
 |<@index0-0>]
+[<@url:index0-0>|
+.*	#index0-0
+|<@url:index0-0>]
+[<@title:index0-0>|
+.*	０-0． ライセンス及びソフトの使用の補足ガイドライン
+|<@title:index0-0>]
 [<#contents0-0>|
 <@P> ※「MIT License」準拠。<@BR><@/P>
 <@http://choosealicense.com/licenses/mit/>
@@ -233,8 +245,15 @@ modify <@modify><@BR><@/P>
 |<@title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
 
 [<@index0-1>|
-.*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
+.+\.html?	<a href="<@url:index0-1>" title="<@title:index0-1>"><@title:index0-1></a>
+.*	<@title:index0-1>\0
 |<@index0-1>]
+[<@url:index0-1>|
+.*	#index0-1
+|<@url:index0-1>]
+[<@title:index0-1>|
+.*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
+|<@title:index0-1>]
 [<#contents0-1>|
 <@P> ダウンロードは「<@https://github.com/ooblog/LTsv10kanedit>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<@BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<@BR>
@@ -244,8 +263,15 @@ modify <@modify><@BR><@/P>
 |<#contents0-1>]
 
 [<@index0-2>|
-.*	０-2． その他現在わかっている不具合や今後の課題
+.+\.html?	<a href="<@url:index0-2>" title="<@title:index0-2>"><@title:index0-2></a>
+.*	<@title:index0-2>\0
 |<@index0-2>]
+[<@url:index0-2>|
+.*	#index0-2
+|<@url:index0-2>]
+[<@title:index0-2>|
+.*	０-2． その他現在わかっている不具合や今後の課題
+|<@title:index0-2>]
 [<#contents0-2>|
 <@P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<@BR>
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<@BR>
@@ -259,8 +285,15 @@ modify <@modify><@BR><@/P>
 |<#contents0-2>]
 
 [<@index1-0a>|
-.*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
+.+\.html?	<a href="<@url:index1-0a>" title="<@title:index1-0a>"><@title:index1-0a></a>
+.*	<@title:index1-0a>\0
 |<@index1-0a>]
+[<@url:index1-0a>|
+.*	#index1-0a
+|<@url:index1-0a>]
+[<@title:index1-0a>|
+.*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
+|<@title:index1-0a>]
 [<#contents1-0a>|
 <@P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<@BR>
  素のLTSVファイル自体は単なるログのフォーマットです。<@BR>
@@ -293,31 +326,49 @@ modify <@modify><@BR><@/P>
 |<@title:http://d.hatena.ne.jp/naoya/20130209/1360381374>]
 
 [<@index1-0b>|
-.*	１-0b．「L:Tsv」ファイルの構造
+.+\.html?	<a href="<@url:index1-0b>" title="<@title:index1-0b>"><@title:index1-0b></a>
+.*	<@title:index1-0b>\0
 |<@index1-0b>]
+[<@url:index1-0b>|
+.*	#index1-0b
+|<@url:index1-0b>]
+[<@title:index1-0b>|
+.*	１-0b．「L:Tsv」ファイルの構造
+|<@title:index1-0b>]
 [<#contents1-0b>|
 <@P>  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<@BR>
  先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<@BR>
  firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<@BR>
- LTSVを「[tag|」と「|tag]」の様にタグで挟む事で１つのファイルに複数のCSVやLTSVやTXT等複数のページを格納できます。<@BR>
+ LTSVを「[tag|」と「|tag]」の様に<@contents1-0b:tagsplit><@BR>
  拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<@BR>
 <@/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<@BR>
-  [L:Tsv|                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<@BR>
-   code                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<@BR>
-   enter                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<@BR>
-   tab                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<@BR>
-   program                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。<@BR>
-   1st                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<@BR>
-   LTsvver                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<@BR>
-   modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<@BR>
-<@/PP>
+<@DLDT>  [L:Tsv|<@/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<@/DD/DL>
+<@DLDT>   code<@/DTDD>                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<@/DD/DL>
+<@DLDT>   enter<@/DTDD>                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<@/DD/DL>
+<@DLDT>   tab<@/DTDD>                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<@/DD/DL>
+<@DLDT>   program<@/DTDD>                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。<@/DD/DL>
+<@DLDT>   1st<@/DTDD>                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<@/DD/DL>
+<@DLDT>   LTsvver<@/DTDD>                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<@/DD/DL>
+<@DLDT>   modify <@/DTDD>                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<@/DD/DL>
+<@DLDT>  |L:Tsv]<@/DTDD>                    メタタグ「L:Tsv」を閉じます。<@contents1-0b:tagsplit><@/DD/DL>
+<@P>
 「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<@index1-2>」も参考。<@BR><@/P>
 |<#contents1-0b>]
+[<@contents1-0b:tagsplit>|
+.*	タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
+|<@contents1-0b:tagsplit>]
 
 [<@index1-1a>|
-.*	１-1a．「LTsv_printf.py」の関数一覧
+.+\.html?	<a href="<@url:index1-1a>" title="<@title:index1-1a>"><@title:index1-1a></a>
+.*	<@title:index1-1a>\0
 |<@index1-1a>]
+[<@url:index1-1a>|
+.*	#index1-1a
+|<@url:index1-1a>]
+[<@title:index1-1a>|
+.*	１-1a．「LTsv_printf.py」の関数一覧
+|<@title:index1-1a>]
 [<#contents1-1a>|
 <@P> Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<@BR>
  ・Wine上DOSのエラー要因だった<@CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<@BR>
@@ -341,8 +392,15 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |LTsv_printf.py]
 
 [<@index1-1b>|
-.*	１-1a．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+.+\.html?	<a href="<@url:index1-1b>" title="<@title:index1-1b>"><@title:index1-1b></a>
+.*	<@title:index1-1b>\0
 |<@index1-1b>]
+[<@url:index1-1b>|
+.*	#index1-1b
+|<@url:index1-1b>]
+[<@title:index1-1b>|
+.*	１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+|<@title:index1-1b>]
 [<#contents1-1b>|
 <@DLDT>   "Hira2Kata"<@/DTDD>         ひらがなをカタカナに。<@/DD/DL>
 <@DLDT>   "Kata2Hira"<@/DTDD>         カタカナをひらがなに。<@/DD/DL>
@@ -364,19 +422,23 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<#contents1-1b>]
 
 [<@index1-2>|
-.*	１-2． 「LTsv_file.py」の関数一覧
+.+\.html?	<a href="<@url:index1-2>" title="<@title:index1-2>"><@title:index1-2></a>
+.*	<@title:index1-2>\0
 |<@index1-2>]
-[<@contents1-2>|
-.*	<#text1-2>
-|<@contents1-2>]
-[<#text1-2>|
+[<@url:index1-2>|
+.*	#index1-2
+|<@url:index1-2>]
+[<@title:index1-2>|
+.*	１-2． 「LTsv_file.py」の関数一覧
+|<@title:index1-2>]
+[<#contents1-2>|
 <@P> Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<@BR>
  ・Wine上DOSのエラー要因だった<@CP932>に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。<@BR>
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<@BR>
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<@BR><@/P>
 
 <?LTsv_file.py>
-|<#text1-2>]
+|<#contents1-2>]
 
 [LTsv_file.py|
 LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<@index1-0b>」も参考。
@@ -739,12 +801,6 @@ debug_configload()
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
 
-[<@outlist>|
-.+\.html?	LTsv_doc.html
-.+\.css	LTsv_doc.css
-.*	LTsv_doc.txt
-|<@outlist>]
-
 [<@ooblog>|
 .+\.html?	<@Copyright><@BR>\n# <@LicenseMIT><@BR>\n# <a href="<@LICENSE>" title="<@LICENSE>"><@LICENSE></a><@BR>\n
 .*	# <@Copyright>\n# <@LicenseMIT>\n# <@LICENSE>
@@ -793,6 +849,11 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<@CP932>|
 .*	CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)
 |<@CP932>]
+[<@outlist>|
+.+\.html?	LTsv_doc.html
+.+\.css	LTsv_doc.css
+.*	LTsv_doc.txt
+|<@outlist>]
 
 [<@P>|
 .+\.html?	<p>\n
@@ -811,7 +872,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .*	
 |<@DLDT>]
 [<@/DTDD>|
-.+\.html?	</dt><dd>\n
+.+\.html?	</dt>\n<dd>\n
 .*	
 |<@/DTDD>]
 [<@/DD/DL>|
@@ -828,7 +889,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<@firstL>]
 [<@firstR>|
 .+\.html?	</dt>
-.*	】
+.*	】\n
 |<@firstR>]
 [<@restL>|
 .+\.html?	<dd>\n
@@ -839,9 +900,13 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .*	\n  
 |<@restC>]
 [<@restR>|
-.+\.html?	</dd></dl>
-.*	\n
+.+\.html?	</dd></dl>\n
+.*	|\n\n
 |<@restR>]
+[<@restRLast>|
+.+\.html?	</dd></dl>
+.*	
+|<@restRLast>]
 
 # Copyright (c) 2016 ooblog
 # License: MIT
