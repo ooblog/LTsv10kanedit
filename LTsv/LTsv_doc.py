@@ -91,7 +91,7 @@ LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOC
 LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist=[],[],[]
 LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR="",""
 LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast="【","】","  ","\n  ","\n",""
-LTsvDOClaunch_LTsvver="<L:Tsv@LTsvver>"
+LTsvDOClaunch_LTsvver="<*L:TsvLTsvver>"
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
@@ -111,11 +111,11 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_outdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"outdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_defdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"defdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_mainname=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
-        LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_mainname)
+        LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_mainname,"<#LTsv_doc_main>")
         LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag"),"L","R"))
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<@firstL>\tfirstR:<@firstR>\trestL:<@restL>\trestC:<@restC>\trestR:<@restR>\trestRLast:<@restRLast>"),"firstL","firstR","restL","restC","restR","restRLast"),6)
-        LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<L:Tsv@LTsvver>")
+        LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<*L:TsvLTsvver>")
         LTsvDOClaunch_pages=LTsv_readlinepages(LTsvDOClaunch_ltsv)
         LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,LTsvDOClaunch_mainname))
         for skplist in LTsvDOClaunch_skplist:

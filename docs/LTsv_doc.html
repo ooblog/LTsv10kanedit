@@ -11,9 +11,9 @@
 <h1>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</h1>
 <p>
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
-このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<6ttps://github.com/ooblog/LTsv10kanedit>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
+このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161107M064913<br />
+modify 20161107M221050<br />
 </p>
 
 <h2>目次</h2>
@@ -58,7 +58,7 @@ modify 20161107M064913<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<br />
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。<br />
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<@index3-0>」も参考)。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<*index3-0>」も参考)。<br />
 </p>
 
 </section>
@@ -299,7 +299,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 「L:Tsv」ファイルを変数上に作成する。<br />
  LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
 LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
-メタタグについては「<@index1-0b>」も参考。</dd></dl>
+メタタグについては「<*index1-0b>」も参考。</dd></dl>
 <dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
 ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
 ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
