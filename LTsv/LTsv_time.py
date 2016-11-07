@@ -204,20 +204,6 @@ def LTsv_setdaytimeoption(overhour=None,diffminute=None):
     LTsv_overhour=LTsv_overhour if overhour is None else min(max(overhour,LTsv_HourMAXLower),LTsv_HourMAXUpper)
     LTsv_diffminute=LTsv_diffminute if diffminute is None else min(max(diffminute,-24*60),+24*60)
 
-def LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None):
-    LTsv_setdaytimeoption(overhour,diffminute)
-    global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
-    LTsv_year=min(max(LTsv_toyear,datetime.MINYEAR),datetime.MAXYEAR)
-    LTsv_month=min(max(LTsv_tomonth,1),12)
-    LTsv_day=min(max(LTsv_today,1),LTsv_monthleap(LTsv_year,LTsv_month))
-    LTsv_hour=min(max(LTsv_tohour,0),23)
-    LTsv_minute=min(max(LTsv_tominute,0),59)
-    LTsv_second=min(max(LTsv_tosecond,0),59)
-    LTsv_microsecond=min(max(LTsv_tomicrosecond,0),999999)
-    LTsv_meridian_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)+datetime.timedelta(minutes=LTsv_diffminute)
-    LTsv_setdaytimeshift()
-    return LTsv_meridian_now
-
 def LTsv_putdaytimenow(overhour=None,diffminute=None):
     LTsv_setdaytimeoption(overhour,diffminute)
     global LTsv_earlier_now
@@ -232,6 +218,21 @@ def LTsv_putdaytimeearlier(overhour=None,diffminute=None):
     global LTsv_earlier_now
     global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
     LTsv_meridian_now=LTsv_earlier_now+datetime.timedelta(minutes=LTsv_diffminute)
+    LTsv_setdaytimeshift()
+    return LTsv_meridian_now
+
+def LTsv_putdaytimespecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None,overhour=None,diffminute=None):
+    LTsv_setdaytimeoption(overhour,diffminute)
+    global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
+    LTsv_meridian_now=datetime.datetime.now()
+    LTsv_year=min(max(year,datetime.MINYEAR),datetime.MAXYEAR) if year != None else LTsv_meridian_now.year
+    LTsv_month=min(max(month,1),12) if month != None else LTsv_meridian_now.month
+    LTsv_day=min(max(day,1),LTsv_monthleap(LTsv_year,LTsv_month)) if day != None else LTsv_meridian_now.day
+    LTsv_hour=min(max(hour,0),23) if hour != None else LTsv_meridian_now.hour
+    LTsv_minute=min(max(minute,0),59) if minute != None else LTsv_meridian_now.minute
+    LTsv_second=min(max(seconds,0),59) if seconds != None else LTsv_meridian_now.second
+    LTsv_microsecond=min(max(microsecond,0),999999) if microsecond != None else LTsv_meridian_now.microsecond
+    LTsv_meridian_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)+datetime.timedelta(minutes=LTsv_diffminute)
     LTsv_setdaytimeshift()
     return LTsv_meridian_now
 
@@ -535,6 +536,7 @@ def LTsv_settimershiftoption():
     LTsv_limit_Beat,LTsv_limit_BeatInteger,LTsv_limit_BeatPoint=LTsv_beat864(LTsv_limit_Hour,LTsv_limit_miNute,LTsv_limit_Second)
 
 def LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None):
+    global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
     LTsv_microsecond=0
     LTsv_microsecond=LTsv_microsecond if day         is None else day*86400*1000000
     LTsv_microsecond=LTsv_microsecond if hour        is None else hour*3600*1000000
@@ -542,7 +544,6 @@ def LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute
     LTsv_microsecond=LTsv_microsecond if seconds     is None else seconds*1000000
     LTsv_microsecond=LTsv_microsecond if millisecond is None else millisecond*1000
     LTsv_microsecond=LTsv_microsecond if microsecond is None else microsecond
-    global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
     LTsv_start_now=datetime.datetime.now()
     LTsv_lap_now=LTsv_start_now
     LTsv_goal_now=LTsv_start_now+datetime.timedelta(microseconds=LTsv_microsecond)
@@ -553,17 +554,17 @@ def LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute
     LTsv_settimershiftoption()
     return LTsv_limit_TotalSeconds
 
-def LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond):
+def LTsv_puttimerspecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None):
     global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
-    LTsv_year=min(max(LTsv_toyear,datetime.MINYEAR),datetime.MAXYEAR)
-    LTsv_month=min(max(LTsv_tomonth,1),12)
-    LTsv_day=min(max(LTsv_today,1),LTsv_monthleap(LTsv_year,LTsv_month))
-    LTsv_hour=min(max(LTsv_tohour,0),23)
-    LTsv_minute=min(max(LTsv_tominute,0),59)
-    LTsv_second=min(max(LTsv_tosecond,0),59)
-    LTsv_microsecond=min(max(LTsv_tomicrosecond,0),999999)
     global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
     LTsv_start_now=datetime.datetime.now()
+    LTsv_year=min(max(year,datetime.MINYEAR),datetime.MAXYEAR) if year != None else LTsv_start_now.year
+    LTsv_month=min(max(month,1),12) if month != None else LTsv_start_now.month
+    LTsv_day=min(max(day,1),LTsv_monthleap(LTsv_year,LTsv_month)) if day != None else LTsv_start_now.day
+    LTsv_hour=min(max(hour,0),23) if hour != None else LTsv_start_now.hour
+    LTsv_minute=min(max(minute,0),59) if minute != None else LTsv_start_now.minute
+    LTsv_second=min(max(seconds,0),59) if seconds != None else LTsv_start_now.second
+    LTsv_microsecond=min(max(microsecond,0),999999) if microsecond != None else LTsv_start_now.microsecond
     LTsv_goal_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)
     LTsv_lap_now=LTsv_start_now
     LTsv_passed_TotalSeconds=(LTsv_lap_now-LTsv_start_now).total_seconds()
@@ -729,8 +730,8 @@ if __name__=="__main__":
     timeformatday="2020年東京オリンピックまで@000D日"
     printlog=LTsv_libc_printf("LTsv_getdaytimestr()→{0}".format(LTsv_getdaytimestr()),printlog)
     print("")
-    LTsv_putdaytimespecify(2011,3,11,14,46,18,0,overhour=24,diffminute=0)
-    printlog=LTsv_libc_printf("LTsv_putdaytimespecify(2011,3,11,14,46,18,0,overhour=24,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    LTsv_putdaytimespecify(year=2011,month=3,day=11,hour=14,minute=46,seconds=18,microsecond=None,overhour=24,diffminute=0)
+    printlog=LTsv_libc_printf("LTsv_putdaytimespecify(year=2011,month=3,day=11,hour=14,minute=46,seconds=18,microsecond=None,overhour=24,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
     printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)),printlog)
     print("")
     LTsv_putdaytimever(LTsv_file_ver())
@@ -759,8 +760,8 @@ if __name__=="__main__":
         if count >= 0:
             time.sleep(1.0)
     print("")
-    LTsv_puttimerspecify(2020,7,24,0,0,0,0)
-    printlog=LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatday,LTsv_gettimerstr(timeformatday)),printlog)
+    LTsv_puttimerspecify(year=2020,month=7,day=24,hour=0)
+    printlog=LTsv_libc_printf("LTsv_puttimerspecify(year=2020,month=7,day=24,hour=0),LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatday,LTsv_gettimerstr(timeformatday)),printlog)
     LTsv_saveplain(txtpath,printlog); LTsv_libc_printf("LTsv_savefile('{0}',printlog)".format(txtpath))
     print("")
     print("__main__",LTsv_file_ver())

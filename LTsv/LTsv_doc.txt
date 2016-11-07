@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv_doc」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161108T043143
+modify 20161108T052511
 
 
 目次
@@ -356,7 +356,7 @@ modify 20161108T043143
 
  日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・20161108T043143形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
+ ・20161108T052511形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -383,12 +383,8 @@ modify 20161108T043143
   通常は「LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()」から呼び出される内部関数。
 
  【LTsv_setdaytimeoption(overhour=None,diffminute=None)】
-  現在時刻をLTsv_meridian_nowに格納。各種日時変数も計算。
-  追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
-
- 【LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)】
-  LTsv_meridian_nowに格納された日時を元に日時フォーマット用の各種日時変数(徹夜日時など)を再計算する。
-  通常はLTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()から呼び出される内部関数。
+  LTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定。
+  LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()にも同等機能のオプションがある。
 
  【LTsv_putdaytimenow(overhour=None,diffminute=None)】
   現在時刻を「LTsv_meridian_now」に格納。各種日時変数も計算。
@@ -398,13 +394,17 @@ modify 20161108T043143
   最後に実行された「LTsv_putdaytimenow()」の時刻「LTsv_earlier_now」を再度「LTsv_meridian_now」に格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
+ 【LTsv_putdaytimespecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None,overhour=None,diffminute=None)】
+  日時を指定して「LTsv_meridian_now」に格納。省略(Noneを代入)した項目は現在時刻などが代入。
+  追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
+
  【LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)】
   ファイルLTsv_pathの更新時刻タイムスタンプをLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの20161108T043143形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20161108T052511形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
@@ -425,9 +425,8 @@ modify 20161108T043143
   例えば三分後を指定する場合「LTsv_puttimerstartgoal(minute=3)」と入力。
   複数のパラメータを同時指定した場合、例えば分と秒なら秒優先というように細かい方の単位が採用される(内部ではmicrosecondで計算)。
 
- 【LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)】
-  タイマーのLTsv_goal_nowを設定する。
-  省略したパラメーターは現在日時が代入される(予定)。
+ 【LTsv_puttimerspecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None)】
+  タイマーのLTsv_goal_nowを日時指定。省略(Noneを代入)した項目は現在時刻などが代入。
 
  【LTsv_puttimerlap()】
   タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。
