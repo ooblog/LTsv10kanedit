@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<？DOCTYPE html>
 <html lang="ja"><head>
  <meta charset="UTF-8" />
  <meta name="description" content="">
@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「LTsv_doc」を使って「<a href="https://github.com/ooblog/LTsv10kaneditLTsv/LTsv_doc.tsv" title="<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a>LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161107M221050<br />
+modify 20161108T011235<br />
 </p>
 
 <h2>目次</h2>
@@ -26,6 +26,7 @@ modify 20161107M221050<br />
  <li><a href="#index1-1a" title="１-1a．「LTsv_printf.py」の関数一覧">１-1a．「LTsv_printf.py」の関数一覧</a></li>
  <li><a href="#index1-1b" title="１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧">１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a></li>
  <li><a href="#index1-2" title="１-2． 「LTsv_file.py」の関数一覧">１-2． 「LTsv_file.py」の関数一覧</a></li>
+ <li><a href="#index1-3a" title="１-3a．[LTsv_time.py]の関数一覧">１-3a．[LTsv_time.py]の関数一覧</a></li>
 </ul>
 </header>
 
@@ -41,7 +42,7 @@ modify 20161107M221050<br />
 <dl><dt>MIT License - Choose a License</dt><dd><a href="https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license" title="MIT License - Choose a License">https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license</a></dd></dl>
 <p>
  ※日本語による補足。<br />
-   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。<br />
+   ・複製物にも「MIT License」のLICENSEファイルを添付る事(著作権表示を誤魔化さない事)。<br />
    ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<br />
    ・ソースコードの閲覧やコピーに制限を設けない事。<br />
 </p><p>
@@ -58,7 +59,7 @@ modify 20161107M221050<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<br />
  Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。<br />
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<*index3-0>」も参考)。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index3-0>」も参考)。<br />
 </p>
 
 </section>
@@ -299,7 +300,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 「L:Tsv」ファイルを変数上に作成する。<br />
  LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
 LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
-メタタグについては「<*index1-0b>」も参考。</dd></dl>
+メタタグについては「<？index1-0b>」も参考。</dd></dl>
 <dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
 ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
 ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
@@ -434,6 +435,59 @@ Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:
 「LTsv_file.py」のバージョン表示(20161023U011852)。</dd></dl>
 <dl><dt>LTsv_issue()</dt><dd>
 「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。</dd></dl>
+
+</section>
+
+<section>
+<h3><a name="index1-3a">１-3a．[LTsv_time.py]の関数一覧</a></h3>
+<p>
+ 日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<br />
+ ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<br />
+ ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。<br />
+ ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<br />
+ ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。<br />
+ ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<br />
+</p>
+
+<dl><dt>LTsv_yearleap(LTsv_toyear)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_yearweeks(LTsv_toyear)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_monthleap(LTsv_toyear,LTsv_tomonth)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_beat864(LTsv_tohour,LTsv_tominute,LTsv_tosecond)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_checkFPS()</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_setdaytimeshift()</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_setdaytimeoption(overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)</dt><dd>
+LTsv_meridian_nowに格納された日時を元に日時フォーマット用の各種日時変数(徹夜日時など)を再計算する。<br />
+通常はLTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()から呼び出される内部関数。</dd></dl>
+<dl><dt>LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_putdaytimenow(overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_putdaytimeearlier(overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_settimershift()</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_settimershiftoption()</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_puttimerlap()</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_gettimerstr(timeformat=None)</dt><dd>
+</dd></dl>
 
 </section>
 
