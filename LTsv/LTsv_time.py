@@ -30,7 +30,7 @@ LTsv_ampmenl=("am",  "pm", "an")
 LTsv_ampmenu=("AM",  "PM", "AN")
 
 def LTsv_yearleap(LTsv_toyear):
-    return LTsv_toyear%4==0 and LTsv_toyear%100!=0 or LTsv_toyear%400==0
+    return LTsv_toyear%4 == 0 and LTsv_toyear%100 != 0 or LTsv_toyear%400 == 0
 
 def LTsv_yearweeks(LTsv_toyear):
     LTsv_Y,LTsv_WN,LTsv_WD=datetime.date(LTsv_toyear,12,31).isocalendar()
@@ -218,26 +218,6 @@ def LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_
     LTsv_setdaytimeshift()
     return LTsv_meridian_now
 
-def LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None):
-    LTsv_setdaytimeoption(overhour,diffminute)
-    global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
-    LTsv_ymd,LTsv_hns=0,0
-    try:
-        LTsv_ymd=int(LTsv_verstr[0:8])
-        LTsv_hns=int(LTsv_verstr[-6:])
-    except ValueError:
-        pass
-    LTsv_year=min(max(LTsv_ymd//10000,datetime.MINYEAR),datetime.MAXYEAR)
-    LTsv_month=min(max(LTsv_ymd//100%100,1),12)
-    LTsv_day=min(max(LTsv_ymd%100,1),LTsv_monthleap(LTsv_year,LTsv_month))
-    LTsv_hour=min(max(LTsv_hns//10000,0),23)
-    LTsv_minute=min(max(LTsv_hns//100%100,0),59)
-    LTsv_second=min(max(LTsv_hns%100,0),59)
-    LTsv_microsecond=0
-    LTsv_meridian_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)+datetime.timedelta(minutes=LTsv_diffminute)
-    LTsv_setdaytimeshift()
-    return LTsv_meridian_now
-
 def LTsv_putdaytimenow(overhour=None,diffminute=None):
     LTsv_setdaytimeoption(overhour,diffminute)
     global LTsv_earlier_now
@@ -259,6 +239,26 @@ def LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None):
     LTsv_setdaytimeoption(overhour,diffminute)
     global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
     LTsv_meridian_now=datetime.datetime.fromtimestamp(os.stat(LTsv_path).st_mtime)+datetime.timedelta(minutes=LTsv_diffminute)
+    LTsv_setdaytimeshift()
+    return LTsv_meridian_now
+
+def LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None):
+    LTsv_setdaytimeoption(overhour,diffminute)
+    global LTsv_meridian_now,LTsv_overhour,LTsv_diffminute,LTsv_HourMAXLower,LTsv_HourMAXUpper
+    LTsv_ymd,LTsv_hns=0,0
+    try:
+        LTsv_ymd=int(LTsv_verstr[0:8])
+        LTsv_hns=int(LTsv_verstr[-6:])
+    except ValueError:
+        pass
+    LTsv_year=min(max(LTsv_ymd//10000,datetime.MINYEAR),datetime.MAXYEAR)
+    LTsv_month=min(max(LTsv_ymd//100%100,1),12)
+    LTsv_day=min(max(LTsv_ymd%100,1),LTsv_monthleap(LTsv_year,LTsv_month))
+    LTsv_hour=min(max(LTsv_hns//10000,0),23)
+    LTsv_minute=min(max(LTsv_hns//100%100,0),59)
+    LTsv_second=min(max(LTsv_hns%100,0),59)
+    LTsv_microsecond=0
+    LTsv_meridian_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)+datetime.timedelta(minutes=LTsv_diffminute)
     LTsv_setdaytimeshift()
     return LTsv_meridian_now
 
@@ -562,14 +562,16 @@ def LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_to
     LTsv_minute=min(max(LTsv_tominute,0),59)
     LTsv_second=min(max(LTsv_tosecond,0),59)
     LTsv_microsecond=min(max(LTsv_tomicrosecond,0),999999)
-    LTsv_goal_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)
+    global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
     LTsv_start_now=datetime.datetime.now()
+    LTsv_goal_now=datetime.datetime(LTsv_year,LTsv_month,LTsv_day,LTsv_hour,LTsv_minute,LTsv_second,LTsv_microsecond)
     LTsv_lap_now=LTsv_start_now
     LTsv_passed_TotalSeconds=(LTsv_lap_now-LTsv_start_now).total_seconds()
     LTsv_timeleft_TotalSeconds=(LTsv_goal_now-LTsv_lap_now).total_seconds()
     LTsv_limit_TotalSeconds=(LTsv_goal_now-LTsv_start_now).total_seconds()
     LTsv_settimershift()
     LTsv_settimershiftoption()
+    return LTsv_limit_TotalSeconds
 
 def LTsv_puttimerlap():
     global LTsv_start_now,LTsv_lap_now,LTsv_goal_now,LTsv_passed_TotalSeconds,LTsv_timeleft_TotalSeconds,LTsv_limit_TotalSeconds
@@ -719,45 +721,47 @@ if __name__=="__main__":
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
     LTsv_checkFPS()
+    test_workdir="./testfile/"; txtpath=test_workdir+"testtime.txt"; printlog=""
     timeformat24="@yzj年@000y-@0m-@0dm@mes(@0dy/@0yd日@0wnyi/@ywi週@wdes第@wnm@wdj曜@apj@hap時)@0h:@0n:@0s.@0rs"
     timeformat30="@Yzj年@000Y-@Mz-@Dmz@Mes(@0Dy/@0Yd日@Wnyiz/@Ywi週@Wdes第@Wnmz@Wdj曜@Apj@Hz時)@Hz:@Nz:@Sz.@0Rs"
     timeformatBT="@000y-@0m-@0dm@mes(@0dy/@0yd,@0wn/@yw.@wdes)@bt:@@@0bti.@0btp"
     timeformatsec="@0h:@0n:@0s.@0rs(@+-@-0h:@-0n:@-0s.@-0rs)@@@0bti.@0btp(@+-@-0bti.@-0btp)/@0H:@0N:@0S.@0Rs FPS:@0fpk"
     timeformatday="2020年東京オリンピックまで@000D日"
-    LTsv_libc_printf("LTsv_getdaytimestr()→{0}".format(LTsv_getdaytimestr()))
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr()→{0}".format(LTsv_getdaytimestr()),printlog)
     print("")
     LTsv_putdaytimespecify(2011,3,11,14,46,18,0,overhour=24,diffminute=0)
-    LTsv_libc_printf("LTsv_putdaytimespecify(2011,3,11,14,46,18,0,overhour=24,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)))
+    printlog=LTsv_libc_printf("LTsv_putdaytimespecify(2011,3,11,14,46,18,0,overhour=24,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)),printlog)
     print("")
     LTsv_putdaytimever(LTsv_file_ver())
-    LTsv_libc_printf("LTsv_putdaytimever(LTsv_time_ver()),LTsv_meridian_now→{0}".format(LTsv_meridian_now))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)))
+    printlog=LTsv_libc_printf("LTsv_putdaytimever(LTsv_time_ver()),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)),printlog)
     print("")
     LTsv_putdaytimenow(overhour=24,diffminute=-9*60)
-    LTsv_libc_printf("LTsv_putdaytimenow(overhour=24,diffminute=-9*60),LTsv_meridian_now→{0}".format(LTsv_meridian_now))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)))
+    printlog=LTsv_libc_printf("LTsv_putdaytimenow(overhour=24,diffminute=-9*60),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)),printlog)
     LTsv_putdaytimeearlier(overhour=48,diffminute=0);
-    LTsv_libc_printf("LTsv_putdaytimeearlier(overhour=48,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat30,LTsv_getdaytimestr(timeformat30)))
+    printlog=LTsv_libc_printf("LTsv_putdaytimeearlier(overhour=48,diffminute=0),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat24,LTsv_getdaytimestr(timeformat24)),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformat30,LTsv_getdaytimestr(timeformat30)),printlog)
     print("")
     LTsv_putdaytimeearlier(overhour=24,diffminute=-8*60)
-    LTsv_libc_printf("LTsv_putdaytimeearlier(overhour=24,diffminute=-8*60),LTsv_meridian_now→{0}".format(LTsv_meridian_now))
-    LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformatBT,LTsv_getdaytimestr(timeformatBT)))
+    printlog=LTsv_libc_printf("LTsv_putdaytimeearlier(overhour=24,diffminute=-8*60),LTsv_meridian_now→{0}".format(LTsv_meridian_now),printlog)
+    printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformatBT,LTsv_getdaytimestr(timeformatBT)),printlog)
     print("")
     LTsv_puttimerstartgoal(seconds=3)
-    count=5
+    count=3
     while count >= 0:
         LTsv_checkFPS()
-        LTsv_libc_printf("count {0}:{1:3.6f}".format(count,LTsv_puttimerlap()))
-        LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatsec,LTsv_gettimerstr(timeformatsec)))
+        printlog=LTsv_libc_printf("count {0}:{1:3.6f}".format(count,LTsv_puttimerlap()),printlog)
+        printlog=LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatsec,LTsv_gettimerstr(timeformatsec)),printlog)
         count-=1
         if count >= 0:
             time.sleep(1.0)
     print("")
     LTsv_puttimerspecify(2020,7,24,0,0,0,0)
-    LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatday,LTsv_gettimerstr(timeformatday)))
+    printlog=LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatday,LTsv_gettimerstr(timeformatday)),printlog)
+    LTsv_saveplain(txtpath,printlog); LTsv_libc_printf("LTsv_savefile('{0}',printlog)".format(txtpath))
     print("")
     print("__main__",LTsv_file_ver())
 

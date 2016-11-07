@@ -51,6 +51,9 @@ def LTsvDOCdef_python(LTsvDOClaunch_deffile):
     LTsvDOClaunch_deffile=re.sub(re.compile("[:].*$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     return LTsvDOClaunch_deffile
 
+def LTsvDOCdef_PNGbase64(LTsvDOClaunch_deffile):
+    return LTsvDOClaunch_deffile
+
 def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
     return LTsvDOClaunch_deffile
 
@@ -64,7 +67,6 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
     if LTsvDOC_defnameext in LTsvDOCdefextlist:
         if not LTsvDOC_tagname in LTsvDOClaunch_deflist:
             LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
-            LTsvDOClaunch_deflist=LTsvDOClaunch_deflist+[LTsvDOC_tagname]
             LTsvDOClaunch_deffile=LTsvDOCdefextlist[LTsvDOC_defnameext](LTsvDOClaunch_deffile)
             LTsvDOC_defcases=LTsvDOClaunch_deffile.rstrip('\n').split('\n')
             LTsvDOClaunch_defnewpage=""
@@ -72,6 +74,7 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
                 LTsvDOClaunch_defrest=LTsv_readlinerest(LTsvDOClaunch_defpage,LTsvDOC_defname)
                 LTsvDOClaunch_defnewpage=LTsv_pushlinerest(LTsvDOClaunch_defnewpage,LTsvDOC_defname,LTsvDOClaunch_defrest)
             LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname,LTsvDOClaunch_defnewpage)
+            LTsvDOClaunch_deflist=LTsvDOClaunch_deflist+[LTsvDOC_tagname]
         LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
         LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
         LTsvDOC_tagcasesLast=len(LTsvDOC_tagcases)-1

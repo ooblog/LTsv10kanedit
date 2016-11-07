@@ -508,8 +508,7 @@ if __name__=="__main__":
     from LTsv_printf import *
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
-    test_workdir="./testfile/"
-    tsvpath=test_workdir+"testfile.tsv"; txtpath=test_workdir+"testfile.txt"; printlog=""
+    test_workdir="./testfile/"; tsvpath=test_workdir+"testfile.tsv"; txtpath=test_workdir+"testfile.txt"; printlog=""
     newfile=LTsv_newfile('__name__=="__main__"',"LTsv10kanedit"); printlog=LTsv_libc_printf("LTsv_newfile('LTsv10kanedit')↓\n{0}-eof-".format(newfile),printlog)
     newfile=LTsv_putpage(newfile,"LTsv10kanedit","stdout\tHelloワールド\u5496\u55B1")
     newpage=LTsv_getpage(newfile,"LTsv10kanedit")

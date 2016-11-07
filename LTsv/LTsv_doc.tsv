@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161108T011236
+modify	20161108T043144
 |L:Tsv]
 
 [LTsv_doc|
@@ -159,7 +159,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 <footer>
  <p>site generator repository：<？https://github.com/ooblog/LTsv10kanedit></p>
-<？ooblog>
+ <p><？ooblog></p>
 </footer>
 </body></html>
 |<＃LTsv_doc_html>]
@@ -231,7 +231,7 @@ modify <？modify><？BR><？/P>
 <？P> ※「MIT License」の日本語訳。<？BR><？/P>
 <？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>
 <？P> ※日本語による補足。<？BR>
-   ・複製物にも「MIT License」のLICENSEファイルを添付る事(著作権表示を誤魔化さない事)。<？BR>
+   ・複製物にも「MIT License」の「<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>」ファイルを添付る事(著作権表示を誤魔化さない事)。<？BR>
    ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<？BR>
    ・ソースコードの閲覧やコピーに制限を設けない事。<？BR>
 <？/PP>
@@ -511,12 +511,12 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 .*	#index1-3a
 |<？url:index1-3a>]
 [<？title:index1-3a>|
-.*	１-3a．[LTsv_time.py]の関数一覧
+.*	１-3a．「LTsv_time.py」の関数一覧
 |<？title:index1-3a>]
 [<＃contents1-3a>|
 <？P> 日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<？BR>
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<？BR>
- ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。<？BR>
+ ・<？modify_style>だと困るのであればフォーマット指定。<？BR>
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<？BR>
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。<？BR>
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
@@ -526,26 +526,27 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 
 
 [LTsv_time.py|
-LTsv_yearleap(LTsv_toyear)	
-LTsv_yearweeks(LTsv_toyear)	
-LTsv_monthleap(LTsv_toyear,LTsv_tomonth)	
-LTsv_beat864(LTsv_tohour,LTsv_tominute,LTsv_tosecond)	
-LTsv_checkFPS()	
-LTsv_setdaytimeshift()	
-LTsv_setdaytimeoption(overhour=None,diffminute=None)	
+LTsv_yearleap(LTsv_toyear)	閏年ならTrue。
+LTsv_yearweeks(LTsv_toyear)	一年の間に週(ISOカレンダーの週)が何回あるか、年間の週数52〜53を返す。
+LTsv_monthleap(LTsv_toyear,LTsv_tomonth)	一月の間に日が何回あるか、28〜31を返す。閏年なら2月は29日。
+LTsv_beat864(LTsv_tohour,LTsv_tominute,LTsv_tosecond)	(LTsv_Beat,LTsv_BeatInteger,LTsv_BeatPoint)のタプルを返す。	LTsv_Beatは1日の秒数0?86399(86400)。@Beatはその秒数を86.4で割った一日を1000分割する数。	LTsv_BeatIntegerは@Beatの整数部分。LTsv_BeatPointは@Beatの小数部分。
+LTsv_checkFPS()	LTsv_checkFPS()自身を1秒間に何回実行できるか計測。0〜999の範囲。
+LTsv_setdaytimeshift()	日時フォーマット用の日時変数(LTsv_meridian_nowなど)を再計算する。	通常は「LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()」から呼び出される内部関数。
+LTsv_setdaytimeoption(overhour=None,diffminute=None)	現在時刻をLTsv_meridian_nowに格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定を上書きできる。
 LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)	LTsv_meridian_nowに格納された日時を元に日時フォーマット用の各種日時変数(徹夜日時など)を再計算する。	通常はLTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()から呼び出される内部関数。
-LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)	
-LTsv_putdaytimenow(overhour=None,diffminute=None)	
-LTsv_putdaytimeearlier(overhour=None,diffminute=None)	
-LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)	
-LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)	
-LTsv_settimershift()	
-LTsv_settimershiftoption()	
-LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)	
-LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	
-LTsv_puttimerlap()	
-LTsv_gettimerstr(timeformat=None)	
+LTsv_putdaytimenow(overhour=None,diffminute=None)	現在時刻を「LTsv_meridian_now」に格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
+LTsv_putdaytimeearlier(overhour=None,diffminute=None)	最後に実行された「LTsv_putdaytimenow()」の時刻「LTsv_earlier_now」を再度「LTsv_meridian_now」に格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
+LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)	ファイルLTsv_pathの更新時刻タイムスタンプをLTsv_meridian_nowに格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。	OSやファイルシステム毎に秒や分の精度に違いがあると思う。
+LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)	「LTsv_time_ver()」などの<？modify_style>をLTsv_meridian_nowに格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
+LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)	日付フォーマットtimeformatを各種日時変数で置換する。	timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。	日付フォーマットの概要は「<？index1-3b>」を参照。
+LTsv_settimershift()	日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。	通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。
+LTsv_settimershiftoption()	LTsv_start_nowとLTsv_goal_nowの差分を再計算する。	通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。
+LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)	タイマーのLTsv_goal_nowを数秒後(seconds)・数分後(minute)・数時間後(hour)・数日後(day)などいずれかに設定する。	例えば三分後を指定する場合「LTsv_puttimerstartgoal(minute=3)」と入力。	複数のパラメータを同時指定した場合、例えば分と秒なら秒優先というように細かい方の単位が採用される(内部ではmicrosecondで計算)。
+LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	タイマーのLTsv_goal_nowを設定する。	省略したパラメーターは現在日時が代入される(予定)。
+LTsv_puttimerlap()	タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。
+LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タイマー変数で置換する。	timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index1-3b>」を参照。
 |LTsv_time.py]
+LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	タイマーのLTsv_goal_nowを設定する。	省略したパラメーターは現在日時が代入される(予定)。
 
 [LTsv_calc.py|
 LTsv_calc_GCM(LTsv_calcL,LTsv_calcR)	
@@ -838,9 +839,25 @@ debug_configload()
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
 
+[<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>|
+.+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_tsv>" title="<？url:https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_tsv>"><？LTsv/LTsv_doc_tsv></a>
+.*	LTsv/LTsv_doc.tsv
+|<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>]
+[<？LTsv/LTsv_doc_tsv>|
+.*	LTsv/LTsv_doc.tsv
+|<？LTsv/LTsv_doc_tsv>]
+
+[<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>|
+.+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>" title="<？url:https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>">LICENSE</a>
+.*	LICENSE
+|<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>]
+[<？blob/master/LICENSE>|
+.*	blob/master/LICENSE
+|<？blob/master/LICENSE>]
+
 [<？ooblog>|
-.+\.html?	<？Copyright><？BR>\n# <？LicenseMIT><？BR>\n# <a href="<？LICENSE>" title="<？LICENSE>"><？LICENSE></a><？BR>\n
-.*	# <？Copyright>\n# <？LicenseMIT>\n# <？LICENSE>
+.+\.html?	# <？Copyright><？BR>\n# <？LicenseMIT><？BR>\n# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE><？BR>\n
+.*	# <？Copyright>\n# <？LicenseMIT>\n# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>\n
 |<？ooblog>]
 [<？Copyright>|
 .*	Copyright (c) 2016 ooblog
@@ -848,20 +865,16 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<？LicenseMIT>|
 .*	License: MIT
 |<？LicenseMIT>]
-[<？LICENSEurl>|
-.+\.html?	<a href="<？LICENSE>" title="<？LICENSE>"><？LICENSE></a>
-.*	   LTsv/LTsv_doc.tsv
-|<？LICENSEurl>]
-[<？LICENSE>|
-.*	<？url:https://github.com/ooblog/LTsv10kanedit>/blob/master/LICENSE
-|<？LICENSE>]
-[<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>|
-.+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit><？LTsv/LTsv_doc_tsv>" title="<？https://github.com/ooblog/LTsv10kanedit><？LTsv/LTsv_doc_tsv>"><？LTsv/LTsv_doc_tsv></a>
-.*	   LTsv/LTsv_doc.tsv
-|<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>]
-[<？LTsv/LTsv_doc_tsv>|
-.*	LTsv/LTsv_doc.tsv
-|<？LTsv/LTsv_doc_tsv>]
+[<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
+.+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>" title="<？title:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>"><？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE></a>
+.*	<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>\0
+|<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
+[<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
+.*	https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+|<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
+[<？title:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
+.*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
+|<？title:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
 
 [<？https://github.com/ooblog/LTsv10kanedit>|
 .+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>" title="<？title:https://github.com/ooblog/LTsv10kanedit>"><？url:https://github.com/ooblog/LTsv10kanedit></a>
@@ -877,6 +890,9 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<？LTsv>|
 .*	LTsv10kanedit(tsvtool10)
 |<？LTsv>]
+[<？modify_style>|
+.*	<？modify>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
+|<？modify_style>]
 [<？modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
 |<？modify>]
