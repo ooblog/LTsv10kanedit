@@ -267,6 +267,7 @@ if __name__=="__main__":
     from LTsv_file   import *
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
+    test_workdir="./testfile/"; txtpath=test_workdir+"testcalc.txt"; printlog=""
     LTsv_calcQlist=[ "1/3","1|3*3","1-m2",
                      "1|6+1|3","3|4-1|4","2|3*3|4","2|5/4|5","7\\3","10#3","3|2#1|3","10000+8%","24G36","24L36","24|7G36|7","24|7G36|11",
                      "0.5|3.5","0.5/3.5","1|2/7|2","2|3|5|7","2||3","2|--|3","2|p-|3","2|..|3","2|p4.|3","2|m.4|3",
@@ -275,7 +276,8 @@ if __name__=="__main__":
                      "c","1|1","π","314159265359|100000000000","3.1416","ｅ","135914091423|50000000000","2.71828","n","n|0","123456789/0",
                      "8765垓4321京0987兆8901億987万6543円210銭","一千二百三十四万五千六百七十八","千百十","億千万","壱萬円" ]
     for LTsv_calcQ in LTsv_calcQlist:
-        LTsv_libc_printf("{0}⇔{1}".format(LTsv_calcQ,LTsv_calc(LTsv_calcQ)))
+        printlog=LTsv_libc_printf("{0}⇔{1}".format(LTsv_calcQ,LTsv_calc(LTsv_calcQ)),printlog)
+    LTsv_saveplain(txtpath,printlog); LTsv_libc_printf("LTsv_savefile('{0}',printlog)".format(txtpath))
     print("")
     print("__main__",LTsv_file_ver())
 

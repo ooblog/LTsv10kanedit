@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161108T052512
+modify	20161108T221853
 |L:Tsv]
 
 [LTsv_doc|
@@ -44,7 +44,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <？index1-1b>
  <？index1-2>
  <？index1-3a>
-
+ <？index1-3b>
+ <？index1-4a>
 
 <？index0-0>
 
@@ -82,11 +83,19 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 <＃contents1-3a>
 
+<？index1-3b>
+
+<＃contents1-3b>
+
+<？index1-4a>
+
+<＃contents1-4a>
+
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
 [<＃LTsv_doc_html>|
-<？DOCTYPE html>
+<?DOCTYPE html>
 <html lang="ja"><head>
  <meta charset="UTF-8" />
  <meta name="description" content="">
@@ -109,6 +118,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <li><？index1-1b></li>
  <li><？index1-2></li>
  <li><？index1-3a></li>
+ <li><？index1-3b></li>
+ <li><？index1-4a></li>
 </ul>
 </header>
 
@@ -157,8 +168,18 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <＃contents1-3a>
 </section>
 
+<section>
+<h3><a name="index1-3b"><？title:index1-3b></a></h3>
+<＃contents1-3b>
+</section>
+
+<section>
+<h3><a name="index1-4"><？title:index1-4a></a></h3>
+<＃contents1-4a>
+</section>
+
 <footer>
- <p>site generator repository：<？https://github.com/ooblog/LTsv10kanedit></p>
+ <p>site generator "<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>" repository：<？https://github.com/ooblog/LTsv10kanedit></p>
  <p><？ooblog></p>
 </footer>
 </body></html>
@@ -210,7 +231,7 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 [<＃summary>|
 <？P>「LTsv_doc」は「<？LTsv>」を用いたドキュメント生成ツールです。<？BR>
-このモジュール解説文書「<？outlist>」も「LTsv_doc」を使って「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<？BR>
+このモジュール解説文書「<？outlist>」も「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>」を使って「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<？BR>
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
@@ -549,16 +570,118 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 #LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)	日時のLTsv_meridian_nowを設定する。	のに格納された日時を元に各種日時変数(徹夜日時など)を再計算する。	通常はLTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()から呼び出される内部関数。
 #LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	タイマーのLTsv_goal_nowを設定する。	省略したパラメーターは現在日時が代入される。
 
+[<？index1-3b>|
+.+\.html?	<a href="<？url:index1-3b>" title="<？title:index1-3b>"><？title:index1-3b></a>
+.*	<？title:index1-3b>\0
+|<？index1-3b>]
+[<？url:index1-3b>|
+.*	#index1-3b
+|<？url:index1-3b>]
+[<？title:index1-3b>|
+.*	１-3b．日時フォーマットの概要
+|<？title:index1-3b>]
+[<＃contents1-3b>|
+<？P> 0.「@」で始まるキーワードが年月日等に置換される仕組み。「@」を表示する場合は「@@」と表記。<？BR>
+ 1.日付フォーマット(daytime系)では、小文字が現在時刻(meridian)、大文字が徹夜日時(allnight)です。分以下・Beat・timer系に徹夜日時はありません。<？BR>
+ 2.時間フォーマット(timer系)では、小文字が現在時刻(lap)、大文字が曲や動画などの長さ(limit)、「-」が先頭でタイマーの残り時間(timeleft)です。<？BR>
+ 3.分(miNute)は「n」で代用して月(Month)との変数名衝突防止してます。ミリ秒は「L」(miLlisecond)。マイクロ秒は「R」(micRoSecond)。<？BR>
+ 4.「_」(アンダースコア)を先頭に入れると0が空白に。0も空白も省くと数値は可変長。<？BR>
+ 5.月で「JFCAMNLUSOND」表記が使えます。曜で「UMTWRFS」表記が使えます。末尾に「ec」で英語1文字。末尾「j」で日本語表記。<？BR>
+ 5.日時の月,週,時,分,秒で2桁以下の数値項目の場合、末尾に「z」で１,２,３,４,５,６,７,８,９,10,11,12といった1桁の時全角数値の表現が可能。<？BR>
+<？/P>
+<？DLDT> 年=@yzj,@yzc,@0yz,@_yz,@yz,@0yd,@_yd,@yd,@0yw,@_yw,@yw,@000yi,@___yi,@4yi,@0yi,@_yi,@2yi,@yi,@000y,@___y,@4y,@0y,@_y,@2y,@y,@Yzj,@Yzc,@0Yz,@_Yz,@Yz,@0Yd,@_Yd,@Yd,@0Yw,@_Yw,@Yw,@000Yi,@___Yi,@4Yi,@0Yi,@_Yi,@2Yi,@Yi,@000Y,@___Y,@4Y,@0Y,@_Y,@2Y,@Y<？/DTDD>
+  000y,___y,4y系は4桁の年(Year)。000y,___y,4y系は2桁の年(Yearlower)。<？BR>
+  yz系は干支(YearZodiac)。@yzjで鼠,牛,虎,兎,龍,蛇,馬,羊,猿,鶏,犬,猪。@yzcで子,丑,寅,卯,辰,巳,午,未,申,酉,戌,亥<？BR>
+  yi系はISOカレンダーの年(YearIso)。第1週に突入した時点で年が明けるので、年末年始の間は西暦カレンダーの年とズレる場合があります。<？BR>
+  ywi系は年間の週数(YearWeeksIso)。年間約52〜53回。1月4日が含まれる週が第1週(第1木曜日が含まれる週)。<？BR>
+  yd系は年間の日数(YearDays)。年間約365〜366日。閏年の時に1日増える。<？BR><？/DD/DL>
+
+<？DLDT> 月=@0md,@_md,@md,@mec,@mes,@mel,@_mel,@meh,@_meh,@mjiz,@_mjiz,@mj,@_mj,@0m,@_m,@mz,@m,@0Md,@_Md,@Md,@Mec,@Mes,@Mel,@_Mel,@Meh,@_Meh,@Mjiz,@_Mjiz,@Mj,@_Mj,@0M,@_M,@Mz,@M<？/DTDD>
+  m系は月の数値(Month)。1?12。<？BR>
+  me系は月の英語表記。末尾「c」で一文字(JFCAMNLUSOND)、末尾「s」で三文字、末尾「l」で単語、末尾「h」で一文字の箇所大文字。<？BR>
+   (January,February,marCh,April,May,juNe,juLy,aUgust,September,October,November,December)<？BR>
+  mj系は神無月、mjiz系は神有月(睦月,如月,弥生,卯月,皐月,水無月,文月,葉月,長月,神有月,霜月,師走)表記の旧暦の月名。<？BR>
+  md系は月間の日数(MonthDays)。31,28,31,30,31,30,31,31,30,31,30,31。閏年は31,29,31,30,31,30,31,31,30,31,30,31と2月が29日になる。<？BR><？/DD/DL>
+
+<？DLDT> 週=@0wnyi,@_wnyi,@wnyiz,@wnyi,@0Wnyi,@_Wnyi,@Wnyiz,@Wnyi,@0wnm,@_wnm,@wnmz,@wnm,@0Wnm,@_Wnm,@Wnmz,@Wnm<？/DTDD>
+  wnyi系はISOカレンダーの週番号(WeekNumberYearIso)。年間約52〜53回。1月4日が含まれる週が第1週(第1木曜日が含まれる週)。<？BR>
+  wnm系は月毎の曜番号(WeekNumberMonth)。月間約4?5回。単純に月内の日数を7で割った数。<？BR><？/DD/DL>
+
+<？DLDT> 曜=@wdj,@wdec,@wdes,@wdel,@_wdel,@wdeh,@_wdeh,@wdi,@wd,@Wdj,@Wdec,@Wdes,@Wdel,@_Wdel,@Wdeh,@_Wdeh,@Wdi,@Wd<？/DTDD>
+  wd系は曜の数値(WeekDay)。月曜が0で土曜が5、日曜が6。<？BR>
+  we系は曜の英語表記。末尾「c」で一文字(MTWRFSU)、末尾「s」で三文字、末尾「l」で単語、末尾「h」で一文字の箇所大文字。<？BR>
+   (Monday,Tuesday,Wednesday,thuRsday,Friday,Saturday,sUnday)<？BR>
+  wj系は月火水木金土日。<？BR>
+  wdi系はISOカレンダー曜日の数値(WeekDayIso)。月曜が1で土曜が6、日曜が7。<？BR><？/DD/DL>
+
+<？DLDT> 日(日付)=@0dm,@_dm,@dmz,@dm,@0dy,@_dy,@dy,@0Dm,@_Dm,@Dmz,@Dm,@0Dy,@_Dy,@Dy<？/DTDD>
+ 日(時間)=@000d,@___d,@00d,@__d,@0d,@_d,@d,@-000d,@-___d,@-00d,@-__d,@-0d,@-_d,@-d,@000D,@___D,@00D,@__D,@0D,@_D,@D<？BR>
+  dm系は月換算の日数(DayMonth)。31,28,31,30,31,30,31,31,30,31,30,31。閏年は31,29,31,30,31,30,31,31,30,31,30,31と2月が29日になる。<？BR>
+  dy系は年換算の日数(DayYear)。年間約365〜366日。閏年の時に1日増える。<？BR>
+  時間フォーマット(timer系)では日は4桁まで使えます。<？BR><？/DD/DL>
+
+<？DLDT> 時(日付)=@apj,@apel,@apeu,@ap,@Apj,@Apel,@Apeu,@Ap,@0hap,@_hap,@hapz,@hap,@0h,@_h,@hz,@h,@0H,@_H,@Hz,@H<？/DTDD>
+ 時(時間)=@0dh,@_dh,@dh,@-0dh,@-_dh,@-dh,@0Dh,@_Dh,@Dh,@0h,@_h,@h,@-0h,@-_h,@-h,@0H,@_H,@H<？BR>
+  h系は時の数値(Hour)。1?24。大文字の「H」を使うと徹夜日時を表示(overhour)。1〜48。<？BR>
+  hap系は午前午後表記の数値(HourAP)。1〜12。<？BR>
+  apj系は午前午後徹夜表記。大文字の「A」を使うと徹夜日時を表示(overhour)。36時を過ぎようが徹夜日時の時は「徹夜」と表示される。<？BR>
+  ape系はam,pm,al表記。大文字の「A」を使うと徹夜日時を表示(overhour)。末尾「l」で小文字、末尾「u」で大文字。<？BR>
+  ap系は午前午後を0,1で。大文字の「A」を使うと午前午後徹夜を0,1,2で。何を言ってるか分からないだろうがoverhourの設定次第では昼の12時だろうが徹夜と表示。<？BR>
+  午前午後徹夜は時間フォーマット(timer系)には存在しません。<？BR><？/DD/DL>
+
+<？DLDT> 分(日付)=@0n,@_n,@nz,@n,@0N,@_N,@Nz,@N<？/DTDD>
+ 分(時間)=@0n,@_n,@n,@-0n,@-_n,@-n,@0N,@_N,@N<？BR>
+  n系は分(miNute)。0〜59。<？BR><？/DD/DL>
+
+<？DLDT> 秒(日付)=@0s,@_s,@sz,@s,@0S,@_S,@Sz,@S,@0ls,@_ls,@ls,@0rs,@_rs,@rs,@0Ls,@_Ls,@Ls,@0Rs,@_Rs,@Rs<？BR>
+ 秒(時間)=@0s,@_s,@s,@-0s,@-_s,@-s,@0S,@_S,@S,@0ls,@_ls,@ls,@-0ls,@-_ls,@-ls,@0Ls,@_Ls,@Ls,@0rs,@_rs,@rs,@-0rs,@-_rs,@-rs,@0Rs,@_Rs,@Rs<？/DTDD>
+  s系は秒(Second)。0〜59。<？BR>
+  ls系はミリ秒(miLlisecond)。ミリ秒は3桁、0〜999。<？BR>
+  rs系はマイクロ秒(micRoSecond)。マイクロ秒は6桁、0〜999999。<？BR><？/DD/DL>
+
+<？DLDT> @Beat(日付)=@0bti,@_bti,@bti,@0btp,@_btp,@btp,@bt<？/DTDD>
+ @Beat(時間)=@0bti,@_bti,@bti,@0btp,@_btp,@btp,@0bt,@_bt,@bt,@-0bti,@-_bti,@-bti,@-0btp,@-_btp,@-btp,@-0bt,@-_bt,@-bt,@0Bti,@_Bti,@Bti,@0Btp,@_Btp,@Btp,@0Bt,@_Bt,@Bt<？/DTDD>
+  bt系はビート(Beat)の途中計算。1日の秒数0〜86399(86400)をそのまま表示。本当のビートは86.4秒。<？BR>
+  bti系はビートの整数部分(BeatInteger)。0?999。ビートとして使う場合、日本だと時差の指定「diffminute=8」が必要。<？BR>
+  btp系はビートの小数部分(BeatPoint)。0?999。ビートとして使う場合、日本だと時差の指定「diffminute=8」が必要。<？BR>
+  時間フォーマット(timer系)としてビートを用いる場合時差は関係無し。<？BR><？/DD/DL>
+
+<？DLDT> 正負符号(時間)=@+-,@_-,@--<？/DTDD>
+  LTsv_lap_nowがLTsv_goal_nowを通りすぎた、いわゆるタイムオーバーの時はLTsv_lap_nowが負の数に。<？BR>
+  @+-はプラスマイナス両方表示。<？BR>
+  @_-はプラスの時は空白を表示。<？BR>
+  @--はマイナスのみ表示。プラスの時は一文字詰める。<？BR><？/DD/DL>
+|<＃contents1-3b>]
+
+[<？index1-4a>|
+.+\.html?	<a href="<？url:index1-4a>" title="<？title:index1-4a>"><？title:index1-4a></a>
+.*	<？title:index1-4a>\0
+|<？index1-4a>]
+[<？url:index1-4a>|
+.*	#index1-4
+|<？url:index1-4a>]
+[<？title:index1-4a>|
+.*	１-4a．「LTsv_calc.py」の関数一覧
+|<？title:index1-4a>]
+[<＃contents1-4a>|
+<？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。<？BR>
+ ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
+ ・「LTsv_calc()」と「LTsv_calc_ver()」と「LTsv_calc_GCM()」と「LTsv_calc_LCM()」以外の関数は内部計算なので通常使わないはず。<？BR>
+ ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
+
+<！LTsv_calc.py>
+|<＃contents1-4a>]
+
 [LTsv_calc.py|
-LTsv_calc_GCM(LTsv_calcL,LTsv_calcR)	
-LTsv_calc_LCM(LTsv_calcL,LTsv_calcR)	
-LTsv_calc_bracketsbalance(LTsv_calcQbase)	
-LTsv_calc_decimalize(LTsv_calcQbase)	
-LTsv_calc_fractalize(LTsv_calcQbase)	
-LTsv_calc(LTsv_calcQbase)	
-LTsv_calc_function(LTsv_calcQbase)	
-LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	
-LTsv_calc_multiplication(LTsv_calcQbase)	
+LTsv_calc_GCM(LTsv_calcL,LTsv_calcR)	最大公約数。
+LTsv_calc_LCM(LTsv_calcL,LTsv_calcR)	最小公倍数。
+LTsv_calc_bracketsbalance(LTsv_calcQbase)	左右の括弧の数を合わせる。ついでに演算子の整理整頓など。
+LTsv_calc_decimalize(LTsv_calcQbase)	分数を小数に。
+LTsv_calc_fractalize(LTsv_calcQbase)	小数を分数に。
+LTsv_calc(LTsv_calcQbase)	電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。	LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。	電卓フォーマットの概要は「<？index1-4b>」を参照。
+LTsv_calc_function(LTsv_calcQbase)	主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。
+LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	主に分数の加算減算。分数の積割処理で「LTsv_calc_addition()」を呼び出す。
+LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。
 |LTsv_calc.py]
 
 [LTsv_joy.py|
@@ -848,6 +971,14 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .*	LTsv/LTsv_doc.tsv
 |<？LTsv/LTsv_doc_tsv>]
 
+[<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>|
+.+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_py>" title="<？url:https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_py>"><？LTsv/LTsv_doc_py></a>
+.*	LTsv/LTsv_doc.py
+|<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>]
+[<？LTsv/LTsv_doc_py>|
+.*	LTsv/LTsv_doc.py
+|<？LTsv/LTsv_doc_py>]
+
 [<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>|
 .+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>" title="<？url:https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>">LICENSE</a>
 .*	LICENSE
@@ -892,7 +1023,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .*	LTsv10kanedit(tsvtool10)
 |<？LTsv>]
 [<？modify_style>|
-.*	<？modify>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
+.*	<！L:TsvLTsvver>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
 |<？modify_style>]
 [<？modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
