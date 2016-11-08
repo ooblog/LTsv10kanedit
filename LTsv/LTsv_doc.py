@@ -51,11 +51,18 @@ def LTsvDOCdef_python(LTsvDOClaunch_deffile):
     LTsvDOClaunch_deffile=re.sub(re.compile("[:].*$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     return LTsvDOClaunch_deffile
 
-def LTsvDOCdef_PNGbase64(LTsvDOClaunch_deffile):
-    return LTsvDOClaunch_deffile
-
 def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
-    return LTsvDOClaunch_deffile
+    LTsvDOClaunch_defnewfile=""
+    LTsvDOClaunch_tsvpages=LTsv_readlinepages(LTsvDOClaunch_deffile)
+    LTsvDOClaunch_tsvpagelist=LTsvDOClaunch_tsvpages.split('\t') if len(LTsvDOClaunch_tsvpages) else []
+    if "L:Tsv" in LTsvDOClaunch_tsvpagelist: LTsvDOClaunch_tsvpagelist.remove("L:Tsv")
+    for LTsvDOClaunch_tsvpagename in LTsvDOClaunch_tsvpagelist:
+        LTsvDOClaunch_tsvpage=LTsv_getpage(LTsvDOClaunch_deffile,LTsvDOClaunch_tsvpagename)
+        LTsvDOClaunch_pagefirsts=LTsv_readlinefirsts(LTsvDOClaunch_tsvpage)
+        LTsvDOClaunch_pagefirstslist=LTsvDOClaunch_pagefirsts.split('\t') if len(LTsvDOClaunch_pagefirsts) else []
+        LTsvDOClaunch_pagefirstslist=["[{0}|".format(LTsvDOClaunch_tsvpagename)]+LTsvDOClaunch_pagefirstslist
+        LTsvDOClaunch_defnewfile+="\n".join(LTsvDOClaunch_pagefirstslist)+"\n"
+    return LTsvDOClaunch_defnewfile
 
 LTsvDOCdefextlist={".py":LTsvDOCdef_python,".tsv":LTsvDOCdef_LTSV,".ltsv":LTsvDOCdef_LTSV}
 def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
@@ -89,6 +96,10 @@ def LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     return LTsvDOClaunch_main
+
+LTsvDOCbase64extlist=[".png",".gif",".jpg",".jpeg"]
+def LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile):
+    return LTsvDOClaunch_deffile
 
 LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname="","","",""
 LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir=0,0,"",""

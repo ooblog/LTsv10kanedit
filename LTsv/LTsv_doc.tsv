@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161108T221853
+modify	20161109W063157
 |L:Tsv]
 
 [LTsv_doc|
@@ -46,6 +46,11 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <？index1-3a>
  <？index1-3b>
  <？index1-4a>
+ <？index1-4b>
+ <？index1-5a>
+ <？index1-5b>
+ <？index1-6a>
+ <？index1-6b>
 
 <？index0-0>
 
@@ -91,6 +96,26 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 <＃contents1-4a>
 
+<？index1-4b>
+
+<＃contents1-4b>
+
+<？index1-5a>
+
+<＃contents1-5a>
+
+<？index1-5b>
+
+<＃contents1-5b>
+
+<？index1-6a>
+
+<＃contents1-6a>
+
+<？index1-6b>
+
+<＃contents1-6b>
+
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
@@ -120,6 +145,11 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <li><？index1-3a></li>
  <li><？index1-3b></li>
  <li><？index1-4a></li>
+ <li><？index1-4b></li>
+ <li><？index1-5a></li>
+ <li><？index1-5b></li>
+ <li><？index1-6a></li>
+ <li><？index1-6b></li>
 </ul>
 </header>
 
@@ -174,8 +204,33 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 </section>
 
 <section>
-<h3><a name="index1-4"><？title:index1-4a></a></h3>
+<h3><a name="index1-4a"><？title:index1-4a></a></h3>
 <＃contents1-4a>
+</section>
+
+<section>
+<h3><a name="index1-4b"><？title:index1-4b></a></h3>
+<＃contents1-4b>
+</section>
+
+<section>
+<h3><a name="index1-5a"><？title:index1-5a></a></h3>
+<＃contents1-5a>
+</section>
+
+<section>
+<h3><a name="index1-5b"><？title:index1-5b></a></h3>
+<＃contents1-5b>
+</section>
+
+<section>
+<h3><a name="index1-6a"><？title:index1-6a></a></h3>
+<＃contents1-6a>
+</section>
+
+<section>
+<h3><a name="index1-6b"><？title:index1-6b></a></h3>
+<＃contents1-6b>
 </section>
 
 <footer>
@@ -313,7 +368,7 @@ modify <？modify><？BR><？/P>
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<？BR>
  「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位が低い。<？BR>
- 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar,tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。<？BR>
+ 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar.tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。<？BR>
  Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
@@ -328,7 +383,7 @@ modify <？modify><？BR><？/P>
 .*	#index1-0a
 |<？url:index1-0a>]
 [<？title:index1-0a>|
-.*	１-0a．「L:Tsv」「tsvtool」と「LTSV」の違い
+.*	１-0a．「L:Tsv」と「LTSV」の違い
 |<？title:index1-0a>]
 [<＃contents1-0a>|
 <？P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<？BR>
@@ -658,7 +713,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 .*	<？title:index1-4a>\0
 |<？index1-4a>]
 [<？url:index1-4a>|
-.*	#index1-4
+.*	#index1-4a
 |<？url:index1-4a>]
 [<？title:index1-4a>|
 .*	１-4a．「LTsv_calc.py」の関数一覧
@@ -666,7 +721,6 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 [<＃contents1-4a>|
 <？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。<？BR>
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
- ・「LTsv_calc()」と「LTsv_calc_ver()」と「LTsv_calc_GCM()」と「LTsv_calc_LCM()」以外の関数は内部計算なので通常使わないはず。<？BR>
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
 <！LTsv_calc.py>
@@ -684,6 +738,105 @@ LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	主に分数の加算減算。分�
 LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。
 |LTsv_calc.py]
 
+[<？index1-4b>|
+.+\.html?	<a href="<？url:index1-4b>" title="<？title:index1-4b>"><？title:index1-4b></a>
+.*	<？title:index1-4b>\0
+|<？index1-4b>]
+[<？url:index1-4b>|
+.*	#index1-4b
+|<？url:index1-4b>]
+[<？title:index1-4b>|
+.*	１-3b．日時フォーマットの概要
+|<？title:index1-4b>]
+[<＃contents1-4b>|
+<？P> 分数「|」と割り算「/」を別物として扱います。分数の入れ子は「2|3|5|7⇔2|105」のように分母にまとめられます。<？BR>
+ 通常は分数で計算するので「1/3⇔1|3」「1|3*3⇔1」になり一般的な電卓のように「0.999999999999」などにはならない。<？BR>
+ 分数内で小数が使用可能です。「0.5|3.5⇔1|7」の様に小数が混在してても分数に変換します。<？BR>
+ 加算「+」減算「-」と区別して表現できます。「1-(-2)」と括弧を使わなくても「1-m2⇔3|1」のようにマイナスで引くといった表現が可能。<？BR>
+ 数列計算のカウント変数「c」は整数です。初期値は+1で増減は±1です。カウント変数に代入する過程で整数変換が発生するので注意。括弧の内外で別カウントになるので要注意。<？BR>
+ 「(c+2)(c+1)」のように括弧間の演算子が省略された場合には(c+2)*(c+1)⇔6|1」のように掛け算を適用します。<？BR><？BR>
+ Pythonには整数有効計算範囲の概念は存在しないはずですが、小数計算ではPythonの実装・環境に応じた丸め誤差などが発生します。<？BR>
+ 0で割るなどの計算できない場合は無限エラー扱いにして「n|0」と表示します。実際の無限には正負の概念が存在しますが電卓フォーマットの「n|0」は単に計算放棄です。<？BR><？/P>
+
+<？index1-4a_number>
+<？DLDT>  012456789 １２３４５６７８９０<？/DTDD>    アラビア数字は全角でも使用できます。<？/DD/DL>
+<？DLDT>  〇一二三四五六七八九<？/DTDD>              漢数字も使用できます。大字も「壱弐参肆伍陸漆捌玖零陌阡萬」が使用可能です。<？/DD/DL>
+<？DLDT>  垓京兆億万千百十 銭<？/DTDD>               漢数字の万単位の繰り上がりも垓までとりあえず対応しています。銭は百分の一になります。<？/DD/DL>
+
+<？index1-4a_‎operator>
+<？DLDT>   . ．      小円<？/DTDD>                    小数点は「3.1416⇔3927|1250」の様にドットを使います。「円」は「3円14銭」のような表現用途。<？/DD/DL>
+<？DLDT>  | ｜      分<？/DTDD>                      分数を表します。分数中の小数は「0.5|3⇔1|6」のように通分されます。<？/DD/DL>
+<？DLDT>  p PｐＰ   正<？/DTDD>                      正の数を表現。符号が付加されてなければ0以上の数です。<？/DD/DL>
+<？DLDT>  m MｍＭ   負<？/DTDD>                      負の数を表現できます。「2-m1⇔3|1」のように負の数で引き算すると加算されます。<？/DD/DL>
+<？DLDT>  + ＋      加足和<？/DTDD>                  足し算をします。計算結果は「1|6+1|3⇔1|2」のように通分されます。<？/DD/DL>
+<？DLDT><？/DTDD><？/DD/DL>
+<？DLDT>  - －      減引差<？/DTDD>                  引き算をします。計算結果は「3|4-1|4⇔1|2」のように通分されます。<？/DD/DL>
+<？DLDT>  * ×      乗掛積<？/DTDD>                  掛け算をします。計算結果は「2|3*3|4⇔1|2」のように通分されます。<？/DD/DL>
+<？DLDT>  / ／÷    除割商<？/DTDD>                  割り算をします。計算結果は「2|5/4|5⇔1|2」のように通分されます。<？/DD/DL>
+<？DLDT>  \ ＼<？/DTDD>                              整数未満を切り捨てる割り算をします。計算結果は「7\3⇔2」のように小数以下は切り捨てられます。<？/DD/DL>
+<？DLDT>  # ＃      余<？/DTDD>                      割り算の余りを求めます。「3|2#1|3⇔1|6」のように分数も使えます。<？/DD/DL>
+<？DLDT>  L lＬｌ   倍 <？/DTDD>                     最小公倍数の計算。負数も絶対値で計算。同じ分母であれば分母を1と見なして無理やり計算。分母が異なる場合「n|0」エラー扱い。<？/DD/DL>
+<？DLDT>  G gＧｇ   約<？/DTDD>                      最大公約数の計算。負数も絶対値で計算。同じ分母であれば分母を1と見なして無理やり計算。分母が異なる場合「n|0」エラー扱い。<？/DD/DL>
+<？DLDT>  % ％      率<？/DTDD>                      消費税などの計算用。「10000+8%⇔10800|1」のように「10000×1.08⇔10800|1」と小数計算の手間簡略化。<？/DD/DL>
+<？DLDT>  y π      周<？/DTDD>                       円周率。math.pi(約3.14159265359)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
+<？DLDT>  e ｅ      底<？/DTDD>                      ネイピア数。math.e(約2.71828182846)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
+
+<？index1-4a_bracket>
+<？DLDT>  ()（）<？/DTDD>                            括弧の中を先に計算する「3(c+1)→3×(c+1)→3×(1+1)→3×2」。もしくは数列の表現にも使用。<？/DD/DL>
+<？DLDT>  c CＣｃ   数<？/DTDD>                      数列内で有効なカウント変数。括弧の内外で異なる数列を数えるので注意。初期値は「1」。<？/DD/DL>
+<？DLDT>  S SｓＳΣ 列但※<？/DTDD>                   数列和。「(cΣ1～5)→1＋2＋3＋4＋5」といった等差数列の和を想定。<？/DD/DL>
+<？DLDT>  ! ！      方<？/DTDD>                      数列積。「(2!1～4)→2×2×2×2」のような乗数や「(c!1～5)→1×2×3×4×5」のような階乗を想定。<？/DD/DL>
+<？DLDT>  ~ ～      ?<？/DTDD>                       数列和(もしくは数列積)の範囲指定。「(cΣ1~4)→1＋2＋3＋4」「(c!4～1)→4×3×2×1」と増減±1の計算は自動。<？/DD/DL>
+
+<？index1-4a_nonuse>
+<？DLDT>  n NｎＮ∞ 無<？/DTDD>                      0で割った時など計算"できない"事を表す「n|0」と同じ。本当の無限には正負などがあるが、単純に未定というか計算放棄。<？/DD/DL>
+<？DLDT>  ,  <？/DTDD>                               「10,800⇔10800|1」とコンマ無しの計算結果を帰します。使用でき無い他の演算子もだいたいコンマ扱いです。<？/DD/DL>
+<？DLDT>  √<？/DTDD>                                平方根に使う予定の演算子。分数電卓なので無理数などの扱いに困ってる。<？/DD/DL>
+|<＃contents1-4b>]
+#<h4>
+[<？index1-4a_number>|
+.+\.html?	<h4><？title:index1-4a_number></h4>
+.*	 <？title:index1-4a_number>\0
+|<？index1-4a_number>]
+[<？title:index1-4a_number>|
+.*	使用できる数字
+|<？title:index1-4a_number>]
+[<？index1-4a_‎operator>|
+.+\.html?	<h4><？title:index1-4a_‎operator></h4>
+.*	 <？title:index1-4a_‎operator>\0
+|<？index1-4a_‎operator>]
+[<？title:index1-4a_‎operator>|
+.*	使用できる演算子
+|<？title:index1-4a_‎operator>]
+[<？index1-4a_bracket>|
+.+\.html?	<h4><？title:index1-4a_bracket></h4>
+.*	 <？title:index1-4a_bracket>\0
+|<？index1-4a_bracket>]
+[<？title:index1-4a_bracket>|
+.*	括弧および関数用途の演算子
+|<？title:index1-4a_bracket>]
+[<？index1-4a_nonuse>|
+.+\.html?	<h4><？title:index1-4a_nonuse></h4>
+.*	 <？title:index1-4a_nonuse>\0
+|<？index1-4a_nonuse>]
+[<？title:index1-4a_nonuse>|
+.*	未実装等で使用できない演算子
+|<？title:index1-4a_nonuse>]
+
+[<？index1-5a>|
+.+\.html?	<a href="<？url:index1-5a>" title="<？title:index1-5a>"><？title:index1-5a></a>
+.*	<？title:index1-5a>\0
+|<？index1-5a>]
+[<？url:index1-5a>|
+.*	#index1-5a
+|<？url:index1-5a>]
+[<？title:index1-5a>|
+.*	１-5a．「LTsv_joy.py」の関数一覧
+|<？title:index1-5a>]
+[<＃contents1-5a>|
+<！LTsv_joy.py>
+|<＃contents1-5a>]
+
 [LTsv_joy.py|
 LTsv_joyreset(LTsv_tsvpath)	
 LTsv_joyexit()	
@@ -694,6 +847,50 @@ LTsv_atanscalar(LTsv_atanX,LTsv_atanY)
 LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)	
 LTsv_joyaxis_label()	
 |LTsv_joy.py]
+
+[<？index1-5b>|
+.+\.html?	<a href="<？url:index1-5b>" title="<？title:index1-5b>"><？title:index1-5b></a>
+.*	<？title:index1-5b>\0
+|<？index1-5b>]
+[<？url:index1-5b>|
+.*	#index1-5b
+|<？url:index1-5b>]
+[<？title:index1-5b>|
+.*	１-5a．「LTsv_kbd.tsv」のタグ解説
+|<？title:index1-5b>]
+[<＃contents1-5b>|
+<！LTsv_joy.tsv>
+|<＃contents1-5b>]
+
+[LTsv_joy.tsv|
+[LTsv_deviceL|	Linuxのデバイス指定ページ。
+joy	
+[keydefault|	
+axisL	
+axisW	
+button	
+[keyanother|	
+axisUV	
+axisLW	
+axisL7	
+axisW8	
+buttonN	
+buttonP	
+|LTsv_joy.tsv]
+
+[<？index1-6a>|
+.+\.html?	<a href="<？url:index1-6a>" title="<？title:index1-6a>"><？title:index1-6a></a>
+.*	<？title:index1-6a>\0
+|<？index1-6a>]
+[<？url:index1-6a>|
+.*	#index1-6a
+|<？url:index1-6a>]
+[<？title:index1-6a>|
+.*	１-6a．「LTsv_joy.py」の関数一覧
+|<？title:index1-6a>]
+[<＃contents1-6a>|
+<！LTsv_kbd.py>
+|<＃contents1-6a>]
 
 [LTsv_kbd.py|
 LTsv_kbdreset(LTsv_tsvpath)	
@@ -712,6 +909,69 @@ LTsv_getkbdnames()
 LTsv_getkbdcodes()	
 LTsv_getkbdkanas()	
 |LTsv_kbd.py]
+
+[<？index1-6b>|
+.+\.html?	<a href="<？url:index1-6b>" title="<？title:index1-6b>"><？title:index1-6b></a>
+.*	<？title:index1-6b>\0
+|<？index1-6b>]
+[<？url:index1-6b>|
+.*	#index1-6b
+|<？url:index1-6b>]
+[<？title:index1-6b>|
+.*	１-6b．「LTsv_kbd.tsv」のタグ解説
+|<？title:index1-6b>]
+[<＃contents1-6b>|
+<！LTsv_kbd.tsv>
+|<＃contents1-6b>]
+
+[LTsv_kbd.tsv|
+[LTsv_deviceL|	
+kbd	
+mouse	
+[LTsv_mouse_EV_KEY|	
+BTN_LEFT:0x110	
+BTN_RIGHT:0x111	
+BTN_MIDDLE:0x112	
+BTN_TOUCH:0x14a	
+BTN_STYLUS:0x14b	
+BTN_STYLUS2:0x14c	
+BTN_FORWARD:0x115	
+BTN_BACK:0x116	
+[LTsv_EV_REL|	
+REL_WHEEL:8	
+[LTsv_EV_ABS|	
+[LTsv_typenameW|	
+1:0x31	
+Q:0x51	
+A:0x41	
+Z:0x5a	
+NFER:0xe6	
+ShiftL:0xa0	
+Left:0x25	
+Enter:0x0d	
+F01:0x70	
+MouseL:1	
+[WineVK|	
+[WindowsVK|	
+NFER:0x1c	
+[LTsv_typenameL|	
+1:2	
+Q:16	
+A:30	
+Z:44	
+NFER:94	
+ShiftL:42	
+Left:105	
+Enter:28	
+F01:59	
+MouseL:250	
+[LTsv_typegana|	
+ぬ:1	
+た:Q	
+ち:A	
+つ:Z	
+[LTsv_keydefault|	
+|LTsv_kbd.tsv]
 
 [LTsv_gui.py|
 LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	
