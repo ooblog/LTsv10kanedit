@@ -20,10 +20,10 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
+    LTsv_settimerCounter(0)
     if '\t' in LTsvDOC_tagpage:
         LTsvDOC_tagnamesL=LTsvDOC_tagnames.split(LTsvDOClaunch_tagseparate)
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,"".join(LTsvDOC_tagnamesL))
-        LTsv_settimerCounter(0)
         for LTsvDOC_tagname in LTsvDOC_tagnamesL:
             if len(LTsvDOC_tagname) == 0: continue;
             LTsvDOC_tagdata=""

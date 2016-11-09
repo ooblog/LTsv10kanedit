@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161110R053525
+modify 20161110R074016
 
 
 目次
@@ -119,8 +119,8 @@ modify 20161110R053525
  【LTsv_libc_printcat(LTsv_text)】
   上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
 
- 【LTsv_libc_printf_type(LTsv_text)】
-  Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+ 【LTsv_libc_printf_type(LTsv_text,LTsv_log=None)】
+  Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。
 
  【LTsv_utf2xml(LTsv_text)】
   LTsv_textの文字列を数値文字参照に変換。

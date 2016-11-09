@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161110R053525<br />
+modify 20161110R074016<br />
 </p>
 
 <h2>目次</h2>
@@ -183,8 +183,8 @@ LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「st
 「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。</dd></dl>
 <dl><dt>LTsv_libc_printcat(LTsv_text)</dt><dd>
 上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。</dd></dl>
-<dl><dt>LTsv_libc_printf_type(LTsv_text)</dt><dd>
-Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。</dd></dl>
+<dl><dt>LTsv_libc_printf_type(LTsv_text,LTsv_log=None)</dt><dd>
+Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。</dd></dl>
 <dl><dt>LTsv_utf2xml(LTsv_text)</dt><dd>
 LTsv_textの文字列を数値文字参照に変換。</dd></dl>
 <dl><dt>LTsv_xml2utf(LTsv_text)</dt><dd>

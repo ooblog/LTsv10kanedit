@@ -125,7 +125,7 @@ version(branch) 20161023U011852
   上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
 
  LTsv_libc_printf_type(LTsv_text)
-   Python2では「<type 'str'>」Python3だと「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+   Python2では「<type 'str'>」Python3だと「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
 
  LTsv_utf2xml(LTsv_text)
   LTsv_textの文字列を数値文字参照に変換。

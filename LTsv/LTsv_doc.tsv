@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161110R053526
+modify	20161110R074017
 |L:Tsv]
 
 [LTsv_doc|
@@ -471,9 +471,9 @@ modify <？modify><？BR><？/P>
 |<＃contents1-1a>]
 
 [LTsv_printf.py|
-LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
+LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
 LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
-LTsv_libc_printf_type(LTsv_text)	Python2の「<type 'str'>」Python3の「「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+LTsv_libc_printf_type(LTsv_text,LTsv_log=None)	Python2では「<？&lt;>type 'str'<？&gt;>」Python3だと「<？&lt;>class 'bytes'<？&gt;>」のようにprintfに渡すバイナリ文字列の変数の型を表示。	LTsv_logと返り値を指定する事で変数にも出力追記できる。
 LTsv_utf2xml(LTsv_text)	LTsv_textの文字列を数値文字参照に変換。
 LTsv_xml2utf(LTsv_text)	LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
 LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index1-1b>」を参考。
@@ -1335,6 +1335,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .+\.html?	<br />
 .*	
 |<？BR>]
+
 [<？firstL>|
 .+\.html?	<dl><dt>
 .*	 【
@@ -1359,6 +1360,16 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .+\.html?	</dd></dl>
 .*	
 |<？restRLast>]
+
+[<？&lt;>|
+.+\.html?	&lt;
+.*	&lt;
+|<？&lt;>]
+[<？&gt;>|
+.+\.html?	&gt;
+.*	&gt;
+|<？&gt;>]
+
 
 # Copyright (c) 2016 ooblog
 # License: MIT
