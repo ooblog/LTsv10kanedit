@@ -16,32 +16,63 @@ from LTsv_gui     import *
 from LTsv_glyph  import *
 
 
-def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname):
+#def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
+#    global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
+#    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+#    LTsvDOC_tagdata=LTsvDOC_tagnames
+#    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
+#    if '\t' in LTsvDOC_tagpage:
+#        LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
+#        for LTsvDOC_tagcase in LTsvDOC_tagcases:
+#            LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
+#            LTsvDOC_research=None
+#            try:
+#                LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
+#            except re.error:
+#                continue
+#            else:
+#                if LTsvDOC_research:
+#                    LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
+#                    LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
+#                    LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
+#                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\0','').replace('\\\\','\\')
+#                    if len(LTsvDOC_tagdata) == 0:
+#                        LTsvDOC_tagdata=LTsvDOC_caseline;
+#                    LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagdata)
+#                    break
+#    elif len(LTsvDOC_tagpage) > 0:
+#         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagpage)
+#    return LTsvDOClaunch_main
+def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
-    LTsvDOC_tagdata=LTsvDOC_tagname
-    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
+    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
     if '\t' in LTsvDOC_tagpage:
-        LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
-        for LTsvDOC_tagcase in LTsvDOC_tagcases:
-            LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
-            LTsvDOC_research=None
-            try:
-                LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
-            except re.error:
-                continue
-            else:
-                if LTsvDOC_research:
-                    LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
-                    LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
-                    LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
-                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\0','').replace('\\\\','\\')
-                    if len(LTsvDOC_tagdata) == 0:
-                        LTsvDOC_tagdata=LTsvDOC_caseline;
-                    LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
-                    break
-    elif len(LTsvDOC_tagpage) > 0:
-         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagpage)
+        LTsvDOC_tagdatas=""
+        LTsvDOC_tagnamesL=LTsvDOC_tagnames.split('\t')
+        for LTsvDOC_tagname in LTsvDOC_tagnamesL:
+            LTsvDOC_tagdata=""
+            LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
+            for LTsvDOC_tagcase in LTsvDOC_tagcases:
+                LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
+                LTsvDOC_research=None
+                try:
+                    LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
+                except re.error:
+                    continue
+                else:
+                    if LTsvDOC_research:
+                        LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
+                        if len(LTsvDOC_caserest) > 0:
+                            LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caserest)
+                            LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
+                            if len(LTsvDOC_tagdata) == 0 or '\t' in LTsvDOC_tagdata:
+                                LTsvDOC_tagdata=LTsvDOC_caseline
+                        break
+            LTsvDOC_tagdatas+=LTsvDOC_tagdata
+        LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagdatas)
+    if len(LTsvDOC_tagpage) > 0:
+         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagpage)
     return LTsvDOClaunch_main
 
 def LTsvDOCdef_python(LTsvDOClaunch_deffile):
@@ -141,13 +172,13 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     elif 0 <= LTsvDOClaunch_outcount < len(LTsvDOClaunch_outlist):
         LTsvDOC_outname=LTsvDOClaunch_outlist[LTsvDOClaunch_outcount]
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
-        for LTsvDOC_tagname in LTsvDOClaunch_reglist:
-            if os.path.isfile(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagname):
-                LTsvDOClaunch_main=LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)
-            elif os.path.isdir(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagname):
-                LTsvDOClaunch_main=LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)
+        for LTsvDOC_tagnames in LTsvDOClaunch_reglist:
+            if os.path.isfile(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagnames):
+                LTsvDOClaunch_main=LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagnames)
+            elif os.path.isdir(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagnames):
+                LTsvDOClaunch_main=LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagnames)
             else:
-                LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagname)
+                LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOClaunch_LTsvver,LTsv_file_ver())
         LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
         LTsvDOClaunch_outcount+=1

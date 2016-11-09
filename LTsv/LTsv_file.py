@@ -78,8 +78,8 @@ def LTsv_readlinepages(LTsv_text):
 
 def LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None):
     LTsv_page="" if LTsv_default is None else LTsv_default
-    LTsv_tagL="[{0}|\n".format(LTsv_tag); LTsv_tagR="|{0}]\n".format(LTsv_tag)
-    if len(LTsv_tag) > 0:
+    if len(LTsv_tag) > 0 and not '\n' in LTsv_tag:
+        LTsv_tagL="[{0}|\n".format(LTsv_tag); LTsv_tagR="|{0}]\n".format(LTsv_tag)
         LTsv_posL=LTsv_text.find(LTsv_tagL); LTsv_posR=LTsv_text.find(LTsv_tagR)
         if 0 <= LTsv_posL < LTsv_posR <= len(LTsv_text):
             LTsv_page=LTsv_text[LTsv_posL+len(LTsv_tagL):LTsv_posR]

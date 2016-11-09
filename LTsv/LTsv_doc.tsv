@@ -5,12 +5,12 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161109W071646
+modify	20161110R015147
 |L:Tsv]
 
 [LTsv_doc|
 window_size	width:600	height:480	wait:10	fontsize:24
-tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv
+tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	LTsv_debug.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 main	<＃LTsv_doc_main>
 outdir	./
@@ -293,7 +293,7 @@ modify <？modify><？BR><？/P>
 
 [<？index0-0>|
 .+\.html?	<a href="<？url:index0-0>" title="<？title:index0-0>"><？title:index0-0></a>
-.*	<？title:index0-0>\0
+.*	<？title:index0-0>
 |<？index0-0>]
 [<？url:index0-0>|
 .*	#index0-0
@@ -316,7 +316,7 @@ modify <？modify><？BR><？/P>
 |<＃contents0-0>]
 [<？http://choosealicense.com/licenses/mit/>|
 .+\.html?	<dl><dt><？title:http://choosealicense.com/licenses/mit/></dt><dd><a href="<？url:http://choosealicense.com/licenses/mit/>" title="<？title:http://choosealicense.com/licenses/mit/>"><？url:http://choosealicense.com/licenses/mit/></a></dd></dl>
-.*	   <？title:http://choosealicense.com/licenses/mit/><？BR>\n   <？url:http://choosealicense.com/licenses/mit/><？BR>\n
+.*	   <？title:http://choosealicense.com/licenses/mit/><？BR>@E   <？url:http://choosealicense.com/licenses/mit/><？BR>@E
 |<？http://choosealicense.com/licenses/mit/>]
 [<？url:http://choosealicense.com/licenses/mit/>|
 .*	http://choosealicense.com/licenses/mit/
@@ -326,7 +326,7 @@ modify <？modify><？BR><？/P>
 |<？title:http://choosealicense.com/licenses/mit/>]
 [<？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
 .+\.html?	<dl><dt><？title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></dt><dd><a href="<？url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>" title="<？title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>"><？url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></a></dd></dl>
-.*	   <？title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>\n   <？url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>\n
+.*	   <？title:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>@E   <？url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>@E
 |<？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
 [<？url:https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
 .*	https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
@@ -337,7 +337,7 @@ modify <？modify><？BR><？/P>
 
 [<？index0-1>|
 .+\.html?	<a href="<？url:index0-1>" title="<？title:index0-1>"><？title:index0-1></a>
-.*	<？title:index0-1>\0
+.*	<？title:index0-1>
 |<？index0-1>]
 [<？url:index0-1>|
 .*	#index0-1
@@ -355,7 +355,7 @@ modify <？modify><？BR><？/P>
 
 [<？index0-2>|
 .+\.html?	<a href="<？url:index0-2>" title="<？title:index0-2>"><？title:index0-2></a>
-.*	<？title:index0-2>\0
+.*	<？title:index0-2>
 |<？index0-2>]
 [<？url:index0-2>|
 .*	#index0-2
@@ -377,7 +377,7 @@ modify <？modify><？BR><？/P>
 
 [<？index1-0a>|
 .+\.html?	<a href="<？url:index1-0a>" title="<？title:index1-0a>"><？title:index1-0a></a>
-.*	<？title:index1-0a>\0
+.*	<？title:index1-0a>
 |<？index1-0a>]
 [<？url:index1-0a>|
 .*	#index1-0a
@@ -397,7 +397,7 @@ modify <？modify><？BR><？/P>
 |<＃contents1-0a>]
 [<？http://ltsv.org/>|
 .+\.html?	<dl><dt><？title:http://ltsv.org/></dt><dd><a href="<？url:http://ltsv.org/>" title="<？title:http://ltsv.org/>"><？url:http://ltsv.org/></a></dd></dl>
-.*	   <？title:http://ltsv.org/><？BR>\n   <？url:http://ltsv.org/><？BR>\n
+.*	   <？title:http://ltsv.org/><？BR>@E   <？url:http://ltsv.org/><？BR>@E
 |<？http://ltsv.org/>]
 [<？url:http://ltsv.org/>|
 .*	http://ltsv.org/
@@ -407,7 +407,7 @@ modify <？modify><？BR><？/P>
 |<？title:http://ltsv.org/>]
 [<？http://d.hatena.ne.jp/naoya/20130209/1360381374>|
 .+\.html?	<dl><dt><？title:http://d.hatena.ne.jp/naoya/20130209/1360381374></dt><dd><a href="<？url:http://d.hatena.ne.jp/naoya/20130209/1360381374>" title="<？title:http://d.hatena.ne.jp/naoya/20130209/1360381374>"><？url:http://d.hatena.ne.jp/naoya/20130209/1360381374></a></dd></dl>
-.*	   <？title:http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>\n   <？url:http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>\n
+.*	   <？title:http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>@E   <？url:http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>@E
 |<？http://d.hatena.ne.jp/naoya/20130209/1360381374>]
 [<？url:http://d.hatena.ne.jp/naoya/20130209/1360381374>|
 .*	http://d.hatena.ne.jp/naoya/20130209/1360381374
@@ -418,7 +418,7 @@ modify <？modify><？BR><？/P>
 
 [<？index1-0b>|
 .+\.html?	<a href="<？url:index1-0b>" title="<？title:index1-0b>"><？title:index1-0b></a>
-.*	<？title:index1-0b>\0
+.*	<？title:index1-0b>
 |<？index1-0b>]
 [<？url:index1-0b>|
 .*	#index1-0b
@@ -452,7 +452,7 @@ modify <？modify><？BR><？/P>
 
 [<？index1-1a>|
 .+\.html?	<a href="<？url:index1-1a>" title="<？title:index1-1a>"><？title:index1-1a></a>
-.*	<？title:index1-1a>\0
+.*	<？title:index1-1a>
 |<？index1-1a>]
 [<？url:index1-1a>|
 .*	#index1-1a
@@ -484,7 +484,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 
 [<？index1-1b>|
 .+\.html?	<a href="<？url:index1-1b>" title="<？title:index1-1b>"><？title:index1-1b></a>
-.*	<？title:index1-1b>\0
+.*	<？title:index1-1b>
 |<？index1-1b>]
 [<？url:index1-1b>|
 .*	#index1-1b
@@ -514,7 +514,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 
 [<？index1-2>|
 .+\.html?	<a href="<？url:index1-2>" title="<？title:index1-2>"><？title:index1-2></a>
-.*	<？title:index1-2>\0
+.*	<？title:index1-2>
 |<？index1-2>]
 [<？url:index1-2>|
 .*	#index1-2
@@ -581,7 +581,7 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 
 [<？index1-3a>|
 .+\.html?	<a href="<？url:index1-3a>" title="<？title:index1-3a>"><？title:index1-3a></a>
-.*	<？title:index1-3a>\0
+.*	<？title:index1-3a>
 |<？index1-3a>]
 [<？url:index1-3a>|
 .*	#index1-3a
@@ -627,7 +627,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 
 [<？index1-3b>|
 .+\.html?	<a href="<？url:index1-3b>" title="<？title:index1-3b>"><？title:index1-3b></a>
-.*	<？title:index1-3b>\0
+.*	<？title:index1-3b>
 |<？index1-3b>]
 [<？url:index1-3b>|
 .*	#index1-3b
@@ -706,11 +706,16 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
   @+-はプラスマイナス両方表示。<？BR>
   @_-はプラスの時は空白を表示。<？BR>
   @--はマイナスのみ表示。プラスの時は一文字詰める。<？BR><？/DD/DL>
+
+<？DLDT> その他エスケープ文字<？/DTDD>
+  @T=\t。タブ文字用。<？BR>
+  @E=\n。改行文字用。<？BR>
+  @Z=\0。文字列長0用。<？BR><？/DD/DL>
 |<＃contents1-3b>]
 
 [<？index1-4a>|
 .+\.html?	<a href="<？url:index1-4a>" title="<？title:index1-4a>"><？title:index1-4a></a>
-.*	<？title:index1-4a>\0
+.*	<？title:index1-4a>
 |<？index1-4a>]
 [<？url:index1-4a>|
 .*	#index1-4a
@@ -740,7 +745,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 
 [<？index1-4b>|
 .+\.html?	<a href="<？url:index1-4b>" title="<？title:index1-4b>"><？title:index1-4b></a>
-.*	<？title:index1-4b>\0
+.*	<？title:index1-4b>
 |<？index1-4b>]
 [<？url:index1-4b>|
 .*	#index1-4b
@@ -796,28 +801,28 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 #<h4>
 [<？index1-4a_number>|
 .+\.html?	<h4><？title:index1-4a_number></h4>
-.*	 <？title:index1-4a_number>\0
+.*	 <？title:index1-4a_number>
 |<？index1-4a_number>]
 [<？title:index1-4a_number>|
 .*	使用できる数字
 |<？title:index1-4a_number>]
 [<？index1-4a_‎operator>|
 .+\.html?	<h4><？title:index1-4a_‎operator></h4>
-.*	 <？title:index1-4a_‎operator>\0
+.*	 <？title:index1-4a_‎operator>
 |<？index1-4a_‎operator>]
 [<？title:index1-4a_‎operator>|
 .*	使用できる演算子
 |<？title:index1-4a_‎operator>]
 [<？index1-4a_bracket>|
 .+\.html?	<h4><？title:index1-4a_bracket></h4>
-.*	 <？title:index1-4a_bracket>\0
+.*	 <？title:index1-4a_bracket>
 |<？index1-4a_bracket>]
 [<？title:index1-4a_bracket>|
 .*	括弧および関数用途の演算子
 |<？title:index1-4a_bracket>]
 [<？index1-4a_nonuse>|
 .+\.html?	<h4><？title:index1-4a_nonuse></h4>
-.*	 <？title:index1-4a_nonuse>\0
+.*	 <？title:index1-4a_nonuse>
 |<？index1-4a_nonuse>]
 [<？title:index1-4a_nonuse>|
 .*	未実装等で使用できない演算子
@@ -825,7 +830,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 
 [<？index1-5a>|
 .+\.html?	<a href="<？url:index1-5a>" title="<？title:index1-5a>"><？title:index1-5a></a>
-.*	<？title:index1-5a>\0
+.*	<？title:index1-5a>
 |<？index1-5a>]
 [<？url:index1-5a>|
 .*	#index1-5a
@@ -850,7 +855,7 @@ LTsv_joyaxis_label()
 
 [<？index1-5b>|
 .+\.html?	<a href="<？url:index1-5b>" title="<？title:index1-5b>"><？title:index1-5b></a>
-.*	<？title:index1-5b>\0
+.*	<？title:index1-5b>
 |<？index1-5b>]
 [<？url:index1-5b>|
 .*	#index1-5b
@@ -880,7 +885,7 @@ buttonP
 
 [<？index1-6a>|
 .+\.html?	<a href="<？url:index1-6a>" title="<？title:index1-6a>"><？title:index1-6a></a>
-.*	<？title:index1-6a>\0
+.*	<？title:index1-6a>
 |<？index1-6a>]
 [<？url:index1-6a>|
 .*	#index1-6a
@@ -912,7 +917,7 @@ LTsv_getkbdkanas()
 
 [<？index1-6b>|
 .+\.html?	<a href="<？url:index1-6b>" title="<？title:index1-6b>"><？title:index1-6b></a>
-.*	<？title:index1-6b>\0
+.*	<？title:index1-6b>
 |<？index1-6b>]
 [<？url:index1-6b>|
 .*	#index1-6b
@@ -1248,8 +1253,8 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？blob/master/LICENSE>]
 
 [<？ooblog>|
-.+\.html?	# <？Copyright><？BR>\n# <？LicenseMIT><？BR>\n# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE><？BR>\n
-.*	# <？Copyright>\n# <？LicenseMIT>\n# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>\n
+.+\.html?	# <？Copyright><？BR>@E# <？LicenseMIT><？BR>@E# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE><？BR>@E
+.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>@E
 |<？ooblog>]
 [<？Copyright>|
 .*	Copyright (c) 2016 ooblog
@@ -1259,7 +1264,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？LicenseMIT>]
 [<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
 .+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>" title="<？title:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>"><？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE></a>
-.*	<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>\0
+.*	<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>
 |<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
 [<？url:https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
 .*	https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
@@ -1270,7 +1275,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 
 [<？https://github.com/ooblog/LTsv10kanedit>|
 .+\.html?	<a href="<？url:https://github.com/ooblog/LTsv10kanedit>" title="<？title:https://github.com/ooblog/LTsv10kanedit>"><？url:https://github.com/ooblog/LTsv10kanedit></a>
-.*	<？url:https://github.com/ooblog/LTsv10kanedit>\0
+.*	<？url:https://github.com/ooblog/LTsv10kanedit>
 |<？https://github.com/ooblog/LTsv10kanedit>]
 [<？url:https://github.com/ooblog/LTsv10kanedit>|
 .*	https://github.com/ooblog/LTsv10kanedit
@@ -1298,7 +1303,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？outlist>]
 
 [<？P>|
-.+\.html?	<p>\n
+.+\.html?	<p>@E
 .*	
 |<？P>]
 [<？/PP>|
@@ -1306,19 +1311,19 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 .*	
 |<？/PP>]
 [<？/P>|
-.+\.html?	\n</p>
+.+\.html?	@E</p>
 .*	
 |<？/P>]
 [<？DLDT>|
-.+\.html?	<dl><dt>\n
+.+\.html?	<dl><dt>@E
 .*	
 |<？DLDT>]
 [<？/DTDD>|
-.+\.html?	</dt>\n<dd>\n
+.+\.html?	</dt>@E<dd>@E
 .*	
 |<？/DTDD>]
 [<？/DD/DL>|
-.+\.html?	\n</dd></dl>
+.+\.html?	@E</dd></dl>
 .*	
 |<？/DD/DL>]
 [<？BR>|
@@ -1331,19 +1336,19 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？firstL>]
 [<？firstR>|
 .+\.html?	</dt>
-.*	】\n
+.*	】@E
 |<？firstR>]
 [<？restL>|
-.+\.html?	<dd>\n
+.+\.html?	<dd>@E
 .*	  
 |<？restL>]
 [<？restC>|
-.+\.html?	<br />\n
-.*	\n  
+.+\.html?	<br />@E
+.*	@E  
 |<？restC>]
 [<？restR>|
-.+\.html?	</dd></dl>\n
-.*	\n\n
+.+\.html?	</dd></dl>@E
+.*	@E@E
 |<？restR>]
 [<？restRLast>|
 .+\.html?	</dd></dl>

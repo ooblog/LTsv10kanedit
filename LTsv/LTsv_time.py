@@ -269,9 +269,6 @@ def LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None):
         LTsv_overhour=LTsv_overhour if overhour is None else overhour
         LTsv_diffminute=LTsv_diffminute if diffminute is None else diffminute
         LTsv_putdaytimenow(LTsv_overhour,LTsv_diffminute)
-#    LTsv_tf="@000y@0m@0dm@wdec@0h@0n@0s" if timeformat is None else timeformat
-#    LTsv_tf=LTsv_tf if not "@@"     in LTsv_tf else LTsv_tf.replace("@@","\t")
-
     LTsv_tfBase="@000y@0m@0dm@wdec@0h@0n@0s" if timeformat is None else timeformat
     LTsv_tfList=LTsv_tfBase.split("@@")
 
@@ -496,12 +493,12 @@ def LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None):
         LTsv_tf=LTsv_tf if not "@_fpc"  in LTsv_tf else LTsv_tf.replace("@_fpc" ,"{0: >2}".format(LTsv_FPS_fPsC))
         LTsv_tf=LTsv_tf if not "@fpc"   in LTsv_tf else LTsv_tf.replace("@fpc"  ,"{0}".format(LTsv_FPS_fPsC))
 
+        LTsv_tf=LTsv_tf if not "@T"   in LTsv_tf else LTsv_tf.replace("@T"  ,"\t")
+        LTsv_tf=LTsv_tf if not "@E"    in LTsv_tf else LTsv_tf.replace("@E"  ,"\n")
+        LTsv_tf=LTsv_tf if not "@Z"    in LTsv_tf else LTsv_tf.replace("@Z"  ,"")
         LTsv_tfList[LTsv_tf_count]=LTsv_tf
-
     LTsv_tfBase="@".join(LTsv_tfList)
     return LTsv_tfBase
-#    LTsv_tf=LTsv_tf if not "\t"     in LTsv_tf else LTsv_tf.replace("\t","@")
-#    return LTsv_tf
 
 #timer
 def LTsv_settimershift():
@@ -591,8 +588,6 @@ def LTsv_puttimerlap():
     return LTsv_passed_TotalSeconds
 
 def LTsv_gettimerstr(timeformat=None):
-#    LTsv_tf="@0h@0n@0s.0Rs" if timeformat is None else timeformat
-#    LTsv_tf=LTsv_tf if not "@@"     in LTsv_tf else LTsv_tf.replace("@@","\t")
     LTsv_tfBase="@0h@0n@0s.0Rs" if timeformat is None else timeformat
     LTsv_tfList=LTsv_tfBase.split("@@")
 
@@ -723,12 +718,12 @@ def LTsv_gettimerstr(timeformat=None):
         LTsv_tf=LTsv_tf if not "@_fpc"  in LTsv_tf else LTsv_tf.replace("@_fpc" ,"{0: >2}".format(LTsv_FPS_fPsC))
         LTsv_tf=LTsv_tf if not "@fpc"   in LTsv_tf else LTsv_tf.replace("@fpc"  ,"{0}".format(LTsv_FPS_fPsC))
 
+        LTsv_tf=LTsv_tf if not "@T"   in LTsv_tf else LTsv_tf.replace("@T"  ,"\t")
+        LTsv_tf=LTsv_tf if not "@E"    in LTsv_tf else LTsv_tf.replace("@E"  ,"\n")
+        LTsv_tf=LTsv_tf if not "@Z"    in LTsv_tf else LTsv_tf.replace("@Z"  ,"")
         LTsv_tfList[LTsv_tf_count]=LTsv_tf
-
     LTsv_tfBase="@".join(LTsv_tfList)
     return LTsv_tfBase
-#    LTsv_tf=LTsv_tf if not "\t"     in LTsv_tf else LTsv_tf.replace("\t","@")
-#    return LTsv_tf
 
 
 if __name__=="__main__":
