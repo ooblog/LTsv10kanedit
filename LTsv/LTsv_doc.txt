@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161110R015147
+modify 20161110R053525
 
 
 目次
@@ -17,7 +17,7 @@ modify 20161110R015147
  １-3a．「LTsv_time.py」の関数一覧
  １-3b．日時フォーマットの概要
  １-4a．「LTsv_calc.py」の関数一覧
- １-3b．日時フォーマットの概要
+ １-4b．電卓フォーマットの概要
  １-5a．「LTsv_joy.py」の関数一覧
  １-5a．「LTsv_kbd.tsv」のタグ解説
  １-6a．「LTsv_joy.py」の関数一覧
@@ -337,11 +337,6 @@ modify 20161110R015147
  【LTsv_tsv2tuple(LTsv_line,LTsv_len=None)】
   「LTsv_tsv2list()」のタプルバージョン。
 
- 【LTsv_intstr0x(LTsv_codestr)】
-  "0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。
-  
-  try節で囲む手間を省きたい場合に便利。
-
  【LTsv_label2dictint(LTsv_line)】
   LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。
 
@@ -380,6 +375,13 @@ modify 20161110R015147
   (LTsv_Beat,LTsv_BeatInteger,LTsv_BeatPoint)のタプルを返す。
   LTsv_Beatは1日の秒数0?86399(86400)。@Beatはその秒数を86.4で割った一日を1000分割する数。
   LTsv_BeatIntegerは@Beatの整数部分。LTsv_BeatPointは@Beatの小数部分。
+
+ 【LTsv_intstr0x(LTsv_code)】
+  "0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。
+  try節で囲む手間を省きたい場合に便利。
+
+ 【LTsv_settimerCounter(counter=None)】
+  LTsv_timerCounter「@c」の値を設定する(取得のみも可能)。
 
  【LTsv_checkFPS()】
   LTsv_checkFPS()自身を1秒間に何回実行できるか計測。0〜999の範囲。
@@ -515,6 +517,10 @@ modify 20161110R015147
   @_-はプラスの時は空白を表示。
   @--はマイナスのみ表示。プラスの時は一文字詰める。
 
+ @c(日付)=@000c,@00c,@0c,@c
+  「LTsv_getdaytimestr()」もしくは「LTsv_gettimerstr()」が実行される度にカウンター(LTsv_timerCounter)が加算される。
+  @Z=\0。文字列長0用。
+
  その他エスケープ文字
   @T=\t。タブ文字用。
   @E=\n。改行文字用。
@@ -523,7 +529,7 @@ modify 20161110R015147
 
 １-4a．「LTsv_calc.py」の関数一覧
 
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「１-3b．日時フォーマットの概要」を参照。
+ 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「１-4b．電卓フォーマットの概要」を参照。
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。
 
@@ -545,7 +551,7 @@ modify 20161110R015147
  【LTsv_calc(LTsv_calcQbase)】
   電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。
   LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。
-  電卓フォーマットの概要は「１-3b．日時フォーマットの概要」を参照。
+  電卓フォーマットの概要は「１-4b．電卓フォーマットの概要」を参照。
 
  【LTsv_calc_function(LTsv_calcQbase)】
   主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。
@@ -557,7 +563,7 @@ modify 20161110R015147
   主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。
 
 
-１-3b．日時フォーマットの概要
+１-4b．電卓フォーマットの概要
 
  分数「|」と割り算「/」を別物として扱います。分数の入れ子は「2|3|5|7⇔2|105」のように分母にまとめられます。
  通常は分数で計算するので「1/3⇔1|3」「1|3*3⇔1」になり一般的な電卓のように「0.999999999999」などにはならない。

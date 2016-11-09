@@ -302,12 +302,12 @@ def LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None):
 
 def LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None):
     LTsv_page="" if LTsv_default is None else LTsv_default
-    LTsv_join=LTsv_text; LTsv_tagL="[{0}|\n".format(LTsv_tag); LTsv_tagR="|{0}]\n".format(LTsv_tag);
     if LTsv_default != None:
         if len(LTsv_page) > 0:
             if not LTsv_page.endswith('\n'):
                 LTsv_page+='\n'
-    if len(LTsv_tag) > 0:
+    LTsv_join=LTsv_text; LTsv_tagL="[{0}|\n".format(LTsv_tag); LTsv_tagR="|{0}]\n".format(LTsv_tag);
+    if len(LTsv_tag) > 0 and not '\n' in LTsv_tag:
         LTsv_posL=LTsv_text.find(LTsv_tagL); LTsv_posR=LTsv_text.find(LTsv_tagR)
         if 0 <= LTsv_posL < LTsv_posR <= len(LTsv_text):
             if LTsv_default != None:
@@ -447,21 +447,6 @@ def LTsv_tsv2list(LTsv_line,LTsv_len=None):
 def LTsv_tsv2tuple(LTsv_line,LTsv_len=None):
     LTsv_tuple=tuple(LTsv_tsv2list(LTsv_line,LTsv_len))
     return LTsv_tuple
-
-def LTsv_intstr0x(LTsv_codestr):
-    LTsv_codeint=0
-    try:
-        LTsv_codeint=int(float(LTsv_codestr))
-    except ValueError:
-        pass
-    for LTsv_hexstr in ["0x","$"]:
-        if LTsv_hexstr in LTsv_codestr:
-            try:
-                LTsv_codeint=int(LTsv_codestr.replace(LTsv_hexstr,""),16)
-            except ValueError:
-                pass
-            break
-    return LTsv_codeint
 
 def LTsv_label2dictint(LTsv_line):
     LTsv_labels=""; LTsv_datas=""; LTsv_dict={}

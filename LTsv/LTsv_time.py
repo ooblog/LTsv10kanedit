@@ -4,6 +4,7 @@ from __future__ import division,print_function,absolute_import,unicode_literals
 import time
 import datetime
 import os
+from LTsv_file    import *
 
 LTsv_HourMAXLower,LTsv_HourMAXUpper=(24,48)
 LTsv_overhour=LTsv_HourMAXLower
@@ -123,6 +124,29 @@ LTsv_FPS_earlier=LTsv_FPS_now
 LTsv_FPS_TotalSeconds=(LTsv_FPS_now-LTsv_FPS_earlier).total_seconds()
 LTsv_FPS_fPsK=min(max(int(1/LTsv_FPS_TotalSeconds),1),999) if LTsv_FPS_TotalSeconds > 0 else 999
 LTsv_FPS_fPsC=min(max(int(1/LTsv_FPS_TotalSeconds),1),99) if LTsv_FPS_TotalSeconds > 0 else 99
+LTsv_timerCounter=0
+
+#Counter
+def LTsv_intstr0x(LTsv_code):
+    LTsv_codestr="{0}".format(LTsv_code)
+    LTsv_codeint=0
+    try:
+        LTsv_codeint=int(float(LTsv_codestr))
+    except ValueError:
+        pass
+    for LTsv_hexstr in ["0x","$"]:
+        if LTsv_hexstr in LTsv_codestr:
+            try:
+                LTsv_codeint=int(LTsv_codestr.replace(LTsv_hexstr,""),16)
+            except ValueError:
+                pass
+            break
+    return LTsv_codeint
+
+def LTsv_settimerCounter(counter=None):
+    global LTsv_timerCounter
+    LTsv_timerCounter=LTsv_timerCounter if counter != None else LTsv_intstr0x(counter)
+    return LTsv_timerCounter
 
 #FPS
 def LTsv_checkFPS():
@@ -286,6 +310,7 @@ def LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None):
     global LTsv_allnight_Month,LTsv_allnight_MonthDays,LTsv_allnight_WeekNumberYearIso
     global LTsv_allnight_WeekDay,LTsv_allnight_WeekNumberMonth,LTsv_allnight_WeekDayIso
     global LTsv_FPS_now,LTsv_FPS_earlier,LTsv_FPS_TotalSeconds,LTsv_FPS_fPsK,LTsv_FPS_fPsC
+    global LTsv_timerCounter
     for LTsv_tf_count,LTsv_tf in enumerate(LTsv_tfList):
         LTsv_tf=LTsv_tf if not "@yzj"   in LTsv_tf else LTsv_tf.replace("@yzj"  ,"{0}".format(LTsv_zodiacjp[LTsv_meridian_YearZodiac]))
         LTsv_tf=LTsv_tf if not "@yzc"   in LTsv_tf else LTsv_tf.replace("@yzc"  ,"{0}".format(LTsv_zodiacch[LTsv_meridian_YearZodiac]))
@@ -496,7 +521,12 @@ def LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None):
         LTsv_tf=LTsv_tf if not "@T"   in LTsv_tf else LTsv_tf.replace("@T"  ,"\t")
         LTsv_tf=LTsv_tf if not "@E"    in LTsv_tf else LTsv_tf.replace("@E"  ,"\n")
         LTsv_tf=LTsv_tf if not "@Z"    in LTsv_tf else LTsv_tf.replace("@Z"  ,"")
+        LTsv_tf=LTsv_tf if not "@000c" in LTsv_tf else LTsv_tf.replace("@000c","{0:0>4}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@00c"  in LTsv_tf else LTsv_tf.replace("@00c" ,"{0:0>3}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@0c"   in LTsv_tf else LTsv_tf.replace("@0c"  ,"{0:0>2}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@c"    in LTsv_tf else LTsv_tf.replace("@c"   ,"{0}".format(LTsv_timerCounter))
         LTsv_tfList[LTsv_tf_count]=LTsv_tf
+    LTsv_timerCounter+=1
     LTsv_tfBase="@".join(LTsv_tfList)
     return LTsv_tfBase
 
@@ -598,6 +628,7 @@ def LTsv_gettimerstr(timeformat=None):
     global LTsv_passed_Beat,LTsv_passed_BeatInteger,LTsv_passed_BeatPoint
     global LTsv_limit_Beat,LTsv_limit_BeatInteger,LTsv_limit_BeatPoint
     global LTsv_FPS_now,LTsv_FPS_earlier,LTsv_FPS_TotalSeconds,LTsv_FPS_fPsK,LTsv_FPS_fPsC
+    global LTsv_timerCounter
     for LTsv_tf_count,LTsv_tf in enumerate(LTsv_tfList):
         LTsv_tf=LTsv_tf if not "@000d"  in LTsv_tf else LTsv_tf.replace("@000d" ,"{0:0>4}".format(LTsv_passed_Day))
         LTsv_tf=LTsv_tf if not "@___d"  in LTsv_tf else LTsv_tf.replace("@___d" ,"{0: >4}".format(LTsv_passed_Day))
@@ -721,7 +752,12 @@ def LTsv_gettimerstr(timeformat=None):
         LTsv_tf=LTsv_tf if not "@T"   in LTsv_tf else LTsv_tf.replace("@T"  ,"\t")
         LTsv_tf=LTsv_tf if not "@E"    in LTsv_tf else LTsv_tf.replace("@E"  ,"\n")
         LTsv_tf=LTsv_tf if not "@Z"    in LTsv_tf else LTsv_tf.replace("@Z"  ,"")
+        LTsv_tf=LTsv_tf if not "@000c" in LTsv_tf else LTsv_tf.replace("@000c","{0:0>4}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@00c"  in LTsv_tf else LTsv_tf.replace("@00c" ,"{0:0>3}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@0c"   in LTsv_tf else LTsv_tf.replace("@0c"  ,"{0:0>2}".format(LTsv_timerCounter))
+        LTsv_tf=LTsv_tf if not "@c"    in LTsv_tf else LTsv_tf.replace("@c"   ,"{0}".format(LTsv_timerCounter))
         LTsv_tfList[LTsv_tf_count]=LTsv_tf
+    LTsv_timerCounter+=1
     LTsv_tfBase="@".join(LTsv_tfList)
     return LTsv_tfBase
 
@@ -736,7 +772,7 @@ if __name__=="__main__":
     timeformat24="@yzj年@000y-@0m-@0dm@mes(@0dy/@0yd日@0wnyi/@ywi週@wdes第@wnm@wdj曜@apj@hap時)@0h:@0n:@0s.@0rs"
     timeformat30="@Yzj年@000Y-@Mz-@Dmz@Mes(@0Dy/@0Yd日@Wnyiz/@Ywi週@Wdes第@Wnmz@Wdj曜@Apj@Hz時)@Hz:@Nz:@Sz.@0Rs"
     timeformatBT="@000y-@0m-@0dm@mes(@0dy/@0yd,@0wn/@yw.@wdes)@bt:@@@0bti.@0btp"
-    timeformatsec="@0h:@0n:@0s.@0rs(@+-@-0h:@-0n:@-0s.@-0rs)@@@0bti.@0btp(@+-@-0bti.@-0btp)/@0H:@0N:@0S.@0Rs FPS:@0fpk"
+    timeformatsec="@0h:@0n:@0s.@0rs(@+-@-0h:@-0n:@-0s.@-0rs)@@@0bti.@0btp(@+-@-0bti.@-0btp)/@0H:@0N:@0S.@0Rs FPS:@0fpk Counter:@0c"
     timeformatday="2020年東京オリンピックまで@000D日"
     printlog=LTsv_libc_printf("LTsv_getdaytimestr()→{0}".format(LTsv_getdaytimestr()),printlog)
     print("")
@@ -761,6 +797,7 @@ if __name__=="__main__":
     printlog=LTsv_libc_printf("LTsv_getdaytimestr('{0}')↓\n{1}".format(timeformatBT,LTsv_getdaytimestr(timeformatBT)),printlog)
     print("")
     count=5
+    LTsv_settimerCounter(0)
     LTsv_puttimerstartgoal(seconds=count-2)
     while count >= 0:
         LTsv_checkFPS()
@@ -768,7 +805,7 @@ if __name__=="__main__":
         printlog=LTsv_libc_printf("LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatsec,LTsv_gettimerstr(timeformatsec)),printlog)
         count-=1
         if count >= 0:
-            time.sleep(1.0)
+            time.sleep(0.5)
     print("")
     LTsv_puttimerspecify(year=2020,month=7,day=24,hour=0)
     printlog=LTsv_libc_printf("LTsv_puttimerspecify(year=2020,month=7,day=24,hour=0),LTsv_gettimerstr('{0}')↓\n{1}".format(timeformatday,LTsv_gettimerstr(timeformatday)),printlog)

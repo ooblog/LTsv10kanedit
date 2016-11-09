@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161110R015147<br />
+modify 20161110R053525<br />
 </p>
 
 <h2>目次</h2>
@@ -29,7 +29,7 @@ modify 20161110R015147<br />
  <li><a href="#index1-3a" title="１-3a．「LTsv_time.py」の関数一覧">１-3a．「LTsv_time.py」の関数一覧</a></li>
  <li><a href="#index1-3b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a></li>
  <li><a href="#index1-4a" title="１-4a．「LTsv_calc.py」の関数一覧">１-4a．「LTsv_calc.py」の関数一覧</a></li>
- <li><a href="#index1-4b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a></li>
+ <li><a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a></li>
  <li><a href="#index1-5a" title="１-5a．「LTsv_joy.py」の関数一覧">１-5a．「LTsv_joy.py」の関数一覧</a></li>
  <li><a href="#index1-5b" title="１-5a．「LTsv_kbd.tsv」のタグ解説">１-5a．「LTsv_kbd.tsv」のタグ解説</a></li>
  <li><a href="#index1-6a" title="１-6a．「LTsv_joy.py」の関数一覧">１-6a．「LTsv_joy.py」の関数一覧</a></li>
@@ -428,10 +428,6 @@ tsvをPythonのリストに。<br />
 LTsv_lenがデータ数より多い場合は0文字列が補完される。</dd></dl>
 <dl><dt>LTsv_tsv2tuple(LTsv_line,LTsv_len=None)</dt><dd>
 「LTsv_tsv2list()」のタプルバージョン。</dd></dl>
-<dl><dt>LTsv_intstr0x(LTsv_codestr)</dt><dd>
-"0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。<br />
-<br />
-try節で囲む手間を省きたい場合に便利。</dd></dl>
 <dl><dt>LTsv_label2dictint(LTsv_line)</dt><dd>
 LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。</dd></dl>
 <dl><dt>LTsv_label2dictstr(LTsv_line)</dt><dd>
@@ -466,6 +462,11 @@ Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:
 (LTsv_Beat,LTsv_BeatInteger,LTsv_BeatPoint)のタプルを返す。<br />
 LTsv_Beatは1日の秒数0?86399(86400)。@Beatはその秒数を86.4で割った一日を1000分割する数。<br />
 LTsv_BeatIntegerは@Beatの整数部分。LTsv_BeatPointは@Beatの小数部分。</dd></dl>
+<dl><dt>LTsv_intstr0x(LTsv_code)</dt><dd>
+"0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。<br />
+try節で囲む手間を省きたい場合に便利。</dd></dl>
+<dl><dt>LTsv_settimerCounter(counter=None)</dt><dd>
+LTsv_timerCounter「@c」の値を設定する(取得のみも可能)。</dd></dl>
 <dl><dt>LTsv_checkFPS()</dt><dd>
 LTsv_checkFPS()自身を1秒間に何回実行できるか計測。0〜999の範囲。</dd></dl>
 <dl><dt>LTsv_setdaytimeshift()</dt><dd>
@@ -632,6 +633,14 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 </dd></dl>
 
 <dl><dt>
+ @c(日付)=@000c,@00c,@0c,@c</dt>
+<dd>
+
+  「LTsv_getdaytimestr()」もしくは「LTsv_gettimerstr()」が実行される度にカウンター(LTsv_timerCounter)が加算される。<br />
+  @Z=\0。文字列長0用。<br />
+</dd></dl>
+
+<dl><dt>
  その他エスケープ文字</dt>
 <dd>
 
@@ -645,7 +654,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <section>
 <h3><a name="index1-4a">１-4a．「LTsv_calc.py」の関数一覧</a></h3>
 <p>
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#index1-4b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a>」を参照。<br />
+ 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a>」を参照。<br />
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<br />
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<br />
 </p>
@@ -663,7 +672,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <dl><dt>LTsv_calc(LTsv_calcQbase)</dt><dd>
 電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。<br />
 LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。<br />
-電卓フォーマットの概要は「<a href="#index1-4b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a>」を参照。</dd></dl>
+電卓フォーマットの概要は「<a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a>」を参照。</dd></dl>
 <dl><dt>LTsv_calc_function(LTsv_calcQbase)</dt><dd>
 主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。</dd></dl>
 <dl><dt>LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)</dt><dd>
@@ -674,7 +683,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 </section>
 
 <section>
-<h3><a name="index1-4b">１-3b．日時フォーマットの概要</a></h3>
+<h3><a name="index1-4b">１-4b．電卓フォーマットの概要</a></h3>
 <p>
  分数「|」と割り算「/」を別物として扱います。分数の入れ子は「2|3|5|7⇔2|105」のように分母にまとめられます。<br />
  通常は分数で計算するので「1/3⇔1|3」「1|3*3⇔1」になり一般的な電卓のように「0.999999999999」などにはならない。<br />

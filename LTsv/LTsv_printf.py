@@ -221,7 +221,9 @@ if __name__=="__main__":
     from LTsv_file   import *
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
-    print("hello world",type("hello world"))
+    test_workdir="./testfile/"; txtpath=test_workdir+"testprint.txt"; printlog=""
+#    print("hello world",type("hello world"))
+    LTsv_libc_printf("{0} {1}".format("hello world",type("hello world")))
     print("'hello world'.encode('utf-8')",type("hello world".encode('utf-8')))
     print("'hello {0}'.format('world')",type("hello world".format('world')))
     print("")
@@ -257,7 +259,8 @@ if __name__=="__main__":
         else:
             kanare_value=''.join(sorted(LTsv_kanarecases[kanare_key].keys()))
         kanare_replace=LTsv_kanare(kanare_value,kanare_key)
-        LTsv_libc_printf("LTsv_kanare(kanare_value,'{0}')\n{1}↓\n{2}\n".format(kanare_key,kanare_value,kanare_replace))
+        printlog=LTsv_libc_printf("LTsv_kanare(kanare_value,'{0}')\n{1}↓\n{2}\n".format(kanare_key,kanare_value,kanare_replace),printlog)
+    LTsv_saveplain(txtpath,printlog); LTsv_libc_printf("LTsv_savefile('{0}',printlog)".format(txtpath))
     print("")
     print("__main__",LTsv_file_ver())
 

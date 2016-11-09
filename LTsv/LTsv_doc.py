@@ -15,42 +15,17 @@ from LTsv_calc    import *
 from LTsv_gui     import *
 from LTsv_glyph  import *
 
-
-#def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
-#    global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
-#    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
-#    LTsvDOC_tagdata=LTsvDOC_tagnames
-#    LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
-#    if '\t' in LTsvDOC_tagpage:
-#        LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
-#        for LTsvDOC_tagcase in LTsvDOC_tagcases:
-#            LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
-#            LTsvDOC_research=None
-#            try:
-#                LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
-#            except re.error:
-#                continue
-#            else:
-#                if LTsvDOC_research:
-#                    LTsvDOC_caseline=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
-#                    LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caseline)
-#                    LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)
-#                    LTsvDOC_caseline=LTsvDOC_caseline.replace('\\n','\n').replace('\\t','\t').replace('\\0','').replace('\\\\','\\')
-#                    if len(LTsvDOC_tagdata) == 0:
-#                        LTsvDOC_tagdata=LTsvDOC_caseline;
-#                    LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagdata)
-#                    break
-#    elif len(LTsvDOC_tagpage) > 0:
-#         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagpage)
-#    return LTsvDOClaunch_main
+LTsvDOClaunch_tagseparate="*"
 def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
     if '\t' in LTsvDOC_tagpage:
-        LTsvDOC_tagdatas=""
-        LTsvDOC_tagnamesL=LTsvDOC_tagnames.split('\t')
+        LTsvDOC_tagnamesL=LTsvDOC_tagnames.split(LTsvDOClaunch_tagseparate)
+        LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,"".join(LTsvDOC_tagnamesL))
+        LTsv_settimerCounter(0)
         for LTsvDOC_tagname in LTsvDOC_tagnamesL:
+            if len(LTsvDOC_tagname) == 0: continue;
             LTsvDOC_tagdata=""
             LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
             for LTsvDOC_tagcase in LTsvDOC_tagcases:
@@ -69,8 +44,7 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
                             if len(LTsvDOC_tagdata) == 0 or '\t' in LTsvDOC_tagdata:
                                 LTsvDOC_tagdata=LTsvDOC_caseline
                         break
-            LTsvDOC_tagdatas+=LTsvDOC_tagdata
-        LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagdatas)
+            LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
     if len(LTsvDOC_tagpage) > 0:
          LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagpage)
     return LTsvDOClaunch_main
