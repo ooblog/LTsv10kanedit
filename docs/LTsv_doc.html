@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161110R074016<br />
+modify 20161111F040819<br />
 </p>
 
 <h2>目次</h2>
@@ -31,8 +31,9 @@ modify 20161110R074016<br />
  <li><a href="#index1-4a" title="１-4a．「LTsv_calc.py」の関数一覧">１-4a．「LTsv_calc.py」の関数一覧</a></li>
  <li><a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a></li>
  <li><a href="#index1-5a" title="１-5a．「LTsv_joy.py」の関数一覧">１-5a．「LTsv_joy.py」の関数一覧</a></li>
- <li><a href="#index1-5b" title="１-5a．「LTsv_kbd.tsv」のタグ解説">１-5a．「LTsv_kbd.tsv」のタグ解説</a></li>
- <li><a href="#index1-6a" title="１-6a．「LTsv_joy.py」の関数一覧">１-6a．「LTsv_joy.py」の関数一覧</a></li>
+ <li><a href="#index1-5b" title="１-5b．「LTsv_joy.tsv」のタグ解説">１-5b．「LTsv_joy.tsv」のタグ解説</a></li>
+ <li><a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></li>
+ <li><a href="#index1-6a" title="１-6a．「LTsv_kbd.py」の関数一覧">１-6a．「LTsv_kbd.py」の関数一覧</a></li>
  <li><a href="#index1-6b" title="１-6b．「LTsv_kbd.tsv」のタグ解説">１-6b．「LTsv_kbd.tsv」のタグ解説</a></li>
 </ul>
 </header>
@@ -78,7 +79,7 @@ modify 20161110R074016<br />
  フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
  「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<br />
  「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位が低い。<br />
- 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar.tsv」に移管作業中。なので漢字鍵盤の漢字配列が大幅に変更するかも。<br />
+ 現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列が大幅に変更するかも。<br />
  Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
@@ -177,14 +178,15 @@ modify 20161110R074016<br />
 </p>
 
 <dl><dt>LTsv_libc_printf(LTsv_text,LTsv_log=None)</dt><dd>
-LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logに変数名を指定する事で変数にも出力追記できる。<br />
+LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。<br />
 LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。<br />
 扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。<br />
 「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。</dd></dl>
 <dl><dt>LTsv_libc_printcat(LTsv_text)</dt><dd>
 上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。</dd></dl>
 <dl><dt>LTsv_libc_printf_type(LTsv_text,LTsv_log=None)</dt><dd>
-Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。</dd></dl>
+Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。<br />
+LTsv_logと返り値を指定する事で変数にも出力追記できる。</dd></dl>
 <dl><dt>LTsv_utf2xml(LTsv_text)</dt><dd>
 LTsv_textの文字列を数値文字参照に変換。</dd></dl>
 <dl><dt>LTsv_xml2utf(LTsv_text)</dt><dd>
@@ -842,183 +844,170 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 
 <section>
 <h3><a name="index1-5a">１-5a．「LTsv_joy.py」の関数一覧</a></h3>
+<p>
+ ジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。<br />
+ ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<br />
+ ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。<br />
+</p>
+ 
 <dl><dt>LTsv_joyreset(LTsv_tsvpath)</dt><dd>
-</dd></dl>
+「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<a href="#index1-5b" title="１-5b．「LTsv_joy.tsv」のタグ解説">１-5b．「LTsv_joy.tsv」のタグ解説</a>」。</dd></dl>
 <dl><dt>LTsv_joyexit()</dt><dd>
-</dd></dl>
+ジョイスティック(ゲームPAD)の変数初期化です。Linuxではデバイスをクローズします。</dd></dl>
 <dl><dt>LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")</dt><dd>
-</dd></dl>
+ジョイスティック(ゲームPAD)の準備です。Linuxではデバイスをオープンします。<br />
+「LTsv_joyinit()」のタイミングでジョイスティック(ゲームPAD)ので個数を受けとる。<br />
+0を受け取った場合ジョイスティック(ゲームPAD)を見つけれてない状態。</dd></dl>
 <dl><dt>LTsv_setjoydata(LTsv_joyid,LTsv_default=None)</dt><dd>
-</dd></dl>
+スティック(axisW/axisL)とボタン(button)の状態を読み込む。<br />
+axisリストとbuttonリストのタプルで返り値も受け取れる。</dd></dl>
 <dl><dt>LTsv_getjoystr(LTsv_joyid,joyformat=None)</dt><dd>
-</dd></dl>
+スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。<br />
+LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。<br />
+項目一覧の詳細は「<a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a>」。</dd></dl>
 <dl><dt>LTsv_atanscalar(LTsv_atanX,LTsv_atanY)</dt><dd>
-</dd></dl>
+スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。</dd></dl>
 <dl><dt>LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)</dt><dd>
-</dd></dl>
+ラジアン角度円周2πをLTsv_labelsのラベルに置き換え。<br />
+ジョイスティック(ゲームPAD)の方角、上下左右東西南北などの表現を想定。</dd></dl>
 <dl><dt>LTsv_joyaxis_label()</dt><dd>
-</dd></dl>
+Windowsなら「axisW」を返す。Windowsなら「axisL」を返す。<br />
+「LTsv_getjoystr()」でどのaxisを取得するべきかの調査用途。</dd></dl>
 
 </section>
 
 <section>
-<h3><a name="index1-5b">１-5a．「LTsv_kbd.tsv」のタグ解説</a></h3>
+<h3><a name="index1-5b">１-5b．「LTsv_joy.tsv」のタグ解説</a></h3>
 <dl><dt>[LTsv_deviceL|</dt><dd>
 Linuxのデバイス指定ページ。</dd></dl>
 <dl><dt>joy</dt><dd>
-</dd></dl>
+Linuxの場合デバイス名(から数字を省いた物)を指定。初期設定は「/dev/input/js」(「/dev/input/js0」を想定)。</dd></dl>
 <dl><dt>[keydefault|</dt><dd>
-</dd></dl>
+「LTsv_getjoystr()」のLTsv_joykbdformatの初期値設定。</dd></dl>
 <dl><dt>axisL</dt><dd>
-</dd></dl>
+初期値は「Lx\tLy\t_\tRx\tRy\tPx\tPy」。</dd></dl>
 <dl><dt>axisW</dt><dd>
-</dd></dl>
+初期値は「Lx\tLy\tRy\tRx\tPx\tPy」。</dd></dl>
 <dl><dt>button</dt><dd>
-</dd></dl>
+初期値は「X\tY\tA\tB\tC\tZ\tL\tR\tF\tJ\tS\tP」。<br />
+C,ZがむしろL1,R1。L,Rが機種によってZL,ZR(L2,R2)。F,JがいわゆるL3,R3。</dd></dl>
 <dl><dt>[keyanother|</dt><dd>
-</dd></dl>
+「keydefault」の初期値ボツ案などだがボタン配置解説用に温存。</dd></dl>
 <dl><dt>axisUV</dt><dd>
-</dd></dl>
+Windowsを「dwXpos,dwYpos,dwZpos,dwRpos,dwUpos,dwVpos,dwPOV」固定でも構わなかったけどPOVもLinux同様に２軸にしてすり合わせたかったので直接は使わず。</dd></dl>
 <dl><dt>axisLW</dt><dd>
-</dd></dl>
+本来こうしたかった例「Lx\tLy\tRy\tRx\tPx\tPy」。でもこれだとZ軸(dwUpos,dwVpos)の扱いが謎に。</dd></dl>
 <dl><dt>axisL7</dt><dd>
-</dd></dl>
+Linuxドライバのaxis解釈が謎7軸なのは多分こうなるはずだったから予想「Lx\tLy\tLz\tRx\tRy\tRz\tPx\tPy」。そのせいでなのかWindowsとLinuxでaxisにズレが発生する。</dd></dl>
 <dl><dt>axisW8</dt><dd>
-</dd></dl>
+axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\tLy\tRy\tRx\tPx\tPy\tLz\tRz」。Z軸を後付け設計にしたので注意。</dd></dl>
 <dl><dt>buttonN</dt><dd>
-</dd></dl>
+いわゆる任天堂(3DS)配列風。「X\tY\tA\tB\tL\tR\tZL\tZR\tLC\tRC\tS\tP\tH」。</dd></dl>
 <dl><dt>buttonP</dt><dd>
+いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\tR2\tL3\tR3\tS\tO\tP」。。</dd></dl>
+
+</section>
+
+<section>
+<h3><a name="index1-5c">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></h3>
+<dl><dt>
+  status</dt>
+<dd>
+           axis最大値とボタン最大値。2項目。axis最大値はWindowsとLinuxでズレる場合があります。ループ内省略推奨。
+</dd></dl>
+<dl><dt>
+  button</dt>
+<dd>
+           ボタンが押されてれば1。押されてなければ0。データ項目はボタンの個数分。WindowsとLinuxで共通。
+</dd></dl>
+<dl><dt>
+  axisL</dt>
+<dd>
+            Linux版はPOVが2軸扱い。合計6項目の場合でも7項目を返すゲームPADが存在したりするので注意(PxPy軸がズレてる場合がある)。
+</dd></dl>
+<dl><dt>
+  axisW</dt>
+<dd>
+            Windows版はPOVが1軸扱いですがスクリプト側で2軸に変換。通常6項目。
 </dd></dl>
 
 </section>
 
 <section>
-<h3><a name="index1-6a">１-6a．「LTsv_joy.py」の関数一覧</a></h3>
+<h3><a name="index1-6a">１-6a．「LTsv_kbd.py」の関数一覧</a></h3>
 <dl><dt>LTsv_kbdreset(LTsv_tsvpath)</dt><dd>
-</dd></dl>
+ [LTsv_kbd.tsv]からモジュールの初期設定や、キーコード($00〜$FF)に名付けたキー名称を読み込む。<br />
+デバイスの検出方法に改善の余地がある予感。<br />
+詳細は「<a href="#index1-6b" title="１-6b．「LTsv_kbd.tsv」のタグ解説">１-6b．「LTsv_kbd.tsv」のタグ解説</a>」。</dd></dl>
 <dl><dt>LTsv_kbdgettypename(LTsv_code)</dt><dd>
-</dd></dl>
+キーコード($00〜$FF)をキー名称に変換。ひらがなキー名称は用いない。</dd></dl>
 <dl><dt>LTsv_kbdgettypekana(LTsv_code)</dt><dd>
-</dd></dl>
+キーコード($00〜$FF)をキー名称に変換。かな入力に用いるキーはひらがなキー名称を取得。</dd></dl>
 <dl><dt>LTsv_kbdgettypecode(LTsv_name)</dt><dd>
-</dd></dl>
+キー名称をキーコード($00〜$FF)に変換。</dd></dl>
 <dl><dt>LTsv_kbdgettypegana(LTsv_gana)</dt><dd>
-</dd></dl>
+ひらがなキー名称をキーコード($00〜$FF)に変換。ひらがな以外のキー名称も使用可能。</dd></dl>
 <dl><dt>LTsv_kbdexit()</dt><dd>
-</dd></dl>
+PCキーボード(マウス含む)の変数初期化です。Linuxではデバイスをクローズします。</dd></dl>
 <dl><dt>LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)</dt><dd>
-</dd></dl>
+PCキーボードの準備です。Linuxではデバイスをオープンします。<br />
+Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。<br />
+マウスボタンの配置は「<a href="#index1-6b" title="１-6b．「LTsv_kbd.tsv」のタグ解説">１-6b．「LTsv_kbd.tsv」のタグ解説</a>」を参考。<br />
+Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。</dd></dl>
 <dl><dt>LTsv_kbdEVIOCGRAB(LTsv_grabflag)</dt><dd>
-</dd></dl>
+※Linux専用命令です。PCキーボードの入力をターミナルやテキストエリアなどに出力しないようにします。<br />
+Windowsのキーフックとすり合わせる過程で別の名前になる可能性があります。<br />
+漢直とかでPCキーボードのアルファベット入力を漢字出力に置き換える用途です。</dd></dl>
 <dl><dt>LTsv_kbdwrite(LTsv_code,LTsv_press)</dt><dd>
-</dd></dl>
+※Linux専用命令です。PCキーボードを入力した事にします。<br />
+「LTsv_kbdEVIOCGRAB()」実行中は動作しません。</dd></dl>
 <dl><dt>LTsv_kbdwriteCtrl(LTsv_ganastsv)</dt><dd>
-</dd></dl>
+※Linux専用命令です。「Ctrl」など複数のキーを押しながら入力みたいな動作を再現します。<br />
+「LTsv_kbdEVIOCGRAB()」実行中は動作しません。</dd></dl>
 <dl><dt>LTsv_setkbddata(LTsv_kbdstacks,LTsv_mousestacks)</dt><dd>
-</dd></dl>
+PCキーボードの状態を読み込みます。<br />
+LTsv_kbdstacksとLTsv_mousestacksはLinuxでそれぞれのデバイスから一度に読み込む量の指定です。</dd></dl>
 <dl><dt>LTsv_getkbdlabels(kbdformat=LTsv_defkbdformat)</dt><dd>
-</dd></dl>
+キー名一覧のtsvをLTsv_defkbdformatに渡すとキーの状態を表すLTSVが帰ってくる。<br />
+例えば「LTsv_getkbdlabels("MouseL\tMouseR\tMouseC")」とすると「MouseL:0\nMouseR:0\nMouseC:0」とかが帰ってくる。</dd></dl>
 <dl><dt>LTsv_getkbdnames()</dt><dd>
-</dd></dl>
+押されたPCキーボードのキー名称を返す。キーコード($00〜$FF)にキー名称が付けられる必要がある。</dd></dl>
 <dl><dt>LTsv_getkbdcodes()</dt><dd>
-</dd></dl>
+ 押されたPCキーボードのキーコード($00〜$FF)を返す。</dd></dl>
 <dl><dt>LTsv_getkbdkanas()</dt><dd>
-</dd></dl>
+押されたPCキーボードのかな文字を返す。かな以外だと押されたPCキーボードのキーコード($00〜$FF)を返す。</dd></dl>
 
 </section>
 
 <section>
 <h3><a name="index1-6b">１-6b．「LTsv_kbd.tsv」のタグ解説</a></h3>
 <dl><dt>[LTsv_deviceL|</dt><dd>
-</dd></dl>
+Linuxのデバイス指定。</dd></dl>
 <dl><dt>kbd</dt><dd>
-</dd></dl>
+初期設定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。<br />
+PCキーボードデバイスの位置は環境毎の差異があるので「dmesg | grep keyboard | grep device」で確認。<br />
+例えば「input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3」みたいな文字列が見つかったら「/dev/input/event3」になるはず。</dd></dl>
 <dl><dt>mouse</dt><dd>
-</dd></dl>
+初期想定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。<br />
+マウスデバイスの位置は環境毎の差異があるかもなので「cat /proc/bus/input/devices | grep mouse0」で確認。<br />
+例えば「H: Handlers=mouse0 event5」みたいな文字列が見つかったら「/dev/input/event5」になるはず。</dd></dl>
 <dl><dt>[LTsv_mouse_EV_KEY|</dt><dd>
-</dd></dl>
-<dl><dt>BTN_LEFT:0x110</dt><dd>
-</dd></dl>
-<dl><dt>BTN_RIGHT:0x111</dt><dd>
-</dd></dl>
-<dl><dt>BTN_MIDDLE:0x112</dt><dd>
-</dd></dl>
-<dl><dt>BTN_TOUCH:0x14a</dt><dd>
-</dd></dl>
-<dl><dt>BTN_STYLUS:0x14b</dt><dd>
-</dd></dl>
-<dl><dt>BTN_STYLUS2:0x14c</dt><dd>
-</dd></dl>
-<dl><dt>BTN_FORWARD:0x115</dt><dd>
-</dd></dl>
-<dl><dt>BTN_BACK:0x116</dt><dd>
-</dd></dl>
+※Linux専用。マウスボタンなどの入力をWindowsのGetAsyncKeyStateの1,2,4みたいにキーコード($00〜$FF)風に処理するための仮想キーコードの設定。</dd></dl>
 <dl><dt>[LTsv_EV_REL|</dt><dd>
-</dd></dl>
-<dl><dt>REL_WHEEL:8</dt><dd>
-</dd></dl>
+マウスホイールなどの入力を処理する予定だった設定枠(未実装)。</dd></dl>
 <dl><dt>[LTsv_EV_ABS|</dt><dd>
-</dd></dl>
+その他アナログな入力を処理する予定だった設定枠(未定)。</dd></dl>
 <dl><dt>[LTsv_typenameW|</dt><dd>
-</dd></dl>
-<dl><dt>1:0x31</dt><dd>
-</dd></dl>
-<dl><dt>Q:0x51</dt><dd>
-</dd></dl>
-<dl><dt>A:0x41</dt><dd>
-</dd></dl>
-<dl><dt>Z:0x5a</dt><dd>
-</dd></dl>
-<dl><dt>NFER:0xe6</dt><dd>
-</dd></dl>
-<dl><dt>ShiftL:0xa0</dt><dd>
-</dd></dl>
-<dl><dt>Left:0x25</dt><dd>
-</dd></dl>
-<dl><dt>Enter:0x0d</dt><dd>
-</dd></dl>
-<dl><dt>F01:0x70</dt><dd>
-</dd></dl>
-<dl><dt>MouseL:1</dt><dd>
-</dd></dl>
+Windowsの「キー名称:キーコード($00〜$FF)」の組み合わせを記述。<br />
+だがWineとWindows実機でGetAsyncKeyStateの返り値が違う様子。</dd></dl>
 <dl><dt>[WineVK|</dt><dd>
 </dd></dl>
 <dl><dt>[WindowsVK|</dt><dd>
 </dd></dl>
-<dl><dt>NFER:0x1c</dt><dd>
-</dd></dl>
 <dl><dt>[LTsv_typenameL|</dt><dd>
 </dd></dl>
-<dl><dt>1:2</dt><dd>
-</dd></dl>
-<dl><dt>Q:16</dt><dd>
-</dd></dl>
-<dl><dt>A:30</dt><dd>
-</dd></dl>
-<dl><dt>Z:44</dt><dd>
-</dd></dl>
-<dl><dt>NFER:94</dt><dd>
-</dd></dl>
-<dl><dt>ShiftL:42</dt><dd>
-</dd></dl>
-<dl><dt>Left:105</dt><dd>
-</dd></dl>
-<dl><dt>Enter:28</dt><dd>
-</dd></dl>
-<dl><dt>F01:59</dt><dd>
-</dd></dl>
-<dl><dt>MouseL:250</dt><dd>
-</dd></dl>
 <dl><dt>[LTsv_typegana|</dt><dd>
-</dd></dl>
-<dl><dt>ぬ:1</dt><dd>
-</dd></dl>
-<dl><dt>た:Q</dt><dd>
-</dd></dl>
-<dl><dt>ち:A</dt><dd>
-</dd></dl>
-<dl><dt>つ:Z</dt><dd>
-</dd></dl>
+Windows仮想キーの「キー名称:キーコード($00〜$FF)」の組み合わせ保存用。PCキーボードの種類によって変化する怖れ。</dd></dl>
 <dl><dt>[LTsv_keydefault|</dt><dd>
 </dd></dl>
 

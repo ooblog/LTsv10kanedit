@@ -89,6 +89,7 @@ ENV/
 .ropeproject
 
 
+# git status
 # git push github:ooblog/LTsv10kanedit.git master
 # git push github:ooblog/LTsv10kanedit.git 20161023U011852
 # git log

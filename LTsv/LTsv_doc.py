@@ -65,6 +65,8 @@ def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
         LTsvDOClaunch_tsvpage=LTsv_getpage(LTsvDOClaunch_deffile,LTsvDOClaunch_tsvpagename)
         LTsvDOClaunch_pagefirsts=LTsv_readlinefirsts(LTsvDOClaunch_tsvpage)
         LTsvDOClaunch_pagefirstslist=LTsvDOClaunch_pagefirsts.split('\t') if len(LTsvDOClaunch_pagefirsts) else []
+        for pagefirst in LTsvDOClaunch_pagefirstslist[:]:
+            if ":" in pagefirst: LTsvDOClaunch_pagefirstslist.remove(pagefirst)
         LTsvDOClaunch_pagefirstslist=["[{0}|".format(LTsvDOClaunch_tsvpagename)]+LTsvDOClaunch_pagefirstslist
         LTsvDOClaunch_defnewfile+="\n".join(LTsvDOClaunch_pagefirstslist)+"\n"
     return LTsvDOClaunch_defnewfile

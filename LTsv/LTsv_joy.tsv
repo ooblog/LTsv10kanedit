@@ -22,7 +22,7 @@ axisUV	dwXpos	dwYpos	dwZpos	dwRpos	dwUpos	dwVpos	dwPOV
 axisLW	Lx	Ly	Ry	Rx	Px	Py
 axisL7	Lx	Ly	Lz	Rx	Ry	Rz	Px	Py
 axisW8	Lx	Ly	Ry	Rx	Px	Py	Lz	Rz
-buttonN	X	Y	A	B	L	R	ZL	ZR	Ls	RC	S	P	H
+buttonN	X	Y	A	B	L	R	ZL	ZR	LC	RC	S	P	H
 buttonP	△	□	×	○	L1	R1	L2	R2	L3	R3	S	O	P
 |keyanother]
 
