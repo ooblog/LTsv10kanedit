@@ -38,13 +38,13 @@ def kanmap_KBDstart():
             kanmap_chars[kbd_y][kbd_x]=LTsv_glyph_kanmapX[LTsv_global_irohaalpha()[map_xy]][kbd_xy]
     global kanmap_linecount
     kanmap_linecount=0
-    LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=10)
+    LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=20)
 
 def kanmap_KBDcount(window_objvoid=None,window_objptr=None):
     global kanmap_linecount
     LTsv_kanmap_drawline(kanmap_linecount); kanmap_linecount+=1
     if kanmap_linecount < kanmap_charsH:
-        LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=10)
+        LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=20)
     else:
         kanmap_KBDfinishDICstart()
 
@@ -78,13 +78,13 @@ def kanmap_KBDfinishDICstart():
             kanmap_chars[kanmap_charsY+dic_xy][map_xy]=kanmap_dicsplits[dicpos][0:1]
     global kanmap_linecount
     kanmap_linecount=kanmap_charsH+1
-    LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=10)
+    LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=20)
 
 def kanmap_DICcount(window_objvoid=None,window_objptr=None):
     global kanmap_linecount
     LTsv_kanmap_drawline(kanmap_linecount); kanmap_linecount+=1
     if kanmap_linecount < kandic_charsdicH:
-        LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=10)
+        LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=20)
     else:
         kanmap_DICfinish()
 

@@ -162,11 +162,6 @@ def LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption):
     else:
         return None
 
-#def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
-#  widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
-#  event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
-#  menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None, \
-#  kbd_p=None,kbd_r=None,kbd_m=None,kbd_e=None,kbd_l=None,kbd_i=None,kbd_s=None,kbd_d=None,kbd_t=None,kbd_u=None,kbd_k=None):
 def LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \
   widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, \
   event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, \
@@ -761,24 +756,24 @@ def LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widge
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
-def LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_logo.png",widget_x=0,widget_y=0):
+def LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0):
     global LTsv_widgetLTSV
     LTsv_windowPAGE=LTsv_getpage(LTsv_widgetLTSV,LTsv_windowPAGENAME)
     window_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
     LTsv_widgetPAGENAME=LTsv_widget_newUUID(widget_n); LTsv_widgetPAGE=""
     LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_k="image",widget_x=widget_x,widget_y=widget_y)
     if LTsv_GUI == LTsv_GUI_GTK2:
-        widget_p=LTsv_libgtk.gtk_image_new_from_file(widget_t.encode("utf-8","xmlcharrefreplace"))
+        widget_p=LTsv_libgtk.gtk_image_new_from_file(widget_u.encode("utf-8","xmlcharrefreplace"))
         widget_o=LTsv_libgtk.gtk_event_box_new()
         LTsv_libgtk.gtk_container_add(widget_o,widget_p)
         window_c=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetcontainer")]
         LTsv_libgtk.gtk_fixed_put(window_c,widget_o,widget_x,widget_y)
-        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,widget_p=widget_p)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_u=widget_u,widget_p=widget_p)
     if LTsv_GUI == LTsv_GUI_Tkinter:
-        widget_p=Tk.PhotoImage(file=widget_t)
+        widget_p=Tk.PhotoImage(file=widget_u)
         widget_o=Tk.Label(window_o,image=widget_p)
         widget_o.place(x=widget_x,y=widget_y)
-        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_t=widget_t,widget_p=widget_p)
+        LTsv_widgetPAGE=LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=widget_o,widget_u=widget_u,widget_p=widget_p)
     LTsv_widgetLTSV=LTsv_putpage(LTsv_widgetLTSV,LTsv_widgetPAGENAME,LTsv_widgetPAGE)
     return LTsv_widgetPAGENAME
 
@@ -1894,6 +1889,7 @@ if __name__=="__main__":
             LTsv_widget_disableenable(debug_keysetup_spin[debug_kbdxy],False)
             debug_kbdcodename="「{0}」({1})".format(debug_kbdlabel,LTsv_kbdgettypename(LTsv_kbdgettypegana(debug_kbdlabel))) if debug_kbdlabel != "NFER" and debug_kbdlabel != "NFER" and debug_kbdlabel != "XFER" and debug_kbdlabel != "KANA" else "「{0}」".format(debug_kbdlabel)
             debug_keysetup_label[debug_kbdxy]=LTsv_label_new(debug_keysetup_window,widget_t=debug_kbdcodename,widget_x=debug_keyspin_X+debug_kbdx,widget_y=debug_keyspin_Y+debug_kbd_y-debug_keyspin_H,widget_w=debug_keyspin_W if debug_kbdlabel != "　" else debug_keyspin_W*3,widget_h=debug_keyspin_H,widget_f=debug_font_entry)
+        debug_image=LTsv_image_new(debug_keysetup_window,widget_u=LTsv10_logoPATH,widget_x=debug_keysetup_W-LTsv_global_pictureW(LTsv10_logoPATH),widget_y=debug_keyspin_Y+debug_keyspin_H)
         debug_edit=LTsv_edit_new(debug_keysetup_window,widget_t="",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*4,widget_w=debug_keyspin_W*2,widget_h=debug_keyspin_H*4,widget_f=debug_font_entry)
         debug_clipboard=LTsv_clipboard_new(debug_keysetup_window)
         debug_clipbutton=LTsv_button_new(debug_keysetup_window,widget_t="clip",widget_x=0,widget_y=debug_keysetup_H-debug_keyspin_H*5,widget_w=debug_keyspin_W*1,widget_h=debug_keyspin_H*1,widget_f=debug_font_entry,event_b=debug_edit_clip)

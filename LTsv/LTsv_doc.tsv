@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161111F040820
+modify	20161114M012345
 |L:Tsv]
 
 [LTsv_doc|
@@ -52,6 +52,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <？index1-5c>
  <？index1-6a>
  <？index1-6b>
+ <？index1-7a>
+ <？index1-7b>
 
 <？index0-0>
 
@@ -121,6 +123,15 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 <＃contents1-6b>
 
+<？index1-7a>
+
+<＃contents1-7a>
+
+<？index1-7b>
+
+<＃contents1-7b>
+
+
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
@@ -156,6 +167,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <li><？index1-5c></li>
  <li><？index1-6a></li>
  <li><？index1-6b></li>
+ <li><？index1-7a></li>
+ <li><？index1-7b></li>
 </ul>
 </header>
 
@@ -242,6 +255,16 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <section>
 <h3><a name="index1-6b"><？title$index1-6b></a></h3>
 <＃contents1-6b>
+</section>
+
+<section>
+<h3><a name="index1-7a"><？title$index1-7a></a></h3>
+<＃contents1-7a>
+</section>
+
+<section>
+<h3><a name="index1-7b"><？title$index1-7b></a></h3>
+<＃contents1-7b>
 </section>
 
 <footer>
@@ -443,6 +466,7 @@ modify <？modify><？BR><？/P>
  firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<？BR>
  LTSVを「[tag|」と「|tag]」の様に<？contents1-0b:tagsplit><？BR>
  拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<？BR>
+ first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？DLDT>  [L:Tsv|<？/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<？/DD/DL>
@@ -582,8 +606,8 @@ LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)	1行のラベル有りLTSV「l
 LTsv_tuple2tsv(LTsv_tuple)	Pythonのタプルやリストをtsvに。	forループよりjoin使った方が速い的なPythonあるある。
 LTsv_tsv2list(LTsv_line,LTsv_len=None)	tsvをPythonのリストに。	左辺でunpackする場合受けとる変数の個数をLTsv_lenで指定。	LTsv_lenがデータ数より多い場合は0文字列が補完される。
 LTsv_tsv2tuple(LTsv_line,LTsv_len=None)	「LTsv_tsv2list()」のタプルバージョン。
-LTsv_label2dictint(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。
-LTsv_label2dictstr(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。
+LTsv_label2dictint(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。	複数行あっても1つのLTSVとみなす。
+LTsv_label2dictstr(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。	複数行あっても1つのLTSVとみなす。
 LTsv_dict2label(LTsv_dict)	Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
 LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<！L:TsvLTsvver>)。
 LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
@@ -719,9 +743,9 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
   @_-はプラスの時は空白を表示。<？BR>
   @--はマイナスのみ表示。プラスの時は一文字詰める。<？BR><？/DD/DL>
 
-<？DLDT> @c(日付)=@000c,@00c,@0c,@c<？/DTDD>
+<？DLDT> @c(カウンター)=@000c,@00c,@0c,@c<？/DTDD>
   「LTsv_getdaytimestr()」もしくは「LTsv_gettimerstr()」が実行される度にカウンター(LTsv_timerCounter)が加算される。<？BR>
-  @Z=\0。文字列長0用。<？BR><？/DD/DL>
+  カウンターの値を変更は「LTsv_settimerCounter()」。<？BR><？/DD/DL>
 
 <？DLDT> その他エスケープ文字<？/DTDD>
   @T=\t。タブ文字用。<？BR>
@@ -978,70 +1002,94 @@ mouse	初期想定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイ
 [LTsv_mouse_EV_KEY|	※Linux専用。マウスボタンなどの入力をWindowsのGetAsyncKeyStateの1,2,4みたいに<？keycode00FF>風に処理するための仮想キーコードの設定。
 [LTsv_EV_REL|	マウスホイールなどの入力を処理する予定だった設定枠(未実装)。
 [LTsv_EV_ABS|	その他アナログな入力を処理する予定だった設定枠(未定)。
-[LTsv_typenameW|	Windowsの「キー名称:<？keycode00FF>」の組み合わせを記述。	だがWineとWindows実機でGetAsyncKeyStateの返り値が違う様子。
-[WineVK|	
-[WindowsVK|	
-[LTsv_typenameL|	
-[LTsv_typegana|	Windows仮想キーの「キー名称:<？keycode00FF>」の組み合わせ保存用。PCキーボードの種類によって変化する怖れ。
-[LTsv_keydefault|	
+[LTsv_typenameW|	Windowsの「キー名称:<？keycode00FF>」の組み合わせを記述。	だがWineとWindows実機でGetAsyncKeyStateの返り値が違う様子。	※この項目はページ全体がLTSVです。
+[WineVK|	Wineで得られる「キー名称:<？keycode00FF>」の組み合わせ解説用。<？PCkeyboard>の種類によって変化する怖れ。	※この項目はページ全体がLTSVです。
+[WindowsVK|	Windowsの仮想キーで「キー名称:<？keycode00FF>」の組み合わせ確認用。	※この項目はページ全体がLTSVです。
+[LTsv_typenameL|	Linuxの「キー名称:<？keycode00FF>」の組み合わせを記述。<？PCkeyboard>の種類によって変化する怖れ。	※この項目はページ全体がLTSVです。
+[LTsv_typegana|	Windows仮想キーの「キー名称:<？keycode00FF>」の組み合わせ保存用。PCキーボードの種類によって変化する怖れ。	※この項目はページ全体がLTSVです。
+[LTsv_keydefault|	「LTsv_getkbdlabels()」のkbdformat初期値。	※この項目はページ全体がLTSVです。
 |LTsv_kbd.tsv]
 
+[<？index1-7a>|
+.+\.html?	<a href="<？url$index1-7a>" title="<？title$index1-7a>"><？title$index1-7a></a>
+.*	<？title$index1-7a>
+|<？index1-7a>]
+[<？url$index1-7a>|
+.*	#index1-7a
+|<？url$index1-7a>]
+[<？title$index1-7a>|
+.*	１-7a．「LTsv_gui.py」の関数一覧
+|<？title$index1-7a>]
+[<＃contents1-7a>|
+<？P> ウィンドウなど<？GUIwidget>を設置するモジュールです。<？BR>
+ ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。<？BR>
+ ・「canvas」の描画高速化のため「LTsv_draw_*_shell(LTsv_GUI)」で関数オブジェクトを用意する手続き推奨。<？BR>
+ ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。<？BR>
+ ・「LTsv_window_main()」実行後は<？GUIwidget>のイベント(「LTsv_window_after()」の様なタイマー系含む)が発生するまでPythonスクリプトが停止するので注意。<？BR>
+ ・「LTsv_」を付加してないローカル変数が多々あるので変数名の衝突が心配。<？BR>
+ ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。<？BR>
+ ・<？tasktrayNotify>関連は「Tkinter」で使えないので注意。他にも「Tkinter」で動かない命令はいくつか存在。<？BR>
+ ・単体風テストでは<？GUIwidget>はもちろん、<？PCkeyboard>や<？gamepad>、日時フォーマットや電卓フォーマットなどの挙動確認もできます。<？BR><？BR>
+ 
+<！LTsv_gui.py>
+|<＃contents1-7a>]
+
 [LTsv_gui.py|
-LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	
-LTsv_guiinit(LTsv_guistyle=LTsv_GUI_GTK2,LTsv_libvermin=0,LTsv_libvermax=0)	
-LTsv_global_GUI()	
-LTsv_global_Notify()	
-LTsv_global_GTK2()	
-LTsv_global_Tkinter()	
-LTsv_global_WinAPI()	
-LTsv_global_libgtk()	
-LTsv_global_libgdk()	
-LTsv_global_libobj()	
-LTsv_global_canvasmotionZ()	
-LTsv_global_canvasmotionX(motionZ=None)	
-LTsv_global_canvasmotionY(motionZ=None)	
-LTsv_global_canvascolor()	
-LTsv_global_canvasbgcolor()	
-LTsv_global_canvasTAG(TkinterTAG=None)	
-LTsv_global_widgetltsv(new_LTSV=None)	
-LTsv_global_widgetgetpage(LTsv_widgetPAGENAME)	
-LTsv_global_widgetOBJ(LTsv_objid)	
-LTsv_global_pictureOBJ(LTsv_objid)	
-LTsv_global_pictureW(LTsv_objid)	
-LTsv_global_pictureH(LTsv_objid)	
-LTsv_global_iconOBJ(LTsv_objid)	
-LTsv_global_popupmenuOBJ(LTsv_objid)	
-LTsv_widget_newUUID(LTsv_widgetID=None)	
-LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	
-LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	
-LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, \	
-LTsv_fonttuple(LTsv_line)	
-LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	
-LTsv_hideondelete_shell(LTsv_windowPAGENAME)	
-LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	
-LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="")	
-LTsv_widget_gettext(LTsv_widgetPAGENAME)	
-LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0)	
-LTsv_widget_getnumber(LTsv_widgetPAGENAME)	
-LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u="")	
-LTsv_widget_geturi(LTsv_widgetPAGENAME)	
-LTsv_widget_showhide(LTsv_widgetPAGENAME,widget_i)	
-LTsv_widget_disableenable(LTsv_widgetPAGENAME,widget_i)	
-LTsv_widget_focus(LTsv_widgetPAGENAME)	
-LTsv_window_main(LTsv_windowPAGENAME)	
-LTsv_window_after(LTsv_windowPAGENAME,event_b=None,event_i="mousemotion",event_w=1000)	
-LTsv_window_foreground()	
-LTsv_window_title(LTsv_window_id)	
-LTsv_window_exit(window_objvoid=None,window_objptr=None)	
-LTsv_window_none(window_objvoid=None,window_objptr=None)	
-LTsv_screen_w(LTsv_windowPAGENAME="")	
-LTsv_screen_h(LTsv_windowPAGENAME="")	
-LTsv_window_wh(LTsv_windowPAGENAME)	
-LTsv_window_w(LTsv_windowPAGENAME)	
-LTsv_window_h(LTsv_windowPAGENAME)	
-LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)	
-LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_logo.png",widget_x=0,widget_y=0)	
+LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	「LTsv_guiinit()」で使う「libgtk-x11-2.0.so.?」などの「?」のバージョン番号部分を探索。
+LTsv_guiinit(LTsv_guistyle=LTsv_GUI_GTK2,LTsv_libvermin=0,LTsv_libvermax=0)	どのGUIを使うか(「Tkinter」と「GTK2」の選択)を決定。 LTsv_guistyleでUI指定できるがPuppyLinuxだと強制的に「GTK2」。	Windowsだと今の所「Tkinter」。「WinAPI」はほぼ未実装。	「LTsv_libvermin」「LTsv_libvermax」でDLLバージョン違いの探索範囲指定。
+LTsv_global_GUI()	「LTsv_GUI」の値(「Tkinter」「GTK2」どちらか)を取得。
+LTsv_global_Notify()	「LTsv_Notify」の値(「WinAPI」「GTK2」どちらか)を取得。	「Tkinter」に<？tasktrayNotify>が存在しないので暫定的に「WinAPI」で対応。
+LTsv_global_GTK2()	「LTsv_GUI_GTK2」の値"GTK2"を取得。「LTsv_guiinit()」の返り値判定用。
+LTsv_global_Tkinter()	「LTsv_GUI_Tkinter」の値"Tkinter"を取得。「LTsv_guiinit()」の返り値判定用。
+LTsv_global_WinAPI()	「LTsv_GUI_WinAPI」の値"WinAPI"を取得。「LTsv_guiinit()」の返り値判定用。
+LTsv_global_libgtk()	「LTsv_libgtk」の値取得。「ctypes.CDLL("libgtk-x11-2.0.so.0")」あたりが帰ってくると思う。
+LTsv_global_libgdk()	「LTsv_libgdk」の値取得。「ctypes.CDLL("libgdk-x11-2.0.so.0")」あたりが帰ってくると思う。
+LTsv_global_libobj()	「LTsv_libobj」の値取得。「ctypes.CDLL("libgobject-2.0.so.0")」あたりが帰ってくると思う。
+LTsv_global_canvasmotionZ()	マウスはどの「canvas」上に存在しているのかを取得。
+LTsv_global_canvasmotionX(motionZ=None)	「canvas」上のマウスのX座標(横)を取得。canvas外なら-1。	motionZを指定しないと隣接してる「canvas」間を移動する際に正しくない値を拾う場合がある。
+LTsv_global_canvasmotionY(motionZ=None)	「canvas」上のマウスのY座標(縦)を取得。canvas外なら-1。	motionZを指定しないと隣接してる「canvas」間を移動する際に正しくない値を拾う場合がある。
+LTsv_global_canvascolor()	「canvas」に設定した描画色を取得。
+LTsv_global_canvasbgcolor()	「canvas」に設定した背景色を取得。
+LTsv_global_canvasTAG(TkinterTAG=None)	「canvas」に設定した描画タグを取得。もしくは変更。
+LTsv_global_widgetltsv(new_LTSV=None)	<？GUIwidget>を管理している「L:Tsv」を取得。もしくは直接書き換え。
+LTsv_global_widgetgetpage(LTsv_widgetPAGENAME)	widgetを管理している「L:Tsv」からwidgetのページを取得。
+LTsv_global_widgetOBJ(LTsv_objid)	<？GUIwidget>などテキスト化できないオブジェクトは番号で管理していて、LTsv_objid暗号でオブジェクトを取得。
+LTsv_global_pictureOBJ(LTsv_objid)	LTsv_objid暗号で画像オブジェクトを取得。
+LTsv_global_pictureW(LTsv_objid)	画像オブジェクトの横幅を取得。
+LTsv_global_pictureH(LTsv_objid)	画像オブジェクトの縦幅を取得。
+LTsv_global_iconOBJ(LTsv_objid)	WindowsのアイコンIDを取得。
+LTsv_global_popupmenuOBJ(LTsv_objid)	ポップアップメニューのオブジェクトを取得。
+LTsv_widget_newUUID(LTsv_widgetID=None)	<？GUIwidget>管理用にユニークIDを発行する。	「uuid.uuid4()」と「str(time.time())」の組み合わせ。1秒未満以内に122bitの乱数が重複する事はほぼないと思うが重複する確率は理論上ゼロではないので注意。	LTsv_widgetIDにFalseを指定することで前回と同じIDを再発行できる。コールバック関数に自身のIDを渡す必要がある場合に必要。
+LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	 「LTsv_widgetPAGEXYWH()」のオブジェクト管理で番号が被らないようにするカウンター。
+LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
+LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index1-7b>」参考。
+LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,12"」なら「(kan5x5comic,12)」のようにタプルに変換。
+LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。	widget_dは「gtk_bin_get_child」が要求される場合の分岐。
+LTsv_hideondelete_shell(LTsv_windowPAGENAME)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
+LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	「window」オブジェクトを作成。widget_tにウィンドウのタイトル。	widget_w,widget_hにウィンドウサイズ(最小値)。event_zにコールバック関数登録で同時にリサイズの許可。	event_bはウィンドウを閉じた時にコールバック関数を呼ぶ場合指定。コールバック先で必ず「LTsv_window_exit()」を使う。	event_k,event_yはキーボード入力時(event_kが押した時event_yが離した時)のコールバック関数。
+LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="")	<？GUIwidget>の文字列を設定。
+LTsv_widget_gettext(LTsv_widgetPAGENAME)	<？GUIwidget>の文字列を取得。	ウィンドウのタイトル取得には「LTsv_window_title(LTsv_window_id)」という別解もある。
+LTsv_widget_setnumber(LTsv_widgetPAGENAME,widget_s=0)	<？GUIwidget>の数値を設定。
+LTsv_widget_getnumber(LTsv_widgetPAGENAME)	<？GUIwidget>の数値を取得。
+LTsv_widget_seturi(LTsv_widgetPAGENAME,widget_u="")	<？GUIwidget>のURIを設定。
+LTsv_widget_geturi(LTsv_widgetPAGENAME)	<？GUIwidget>のURIを取得。
+LTsv_widget_showhide(LTsv_widgetPAGENAME,widget_i)	<？GUIwidget>の表示非表示の設定。	「Tkinter」の<？GUIwidget>非表示オプション未確認。
+LTsv_widget_disableenable(LTsv_widgetPAGENAME,widget_i)	<？GUIwidget>の無効有効の設定。
+LTsv_widget_focus(LTsv_widgetPAGENAME)	<？GUIwidget>にフォーカスする(「edit」「entry」「spin」などにカーソルを合わせる)。
+LTsv_window_main(LTsv_windowPAGENAME)	<？GUIwidget>のイベント発生(コールバック)待機。スクリプトはここで一旦停止。	「LTsv_window_main()」の直後にもやる事ある場合「LTsv_window_after()」を使う。	「LTsv_guiinit()」から「LTsv_window_main()」の途中に「print()」「LTsv_libc_printf()」などコンソール系命令が挟まってるとGUIが起動しないので注意。
+LTsv_window_after(LTsv_windowPAGENAME,event_b=None,event_i="mousemotion",event_w=1000)	タイマーの設定。「LTsv_window_main()」から一時的に抜け出す手段の一つ。	event_bにコールバックする関数の指定。Noneの場合何もしない。	event_iでタグの指定。タイマーは複数設置できるのでタグで管理。	event_tでタイマーイベント発生のミリ秒の指定。
+LTsv_window_foreground()	アクティブウィンドウのIDを取得する。	ターミナルから起動した場合でもターミナルは別ウィンドウ。
+LTsv_window_title(LTsv_window_id)	「LTsv_window_foreground()」で取得したウィンドウIDからタイトルを取得する。	通常使用の「LTsv_widget_gettext()」とは事なり別アプリのウィンドウからもタイトル取得できる。
+LTsv_window_exit(window_objvoid=None,window_objptr=None)	スクリプトを終了する。	ウィンドウを閉じる時のコールバック関数を指定(LTsv_window_newにevent_b)してる場合そのコールバック先の関数の最後に設定。
+LTsv_window_none(window_objvoid=None,window_objptr=None)	 何もしない。Pythonのpassみたいな使い方想定。
+LTsv_screen_w(LTsv_windowPAGENAME="")	ディスプレイの縦サイズ。	「Tkinter」ではルートウィンドウが設置されてからでないと「winfo_vrootwidth()」が使えないので注意(代わりに-1を返します)。
+LTsv_screen_h(LTsv_windowPAGENAME="")	ディスプレイの横サイズ。	「Tkinter」ではルートウィンドウが設置されてからでないと「winfo_vrootheight()」が使えないので注意(代わりに-1を返します)。
+LTsv_window_wh(LTsv_windowPAGENAME)	ウィンドウの縦サイズ横サイズをタプルで取得。
+LTsv_window_w(LTsv_windowPAGENAME)	ウィンドウの横サイズを数値で取得。
+LTsv_window_h(LTsv_windowPAGENAME)	ウィンドウの縦サイズを数値で取得。
+LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)	「window」のリサイズ。
+LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。
+LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0)	「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。
 LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
 LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
 LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
@@ -1136,6 +1184,71 @@ debug_keyrelease(window_objvoid=None,window_objptr=None)
 debug_filedialog(window_objvoid=None,window_objptr=None)	
 debug_filedialog_response(window_objvoid=None,window_objptr=None)	
 |LTsv_gui.py]
+
+[<？index1-7b>|
+.+\.html?	<a href="<？url$index1-7b>" title="<？title$index1-7b>"><？title$index1-7b></a>
+.*	<？title$index1-7b>
+|<？index1-7b>]
+[<？url$index1-7b>|
+.*	#index1-7b
+|<？url$index1-7b>]
+[<？title$index1-7b>|
+.*	１-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
+|<？title$index1-7b>]
+[<＃contents1-7b>|
+<？P> 「LTsv_gui.py」では「<？GUIwidget>」を「L:Tsv」で管理してます。<？BR>
+ ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。<？BR>
+ テキスト化できる項目とテキスト化できないので「LTsv_widget_newobj()」のIDだけを保管する項目とに仕分けるのが「LTsv_widgetPAGEXYWH()」の役割です。<？BR>
+ オブジェクトを「L:Tsv」で管理する理由はガベージコレクションで消えるのを予防とグローバル変数が散らかるのを予防するためです。<？BR><？/P>
+<？DLDT>   widget_o(widgetobj)<？/DTDD>                  <？GUIwidget>本体のポインターもしくはオブジェクトID。<？/DD/DL>
+<？DLDT>   widget_k(widgetkind)<？/DTDD>                 <？GUIwidget>の種類。「LTsv_window_new()」なら「window」。<？BR>
+                                       「LTsv_label_new()」なら"label"。<？BR>
+                                       「LTsv_image_new()」なら"image"。<？BR>
+                                       「LTsv_button_new()」なら"button"。<？BR>
+                                       「LTsv_check_new()」なら"check"。<？BR>
+                                       「LTsv_radio_new()」なら"radio"。<？BR>
+                                       「LTsv_clipboard_new()」なら"clipboard"。<？BR>
+                                       「LTsv_entry_new()」なら"entry"。<？BR>
+                                       「LTsv_spin_new()」なら"spin"。<？BR>
+                                       「LTsv_scale_new()」なら"scale"。<？BR>
+                                       「LTsv_scale_new()」なら"combobox"。<？BR>
+                                       「LTsv_combobox_new()」なら"combobox"。<？BR>
+                                       「LTsv_canvas_new()」なら"canvas"。<？BR>
+                                       「LTsv_notifyicon_new()」なら"notify"。<？BR>
+                                       「LTsv_filedialog_new()」なら"filedialog"。<？BR><？/DD/DL>
+<？DLDT>   widget_t(widgettext)<？/DTDD>                <？GUIwidget>が保有するテキスト。「window」のタイトルなど。<？/DD/DL>
+<？DLDT>   widget_u(widgettext)<？/DTDD>                <？GUIwidget>が保有するURI(URLもしくはファイルパス)。「image」のファイルパスなど。<？/DD/DL>
+<？DLDT>   widget_s(widgetstart)<？/DTDD>               「spin」「scale」など数値入力系<？GUIwidget>のmin(start)。<？/DD/DL>
+<？DLDT>   widget_e(widgetend)<？/DTDD>                 「spin」「scale」など数値入力系<？GUIwidget>のmax(end)。<？/DD/DL>
+<？DLDT>   widget_a(widgetadd)<？/DTDD>                 「spin」scale」など数値入力系<？GUIwidget>の増減量。「Tkinter」だと整数だが「GTK2」だと小数指定が可能。<？/DD/DL>
+<？DLDT>   widget_v(widgetstringvar)<？/DTDD>           「entry」などテキスト入力系<？GUIwidget>のテキスト。<？/DD/DL>
+<？DLDT>   widget_b(widgetbooleanvar)<？/DTDD>          「check」など論理値入力系<？GUIwidget>の0または1。<？/DD/DL>
+<？DLDT>   widget_p(widgetphotoimage)<？/DTDD>          「image」などで管理される<？GUIwidget>の画像。<？/DD/DL>
+<？DLDT>   widget_m(widgetpixmap)<？/DTDD>              「canvas」の「LTsv_libgdk.gdk_pixmap_new()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。<？/DD/DL>
+<？DLDT>   widget_g(widgetgc)<？/DTDD>                  「canvas」の「LTsv_GDKCOLOR()」を「LTsv_widgetOBJ[str(LTsv_widgetOBJcount)]」で管理。<？/DD/DL>
+<？DLDT>   widget_f(widgetfont)<？/DTDD>                <？GUIwidget>のフォント。<？/DD/DL>
+<？DLDT>   widget_x(widgetsizeX)<？/DTDD>               <？GUIwidget>のウィンドウ内X座標。<？/DD/DL>
+<？DLDT>   widget_y(widgetsizeY)<？/DTDD>               <？GUIwidget>のウィンドウ内Y座標。<？/DD/DL>
+<？DLDT>   widget_w(widgetsizeW)<？/DTDD>               <？GUIwidget>の横幅。<？/DD/DL>
+<？DLDT>   widget_h(widgetsizeH)<？/DTDD>               <？GUIwidget>の縦幅。<？/DD/DL>
+<？DLDT>   widgetcontainer(widget_c)<？/DTDD>           「window」がオブジェクト配置するルールを格納するコンテナ。<？/DD/DL>
+<？DLDT>   widgetresize(event_z)<？/DTDD>               「window」のサイズ変更時のコールバック関数。<？/DD/DL>
+<？DLDT>   keyboard_press(event_k)<？/DTDD>             「window」のキー押した時のコールバック関数。<？/DD/DL>
+<？DLDT>   keyboard_release(event_y)<？/DTDD>           「window」のキー離した時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_b(widgetcallback)<？/DTDD>             例えば「button」を押した時に呼び出されような何かしらのコールバック関数。<？/DD/DL>
+<？DLDT>   event_p(mouse_press)<？/DTDD>                「canvas」でマウスボタンを押した時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_r(mouse_release)<？/DTDD>              「canvas」でマウスボタンを離した時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_e(mouse_enter)<？/DTDD>                「canvas」にマウスポインタが入った時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_m(mouse_motion)<？/DTDD>               「canvas」内でマウスポインタが動いた時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_l(mouse_leave)<？/DTDD>                「canvas」からマウスポインタが出た時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_a(notify_activate)<？/DTDD>            <？tasktrayNotify>を左クリックした時のコールバック関数。<？/DD/DL>
+<？DLDT>   event_u(notify_popupmenu)<？/DTDD>           <？tasktrayNotify>を右クリックした時のコールバック関数。<？/DD/DL>
+<？DLDT>   menu_o(popupmenuobj)<？/DTDD>                WindowsのNOTIFYICONなどポップアップメニューの呼び出し元となるオブジェクト。<？/DD/DL>
+<？DLDT>   menu_b(popupmenubind)<？/DTDD>               ポップアップメニュー表示用コールバック関数。<？/DD/DL>
+<？DLDT>   menu_c(popupmenuclick)<？/DTDD>              <？tasktrayNotify>クリック時のコールバック関数。<？/DD/DL>
+<？DLDT>   dialog_t(dialog_type)<？/DTDD>                ファイルダイアログの種類。<？/DD/DL>
+<？DLDT>   dialog_c(dialog_close)<？/DTDD>               ファイルダイアログを閉じる時のコールバック関数。<？/DD/DL>
+|<＃contents1-7b>]
 
 [LTsv_glyph.py|
 LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	
@@ -1316,6 +1429,12 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<？keycode00FF>|
 .*	キーコード($00〜$FF)
 |<？keycode00FF>]
+[<？tasktrayNotify>|
+.*	通知タスクトレイ(Notify)
+|<？tasktrayNotify>]
+[<？GUIwidget>|
+.*	GUIオブジェクト(widget)
+|<？GUIwidget>]
 [<？outlist>|
 .+\.html?	LTsv_doc.html
 .+\.css	LTsv_doc.css

@@ -50,6 +50,7 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     return LTsvDOClaunch_main
 
 def LTsvDOCdef_python(LTsvDOClaunch_deffile):
+    LTsvDOClaunch_deffile=re.sub(re.compile(", +\\\\\n +",re.MULTILINE),", ",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^(?!def).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
     LTsvDOClaunch_deffile=re.sub(re.compile("^def ",re.MULTILINE),"",LTsvDOClaunch_deffile)
