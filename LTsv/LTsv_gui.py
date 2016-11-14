@@ -1270,17 +1270,16 @@ def LTsv_drawGTK_polygonfill(*draw_xy):
 def LTsv_drawTkinter_polygonfill(*draw_xy):
     xyloop=draw_xy if len(draw_xy)%2 == 0 else draw_xy[:-1]
     if len(xyloop) > 0:
-#        LTsv_Tkintercanvas_o.create_polygon(*xyloop,fill=LTsv_canvascolor,outline=LTsv_canvascolor,tag=LTsv_Tkintercanvas_TAG)
         LTsv_Tkintercanvas_o.create_polygon(*xyloop,fill=LTsv_canvascolor,outline="",tag=LTsv_Tkintercanvas_TAG)
 
 def LTsv_draw_polygonfill_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_polygonfill
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_polygonfill
 
-def LTsv_drawTkinter_fontfill(*draw_xy):
-    xyloop=draw_xy if len(draw_xy)%2 == 0 else draw_xy[:-1]
-    if len(xyloop) > 0:
-        LTsv_Tkintercanvas_o.create_polygon(*xyloop,fill=LTsv_canvasbgcolor,outline=LTsv_canvasbgcolor,tag=LTsv_Tkintercanvas_TAG)
+#def LTsv_drawTkinter_fontfill(*draw_xy):
+#    xyloop=draw_xy if len(draw_xy)%2 == 0 else draw_xy[:-1]
+#    if len(xyloop) > 0:
+#        LTsv_Tkintercanvas_o.create_polygon(*xyloop,fill=LTsv_canvasbgcolor,outline=LTsv_canvasbgcolor,tag=LTsv_Tkintercanvas_TAG)
 
 def LTsv_drawGTK_squares(draw_wh=16,*draw_xy):
     for draw_xy_count in range(len(draw_xy)//2):

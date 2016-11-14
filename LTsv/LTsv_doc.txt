@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161115T051358
+modify 20161115T061555
 
 
 目次
@@ -1121,25 +1121,24 @@ modify 20161115T051358
   「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 
  【LTsv_drawGTK_polygon(*draw_xy)】
-  
+  「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 
  【LTsv_drawTkinter_polygon(*draw_xy)】
-  
+  「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 
  【LTsv_draw_polygon_shell(LTsv_GUI)】
-  
+  「LTsv_drawGTK_polygon()」か「LTsv_drawTkinter_polygon()」の関数取得。
+  「LTsv_draw_polygon=LTsv_draw_polygon_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 
  【LTsv_drawGTK_polygonfill(*draw_xy)】
-  
+  「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 
  【LTsv_drawTkinter_polygonfill(*draw_xy)】
-  
+  「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 
  【LTsv_draw_polygonfill_shell(LTsv_GUI)】
-  
-
- 【LTsv_drawTkinter_fontfill(*draw_xy)】
-  
+  「LTsv_drawGTK_polygonfill()」か「LTsv_drawTkinter_polygonfill()」の関数取得。
+  「LTsv_draw_polygonfill=LTsv_draw_polygonfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 
  【LTsv_drawGTK_squares(draw_wh=16,*draw_xy)】
   

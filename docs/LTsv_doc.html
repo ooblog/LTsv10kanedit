@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161115T051358<br />
+modify 20161115T061555<br />
 </p>
 
 <h2>目次</h2>
@@ -1248,19 +1248,19 @@ event_mはマウスポインタが「canvas」枠内滞在中event_wミリ秒毎
 「LTsv_drawGTK_bgcolor()」か「LTsv_drawTkinter_bgcolor()」の関数取得。<br />
 「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_polygon(*draw_xy)</dt><dd>
-</dd></dl>
+「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。</dd></dl>
 <dl><dt>LTsv_drawTkinter_polygon(*draw_xy)</dt><dd>
-</dd></dl>
+「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。</dd></dl>
 <dl><dt>LTsv_draw_polygon_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_polygon()」か「LTsv_drawTkinter_polygon()」の関数取得。<br />
+「LTsv_draw_polygon=LTsv_draw_polygon_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_polygonfill(*draw_xy)</dt><dd>
-</dd></dl>
+「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。</dd></dl>
 <dl><dt>LTsv_drawTkinter_polygonfill(*draw_xy)</dt><dd>
-</dd></dl>
+「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。</dd></dl>
 <dl><dt>LTsv_draw_polygonfill_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
-<dl><dt>LTsv_drawTkinter_fontfill(*draw_xy)</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_polygonfill()」か「LTsv_drawTkinter_polygonfill()」の関数取得。<br />
+「LTsv_draw_polygonfill=LTsv_draw_polygonfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_squares(draw_wh=16,*draw_xy)</dt><dd>
 </dd></dl>
 <dl><dt>LTsv_drawTkinter_squares(draw_wh=16,*draw_xy)</dt><dd>

@@ -123,15 +123,8 @@ def LTsv_kbdreset(LTsv_tsvpath):
         LTsv_mousedevpath=LTsv_readlinerest(LTsv_deviceL_page,"mouse",LTsv_defmousedevpath)
         if sys.platform.startswith("linux"):
             if LTsv_kbddevpath in ["/dev/input/event","/dev/input/event?","/dev/input/event*"]:
-#                LTsv_kbddmsg=LTsv_subprocess("dmesg | grep keyboard | grep device",LTsv_subprocess_shell=True)
-#                LTsv_posL=LTsv_kbddmsg.find("input/"); LTsv_posR=LTsv_kbddmsg.find('\n')
-#                LTsv_kbddevpath="/dev/"+LTsv_kbddmsg[LTsv_posL:LTsv_posR].replace('/input','/event')
-                LTsv_kbdcatproc("keyboard")
                 LTsv_kbddevpath="/dev/input/{0}".format(LTsv_kbdcatproc("keyboard"))
             if LTsv_mousedevpath in ["/dev/input/event","/dev/input/event?","/dev/input/event*","/dev/input/mice","/dev/input/mouse","/dev/input/mouse0","/dev/input/mouse?","/dev/input/mouse*"]:
-#                LTsv_kbddmsg=LTsv_subprocess("cat /proc/bus/input/devices | grep mouse0",LTsv_subprocess_shell=True)
-#                LTsv_posL=LTsv_kbddmsg.find("event"); LTsv_posR=LTsv_kbddmsg.find(' \n')
-#                LTsv_mousedevpath="/dev/input/"+LTsv_kbddmsg[LTsv_posL:LTsv_posR]
                 LTsv_mousedevpath="/dev/input/{0}".format(LTsv_kbdcatproc("mouse0"))
 #        print(LTsv_kbddevpath,LTsv_mousedevpath)
     LTsv_typenameW_page=LTsv_getpage(LTsv_kbdltsv,"LTsv_typenameW")

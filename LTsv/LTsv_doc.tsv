@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161115T051400
+modify	20161115T061556
 |L:Tsv]
 
 [LTsv_doc|
@@ -1116,13 +1116,12 @@ LTsv_draw_color_shell(LTsv_GUI)	「canvas」描画色指定。
 LTsv_drawGTK_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
 LTsv_drawTkinter_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
 LTsv_draw_bgcolor_shell(LTsv_GUI)	「LTsv_drawGTK_bgcolor()」か「LTsv_drawTkinter_bgcolor()」の関数取得。	「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
-LTsv_drawGTK_polygon(*draw_xy)	
-LTsv_drawTkinter_polygon(*draw_xy)	
-LTsv_draw_polygon_shell(LTsv_GUI)	
-LTsv_drawGTK_polygonfill(*draw_xy)	
-LTsv_drawTkinter_polygonfill(*draw_xy)	
-LTsv_draw_polygonfill_shell(LTsv_GUI)	
-LTsv_drawTkinter_fontfill(*draw_xy)	
+LTsv_drawGTK_polygon(*draw_xy)	「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_polygon(*draw_xy)	「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_polygon_shell(LTsv_GUI)	「LTsv_drawGTK_polygon()」か「LTsv_drawTkinter_polygon()」の関数取得。	「LTsv_draw_polygon=LTsv_draw_polygon_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_polygonfill(*draw_xy)	「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_polygonfill(*draw_xy)	「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_polygonfill_shell(LTsv_GUI)	「LTsv_drawGTK_polygonfill()」か「LTsv_drawTkinter_polygonfill()」の関数取得。	「LTsv_draw_polygonfill=LTsv_draw_polygonfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_drawGTK_squares(draw_wh=16,*draw_xy)	
 LTsv_drawTkinter_squares(draw_wh=16,*draw_xy)	
 LTsv_draw_squares_shell(LTsv_GUI)	
