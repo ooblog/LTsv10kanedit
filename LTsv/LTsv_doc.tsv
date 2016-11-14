@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161114M012345
+modify	20161115T040253
 |L:Tsv]
 
 [LTsv_doc|
@@ -658,8 +658,6 @@ LTsv_puttimerspecify(year=None,month=None,day=None,hour=None,minute=None,seconds
 LTsv_puttimerlap()	タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。
 LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タイマー変数で置換する。	timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index1-3b>」を参照。
 |LTsv_time.py]
-#LTsv_putdaytimespecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond,overhour=None,diffminute=None)	日時のLTsv_meridian_nowを設定する。	のに格納された日時を元に各種日時変数(徹夜日時など)を再計算する。	通常はLTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()から呼び出される内部関数。
-#LTsv_puttimerspecify(LTsv_toyear,LTsv_tomonth,LTsv_today,LTsv_tohour,LTsv_tominute,LTsv_tosecond,LTsv_tomicrosecond)	タイマーのLTsv_goal_nowを設定する。	省略したパラメーターは現在日時が代入される。
 
 [<？index1-3b>|
 .+\.html?	<a href="<？url$index1-3b>" title="<？title$index1-3b>"><？title$index1-3b></a>
@@ -1088,37 +1086,35 @@ LTsv_window_wh(LTsv_windowPAGENAME)	ウィンドウの縦サイズ横サイズ�
 LTsv_window_w(LTsv_windowPAGENAME)	ウィンドウの横サイズを数値で取得。
 LTsv_window_h(LTsv_windowPAGENAME)	ウィンドウの縦サイズを数値で取得。
 LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)	「window」のリサイズ。
-LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。
-LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0)	「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。
-LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None)	
-LTsv_clipmenu_new(widget_o)	
-LTsv_edit_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_edit",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_entry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_entry",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_spin_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_scale_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16)	
-LTsv_scale_adjustment(LTsv_widgetPAGENAME,widget_s=0,widget_e=255,widget_a=1)	
-LTsv_combobox_list(LTsv_widgetPAGENAME,widget_t="")	
-LTsv_combobox_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	
-LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)	
-LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	
-LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	
-LTsv_draw_selcanvas_shell(LTsv_GUI)	
-LTsv_drawGTK_delete(draw_c="white")	
-LTsv_drawTkinter_delete(draw_c="white")	
-LTsv_draw_delete_shell(LTsv_GUI)	
-LTsv_drawTkinter_deleteTAG(TkinterTAG=None)	
-LTsv_draw_deleteTAG_shell(LTsv_GUI)	
-LTsv_drawGTK_color(draw_c="")	
-LTsv_drawTkinter_color(draw_c="")	
-LTsv_draw_color_shell(LTsv_GUI)	
-LTsv_drawGTK_bgcolor(draw_c="")	
-LTsv_drawTkinter_bgcolor(draw_c="")	
-LTsv_draw_bgcolor_shell(LTsv_GUI)	
-LTsv_drawGTK_gcfcolor()	
-LTsv_drawGTK_gcbcolor()	
+LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。	widget_fはCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。
+LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0)	「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。	「LTsv_image_new()」は「LTsv_label_new()」と違ってwidget_w,widget_hによるオブジェクトの大きさ指定は無く、widget_x,widget_yによる表示位置座標のみ。
+LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「button」オブジェクトを作成。ボタンを押すとevent_bをコールバック。widget_tにボタンに表示するテキスト。
+LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「check」オブジェクトを作成。チェックマークをONOFFするとevent_bをコールバック。widget_tにラベルに表示するテキスト。
+LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「radio」オブジェクトを作成。ラジオボタンを選択するとevent_bをコールバック。widget_tにラベルに表示するテキスト。「LTsv_radio_new()」を連続して呼び出すと自動でラジオボタングループ(選択肢)として動作。	「LTsv_widget_getnumber()」で選択肢の取得。「LTsv_widget_setnumber()」で選択肢の変更。	GTKの場合チェックマークのONOFFと同じ理屈なのか2回分のコールバックが発生。	「Tkinter」の場合「LTsv_widget_setnumber()」でラジオボタンの個数を越える値も通るので注意。
+LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None)	「clipboard」を作成。クリップボードを用いたテキスト入力(コピペ補助)。	「LTsv_widget_settext()」「LTsv_widget_gettext()」でテキスト交換。
+LTsv_clipmenu_new(widget_o)	「Tkinter」専用の内部関数。「edit」「entry」「spin」の右クリックメニュー(コピペ補助)を作成。
+LTsv_edit_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_edit",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「edit」オブジェクトを作成。テキスト複数行入力欄。
+LTsv_entry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_entry",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「edit」オブジェクトを作成。テキスト１行入力欄入力欄。	テキスト変更後エンターキーでevent_bをコールバック。
+LTsv_spin_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「spin」オブジェクトを作成。数値入力。数値変更でevent_bをコールバック。
+LTsv_scale_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16)	「scale」オブジェクトを作成。数値調節。数値変更でevent_bをコールバック。	「GTK2」と「Tkinter」で数値表示の位置というかデザインが異なるので注意。
+LTsv_scale_adjustment(LTsv_widgetPAGENAME,widget_s=0,widget_e=255,widget_a=1)	「spin」「scale」の範囲を変更。	widget_s,widget_eで数値の範囲、widget_aで増減量の指定。
+LTsv_combobox_list(LTsv_widgetPAGENAME,widget_t="")	「combobox」の項目を変更。widget_tに項目一覧をテキスト複数行で設定。
+LTsv_combobox_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「combobox」オブジェクトを作成。「GTK2」のみ。	項目変更でevent_bをコールバック。	「Tkinter」版tkkなので未実装。
+LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)	「canvas」オブジェクトを作成。画像やテキストの描画。マウスジェスチャーでコールバック発生。任意のGUIを作れるはず。	event_pはマウス押下時のコールバック。event_rはマウス押上時のコールバック。	event_eはマウスポインタが「canvas」枠内に入ったのコールバック。event_lはマウスポインタが「canvas」枠外に出た時のコールバック。	event_mはマウスポインタが「canvas」枠内滞在中event_wミリ秒毎に発生する。マウスを動かしてなくてもevent_mにコールバックするので注意。
+LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	描画先「canvas」の指定。	「GTK2」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」は不要。「LTsv_draw_selcanvas_shell()」の互換性で存在。
+LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	描画先「canvas」の指定。	「Tkinter」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」も指定できる。
+LTsv_draw_selcanvas_shell(LTsv_GUI)	「LTsv_drawGTK_selcanvas()」か「LTsv_drawTkinter_selcanvas()」の関数取得。	「LTsv_draw_selcanvas=LTsv_draw_selcanvas_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_delete(draw_c="white")	「canvas」に描画した図形の消去。	「GTK2」だと長方形を上描き描画して図形を消去する(塗りつぶす)。
+LTsv_drawTkinter_delete(draw_c="white")	「canvas」に描画した図形の消去。	「Tkinter」ではタグ(初期値は「LTsv_draw_tkTAG」)が付けられた図形を消去する(消去のみで塗りつぶすわけではない)。
+LTsv_draw_delete_shell(LTsv_GUI)	「LTsv_drawGTK_delete()」か「LTsv_drawTkinter_delete()」の関数取得。	「LTsv_draw_delete=LTsv_draw_delete_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawTkinter_deleteTAG(TkinterTAG=None)	「canvas」に描画した図形の消去。「Tkinter」で特定のタグ付けられた図形を消去する。
+LTsv_draw_deleteTAG_shell(LTsv_GUI)	「LTsv_drawTkinter_delete()」の関数取得。	「LTsv_drawGTK_delete()」は存在しないが文法上「LTsv_draw_deleteTAG_shell()」が存在。
+LTsv_drawGTK_color(draw_c="")	「LTsv_drawGTK_delete()」か「LTsv_drawTkinter_delete()」の関数取得。	「LTsv_draw_delete=LTsv_draw_delete_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawTkinter_color(draw_c="")	「canvas」描画色指定。
+LTsv_draw_color_shell(LTsv_GUI)	「canvas」描画色指定。
+LTsv_drawGTK_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
+LTsv_drawTkinter_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
+LTsv_draw_bgcolor_shell(LTsv_GUI)	「LTsv_drawGTK_bgcolor()」か「LTsv_drawTkinter_bgcolor()」の関数取得。	「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_drawGTK_polygon(*draw_xy)	
 LTsv_drawTkinter_polygon(*draw_xy)	
 LTsv_draw_polygon_shell(LTsv_GUI)	

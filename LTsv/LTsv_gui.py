@@ -1246,11 +1246,11 @@ def LTsv_draw_bgcolor_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_bgcolor
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_bgcolor
 
-def LTsv_drawGTK_gcfcolor():
-    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
-
-def LTsv_drawGTK_gcbcolor():
-    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_canvas_bccolor))
+#def LTsv_drawGTK_gcfcolor():
+#    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_GTKcanvas_gccolor))
+#
+#def LTsv_drawGTK_gcbcolor():
+#    LTsv_libgdk.gdk_gc_set_rgb_fg_color(LTsv_GTKcanvas_g,ctypes.pointer(LTsv_canvas_bccolor))
 
 def LTsv_drawGTK_polygon(*draw_xy):
     draw_xylen=len(draw_xy)//2; gdkpointsArrayType=LTsv_GDKPOINT*draw_xylen; gdkpointsArray=gdkpointsArrayType()

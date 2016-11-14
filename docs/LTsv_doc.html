@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161114M012344<br />
+modify 20161115T040252<br />
 </p>
 
 <h2>目次</h2>
@@ -1167,67 +1167,86 @@ event_tでタイマーイベント発生のミリ秒の指定。</dd></dl>
 <dl><dt>LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)</dt><dd>
 「window」のリサイズ。</dd></dl>
 <dl><dt>LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。</dd></dl>
+「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。<br />
+widget_fはCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。</dd></dl>
 <dl><dt>LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0)</dt><dd>
-「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。</dd></dl>
+「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。<br />
+「LTsv_image_new()」は「LTsv_label_new()」と違ってwidget_w,widget_hによるオブジェクトの大きさ指定は無く、widget_x,widget_yによる表示位置座標のみ。</dd></dl>
 <dl><dt>LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「button」オブジェクトを作成。ボタンを押すとevent_bをコールバック。widget_tにボタンに表示するテキスト。</dd></dl>
 <dl><dt>LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「check」オブジェクトを作成。チェックマークをONOFFするとevent_bをコールバック。widget_tにラベルに表示するテキスト。</dd></dl>
 <dl><dt>LTsv_radio_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_radio",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「radio」オブジェクトを作成。ラジオボタンを選択するとevent_bをコールバック。widget_tにラベルに表示するテキスト。「LTsv_radio_new()」を連続して呼び出すと自動でラジオボタングループ(選択肢)として動作。<br />
+「LTsv_widget_getnumber()」で選択肢の取得。「LTsv_widget_setnumber()」で選択肢の変更。<br />
+GTKの場合チェックマークのONOFFと同じ理屈なのか2回分のコールバックが発生。<br />
+「Tkinter」の場合「LTsv_widget_setnumber()」でラジオボタンの個数を越える値も通るので注意。</dd></dl>
 <dl><dt>LTsv_clipboard_new(LTsv_windowPAGENAME,widget_n=None)</dt><dd>
-</dd></dl>
+「clipboard」を作成。クリップボードを用いたテキスト入力(コピペ補助)。<br />
+「LTsv_widget_settext()」「LTsv_widget_gettext()」でテキスト交換。</dd></dl>
 <dl><dt>LTsv_clipmenu_new(widget_o)</dt><dd>
-</dd></dl>
+「Tkinter」専用の内部関数。「edit」「entry」「spin」の右クリックメニュー(コピペ補助)を作成。</dd></dl>
 <dl><dt>LTsv_edit_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_edit",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「edit」オブジェクトを作成。テキスト複数行入力欄。</dd></dl>
 <dl><dt>LTsv_entry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_entry",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「edit」オブジェクトを作成。テキスト１行入力欄入力欄。<br />
+テキスト変更後エンターキーでevent_bをコールバック。</dd></dl>
 <dl><dt>LTsv_spin_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「spin」オブジェクトを作成。数値入力。数値変更でevent_bをコールバック。</dd></dl>
 <dl><dt>LTsv_scale_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16)</dt><dd>
-</dd></dl>
+「scale」オブジェクトを作成。数値調節。数値変更でevent_bをコールバック。<br />
+「GTK2」と「Tkinter」で数値表示の位置というかデザインが異なるので注意。</dd></dl>
 <dl><dt>LTsv_scale_adjustment(LTsv_widgetPAGENAME,widget_s=0,widget_e=255,widget_a=1)</dt><dd>
-</dd></dl>
+「spin」「scale」の範囲を変更。<br />
+widget_s,widget_eで数値の範囲、widget_aで増減量の指定。</dd></dl>
 <dl><dt>LTsv_combobox_list(LTsv_widgetPAGENAME,widget_t="")</dt><dd>
-</dd></dl>
+「combobox」の項目を変更。widget_tに項目一覧をテキスト複数行で設定。</dd></dl>
 <dl><dt>LTsv_combobox_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-</dd></dl>
+「combobox」オブジェクトを作成。「GTK2」のみ。<br />
+項目変更でevent_bをコールバック。<br />
+「Tkinter」版tkkなので未実装。</dd></dl>
 <dl><dt>LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)</dt><dd>
-</dd></dl>
+「canvas」オブジェクトを作成。画像やテキストの描画。マウスジェスチャーでコールバック発生。任意のGUIを作れるはず。<br />
+event_pはマウス押下時のコールバック。event_rはマウス押上時のコールバック。<br />
+event_eはマウスポインタが「canvas」枠内に入ったのコールバック。event_lはマウスポインタが「canvas」枠外に出た時のコールバック。<br />
+event_mはマウスポインタが「canvas」枠内滞在中event_wミリ秒毎に発生する。マウスを動かしてなくてもevent_mにコールバックするので注意。</dd></dl>
 <dl><dt>LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")</dt><dd>
-</dd></dl>
+描画先「canvas」の指定。<br />
+「GTK2」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」は不要。「LTsv_draw_selcanvas_shell()」の互換性で存在。</dd></dl>
 <dl><dt>LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")</dt><dd>
-</dd></dl>
+描画先「canvas」の指定。<br />
+「Tkinter」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」も指定できる。</dd></dl>
 <dl><dt>LTsv_draw_selcanvas_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_selcanvas()」か「LTsv_drawTkinter_selcanvas()」の関数取得。<br />
+「LTsv_draw_selcanvas=LTsv_draw_selcanvas_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_delete(draw_c="white")</dt><dd>
-</dd></dl>
+「canvas」に描画した図形の消去。<br />
+「GTK2」だと長方形を上描き描画して図形を消去する(塗りつぶす)。</dd></dl>
 <dl><dt>LTsv_drawTkinter_delete(draw_c="white")</dt><dd>
-</dd></dl>
+「canvas」に描画した図形の消去。<br />
+「Tkinter」ではタグ(初期値は「LTsv_draw_tkTAG」)が付けられた図形を消去する(消去のみで塗りつぶすわけではない)。</dd></dl>
 <dl><dt>LTsv_draw_delete_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_delete()」か「LTsv_drawTkinter_delete()」の関数取得。<br />
+「LTsv_draw_delete=LTsv_draw_delete_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawTkinter_deleteTAG(TkinterTAG=None)</dt><dd>
-</dd></dl>
+「canvas」に描画した図形の消去。「Tkinter」で特定のタグ付けられた図形を消去する。</dd></dl>
 <dl><dt>LTsv_draw_deleteTAG_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「LTsv_drawTkinter_delete()」の関数取得。<br />
+「LTsv_drawGTK_delete()」は存在しないが文法上「LTsv_draw_deleteTAG_shell()」が存在。</dd></dl>
 <dl><dt>LTsv_drawGTK_color(draw_c="")</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_delete()」か「LTsv_drawTkinter_delete()」の関数取得。<br />
+「LTsv_draw_delete=LTsv_draw_delete_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawTkinter_color(draw_c="")</dt><dd>
-</dd></dl>
+「canvas」描画色指定。</dd></dl>
 <dl><dt>LTsv_draw_color_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「canvas」描画色指定。</dd></dl>
 <dl><dt>LTsv_drawGTK_bgcolor(draw_c="")</dt><dd>
-</dd></dl>
+「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。</dd></dl>
 <dl><dt>LTsv_drawTkinter_bgcolor(draw_c="")</dt><dd>
-</dd></dl>
+「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。</dd></dl>
 <dl><dt>LTsv_draw_bgcolor_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
-<dl><dt>LTsv_drawGTK_gcfcolor()</dt><dd>
-</dd></dl>
-<dl><dt>LTsv_drawGTK_gcbcolor()</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_bgcolor()」か「LTsv_drawTkinter_bgcolor()」の関数取得。<br />
+「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_polygon(*draw_xy)</dt><dd>
 </dd></dl>
 <dl><dt>LTsv_drawTkinter_polygon(*draw_xy)</dt><dd>
