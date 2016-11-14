@@ -8,9 +8,10 @@ modify	20161023U011852
 |L:Tsv]
 
 [LTsv_deviceL|
-kbd	/dev/input/event3
+kbd	/dev/input/event?
 mouse	/dev/input/event?
 |LTsv_deviceL]
+# cat /proc/bus/input/devices | grep mouse0
 # dmesg | grep keyboard | grep device
 # dmesg | grep mouse | grep device
 

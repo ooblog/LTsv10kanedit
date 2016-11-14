@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161115T040252<br />
+modify 20161115T051358<br />
 </p>
 
 <h2>目次</h2>
@@ -205,7 +205,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
  データ破損を補完する機能はないので注意。</dd></dl>
 <dl><dt>LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)</dt><dd>
 ターミナルにコマンドを送る。実行結果も取得できる。<br />
-「LTsv_subprocess_shell=True」でより複雑な事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。</dd></dl>
+「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。</dd></dl>
 
 </section>
 
@@ -940,6 +940,8 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
 
 <section>
 <h3><a name="index1-6a">１-6a．「LTsv_kbd.py」の関数一覧</a></h3>
+<dl><dt>LTsv_kbdcatproc(LTsv_devname)</dt><dd>
+「cat /proc/bus/input/devices」からLTsv_devnameで検索して「event?」を返す。「?」の部分は数値。</dd></dl>
 <dl><dt>LTsv_kbdreset(LTsv_tsvpath)</dt><dd>
  [LTsv_kbd.tsv]からモジュールの初期設定や、キーコード($00〜$FF)に名付けたキー名称を読み込む。<br />
 デバイスの検出方法に改善の余地がある予感。<br />
@@ -989,13 +991,11 @@ LTsv_kbdstacksとLTsv_mousestacksはLinuxでそれぞれのデバイスから一
 <dl><dt>[LTsv_deviceL|</dt><dd>
 Linuxのデバイス指定。</dd></dl>
 <dl><dt>kbd</dt><dd>
-初期設定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。<br />
-PCキーボードデバイスの位置は環境毎の差異があるので「dmesg | grep keyboard | grep device」で確認。<br />
-例えば「input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3」みたいな文字列が見つかったら「/dev/input/event3」になるはず。</dd></dl>
+初期設定は「/dev/input/event?」。<br />
+万が一「LTsv_kbdreset()」内の「LTsv_kbdcatproc()」でデバイスを検出できない場合は直接指定。</dd></dl>
 <dl><dt>mouse</dt><dd>
-初期想定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。<br />
-マウスデバイスの位置は環境毎の差異があるかもなので「cat /proc/bus/input/devices | grep mouse0」で確認。<br />
-例えば「H: Handlers=mouse0 event5」みたいな文字列が見つかったら「/dev/input/event5」になるはず。</dd></dl>
+初期想定は「/dev/input/event?」。<br />
+万が一「LTsv_kbdreset()」内の「LTsv_kbdcatproc()」でデバイスを検出できない場合は直接指定。</dd></dl>
 <dl><dt>[LTsv_mouse_EV_KEY|</dt><dd>
 ※Linux専用。マウスボタンなどの入力をWindowsのGetAsyncKeyStateの1,2,4みたいにキーコード($00〜$FF)風に処理するための仮想キーコードの設定。</dd></dl>
 <dl><dt>[LTsv_EV_REL|</dt><dd>

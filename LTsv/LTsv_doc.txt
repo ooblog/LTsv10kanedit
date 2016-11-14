@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161115T040252
+modify 20161115T051358
 
 
 目次
@@ -147,7 +147,7 @@ modify 20161115T040252
 
  【LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)】
   ターミナルにコマンドを送る。実行結果も取得できる。
-  「LTsv_subprocess_shell=True」でより複雑な事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
+  「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
 
 
 １-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
@@ -708,6 +708,9 @@ modify 20161115T040252
 
 １-6a．「LTsv_kbd.py」の関数一覧
 
+ 【LTsv_kbdcatproc(LTsv_devname)】
+  「cat /proc/bus/input/devices」からLTsv_devnameで検索して「event?」を返す。「?」の部分は数値。
+
  【LTsv_kbdreset(LTsv_tsvpath)】
    [LTsv_kbd.tsv]からモジュールの初期設定や、キーコード($00〜$FF)に名付けたキー名称を読み込む。
   デバイスの検出方法に改善の余地がある予感。
@@ -771,14 +774,12 @@ modify 20161115T040252
   Linuxのデバイス指定。
 
  【kbd】
-  初期設定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。
-  PCキーボードデバイスの位置は環境毎の差異があるので「dmesg | grep keyboard | grep device」で確認。
-  例えば「input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3」みたいな文字列が見つかったら「/dev/input/event3」になるはず。
+  初期設定は「/dev/input/event?」。
+  万が一「LTsv_kbdreset()」内の「LTsv_kbdcatproc()」でデバイスを検出できない場合は直接指定。
 
  【mouse】
-  初期想定は「/dev/input/event?」。「LTsv_kbdreset()」でデバイスを検出できない場合に直接指定。
-  マウスデバイスの位置は環境毎の差異があるかもなので「cat /proc/bus/input/devices | grep mouse0」で確認。
-  例えば「H: Handlers=mouse0 event5」みたいな文字列が見つかったら「/dev/input/event5」になるはず。
+  初期想定は「/dev/input/event?」。
+  万が一「LTsv_kbdreset()」内の「LTsv_kbdcatproc()」でデバイスを検出できない場合は直接指定。
 
  【[LTsv_mouse_EV_KEY|】
   ※Linux専用。マウスボタンなどの入力をWindowsのGetAsyncKeyStateの1,2,4みたいにキーコード($00〜$FF)風に処理するための仮想キーコードの設定。
