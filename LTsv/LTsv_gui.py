@@ -1276,11 +1276,6 @@ def LTsv_draw_polygonfill_shell(LTsv_GUI):
     if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_drawGTK_polygonfill
     if LTsv_GUI == LTsv_GUI_Tkinter: return LTsv_drawTkinter_polygonfill
 
-#def LTsv_drawTkinter_fontfill(*draw_xy):
-#    xyloop=draw_xy if len(draw_xy)%2 == 0 else draw_xy[:-1]
-#    if len(xyloop) > 0:
-#        LTsv_Tkintercanvas_o.create_polygon(*xyloop,fill=LTsv_canvasbgcolor,outline=LTsv_canvasbgcolor,tag=LTsv_Tkintercanvas_TAG)
-
 def LTsv_drawGTK_squares(draw_wh=16,*draw_xy):
     for draw_xy_count in range(len(draw_xy)//2):
         draw_x,draw_y=draw_xy[draw_xy_count*2],draw_xy[draw_xy_count*2+1]
@@ -1471,12 +1466,12 @@ def LTsv_draw_canvas_save(LTsv_canvasPAGENAME,LTsv_picturenewpath):
 #        canvas_d.paste(canvas_o,(0,0))
 #        canvas_d.save(fileName,returnFormat(LTsv_picturenewext))
 
-def LTsv_drawGTK_picture(draw_t="",draw_x=0,draw_y=0):
-    picture_o,picture_w,picture_h=LTsv_pictureOBJ[draw_t],LTsv_pictureW[draw_t],LTsv_pictureH[draw_t]
+def LTsv_drawGTK_picture(LTsv_picturepath,draw_x=0,draw_y=0):
+    picture_o,picture_w,picture_h=LTsv_pictureOBJ[LTsv_picturepath],LTsv_pictureW[LTsv_picturepath],LTsv_pictureH[LTsv_picturepath]
     LTsv_libgdk.gdk_draw_pixbuf(LTsv_GTKcanvas_m,LTsv_GTKcanvas_g,picture_o,0,0,draw_x,draw_y,picture_w,picture_h,0,0,0)
 
-def LTsv_drawTkinter_picture(draw_t="",draw_x=0,draw_y=0):
-    picture_o,picture_w,picture_h=LTsv_pictureOBJ[draw_t],LTsv_pictureW[draw_t],LTsv_pictureH[draw_t]
+def LTsv_drawTkinter_picture(LTsv_picturepath,draw_x=0,draw_y=0):
+    picture_o,picture_w,picture_h=LTsv_pictureOBJ[LTsv_picturepath],LTsv_pictureW[LTsv_picturepath],LTsv_pictureH[LTsv_picturepath]
     LTsv_Tkintercanvas_o.create_image(draw_x,draw_y,image=picture_o,anchor="nw",tag=LTsv_Tkintercanvas_TAG)
 
 def LTsv_draw_picture_shell(LTsv_GUI):

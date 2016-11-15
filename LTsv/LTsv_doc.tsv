@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161115T061556
+modify	20161115T102135
 |L:Tsv]
 
 [LTsv_doc|
@@ -399,14 +399,13 @@ modify <？modify><？BR><？/P>
 |<？title$index0-2>]
 [<＃contents0-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
- フォント「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
- 「kanpickle.bin」にグリフ座標データが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<？BR>
- 「kan5x5.svg」を「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。直接フォント生成したいけど優先順位が低い。<？BR>
+ フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
+ 「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<？BR>
+ グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「kanchar.tsv」から直接生成したいけど優先順位が低い。<？BR>
  現在人名に使える漢字の異体字を漢字配列「kanmap.tsv」から単漢字辞書「kanchar.tsv」に移管作業中。なので<？VRkeyboard>の漢字配列が大幅に変更するかも。<？BR>
  Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
- ドキュメント全体でグリフとフォントの言葉の使い分けルールが曖昧な気がする。<？BR><？/P>
 |<＃contents0-2>]
 
 [<？index1-0a>|
@@ -1062,7 +1061,7 @@ LTsv_widget_newUUID(LTsv_widgetID=None)	<？GUIwidget>管理用にユニークID
 LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	 「LTsv_widgetPAGEXYWH()」のオブジェクト管理で番号が被らないようにするカウンター。
 LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
 LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index1-7b>」参考。
-LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,12"」なら「(kan5x5comic,12)」のようにタプルに変換。
+LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
 LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。	widget_dは「gtk_bin_get_child」が要求される場合の分岐。
 LTsv_hideondelete_shell(LTsv_windowPAGENAME)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
 LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	「window」オブジェクトを作成。widget_tにウィンドウのタイトル。	widget_w,widget_hにウィンドウサイズ(最小値)。event_zにコールバック関数登録で同時にリサイズの許可。	event_bはウィンドウを閉じた時にコールバック関数を呼ぶ場合指定。コールバック先で必ず「LTsv_window_exit()」を使う。	event_k,event_yはキーボード入力時(event_kが押した時event_yが離した時)のコールバック関数。
@@ -1087,7 +1086,7 @@ LTsv_window_wh(LTsv_windowPAGENAME)	ウィンドウの縦サイズ横サイズ�
 LTsv_window_w(LTsv_windowPAGENAME)	ウィンドウの横サイズを数値で取得。
 LTsv_window_h(LTsv_windowPAGENAME)	ウィンドウの縦サイズを数値で取得。
 LTsv_window_resize(LTsv_windowPAGENAME,widget_w=16,widget_h=16)	「window」のリサイズ。
-LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。	widget_fはCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。
+LTsv_label_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_label",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「label」オブジェクトを作成。テキストを表示。widget_tにラベルで表示するテキスト。	widget_fはCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。「LTsv_fonttuple()」も参考。
 LTsv_image_new(LTsv_windowPAGENAME,widget_n=None,widget_u="LTsv_logo.png",widget_x=0,widget_y=0)	「image」オブジェクトを作成。画像を表示。widget_uに画像のファイルパス。	「LTsv_image_new()」は「LTsv_label_new()」と違ってwidget_w,widget_hによるオブジェクトの大きさ指定は無く、widget_x,widget_yによる表示位置座標のみ。
 LTsv_button_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_button",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「button」オブジェクトを作成。ボタンを押すとevent_bをコールバック。widget_tにボタンに表示するテキスト。
 LTsv_check_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_check",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「check」オブジェクトを作成。チェックマークをONOFFするとevent_bをコールバック。widget_tにラベルに表示するテキスト。
@@ -1101,7 +1100,7 @@ LTsv_scale_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_
 LTsv_scale_adjustment(LTsv_widgetPAGENAME,widget_s=0,widget_e=255,widget_a=1)	「spin」「scale」の範囲を変更。	widget_s,widget_eで数値の範囲、widget_aで増減量の指定。
 LTsv_combobox_list(LTsv_widgetPAGENAME,widget_t="")	「combobox」の項目を変更。widget_tに項目一覧をテキスト複数行で設定。
 LTsv_combobox_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)	「combobox」オブジェクトを作成。「GTK2」のみ。	項目変更でevent_bをコールバック。	「Tkinter」版tkkなので未実装。
-LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)	「canvas」オブジェクトを作成。画像やテキストの描画。マウスジェスチャーでコールバック発生。任意のGUIを作れるはず。	event_pはマウス押下時のコールバック。event_rはマウス押上時のコールバック。	event_eはマウスポインタが「canvas」枠内に入ったのコールバック。event_lはマウスポインタが「canvas」枠外に出た時のコールバック。	event_mはマウスポインタが「canvas」枠内滞在中event_wミリ秒毎に発生する。マウスを動かしてなくてもevent_mにコールバックするので注意。
+LTsv_canvas_new(LTsv_windowPAGENAME,widget_n=None,widget_x=0,widget_y=0,widget_w=16,widget_h=16,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_w=100)	「canvas」オブジェクトを作成。画像やテキストの描画。マウスジェスチャーでコールバック発生。任意のGUIを作れるはず。	event_pはマウス押下時のコールバック。event_rはマウス押上時のコールバック。	event_eはマウスポインタが「canvas」枠内に入ったのコールバック。event_lはマウスポインタが「canvas」枠外に出た時のコールバック。	event_mはマウスポインタが「canvas」枠内滞在中event_wミリ秒毎に発生する。マウスを動かしてなくてもevent_mにコールバックするので注意。	「GTK2」だとラスタ(ドット絵)形式「Tkinter」だとベクター(クリップアートやFlash)形式の違いがあります。
 LTsv_drawGTK_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	描画先「canvas」の指定。	「GTK2」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」は不要。「LTsv_draw_selcanvas_shell()」の互換性で存在。
 LTsv_drawTkinter_selcanvas(LTsv_canvasPAGENAME,draw_g="LTsv_draw_tkTAG")	描画先「canvas」の指定。	「Tkinter」の場合描画図形に添付するタグ「LTsv_draw_tkTAG」も指定できる。
 LTsv_draw_selcanvas_shell(LTsv_GUI)	「LTsv_drawGTK_selcanvas()」か「LTsv_drawTkinter_selcanvas()」の関数取得。	「LTsv_draw_selcanvas=LTsv_draw_selcanvas_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
@@ -1113,49 +1112,49 @@ LTsv_draw_deleteTAG_shell(LTsv_GUI)	「LTsv_drawTkinter_delete()」の関数取�
 LTsv_drawGTK_color(draw_c="")	「LTsv_drawGTK_delete()」か「LTsv_drawTkinter_delete()」の関数取得。	「LTsv_draw_delete=LTsv_draw_delete_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_drawTkinter_color(draw_c="")	「canvas」描画色指定。
 LTsv_draw_color_shell(LTsv_GUI)	「canvas」描画色指定。
-LTsv_drawGTK_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
-LTsv_drawTkinter_bgcolor(draw_c="")	「canvas」背景色指定。フォントグリフ穴空けなどの図形消去に使う色指定。
+LTsv_drawGTK_bgcolor(draw_c="")	「canvas」背景色指定。グリフ穴空けなどの図形消去に使う色指定。
+LTsv_drawTkinter_bgcolor(draw_c="")	「canvas」背景色指定。グリフ穴空けなどの図形消去に使う色指定。
 LTsv_draw_bgcolor_shell(LTsv_GUI)	「LTsv_drawGTK_bgcolor()」か「LTsv_drawTkinter_bgcolor()」の関数取得。	「LTsv_draw_bgcolor=LTsv_draw_bgcolor_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_drawGTK_polygon(*draw_xy)	「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 LTsv_drawTkinter_polygon(*draw_xy)	「canvas」にポリゴン(ワイヤフレーム)の描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 LTsv_draw_polygon_shell(LTsv_GUI)	「LTsv_drawGTK_polygon()」か「LTsv_drawTkinter_polygon()」の関数取得。	「LTsv_draw_polygon=LTsv_draw_polygon_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
-LTsv_drawGTK_polygonfill(*draw_xy)	「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
-LTsv_drawTkinter_polygonfill(*draw_xy)	「canvas」にポリゴンの描画(塗り潰し)。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawGTK_polygonfill(*draw_xy)	「canvas」にポリゴン(塗り潰し)の描画。頂点座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_polygonfill(*draw_xy)	「canvas」にポリゴン(塗り潰し)の描画。頂点座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
 LTsv_draw_polygonfill_shell(LTsv_GUI)	「LTsv_drawGTK_polygonfill()」か「LTsv_drawTkinter_polygonfill()」の関数取得。	「LTsv_draw_polygonfill=LTsv_draw_polygonfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
-LTsv_drawGTK_squares(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_squares(draw_wh=16,*draw_xy)	
-LTsv_draw_squares_shell(LTsv_GUI)	
-LTsv_drawGTK_squaresfill(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_squaresfill(draw_wh=16,*draw_xy)	
-LTsv_draw_squaresfill_shell(LTsv_GUI)	
-LTsv_drawGTK_circles(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_circles(draw_wh=16,*draw_xy)	
-LTsv_draw_circles_shell(LTsv_GUI)	
-LTsv_drawGTK_circlesfill(draw_wh=16,*draw_xy)	
-LTsv_drawTkinter_circlesfill(draw_wh=16,*draw_xy)	
-LTsv_draw_circlesfill_shell(LTsv_GUI)	
-LTsv_drawGTK_points(*draw_xy)	
-LTsv_drawTkinter_points(*draw_xy)	
-LTsv_draw_points_shell(LTsv_GUI)	
-LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_drawTkinter_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_draw_arc_shell(LTsv_GUI)	
-LTsv_drawGTK_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	
-LTsv_draw_arcfill_shell(LTsv_GUI)	
-LTsv_drawGTK_font(draw_f="")	
-LTsv_drawTkinter_font(draw_f=None)	
-LTsv_draw_font_shell(LTsv_GUI)	
-LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	
-LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	
-LTsv_draw_text_shell(LTsv_GUI)	
-LTsv_draw_picture_load(LTsv_picturepath)	
-LTsv_draw_picture_celldiv(LTsv_picturepath,picture_divw,picture_divh)	
-LTsv_draw_picture_save(LTsv_pictureoldpath,LTsv_picturenewpath)	
-LTsv_draw_canvas_save(LTsv_canvasPAGENAME,LTsv_picturenewpath)	
-LTsv_drawGTK_picture(draw_t="",draw_x=0,draw_y=0)	
-LTsv_drawTkinter_picture(draw_t="",draw_x=0,draw_y=0)	
-LTsv_draw_picture_shell(LTsv_GUI)	
+LTsv_drawGTK_squares(draw_wh=16,*draw_xy)	「canvas」に正方形(ワイヤフレーム)を描画。draw_whは円で例えると半径のサイズ。	中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_squares(draw_wh=16,*draw_xy)	「canvas」に正方形(ワイヤフレーム)を描画。draw_whは円で例えると半径のサイズ。		中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_squares_shell(LTsv_GUI)	「LTsv_drawGTK_squares()」か「LTsv_drawTkinter_squares()」の関数取得。	「LTsv_draw_squares=LTsv_draw_squares_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_squaresfill(draw_wh=16,*draw_xy)	「canvas」に正方形(塗り潰し)を描画。draw_whは円で例えると半径のサイズ。	中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_squaresfill(draw_wh=16,*draw_xy)	「canvas」に正方形(塗り潰し)を描画。draw_whは円で例えると半径のサイズ。	中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_squaresfill_shell(LTsv_GUI)	「LTsv_drawGTK_squaresfill()」か「LTsv_drawTkinter_squaresfill()」の関数取得。	「LTsv_draw_squaresfill=LTsv_draw_squaresfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_circles(draw_wh=16,*draw_xy)	「canvas」に円(ワイヤフレーム)を描画。draw_whに円の半径サイズ。中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_circles(draw_wh=16,*draw_xy)	「canvas」に円(ワイヤフレーム)を描画。draw_whに円の半径サイズ。中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_circles_shell(LTsv_GUI)	「LTsv_drawGTK_circles()」か「LTsv_draw_circles_shell()」の関数取得。	「LTsv_draw_circles=LTsv_draw_circles_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_circlesfill(draw_wh=16,*draw_xy)	「canvas」に円(塗り潰し)を描画。draw_whに円の半径サイズ。中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_circlesfill(draw_wh=16,*draw_xy)	「canvas」に円(塗り潰し)を描画。draw_whに円の半径サイズ。中心座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_circlesfill_shell(LTsv_GUI)	「LTsv_drawGTKfill_circles()」か「LTsv_draw_circlesfillfill_shell()」の関数取得。	「LTsv_draw_circlesfill=LTsv_draw_circlesfill_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_points(*draw_xy)	「canvas」に点を描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_drawTkinter_points(*draw_xy)	「canvas」に点(短線)を描画。座標はX座標とY座標が交互に来るタプル(x,y,x,y…)。
+LTsv_draw_points_shell(LTsv_GUI)	「LTsv_drawGTK_points()」か「LTsv_drawTkinter_points()」の関数取得。	「LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	「canvas」に弧(円周のみ)を描画。「arc」の挙動が「GTK2」と「Tkinter」で事なる。	楕円に外接する長方形の左上座標がdraw_x,draw_y。長方形のサイズがdraw_w,draw_h。	draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
+LTsv_drawTkinter_arc(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	「canvas」に扇(半径含む)を描画。「arc」の挙動が「GTK2」と「Tkinter」で事なる。	円に外接する長方形の左上座標がdraw_x,draw_y。長方形のサイズがdraw_w,draw_h。	draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
+LTsv_draw_arc_shell(LTsv_GUI)	「LTsv_drawGTK_arc()」か「LTsv_drawTkinter_arc()」の関数取得。	「LTsv_draw_arc=LTsv_draw_arc_shell(LTsv_GUI)」の様に文法上プラットフォーム間差異吸収しても挙動が異なるので注意。
+LTsv_drawGTK_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	「canvas」に弧(塗り潰し)を描画。結果的に「GTK2」と「Tkinter」がほぼ同じ挙動。	楕円に外接する長方形の左上座標がdraw_x,draw_y。長方形のサイズがdraw_w,draw_h。	draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
+LTsv_drawTkinter_arcfill(draw_x,draw_y,draw_w,draw_h,draw_s=-math.pi,draw_e=math.pi)	「canvas」に扇(塗り潰し)を描画。結果的に「GTK2」と「Tkinter」がほぼ同じ挙動。	楕円に外接する長方形の左上座標がdraw_x,draw_y。長方形のサイズがdraw_w,draw_h。	draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角度の単位はラジアン(2π)。
+LTsv_draw_arcfill_shell(LTsv_GUI)	「LTsv_drawGTK_arcfill()」か「LTsv_drawTkinter_arcfill()」の関数取得。	「LTsv_draw_arcfill=LTsv_draw_arcfill_shell(LTsv_GUI)」の様に文法上プラットフォーム間差異吸収しても挙動が異なるので注意。
+LTsv_drawGTK_font(draw_f="")	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
+LTsv_drawTkinter_font(draw_f=None)	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
+LTsv_draw_font_shell(LTsv_GUI)	「LTsv_drawGTK_font()」か「LTsv_drawTkinter_font()」の関数取得。	「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	グリフでのテキスト描画は「<？index1-8a>」を参考。
+LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	「Tkinter」には「<？CP932>」の制限があるのでグリフでのテキスト描画「<？index1-8a>」も参考。
+LTsv_draw_text_shell(LTsv_GUI)	「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。	「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
+LTsv_draw_picture_load(LTsv_picturepath)	「canvas」用の画像を読み込む。LTsv_picturepathはローカルの画像ファイルのパス。	GUIオブジェクト(widget)の「image」とは別腹。	「Tkinter」では先に「LTsv_canvas_new()」で「canvas」を作って置く必要がある。
+LTsv_draw_picture_celldiv(LTsv_picturepath,picture_divw,picture_divh)	「LTsv_draw_picture_load()」で読み込んだ(読み込んでなければ読み込む)画像を分割して「filepath[num]」の様に番号を付けることができる。	「GTK2」でのみ実装。
+LTsv_draw_picture_save(LTsv_pictureoldpath,LTsv_picturenewpath)	「LTsv_draw_picture_celdiv()」で分割した、あるいは分割前の「LTsv_draw_picture_load()」読み込んだ画像を保存。png推奨。	「GTK2」でのみ実装。
+LTsv_draw_canvas_save(LTsv_canvasPAGENAME,LTsv_picturenewpath)	「canvas」を画像保存。png推奨。	「GTK2」でのみ実装。
+LTsv_drawGTK_picture(LTsv_picturepath,draw_x=0,draw_y=0)	「canvas」に「LTsv_draw_picture_load()」で読み込んだ(「LTsv_draw_picture_celdiv()」で分割した)画像を描画。	LTsv_picturepathは「LTsv_draw_picture_load(LTsv_picturepath)」と同じパス(LTsv_draw_picture_celldiv()の場合「filepath[num]」の添字num数値は分割数範囲内)。左上座標はdraw_x,draw_y。
+LTsv_drawTkinter_picture(LTsv_picturepath,draw_x=0,draw_y=0)	「canvas」に「LTsv_draw_picture_load()」で読み込んだ画像を描画。	LTsv_picturepathは「LTsv_draw_picture_load(LTsv_picturepath)」と同じパス。左上座標はdraw_x,draw_y。
+LTsv_draw_picture_shell(LTsv_GUI)	「LTsv_drawGTK_picture()」か「LTsv_drawTkinter_picture()」の関数取得。	「LTsv_draw_picture=LTsv_draw_picture_shell(LTsv_GUI)」の様に文法上プラットフォーム間差異吸収しても挙動が異なるので注意。
 LTsv_drawGTK_queue()	
 LTsv_drawTkinter_queue()	
 LTsv_draw_queue_shell(LTsv_GUI)	
