@@ -1735,6 +1735,12 @@ def debug_polygonpoints(callback_void=None,callback_ptr=None):
         debug_polygonpointlist.pop()
     LTsv_widget_settext(debug_keysetup_polygonentry,widget_t="{0}".format(debug_polygonpointlist))
 
+def debug_polygonbutton(callback_void=None,callback_ptr=None):
+    global debug_polygonpointlist
+    if len(debug_polygonpointlist) >= 2:
+        debug_polygonpointlist.pop(); debug_polygonpointlist.pop()
+    LTsv_widget_settext(debug_keysetup_polygonentry,widget_t="{0}".format(debug_polygonpointlist))
+
 def debug_activewindow(callback_void=None,callback_ptr=None):
     LTsv_widget_settext(debug_keysetup_activelabel,widget_t=LTsv_window_foreground())
     LTsv_window_after(debug_keysetup_window,event_b=debug_activewindow,event_i="debug_activewindow",event_w=500)
@@ -1750,12 +1756,6 @@ def debug_canvas_press(callback_void=None,callback_ptr=None):
         debug_polygonbutton()
     LTsv_widget_settext(debug_keysetup_polygonentry,widget_t="{0}".format(debug_polygonpointlist))
     LTsv_widget_focus(debug_keysetup_polygonentry)
-
-def debug_polygonbutton(callback_void=None,callback_ptr=None):
-    global debug_polygonpointlist
-    if len(debug_polygonpointlist) >= 2:
-        debug_polygonpointlist.pop(); debug_polygonpointlist.pop()
-    LTsv_widget_settext(debug_keysetup_polygonentry,widget_t="{0}".format(debug_polygonpointlist))
 
 def debug_color_scale(window_objvoid=None,window_objptr=None):
     global debug_scaleRGB

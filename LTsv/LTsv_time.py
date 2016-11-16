@@ -145,7 +145,7 @@ def LTsv_intstr0x(LTsv_code):
 
 def LTsv_settimerCounter(counter=None):
     global LTsv_timerCounter
-    LTsv_timerCounter=LTsv_timerCounter if counter != None else LTsv_intstr0x(counter)
+    LTsv_timerCounter=LTsv_timerCounter if counter == None else LTsv_intstr0x(counter)
     return LTsv_timerCounter
 
 #FPS

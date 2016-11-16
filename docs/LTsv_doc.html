@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161115T102134<br />
+modify 20161116W090018<br />
 </p>
 
 <h2>目次</h2>
@@ -32,7 +32,7 @@ modify 20161115T102134<br />
  <li><a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a></li>
  <li><a href="#index1-5a" title="１-5a．「LTsv_joy.py」の関数一覧">１-5a．「LTsv_joy.py」の関数一覧</a></li>
  <li><a href="#index1-5b" title="１-5b．「LTsv_joy.tsv」のタグ解説">１-5b．「LTsv_joy.tsv」のタグ解説</a></li>
- <li><a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></li>
+ <li><a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧">１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧</a></li>
  <li><a href="#index1-6a" title="１-6a．「LTsv_kbd.py」の関数一覧">１-6a．「LTsv_kbd.py」の関数一覧</a></li>
  <li><a href="#index1-6b" title="１-6b．「LTsv_kbd.tsv」のタグ解説">１-6b．「LTsv_kbd.tsv」のタグ解説</a></li>
  <li><a href="#index1-7a" title="１-7a．「LTsv_gui.py」の関数一覧">１-7a．「LTsv_gui.py」の関数一覧</a></li>
@@ -310,7 +310,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 「L:Tsv」ファイルを変数上に作成する。<br />
  LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
 LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
-メタタグについては「<？index1-0b>」も参考。</dd></dl>
+メタタグについては「<a href="#index1-0b" title="１-0b．「L:Tsv」ファイルの構造">１-0b．「L:Tsv」ファイルの構造</a>」も参考。</dd></dl>
 <dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
 ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
 ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
@@ -867,7 +867,7 @@ axisリストとbuttonリストのタプルで返り値も受け取れる。</dd
 <dl><dt>LTsv_getjoystr(LTsv_joyid,joyformat=None)</dt><dd>
 スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。<br />
 LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。<br />
-項目一覧の詳細は「<a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a>」。</dd></dl>
+項目一覧の詳細は「<a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧">１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧</a>」。</dd></dl>
 <dl><dt>LTsv_atanscalar(LTsv_atanX,LTsv_atanY)</dt><dd>
 スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。</dd></dl>
 <dl><dt>LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)</dt><dd>
@@ -912,7 +912,7 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
 </section>
 
 <section>
-<h3><a name="index1-5c">１-5c．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></h3>
+<h3><a name="index1-5c">１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧</a></h3>
 <dl><dt>
   status</dt>
 <dd>
@@ -938,6 +938,14 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
 
 <section>
 <h3><a name="index1-6a">１-6a．「LTsv_kbd.py」の関数一覧</a></h3>
+<p>
+ PCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。<br />
+ ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<br />
+ ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<br />
+ ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。<br />
+ ・「LTsv_kbd.py」単独の単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。<br />
+</p>
+
 <dl><dt>LTsv_kbdcatproc(LTsv_devname)</dt><dd>
 「cat /proc/bus/input/devices」からLTsv_devnameで検索して「event?」を返す。「?」の部分は数値。</dd></dl>
 <dl><dt>LTsv_kbdreset(LTsv_tsvpath)</dt><dd>
@@ -1185,9 +1193,9 @@ GTKの場合チェックマークのONOFFと同じ理屈なのか2回分のコ�
 <dl><dt>LTsv_clipmenu_new(widget_o)</dt><dd>
 「Tkinter」専用の内部関数。「edit」「entry」「spin」の右クリックメニュー(コピペ補助)を作成。</dd></dl>
 <dl><dt>LTsv_edit_new(LTsv_windowPAGENAME,widget_n=None,widget_t="LTsv_edit",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-「edit」オブジェクトを作成。テキスト複数行入力欄。</dd></dl>
+「edit」オブジェクトを作成。テキスト複数行入力欄。widget_tに初期値テキスト。</dd></dl>
 <dl><dt>LTsv_entry_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_entry",widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
-「edit」オブジェクトを作成。テキスト１行入力欄入力欄。<br />
+「edit」オブジェクトを作成。テキスト１行入力欄入力欄。widget_tに初期値テキスト。<br />
 テキスト変更後エンターキーでevent_bをコールバック。</dd></dl>
 <dl><dt>LTsv_spin_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_s=0,widget_e=255,widget_a=1,widget_x=0,widget_y=0,widget_w=16,widget_h=16,widget_f=None)</dt><dd>
 「spin」オブジェクトを作成。数値入力。数値変更でevent_bをコールバック。</dd></dl>
@@ -1363,47 +1371,66 @@ LTsv_picturepathは「LTsv_draw_picture_load(LTsv_picturepath)」と同じパス
 「LTsv_drawGTK_picture()」か「LTsv_drawTkinter_picture()」の関数取得。<br />
 「LTsv_draw_picture=LTsv_draw_picture_shell(LTsv_GUI)」の様に文法上プラットフォーム間差異吸収しても挙動が異なるので注意。</dd></dl>
 <dl><dt>LTsv_drawGTK_queue()</dt><dd>
-</dd></dl>
+「canvas」の描画更新をする。描画更新を通知しないと描画が「window」に反映されません。「GTK2」でのみ必要。</dd></dl>
 <dl><dt>LTsv_drawTkinter_queue()</dt><dd>
-</dd></dl>
+「Tkinter」の「canvas」は描画更新を自動で行うのでこの関数は何もしません。文法上の都合で存在。</dd></dl>
 <dl><dt>LTsv_draw_queue_shell(LTsv_GUI)</dt><dd>
-</dd></dl>
+「LTsv_drawGTK_queue()」か「LTsv_drawTkinter_queue()」の関数取得。<br />
+「LTsv_draw_queue=LTsv_draw_queue_shell(LTsv_GUI)」の様に文法上プラットフォーム間差異吸収しても挙動が異なるので注意。</dd></dl>
 <dl><dt>LTsv_clockwise(*draw_xy)</dt><dd>
-</dd></dl>
+ポリゴンが時計回りなら正数、反時計回りなら負数、判定できない場合0のカウントを返す。<br />
+時計回りの判定は簡易的(外積による角度のみの計算で面積無視)なので８の字にねじった形状や十字手裏剣のような凹みのある形状を扱う場合注意。<br />
+座標は「LTsv_draw_polygon」系と同じくX座標とY座標が交互に来るタプル(x,y,x,y…)。</dd></dl>
 <dl><dt>LTsv_icon_load(LTsv_picturepath)</dt><dd>
-</dd></dl>
+通知タスクトレイ(Notify)に使うアイコン「*.ico」またはアイコンDLL「*.icl」を読込。<br />
+1つのファイルに複数のアイコンを認識できた場合「filepath[num]」の様に番号が添付される。<br />
+「WinAPI」でのみ実装(「Tkinter」でもWindowsなら「WinAPI」で対応)。「canvas」用途の画像とは別に管理。</dd></dl>
 <dl><dt>LTsv_notifyicon_new(LTsv_windowPAGENAME,notify_n=None,widget_t="",widget_u="",menu_b=None,menu_c=None)</dt><dd>
-</dd></dl>
+通知タスクトレイ(Notify)の作成。<br />
+「GTK2」ではポップアップメニュー表示を実装できたが、「Tkinter」で「WinAPI」のイベントを拾う方法が不明なのでポップアップメニューが開けない。<br />
+widget_tはツールチップテキスト。<br />
+widget_uはアイコンのURI(ファイルパス)。「GTK2」では「LTsv_draw_picture_load()」、「WinAPI」では「LTsv_icon_load()」を呼び出す。<br />
+menu_bに「yield ("window exit",LTsv_window_exit_cbk)」のようなイテレータ生成関数を送るとポップアップメニューを作成。<br />
+menu_cにポップアップメニューとは別途1クリック実行するコールバック関数を指定。</dd></dl>
 <dl><dt>LTsv_filedialog_new(LTsv_windowPAGENAME,widget_n=None,event_b=None,widget_t="LTsv_filedialog",dialog_t=0)</dt><dd>
-</dd></dl>
+ファイルダイアログ「filedialog」の作成。widget_tにダイアログウィンドウ用のテキスト。<br />
+dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未満ならファイル、2以上ならフォルダ。<br />
+ダイアログウィンドウを表示するときは「LTsv_widget_showhide(kanedit_filedialog,True)」。<br />
+ボタンを押すとevent_bをコールバック。コールバック先で「LTsv_widget_showhide(kanedit_filedialog,False)」してダイアログウィンドウを閉じる必要。<br />
+キャンセルが実装されてないので注意。</dd></dl>
 <dl><dt>debug_canvas(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。「LTsv_window_after()」を使って「debug_canvas()」自身をループ。<br />
+日時表示の更新や「canvas」の描き替えをしてる。</dd></dl>
 <dl><dt>debug_timebutton(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。reset「button」が押されたら日時フォーマットの初期化。</dd></dl>
 <dl><dt>debug_calc(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。電卓の「entry」が書き換えた(Enterキー押下した)ら電卓フォーマットで演算。</dd></dl>
 <dl><dt>debug_polygonpoints(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
-<dl><dt>debug_activewindow(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
-<dl><dt>debug_canvas_press(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。描画テスト用ポリゴンの頂点がX座標とY座標が交互に来るタプル(x,y,x,y…)になってるか確認して奇数なら偶数に減らして揃える。</dd></dl>
 <dl><dt>debug_polygonbutton(callback_void=None,callback_ptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。描画テスト用ポリゴンの頂点削除。</dd></dl>
+<dl><dt>debug_activewindow(callback_void=None,callback_ptr=None)</dt><dd>
+単体風テスト専用。アクティブウィンドウのID取得テスト。</dd></dl>
+<dl><dt>debug_canvas_press(callback_void=None,callback_ptr=None)</dt><dd>
+単体風テスト専用。「canvas」マウスクリックのコールバック。</dd></dl>
 <dl><dt>debug_color_scale(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。「scale」で描画テスト用ポリゴンの色変更。</dd></dl>
 <dl><dt>debug_color_combo(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。「combobox」で描画テスト用ポリゴンの色変更…みたいなのを想定。未実装。「Tkinter」では機能しない。</dd></dl>
 <dl><dt>debug_edit_clip(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。クリップボード「clipboard」の動作確認。</dd></dl>
 <dl><dt>debug_checkbutton_shell(checkNumber)</dt><dd>
-</dd></dl>
+単体風テスト専用。「check」のコールバック用関数の例。「radio」と比較用途。<br />
+同じような動作をするGUIオブジェクト(widget)を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。</dd></dl>
 <dl><dt>debug_radiobutton_shell(radioNumber)</dt><dd>
-</dd></dl>
+単体風テスト専用。「radio」のコールバック用関数の例。「check」と比較用途。<br />
+同じような動作をするGUIオブジェクト(widget)を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。</dd></dl>
 <dl><dt>debug_keypress(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。PCキーボード入力(押下)の動作検証。<br />
+「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<a href="#index1-6a" title="１-6a．「LTsv_kbd.py」の関数一覧">１-6a．「LTsv_kbd.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>debug_keyrelease(window_objvoid=None,window_objptr=None)</dt><dd>
-</dd></dl>
+単体風テスト専用。PCキーボード入力(押上)の動作検証。<br />
+「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<a href="#index1-6a" title="１-6a．「LTsv_kbd.py」の関数一覧">１-6a．「LTsv_kbd.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>debug_filedialog(window_objvoid=None,window_objptr=None)</dt><dd>
 </dd></dl>
 <dl><dt>debug_filedialog_response(window_objvoid=None,window_objptr=None)</dt><dd>
