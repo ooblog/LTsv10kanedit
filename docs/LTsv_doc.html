@@ -13,7 +13,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161116W114416<br />
+modify 20161116W132017<br />
 </p>
 
 <h2>目次</h2>
@@ -30,10 +30,12 @@ modify 20161116W114416<br />
 
  <li><a href="#index03-0" title="③-0．「LTsv_file.py」の関数一覧">③-0．「LTsv_file.py」の関数一覧</a></li>
 
- <li><a href="#index1-3a" title="１-3a．「LTsv_time.py」の関数一覧">１-3a．「LTsv_time.py」の関数一覧</a></li>
- <li><a href="#index1-3b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a></li>
- <li><a href="#index1-4a" title="１-4a．「LTsv_calc.py」の関数一覧">１-4a．「LTsv_calc.py」の関数一覧</a></li>
- <li><a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a></li>
+ <li><a href="#index04-0" title="④-0．「LTsv_time.py」の関数一覧">④-0．「LTsv_time.py」の関数一覧</a></li>
+ <li><a href="#index04-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a></li>
+
+ <li><a href="#index05-0" title="⑤-0．「LTsv_calc.py」の関数一覧">⑤-0．「LTsv_calc.py」の関数一覧</a></li>
+ <li><a href="#index05-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a></li>
+
  <li><a href="#index1-5a" title="１-5a．「LTsv_joy.py」の関数一覧">１-5a．「LTsv_joy.py」の関数一覧</a></li>
  <li><a href="#index1-5b" title="１-5b．「LTsv_joy.tsv」のタグ解説">１-5b．「LTsv_joy.tsv」のタグ解説</a></li>
  <li><a href="#index1-5c" title="１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧">１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧</a></li>
@@ -446,9 +448,8 @@ Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:
 
 </section>
 
-
 <section>
-<h3><a name="index1-3a">１-3a．「LTsv_time.py」の関数一覧</a></h3>
+ <h3><a name="index04-0">④-0．「LTsv_time.py」の関数一覧</a></h3>
 <p>
  日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<br />
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<br />
@@ -500,7 +501,7 @@ OSやファイルシステム毎に秒や分の精度に違いがあると思う
 <dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
 日付フォーマットtimeformatを各種日時変数で置換する。<br />
 timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。<br />
-日付フォーマットの概要は「<a href="#index1-3b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a>」を参照。</dd></dl>
+日付フォーマットの概要は「<？index1-3b>」を参照。</dd></dl>
 <dl><dt>LTsv_settimershift()</dt><dd>
 日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。<br />
 通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。</dd></dl>
@@ -517,12 +518,11 @@ LTsv_start_nowとLTsv_goal_nowの差分を再計算する。<br />
 タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。</dd></dl>
 <dl><dt>LTsv_gettimerstr(timeformat=None)</dt><dd>
 日付フォーマットtimeformatを各種タイマー変数で置換する。<br />
-timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<a href="#index1-3b" title="１-3b．日時フォーマットの概要">１-3b．日時フォーマットの概要</a>」を参照。</dd></dl>
+timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index1-3b>」を参照。</dd></dl>
 
 </section>
-
 <section>
-<h3><a name="index1-3b">１-3b．日時フォーマットの概要</a></h3>
+ <h3><a name="index04-1">④-1．日時フォーマットの概要</a></h3>
 <p>
  0.「@」で始まるキーワードが年月日等に置換される仕組み。「@」を表示する場合は「@@」と表記。<br />
  1.日付フォーマット(daytime系)では、小文字が現在時刻(meridian)、大文字が徹夜日時(allnight)です。分以下・Beat・timer系に徹夜日時はありません。<br />
@@ -658,9 +658,9 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 </section>
 
 <section>
-<h3><a name="index1-4a">１-4a．「LTsv_calc.py」の関数一覧</a></h3>
+ <h3><a name="index05-0">⑤-0．「LTsv_calc.py」の関数一覧</a></h3>
 <p>
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a>」を参照。<br />
+ 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。<br />
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<br />
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<br />
 </p>
@@ -678,7 +678,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <dl><dt>LTsv_calc(LTsv_calcQbase)</dt><dd>
 電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。<br />
 LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。<br />
-電卓フォーマットの概要は「<a href="#index1-4b" title="１-4b．電卓フォーマットの概要">１-4b．電卓フォーマットの概要</a>」を参照。</dd></dl>
+電卓フォーマットの概要は「<？index1-4b>」を参照。</dd></dl>
 <dl><dt>LTsv_calc_function(LTsv_calcQbase)</dt><dd>
 主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。</dd></dl>
 <dl><dt>LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)</dt><dd>
@@ -687,9 +687,8 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。</dd></dl>
 
 </section>
-
 <section>
-<h3><a name="index1-4b">１-4b．電卓フォーマットの概要</a></h3>
+ <h3><a name="index05-1">⑤-1．電卓フォーマットの概要</a></h3>
 <p>
  分数「|」と割り算「/」を別物として扱います。分数の入れ子は「2|3|5|7⇔2|105」のように分母にまとめられます。<br />
  通常は分数で計算するので「1/3⇔1|3」「1|3*3⇔1」になり一般的な電卓のように「0.999999999999」などにはならない。<br />
@@ -845,6 +844,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 </dd></dl>
 
 </section>
+
 
 <section>
 <h3><a name="index1-5a">１-5a．「LTsv_joy.py」の関数一覧</a></h3>

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161116W114417
+modify	20161116W132018
 |L:Tsv]
 
 [LTsv_doc|
@@ -36,12 +36,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 目次
 
-<？index00-0>*<？index00-1>*<？index00-2><？index01-0>*<？index01-1><？index02-0>*<？index02-1><？index03-0>
- <？index1-2>
- <？index1-3a>
- <？index1-3b>
- <？index1-4a>
- <？index1-4b>
+<？index00-0>*<？index00-1>*<？index00-2><？index01-0>*<？index01-1><？index02-0>*<？index02-1><？index03-0><？index04-0>*<？index04-1><？index05-0>*<？index05-1>
  <？index1-5a>
  <？index1-5b>
  <？index1-5c>
@@ -50,24 +45,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <？index1-7a>
  <？index1-7b>
  
-<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0>
+<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1>
 
-
-<？index1-3a>
-
-<＃contents1-3a>
-
-<？index1-3b>
-
-<＃contents1-3b>
-
-<？index1-4a>
-
-<＃contents1-4a>
-
-<？index1-4b>
-
-<＃contents1-4b>
 
 <？index1-5a>
 
@@ -120,10 +99,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <？index01-0>*<？index01-1>
 <？index02-0>*<？index02-1>
 <？index03-0>
- <li><？index1-3a></li>
- <li><？index1-3b></li>
- <li><？index1-4a></li>
- <li><？index1-4b></li>
+<？index04-0>*<？index04-1>
+<？index05-0>*<？index05-1>
  <li><？index1-5a></li>
  <li><？index1-5b></li>
  <li><？index1-5c></li>
@@ -138,26 +115,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <？section01-0>*<？section01-1>
 <？section02-0>*<？section02-1>
 <？section03-0>
-
-<section>
-<h3><a name="index1-3a"><？title$index1-3a></a></h3>
-<＃contents1-3a>
-</section>
-
-<section>
-<h3><a name="index1-3b"><？title$index1-3b></a></h3>
-<＃contents1-3b>
-</section>
-
-<section>
-<h3><a name="index1-4a"><？title$index1-4a></a></h3>
-<＃contents1-4a>
-</section>
-
-<section>
-<h3><a name="index1-4b"><？title$index1-4b></a></h3>
-<＃contents1-4b>
-</section>
+<？section04-0>*<？section04-1>
+<？section05-0>*<？section05-1>
 
 <section>
 <h3><a name="index1-5a"><？title$index1-5a></a></h3>
@@ -266,9 +225,9 @@ modify <？modify><？BR><？/P>
 |<？title00-0>]
 [<＃contents00-0>|
 <？P> ※「MIT License」準拠。<？BR><？/P>
-<？http://choosealicense.com/licenses/mit/>
+<？https00-0:mit>
 <？P> ※「MIT License」の日本語訳。<？BR><？/P>
-<？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>
+<？https00-0:osdn>
 <？P> ※日本語による補足。<？BR>
    ・複製物にも「MIT License」の「<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>」ファイルを添付る事(著作権表示を誤魔化さない事)。<？BR>
    ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<？BR>
@@ -277,26 +236,26 @@ modify <？modify><？BR><？/P>
  ※「kanedit」固有の問題への言及。<？BR>
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<？BR><？/P>
 |<＃contents00-0>]
-[<？http://choosealicense.com/licenses/mit/>|
-.+\.html?	<dl><dt><？title$http://choosealicense.com/licenses/mit/></dt><dd><a href="<？url$http://choosealicense.com/licenses/mit/>" title="<？title$http://choosealicense.com/licenses/mit/>"><？url$http://choosealicense.com/licenses/mit/></a></dd></dl>
-.*	   <？title$http://choosealicense.com/licenses/mit/><？BR>@E   <？url$http://choosealicense.com/licenses/mit/><？BR>@E
-|<？http://choosealicense.com/licenses/mit/>]
-[<？url$http://choosealicense.com/licenses/mit/>|
+[<？https00-0:mit>|
+.+\.html?	<dl><dt><？title00-0:mit></dt><dd><a href="<？url00-0:mit>" title="<？title00-0:mit>"><？url00-0:mit></a></dd></dl>
+.*	   <？title00-0:mit><？BR>@E   <？url00-0:mit><？BR>@E
+|<？https00-0:mit>]
+[<？url00-0:mit>|
 .*	http://choosealicense.com/licenses/mit/
-|<？url$http://choosealicense.com/licenses/mit/>]
-[<？title$http://choosealicense.com/licenses/mit/>|
+|<？url00-0:mit>]
+[<？title00-0:mit>|
 .*	MIT License - Choose a License
-|<？title$http://choosealicense.com/licenses/mit/>]
-[<？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
-.+\.html?	<dl><dt><？title$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></dt><dd><a href="<？url$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>" title="<？title$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>"><？url$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license></a></dd></dl>
-.*	   <？title$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>@E   <？url$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license><？BR>@E
-|<？https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
-[<？url$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
+|<？title00-0:mit>]
+[<？https00-0:osdn>|
+.+\.html?	<dl><dt><？title00-0:osdn></dt><dd><a href="<？url00-0:osdn>" title="<？title00-0:osdn>"><？url00-0:osdn></a></dd></dl>
+.*	   <？title00-0:osdn><？BR>@E   <？url00-0:osdn><？BR>@E
+|<？https00-0:osdn>]
+[<？url00-0:osdn>|
 .*	https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
-|<？url$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
-[<？title$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>|
+|<？url00-0:osdn>]
+[<？title00-0:osdn>|
 .*	MIT License - Choose a License
-|<？title$https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license>]
+|<？title00-0:osdn>]
 
 [<？title00-1>|
 .*	⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
@@ -451,7 +410,6 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 <？DLDT>   "Alpha2ZENYen"<？/DTDD>      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。<？/DD/DL>
 |<＃contents02-1>]
 
-
 [<？index03-0>|
 .+\.html?	 <li><a href="#index03-@c" title="<？title03-@c>"><？title03-@c></a></li>@E
 .*	 <？title03-@c>@E
@@ -520,7 +478,19 @@ LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<！L:TsvLTsvver>)。
 LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
 |LTsv_file.py]
 
-[<＃contents1-3a>|
+[<？index04-0>*<？index04-1>|
+.+\.html?	 <li><a href="#index04-@c" title="<？title04-@c>"><？title04-@c></a></li>@E
+.*	 <？title04-@c>@E
+|<？index04-0>*<？index04-1>]
+[<？section04-0>*<？section04-1>|
+.+\.html?	<section>@E <h3><a name="index04-@c"><？title04-@c></a></h3>@E<＃contents04-@c>@E</section>@E
+.*	@E<？title04-@c>@E@E<＃contents04-@c>@E
+|<？section04-0>*<？section04-1>]
+
+[<？title04-0>|
+.*	④-0．「LTsv_time.py」の関数一覧
+|<？title04-0>]
+[<＃contents04-0>|
 <？P> 日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<？BR>
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<？BR>
  ・<？modify_style>だと困るのであればフォーマット指定。<？BR>
@@ -529,8 +499,7 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
 <！LTsv_time.py>
-|<＃contents1-3a>]
-
+|<＃contents04-0>]
 
 [LTsv_time.py|
 LTsv_yearleap(LTsv_toyear)	閏年ならTrue。
@@ -556,7 +525,10 @@ LTsv_puttimerlap()	タイマーの経過時間をLTsv_passed_TotalSecondsに、�
 LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タイマー変数で置換する。	timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index1-3b>」を参照。
 |LTsv_time.py]
 
-[<＃contents1-3b>|
+[<？title04-1>|
+.*	④-1．日時フォーマットの概要
+|<？title04-1>]
+[<＃contents04-1>|
 <？P> 0.「@」で始まるキーワードが年月日等に置換される仕組み。「@」を表示する場合は「@@」と表記。<？BR>
  1.日付フォーマット(daytime系)では、小文字が現在時刻(meridian)、大文字が徹夜日時(allnight)です。分以下・Beat・timer系に徹夜日時はありません。<？BR>
  2.時間フォーマット(timer系)では、小文字が現在時刻(lap)、大文字が曲や動画などの長さ(limit)、「-」が先頭でタイマーの残り時間(timeleft)です。<？BR>
@@ -636,15 +608,28 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
   @T=\t。タブ文字用。<？BR>
   @E=\n。改行文字用。<？BR>
   @Z=\0。文字列長0用。<？BR><？/DD/DL>
-|<＃contents1-3b>]
+|<＃contents04-1>]
 
-[<＃contents1-4a>|
+
+[<？index05-0>*<？index05-1>|
+.+\.html?	 <li><a href="#index05-@c" title="<？title05-@c>"><？title05-@c></a></li>@E
+.*	 <？title05-@c>@E
+|<？index05-0>*<？index05-1>]
+[<？section05-0>*<？section05-1>|
+.+\.html?	<section>@E <h3><a name="index05-@c"><？title05-@c></a></h3>@E<＃contents05-@c>@E</section>@E
+.*	@E<？title05-@c>@E@E<＃contents05-@c>@E
+|<？section05-0>*<？section05-1>]
+
+[<？title05-0>|
+.*	⑤-0．「LTsv_calc.py」の関数一覧
+|<？title05-0>]
+[<＃contents05-0>|
 <？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。<？BR>
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
 <！LTsv_calc.py>
-|<＃contents1-4a>]
+|<＃contents05-0>]
 
 [LTsv_calc.py|
 LTsv_calc_GCM(LTsv_calcL,LTsv_calcR)	最大公約数。
@@ -658,7 +643,10 @@ LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	主に分数の加算減算。分�
 LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。
 |LTsv_calc.py]
 
-[<＃contents1-4b>|
+[<？title05-1>|
+.*	⑤-1．電卓フォーマットの概要
+|<？title05-1>]
+[<＃contents05-1>|
 <？P> 分数「|」と割り算「/」を別物として扱います。分数の入れ子は「2|3|5|7⇔2|105」のように分母にまとめられます。<？BR>
  通常は分数で計算するので「1/3⇔1|3」「1|3*3⇔1」になり一般的な電卓のように「0.999999999999」などにはならない。<？BR>
  分数内で小数が使用可能です。「0.5|3.5⇔1|7」の様に小数が混在してても分数に変換します。<？BR>
@@ -668,12 +656,12 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
  Pythonには整数有効計算範囲の概念は存在しないはずですが、小数計算ではPythonの実装・環境に応じた丸め誤差などが発生します。<？BR>
  0で割るなどの計算できない場合は無限エラー扱いにして「n|0」と表示します。実際の無限には正負の概念が存在しますが電卓フォーマットの「n|0」は単に計算放棄です。<？BR><？/P>
 
-<？index1-4a_number>
+<？index05-1:number>
 <？DLDT>  012456789 １２３４５６７８９０<？/DTDD>    アラビア数字は全角でも使用できます。<？/DD/DL>
 <？DLDT>  〇一二三四五六七八九<？/DTDD>              漢数字も使用できます。大字も「壱弐参肆伍陸漆捌玖零陌阡萬」が使用可能です。<？/DD/DL>
 <？DLDT>  垓京兆億万千百十 銭<？/DTDD>               漢数字の万単位の繰り上がりも垓までとりあえず対応しています。銭は百分の一になります。<？/DD/DL>
 
-<？index1-4a_‎operator>
+<？index05-1:‎operator>
 <？DLDT>   . ．      小円<？/DTDD>                    小数点は「3.1416⇔3927|1250」の様にドットを使います。「円」は「3円14銭」のような表現用途。<？/DD/DL>
 <？DLDT>  | ｜      分<？/DTDD>                      分数を表します。分数中の小数は「0.5|3⇔1|6」のように通分されます。<？/DD/DL>
 <？DLDT>  p PｐＰ   正<？/DTDD>                      正の数を表現。符号が付加されてなければ0以上の数です。<？/DD/DL>
@@ -691,47 +679,47 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 <？DLDT>  y π      周<？/DTDD>                       円周率。math.pi(約3.14159265359)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
 <？DLDT>  e ｅ      底<？/DTDD>                      ネイピア数。math.e(約2.71828182846)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
 
-<？index1-4a_bracket>
+<？index05-1:bracket>
 <？DLDT>  ()（）<？/DTDD>                            括弧の中を先に計算する「3(c+1)→3×(c+1)→3×(1+1)→3×2」。もしくは数列の表現にも使用。<？/DD/DL>
 <？DLDT>  c CＣｃ   数<？/DTDD>                      数列内で有効なカウント変数。括弧の内外で異なる数列を数えるので注意。初期値は「1」。<？/DD/DL>
 <？DLDT>  S SｓＳΣ 列但※<？/DTDD>                   数列和。「(cΣ1～5)→1＋2＋3＋4＋5」といった等差数列の和を想定。<？/DD/DL>
 <？DLDT>  ! ！      方<？/DTDD>                      数列積。「(2!1～4)→2×2×2×2」のような乗数や「(c!1～5)→1×2×3×4×5」のような階乗を想定。<？/DD/DL>
 <？DLDT>  ~ ～      ?<？/DTDD>                       数列和(もしくは数列積)の範囲指定。「(cΣ1~4)→1＋2＋3＋4」「(c!4～1)→4×3×2×1」と増減±1の計算は自動。<？/DD/DL>
 
-<？index1-4a_nonuse>
+<？index05-1:nonuse>
 <？DLDT>  n NｎＮ∞ 無<？/DTDD>                      0で割った時など計算"できない"事を表す「n|0」と同じ。本当の無限には正負などがあるが、単純に未定というか計算放棄。<？/DD/DL>
 <？DLDT>  ,  <？/DTDD>                               「10,800⇔10800|1」とコンマ無しの計算結果を帰します。使用でき無い他の演算子もだいたいコンマ扱いです。<？/DD/DL>
 <？DLDT>  √<？/DTDD>                                平方根に使う予定の演算子。分数電卓なので無理数などの扱いに困ってる。<？/DD/DL>
-|<＃contents1-4b>]
+|<＃contents05-1>]
 #<h4>
-[<？index1-4a_number>|
-.+\.html?	<h4><？title$index1-4a_number></h4>
-.*	 <？title$index1-4a_number>
-|<？index1-4a_number>]
-[<？title$index1-4a_number>|
+[<？index05-1:number>|
+.+\.html?	<h4><？title05-1:number></h4>
+.*	 <？title05-1:number>
+|<？index05-1:number>]
+[<？title05-1:number>|
 .*	使用できる数字
-|<？title$index1-4a_number>]
-[<？index1-4a_‎operator>|
-.+\.html?	<h4><？title$index1-4a_‎operator></h4>
-.*	 <？title$index1-4a_‎operator>
-|<？index1-4a_‎operator>]
-[<？title$index1-4a_‎operator>|
+|<？title05-1:number>]
+[<？index05-1:‎operator>|
+.+\.html?	<h4><？title05-1:‎operator></h4>
+.*	 <？title05-1:‎operator>
+|<？index05-1:‎operator>]
+[<？title05-1:‎operator>|
 .*	使用できる演算子
-|<？title$index1-4a_‎operator>]
-[<？index1-4a_bracket>|
-.+\.html?	<h4><？title$index1-4a_bracket></h4>
-.*	 <？title$index1-4a_bracket>
-|<？index1-4a_bracket>]
-[<？title$index1-4a_bracket>|
+|<？title05-1:‎operator>]
+[<？index05-1:bracket>|
+.+\.html?	<h4><？title05-1:bracket></h4>
+.*	 <？title05-1:bracket>
+|<？index05-1:bracket>]
+[<？title05-1:bracket>|
 .*	括弧および関数用途の演算子
-|<？title$index1-4a_bracket>]
-[<？index1-4a_nonuse>|
-.+\.html?	<h4><？title$index1-4a_nonuse></h4>
-.*	 <？title$index1-4a_nonuse>
-|<？index1-4a_nonuse>]
-[<？title$index1-4a_nonuse>|
+|<？title05-1:bracket>]
+[<？index05-1:nonuse>|
+.+\.html?	<h4><？title05-1:nonuse></h4>
+.*	 <？title05-1:nonuse>
+|<？index05-1:nonuse>]
+[<？title05-1:nonuse>|
 .*	未実装等で使用できない演算子
-|<？title$index1-4a_nonuse>]
+|<？title05-1:nonuse>]
 
 [<＃contents1-5a>|
 <？P> <？gamepad>の入力をLTSVに変換するモジュールです。<？BR>
@@ -1148,47 +1136,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |LTsv_glyph.py]
 
 
-[<？index1-3a>|
-.+\.html?	<a href="<？url$index1-3a>" title="<？title$index1-3a>"><？title$index1-3a></a>
-.*	<？title$index1-3a>
-|<？index1-3a>]
-[<？url$index1-3a>|
-.*	#index1-3a
-|<？url$index1-3a>]
-[<？title$index1-3a>|
-.*	１-3a．「LTsv_time.py」の関数一覧
-|<？title$index1-3a>]
-[<？index1-3b>|
-.+\.html?	<a href="<？url$index1-3b>" title="<？title$index1-3b>"><？title$index1-3b></a>
-.*	<？title$index1-3b>
-|<？index1-3b>]
-[<？url$index1-3b>|
-.*	#index1-3b
-|<？url$index1-3b>]
-[<？title$index1-3b>|
-.*	１-3b．日時フォーマットの概要
-|<？title$index1-3b>]
 
-[<？index1-4a>|
-.+\.html?	<a href="<？url$index1-4a>" title="<？title$index1-4a>"><？title$index1-4a></a>
-.*	<？title$index1-4a>
-|<？index1-4a>]
-[<？url$index1-4a>|
-.*	#index1-4a
-|<？url$index1-4a>]
-[<？title$index1-4a>|
-.*	１-4a．「LTsv_calc.py」の関数一覧
-|<？title$index1-4a>]
-[<？index1-4b>|
-.+\.html?	<a href="<？url$index1-4b>" title="<？title$index1-4b>"><？title$index1-4b></a>
-.*	<？title$index1-4b>
-|<？index1-4b>]
-[<？url$index1-4b>|
-.*	#index1-4b
-|<？url$index1-4b>]
-[<？title$index1-4b>|
-.*	１-4b．電卓フォーマットの概要
-|<？title$index1-4b>]
 
 [<？index1-5a>|
 .+\.html?	<a href="<？url$index1-5a>" title="<？title$index1-5a>"><？title$index1-5a></a>
