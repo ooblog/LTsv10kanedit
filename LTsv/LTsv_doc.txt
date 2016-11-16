@@ -1,7 +1,7 @@
-「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
-このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
+「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161116W132017
+modify 20161117R020215
 
 
 目次
@@ -34,18 +34,15 @@ modify 20161116W132017
    MIT License - Choose a License
    http://choosealicense.com/licenses/mit/
 
- ※「MIT License」の日本語訳。
-   MIT License - Choose a License
-   https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
+   licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+   https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
 
- ※日本語による補足。
-   ・複製物にも「MIT License」の「LICENSE」ファイルを添付る事(著作権表示を誤魔化さない事)。
-   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。
-   ・ソースコードの閲覧やコピーに制限を設けない事。
+ ※口語的説明。
+   ・LICENSEも含めソースコードの閲覧やコピーに制限を設けない事。
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。
 
- ※「kanedit」固有の問題への言及。
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。
-
+ ※「LTsv10kanedit(tsvtool10)」固有の問題への言及。
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
@@ -54,7 +51,6 @@ modify 20161116W132017
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
  Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index3-0>」も参考)。
-
 
 ⓪-2．その他現在わかっている不具合や今後の課題
 
@@ -66,7 +62,6 @@ modify 20161116W132017
  Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
-
 
 ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
 

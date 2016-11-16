@@ -10,10 +10,10 @@
 <header>
 <h1>LTsv10kanedit(tsvtool10)モジュール解説(「LTsv/LTsv_doc.tsv」を「LTsv/LTsv_doc.py」で「docs/LTsv.html」に変換)</h1>
 <p>
-「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。<br />
-このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
+「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
+このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161116W132017<br />
+modify 20161117R020215<br />
 </p>
 
 <h2>目次</h2>
@@ -52,25 +52,21 @@ modify 20161116W132017<br />
  ※「MIT License」準拠。<br />
 </p>
 <dl><dt>MIT License - Choose a License</dt><dd><a href="http://choosealicense.com/licenses/mit/" title="MIT License - Choose a License">http://choosealicense.com/licenses/mit/</a></dd></dl>
+<dl><dt>licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN</dt><dd><a href="https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license" title="licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN">https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license</a></dd></dl>
 <p>
- ※「MIT License」の日本語訳。<br />
-</p>
-<dl><dt>MIT License - Choose a License</dt><dd><a href="https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license" title="MIT License - Choose a License">https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license</a></dd></dl>
-<p>
- ※日本語による補足。<br />
-   ・複製物にも「MIT License」の「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE">LICENSE</a>」ファイルを添付る事(著作権表示を誤魔化さない事)。<br />
-   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<br />
-   ・ソースコードの閲覧やコピーに制限を設けない事。<br />
+ ※口語的説明。<br />
+   ・<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE">LICENSE</a>も含めソースコードの閲覧やコピーに制限を設けない事。<br />
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。<br />
 </p><p>
- ※「kanedit」固有の問題への言及。<br />
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<br />
+ ※「LTsv10kanedit(tsvtool10)」固有の問題への言及。<br />
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<br />
 </p>
 
 </section>
 <section>
  <h3><a name="index00-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></h3>
 <p>
- ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
+ ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<br />
  Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
@@ -1636,7 +1632,7 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 </section>
 
 <footer>
- <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:">https://github.com/ooblog/LTsv10kanedit</a></p>
+ <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
  <p># Copyright (c) 2016 ooblog<br />
 # License: MIT<br />
 # <a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit">https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE</a><br />

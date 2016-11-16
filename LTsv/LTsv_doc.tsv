@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161116W132018
+modify	20161117R020217
 |L:Tsv]
 
 [LTsv_doc|
@@ -154,7 +154,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 </section>
 
 <footer>
- <p>site generator "<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>" repository：<？https://github.com/ooblog/LTsv10kanedit></p>
+ <p>site generator "<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
  <p><？ooblog></p>
 </footer>
 </body></html>
@@ -205,8 +205,8 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 |<？title>]
 
 [<＃summary>|
-<？P>「LTsv_doc」は「<？LTsv>」を用いたドキュメント生成ツールです。<？BR>
-このモジュール解説文書「<？outlist>」も「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>」を使って「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<？BR>
+<？P>「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。<？BR>
+このモジュール解説文書「<？outlist>」は「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>」を使って「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<？BR>
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
@@ -217,7 +217,7 @@ modify <？modify><？BR><？/P>
 |<？index00-0>*<？index00-1>*<？index00-2>]
 [<？section00-0>*<？section00-1>*<？section00-2>|
 .+\.html?	<section>@E <h3><a name="index00-@c"><？title00-@c></a></h3>@E<＃contents00-@c>@E</section>@E
-.*	@E<？title00-@c>@E@E<＃contents00-@c>@E
+.*	@E<？title00-@c>@E@E<＃contents00-@c>
 |<？section00-0>*<？section00-1>*<？section00-2>]
 
 [<？title00-0>|
@@ -226,15 +226,13 @@ modify <？modify><？BR><？/P>
 [<＃contents00-0>|
 <？P> ※「MIT License」準拠。<？BR><？/P>
 <？https00-0:mit>
-<？P> ※「MIT License」の日本語訳。<？BR><？/P>
 <？https00-0:osdn>
-<？P> ※日本語による補足。<？BR>
-   ・複製物にも「MIT License」の「<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>」ファイルを添付る事(著作権表示を誤魔化さない事)。<？BR>
-   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。<？BR>
-   ・ソースコードの閲覧やコピーに制限を設けない事。<？BR>
+<？P> ※口語的説明。<？BR>
+   ・<？https99-0:LICENSE>も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR>
 <？/PP>
- ※「kanedit」固有の問題への言及。<？BR>
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。<？BR><？/P>
+ ※「<？LTsv>」固有の問題への言及。<？BR>
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
 |<＃contents00-0>]
 [<？https00-0:mit>|
 .+\.html?	<dl><dt><？title00-0:mit></dt><dd><a href="<？url00-0:mit>" title="<？title00-0:mit>"><？url00-0:mit></a></dd></dl>
@@ -251,17 +249,17 @@ modify <？modify><？BR><？/P>
 .*	   <？title00-0:osdn><？BR>@E   <？url00-0:osdn><？BR>@E
 |<？https00-0:osdn>]
 [<？url00-0:osdn>|
-.*	https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
+.*	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
 |<？url00-0:osdn>]
 [<？title00-0:osdn>|
-.*	MIT License - Choose a License
+.*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
 |<？title00-0:osdn>]
 
 [<？title00-1>|
 .*	⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 |<？title00-1>]
 [<＃contents00-1>|
-<？P> ダウンロードは「<？https://github.com/ooblog/LTsv10kanedit>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
+<？P> ダウンロードは「<？https99-9:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<？BR>
  Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
@@ -298,31 +296,32 @@ modify <？modify><？BR><？/P>
 <？P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<？BR>
  素のLTSVファイル自体は単なるログのフォーマットです。<？BR>
 <？/P>
-<？http://ltsv.org/>
-<？http://d.hatena.ne.jp/naoya/20130209/1360381374>
+<？https01-0:ltsvorg>
+<？https01-0:ltsvfaq>
 <？P> 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<？BR>
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<？BR>
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<？BR><？/P>
 |<＃contents01-0>]
-[<？http://ltsv.org/>|
-.+\.html?	<dl><dt><？title$http://ltsv.org/></dt><dd><a href="<？url$http://ltsv.org/>" title="<？title$http://ltsv.org/>"><？url$http://ltsv.org/></a></dd></dl>
-.*	   <？title$http://ltsv.org/><？BR>@E   <？url$http://ltsv.org/><？BR>@E
-|<？http://ltsv.org/>]
-[<？url$http://ltsv.org/>|
+[<？https01-0:ltsvorg>|
+.+\.html?	<dl><dt><？title01-0:ltsvorg></dt><dd><a href="<？url01-0:ltsvorg>" title="<？title01-0:ltsvorg>"><？url01-0:ltsvorg></a></dd></dl>
+.*	   <？title01-0:ltsvorg><？BR>@E   <？url01-0:ltsvorg><？BR>@E
+|<？https01-0:ltsvorg>]
+[<？url01-0:ltsvorg>|
 .*	http://ltsv.org/
-|<？url$http://ltsv.org/>]
-[<？title$http://ltsv.org/>|
+|<？url01-0:ltsvorg>]
+[<？title01-0:ltsvorg>|
 .*	Labeled Tab-separated Values (LTSV)
-|<？title$http://ltsv.org/>]
-[<？http://d.hatena.ne.jp/naoya/20130209/1360381374>|
-.+\.html?	<dl><dt><？title$http://d.hatena.ne.jp/naoya/20130209/1360381374></dt><dd><a href="<？url$http://d.hatena.ne.jp/naoya/20130209/1360381374>" title="<？title$http://d.hatena.ne.jp/naoya/20130209/1360381374>"><？url$http://d.hatena.ne.jp/naoya/20130209/1360381374></a></dd></dl>
-.*	   <？title$http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>@E   <？url$http://d.hatena.ne.jp/naoya/20130209/1360381374><？BR>@E
-|<？http://d.hatena.ne.jp/naoya/20130209/1360381374>]
-[<？url$http://d.hatena.ne.jp/naoya/20130209/1360381374>|
+|<？title01-0:ltsvorg>]
+[<？https01-0:ltsvfaq>|
+.+\.html?	<dl><dt><？title01-0:ltsvfaq></dt><dd><a href="<？url01-0:ltsvfaq>" title="<？title01-0:ltsvfaq>"><？url01-0:ltsvfaq></a></dd></dl>
+.*	   <？title01-0:ltsvfaq><？BR>@E   <？url01-0:ltsvfaq><？BR>@E
+|<？https01-0:ltsvfaq>]
+[<？url01-0:ltsvfaq>|
 .*	http://d.hatena.ne.jp/naoya/20130209/1360381374
-|<？url$http://d.hatena.ne.jp/naoya/20130209/1360381374>]
-[<？title$http://d.hatena.ne.jp/naoya/20130209/1360381374>|
+|<？url01-0:ltsvfaq>]
+[<？title01-0:ltsvfaq>|
 .*	LTSV FAQ - LTSV って何? どういうところが良いの?
+|<？title01-0:ltsvfaq>]
 |<？title$http://d.hatena.ne.jp/naoya/20130209/1360381374>]
 
 [<？title01-1>|
@@ -1212,7 +1211,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？title$index1-7b>]
 
 [<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>|
-.+\.html?	<a href="<？url$https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_tsv>" title="<？url$https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_tsv>"><？LTsv/LTsv_doc_tsv></a>
+.+\.html?	<a href="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_tsv>" title="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_tsv>"><？LTsv/LTsv_doc_tsv></a>
 .*	LTsv/LTsv_doc.tsv
 |<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>]
 [<？LTsv/LTsv_doc_tsv>|
@@ -1220,53 +1219,52 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 |<？LTsv/LTsv_doc_tsv>]
 
 [<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>|
-.+\.html?	<a href="<？url$https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_py>" title="<？url$https://github.com/ooblog/LTsv10kanedit>/<？LTsv/LTsv_doc_py>"><？LTsv/LTsv_doc_py></a>
+.+\.html?	<a href="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_py>" title="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_py>"><？LTsv/LTsv_doc_py></a>
 .*	LTsv/LTsv_doc.py
 |<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>]
 [<？LTsv/LTsv_doc_py>|
 .*	LTsv/LTsv_doc.py
 |<？LTsv/LTsv_doc_py>]
 
-[<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>|
-.+\.html?	<a href="<？url$https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>" title="<？url$https://github.com/ooblog/LTsv10kanedit>/<？blob/master/LICENSE>">LICENSE</a>
+[<？https99-0:LICENSE>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/<？title99-0:LICENSE>" title="<？url99-9:LTsv10repository>/<？title99-0:LICENSE>">LICENSE</a>
 .*	LICENSE
-|<？github:ooblog/LTsv10kanedit/blob/master/LICENSE>]
-[<？blob/master/LICENSE>|
+|<？https99-0:LICENSE>]
+[<？title99-0:LICENSE>|
 .*	blob/master/LICENSE
-|<？blob/master/LICENSE>]
+|<？title99-0:LICENSE>]
 
 [<？ooblog>|
-.+\.html?	# <？Copyright><？BR>@E# <？LicenseMIT><？BR>@E# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE><？BR>@E
-.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>@E
+.+\.html?	# <？Copyright><？BR>@E# <？LicenseMIT><？BR>@E# <？https99-9:LTsv10LICENSE><？BR>@E
+.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https99-9:LTsv10LICENSE>@E
 |<？ooblog>]
+[<？https99-9:LTsv10LICENSE>|
+.+\.html?	<a href="<？url99-9:LTsv10LICENSE>" title="<？title99-9:LTsv10LICENSE>"><？url99-9:LTsv10LICENSE></a>
+.*	<？url99-9:LTsv10LICENSE>
+|<？https99-9:LTsv10LICENSE>]
+[<？url99-9:LTsv10LICENSE>|
+.*	https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+|<？url99-9:LTsv10LICENSE>]
+[<？title99-9:LTsv10LICENSE>|
+.*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
+|<？title99-9:LTsv10LICENSE>]
+[<？https99-9:LTsv10repository>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>" title="<？title99-9:LTsv10repository>"><？url99-9:LTsv10repository></a>
+.*	<？url99-9:LTsv10repository>
+|<？https99-9:LTsv10repository>]
+[<？url99-9:LTsv10repository>|
+.*	https://github.com/ooblog/LTsv10kanedit
+|<？url99-9:LTsv10repository>]
+[<？title99-9:LTsv10repository>|
+.*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
+|<？title99-9:LTsv10repository>]
+
 [<？Copyright>|
 .*	Copyright (c) 2016 ooblog
 |<？Copyright>]
 [<？LicenseMIT>|
 .*	License: MIT
 |<？LicenseMIT>]
-[<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
-.+\.html?	<a href="<？url$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>" title="<？title$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>"><？url$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE></a>
-.*	<？url$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>
-|<？https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
-[<？url$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
-.*	https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
-|<？url$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
-[<？title$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>|
-.*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
-|<？title$https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE>]
-
-[<？https://github.com/ooblog/LTsv10kanedit>|
-.+\.html?	<a href="<？url$https://github.com/ooblog/LTsv10kanedit>" title="<？title$https://github.com/ooblog/LTsv10kanedit>"><？url$https://github.com/ooblog/LTsv10kanedit></a>
-.*	<？url$https://github.com/ooblog/LTsv10kanedit>
-|<？https://github.com/ooblog/LTsv10kanedit>]
-[<？url$https://github.com/ooblog/LTsv10kanedit>|
-.*	https://github.com/ooblog/LTsv10kanedit
-|<？url$https://github.com/ooblog/LTsv10kanedit>]
-[<？title$https://github.com/ooblog/LTsv10kanedit>|
-.*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。:
-|<？title$https://github.com/ooblog/LTsv10kanedit>]
-
 [<？LTsv>|
 .*	LTsv10kanedit(tsvtool10)
 |<？LTsv>]

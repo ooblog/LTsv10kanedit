@@ -38,17 +38,15 @@ version(branch) 20161023U011852
    MIT License - Choose a License
    http://choosealicense.com/licenses/mit/
 
- ※「MIT License」の日本語訳。
    licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
    https://osdn.jp/projects/opensource/wiki/licenses%2FMIT_license
 
- ※日本語による補足。
-   ・複製物にも「MIT License」の[LICENSE]ファイルを添付る事(著作権表示を誤魔化さない事)。
-   ・いかなる場合においても作者または著作権所有者は一切責任を負わない事。
-   ・ソースコードの閲覧やコピーに制限を設けない事。
+ ※口語的説明。
+   ・LICENSEも含めソースコードの閲覧やコピーに制限を設けない事。
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。
 
- ※「kantray」固有の問題への言及。
-   ・辞書などの翻訳ミスもしくは言い回しが古くなるなどの人間語の方の不具合に対してもメンテナンス義務はありません。
+ ※「kanedit」固有の問題への言及。
+   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。
 
 
 ０-1． インストール＆アンインストール方法・その他セットアップ方法
