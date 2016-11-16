@@ -107,6 +107,7 @@ LTsv/testfile/
 LTsv/kanpickle.bin
 LTsv/LTsv_debug.tsv
 LTsv/LTsv_debug.txt
+LTsv/LTsv_debug.html
 kanzip/
 kanmap/
 LTsv_soundtest.py

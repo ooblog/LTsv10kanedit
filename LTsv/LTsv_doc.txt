@@ -1,7 +1,7 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161116W090018
+modify 20161116W094426
 
 
 目次
@@ -25,6 +25,7 @@ modify 20161116W090018
  １-6b．「LTsv_kbd.tsv」のタグ解説
  １-7a．「LTsv_gui.py」の関数一覧
  １-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
+ 
 
 ０-0． ライセンス及びソフトの使用の補足ガイドライン
 

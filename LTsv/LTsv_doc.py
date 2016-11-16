@@ -22,7 +22,7 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
     LTsv_settimerCounter(0)
     if '\t' in LTsvDOC_tagpage:
-        LTsvDOC_tagnamesL=LTsvDOC_tagnames.split(LTsvDOClaunch_tagseparate)
+        LTsvDOC_tagnamesL=LTsvDOC_tagnames.split(LTsvDOClaunch_tagseparate) if len(LTsvDOClaunch_tagseparate) > 0 else [LTsvDOC_tagnames]
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,"".join(LTsvDOC_tagnamesL))
         for LTsvDOC_tagname in LTsvDOC_tagnamesL:
             if len(LTsvDOC_tagname) == 0: continue;
@@ -118,6 +118,7 @@ LTsvDOClaunch_LTsvver="<！L:TsvLTsvver>"
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_mainname
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
+    global LTsvDOClaunch_tagseparate
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     global LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR
     global LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast
@@ -135,6 +136,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_defdir=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"defdir",os.path.dirname(os.path.normpath(LTsvDOClaunch_tsvname))))
         LTsvDOClaunch_mainname=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_mainname,"<#LTsv_doc_main>")
+        LTsvDOClaunch_tagseparate=LTsv_readlinerest(LTsvDOClaunch_config,"tagseparate","*")
         LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag","L:<！\tR:>"),"L","R"),2)
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<！firstL>\tfirstR:<！firstR>\trestL:<！restL>\trestC:<！restC>\trestR:<！restR>\trestRLast:<！restRLast>"),"firstL","firstR","restL","restC","restR","restRLast"),6)

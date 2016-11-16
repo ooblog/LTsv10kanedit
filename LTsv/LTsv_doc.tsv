@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161116W090020
+modify	20161116W094427
 |L:Tsv]
 
 [LTsv_doc|
@@ -13,6 +13,7 @@ window_size	width:600	height:480	wait:100	fontsize:24
 tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	LTsv_debug.tsv
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 main	<＃LTsv_doc_main>
+tagseparate	*
 outdir	./
 outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
 defdir	./
@@ -35,10 +36,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 目次
 
- <？index0-0>
- <？index0-1>
- <？index0-2>
- <？index1-0a>
+<？index0-0>*<？index0-1>*<？index0-2> <？index1-0a>
  <？index1-0b>
  <？index1-1a>
  <？index1-1b>
@@ -54,19 +52,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <？index1-6b>
  <？index1-7a>
  <？index1-7b>
-
-<？index0-0>
-
-<＃contents0-0>
-
-<？index0-1>
-
-<＃contents0-1>
-
-<？index0-2>
-
-<＃contents0-2>
-
+ 
+<？section0-0>*<？section0-1>*<？section0-2>
 <？index1-0a>
 
 <＃contents1-0a>
@@ -150,10 +137,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <＃summary>
 <h2>目次</h2>
 <ul>
- <li><？index0-0></li>
- <li><？index0-1></li>
- <li><？index0-2></li>
- <li><？index1-0a></li>
+<？index0-0>*<？index0-1>*<？index0-2> <li><？index1-0a></li>
  <li><？index1-0b></li>
  <li><？index1-1a></li>
  <li><？index1-1b></li>
@@ -172,20 +156,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 </ul>
 </header>
 
-<section>
-<h3><a name="index0-0"><？title$index0-0></a></h3>
-<＃contents0-0>
-</section>
-
-<section>
-<h3><a name="index0-1"><？title$index0-1></a></h3>
-<＃contents0-1>
-</section>
-
-<section>
-<h3><a name="index0-2"><？title$index0-2></a></h3>
-<＃contents0-2>
-</section>
+<？section0-0>*<？section0-1>*<？section0-2>
 
 <section>
 <h3><a name="index1-0a"><？title$index1-0a></a></h3>
@@ -324,6 +295,25 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
+
+
+[<？index0-0>*<？index0-1>*<？index0-2>|
+.+\.html?	 <li><a href="#index0-@c" title="<？title0-@c>"><？title0-@c></a></li>@E
+.*	 <？title0-@c>@E
+|<？index0-0>*<？index0-1>*<？index0-2>]
+[<？section0-0>*<？section0-1>*<？section0-2>|
+.+\.html?	<section>@E <h3><a name="index0-@c"><？title0-@c></a></h3>@E<＃contents0-@c>@E</section>@E
+.*	@E<？title0-@c>@E@E<＃contents0-@c>@E
+|<？section0-0>*<？section0-1>*<？section0-2>]
+[<？title0-0>|
+.*	０-0． ライセンス及びソフトの使用の補足ガイドライン
+|<？title0-0>]
+[<？title0-1>|
+.*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
+|<？title0-1>]
+[<？title0-2>|
+.*	０-2． その他現在わかっている不具合や今後の課題
+|<？title0-2>]
 
 [<＃contents0-0>|
 <？P> ※「MIT License」準拠。<？BR><？/P>
@@ -1159,36 +1149,8 @@ debug_configload()
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
 
-[<？index0-0>|
-.+\.html?	<a href="<？url$index0-0>" title="<？title$index0-0>"><？title$index0-0></a>
-.*	<？title$index0-0>
-|<？index0-0>]
-[<？url$index0-0>|
-.*	#index0-0
-|<？url$index0-0>]
-[<？title$index0-0>|
-.*	０-0． ライセンス及びソフトの使用の補足ガイドライン
-|<？title$index0-0>]
-[<？index0-1>|
-.+\.html?	<a href="<？url$index0-1>" title="<？title$index0-1>"><？title$index0-1></a>
-.*	<？title$index0-1>
-|<？index0-1>]
-[<？url$index0-1>|
-.*	#index0-1
-|<？url$index0-1>]
-[<？title$index0-1>|
-.*	０-1． インストール(ダウンロード・アンインストール)＆セットアップ
-|<？title$index0-1>]
-[<？index0-2>|
-.+\.html?	<a href="<？url$index0-2>" title="<？title$index0-2>"><？title$index0-2></a>
-.*	<？title$index0-2>
-|<？index0-2>]
-[<？url$index0-2>|
-.*	#index0-2
-|<？url$index0-2>]
-[<？title$index0-2>|
-.*	０-2． その他現在わかっている不具合や今後の課題
-|<？title$index0-2>]
+
+
 
 [<？index1-0a>|
 .+\.html?	<a href="<？url$index1-0a>" title="<？title$index1-0a>"><？title$index1-0a></a>
