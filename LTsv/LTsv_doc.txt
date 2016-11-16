@@ -1,19 +1,21 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメント生成ツールです。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161116W094426
+modify 20161116W114416
 
 
 目次
 
- ０-0． ライセンス及びソフトの使用の補足ガイドライン
- ０-1． インストール(ダウンロード・アンインストール)＆セットアップ
- ０-2． その他現在わかっている不具合や今後の課題
- １-0a．「L:Tsv」と「LTSV」の違い
- １-0b．「L:Tsv」ファイルの構造
- １-1a．「LTsv_printf.py」の関数一覧
- １-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
- １-2． 「LTsv_file.py」の関数一覧
+ ⓪-0．ライセンス及びソフトの使用の補足ガイドライン
+ ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
+ ⓪-2．その他現在わかっている不具合や今後の課題
+ ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
+ ①-1．「L:Tsv」ファイルの構造
+ ②-0．「LTsv_printf.py」の関数一覧
+ ②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+ ③-0．「LTsv_file.py」の関数一覧
+
+ <？index1-2>
  １-3a．「LTsv_time.py」の関数一覧
  １-3b．日時フォーマットの概要
  １-4a．「LTsv_calc.py」の関数一覧
@@ -27,7 +29,7 @@ modify 20161116W094426
  １-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
  
 
-０-0． ライセンス及びソフトの使用の補足ガイドライン
+⓪-0．ライセンス及びソフトの使用の補足ガイドライン
 
  ※「MIT License」準拠。
    MIT License - Choose a License
@@ -46,16 +48,16 @@ modify 20161116W094426
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど人間語不具合に対してもメンテナンス義務はありません。
 
 
-０-1． インストール(ダウンロード・アンインストール)＆セットアップ
+⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
- Wineを使う予定がある場合は「wine_sh」フォルダ内の[*.sh]のWineパスを適宜修正。
+ Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index3-0>」も参考)。
 
 
-０-2． その他現在わかっている不具合や今後の課題
+⓪-2．その他現在わかっている不具合や今後の課題
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
@@ -67,7 +69,7 @@ modify 20161116W094426
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
 
 
-１-0a．「L:Tsv」と「LTSV」の違い
+①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
 
  データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。
  素のLTSVファイル自体は単なるログのフォーマットです。
@@ -83,7 +85,7 @@ modify 20161116W094426
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
 
 
-１-0b．「L:Tsv」ファイルの構造
+①-1．「L:Tsv」ファイルの構造
 
   データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。
  先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。
@@ -103,10 +105,10 @@ modify 20161116W094426
    modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
   |L:Tsv]                    メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「１-2． 「LTsv_file.py」の関数一覧」も参考。
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index1-2>」も参考。
 
 
-１-1a．「LTsv_printf.py」の関数一覧
+②-0．「LTsv_printf.py」の関数一覧
 
  Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
  ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
@@ -135,7 +137,7 @@ modify 20161116W094426
 
  【LTsv_kanare(LTsv_before,LTsv_recase)】
   全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。
-  変換辞書LTsv_recaseのパラメータは「１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧」を参考。
+  変換辞書LTsv_recaseのパラメータは「<？index1-1b>」を参考。
 
  【LTsv_utf2ink(LTsv_text)】
   UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。
@@ -150,7 +152,7 @@ modify 20161116W094426
   「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
 
 
-１-1b．「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 
    "Hira2Kata"         ひらがなをカタカナに。
    "Kata2Hira"         カタカナをひらがなに。
@@ -171,18 +173,18 @@ modify 20161116W094426
    "Alpha2ZENYen"      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
 
 
-１-2． 「LTsv_file.py」の関数一覧
+③-0．「LTsv_file.py」の関数一覧
 
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)に変換させる事で(変換できない文字は数値文字参照)漢字をある程度扱えるようになります。
- ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
- ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+ 「L;Tsv」ファイルの基本的な読み書きモジュールです。
+ ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。
+ ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。
+ ・modify項目で「LTsv_getdaytimestr()」を使うので「LTsv_time.py」モジュールも必要。
 
  【LTsv_newfile(LTsv_program,LTsv_default=None)】
   「L:Tsv」ファイルを変数上に作成する。
    LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。
   LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。
-  メタタグについては「１-0b．「L:Tsv」ファイルの構造」も参考。
+  メタタグについては「<？index1-0b>」も参考。
 
  【LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)】
   ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。
@@ -358,6 +360,8 @@ modify 20161116W094426
 
  【LTsv_issue()】
   「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
+
+
 
 
 １-3a．「LTsv_time.py」の関数一覧
@@ -1366,10 +1370,11 @@ modify 20161116W094426
   「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「１-6a．「LTsv_kbd.py」の関数一覧」を参考。
 
  【debug_filedialog(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。「filedialog」の表示テスト。
 
  【debug_filedialog_response(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。「filedialog」のレスポンステスト。
+  「GTK2」で「GTK_RESPONSE_ACCEPT」を取り出す方法が不明なので、ファイルダイアログのキャンセル方法が不明。
 
 
 １-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
