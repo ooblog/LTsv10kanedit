@@ -1,7 +1,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161117R020215
+modify 20161118F070334
 
 
 目次
@@ -18,15 +18,19 @@ modify 20161117R020215
  ④-1．日時フォーマットの概要
  ⑤-0．「LTsv_calc.py」の関数一覧
  ⑤-1．電卓フォーマットの概要
+ ⑥-0．「LTsv_joy.py」の関数一覧
+ ⑥-1．「LTsv_joy.tsv」のタグ解説
+ ⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧
+ ⑦-0．「LTsv_kbd.py」の関数一覧
+ ⑦-1．「LTsv_kbd.tsv」のタグ解説
+ ⑧-0．「LTsv_gui.py」の関数一覧
+ ⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
+ ⑨-0．「LTsv_glyph.py」の関数一覧
+ ⑨-1．「LTsv_glyph.tsv」のタグ解説
+ ⑨-2．漢直鍵盤の操作方法
+ ⑨-3．テキスト入力欄(電卓)の操作方法
+ ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
 
- １-5a．「LTsv_joy.py」の関数一覧
- １-5b．「LTsv_joy.tsv」のタグ解説
- １-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧
- １-6a．「LTsv_kbd.py」の関数一覧
- １-6b．「LTsv_kbd.tsv」のタグ解説
- １-7a．「LTsv_gui.py」の関数一覧
- １-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
- 
 
 ⓪-0．ライセンス及びソフトの使用の補足ガイドライン
 
@@ -38,11 +42,12 @@ modify 20161117R020215
    https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
 
  ※口語的説明。
-   ・LICENSEも含めソースコードの閲覧やコピーに制限を設けない事。
+   ・<？path99-0:LTsvFiles04>も含めソースコードの閲覧やコピーに制限を設けない事。
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。
 
  ※「LTsv10kanedit(tsvtool10)」固有の問題への言及。
    ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。
+
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
@@ -50,7 +55,8 @@ modify 20161117R020215
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
  Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index3-0>」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。
+
 
 ⓪-2．その他現在わかっている不具合や今後の課題
 
@@ -62,6 +68,7 @@ modify 20161117R020215
  Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+
 
 ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
 
@@ -99,7 +106,7 @@ modify 20161117R020215
    modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
   |L:Tsv]                    メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index1-2>」も参考。
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「③-0．「LTsv_file.py」の関数一覧」も参考。
 
 
 ②-0．「LTsv_printf.py」の関数一覧
@@ -131,7 +138,7 @@ modify 20161117R020215
 
  【LTsv_kanare(LTsv_before,LTsv_recase)】
   全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。
-  変換辞書LTsv_recaseのパラメータは「<？index1-1b>」を参考。
+  変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。
 
  【LTsv_utf2ink(LTsv_text)】
   UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。
@@ -178,7 +185,7 @@ modify 20161117R020215
   「L:Tsv」ファイルを変数上に作成する。
    LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。
   LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。
-  メタタグについては「<？index1-0b>」も参考。
+  メタタグについては「<？index01-1>」も参考。
 
  【LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)】
   ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。
@@ -421,7 +428,7 @@ modify 20161117R020215
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
   日付フォーマットtimeformatを各種日時変数で置換する。
   timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。
-  日付フォーマットの概要は「<？index1-3b>」を参照。
+  日付フォーマットの概要は「<？index04-1>」を参照。
 
  【LTsv_settimershift()】
   日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。
@@ -532,7 +539,7 @@ modify 20161117R020215
 
 ⑤-0．「LTsv_calc.py」の関数一覧
 
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。
+ 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index05-1>」を参照。
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。
 
@@ -554,7 +561,7 @@ modify 20161117R020215
  【LTsv_calc(LTsv_calcQbase)】
   電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。
   LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。
-  電卓フォーマットの概要は「<？index1-4b>」を参照。
+  電卓フォーマットの概要は「<？index05-1>」を参照。
 
  【LTsv_calc_function(LTsv_calcQbase)】
   主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。
@@ -613,16 +620,14 @@ modify 20161117R020215
   √                                平方根に使う予定の演算子。分数電卓なので無理数などの扱いに困ってる。
 
 
-
-
-１-5a．「LTsv_joy.py」の関数一覧
+⑥-0．「LTsv_joy.py」の関数一覧
 
  ジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。
  ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。
  
  【LTsv_joyreset(LTsv_tsvpath)】
-  「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「１-5b．「LTsv_joy.tsv」のタグ解説」。
+  「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。
 
  【LTsv_joyexit()】
   ジョイスティック(ゲームPAD)の変数初期化です。Linuxではデバイスをクローズします。
@@ -639,7 +644,7 @@ modify 20161117R020215
  【LTsv_getjoystr(LTsv_joyid,joyformat=None)】
   スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。
   LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。
-  項目一覧の詳細は「１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧」。
+  項目一覧の詳細は「<？index06-2>」。
 
  【LTsv_atanscalar(LTsv_atanX,LTsv_atanY)】
   スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。
@@ -653,7 +658,7 @@ modify 20161117R020215
   「LTsv_getjoystr()」でどのaxisを取得するべきかの調査用途。
 
 
-１-5b．「LTsv_joy.tsv」のタグ解説
+⑥-1．「LTsv_joy.tsv」のタグ解説
 
  【[LTsv_deviceL|】
   Linuxのデバイス指定ページ。
@@ -696,7 +701,7 @@ modify 20161117R020215
   いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\tR2\tL3\tR3\tS\tO\tP」。。
 
 
-１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧
+⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧
 
   status           axis最大値とボタン最大値。2項目。axis最大値はWindowsとLinuxでズレる場合があります。ループ内省略推奨。
   button           ボタンが押されてれば1。押されてなければ0。データ項目はボタンの個数分。WindowsとLinuxで共通。
@@ -704,7 +709,7 @@ modify 20161117R020215
   axisW            Windows版はPOVが1軸扱いですがスクリプト側で2軸に変換。通常6項目。
 
 
-１-6a．「LTsv_kbd.py」の関数一覧
+⑦-0．「LTsv_kbd.py」の関数一覧
 
  PCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。
@@ -717,8 +722,6 @@ modify 20161117R020215
 
  【LTsv_kbdreset(LTsv_tsvpath)】
    [LTsv_kbd.tsv]からモジュールの初期設定や、キーコード($00〜$FF)に名付けたキー名称を読み込む。
-  デバイスの検出方法に改善の余地がある予感。
-  詳細は「１-6b．「LTsv_kbd.tsv」のタグ解説」。
 
  【LTsv_kbdgettypename(LTsv_code)】
   キーコード($00〜$FF)をキー名称に変換。ひらがなキー名称は用いない。
@@ -738,7 +741,7 @@ modify 20161117R020215
  【LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)】
   PCキーボードの準備です。Linuxではデバイスをオープンします。
   Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。
-  マウスボタンの配置は「１-6b．「LTsv_kbd.tsv」のタグ解説」を参考。
+  マウスボタンの配置は「<？index07-1>」を参考。
   Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
 
  【LTsv_kbdEVIOCGRAB(LTsv_grabflag)】
@@ -772,7 +775,7 @@ modify 20161117R020215
   押されたPCキーボードのかな文字を返す。かな以外だと押されたPCキーボードのキーコード($00〜$FF)を返す。
 
 
-１-6b．「LTsv_kbd.tsv」のタグ解説
+⑦-1．「LTsv_kbd.tsv」のタグ解説
 
  【[LTsv_deviceL|】
   Linuxのデバイス指定。
@@ -820,7 +823,7 @@ modify 20161117R020215
   ※この項目はページ全体がLTSVです。
 
 
-１-7a．「LTsv_gui.py」の関数一覧
+⑧-0．「LTsv_gui.py」の関数一覧
 
  ウィンドウなどGUIオブジェクト(widget)を設置するモジュールです。
  ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。
@@ -921,7 +924,7 @@ modify 20161117R020215
   「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
 
  【LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)】
-  詳細は「１-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧」参考。
+  詳細は「<？index08-1>」参考。
 
  【LTsv_fonttuple(LTsv_line)】
   「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
@@ -1242,11 +1245,11 @@ modify 20161117R020215
 
  【LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)】
   「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。
-  グリフでのテキスト描画は「<？index1-8a>」を参考。
+  グリフでのテキスト描画は「⑨-0．「LTsv_glyph.py」の関数一覧」を参考。
 
  【LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)】
   「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。
-  「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<？index1-8a>」も参考。
+  「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「⑨-0．「LTsv_glyph.py」の関数一覧」も参考。
 
  【LTsv_draw_text_shell(LTsv_GUI)】
   「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。
@@ -1357,11 +1360,11 @@ modify 20161117R020215
 
  【debug_keypress(window_objvoid=None,window_objptr=None)】
   単体風テスト専用。PCキーボード入力(押下)の動作検証。
-  「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「１-6a．「LTsv_kbd.py」の関数一覧」を参考。
+  「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv/LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
 
  【debug_keyrelease(window_objvoid=None,window_objptr=None)】
   単体風テスト専用。PCキーボード入力(押上)の動作検証。
-  「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「１-6a．「LTsv_kbd.py」の関数一覧」を参考。
+  「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv/LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
 
  【debug_filedialog(window_objvoid=None,window_objptr=None)】
   単体風テスト専用。「filedialog」の表示テスト。
@@ -1371,7 +1374,7 @@ modify 20161117R020215
   「GTK2」で「GTK_RESPONSE_ACCEPT」を取り出す方法が不明なので、ファイルダイアログのキャンセル方法が不明。
 
 
-１-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
+⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
 
  「LTsv_gui.py」では「GUIオブジェクト(widget)」を「L:Tsv」で管理してます。
  ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。
@@ -1427,6 +1430,422 @@ modify 20161117R020215
    dialog_c(dialog_close)               ファイルダイアログを閉じる時のコールバック関数。
 
 
+⑨-0．「LTsv_glyph.py」の関数一覧
+
+ 「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。
+ ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。
+ ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。
+ ・単体風テストとして漢直鍵盤でリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。
+
+ 【LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)】
+  設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「LTsv/kanchar.tsv」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。
+  「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。
+  「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに漢直鍵盤の倍率が指定できるが後述のテキスト入力欄(電卓)と連携が不十分。
+
+ 【LTsv_global_kandic(new_kandic=None)】
+  単漢字辞書「LTsv/kanchar.tsv」を取得できます。
+  「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+
+ 【LTsv_global_kanmap()】
+  漢字配列「LTsv/kanmap.tsv」を取得できます。
+  「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+
+ 【LTsv_global_kanmapN()】
+  漢字配列のNFER鍵盤の辞書を取得。
+
+ 【LTsv_global_kanmapX()】
+  漢字配列のXFER鍵盤の辞書を取得。
+
+ 【LTsv_global_kanpickle()】
+  グリフの座標データを取得。
+
+ 【LTsv_global_irohatype()】
+  「LTsv/kanmap.tsv」項目名としてのイロハ鍵盤名リスト。
+  通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
+
+ 【LTsv_global_irohatypeN()】
+  NFER鍵盤で表示するかな鍵盤名のリスト。
+  通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,＠,ぷ,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
+
+ 【LTsv_global_irohatypeX()】
+  XFER鍵盤で表示するかな鍵盤名のリスト。
+  通常は「ヌ,フ,ア,ウ,エ,オ,ヤ,ユ,ヨ,ワ,ホ,ヘ,タ,テ,イ,ス,カ,ン,ナ,ニ,ラ,セ,｀,プ,チ,ト,シ,ハ,キ,ク,マ,ノ,リ,レ,ケ,ム,ツ,サ,ソ,ヒ,コ,ミ,モ,ネ,ル,メ,ロ,｜」
+
+ 【LTsv_global_alphatype()】
+  「LTsv/kanmap.tsv」項目名としてのα鍵盤名のリスト。
+  通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
+
+ 【LTsv_global_alphatypeN()】
+  NFER鍵盤で表示するα鍵盤名のリスト。
+  通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
+
+ 【LTsv_global_alphatypeX()】
+  XFER鍵盤で表示するα鍵盤名のリスト。
+  通常は「Α,Β,Γ,Δ,Ε,Ζ,Η,Θ,Ι,Κ,Λ,Μ,Ν,Ξ,Ο,Π,Ρ,Σ,Τ,Υ,Φ,Χ,Ψ,Ω,●,▲,■」
+
+ 【LTsv_global_dictype()】
+  
+
+ 【LTsv_global_glyphtype()】
+  
+
+ 【LTsv_global_choice()】
+  
+
+ 【LTsv_global_choiceN()】
+  
+
+ 【LTsv_global_choiceX()】
+  
+
+ 【LTsv_global_evaltype()】
+  
+
+ 【LTsv_global_irohaalpha()】
+  
+
+ 【LTsv_global_irohaalphaN()】
+  
+
+ 【LTsv_global_irohaalphaX()】
+  
+
+ 【LTsv_global_kbdchars()】
+  
+
+ 【LTsv_global_glyphkbdH()】
+  
+
+ 【LTsv_global_glyphkbdW()】
+  
+
+ 【LTsv_global_glyphkbdF()】
+  
+
+ 【LTsv_global_kbdcursorNone()】
+  
+
+ 【LTsv_glyphSVG5x10x(LTsv_glyph_path)】
+  
+
+ 【LTsv_glyphSVG(LTsv_glyph_path)】
+  
+
+ 【LTsv_glyphpath(glyphcode)】
+  
+
+ 【LTsv_glyphfont_5x5(glyphcode)】
+  
+
+ 【LTsv_glyphfont_comic(glyphcode)】
+  
+
+ 【LTsv_glyphfont_brush(glyphcode)】
+  
+
+ 【LTsv_glyphfont_shell(draw_g="活")】
+  
+
+ 【LTsv_draw_glyphs(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)】
+  
+
+ 【LTsv_draw_glyphsfill(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_g="活",draw_LF=False,draw_HT=False)】
+  
+
+ 【LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活")】
+  
+
+ 【LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False)】
+  
+
+ 【LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")】
+  
+
+ 【LTsv_draw_glyphclockfill(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")】
+  
+
+ 【LTsv_draw_glyphcursor(draw_t="",draw_x=0,draw_y=0,path_z=0,draw_s=0,grid_p=-1,grid_q=-1,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3")】
+  
+
+ 【LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_W="#9F6C00")】
+  
+
+ 【LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,mouse_x=LTsv_PSchar_ZW//2,mouse_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活")】
+  
+
+ 【LTsv_glyph_getnote(draw_t="",draw_g="活")】
+  
+
+ 【LTsv_glyph_pointsrotation(glyphnote=[])】
+  
+
+ 【LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")】
+  
+
+ 【LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗")】
+  
+
+ 【LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_kbdselect(choice)】
+  
+
+ 【LTsv_glyph_choiceNX(choice)】
+  
+
+ 【LTsv_glyph_kbdfind(find_t)】
+  
+
+ 【LTsv_glyph_tapcallback_shell(kbd_canvas,callback)】
+  
+
+ 【LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)】
+  
+
+ 【LTsv_glyph_kbddelete(kbd_canvas)】
+  
+
+ 【LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)】
+  
+
+ 【LTsv_glyph_picklesave()】
+  
+
+ 【LTsv_evaltext(calc_value="")】
+  
+
+ 【LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")】
+  
+
+ 【LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)】
+  
+
+ 【LTsv_glyph_calcdelete(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcdraw(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None)】
+  
+
+ 【LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")】
+  
+
+ 【LTsv_glyph_calcglyphs(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcpress(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcmotion(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcrelease(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcenter(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcleave(calc_canvas)】
+  
+
+ 【LTsv_glyph_calcinput(calc_canvas,glyph_calcrinput)】
+  
+
+ 【LTsv_glyph_calctype(calc_canvas)】
+  
+
+ 【LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)】
+  
+
+ 【debug_calculatormousepress(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_calculatormousemotion(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_calculatormouserelease(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_calculatormouseleave(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_calculatormouseenter(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_calculatormouseinput(calculatormouseinput)】
+  
+
+ 【debug_reversi_mousepress(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_reversi_mouserelease(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_reversi_keypress(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_reversi_keyrelease(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_milklid_check(xy,bw)】
+  
+
+ 【debug_milklid_turn(xy,bw)】
+  
+
+ 【debug_milkAI_BS(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_milkAI_reset()】
+  
+
+ 【debug_milkAI_entry(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_milkAI_Auto(window_objvoid=None,window_objptr=None)】
+  
+
+ 【debug_milkAI_add(addentry)】
+  
+
+ 【debug_configload()】
+  
+
+ 【debug_configsave_exit(window_objvoid=None,window_objptr=None)】
+  
+
+
+⑨-1．「LTsv_glyph.tsv」のタグ解説
+
+ 【[kanglyph|】
+  
+
+ 【dicname】
+  
+
+ 【mapname】
+  
+
+ 【picklename】
+  
+
+ 【irohatype】
+  
+
+ 【irohatypeN】
+  
+
+ 【irohatypeX】
+  
+
+ 【alphatype】
+  
+
+ 【alphatypeN】
+  
+
+ 【alphatypeX】
+  
+
+ 【dictype】
+  
+
+ 【glyphtype】
+  
+
+ 【choice】
+  
+
+ 【choiceN】
+  
+
+ 【choiceX】
+  
+
+ 【evaltype】
+  
+
+ 【eval_slash】
+  
+
+ 【eval_dakuon】
+  
+
+ 【eval_seion】
+  
+
+ 【eval_now】
+  
+
+ 【eval_branch】
+  
+
+ 【eval_overhour】
+  
+
+ 【eval_worddicname】
+  
+
+ 【eval_zipdicname】
+  
+
+ 【last_alpha】
+  
+
+ 【last_dic】
+  
+
+ 【kbdTAG】
+  
+
+ 【fontcolor】
+  
+
+ 【bgcolor】
+  
+
+ 【kbddefsize】
+  
+
+ 【[reversi|】
+  
+
+ 【entry】
+  
+
+
+⑨-2．漢直鍵盤の操作方法
+
+<＃contents09-2>
+
+⑨-3．テキスト入力欄(電卓)の操作方法
+
+<＃contents09-3>
+
+⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+
+<＃contents09-4>
 
 # Copyright (c) 2016 ooblog
 # License: MIT

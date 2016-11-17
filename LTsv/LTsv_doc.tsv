@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161117R020217
+modify	20161118F070335
 |L:Tsv]
 
 [LTsv_doc|
@@ -36,47 +36,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 目次
 
-<？index00-0>*<？index00-1>*<？index00-2><？index01-0>*<？index01-1><？index02-0>*<？index02-1><？index03-0><？index04-0>*<？index04-1><？index05-0>*<？index05-1>
- <？index1-5a>
- <？index1-5b>
- <？index1-5c>
- <？index1-6a>
- <？index1-6b>
- <？index1-7a>
- <？index1-7b>
- 
-<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1>
-
-
-<？index1-5a>
-
-<＃contents1-5a>
-
-<？index1-5b>
-
-<＃contents1-5b>
-
-<？index1-5c>
-
-<＃contents1-5c>
-
-<？index1-6a>
-
-<＃contents1-6a>
-
-<？index1-6b>
-
-<＃contents1-6b>
-
-<？index1-7a>
-
-<＃contents1-7a>
-
-<？index1-7b>
-
-<＃contents1-7b>
-
-
+<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
+<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
@@ -95,19 +56,16 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <＃summary>
 <h2>目次</h2>
 <ul>
-<？index00-0>*<？index00-1>*<？index00-2>
-<？index01-0>*<？index01-1>
-<？index02-0>*<？index02-1>
-<？index03-0>
-<？index04-0>*<？index04-1>
-<？index05-0>*<？index05-1>
- <li><？index1-5a></li>
- <li><？index1-5b></li>
- <li><？index1-5c></li>
- <li><？index1-6a></li>
- <li><？index1-6b></li>
- <li><？index1-7a></li>
- <li><？index1-7b></li>
+<？list00-0>*<？list00-1>*<？list00-2>
+<？list01-0>*<？list01-1>
+<？list02-0>*<？list02-1>
+<？list03-0>
+<？list04-0>*<？list04-1>
+<？list05-0>*<？list05-1>
+<？list06-0>*<？list06-1>*<？list06-2>
+<？list07-0>*<？list07-1>
+<？list08-0>*<？list08-1>
+<？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
 </ul>
 </header>
 
@@ -117,44 +75,13 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <？section03-0>
 <？section04-0>*<？section04-1>
 <？section05-0>*<？section05-1>
-
-<section>
-<h3><a name="index1-5a"><？title$index1-5a></a></h3>
-<＃contents1-5a>
-</section>
-
-<section>
-<h3><a name="index1-5b"><？title$index1-5b></a></h3>
-<＃contents1-5b>
-</section>
-
-<section>
-<h3><a name="index1-5c"><？title$index1-5c></a></h3>
-<＃contents1-5c>
-</section>
-
-<section>
-<h3><a name="index1-6a"><？title$index1-6a></a></h3>
-<＃contents1-6a>
-</section>
-
-<section>
-<h3><a name="index1-6b"><？title$index1-6b></a></h3>
-<＃contents1-6b>
-</section>
-
-<section>
-<h3><a name="index1-7a"><？title$index1-7a></a></h3>
-<＃contents1-7a>
-</section>
-
-<section>
-<h3><a name="index1-7b"><？title$index1-7b></a></h3>
-<＃contents1-7b>
-</section>
+<？section06-0>*<？section06-1>*<？section06-2>
+<？section07-0>*<？section07-1>
+<？section08-0>*<？section08-1>
+<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
 
 <footer>
- <p>site generator "<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
+ <p>site generator "<？https99-0:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
  <p><？ooblog></p>
 </footer>
 </body></html>
@@ -206,18 +133,22 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 [<＃summary>|
 <？P>「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。<？BR>
-このモジュール解説文書「<？outlist>」は「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>」を使って「<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>」から錬成されてます。<？BR>
+このモジュール解説文書「<？outlist>」は「<？https99-0:LTsv_doc.py>」を使って「<？https99-0:LTsv_doc.tsv>」から錬成されてます。<？BR>
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
 
+[<？list00-0>*<？list00-1>*<？list00-2>|
+.+\.html?	 <li><？index00-@c></li>@E
+.*	 <？index00-@c>@E
+|<？list00-0>*<？list00-1>*<？list00-2>]
 [<？index00-0>*<？index00-1>*<？index00-2>|
-.+\.html?	 <li><a href="#index00-@c" title="<？title00-@c>"><？title00-@c></a></li>@E
-.*	 <？title00-@c>@E
+.+\.html?	<a href="#index00-@c" title="<？title00-@c>"><？title00-@c></a>
+.*	<？title00-@c>
 |<？index00-0>*<？index00-1>*<？index00-2>]
 [<？section00-0>*<？section00-1>*<？section00-2>|
 .+\.html?	<section>@E <h3><a name="index00-@c"><？title00-@c></a></h3>@E<＃contents00-@c>@E</section>@E
-.*	@E<？title00-@c>@E@E<＃contents00-@c>
+.*	@E<？title00-@c>@E@E<＃contents00-@c>@E
 |<？section00-0>*<？section00-1>*<？section00-2>]
 
 [<？title00-0>|
@@ -263,7 +194,7 @@ modify <？modify><？BR><？/P>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<？BR>
  Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index3-0>」も参考)。<？BR><？/P>
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。<？BR><？/P>
 |<＃contents00-1>]
 
 [<？title00-2>|
@@ -280,9 +211,13 @@ modify <？modify><？BR><？/P>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
 |<＃contents00-2>]
 
+[<？list01-0>*<？list01-1>|
+.+\.html?	 <li><？index01-@c></li>@E
+.*	 <？index01-@c>@E
+|<？list01-0>*<？list01-1>]
 [<？index01-0>*<？index01-1>|
-.+\.html?	 <li><a href="#index01-@c" title="<？title01-@c>"><？title01-@c></a></li>@E
-.*	 <？title01-@c>@E
+.+\.html?	<a href="#index01-@c" title="<？title01-@c>"><？title01-@c></a>
+.*	<？title01-@c>
 |<？index01-0>*<？index01-1>]
 [<？section01-0>*<？section01-1>|
 .+\.html?	<section>@E <h3><a name="index01-@c"><？title01-@c></a></h3>@E<＃contents01-@c>@E</section>@E
@@ -346,15 +281,19 @@ modify <？modify><？BR><？/P>
 <？DLDT>   modify <？/DTDD>                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<？/DD/DL>
 <？DLDT>  |L:Tsv]<？/DTDD>                    メタタグ「L:Tsv」を閉じます。<？contents01-1:tagsplit><？/DD/DL>
 <？P>
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index1-2>」も参考。<？BR><？/P>
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。<？BR><？/P>
 |<＃contents01-1>]
 [<？contents01-1:tagsplit>|
 .*	タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 |<？contents01-1:tagsplit>]
 
+[<？list02-0>*<？list02-1>|
+.+\.html?	 <li><？index02-@c></li>@E
+.*	 <？index02-@c>@E
+|<？list02-0>*<？list02-1>]
 [<？index02-0>*<？index02-1>|
-.+\.html?	 <li><a href="#index02-@c" title="<？title02-@c>"><？title02-@c></a></li>@E
-.*	 <？title02-@c>@E
+.+\.html?	<a href="#index02-@c" title="<？title02-@c>"><？title02-@c></a>
+.*	<？title02-@c>
 |<？index02-0>*<？index02-1>]
 [<？section02-0>*<？section02-1>|
 .+\.html?	<section>@E <h3><a name="index02-@c"><？title02-@c></a></h3>@E<＃contents02-@c>@E</section>@E
@@ -380,7 +319,7 @@ LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsv�
 LTsv_libc_printf_type(LTsv_text,LTsv_log=None)	Python2では「<？&lt;>type 'str'<？&gt;>」Python3だと「<？&lt;>class 'bytes'<？&gt;>」のようにprintfに渡すバイナリ文字列の変数の型を表示。	LTsv_logと返り値を指定する事で変数にも出力追記できる。
 LTsv_utf2xml(LTsv_text)	LTsv_textの文字列を数値文字参照に変換。
 LTsv_xml2utf(LTsv_text)	LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
-LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index1-1b>」を参考。
+LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。
 LTsv_utf2ink(LTsv_text)	UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。	点字フォントが表示できる環境にないと動作確認は困難なので注意。
 LTsv_ink2utf(LTsv_text)	上記「UTF-8点字」をUTF-8に戻す。	 データ破損を補完する機能はないので注意。
 LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミナルにコマンドを送る。実行結果も取得できる。	「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
@@ -409,9 +348,13 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 <？DLDT>   "Alpha2ZENYen"<？/DTDD>      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。<？/DD/DL>
 |<＃contents02-1>]
 
+[<？list03-0>|
+.+\.html?	 <li><？index03-@c></li>@E
+.*	 <？index03-@c>@E
+|<？list03-0>]
 [<？index03-0>|
-.+\.html?	 <li><a href="#index03-@c" title="<？title03-@c>"><？title03-@c></a></li>@E
-.*	 <？title03-@c>@E
+.+\.html?	<a href="#index03-@c" title="<？title03-@c>"><？title03-@c></a>
+.*	<？title03-@c>
 |<？index03-0>]
 [<？section03-0>|
 .+\.html?	<section>@E <h3><a name="index03-@c"><？title03-@c></a></h3>@E<＃contents03-@c>@E</section>@E
@@ -431,7 +374,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<＃contents03-0>]
 
 [LTsv_file.py|
-LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index1-0b>」も参考。
+LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index01-1>」も参考。
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
 LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<？CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
@@ -477,9 +420,13 @@ LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<！L:TsvLTsvver>)。
 LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
 |LTsv_file.py]
 
+[<？list04-0>*<？list04-1>|
+.+\.html?	 <li><？index04-@c></li>@E
+.*	 <？index04-@c>@E
+|<？list04-0>*<？list04-1>]
 [<？index04-0>*<？index04-1>|
-.+\.html?	 <li><a href="#index04-@c" title="<？title04-@c>"><？title04-@c></a></li>@E
-.*	 <？title04-@c>@E
+.+\.html?	<a href="#index04-@c" title="<？title04-@c>"><？title04-@c></a>
+.*	<？title04-@c>
 |<？index04-0>*<？index04-1>]
 [<？section04-0>*<？section04-1>|
 .+\.html?	<section>@E <h3><a name="index04-@c"><？title04-@c></a></h3>@E<＃contents04-@c>@E</section>@E
@@ -515,7 +462,7 @@ LTsv_putdaytimeearlier(overhour=None,diffminute=None)	最後に実行された�
 LTsv_putdaytimespecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None,overhour=None,diffminute=None)	日時を指定して「LTsv_meridian_now」に格納。省略(Noneを代入)した項目は現在時刻などが代入。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)	ファイルLTsv_pathの更新時刻タイムスタンプをLTsv_meridian_nowに格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。	OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)	「LTsv_time_ver()」などの<？modify_style>をLTsv_meridian_nowに格納。各種日時変数も計算。	追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
-LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)	日付フォーマットtimeformatを各種日時変数で置換する。	timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。	日付フォーマットの概要は「<？index1-3b>」を参照。
+LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)	日付フォーマットtimeformatを各種日時変数で置換する。	timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。	日付フォーマットの概要は「<？index04-1>」を参照。
 LTsv_settimershift()	日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。	通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。
 LTsv_settimershiftoption()	LTsv_start_nowとLTsv_goal_nowの差分を再計算する。	通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。
 LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)	タイマーのLTsv_goal_nowを数秒後(seconds)・数分後(minute)・数時間後(hour)・数日後(day)などいずれかに設定する。	例えば三分後を指定する場合「LTsv_puttimerstartgoal(minute=3)」と入力。	複数のパラメータを同時指定した場合、例えば分と秒なら秒優先というように細かい方の単位が採用される(内部ではmicrosecondで計算)。
@@ -610,9 +557,13 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 |<＃contents04-1>]
 
 
+[<？list05-0>*<？list05-1>|
+.+\.html?	 <li><？index05-@c></li>@E
+.*	 <？index05-@c>@E
+|<？list05-0>*<？list05-1>]
 [<？index05-0>*<？index05-1>|
-.+\.html?	 <li><a href="#index05-@c" title="<？title05-@c>"><？title05-@c></a></li>@E
-.*	 <？title05-@c>@E
+.+\.html?	<a href="#index05-@c" title="<？title05-@c>"><？title05-@c></a>
+.*	<？title05-@c>
 |<？index05-0>*<？index05-1>]
 [<？section05-0>*<？section05-1>|
 .+\.html?	<section>@E <h3><a name="index05-@c"><？title05-@c></a></h3>@E<＃contents05-@c>@E</section>@E
@@ -623,7 +574,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 .*	⑤-0．「LTsv_calc.py」の関数一覧
 |<？title05-0>]
 [<＃contents05-0>|
-<？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index1-4b>」を参照。<？BR>
+<？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index05-1>」を参照。<？BR>
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
@@ -636,7 +587,7 @@ LTsv_calc_LCM(LTsv_calcL,LTsv_calcR)	最小公倍数。
 LTsv_calc_bracketsbalance(LTsv_calcQbase)	左右の括弧の数を合わせる。ついでに演算子の整理整頓など。
 LTsv_calc_decimalize(LTsv_calcQbase)	分数を小数に。
 LTsv_calc_fractalize(LTsv_calcQbase)	小数を分数に。
-LTsv_calc(LTsv_calcQbase)	電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。	LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。	電卓フォーマットの概要は「<？index1-4b>」を参照。
+LTsv_calc(LTsv_calcQbase)	電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。	LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。	電卓フォーマットの概要は「<？index05-1>」を参照。
 LTsv_calc_function(LTsv_calcQbase)	主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。
 LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)	主に分数の加算減算。分数の積割処理で「LTsv_calc_addition()」を呼び出す。
 LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算含む)。小数排除処理で「LTsv_calc_fractalize()」呼び出す。
@@ -651,7 +602,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
  分数内で小数が使用可能です。「0.5|3.5⇔1|7」の様に小数が混在してても分数に変換します。<？BR>
  加算「+」減算「-」と区別して表現できます。「1-(-2)」と括弧を使わなくても「1-m2⇔3|1」のようにマイナスで引くといった表現が可能。<？BR>
  数列計算のカウント変数「c」は整数です。初期値は+1で増減は±1です。カウント変数に代入する過程で整数変換が発生するので注意。括弧の内外で別カウントになるので要注意。<？BR>
- 「(c+2)(c+1)」のように括弧間の演算子が省略された場合には(c+2)*(c+1)⇔6|1」のように掛け算を適用します。<？BR><？BR>
+ 「(c+2)(c+1)」のように括弧間の演算子が省略された場合には(c+2)*(c+1)⇔6|1」のように掛け算を適用します。<？BR>
  Pythonには整数有効計算範囲の概念は存在しないはずですが、小数計算ではPythonの実装・環境に応じた丸め誤差などが発生します。<？BR>
  0で割るなどの計算できない場合は無限エラー扱いにして「n|0」と表示します。実際の無限には正負の概念が存在しますが電卓フォーマットの「n|0」は単に計算放棄です。<？BR><？/P>
 
@@ -720,28 +671,47 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 .*	未実装等で使用できない演算子
 |<？title05-1:nonuse>]
 
-[<＃contents1-5a>|
+[<？list06-0>*<？list06-1>*<？list06-2>|
+.+\.html?	 <li><？index06-@c></li>@E
+.*	 <？index06-@c>@E
+|<？list06-0>*<？list06-1>*<？list06-2>]
+[<？index06-0>*<？index06-1>*<？index06-2>|
+.+\.html?	<a href="#index06-@c" title="<？title06-@c>"><？title06-@c></a>
+.*	<？title06-@c>
+|<？index06-0>*<？index06-1>*<？index06-2>]
+[<？section06-0>*<？section06-1>*<？section06-2>|
+.+\.html?	<section>@E <h3><a name="index06-@c"><？title06-@c></a></h3>@E<＃contents06-@c>@E</section>@E
+.*	@E<？title06-@c>@E@E<＃contents06-@c>@E
+|<？section06-0>*<？section06-1>*<？section06-2>]
+
+[<？title06-0>|
+.*	⑥-0．「LTsv_joy.py」の関数一覧
+|<？title06-0>]
+[<＃contents06-0>|
 <？P> <？gamepad>の入力をLTSVに変換するモジュールです。<？BR>
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<？BR>
  ・単体風テストで<？gamepad>の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。<？BR><？/P>
  
 <！LTsv_joy.py>
-|<＃contents1-5a>]
+|<＃contents06-0>]
 
 [LTsv_joy.py|
-LTsv_joyreset(LTsv_tsvpath)	「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index1-5b>」。
+LTsv_joyreset(LTsv_tsvpath)	「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。
 LTsv_joyexit()	<？gamepad>の変数初期化です。Linuxではデバイスをクローズします。
 LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")	<？gamepad>の準備です。Linuxではデバイスをオープンします。	「LTsv_joyinit()」のタイミングで<？gamepad>ので個数を受けとる。	0を受け取った場合<？gamepad>を見つけれてない状態。
 LTsv_setjoydata(LTsv_joyid,LTsv_default=None)	スティック(axisW/axisL)とボタン(button)の状態を読み込む。	axisリストとbuttonリストのタプルで返り値も受け取れる。
-LTsv_getjoystr(LTsv_joyid,joyformat=None)	スティックとボタンの状態を<？joyformat_label>のrestへLTSVで返す。	LTsv_joyidには<？gamepad>の番号を指定。	項目一覧の詳細は「<？index1-5c>」。
+LTsv_getjoystr(LTsv_joyid,joyformat=None)	スティックとボタンの状態を<？joyformat_label>のrestへLTSVで返す。	LTsv_joyidには<？gamepad>の番号を指定。	項目一覧の詳細は「<？index06-2>」。
 LTsv_atanscalar(LTsv_atanX,LTsv_atanY)	スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。
 LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)	ラジアン角度円周2πをLTsv_labelsのラベルに置き換え。	<？gamepad>の方角、上下左右東西南北などの表現を想定。
 LTsv_joyaxis_label()	Windowsなら「axisW」を返す。Windowsなら「axisL」を返す。	「LTsv_getjoystr()」でどのaxisを取得するべきかの調査用途。
 |LTsv_joy.py]
 
-[<＃contents1-5b>|
+[<？title06-1>|
+.*	⑥-1．「LTsv_joy.tsv」のタグ解説
+|<？title06-1>]
+[<＃contents06-1>|
 <！LTsv_joy.tsv>
-|<＃contents1-5b>]
+|<＃contents06-1>]
 
 [LTsv_joy.tsv|
 [LTsv_deviceL|	Linuxのデバイス指定ページ。
@@ -759,17 +729,36 @@ buttonN	いわゆる任天堂(3DS)配列風。「X\tY\tA\tB\tL\tR\tZL\tZR\tLC\tR
 buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\tR2\tL3\tR3\tS\tO\tP」。。
 |LTsv_joy.tsv]
 
-[<＃contents1-5c>|
+[<？title06-2>|
+.*	⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
+|<？title06-2>]
+[<＃contents06-2>|
 <？DLDT>  status<？/DTDD>           axis最大値とボタン最大値。2項目。axis最大値はWindowsとLinuxでズレる場合があります。ループ内省略推奨。<？/DD/DL>
 <？DLDT>  button<？/DTDD>           ボタンが押されてれば1。押されてなければ0。データ項目はボタンの個数分。WindowsとLinuxで共通。<？/DD/DL>
 <？DLDT>  axisL<？/DTDD>            Linux版はPOVが2軸扱い。合計6項目の場合でも7項目を返すゲームPADが存在したりするので注意(PxPy軸がズレてる場合がある)。<？/DD/DL>
 <？DLDT>  axisW<？/DTDD>            Windows版はPOVが1軸扱いですがスクリプト側で2軸に変換。通常6項目。<？/DD/DL>
-|<＃contents1-5c>]
+|<＃contents06-2>]
 [<？joyformat_label>|
 .*	joyformat縦軸ラベル(first)
 |<？joyformat_label>]
 
-[<＃contents1-6a>|
+[<？list07-0>*<？list07-1>|
+.+\.html?	 <li><？index07-@c></li>@E
+.*	 <？index07-@c>@E
+|<？list07-0>*<？list07-1>]
+[<？index07-0>*<？index07-1>|
+.+\.html?	<a href="#index07-@c" title="<？title07-@c>"><？title07-@c></a>
+.*	<？title07-@c>
+|<？index07-0>*<？index07-1>]
+[<？section07-0>*<？section07-1>|
+.+\.html?	<section>@E <h3><a name="index07-@c"><？title07-@c></a></h3>@E<＃contents07-@c>@E</section>@E
+.*	@E<？title07-@c>@E@E<＃contents07-@c>@E
+|<？section07-0>*<？section07-1>]
+
+[<？title07-0>|
+.*	⑦-0．「LTsv_kbd.py」の関数一覧
+|<？title07-0>]
+[<＃contents07-0>|
 <？P> <？PCkeyboard>の入力(マウスのボタン含む)をLTSVに変換するモジュールです。<？BR>
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<？BR>
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<？BR>
@@ -777,17 +766,17 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
  ・「LTsv_kbd.py」単独の単体風テストでは<？PCkeyboard>の挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。<？BR><？/P>
 
 <！LTsv_kbd.py>
-|<＃contents1-6a>]
+|<＃contents07-0>]
 
 [LTsv_kbd.py|
 LTsv_kbdcatproc(LTsv_devname)	「cat /proc/bus/input/devices」からLTsv_devnameで検索して「event?」を返す。「?」の部分は数値。
-LTsv_kbdreset(LTsv_tsvpath)	 [LTsv_kbd.tsv]からモジュールの初期設定や、<？keycode00FF>に名付けたキー名称を読み込む。	デバイスの検出方法に改善の余地がある予感。	詳細は「<？index1-6b>」。
+LTsv_kbdreset(LTsv_tsvpath)	 [LTsv_kbd.tsv]からモジュールの初期設定や、<？keycode00FF>に名付けたキー名称を読み込む。
 LTsv_kbdgettypename(LTsv_code)	<？keycode00FF>をキー名称に変換。ひらがなキー名称は用いない。
 LTsv_kbdgettypekana(LTsv_code)	<？keycode00FF>をキー名称に変換。かな入力に用いるキーはひらがなキー名称を取得。
 LTsv_kbdgettypecode(LTsv_name)	キー名称を<？keycode00FF>に変換。
 LTsv_kbdgettypegana(LTsv_gana)	ひらがなキー名称を<？keycode00FF>に変換。ひらがな以外のキー名称も使用可能。
 LTsv_kbdexit()	<？PCkeyboard>(マウス含む)の変数初期化です。Linuxではデバイスをクローズします。
-LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)	<？PCkeyboard>の準備です。Linuxではデバイスをオープンします。	Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。	マウスボタンの配置は「<？index1-6b>」を参考。	Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
+LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)	<？PCkeyboard>の準備です。Linuxではデバイスをオープンします。	Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。	マウスボタンの配置は「<？index07-1>」を参考。	Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
 LTsv_kbdEVIOCGRAB(LTsv_grabflag)	※Linux専用命令です。<？PCkeyboard>の入力をターミナルやテキストエリアなどに出力しないようにします。	Windowsのキーフックとすり合わせる過程で別の名前になる可能性があります。	漢直とかで<？PCkeyboard>のアルファベット入力を漢字出力に置き換える用途です。
 LTsv_kbdwrite(LTsv_code,LTsv_press)	※Linux専用命令です。<？PCkeyboard>を入力した事にします。	「LTsv_kbdEVIOCGRAB()」実行中は動作しません。
 LTsv_kbdwriteCtrl(LTsv_ganastsv)	※Linux専用命令です。「Ctrl」など複数のキーを押しながら入力みたいな動作を再現します。	「LTsv_kbdEVIOCGRAB()」実行中は動作しません。
@@ -798,9 +787,12 @@ LTsv_getkbdcodes()	 押された<？PCkeyboard>の<？keycode00FF>を返す。
 LTsv_getkbdkanas()	押された<？PCkeyboard>のかな文字を返す。かな以外だと押された<？PCkeyboard>の<？keycode00FF>を返す。
 |LTsv_kbd.py]
 
-[<＃contents1-6b>|
+[<？title07-1>|
+.*	⑦-1．「LTsv_kbd.tsv」のタグ解説
+|<？title07-1>]
+[<＃contents07-1>|
 <！LTsv_kbd.tsv>
-|<＃contents1-6b>]
+|<＃contents07-1>]
 
 [LTsv_kbd.tsv|
 [LTsv_deviceL|	Linuxのデバイス指定。
@@ -817,7 +809,23 @@ mouse	初期想定は「/dev/input/event?」。	万が一「LTsv_kbdreset()」�
 [LTsv_keydefault|	「LTsv_getkbdlabels()」のkbdformat初期値。	※この項目はページ全体がLTSVです。
 |LTsv_kbd.tsv]
 
-[<＃contents1-7a>|
+[<？list08-0>*<？list08-1>|
+.+\.html?	 <li><？index08-@c></li>@E
+.*	 <？index08-@c>@E
+|<？list08-0>*<？list08-1>]
+[<？index08-0>*<？index08-1>|
+.+\.html?	<a href="#index08-@c" title="<？title08-@c>"><？title08-@c></a>
+.*	<？title08-@c>
+|<？index08-0>*<？index08-1>]
+[<？section08-0>*<？section08-1>|
+.+\.html?	<section>@E <h3><a name="index08-@c"><？title08-@c></a></h3>@E<＃contents08-@c>@E</section>@E
+.*	@E<？title08-@c>@E@E<＃contents08-@c>@E
+|<？section08-0>*<？section08-1>]
+
+[<？title08-0>|
+.*	⑧-0．「LTsv_gui.py」の関数一覧
+|<？title08-0>]
+[<＃contents08-0>|
 <？P> ウィンドウなど<？GUIwidget>を設置するモジュールです。<？BR>
  ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。<？BR>
  ・「canvas」の描画高速化のため「LTsv_draw_*_shell(LTsv_GUI)」で関数オブジェクトを用意する手続き推奨。<？BR>
@@ -826,10 +834,10 @@ mouse	初期想定は「/dev/input/event?」。	万が一「LTsv_kbdreset()」�
  ・「LTsv_」を付加してないローカル変数が多々あるので変数名の衝突が心配。<？BR>
  ・「LTsv_widgetPAGE」はほぼ「LTsv_widget_newUUID()」で生成するユニークIDっぽいIDの事。<？BR>
  ・<？tasktrayNotify>関連は「Tkinter」で使えないので注意。他にも「Tkinter」で動かない命令はいくつか存在。<？BR>
- ・単体風テストでは<？GUIwidget>はもちろん、<？PCkeyboard>や<？gamepad>、日時フォーマットや電卓フォーマットなどの挙動確認もできます。<？BR><？BR>
+ ・単体風テストでは<？GUIwidget>はもちろん、<？PCkeyboard>や<？gamepad>、日時フォーマットや電卓フォーマットなどの挙動確認もできます。<？BR><？/P>
  
 <！LTsv_gui.py>
-|<＃contents1-7a>]
+|<＃contents08-0>]
 
 [LTsv_gui.py|
 LTsv_guiCDLLver(LTsv_libname,LTsv_libvermin,LTsv_libvermax)	「LTsv_guiinit()」で使う「libgtk-x11-2.0.so.?」などの「?」のバージョン番号部分を探索。
@@ -859,7 +867,7 @@ LTsv_global_popupmenuOBJ(LTsv_objid)	ポップアップメニューのオブジ�
 LTsv_widget_newUUID(LTsv_widgetID=None)	<？GUIwidget>管理用にユニークIDを発行する。	「uuid.uuid4()」と「str(time.time())」の組み合わせ。1秒未満以内に122bitの乱数が重複する事はほぼないと思うが重複する確率は理論上ゼロではないので注意。	LTsv_widgetIDにFalseを指定することで前回と同じIDを再発行できる。コールバック関数に自身のIDを渡す必要がある場合に必要。
 LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	 「LTsv_widgetPAGEXYWH()」のオブジェクト管理で番号が被らないようにするカウンター。
 LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
-LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index1-7b>」参考。
+LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index08-1>」参考。
 LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
 LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。	widget_dは「gtk_bin_get_child」が要求される場合の分岐。
 LTsv_hideondelete_shell(LTsv_windowPAGENAME)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
@@ -944,8 +952,8 @@ LTsv_draw_arcfill_shell(LTsv_GUI)	「LTsv_drawGTK_arcfill()」か「LTsv_drawTki
 LTsv_drawGTK_font(draw_f="")	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
 LTsv_drawTkinter_font(draw_f=None)	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
 LTsv_draw_font_shell(LTsv_GUI)	「LTsv_drawGTK_font()」か「LTsv_drawTkinter_font()」の関数取得。	「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
-LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	グリフでのテキスト描画は「<？index1-8a>」を参考。
-LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	「Tkinter」には「<？CP932>」の制限があるのでグリフでのテキスト描画「<？index1-8a>」も参考。
+LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	グリフでのテキスト描画は「<？index09-0>」を参考。
+LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	「Tkinter」には「<？CP932>」の制限があるのでグリフでのテキスト描画「<？index09-0>」も参考。
 LTsv_draw_text_shell(LTsv_GUI)	「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。	「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_draw_picture_load(LTsv_picturepath)	「canvas」用の画像を読み込む。LTsv_picturepathはローカルの画像ファイルのパス。	GUIオブジェクト(widget)の「image」とは別腹。	「Tkinter」では先に「LTsv_canvas_new()」で「canvas」を作って置く必要がある。
 LTsv_draw_picture_celldiv(LTsv_picturepath,picture_divw,picture_divh)	「LTsv_draw_picture_load()」で読み込んだ(読み込んでなければ読み込む)画像を分割して「filepath[num]」の様に番号を付けることができる。	「GTK2」でのみ実装。
@@ -973,14 +981,16 @@ debug_color_combo(window_objvoid=None,window_objptr=None)	単体風テスト専�
 debug_edit_clip(window_objvoid=None,window_objptr=None)	単体風テスト専用。クリップボード「clipboard」の動作確認。
 debug_checkbutton_shell(checkNumber)	単体風テスト専用。「check」のコールバック用関数の例。「radio」と比較用途。	同じような動作をする<？GUIwidget>を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。
 debug_radiobutton_shell(radioNumber)	単体風テスト専用。「radio」のコールバック用関数の例。「check」と比較用途。	同じような動作をする<？GUIwidget>を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。
-debug_keypress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押下)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<？index1-6a>」を参考。
-debug_keyrelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押上)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「LTsv_kbd.py」によるキー入力取得が必要です。詳細は「<？index1-6a>」を参考。
+debug_keypress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押下)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https99-0:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
+debug_keyrelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押上)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https99-0:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
 debug_filedialog(window_objvoid=None,window_objptr=None)	単体風テスト専用。「filedialog」の表示テスト。
 debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テスト専用。「filedialog」のレスポンステスト。	「GTK2」で「GTK_RESPONSE_ACCEPT」を取り出す方法が不明なので、ファイルダイアログのキャンセル方法が不明。
 |LTsv_gui.py]
 
-
-[<＃contents1-7b>|
+[<？title08-1>|
+.*	⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
+|<？title08-1>]
+[<＃contents08-1>|
 <？P> 「LTsv_gui.py」では「<？GUIwidget>」を「L:Tsv」で管理してます。<？BR>
  ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。<？BR>
  テキスト化できる項目とテキスト化できないので「LTsv_widget_newobj()」のIDだけを保管する項目とに仕分けるのが「LTsv_widgetPAGEXYWH()」の役割です。<？BR>
@@ -1033,21 +1043,46 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 <？DLDT>   menu_c(popupmenuclick)<？/DTDD>              <？tasktrayNotify>クリック時のコールバック関数。<？/DD/DL>
 <？DLDT>   dialog_t(dialog_type)<？/DTDD>                ファイルダイアログの種類。<？/DD/DL>
 <？DLDT>   dialog_c(dialog_close)<？/DTDD>               ファイルダイアログを閉じる時のコールバック関数。<？/DD/DL>
-|<＃contents1-7b>]
+|<＃contents08-1>]
+
+[<？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>|
+.+\.html?	 <li><？index09-@c></li>@E
+.*	 <？index09-@c>@E
+|<？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>]
+[<？index09-0>*<？index09-1>*<？index09-2>*<？index09-3>*<？index09-4>|
+.+\.html?	<a href="#index09-@c" title="<？title09-@c>"><？title09-@c></a>
+.*	<？title09-@c>
+|<？index09-0>*<？index09-1>*<？index09-2>*<？index09-3>*<？index09-4>]
+[<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>|
+.+\.html?	<section>@E <h3><a name="index09-@c"><？title09-@c></a></h3>@E<＃contents09-@c>@E</section>@E
+.*	@E<？title09-@c>@E@E<＃contents09-@c>@E
+|<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>]
+
+[<？title09-0>|
+.*	⑨-0．「LTsv_glyph.py」の関数一覧
+|<？title09-0>]
+[<＃contents09-0>|
+<？P> 「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。<？BR>
+ ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<？BR>
+ ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。<？BR>
+ ・単体風テストとして漢直鍵盤でリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。<？BR><？/P>
+
+<！LTsv_glyph.py>
+|<＃contents09-0>]
 
 [LTsv_glyph.py|
-LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	
-LTsv_global_kandic(new_kandic=None)	
-LTsv_global_kanmap()	
-LTsv_global_kanmapN()	
-LTsv_global_kanmapX()	
-LTsv_global_kanpickle()	
-LTsv_global_irohatype()	
-LTsv_global_irohatypeN()	
-LTsv_global_irohatypeX()	
-LTsv_global_alphatype()	
-LTsv_global_alphatypeN()	
-LTsv_global_alphatypeX()	
+LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「LTsv/kanchar.tsv」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。	「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。	「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに<？VRkeyboard>の倍率が指定できるが後述の<？VRcalc>と連携が不十分。
+LTsv_global_kandic(new_kandic=None)	単漢字辞書「LTsv/kanchar.tsv」を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+LTsv_global_kanmap()	漢字配列「<？https99-0:kanmap.tsv>」を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+LTsv_global_kanmapN()	漢字配列のNFER鍵盤の辞書を取得。
+LTsv_global_kanmapX()	漢字配列のXFER鍵盤の辞書を取得。
+LTsv_global_kanpickle()	グリフの座標データを取得。
+LTsv_global_irohatype()	「<？https99-0:kanmap.tsv>」項目名としてのイロハ鍵盤名リスト。	通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
+LTsv_global_irohatypeN()	NFER鍵盤で表示するかな鍵盤名のリスト。	通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,＠,ぷ,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
+LTsv_global_irohatypeX()	XFER鍵盤で表示するかな鍵盤名のリスト。	通常は「ヌ,フ,ア,ウ,エ,オ,ヤ,ユ,ヨ,ワ,ホ,ヘ,タ,テ,イ,ス,カ,ン,ナ,ニ,ラ,セ,｀,プ,チ,ト,シ,ハ,キ,ク,マ,ノ,リ,レ,ケ,ム,ツ,サ,ソ,ヒ,コ,ミ,モ,ネ,ル,メ,ロ,｜」
+LTsv_global_alphatype()	「<？https99-0:kanmap.tsv>」項目名としてのα鍵盤名のリスト。	通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
+LTsv_global_alphatypeN()	NFER鍵盤で表示するα鍵盤名のリスト。	通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
+LTsv_global_alphatypeX()	XFER鍵盤で表示するα鍵盤名のリスト。	通常は「Α,Β,Γ,Δ,Ε,Ζ,Η,Θ,Ι,Κ,Λ,Μ,Ν,Ξ,Ο,Π,Ρ,Σ,Τ,Υ,Φ,Χ,Ψ,Ω,●,▲,■」
 LTsv_global_dictype()	
 LTsv_global_glyphtype()	
 LTsv_global_choice()	
@@ -1134,105 +1169,77 @@ debug_configload()
 debug_configsave_exit(window_objvoid=None,window_objptr=None)	
 |LTsv_glyph.py]
 
+[<？title09-1>|
+.*	⑨-1．「LTsv_glyph.tsv」のタグ解説
+|<？title09-1>]
+[<＃contents09-1>|
+<！LTsv_glyph.tsv>
+|<＃contents09-1>]
 
+[LTsv_glyph.tsv|
+[kanglyph|	
+dicname	
+mapname	
+picklename	
+irohatype	
+irohatypeN	
+irohatypeX	
+alphatype	
+alphatypeN	
+alphatypeX	
+dictype	
+glyphtype	
+choice	
+choiceN	
+choiceX	
+evaltype	
+eval_slash	
+eval_dakuon	
+eval_seion	
+eval_now	
+eval_branch	
+eval_overhour	
+eval_worddicname	
+eval_zipdicname	
+last_alpha	
+last_dic	
+kbdTAG	
+fontcolor	
+bgcolor	
+kbddefsize	
+[reversi|	
+entry	
+|LTsv_glyph.tsv]
 
+[<？title09-2>|
+.*	⑨-2．<？VRkeyboard>の操作方法
+|<？title09-2>]
+[<？title09-3>|
+.*	⑨-3．<？VRcalc>の操作方法
+|<？title09-3>]
+[<？title09-4>|
+.*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+|<？title09-4>]
 
-[<？index1-5a>|
-.+\.html?	<a href="<？url$index1-5a>" title="<？title$index1-5a>"><？title$index1-5a></a>
-.*	<？title$index1-5a>
-|<？index1-5a>]
-[<？url$index1-5a>|
-.*	#index1-5a
-|<？url$index1-5a>]
-[<？title$index1-5a>|
-.*	１-5a．「LTsv_joy.py」の関数一覧
-|<？title$index1-5a>]
-[<？index1-5b>|
-.+\.html?	<a href="<？url$index1-5b>" title="<？title$index1-5b>"><？title$index1-5b></a>
-.*	<？title$index1-5b>
-|<？index1-5b>]
-[<？url$index1-5b>|
-.*	#index1-5b
-|<？url$index1-5b>]
-[<？title$index1-5b>|
-.*	１-5b．「LTsv_joy.tsv」のタグ解説
-|<？title$index1-5b>]
-[<？index1-5c>|
-.+\.html?	<a href="<？url$index1-5c>" title="<？title$index1-5c>"><？title$index1-5c></a>
-.*	<？title$index1-5c>
-|<？index1-5c>]
-[<？url$index1-5c>|
-.*	#index1-5c
-|<？url$index1-5c>]
-[<？title$index1-5c>|
-.*	１-5c．「LTsv_getjoystr()」の<？joyformat_label>一覧
-|<？title$index1-5c>]
-
-[<？index1-6a>|
-.+\.html?	<a href="<？url$index1-6a>" title="<？title$index1-6a>"><？title$index1-6a></a>
-.*	<？title$index1-6a>
-|<？index1-6a>]
-[<？url$index1-6a>|
-.*	#index1-6a
-|<？url$index1-6a>]
-[<？title$index1-6a>|
-.*	１-6a．「LTsv_kbd.py」の関数一覧
-|<？title$index1-6a>]
-[<？index1-6b>|
-.+\.html?	<a href="<？url$index1-6b>" title="<？title$index1-6b>"><？title$index1-6b></a>
-.*	<？title$index1-6b>
-|<？index1-6b>]
-[<？url$index1-6b>|
-.*	#index1-6b
-|<？url$index1-6b>]
-[<？title$index1-6b>|
-.*	１-6b．「LTsv_kbd.tsv」のタグ解説
-|<？title$index1-6b>]
-
-[<？index1-7a>|
-.+\.html?	<a href="<？url$index1-7a>" title="<？title$index1-7a>"><？title$index1-7a></a>
-.*	<？title$index1-7a>
-|<？index1-7a>]
-[<？url$index1-7a>|
-.*	#index1-7a
-|<？url$index1-7a>]
-[<？title$index1-7a>|
-.*	１-7a．「LTsv_gui.py」の関数一覧
-|<？title$index1-7a>]
-[<？index1-7b>|
-.+\.html?	<a href="<？url$index1-7b>" title="<？title$index1-7b>"><？title$index1-7b></a>
-.*	<？title$index1-7b>
-|<？index1-7b>]
-[<？url$index1-7b>|
-.*	#index1-7b
-|<？url$index1-7b>]
-[<？title$index1-7b>|
-.*	１-7b．「LTsv_widgetPAGEXYWH()」のオプション一覧
-|<？title$index1-7b>]
-
-[<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_tsv>" title="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_tsv>"><？LTsv/LTsv_doc_tsv></a>
-.*	LTsv/LTsv_doc.tsv
-|<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv>]
-[<？LTsv/LTsv_doc_tsv>|
-.*	LTsv/LTsv_doc.tsv
-|<？LTsv/LTsv_doc_tsv>]
-
-[<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_py>" title="<？url99-9:LTsv10repository>/<？LTsv/LTsv_doc_py>"><？LTsv/LTsv_doc_py></a>
+[<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/<？path99-0:LTsvFiles@0c>" title="<？url99-9:LTsv10repository>/<？path99-0:LTsvFiles@0c>"><？path99-0:LTsvFiles@0c></a>
+.*	<？path99-0:LTsvFiles@0c>
+|<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>]
+[<？path99-0:LTsvFiles00>|
 .*	LTsv/LTsv_doc.py
-|<？github:ooblog/LTsv10kanedit/LTsv/LTsv_doc.py>]
-[<？LTsv/LTsv_doc_py>|
-.*	LTsv/LTsv_doc.py
-|<？LTsv/LTsv_doc_py>]
-
-[<？https99-0:LICENSE>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/<？title99-0:LICENSE>" title="<？url99-9:LTsv10repository>/<？title99-0:LICENSE>">LICENSE</a>
-.*	LICENSE
-|<？https99-0:LICENSE>]
-[<？title99-0:LICENSE>|
+|<？path99-0:LTsvFiles00>]
+[<？path99-0:LTsvFiles01>|
+.*	LTsv/LTsv_doc.tsv
+|<？path99-0:LTsvFiles01>]
+[<？path99-0:LTsvFiles02>|
+.*	LTsv/kanmap.tsv
+|<？path99-0:LTsvFiles02>]
+[<？path99-0:LTsvFiles03>|
+.*	LTsv/LTsv_kbd.py
+|<？path99-0:LTsvFiles03>]
+[<？path99-0:LTsvFiles04>|
 .*	blob/master/LICENSE
-|<？title99-0:LICENSE>]
+|<？path99-0:LTsvFiles05>]
 
 [<？ooblog>|
 .+\.html?	# <？Copyright><？BR>@E# <？LicenseMIT><？BR>@E# <？https99-9:LTsv10LICENSE><？BR>@E
@@ -1286,6 +1293,9 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)
 [<？VRkeyboard>|
 .*	漢直鍵盤
 |<？VRkeyboard>]
+[<？VRcalc>|
+.*	テキスト入力欄(電卓)
+|<？VRcalc>]
 [<？keycode00FF>|
 .*	キーコード($00〜$FF)
 |<？keycode00FF>]
