@@ -13,7 +13,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161118F070334<br />
+modify 20161118F081907<br />
 </p>
 
 <h2>目次</h2>
@@ -38,7 +38,7 @@ modify 20161118F070334<br />
 
  <li><a href="#index06-0" title="⑥-0．「LTsv_joy.py」の関数一覧">⑥-0．「LTsv_joy.py」の関数一覧</a></li>
  <li><a href="#index06-1" title="⑥-1．「LTsv_joy.tsv」のタグ解説">⑥-1．「LTsv_joy.tsv」のタグ解説</a></li>
- <li><a href="#index06-2" title="⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></li>
+ <li><a href="#index06-2" title="⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧">⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧</a></li>
 
  <li><a href="#index07-0" title="⑦-0．「LTsv_kbd.py」の関数一覧">⑦-0．「LTsv_kbd.py」の関数一覧</a></li>
  <li><a href="#index07-1" title="⑦-1．「LTsv_kbd.tsv」のタグ解説">⑦-1．「LTsv_kbd.tsv」のタグ解説</a></li>
@@ -202,7 +202,7 @@ LTsv_textの文字列を数値文字参照に変換。</dd></dl>
 LTsv_textの文字参照(数値文字参照含む)を文字列に変換。</dd></dl>
 <dl><dt>LTsv_kanare(LTsv_before,LTsv_recase)</dt><dd>
 全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。<br />
-変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。</dd></dl>
+変換辞書LTsv_recaseのパラメータは「<a href="#index02-1" title="②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧">②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a>」を参考。</dd></dl>
 <dl><dt>LTsv_utf2ink(LTsv_text)</dt><dd>
 UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br />
 点字フォントが表示できる環境にないと動作確認は困難なので注意。</dd></dl>
@@ -317,7 +317,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 「L:Tsv」ファイルを変数上に作成する。<br />
  LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
 LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
-メタタグについては「<？index01-1>」も参考。</dd></dl>
+メタタグについては「<a href="#index01-1" title="①-1．「L:Tsv」ファイルの構造">①-1．「L:Tsv」ファイルの構造</a>」も参考。</dd></dl>
 <dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
 ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
 ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
@@ -506,7 +506,7 @@ OSやファイルシステム毎に秒や分の精度に違いがあると思う
 <dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
 日付フォーマットtimeformatを各種日時変数で置換する。<br />
 timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。<br />
-日付フォーマットの概要は「<？index04-1>」を参照。</dd></dl>
+日付フォーマットの概要は「<a href="#index04-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a>」を参照。</dd></dl>
 <dl><dt>LTsv_settimershift()</dt><dd>
 日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。<br />
 通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。</dd></dl>
@@ -523,7 +523,7 @@ LTsv_start_nowとLTsv_goal_nowの差分を再計算する。<br />
 タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。</dd></dl>
 <dl><dt>LTsv_gettimerstr(timeformat=None)</dt><dd>
 日付フォーマットtimeformatを各種タイマー変数で置換する。<br />
-timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index1-3b>」を参照。</dd></dl>
+timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<a href="#index04-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a>」を参照。</dd></dl>
 
 </section>
 <section>
@@ -665,7 +665,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <section>
  <h3><a name="index05-0">⑤-0．「LTsv_calc.py」の関数一覧</a></h3>
 <p>
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index05-1>」を参照。<br />
+ 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#index05-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a>」を参照。<br />
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<br />
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<br />
 </p>
@@ -683,7 +683,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <dl><dt>LTsv_calc(LTsv_calcQbase)</dt><dd>
 電卓フォーマットを入力すると分数計算。「1/3⇔1|3」と分数に計算。<br />
 LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側を「LTsv_calc_function()」に渡す。<br />
-電卓フォーマットの概要は「<？index05-1>」を参照。</dd></dl>
+電卓フォーマットの概要は「<a href="#index05-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a>」を参照。</dd></dl>
 <dl><dt>LTsv_calc_function(LTsv_calcQbase)</dt><dd>
 主に数列和・数列積などの計算。「Σ(数列和)」などの左側を「LTsv_calc_addition()」に渡す。</dd></dl>
 <dl><dt>LTsv_calc_addition(LTsv_calcQbase,LTsv_Count)</dt><dd>
@@ -859,7 +859,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 </p>
  
 <dl><dt>LTsv_joyreset(LTsv_tsvpath)</dt><dd>
-「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。</dd></dl>
+「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<a href="#index06-1" title="⑥-1．「LTsv_joy.tsv」のタグ解説">⑥-1．「LTsv_joy.tsv」のタグ解説</a>」。</dd></dl>
 <dl><dt>LTsv_joyexit()</dt><dd>
 ジョイスティック(ゲームPAD)の変数初期化です。Linuxではデバイスをクローズします。</dd></dl>
 <dl><dt>LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")</dt><dd>
@@ -872,7 +872,7 @@ axisリストとbuttonリストのタプルで返り値も受け取れる。</dd
 <dl><dt>LTsv_getjoystr(LTsv_joyid,joyformat=None)</dt><dd>
 スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。<br />
 LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。<br />
-項目一覧の詳細は「<？index06-2>」。</dd></dl>
+項目一覧の詳細は「<a href="#index06-2" title="⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧">⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧</a>」。</dd></dl>
 <dl><dt>LTsv_atanscalar(LTsv_atanX,LTsv_atanY)</dt><dd>
 スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。</dd></dl>
 <dl><dt>LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)</dt><dd>
@@ -915,7 +915,7 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
 
 </section>
 <section>
- <h3><a name="index06-2">⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a></h3>
+ <h3><a name="index06-2">⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧</a></h3>
 <dl><dt>
   status</dt>
 <dd>
@@ -966,7 +966,7 @@ PCキーボード(マウス含む)の変数初期化です。Linuxではデバ�
 <dl><dt>LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)</dt><dd>
 PCキーボードの準備です。Linuxではデバイスをオープンします。<br />
 Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。<br />
-マウスボタンの配置は「<？index07-1>」を参考。<br />
+マウスボタンの配置は「<a href="#index07-1" title="⑦-1．「LTsv_kbd.tsv」のタグ解説">⑦-1．「LTsv_kbd.tsv」のタグ解説</a>」を参考。<br />
 Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。</dd></dl>
 <dl><dt>LTsv_kbdEVIOCGRAB(LTsv_grabflag)</dt><dd>
 ※Linux専用命令です。PCキーボードの入力をターミナルやテキストエリアなどに出力しないようにします。<br />
@@ -1106,7 +1106,7 @@ LTsv_widgetIDにFalseを指定することで前回と同じIDを再発行でき
 <dl><dt>LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)</dt><dd>
 「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。</dd></dl>
 <dl><dt>LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)</dt><dd>
-詳細は「<？index08-1>」参考。</dd></dl>
+詳細は「<a href="#index08-1" title="⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧">⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧</a>」参考。</dd></dl>
 <dl><dt>LTsv_fonttuple(LTsv_line)</dt><dd>
 「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。</dd></dl>
 <dl><dt>LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)</dt><dd>
@@ -1428,10 +1428,10 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 同じような動作をするGUIオブジェクト(widget)を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。</dd></dl>
 <dl><dt>debug_keypress(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。PCキーボード入力(押下)の動作検証。<br />
-「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py">LTsv/LTsv_kbd.py</a>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。</dd></dl>
+「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py">LTsv/LTsv_kbd.py</a>」によるキー入力取得が必要です。詳細は「<a href="#index07-0" title="⑦-0．「LTsv_kbd.py」の関数一覧">⑦-0．「LTsv_kbd.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>debug_keyrelease(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。PCキーボード入力(押上)の動作検証。<br />
-「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py">LTsv/LTsv_kbd.py</a>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。</dd></dl>
+「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<a href="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py" title="https://github.com/ooblog/LTsv10kanedit/LTsv/LTsv_kbd.py">LTsv/LTsv_kbd.py</a>」によるキー入力取得が必要です。詳細は「<a href="#index07-0" title="⑦-0．「LTsv_kbd.py」の関数一覧">⑦-0．「LTsv_kbd.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>debug_filedialog(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。「filedialog」の表示テスト。</dd></dl>
 <dl><dt>debug_filedialog_response(window_objvoid=None,window_objptr=None)</dt><dd>
@@ -1917,15 +1917,18 @@ XFER鍵盤で表示するα鍵盤名のリスト。<br />
 </section>
 <section>
  <h3><a name="index09-2">⑨-2．漢直鍵盤の操作方法</a></h3>
-<＃contents09-2>
+⑨-2．漢直鍵盤の操作方法
+
 </section>
 <section>
  <h3><a name="index09-3">⑨-3．テキスト入力欄(電卓)の操作方法</a></h3>
-<＃contents09-3>
+⑨-3．テキスト入力欄(電卓)の操作方法
+
 </section>
 <section>
  <h3><a name="index09-4">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a></h3>
-<＃contents09-4>
+⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+
 </section>
 
 
