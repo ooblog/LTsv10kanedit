@@ -13,7 +13,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161120U113335<br />
+modify 20161120U123603<br />
 </p>
 
 <h2>目次</h2>
@@ -1782,16 +1782,10 @@ find_tは複数の文字が使用できるので、先頭文字から順に見�
 「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。<br />
 カーソルが漢直鍵盤の外にある場合LTsv_global_kbdcursorNone()」が返り値。</dd></dl>
 <dl><dt>LTsv_glyph_typeNXK(glyphtype_getkbdnames)</dt><dd>
-「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。<br />
+「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。<br />
 NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。<br />
 NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。<br />
 NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。</dd></dl>
-<dl><dt>LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。<br />
-「windows」の「event_k=*_keypress」系コールバック関数内に設置。</dd></dl>
-<dl><dt>LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-「canvas」にマウスカーソルがある状態でPCキーボード押上に対応する漢直鍵盤を描画。<br />
-「windows」の「event_y=*_keyrelease」系コールバック関数内に設置。</dd></dl>
 <dl><dt>LTsv_glyph_kbddelete(kbd_canvas)</dt><dd>
 漢直鍵盤の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。</dd></dl>
 <dl><dt>LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)</dt><dd>
@@ -1846,9 +1840,12 @@ calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。</dd>
 <dl><dt>LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)</dt><dd>
 glyph_calcinputが文字ならテキスト入力欄(電卓)に文字入力、カーソル移動など編集指示ならテキスト処理。</dd></dl>
 <dl><dt>LTsv_glyph_calctype(calc_canvas)</dt><dd>
-</dd></dl>
+「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。<br />
+「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。</dd></dl>
 <dl><dt>LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。<br />
+「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。<br />
+「LTsv_glyph_calctypelimited()」はテキスト入力欄(電卓)を用いず漢直鍵盤のみを直接操作する用途。</dd></dl>
 <dl><dt>debug_calculatormousepress(window_objvoid=None,window_objptr=None)</dt><dd>
 </dd></dl>
 <dl><dt>debug_calculatormousemotion(window_objvoid=None,window_objptr=None)</dt><dd>
