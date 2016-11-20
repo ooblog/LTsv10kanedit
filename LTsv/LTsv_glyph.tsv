@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	LTsv_kbd.py
 LTsvver	20161023U011852
-modify	20161120U024413
+modify	20161120U104408
 |L:Tsv]
 
 [kanglyph|
@@ -36,6 +36,7 @@ last_dic	名
 kbdTAG	kanglyphkbd
 fontcolor	black
 bgcolor	#E1FFFA
+leavecolor	white
 kbddefsize	1
 |kanglyph]
 

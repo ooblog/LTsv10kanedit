@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161120U040000
+modify	20161120U103534
 |L:Tsv]
 
 [LTsv_doc|
@@ -152,7 +152,7 @@ modify <？modify><？BR><？/P>
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR>
 <？/PP>
  ※「<？LTsv>」固有の問題への言及。<？BR>
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
+   ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
 |<＃contents00-0>]
 [<？https00-0:mit>|
 .+\.html?	<dl><dt><？title00-0:mit></dt><dd><a href="<？url00-0:mit>" title="<？title00-0:mit>"><？url00-0:mit></a></dd></dl>
@@ -188,8 +188,8 @@ modify <？modify><？BR><？/P>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<？BR>
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<？https99-0:kanchar.tsv>」から直接生成したいけど優先順位が低い。<？BR>
- 現在人名に使える漢字の異体字を漢字配列「<？https99-0:kanmap.tsv>」から単漢字辞書「<？https99-0:kanchar.tsv>」に移管作業中。なので<？VRkeyboard>の漢字配列が大幅に変更するかも。<？BR>
- Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
+ 人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
+ Windowsのエディタで<？DICmap>を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
 |<＃contents00-2>]
@@ -336,7 +336,7 @@ LTsv_pickdatafind(LTsv_line,LTsv_find)	LTsv_findが1行のLTSVの何項目にデ
 LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	1行のLTSVのLTsv_datanum項目目にLTsv_default(LTsv_data)を追加する。	LTsv_datanumが0以下の場合先頭firstに追加。項目数以上の場合末尾に追加。	省略もしくは文字列長0の場合は何もしない。
 LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)	1行のLTSVのLTsv_datanum項目目にデータLTsv_default(LTsv_data)を上書する。	負数の場合や項目数以上の場合は何もしない。	 LTsv_default(LTsv_data)を省略もしくは文字列長0のデータの場合は項目を削除。
 LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。	LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。
-LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)	「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「LTsv/kanchar.tsv」読込用途。	first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。
+LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)	「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。<？DICchar>読込用途。	first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。
 LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)	1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。	元LTSVに存在しない横軸ラベル(LTsv_label)の場合末尾に追加。	LTsv_default(LTsv_data)を省略した場合に項目はラベルごと削除。	文字列長0のデータLTsv_default(LTsv_data)であっても省略しなかった場合は横軸ラベル項目を追加もしくは上書き。	上記LTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。
 LTsv_sievelabels(LTsv_rest,LTsv_labels="")	データそのままにラベルを取り替える。	文字列0の「data」(データ数よりラベル数が多い場合を想定)は項目が消えるので注意。
 LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)	「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。
@@ -930,16 +930,16 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 |<＃contents09-0>]
 
 [LTsv_glyph.py|
-LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「LTsv/kanchar.tsv」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。	「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。	「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに<？VRkeyboard>の倍率が指定できるが後述の<？VRcalc>と連携が不十分。
-LTsv_global_kandic(new_kandic=None)	単漢字辞書「LTsv/kanchar.tsv」を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
-LTsv_global_kanmap()	漢字配列「<？https99-0:kanmap.tsv>」を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
-LTsv_global_kanmapN()	漢字配列のNFER鍵盤の辞書を取得。
-LTsv_global_kanmapX()	漢字配列のXFER鍵盤の辞書を取得。
+LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	設定ファイル「LTsv/LTsv_glyph.tsv」の読込、<？DICchar>の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。	「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。	「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに<？VRkeyboard>の倍率が指定できるが後述の<？VRcalc>と連携が不十分。
+LTsv_global_kandic(new_kandic=None)	<？DICchar>を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+LTsv_global_kanmap()	<？DICmap>を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
+LTsv_global_kanmapN()	<？DICmap>のNFER鍵盤の配列を取得。
+LTsv_global_kanmapX()	<？DICmap>のXFER鍵盤の配列を取得。
 LTsv_global_kanpickle()	グリフの座標データを取得。
-LTsv_global_irohatype()	「<？https99-0:kanmap.tsv>」項目名としてのイロハ鍵盤名リスト。	通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
+LTsv_global_irohatype()	<？DICmap>項目名としてのイロハ鍵盤名リスト。	通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
 LTsv_global_irohatypeN()	NFER鍵盤で表示するかな鍵盤名のリスト。	通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,＠,ぷ,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」
 LTsv_global_irohatypeX()	XFER鍵盤で表示するかな鍵盤名のリスト。	通常は「ヌ,フ,ア,ウ,エ,オ,ヤ,ユ,ヨ,ワ,ホ,ヘ,タ,テ,イ,ス,カ,ン,ナ,ニ,ラ,セ,｀,プ,チ,ト,シ,ハ,キ,ク,マ,ノ,リ,レ,ケ,ム,ツ,サ,ソ,ヒ,コ,ミ,モ,ネ,ル,メ,ロ,｜」
-LTsv_global_alphatype()	「<？https99-0:kanmap.tsv>」項目名としてのα鍵盤名のリスト。	通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
+LTsv_global_alphatype()	<？DICmap>項目名としてのα鍵盤名のリスト。	通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
 LTsv_global_alphatypeN()	NFER鍵盤で表示するα鍵盤名のリスト。	通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」
 LTsv_global_alphatypeX()	XFER鍵盤で表示するα鍵盤名のリスト。	通常は「Α,Β,Γ,Δ,Ε,Ζ,Η,Θ,Ι,Κ,Λ,Μ,Ν,Ξ,Ο,Π,Ρ,Σ,Τ,Υ,Φ,Χ,Ψ,Ω,●,▲,■」
 LTsv_global_dictype()	辞書名のリスト。通常は「英,名,音,訓,送,異,俗,熙,簡,繁,越,地,顔,鍵,代,逆,非,難,活,漫,筆,幅」
@@ -948,7 +948,7 @@ LTsv_global_choice()	辞書変更鍵盤のリスト。通常は「名,音,訓,�
 LTsv_global_choiceN()	NFER鍵盤で表示する辞書変更鍵盤。通常は「名,音,訓,送,異,俗,簡,繁,越,地,逆,非,英,顔,ε,ρ,τ,υ,θ,ι,ο,π,＠,ぷ,α,σ,δ,φ,γ,η,ξ,κ,λ,代,鍵,ぬ,ζ,χ,ψ,ω,β,ν,μ,熙,○,△,□,￥,σ」
 LTsv_global_choiceX()	XFER鍵盤で表示する辞書変更鍵盤。通常は「名,音,訓,送,異,俗,簡,繁,越,地,逆,非,英,顔,Ε,Ρ,Τ,Υ,Θ,Ι,Ο,Π,｀,プ,Α,Σ,Δ,Φ,Γ,Η,Ξ,Κ,Λ,代,鍵,ぬ,Ζ,Χ,Ψ,Ω,Β,Ν,Μ,熙,●,▲,■,￥,Σ」
 LTsv_global_evaltype()	電卓コマンドのリスト。通常は「平,片,大,小,半,全,＼,￥,清,Ｈ,Ｍ,濁,Ｂ,Ｐ,今,⑩,⑯,⑧,⓪,照,探,〒,汎,算」
-LTsv_global_irohaalpha()	LTsv_global_irohatype()+LTsv_global_alphatype()。「<？https99-0:kanmap.tsv>」項目名全部。
+LTsv_global_irohaalpha()	LTsv_global_irohatype()+LTsv_global_alphatype()。<？DICmap>項目名全部。
 LTsv_global_irohaalphaN()	NFER鍵盤で表示する全鍵盤名のリスト。
 LTsv_global_irohaalphaX()	XFER鍵盤で表示する全鍵盤名のリスト。
 LTsv_global_kbdchars()	<？VRkeyboard>で表示する文字。	NFER,XFER,KANAの操作で鍵盤を交換して、表示されてる文字を入力する。
@@ -958,7 +958,7 @@ LTsv_global_glyphkbdF()	<？VRkeyboard>の文字スペースサイズ。	LTsv_gl
 LTsv_global_kbdcursorNone()	52。	文字入力48鍵+鍵盤制御4鍵(IME想定では4鍵だったが漢直専用エディタでは3鍵に減らせた)の合計。
 LTsv_glyphSVG5x10x(LTsv_glyph_path)	グリフの圧縮された座標データをSVGパスに(伸張)。	「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」	「[AOBOBQAQ]」→「M 0,1000 100,1000 100,900 0,900 z」
 LTsv_glyphSVG(LTsv_glyph_path)	グリフの座標データをSVGからリストに変換。
-LTsv_glyphpath(glyphcode)	グリフの「活」「漫」「筆」および「幅」データを単漢字辞書から抽出。同時にポリゴンの回転方向を事前に計算。
+LTsv_glyphpath(glyphcode)	グリフの「活」「漫」「筆」および「幅」データを<？DICchar>から抽出。同時にポリゴンの回転方向を事前に計算。
 LTsv_glyphfont_5x5(glyphcode)	グリフ「活」の座標データと計算済みのポリゴン回転方向を用意。
 LTsv_glyphfont_comic(glyphcode)	グリフ「漫」の座標データと計算済みのポリゴン回転方向を用意。
 LTsv_glyphfont_brush(glyphcode)	グリフ「筆」の座標データと計算済みのポリゴン回転方向を用意。
@@ -973,28 +973,28 @@ LTsv_draw_glypwide(draw_t="",draw_x=0,draw_y=0,draw_s=0,draw_f=LTsv_PSchar_ZW//2
 LTsv_draw_glyphmouse(draw_t="",draw_x=0,draw_y=0,path_z=0,grid_x=LTsv_PSchar_ZW//2,grid_y=LTsv_PSchar_ZW//2,mouse_x=LTsv_PSchar_ZW//2,mouse_y=LTsv_PSchar_ZW//2,draw_f=LTsv_PSchar_ZW//2,draw_g="活")	ほぼ「kanfont」用。mouse_x,mouse_yにマウス座標を入れて「LTsv_draw_glyphcursor()」で使用する「grid_p」「grid_q」の値を取得。
 LTsv_glyph_getnote(draw_t="",draw_g="活")	グリフの座標をリストで取得。draw_tにテキスト1文字分、draw_gでグリフの種類。
 LTsv_glyph_pointsrotation(glyphnote=[])	グリフ座標のポリゴンの座標の順番を回転ソートしてリスト先頭座標を左上に配置。
-LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")	ほぼ「kanfont」用。単漢字辞書のグリフを座標データで更新する。	draw_tに1文字、draw_gでフォントの種類。glyphnoteはグリフ座標リストを直接。
-LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗")	
-LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_kbdselect(choice)	
-LTsv_glyph_choiceNX(choice)	
-LTsv_glyph_kbdfind(find_t)	
-LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	
-LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)	
-LTsv_glyph_kbddelete(kbd_canvas)	
-LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	
-LTsv_glyph_picklesave()	
-LTsv_evaltext(calc_value="")	
-LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	
-LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	
-LTsv_glyph_calcdelete(calc_canvas)	
-LTsv_glyph_calcdraw(calc_canvas)	
-LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None)	
+LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")	ほぼ「kanfont」用。<？DICchar>のグリフを座標データで更新する。	draw_tに1文字、draw_gでフォントの種類。glyphnoteはグリフ座標リストを直接。
+LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗")	<？DICchar>のグリフをkanpathのテキストデータで更新する。	グリフ以外のデータの更新にも使える。
+LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)	<？VRkeyboard>のどのキーの上にマウスカーソルがあるか調べる。kbd_canvasでキャンバス、kbd_x,kbd_yで漢直鍵盤の表示位置。	漢直鍵盤の上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。
+LTsv_glyph_kbdselect(choice)	<？VRkeyboard>を鍵盤名(LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX)で変更する。	鍵盤名は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」で取得。
+LTsv_glyph_choiceNX(choice)	鍵盤名がLTsv_glyph_irohaalphaNもしくはLTsv_glyph_irohaalphaXの何番目か数値で取得。
+LTsv_glyph_kbdfind(find_t)	find_tが<？DICmap>にあるか検索して<？VRkeyboard>の鍵盤を変更する。	find_tは複数の文字が使用できるので、先頭文字から順に見つからない場合は次の文字を探す。	<？DICchar>も動員して異体字なども調べる場合は「LTsv_evaltext()」を使う。
+LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	<？VRkeyboard>の文字入力を受けとるコールバック関数の指定。	文字入力判定はマウス押下ではなくマウス押上、タップ動作。
+LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス押下動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス移動動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス押上動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)	「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」鍵盤表示、XFERキーとKANAキーの時は「Σ」鍵盤表示。
+LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「windows」の「event_k=*_keypress」系コールバック関数内に設置。
+LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押上に対応する<？VRkeyboard>を描画。	「windows」の「event_y=*_keyrelease」系コールバック関数内に設置。
+LTsv_glyph_kbddelete(kbd_canvas)	<？VRkeyboard>の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
+LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	<？VRkeyboard>の描画。	「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも消去アンド描画されるはず。
+LTsv_glyph_picklesave()	グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。
+LTsv_evaltext(calc_value="")	calc_valueに数式などをいれると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「<？VRcalc>」で使用します。	詳細は「<？index09-4>」を参考。
+LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	「<？VRcalc>(<？VRkeyboard>含む)」の初期設定。calculatorTは初期テキスト。	calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(<？VRkeyboard>より大きくする必要)、	calculatorCには「clipboard」オブジェクト、calculatorBには<？VRkeyboard>の文字入力を受けとるコールバック関数。
+LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	「<？VRcalc>(<？VRkeyboard>含む)」の設定変更もしくはテキストの取得(返り値)。	calculatorTXは文字表示位置を移動。calculatorTCはカーソル移動。
+LTsv_glyph_calcdelete(calc_canvas)	<？VRcalc>の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
+LTsv_glyph_calcdraw(calc_canvas)	<？VRcalc>の描画。	「LTsv_glyph_calcpress()」「LTsv_glyph_calcmotion()」「LTsv_glyph_calcrelease()」でも消去アンド描画されるはず。
+LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasfgcolor=None,calc_canvasbgcolor=None)	<？VRcalc>の描画。	ただし<？VRkeyboard>を非表示、入力欄のカーソルも表示しない。マウスフォーカスが外れてる事を示す用途。	calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。
 LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")	
 LTsv_glyph_calcglyphs(calc_canvas)	
 LTsv_glyph_calcpress(calc_canvas)	
@@ -1062,6 +1062,7 @@ last_dic
 kbdTAG	
 fontcolor	
 bgcolor	
+leavecolor	
 kbddefsize	
 [reversi|	
 entry	
@@ -1250,6 +1251,12 @@ entry
 [<？DICword>|
 .*	汎用辞書「<？https99-0:kanword.tsv>」
 |<？DICword>]
+[<？VRkeyboard>|
+.*	漢直鍵盤
+|<？VRkeyboard>]
+[<？VRcalc>|
+.*	テキスト入力欄(電卓)
+|<？VRcalc>]
 
 [<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:kanchar.tsv>*<？https99-0:kanword.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>"><？path99-0:LTsvFiles@0c></a>
@@ -1269,7 +1276,7 @@ entry
 |<？path99-0:LTsvFiles03>]
 [<？path99-0:LTsvFiles04>|
 .*	LTsv/kanword.tsv
-|<？path99-0:LTsvFiles03>]
+|<？path99-0:LTsvFiles04>]
 [<？path99-0:LTsvFiles05>|
 .*	LTsv/LTsv_kbd.py
 |<？path99-0:LTsvFiles05>]
@@ -1326,12 +1333,6 @@ entry
 [<？PCkeyboard>|
 .*	PCキーボード
 |<？PCkeyboard>]
-[<？VRkeyboard>|
-.*	漢直鍵盤
-|<？VRkeyboard>]
-[<？VRcalc>|
-.*	テキスト入力欄(電卓)
-|<？VRcalc>]
 [<？keycode00FF>|
 .*	キーコード($00〜$FF)
 |<？keycode00FF>]

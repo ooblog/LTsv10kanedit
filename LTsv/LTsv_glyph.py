@@ -50,7 +50,7 @@ LTsv_glyph_kbdchars=[""]*(LTsv_glyph_None); LTsv_glyph_kbdchars[LTsv_glyph_SandS
 LTsv_glyph_kbdtype=tuple(["活" if t < LTsv_glyph_SandS else "漫" for t in range(LTsv_glyph_None)])
 LTsv_glyph_kbdLCR=[""]
 LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL=LTsv_glyph_None,LTsv_glyph_None,"NFER","XFER","KANA","Ctrl"
-LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor="black","#E1FFFA"
+LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor,LTsv_glyph_kbdleavecolor="black","#E1FFFA","white"
 LTsv_glyph_kbdsize=1
 LTsv_glyph_cursorsize=10
 LTsv_chrcode=chr if sys.version_info.major == 3 else unichr
@@ -78,7 +78,7 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
     global LTsv_glyph_kbdF,LTsv_glyph_kbdH,LTsv_glyph_kbdW,LTsv_glyph_kbdG,LTsv_glyph_kbdC
     global LTsv_glyph_fontX,LTsv_glyph_fontY,LTsv_glyph_fontG,LTsv_glyph_mouseX,LTsv_glyph_mouseY,LTsv_glyph_mouseC
     global LTsv_glyph_kbdchars
-    global LTsv_glyph_kbdTAG,LTsv_glyph_calcTAG,LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor
+    global LTsv_glyph_kbdTAG,LTsv_glyph_calcTAG,LTsv_glyph_kbdfontcolor,LTsv_glyph_kbdbgcolor,LTsv_glyph_kbdleavecolor
     global LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue
     global LTsv_draw_color,LTsv_draw_bgcolor
     global LTsv_glyph_kbdsize
@@ -136,6 +136,7 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
     LTsv_glyph_kbdTAG=LTsv_readlinerest(LTsv_glyph_config,"kbdTAG",LTsv_glyph_kbdTAG)
     LTsv_glyph_kbdfontcolor=LTsv_readlinerest(LTsv_glyph_config,"fontcolor",LTsv_glyph_kbdfontcolor)
     LTsv_glyph_kbdbgcolor=LTsv_readlinerest(LTsv_glyph_config,"bgcolor",LTsv_glyph_kbdbgcolor)
+    LTsv_glyph_kbdleavecolor=LTsv_readlinerest(LTsv_glyph_config,"leavecolor",LTsv_glyph_kbdleavecolor)
     LTsv_glyph_kbdsize=LTsv_intstr0x(LTsv_readlinerest(LTsv_glyph_config,"kbddefsize",str(LTsv_glyph_kbdsize))) if LTsv_glyph_kbddefsize == None else LTsv_glyph_kbddefsize
     LTsv_glyph_kbdF=6*LTsv_glyph_kbdsize; LTsv_glyph_kbdH=LTsv_glyph_kbdF*4; LTsv_glyph_kbdW=LTsv_glyph_kbdH*4;
     LTsv_glyph_kbdG,LTsv_glyph_kbdC=LTsv_glyph_kbdF-1,LTsv_glyph_kbdF//2
@@ -966,11 +967,13 @@ def LTsv_glyph_calcdraw(calc_canvas):
     LTsv_glyph_calcglyphs(calc_canvas)
     LTsv_draw_queue()
 
-def LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None):
+def LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasfgcolor=None,calc_canvasbgcolor=None):
     LTsv_draw_selcanvas(calc_canvas,draw_g=LTsv_glyph_calcTAG)
-    LTsv_draw_color("white" if calc_canvascolor == None else calc_canvascolor)
+    calc_canvasfgcolorplane=calc_canvasfgcolor if calc_canvasfgcolor != None else LTsv_glyph_kbdfontcolor
+    calc_canvasbgcolorplane=calc_canvasbgcolor if calc_canvasbgcolor != None else LTsv_glyph_kbdbgcolor
+    LTsv_draw_color(calc_canvasbgcolorplane)
     LTsv_draw_polygonfill(LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas],LTsv_calculatorUX[calc_canvas]+LTsv_calculatorTW[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas],LTsv_calculatorUX[calc_canvas],LTsv_calculatorUY[calc_canvas]+LTsv_calculatorUH[calc_canvas])
-    LTsv_draw_color(LTsv_glyph_kbdfontcolor); LTsv_draw_bgcolor(LTsv_glyph_kbdbgcolor);
+    LTsv_draw_color(calc_canvasfgcolorplane); LTsv_draw_bgcolor(calc_canvasbgcolorplane);
     LTsv_draw_glyphsfill(draw_t=LTsv_calculatorTT[calc_canvas],draw_x=LTsv_calculatorTX[calc_canvas],draw_y=LTsv_calculatorTY[calc_canvas],draw_f=LTsv_calculatorTF[calc_canvas],draw_g=LTsv_calculatorTG[calc_canvas])
     LTsv_draw_queue()
 
@@ -1139,7 +1142,7 @@ def LTsv_glyph_calcleave(calc_canvas):
     LTsv_glyph_kbddelete(calc_canvas)
     LTsv_glyph_calcdelete(calc_canvas)
     LTsv_calculatorTW[calc_canvas]=LTsv_calculatorUW[calc_canvas]
-    LTsv_glyph_calcdrawplane(calc_canvas,"white"); LTsv_draw_queue()
+    LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasbgcolor=LTsv_glyph_kbdleavecolor); LTsv_draw_queue()
     return LTsv_calculatorTT[calc_canvas]
 
 def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput):

@@ -13,7 +13,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161120U035958<br />
+modify 20161120U103557<br />
 </p>
 
 <h2>目次</h2>
@@ -68,7 +68,7 @@ modify 20161120U035958<br />
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。<br />
 </p><p>
  ※「LTsv10kanedit(tsvtool10)」固有の問題への言及。<br />
-   ・単漢字辞書「LTsv/kanchar.tsv」汎用辞書「kanword.tsv」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<br />
+   ・単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv">LTsv/kanword.tsv</a>」などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<br />
 </p>
 
 </section>
@@ -90,8 +90,8 @@ modify 20161120U035958<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
  「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<br />
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
- 現在人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列が大幅に変更するかも。<br />
- Windowsのエディタで[kanchar.tsv]を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<br />
+ 人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
+ Windowsのエディタで漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
 
@@ -369,7 +369,7 @@ LTsv_datanumが0以下の場合先頭firstに追加。項目数以上の場合�
 1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。<br />
 LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。</dd></dl>
 <dl><dt>LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)</dt><dd>
-「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「LTsv/kanchar.tsv」読込用途。<br />
+「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」読込用途。<br />
 first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。</dd></dl>
 <dl><dt>LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)</dt><dd>
 1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。<br />
@@ -1644,23 +1644,23 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 </p>
 
 <dl><dt>LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)</dt><dd>
-設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「LTsv/kanchar.tsv」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。<br />
+設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。<br />
 「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。<br />
 「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに漢直鍵盤の倍率が指定できるが後述のテキスト入力欄(電卓)と連携が不十分。</dd></dl>
 <dl><dt>LTsv_global_kandic(new_kandic=None)</dt><dd>
-単漢字辞書「LTsv/kanchar.tsv」を取得できます。<br />
+単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」を取得できます。<br />
 「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。</dd></dl>
 <dl><dt>LTsv_global_kanmap()</dt><dd>
 漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」を取得できます。<br />
 「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。</dd></dl>
 <dl><dt>LTsv_global_kanmapN()</dt><dd>
-漢字配列のNFER鍵盤の辞書を取得。</dd></dl>
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」のNFER鍵盤の配列を取得。</dd></dl>
 <dl><dt>LTsv_global_kanmapX()</dt><dd>
-漢字配列のXFER鍵盤の辞書を取得。</dd></dl>
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」のXFER鍵盤の配列を取得。</dd></dl>
 <dl><dt>LTsv_global_kanpickle()</dt><dd>
 グリフの座標データを取得。</dd></dl>
 <dl><dt>LTsv_global_irohatype()</dt><dd>
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのイロハ鍵盤名リスト。<br />
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのイロハ鍵盤名リスト。<br />
 通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」</dd></dl>
 <dl><dt>LTsv_global_irohatypeN()</dt><dd>
 NFER鍵盤で表示するかな鍵盤名のリスト。<br />
@@ -1669,7 +1669,7 @@ NFER鍵盤で表示するかな鍵盤名のリスト。<br />
 XFER鍵盤で表示するかな鍵盤名のリスト。<br />
 通常は「ヌ,フ,ア,ウ,エ,オ,ヤ,ユ,ヨ,ワ,ホ,ヘ,タ,テ,イ,ス,カ,ン,ナ,ニ,ラ,セ,｀,プ,チ,ト,シ,ハ,キ,ク,マ,ノ,リ,レ,ケ,ム,ツ,サ,ソ,ヒ,コ,ミ,モ,ネ,ル,メ,ロ,｜」</dd></dl>
 <dl><dt>LTsv_global_alphatype()</dt><dd>
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのα鍵盤名のリスト。<br />
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのα鍵盤名のリスト。<br />
 通常は「α,β,γ,δ,ε,ζ,η,θ,ι,κ,λ,μ,ν,ξ,ο,π,ρ,σ,τ,υ,φ,χ,ψ,ω,○,△,□」</dd></dl>
 <dl><dt>LTsv_global_alphatypeN()</dt><dd>
 NFER鍵盤で表示するα鍵盤名のリスト。<br />
@@ -1690,7 +1690,7 @@ XFER鍵盤で表示する辞書変更鍵盤。通常は「名,音,訓,送,異,�
 <dl><dt>LTsv_global_evaltype()</dt><dd>
 電卓コマンドのリスト。通常は「平,片,大,小,半,全,＼,￥,清,Ｈ,Ｍ,濁,Ｂ,Ｐ,今,⑩,⑯,⑧,⓪,照,探,〒,汎,算」</dd></dl>
 <dl><dt>LTsv_global_irohaalpha()</dt><dd>
-LTsv_global_irohatype()+LTsv_global_alphatype()。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名全部。</dd></dl>
+LTsv_global_irohatype()+LTsv_global_alphatype()。漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名全部。</dd></dl>
 <dl><dt>LTsv_global_irohaalphaN()</dt><dd>
 NFER鍵盤で表示する全鍵盤名のリスト。</dd></dl>
 <dl><dt>LTsv_global_irohaalphaX()</dt><dd>
@@ -1717,7 +1717,7 @@ LTsv_glyph_kbddefsizeが1の時、グリフサイズが5になるので時余白
 <dl><dt>LTsv_glyphSVG(LTsv_glyph_path)</dt><dd>
 グリフの座標データをSVGからリストに変換。</dd></dl>
 <dl><dt>LTsv_glyphpath(glyphcode)</dt><dd>
-グリフの「活」「漫」「筆」および「幅」データを単漢字辞書から抽出。同時にポリゴンの回転方向を事前に計算。</dd></dl>
+グリフの「活」「漫」「筆」および「幅」データを単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から抽出。同時にポリゴンの回転方向を事前に計算。</dd></dl>
 <dl><dt>LTsv_glyphfont_5x5(glyphcode)</dt><dd>
 グリフ「活」の座標データと計算済みのポリゴン回転方向を用意。</dd></dl>
 <dl><dt>LTsv_glyphfont_comic(glyphcode)</dt><dd>
@@ -1749,50 +1749,75 @@ draw_fにフォントサイズ。draw_gでフォントの種類。draw_w,draw_h�
 <dl><dt>LTsv_glyph_pointsrotation(glyphnote=[])</dt><dd>
 グリフ座標のポリゴンの座標の順番を回転ソートしてリスト先頭座標を左上に配置。</dd></dl>
 <dl><dt>LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活")</dt><dd>
-ほぼ「kanfont」用。単漢字辞書のグリフを座標データで更新する。<br />
+ほぼ「kanfont」用。単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」のグリフを座標データで更新する。<br />
 draw_tに1文字、draw_gでフォントの種類。glyphnoteはグリフ座標リストを直接。</dd></dl>
 <dl><dt>LTsv_glyph_text2path(draw_t="",kanpath="",draw_g="俗")</dt><dd>
-</dd></dl>
+単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」のグリフをkanpathのテキストデータで更新する。<br />
+グリフ以外のデータの更新にも使える。</dd></dl>
 <dl><dt>LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+漢直鍵盤のどのキーの上にマウスカーソルがあるか調べる。kbd_canvasでキャンバス、kbd_x,kbd_yで漢直鍵盤の表示位置。<br />
+漢直鍵盤の上にマウスが無い場合「LTsv_global_kbdcursorNone()」を返す。</dd></dl>
 <dl><dt>LTsv_glyph_kbdselect(choice)</dt><dd>
-</dd></dl>
+漢直鍵盤を鍵盤名(LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX)で変更する。<br />
+鍵盤名は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」で取得。</dd></dl>
 <dl><dt>LTsv_glyph_choiceNX(choice)</dt><dd>
-</dd></dl>
+鍵盤名がLTsv_glyph_irohaalphaNもしくはLTsv_glyph_irohaalphaXの何番目か数値で取得。</dd></dl>
 <dl><dt>LTsv_glyph_kbdfind(find_t)</dt><dd>
-</dd></dl>
+find_tが漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」にあるか検索して漢直鍵盤の鍵盤を変更する。<br />
+find_tは複数の文字が使用できるので、先頭文字から順に見つからない場合は次の文字を探す。<br />
+単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」も動員して異体字なども調べる場合は「LTsv_evaltext()」を使う。</dd></dl>
 <dl><dt>LTsv_glyph_tapcallback_shell(kbd_canvas,callback)</dt><dd>
-</dd></dl>
+漢直鍵盤の文字入力を受けとるコールバック関数の指定。<br />
+文字入力判定はマウス押下ではなくマウス押上、タップ動作。</dd></dl>
 <dl><dt>LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウス押下動作に対応する漢直鍵盤を描画。<br />
+「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。<br />
+カーソルが漢直鍵盤の外にある場合「LTsv_global_kbdcursorNone()」が返り値。</dd></dl>
 <dl><dt>LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウス移動動作に対応する漢直鍵盤を描画。<br />
+「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。<br />
+カーソルが漢直鍵盤の外にある場合「LTsv_global_kbdcursorNone()」が返り値。</dd></dl>
 <dl><dt>LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウス押上動作に対応する漢直鍵盤を描画。<br />
+「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。<br />
+カーソルが漢直鍵盤の外にある場合LTsv_global_kbdcursorNone()」が返り値。</dd></dl>
 <dl><dt>LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。<br />
+NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。<br />
+NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。<br />
+NFERキーとKANAキーの時は「σ」鍵盤表示、XFERキーとKANAキーの時は「Σ」鍵盤表示。</dd></dl>
 <dl><dt>LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。<br />
+「windows」の「event_k=*_keypress」系コールバック関数内に設置。</dd></dl>
 <dl><dt>LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)</dt><dd>
-</dd></dl>
+「canvas」にマウスカーソルがある状態でPCキーボード押上に対応する漢直鍵盤を描画。<br />
+「windows」の「event_y=*_keyrelease」系コールバック関数内に設置。</dd></dl>
 <dl><dt>LTsv_glyph_kbddelete(kbd_canvas)</dt><dd>
-</dd></dl>
+漢直鍵盤の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。</dd></dl>
 <dl><dt>LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)</dt><dd>
-</dd></dl>
+漢直鍵盤の描画。<br />
+「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも消去アンド描画されるはず。</dd></dl>
 <dl><dt>LTsv_glyph_picklesave()</dt><dd>
-</dd></dl>
+グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。</dd></dl>
 <dl><dt>LTsv_evaltext(calc_value="")</dt><dd>
-</dd></dl>
+calc_valueに数式などをいれると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「テキスト入力欄(電卓)」で使用します。<br />
+詳細は「<a href="#index09-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")</dt><dd>
-</dd></dl>
+「テキスト入力欄(電卓)(漢直鍵盤含む)」の初期設定。calculatorTは初期テキスト。<br />
+calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(漢直鍵盤より大きくする必要)、<br />
+calculatorCには「clipboard」オブジェクト、calculatorBには漢直鍵盤の文字入力を受けとるコールバック関数。</dd></dl>
 <dl><dt>LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)</dt><dd>
-</dd></dl>
+「テキスト入力欄(電卓)(漢直鍵盤含む)」の設定変更もしくはテキストの取得(返り値)。<br />
+calculatorTXは文字表示位置を移動。calculatorTCはカーソル移動。</dd></dl>
 <dl><dt>LTsv_glyph_calcdelete(calc_canvas)</dt><dd>
-</dd></dl>
+テキスト入力欄(電卓)の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。</dd></dl>
 <dl><dt>LTsv_glyph_calcdraw(calc_canvas)</dt><dd>
-</dd></dl>
-<dl><dt>LTsv_glyph_calcdrawplane(calc_canvas,calc_canvascolor=None)</dt><dd>
-</dd></dl>
+テキスト入力欄(電卓)の描画。<br />
+「LTsv_glyph_calcpress()」「LTsv_glyph_calcmotion()」「LTsv_glyph_calcrelease()」でも消去アンド描画されるはず。</dd></dl>
+<dl><dt>LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasfgcolor=None,calc_canvasbgcolor=None)</dt><dd>
+テキスト入力欄(電卓)の描画。<br />
+ただし漢直鍵盤を非表示、入力欄のカーソルも表示しない。マウスフォーカスが外れてる事を示す用途。<br />
+calc_canvasbgcolorで背景色の変更。</dd></dl>
 <dl><dt>LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")</dt><dd>
 </dd></dl>
 <dl><dt>LTsv_glyph_calcglyphs(calc_canvas)</dt><dd>
@@ -1916,6 +1941,8 @@ draw_tに1文字、draw_gでフォントの種類。glyphnoteはグリフ座標�
 <dl><dt>fontcolor</dt><dd>
 </dd></dl>
 <dl><dt>bgcolor</dt><dd>
+</dd></dl>
+<dl><dt>leavecolor</dt><dd>
 </dd></dl>
 <dl><dt>kbddefsize</dt><dd>
 </dd></dl>

@@ -50,7 +50,8 @@ def kanfont_code(pathpos=None):
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_global_kandic(),kanfont_seek)
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
         calc_canvas=kanfont_dictype_canvas[dictype_cnt]
-        LTsv_glyph_calcdelete(calc_canvas); LTsv_glyph_calcresize(calc_canvas,calculatorT=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split),calculatorTX=0,calculatorTC=len(LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))); LTsv_glyph_calcdrawplane(calc_canvas); LTsv_draw_queue()
+#        LTsv_glyph_calcdelete(calc_canvas); LTsv_glyph_calcresize(calc_canvas,calculatorT=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split),calculatorTX=0,calculatorTC=len(LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))); LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasbgcolor="white"); LTsv_draw_queue()
+        LTsv_glyph_calcdelete(calc_canvas); LTsv_glyph_calcresize(calc_canvas,calculatorT=LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split),calculatorTX=0,calculatorTC=len(LTsv_pickdatalabel(LTsv_glyph_kanline,dictype_split))); LTsv_glyph_calcleave(calc_canvas);
     LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
 
 def kanfont_codespin_shell(window_objvoid=None,window_objptr=None):

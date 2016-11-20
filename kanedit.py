@@ -167,6 +167,7 @@ if len(LTsv_GUI) > 0:
     LTsv_draw_points=LTsv_draw_points_shell(LTsv_GUI)
     LTsv_draw_arc,LTsv_draw_arcfill=LTsv_draw_arc_shell(LTsv_GUI),LTsv_draw_arcfill_shell(LTsv_GUI)
     kanedit_draw()
+    LTsv_glyph_calcresize(kanedit_canvas); LTsv_glyph_calcleave(kanedit_canvas);
     LTsv_window_main(kanedit_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")
