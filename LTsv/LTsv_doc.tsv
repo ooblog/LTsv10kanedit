@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161120U103534
+modify	20161120U113336
 |L:Tsv]
 
 [LTsv_doc|
@@ -980,29 +980,29 @@ LTsv_glyph_kbdselect(choice)	<？VRkeyboard>を鍵盤名(LTsv_glyph_irohaalphaN,
 LTsv_glyph_choiceNX(choice)	鍵盤名がLTsv_glyph_irohaalphaNもしくはLTsv_glyph_irohaalphaXの何番目か数値で取得。
 LTsv_glyph_kbdfind(find_t)	find_tが<？DICmap>にあるか検索して<？VRkeyboard>の鍵盤を変更する。	find_tは複数の文字が使用できるので、先頭文字から順に見つからない場合は次の文字を探す。	<？DICchar>も動員して異体字なども調べる場合は「LTsv_evaltext()」を使う。
 LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	<？VRkeyboard>の文字入力を受けとるコールバック関数の指定。	文字入力判定はマウス押下ではなくマウス押上、タップ動作。
-LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス押下動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
-LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス移動動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
-LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウス押上動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合LTsv_global_kbdcursorNone()」が返り値。
-LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)	「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」鍵盤表示、XFERキーとKANAキーの時は「Σ」鍵盤表示。
+LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス押下動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス移動動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス押上動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合LTsv_global_kbdcursorNone()」が返り値。
+LTsv_glyph_typeNXK(glyphtype_getkbdnames)	「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
 LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「windows」の「event_k=*_keypress」系コールバック関数内に設置。
 LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押上に対応する<？VRkeyboard>を描画。	「windows」の「event_y=*_keyrelease」系コールバック関数内に設置。
 LTsv_glyph_kbddelete(kbd_canvas)	<？VRkeyboard>の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
 LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	<？VRkeyboard>の描画。	「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも消去アンド描画されるはず。
 LTsv_glyph_picklesave()	グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。
-LTsv_evaltext(calc_value="")	calc_valueに数式などをいれると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「<？VRcalc>」で使用します。	詳細は「<？index09-4>」を参考。
+LTsv_evaltext(calc_value="")	calc_valueに数式などを入れると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「<？VRcalc>」で使用します。	詳細は「<？index09-4>」を参考。
 LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")	「<？VRcalc>(<？VRkeyboard>含む)」の初期設定。calculatorTは初期テキスト。	calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(<？VRkeyboard>より大きくする必要)、	calculatorCには「clipboard」オブジェクト、calculatorBには<？VRkeyboard>の文字入力を受けとるコールバック関数。
 LTsv_glyph_calcresize(calc_canvas,calculatorX=None,calculatorY=None,calculatorW=None,calculatorH=None,calculatorT=None,calculatorTX=None,calculatorTC=None)	「<？VRcalc>(<？VRkeyboard>含む)」の設定変更もしくはテキストの取得(返り値)。	calculatorTXは文字表示位置を移動。calculatorTCはカーソル移動。
 LTsv_glyph_calcdelete(calc_canvas)	<？VRcalc>の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
 LTsv_glyph_calcdraw(calc_canvas)	<？VRcalc>の描画。	「LTsv_glyph_calcpress()」「LTsv_glyph_calcmotion()」「LTsv_glyph_calcrelease()」でも消去アンド描画されるはず。
 LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasfgcolor=None,calc_canvasbgcolor=None)	<？VRcalc>の描画。	ただし<？VRkeyboard>を非表示、入力欄のカーソルも表示しない。マウスフォーカスが外れてる事を示す用途。	calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。
-LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")	
-LTsv_glyph_calcglyphs(calc_canvas)	
-LTsv_glyph_calcpress(calc_canvas)	
-LTsv_glyph_calcmotion(calc_canvas)	
-LTsv_glyph_calcrelease(calc_canvas)	
-LTsv_glyph_calcenter(calc_canvas)	
-LTsv_glyph_calcleave(calc_canvas)	
-LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)	
+LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫")	<？VRcalc>のテキストの文字一個一個の座標を記録。
+LTsv_glyph_calcglyphs(calc_canvas)	<？VRcalc>内でテキスト表示。選択テキスト(カーソル)のワイヤーフレーム表示や、入力欄からはみ出る文字を非表示にしたりする。	入力欄操作の詳細は「<？index09-3>」を参考。
+LTsv_glyph_calcpress(calc_canvas)	「canvas」のマウス押下動作に対応する<？VRcalc>を描画。	「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。	カーソルが<？VRcalc>の中にある場合True、外にある場合Falseが返り値。
+LTsv_glyph_calcmotion(calc_canvas)	「canvas」のマウス移動動作に対応する<？VRcalc>を描画。	「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。	カーソルが<？VRcalc>の中にある場合True、外にある場合Falseが返り値。
+LTsv_glyph_calcrelease(calc_canvas)	「canvas」のマウス押上動作に対応する<？VRcalc>を描画。	「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。	カーソルが<？VRcalc>の中にある場合True、外にある場合Falseが返り値。
+LTsv_glyph_calcenter(calc_canvas)	「canvas」にマウスカーソルが入った時の<？VRcalc>を描画。	「canvas」の「event_e=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
+LTsv_glyph_calcleave(calc_canvas)	「canvas」からマウスカーソルが出た時の<？VRcalc>を描画。	「canvas」の「event_l=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
+LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)	glyph_calcinputが文字なら<？VRcalc>に文字入力、カーソル移動など編集指示ならテキスト処理。
 LTsv_glyph_calctype(calc_canvas)	
 LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)	
 debug_calculatormousepress(window_objvoid=None,window_objptr=None)	

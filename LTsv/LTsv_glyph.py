@@ -631,7 +631,8 @@ def LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y):
     LTsv_glyph_kbdLCR=""
     return LTsv_kbdcursor
 
-def LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y):
+#def LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y):
+def LTsv_glyph_typeNXK(glyphtype_getkbdnames):
     LTsv_glyph_NXKSbf=LTsv_glyph_None
     if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
         if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
@@ -640,17 +641,18 @@ def LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y):
         if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
         if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
             LTsv_glyph_kbdselect("σ")
-            LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
+#            LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
         if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
             LTsv_glyph_kbdselect("Σ")
-            LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
+#            LTsv_glyph_kbddelete(kbd_canvas); LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y); LTsv_draw_queue()
     return LTsv_glyph_NXKSbf
 
 def LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
     LTsv_glyph_CTRL=True if LTsv_glyph_kbdCTRL in glyphtype_getkbdnames else False
-    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)
+#    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)
+    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames)
     if LTsv_glyph_NXKSaf != LTsv_glyph_NXKSbf:
         LTsv_glyph_NXKSaf=LTsv_glyph_SandS if LTsv_glyph_NXKSaf == LTsv_glyph_SandS and (LTsv_glyph_NXKSbf == LTsv_glyph_NFER or LTsv_glyph_NXKSbf == LTsv_glyph_XFER) else LTsv_glyph_NXKSbf
         if LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
@@ -714,7 +716,8 @@ def LTsv_glyph_typepress(kbd_canvas,kbd_x,kbd_y):
 def LTsv_glyph_typerelease(kbd_canvas,kbd_x,kbd_y):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)
+#    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames,kbd_canvas,kbd_x,kbd_y)
+    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames)
     if LTsv_glyph_NXKSaf != LTsv_glyph_NXKSbf:
         LTsv_glyph_NXKSaf=LTsv_glyph_SandS if LTsv_glyph_NXKSaf == LTsv_glyph_SandS and (LTsv_glyph_NXKSbf == LTsv_glyph_NFER or LTsv_glyph_NXKSbf == LTsv_glyph_XFER) else LTsv_glyph_NXKSbf
         if LTsv_glyph_NXKSbf == LTsv_glyph_None:
@@ -1198,16 +1201,17 @@ def LTsv_glyph_calctype(calc_canvas):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     glyph_calcinput=""
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-    LTsv_glyph_NXKSbf=LTsv_glyph_None
-    if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-        if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_NFER
-        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_XFER
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-            LTsv_glyph_kbdselect("σ")
-        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-            LTsv_glyph_kbdselect("Σ")
+    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames)
+#    LTsv_glyph_NXKSbf=LTsv_glyph_None
+#    if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#        if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_NFER
+#        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_XFER
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#            LTsv_glyph_kbdselect("σ")
+#        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#            LTsv_glyph_kbdselect("Σ")
     if LTsv_glyph_NXKSaf != LTsv_glyph_NXKSbf:
         LTsv_glyph_NXKSaf=LTsv_glyph_SandS if LTsv_glyph_NXKSaf == LTsv_glyph_SandS and (LTsv_glyph_NXKSbf == LTsv_glyph_NFER or LTsv_glyph_NXKSbf == LTsv_glyph_XFER) else LTsv_glyph_NXKSbf
         if LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
@@ -1265,16 +1269,17 @@ def LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     glyph_calcinput=""
     LTsv_setkbddata(20,0); glyphtype_getkbdnames,glyphtype_getkbdkanas=LTsv_getkbdnames(),LTsv_getkbdkanas()
-    LTsv_glyph_NXKSbf=LTsv_glyph_None
-    if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-        if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_NFER
-        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_XFER
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
-        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-            LTsv_glyph_kbdselect("σ")
-        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
-            LTsv_glyph_kbdselect("Σ")
+    LTsv_glyph_NXKSbf=LTsv_glyph_typeNXK(glyphtype_getkbdnames)
+#    LTsv_glyph_NXKSbf=LTsv_glyph_None
+#    if LTsv_glyph_kbdNFER in glyphtype_getkbdnames or LTsv_glyph_kbdXFER in glyphtype_getkbdnames or LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#        if LTsv_glyph_kbdKANA in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_KANA
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_NFER
+#        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_XFER
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdXFER in glyphtype_getkbdnames: LTsv_glyph_NXKSbf=LTsv_glyph_SandS
+#        if LTsv_glyph_kbdNFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#            LTsv_glyph_kbdselect("σ")
+#        if LTsv_glyph_kbdXFER in glyphtype_getkbdnames and LTsv_glyph_kbdKANA in glyphtype_getkbdnames:
+#            LTsv_glyph_kbdselect("Σ")
     if LTsv_glyph_NXKSaf != LTsv_glyph_NXKSbf:
         LTsv_glyph_NXKSaf=LTsv_glyph_SandS if LTsv_glyph_NXKSaf == LTsv_glyph_SandS and (LTsv_glyph_NXKSbf == LTsv_glyph_NFER or LTsv_glyph_NXKSbf == LTsv_glyph_XFER) else LTsv_glyph_NXKSbf
         if LTsv_glyph_NXKSaf == LTsv_glyph_NFER:
