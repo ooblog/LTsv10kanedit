@@ -1,7 +1,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161120U123603
+modify 20161121M125154
 
 
 目次
@@ -20,7 +20,7 @@ modify 20161120U123603
  ⑤-1．電卓フォーマットの概要
  ⑥-0．「LTsv_joy.py」の関数一覧
  ⑥-1．「LTsv_joy.tsv」のタグ解説
- ⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
+ ⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧
  ⑦-0．「LTsv_kbd.py」の関数一覧
  ⑦-1．「LTsv_kbd.tsv」のタグ解説
  ⑧-0．「LTsv_gui.py」の関数一覧
@@ -30,6 +30,10 @@ modify 20161120U123603
  ⑨-2．漢直鍵盤の操作方法
  ⑨-3．テキスト入力欄(電卓)の操作方法
  ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+ ⑩-0．「LTsv_doc.py」の関数一覧
+ ⑩-1．「LTsv_doc.tsv」のタグ解説
+ ⑪-0．「L:Tsv」のＦＡＱ
+ ⑫-0．作者について、例えば連絡先。
 
 
 ⓪-0．ライセンス及びソフトの使用の補足ガイドライン
@@ -42,7 +46,7 @@ modify 20161120U123603
    https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
 
  ※口語的説明。
-   ・LICENSEも含めソースコードの閲覧やコピーに制限を設けない事。
+   ・「LICENSE」も含めソースコードの閲覧やコピーに制限を設けない事。
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。
 
  ※「LTsv10kanedit(tsvtool10)」固有の問題への言及。
@@ -51,11 +55,19 @@ modify 20161120U123603
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
- 「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。
- Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。
+ 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
+ フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、
+ Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。「kanfont.txt」も参考。
+ フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。
+   ふぉんと - 「約四文字」(http://ooblog.github.io/)
+   https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+
+   WOFFコンバータ
+   http://opentype.jp/woffconv.htm
+
 
 
 ⓪-2．その他現在わかっている不具合や今後の課題
@@ -111,7 +123,7 @@ modify 20161120U123603
 
 ②-0．「LTsv_printf.py」の関数一覧
 
- Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
+ 「LTsv/LTsv_file.py」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
  ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
  ・変換できない文字は数値文字参照に変換されます。
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
@@ -176,7 +188,7 @@ modify 20161120U123603
 
 ③-0．「LTsv_file.py」の関数一覧
 
- 「L;Tsv」ファイルの基本的な読み書きモジュールです。
+ 「LTsv/LTsv_file.py」は「L;Tsv」ファイルの基本的な読み書きモジュールです。
  ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。
  ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。
  ・modify項目で「LTsv_getdaytimestr()」を使うので「LTsv_time.py」モジュールも必要。
@@ -365,7 +377,7 @@ modify 20161120U123603
 
 ④-0．「LTsv_time.py」の関数一覧
 
- 日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
+ 「LTsv/LTsv_time.py」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
  ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
@@ -539,7 +551,7 @@ modify 20161120U123603
 
 ⑤-0．「LTsv_calc.py」の関数一覧
 
- 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「⑤-1．電卓フォーマットの概要」を参照。
+ 「LTsv/LTsv_calc.py」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「⑤-1．電卓フォーマットの概要」を参照。
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。
 
@@ -622,7 +634,7 @@ modify 20161120U123603
 
 ⑥-0．「LTsv_joy.py」の関数一覧
 
- ジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
+ 「LTsv/LTsv_joy.py」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。
  ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。
  
@@ -644,7 +656,7 @@ modify 20161120U123603
  【LTsv_getjoystr(LTsv_joyid,joyformat=None)】
   スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。
   LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。
-  項目一覧の詳細は「⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧」。
+  項目一覧の詳細は「⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧」。
 
  【LTsv_atanscalar(LTsv_atanX,LTsv_atanY)】
   スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。
@@ -660,6 +672,7 @@ modify 20161120U123603
 
 ⑥-1．「LTsv_joy.tsv」のタグ解説
 
+ 「LTsv/LTsv_joy.tsv」は「LTsv/LTsv_joy.py」の設定ファイルです。
  【[LTsv_deviceL|】
   Linuxのデバイス指定ページ。
 
@@ -701,7 +714,7 @@ modify 20161120U123603
   いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\tR2\tL3\tR3\tS\tO\tP」。。
 
 
-⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
+⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧
 
   status           axis最大値とボタン最大値。2項目。axis最大値はWindowsとLinuxでズレる場合があります。ループ内省略推奨。
   button           ボタンが押されてれば1。押されてなければ0。データ項目はボタンの個数分。WindowsとLinuxで共通。
@@ -711,7 +724,7 @@ modify 20161120U123603
 
 ⑦-0．「LTsv_kbd.py」の関数一覧
 
- PCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。
+ 「LTsv/LTsv_kbd.tsv」はPCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。
@@ -777,6 +790,7 @@ modify 20161120U123603
 
 ⑦-1．「LTsv_kbd.tsv」のタグ解説
 
+ 「LTsv/LTsv_kbd.tsv」は「LTsv/LTsv_kbd.py」の設定ファイルです。
  【[LTsv_deviceL|】
   Linuxのデバイス指定。
 
@@ -825,7 +839,7 @@ modify 20161120U123603
 
 ⑧-0．「LTsv_gui.py」の関数一覧
 
- ウィンドウなどGUIオブジェクト(widget)を設置するモジュールです。
+ 「LTsv/LTsv_gui.py」はウィンドウなどGUIオブジェクト(widget)を設置するモジュールです。
  ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。
  ・「canvas」の描画高速化のため「LTsv_draw_*_shell(LTsv_GUI)」で関数オブジェクトを用意する手続き推奨。
  ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。
@@ -1339,7 +1353,7 @@ modify 20161120U123603
   単体風テスト専用。アクティブウィンドウのID取得テスト。
 
  【debug_canvas_press(callback_void=None,callback_ptr=None)】
-  単体風テスト専用。「canvas」マウスクリックのコールバック。
+  単体風テスト専用。「canvas」マウス押下のコールバック。
 
  【debug_color_scale(window_objvoid=None,window_objptr=None)】
   単体風テスト専用。「scale」で描画テスト用ポリゴンの色変更。
@@ -1432,10 +1446,10 @@ modify 20161120U123603
 
 ⑨-0．「LTsv_glyph.py」の関数一覧
 
- 「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。
+ 「LTsv/LTsv_glyph.py」は「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。
  ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。
  ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。
- ・単体風テストとして漢直鍵盤でリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用にテキスト入力欄(電卓)のテストも。
+ ・単体風テストとして漢直鍵盤でリバーシーを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用にテキスト入力欄(電卓)のテストも。
 
  【LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)】
   設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「LTsv/kanchar.tsv」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。
@@ -1610,7 +1624,7 @@ modify 20161120U123603
   単漢字辞書「LTsv/kanchar.tsv」も動員して異体字なども調べる場合は「LTsv_evaltext()」を使う。
 
  【LTsv_glyph_tapcallback_shell(kbd_canvas,callback)】
-  漢直鍵盤の文字入力を受けとるコールバック関数の指定。
+  漢直鍵盤の文字入力を受け取るコールバック関数の指定。
   文字入力判定はマウス押下ではなくマウス押上、タップ動作。
 
  【LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)】
@@ -1627,12 +1641,6 @@ modify 20161120U123603
   「canvas」のマウス押上動作に対応する漢直鍵盤を描画。
   「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。
   カーソルが漢直鍵盤の外にある場合LTsv_global_kbdcursorNone()」が返り値。
-
- 【LTsv_glyph_typeNXK(glyphtype_getkbdnames)】
-  「LTsv_glyph_typepress()」「LTsv_glyph_typerelease()」「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。
-  NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。
-  NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。
-  NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
 
  【LTsv_glyph_kbddelete(kbd_canvas)】
   漢直鍵盤の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
@@ -1704,6 +1712,12 @@ modify 20161120U123603
  【LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)】
   glyph_calcinputが文字ならテキスト入力欄(電卓)に文字入力、カーソル移動など編集指示ならテキスト処理。
 
+ 【LTsv_glyph_typeNXK(glyphtype_getkbdnames)】
+  「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。
+  NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。
+  NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。
+  NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
+
  【LTsv_glyph_calctype(calc_canvas)】
   「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。
   「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。
@@ -1714,73 +1728,76 @@ modify 20161120U123603
   「LTsv_glyph_calctypelimited()」はテキスト入力欄(電卓)を用いず漢直鍵盤のみを直接操作する用途。
 
  【debug_calculatormousepress(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)用「canvas」マウス押下のコールバック。
 
  【debug_calculatormousemotion(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)用「canvas」マウス移動のコールバック。
 
  【debug_calculatormouserelease(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)用「canvas」マウス押上のコールバック。
 
  【debug_calculatormouseleave(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)用「canvas」にマウスカーソルが入った時のコールバック。
 
  【debug_calculatormouseenter(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)用「canvas」からマウスカーソルが出た時のコールバック。
 
  【debug_calculatormouseinput(calculatormouseinput)】
-  
+  単体風テスト専用。テキスト入力欄(電卓)の文字入力を受け取るコールバック関数の指定。
 
  【debug_calculatorcommand(glyph_calcinput)】
-  
+  単体風テスト専用。Enter機ーを押した時に電卓機能を発動。
+  電卓機能の詳細は「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
 
  【debug_reversi_mousepress(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押下のコールバック。
 
  【debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス移動のコールバック。
 
  【debug_reversi_mouserelease(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押上のコールバック。
 
  【debug_reversi_keypress(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシー漢直鍵盤用「canvas」にマウスカーソルが入った時のコールバック。
 
  【debug_reversi_keyrelease(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシー漢直鍵盤用「canvas」からマウスカーソルが出た時のコールバック。
 
  【debug_milklid_check(xy,bw)】
-  
+  単体風テスト専用。リバーシーでxy升にbw石が置けるか(裏返せる石があるか)チェック。
 
  【debug_milklid_turn(xy,bw)】
-  
+  単体風テスト専用。リバーシーでxy升にbw石を置いて挟んだ石を裏返す。
 
  【debug_milkAI_BS(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシーで一手前に戻す(棋譜を1文字削る)。
 
  【debug_milkAI_reset()】
-  
+  単体風テスト専用。棋譜初期化。リバーシーAIのアルゴリズム初期化(戦略変更)。
 
  【debug_milkAI_entry(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシーの棋譜更新。
 
  【debug_milkAI_Auto(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。リバーシーAIが自動で石を置く。「Auto」ボタンは手動で押す。
 
  【debug_milkAI_add(addentry)】
-  
+  単体風テスト専用。リバーシーの升に何らかの方法で石を置く時の動作。試合が決着してる場合は盤面初期化。
 
  【debug_configload()】
-  
+  単体風テスト専用。「LTsv/kanglyph.tsv」から棋譜を読み込む。
+  「LTsv/kanglyph.tsv」の詳細は「⑨-1．「LTsv_glyph.tsv」のタグ解説」を参考。
 
  【debug_configsave_exit(window_objvoid=None,window_objptr=None)】
-  
+  単体風テスト専用。「LTsv/kanglyph.tsv」にリバーシーの棋譜を保存。グリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。
 
 
 ⑨-1．「LTsv_glyph.tsv」のタグ解説
 
+ 「LTsv/LTsv_glyph.tsv」は「LTsv/LTsv_glyph.py」の設定ファイルです。
  【[kanglyph|】
-  
+  「LTsv/LTsv_glyph.py」の設定。
 
  【dicname】
   
@@ -1892,6 +1909,26 @@ modify 20161120U123603
 ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
 
 ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+
+
+⑩-0．「LTsv_doc.py」の関数一覧
+
+ 「LTsv/LTsv_doc.py」はモジュールそのものというよりは、モジュールのドキュメントを作成するソフトです。
+
+
+⑩-1．「LTsv_doc.tsv」のタグ解説
+
+ 「LTsv/LTsv_doc.tsv」は「LTsv/LTsv_glyph.py」の設定ファイルと同時に「LTsv10kanedit(tsvtool10)」のモジュールドキュメントによる実例サンプルです。
+
+
+⑪-0．「L:Tsv」のＦＡＱ
+
+<？title11-@c>
+
+
+⑫-0．作者について、例えば連絡先。
+
+<？title12-@c>
 
 
 # Copyright (c) 2016 ooblog

@@ -1,21 +1,87 @@
 @charset "utf-8";
 @font-face{
   font-family: "kan5x5comic";
-  src: url("kan5x5comic.woff") format('woff');
+  src: url("https://ooblog.github.io/kan5x5comic.woff") format('woff');
+}
+body{
+  background-color: white;
+}
+mark{
+  background-color: white;
+  border: 1px pink solid;
 }
 header{
   border: 1px gray dotted;
   padding: 1rem;
 }
+ .yonmoji_root{
+   font-family: "kan5x5comic";  font-size: 1rem;
+   line-height: 1rem;
+   float: left;
+   margin-top: -0.5rem;
+   padding-right: 0.5rem;
+ }
+ .yonmoji_root > a:nth-child(odd){
+   text-decoration: none;
+ }
+ .yonmoji_sitemap{
+   float: right;
+ }
+ yonmoji_both{
+   float: both;
+ }
 section{
   margin-top: 1rem;
   border: 2px black solid;
   padding: 1rem;
 }
+input.yonmoji_entry{
+  border: solid 1px orange;
+  width: 12rem;
+}
+input.yonmoji_entry:focus{
+  border: solid 2px IndianRed;
+}
+ .yonmoji{
+   width: 100%;  margin: 0 auto;
+   text-align: center;
+   padding-top: 1rem;
+   padding-bottom: 0rem;
+ }
+ .yonmoji_logo{
+   font-family: "kan5x5comic";  font-size: 5rem;
+   line-height: 5rem;
+   width: 10rem;
+   height: 10rem;
+   margin: 0 auto;
+ }
+ .yonmoji_word{
+   font-family: "kan5x5comic";  font-size: 2rem;
+   line-height: 2rem;
+   float: left;
+   margin: 0rem;
+ }
 article{
   margin-top: 0.5rem;
   border: 1px gray solid;
   padding: 1rem;
+}
+aside{
+  border: 1px gray dotted;
+  float: right;
+  width: 12rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+footer{
+  margin-top:1rem;
+  float: both;
+  border: 1px gray dotted;
+  text-align: center;
+}
+p.ooblog{
+  text-align: left;
+  padding: 1rem 1rem 0em;
 }
 dt{
   font-weight: bold;

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161120U123605
+modify	20161121M125157
 |L:Tsv]
 
 [LTsv_doc|
@@ -36,8 +36,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 目次
 
-<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
-<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
+<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4><？list10-0>*<？list10-1><？list11-0><？list12-0>
+<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4><？section10-0>*<？section10-1><？section11-0><？section12-0>
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
@@ -51,23 +51,32 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <link rel="icon" type="image/png" href="" />
 </head><body>
 
-<header>
-<h1><？title></h1>
-<＃summary>
-<h2>目次</h2>
-<ul>
-<？list00-0>*<？list00-1>*<？list00-2>
-<？list01-0>*<？list01-1>
-<？list02-0>*<？list02-1>
-<？list03-0>
-<？list04-0>*<？list04-1>
-<？list05-0>*<？list05-1>
-<？list06-0>*<？list06-1>*<？list06-2>
-<？list07-0>*<？list07-1>
-<？list08-0>*<？list08-1>
-<？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
-</ul>
-</header>
+ <header>
+  <div class="yonmoji_root"><a href="<？link00-1>" rel="publisher" title="<？yakuyon>">約四<br /></a><a href="<？link00-1>" rel="publisher" title="<？yakuyon>">文字</a></div>
+  <span> &#62; <a href="<？link00-1>LTsv.html" title="LTsv - <？yakuyon>">LTSV</a> &#62; <mark>LTsv_doc</mark></span> <span class="yonmoji_sitemap"><a href="<？link00-1>404.html" title="404 - <？yakuyon>">sitemap(404)</a></span>
+  <br class="yonmoji_both" />
+ </header>
+
+ <section>
+  <h1><？title></h1>
+  <＃summary>
+  <h2>目次</h2>
+  <ul>
+   <？list00-0>*<？list00-1>*<？list00-2>
+   <？list01-0>*<？list01-1>
+   <？list02-0>*<？list02-1>
+   <？list03-0>
+   <？list04-0>*<？list04-1>
+   <？list05-0>*<？list05-1>
+   <？list06-0>*<？list06-1>*<？list06-2>
+   <？list07-0>*<？list07-1>
+   <？list08-0>*<？list08-1>
+   <？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
+   <？list10-0>*<？list10-1>
+   <？list11-0>
+   <？list12-0>
+  </ul>
+ </section>
 
 <？section00-0>*<？section00-1>*<？section00-2>
 <？section01-0>*<？section01-1>
@@ -79,10 +88,13 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <？section07-0>*<？section07-1>
 <？section08-0>*<？section08-1>
 <？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
+<？section10-0>*<？section10-1>
+<？section11-0>
+<？section12-0>
 
 <footer>
  <p>site generator "<？https99-0:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
- <p><？ooblog></p>
+ <p class="ooblog"><？ooblog></p>
 </footer>
 </body></html>
 |<＃LTsv_doc_html>]
@@ -91,21 +103,87 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 @charset "utf-8";
 @font-face{
   font-family: "kan5x5comic";
-  src: url("kan5x5comic.woff") format('woff');
+  src: url("<？https00:kan5x5comic.woff>") format('woff');
+}
+body{
+  background-color: white;
+}
+mark{
+  background-color: white;
+  border: 1px pink solid;
 }
 header{
   border: 1px gray dotted;
   padding: 1rem;
 }
+ .yonmoji_root{
+   font-family: "kan5x5comic";  font-size: 1rem;
+   line-height: 1rem;
+   float: left;
+   margin-top: -0.5rem;
+   padding-right: 0.5rem;
+ }
+ .yonmoji_root > a:nth-child(odd){
+   text-decoration: none;
+ }
+ .yonmoji_sitemap{
+   float: right;
+ }
+ yonmoji_both{
+   float: both;
+ }
 section{
   margin-top: 1rem;
   border: 2px black solid;
   padding: 1rem;
 }
+input.yonmoji_entry{
+  border: solid 1px orange;
+  width: 12rem;
+}
+input.yonmoji_entry:focus{
+  border: solid 2px IndianRed;
+}
+ .yonmoji{
+   width: 100%;  margin: 0 auto;
+   text-align: center;
+   padding-top: 1rem;
+   padding-bottom: 0rem;
+ }
+ .yonmoji_logo{
+   font-family: "kan5x5comic";  font-size: 5rem;
+   line-height: 5rem;
+   width: 10rem;
+   height: 10rem;
+   margin: 0 auto;
+ }
+ .yonmoji_word{
+   font-family: "kan5x5comic";  font-size: 2rem;
+   line-height: 2rem;
+   float: left;
+   margin: 0rem;
+ }
 article{
   margin-top: 0.5rem;
   border: 1px gray solid;
   padding: 1rem;
+}
+aside{
+  border: 1px gray dotted;
+  float: right;
+  width: 12rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+footer{
+  margin-top:1rem;
+  float: both;
+  border: 1px gray dotted;
+  text-align: center;
+}
+p.ooblog{
+  text-align: left;
+  padding: 1rem 1rem 0em;
 }
 dt{
   font-weight: bold;
@@ -145,42 +223,26 @@ modify <？modify><？BR><？/P>
 
 [<＃contents00-0>|
 <？P> ※「MIT License」準拠。<？BR><？/P>
-<？https00-0:mit>
-<？https00-0:osdn>
+<？https00:mit>
+<？https00:osdn>
 <？P> ※口語的説明。<？BR>
-   ・<？https99-0:LICENSE>も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
+   ・「<？https00:LICENSE>」も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR>
 <？/PP>
  ※「<？LTsv>」固有の問題への言及。<？BR>
    ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
 |<＃contents00-0>]
-[<？https00-0:mit>|
-.+\.html?	<dl><dt><？title00-0:mit></dt><dd><a href="<？url00-0:mit>" title="<？title00-0:mit>"><？url00-0:mit></a></dd></dl>
-.*	   <？title00-0:mit><？BR>@E   <？url00-0:mit><？BR>@E
-|<？https00-0:mit>]
-[<？url00-0:mit>|
-.*	http://choosealicense.com/licenses/mit/
-|<？url00-0:mit>]
-[<？title00-0:mit>|
-.*	MIT License - Choose a License
-|<？title00-0:mit>]
-[<？https00-0:osdn>|
-.+\.html?	<dl><dt><？title00-0:osdn></dt><dd><a href="<？url00-0:osdn>" title="<？title00-0:osdn>"><？url00-0:osdn></a></dd></dl>
-.*	   <？title00-0:osdn><？BR>@E   <？url00-0:osdn><？BR>@E
-|<？https00-0:osdn>]
-[<？url00-0:osdn>|
-.*	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
-|<？url00-0:osdn>]
-[<？title00-0:osdn>|
-.*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
-|<？title00-0:osdn>]
 
 [<＃contents00-1>|
-<？P> ダウンロードは「<？https99-9:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
+<？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。<？BR>
+ ダウンロードは「<？https99-9:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
- 「kan5x5comic.ttf」を用意する場合は「kan5x5.svg」から「FontForge」で変換するか「kan5x5comic.woff」を「WOFFコンバーター」変換(「kanfont.txt」を参考)。<？BR>
- Wineを使う予定がある場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。<？BR><？/P>
+ 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
+ フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<？BR>
+ Windowsの場合は「<？https00:yakuyon>」からWebフォント「<？https00:kan5x5comic.woff>」をダウンロードして「WOFFコンバーター」で変換。「<？https00:kanfont.txt>」も参考。<？BR>
+ フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<？BR><？/P>
+<？https00:ooblog.github.io>
+<？https00:woffconv>
 |<＃contents00-1>]
 
 [<＃contents00-2>|
@@ -193,6 +255,36 @@ modify <？modify><？BR><？/P>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
 |<＃contents00-2>]
+
+[<？https00:mit>*<？https00:osdn>*<？https00:ooblog.github.io>*<？https00:woffconv>|
+.+\.html?	<dl><dt><？web00-@c></dt><dd><a href="<？url00-@c>" title="<？web00-@c>"><？url00-@c></a></dd></dl>
+.*	   <？web00-@c><？BR>@E   <？url00-@c><？BR>@E
+|<？https00:mit>*<？https00:osdn>*<？https00:ooblog.github.io>*<？https00:woffconv>]
+[<？url00-0>|
+.*	http://choosealicense.com/licenses/mit/
+|<？url00-0>]
+[<？web00-0>|
+.*	MIT License - Choose a License
+|<？web00-0>]
+[<？url00-1>|
+.*	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
+|<？url00-1>]
+[<？web00-1>|
+.*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+|<？web00-1>]
+[<？url00-2>|
+.*	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+|<？url00-2>]
+[<？web00-2>|
+.*	ふぉんと - 「約四文字」(http://ooblog.github.io/)
+|<？web00-2>]
+[<？url00-3>|
+.*	http://opentype.jp/woffconv.htm
+|<？url00-3>]
+[<？web00-3>|
+.*	WOFFコンバータ
+|<？web00-3>]
+
 
 [<？section01-0>*<？section01-1>|
 .+\.html?	<section>@E <h3><a name="index01-@c"><？title01-@c></a></h3>@E<＃contents01-@c>@E</section>@E
@@ -262,7 +354,7 @@ modify <？modify><？BR><？/P>
 |<？section02-0>*<？section02-1>]
 
 [<＃contents02-0>|
-<？P> Pythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<？BR>
+<？P> 「<？https02:LTsv_printf.py>」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<？BR>
  ・Wine上DOSのエラー要因だった<？CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<？BR>
  ・変換できない文字は数値文字参照に変換されます。<？BR>
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<？BR>
@@ -309,7 +401,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<？section03-0>]
 
 [<＃contents03-0>|
-<？P> 「L;Tsv」ファイルの基本的な読み書きモジュールです。
+<？P> 「<？https03:LTsv_file.py>」は「L;Tsv」ファイルの基本的な読み書きモジュールです。
  ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。<？BR>
  ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。<？BR>
  ・modify項目で「LTsv_getdaytimestr()」を使うので「LTsv_time.py」モジュールも必要。<？BR><？/P>
@@ -370,7 +462,7 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 |<？section04-0>*<？section04-1>]
 
 [<＃contents04-0>|
-<？P> 日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<？BR>
+<？P> 「<？https04:LTsv_time.py>」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<？BR>
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<？BR>
  ・<？modify_style>だと困るのであればフォーマット指定。<？BR>
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<？BR>
@@ -492,7 +584,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 |<？section05-0>*<？section05-1>]
 
 [<＃contents05-0>|
-<？P> 電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index05-1>」を参照。<？BR>
+<？P> 「<？https05:LTsv_calc.py>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index05-1>」を参照。<？BR>
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
@@ -592,7 +684,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 |<？section06-0>*<？section06-1>*<？section06-2>]
 
 [<＃contents06-0>|
-<？P> <？gamepad>の入力をLTSVに変換するモジュールです。<？BR>
+<？P> 「<？https06:LTsv_joy.py>」は<？gamepad>の入力をLTSVに変換するモジュールです。<？BR>
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<？BR>
  ・単体風テストで<？gamepad>の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。<？BR><？/P>
  
@@ -611,6 +703,7 @@ LTsv_joyaxis_label()	Windowsなら「axisW」を返す。Windowsなら「axisL�
 |LTsv_joy.py]
 
 [<＃contents06-1>|
+<？P> 「<？https06:LTsv_joy.tsv>」は「<？https06:LTsv_joy.py>」の設定ファイルです。<？BR><？/P>
 <！LTsv_joy.tsv>
 |<＃contents06-1>]
 
@@ -636,9 +729,6 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
 <？DLDT>  axisL<？/DTDD>            Linux版はPOVが2軸扱い。合計6項目の場合でも7項目を返すゲームPADが存在したりするので注意(PxPy軸がズレてる場合がある)。<？/DD/DL>
 <？DLDT>  axisW<？/DTDD>            Windows版はPOVが1軸扱いですがスクリプト側で2軸に変換。通常6項目。<？/DD/DL>
 |<＃contents06-2>]
-[<？joyformat_label>|
-.*	joyformat縦軸ラベル(first)
-|<？joyformat_label>]
 
 [<？section07-0>*<？section07-1>|
 .+\.html?	<section>@E <h3><a name="index07-@c"><？title07-@c></a></h3>@E<＃contents07-@c>@E</section>@E
@@ -646,7 +736,7 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
 |<？section07-0>*<？section07-1>]
 
 [<＃contents07-0>|
-<？P> <？PCkeyboard>の入力(マウスのボタン含む)をLTSVに変換するモジュールです。<？BR>
+<？P> 「<？https07:LTsv_kbd.tsv>」は<？PCkeyboard>の入力(マウスのボタン含む)をLTSVに変換するモジュールです。<？BR>
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<？BR>
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<？BR>
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。<？BR>
@@ -675,6 +765,7 @@ LTsv_getkbdkanas()	押された<？PCkeyboard>のかな文字を返す。かな�
 |LTsv_kbd.py]
 
 [<＃contents07-1>|
+<？P> 「<？https07:LTsv_kbd.tsv>」は「<？https07:LTsv_kbd.py>」の設定ファイルです。<？BR><？/P>
 <！LTsv_kbd.tsv>
 |<＃contents07-1>]
 
@@ -699,7 +790,7 @@ mouse	初期想定は「/dev/input/event?」。	万が一「LTsv_kbdreset()」�
 |<？section08-0>*<？section08-1>]
 
 [<＃contents08-0>|
-<？P> ウィンドウなど<？GUIwidget>を設置するモジュールです。<？BR>
+<？P> 「<？https08:LTsv_gui.py>」はウィンドウなど<？GUIwidget>を設置するモジュールです。<？BR>
  ・環境次第では「GTK2」と「Tkinter」が選べるはずですがPuppyLinuxでは「GTK2」Windows環境では「Tkinter」です。<？BR>
  ・「canvas」の描画高速化のため「LTsv_draw_*_shell(LTsv_GUI)」で関数オブジェクトを用意する手続き推奨。<？BR>
  ・「LTsv_window_main()」実行前に「print()」「LTsv_libc_printf()」などターミナル(stdout)系命令が実行されるとGUIが表示されない場合があります。<？BR>
@@ -848,7 +939,7 @@ debug_calc(callback_void=None,callback_ptr=None)	単体風テスト専用。電�
 debug_polygonpoints(callback_void=None,callback_ptr=None)	単体風テスト専用。描画テスト用ポリゴンの頂点がX座標とY座標が交互に来るタプル(x,y,x,y…)になってるか確認して奇数なら偶数に減らして揃える。
 debug_polygonbutton(callback_void=None,callback_ptr=None)	単体風テスト専用。描画テスト用ポリゴンの頂点削除。
 debug_activewindow(callback_void=None,callback_ptr=None)	単体風テスト専用。アクティブウィンドウのID取得テスト。
-debug_canvas_press(callback_void=None,callback_ptr=None)	単体風テスト専用。「canvas」マウスクリックのコールバック。
+debug_canvas_press(callback_void=None,callback_ptr=None)	単体風テスト専用。「canvas」マウス押下のコールバック。
 debug_color_scale(window_objvoid=None,window_objptr=None)	単体風テスト専用。「scale」で描画テスト用ポリゴンの色変更。
 debug_color_combo(window_objvoid=None,window_objptr=None)	単体風テスト専用。「combobox」で描画テスト用ポリゴンの色変更…みたいなのを想定。未実装。「Tkinter」では機能しない。
 debug_edit_clip(window_objvoid=None,window_objptr=None)	単体風テスト専用。クリップボード「clipboard」の動作確認。
@@ -921,10 +1012,10 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 |<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>]
 
 [<＃contents09-0>|
-<？P> 「canvas」上でフォントグリフを描画するモジュールです。<？VRkeyboard>関連も扱います。<？BR>
+<？P> 「<？https09:LTsv_glyph.py>」は「canvas」上でフォントグリフを描画するモジュールです。<？VRkeyboard>関連も扱います。<？BR>
  ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<？BR>
  ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。<？BR>
- ・単体風テストとして<？VRkeyboard>でリバーシを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用に<？VRcalc>のテストも。<？BR><？/P>
+ ・単体風テストとして<？VRkeyboard>で<？reversi>を操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用に<？VRcalc>のテストも。<？BR><？/P>
 
 <！LTsv_glyph.py>
 |<＃contents09-0>]
@@ -979,11 +1070,10 @@ LTsv_glyph_kbdcursor(kbd_canvas,kbd_x,kbd_y)	<？VRkeyboard>のどのキーの�
 LTsv_glyph_kbdselect(choice)	<？VRkeyboard>を鍵盤名(LTsv_glyph_irohaalphaN,LTsv_glyph_irohaalphaX)で変更する。	鍵盤名は「LTsv_global_irohaalphaN()」「LTsv_global_irohaalphaX()」で取得。
 LTsv_glyph_choiceNX(choice)	鍵盤名がLTsv_glyph_irohaalphaNもしくはLTsv_glyph_irohaalphaXの何番目か数値で取得。
 LTsv_glyph_kbdfind(find_t)	find_tが<？DICmap>にあるか検索して<？VRkeyboard>の鍵盤を変更する。	find_tは複数の文字が使用できるので、先頭文字から順に見つからない場合は次の文字を探す。	<？DICchar>も動員して異体字なども調べる場合は「LTsv_evaltext()」を使う。
-LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	<？VRkeyboard>の文字入力を受けとるコールバック関数の指定。	文字入力判定はマウス押下ではなくマウス押上、タップ動作。
+LTsv_glyph_tapcallback_shell(kbd_canvas,callback)	<？VRkeyboard>の文字入力を受け取るコールバック関数の指定。	文字入力判定はマウス押下ではなくマウス押上、タップ動作。
 LTsv_glyph_mousepress(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス押下動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
 LTsv_glyph_mousemotion(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス移動動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_m=*_mousemotion」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合「LTsv_global_kbdcursorNone()」が返り値。
 LTsv_glyph_mouserelease(kbd_canvas,kbd_x,kbd_y)	「canvas」のマウス押上動作に対応する<？VRkeyboard>を描画。	「canvas」の「event_r=*_mouserelease」系コールバック関数内に設置。	カーソルが<？VRkeyboard>の外にある場合LTsv_global_kbdcursorNone()」が返り値。
-LTsv_glyph_typeNXK(glyphtype_getkbdnames)	「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
 LTsv_glyph_kbddelete(kbd_canvas)	<？VRkeyboard>の消去。特に「Tkinter」では描画した図形は消す必要がある(消さないとオブジェクトが無限増殖の危険性)ので注意。
 LTsv_glyph_kbddraw(kbd_canvas,kbd_x,kbd_y,kbd_c=LTsv_glyph_None)	<？VRkeyboard>の描画。	「LTsv_glyph_mousepress()」「LTsv_glyph_mousemotion()」「LTsv_glyph_mouserelease()」でも消去アンド描画されるはず。
 LTsv_glyph_picklesave()	グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。
@@ -1001,37 +1091,39 @@ LTsv_glyph_calcrelease(calc_canvas)	「canvas」のマウス押上動作に対�
 LTsv_glyph_calcenter(calc_canvas)	「canvas」にマウスカーソルが入った時の<？VRcalc>を描画。	「canvas」の「event_e=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
 LTsv_glyph_calcleave(calc_canvas)	「canvas」からマウスカーソルが出た時の<？VRcalc>を描画。	「canvas」の「event_l=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
 LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)	glyph_calcinputが文字なら<？VRcalc>に文字入力、カーソル移動など編集指示ならテキスト処理。
+LTsv_glyph_typeNXK(glyphtype_getkbdnames)	「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
 LTsv_glyph_calctype(calc_canvas)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。
 LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。	「LTsv_glyph_calctypelimited()」は<？VRcalc>を用いず<？VRkeyboard>のみを直接操作する用途。
-debug_calculatormousepress(window_objvoid=None,window_objptr=None)	
-debug_calculatormousemotion(window_objvoid=None,window_objptr=None)	
-debug_calculatormouserelease(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseleave(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseenter(window_objvoid=None,window_objptr=None)	
-debug_calculatormouseinput(calculatormouseinput)	
-debug_calculatorcommand(glyph_calcinput)	
-debug_reversi_mousepress(window_objvoid=None,window_objptr=None)	
-debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)	
-debug_reversi_mouserelease(window_objvoid=None,window_objptr=None)	
-debug_reversi_keypress(window_objvoid=None,window_objptr=None)	
-debug_reversi_keyrelease(window_objvoid=None,window_objptr=None)	
-debug_milklid_check(xy,bw)	
-debug_milklid_turn(xy,bw)	
-debug_milkAI_BS(window_objvoid=None,window_objptr=None)	
-debug_milkAI_reset()	
-debug_milkAI_entry(window_objvoid=None,window_objptr=None)	
-debug_milkAI_Auto(window_objvoid=None,window_objptr=None)	
-debug_milkAI_add(addentry)	
-debug_configload()	
-debug_configsave_exit(window_objvoid=None,window_objptr=None)	
+debug_calculatormousepress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」マウス押下のコールバック。
+debug_calculatormousemotion(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」マウス移動のコールバック。
+debug_calculatormouserelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」マウス押上のコールバック。
+debug_calculatormouseleave(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」にマウスカーソルが入った時のコールバック。
+debug_calculatormouseenter(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」からマウスカーソルが出た時のコールバック。
+debug_calculatormouseinput(calculatormouseinput)	単体風テスト専用。<？VRcalc>の文字入力を受け取るコールバック関数の指定。
+debug_calculatorcommand(glyph_calcinput)	単体風テスト専用。Enter機ーを押した時に電卓機能を発動。	電卓機能の詳細は「<？index09-4>」を参考。
+debug_reversi_mousepress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi><？VRkeyboard>用「canvas」マウス押下のコールバック。
+debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi><？VRkeyboard>用「canvas」マウス移動のコールバック。
+debug_reversi_mouserelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi><？VRkeyboard>用「canvas」マウス押上のコールバック。
+debug_reversi_keypress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi><？VRkeyboard>用「canvas」にマウスカーソルが入った時のコールバック。
+debug_reversi_keyrelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi><？VRkeyboard>用「canvas」からマウスカーソルが出た時のコールバック。
+debug_milklid_check(xy,bw)	単体風テスト専用。<？reversi>でxy升にbw石が置けるか(裏返せる石があるか)チェック。
+debug_milklid_turn(xy,bw)	単体風テスト専用。<？reversi>でxy升にbw石を置いて挟んだ石を裏返す。
+debug_milkAI_BS(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi>で一手前に戻す(棋譜を1文字削る)。
+debug_milkAI_reset()	単体風テスト専用。棋譜初期化。<？reversi>AIのアルゴリズム初期化(戦略変更)。
+debug_milkAI_entry(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi>の棋譜更新。
+debug_milkAI_Auto(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？reversi>AIが自動で石を置く。「Auto」ボタンは手動で押す。
+debug_milkAI_add(addentry)	単体風テスト専用。<？reversi>の升に何らかの方法で石を置く時の動作。試合が決着してる場合は盤面初期化。
+debug_configload()	単体風テスト専用。「LTsv/kanglyph.tsv」から棋譜を読み込む。	「LTsv/kanglyph.tsv」の詳細は「<？index09-1>」を参考。
+debug_configsave_exit(window_objvoid=None,window_objptr=None)	単体風テスト専用。「LTsv/kanglyph.tsv」に<？reversi>の棋譜を保存。グリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。
 |LTsv_glyph.py]
 
 [<＃contents09-1>|
+<？P> 「<？https09:LTsv_glyph.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルです。<？BR><？/P>
 <！LTsv_glyph.tsv>
 |<＃contents09-1>]
 
 [LTsv_glyph.tsv|
-[kanglyph|	
+[kanglyph|	「LTsv/LTsv_glyph.py」の設定。
 dicname	
 mapname	
 picklename	
@@ -1076,6 +1168,46 @@ entry
 <？title09-4>
 |<＃contents09-4>]
 
+[<？section10-0>*<？section10-1>|
+.+\.html?	<section>@E <h3><a name="index10-@c"><？title10-@c></a></h3>@E<＃contents10-@c>@E</section>@E
+.*	@E<？title10-@c>@E@E<＃contents10-@c>@E
+|<？section10-0>*<？section10-1>]
+
+[<＃contents10-0>|
+<？P> 「<？https10:LTsv_doc.py>」はモジュールそのものというよりは、モジュールのドキュメントを作成するソフトです。<？BR><？/P>
+|<＃contents10-0>]
+[<＃contents10-1>|
+<？P> 「<？https10:LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時に「<？LTsv>」のモジュールドキュメントによる実例サンプルです。<？BR><？/P>
+|<＃contents10-1>]
+
+
+[<？section11-0>|
+.+\.html?	<section>@E <h3><a name="index11-@c"><？title11-@c></a></h3>@E<＃contents11-@c>@E</section>@E
+.*	@E<？title11-@c>@E@E<＃contents11-@c>@E
+|<？section11-0>]
+
+[<＃contents11-0>|
+<？P><？title11-@c><？BR><？/P>
+|<＃contents11-0>]
+
+[<？section12-0>|
+.+\.html?	<section>@E <h3><a name="index12-@c"><？title12-@c></a></h3>@E<＃contents12-@c>@E</section>@E
+.*	@E<？title12-@c>@E@E<＃contents12-@c>@E
+|<？section12-0>]
+
+[<＃contents12-0>|
+<？P><？title12-@c><？BR><？/P>
+|<＃contents12-0>]
+
+[<？DICmap>|
+.*	漢字配列「<？https00:kanmap.tsv>」
+|<？DICmap>]
+[<？DICchar>|
+.*	単漢字辞書「<？https00:kanchar.tsv>」
+|<？DICchar>]
+[<？DICword>|
+.*	汎用辞書「<？https00:kanword.tsv>」
+|<？DICword>]
 
 [<？list00-0>*<？list00-1>*<？list00-2>|
 .+\.html?	 <li><？index00-@c></li>@E
@@ -1094,6 +1226,42 @@ entry
 [<？title00-2>|
 .*	⓪-2．その他現在わかっている不具合や今後の課題
 |<？title00-2>]
+[<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path00-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path00-F@0c>"><？path00-F@0c></a>
+.*	<？path00-F@0c>
+|<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>]
+[<？path00-F00>|
+.*	LICENSE
+|<？path00-F00>]
+[<？path00-F01>|
+.*	LTsv/kanmap.tsv
+|<？path00-F01>]
+[<？path00-F02>|
+.*	LTsv/kanchar.tsv
+|<？path00-F02>]
+[<？path00-F03>|
+.*	LTsv/kanword.tsv
+|<？path00-F03>]
+[<？path00-F04>|
+.*	kanfont.txt
+|<？path00-F04>]
+[<？https00:kan5x5comic.woff>*<？https00:yakuyon>|
+.+\.html?	<a href="<？link00-@c>" title="<？word00-@c>"><？word00-@c></a>
+.+\.css	<？link00-@c>
+.*	<？word00-@c>
+|<？https00:kan5x5comic.woff>*<？https00:yakuyon>]
+[<？link00-0>|
+.*	https://ooblog.github.io/kan5x5comic.woff
+|<？link00-0>]
+[<？word00-0>|
+.*	kan5x5comic.woff
+|<？word00-0>]
+[<？link00-1>|
+.*	https://ooblog.github.io/
+|<？link00-1>]
+[<？word00-1>|
+.*	約四文字
+|<？word00-1>]
 
 [<？list01-0>*<？list01-1>|
 .+\.html?	 <li><？index01-@c></li>@E
@@ -1124,6 +1292,13 @@ entry
 [<？title02-1>|
 .*	②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 |<？title02-1>]
+[<？https02:LTsv_printf.py>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path02-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path02-F@0c>"><？path02-F@0c></a>
+.*	<？path02-F@0c>
+|<？https02:LTsv_printf.py>]
+[<？path02-F00>|
+.*	LTsv/LTsv_file.py
+|<？path02-F00>]
 
 [<？list03-0>|
 .+\.html?	 <li><？index03-@c></li>@E
@@ -1136,6 +1311,13 @@ entry
 [<？title03-0>|
 .*	③-0．「LTsv_file.py」の関数一覧
 |<？title03-0>]
+[<？https03:LTsv_file.py>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path03-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path03-F@0c>"><？path03-F@0c></a>
+.*	<？path03-F@0c>
+|<？https03:LTsv_file.py>]
+[<？path03-F00>|
+.*	LTsv/LTsv_file.py
+|<？path03-F00>]
 
 [<？list04-0>*<？list04-1>|
 .+\.html?	 <li><？index04-@c></li>@E
@@ -1151,6 +1333,13 @@ entry
 [<？title04-1>|
 .*	④-1．日時フォーマットの概要
 |<？title04-1>]
+[<？https04:LTsv_time.py>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path04-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path04-F@0c>"><？path04-F@0c></a>
+.*	<？path04-F@0c>
+|<？https04:LTsv_time.py>]
+[<？path04-F00>|
+.*	LTsv/LTsv_time.py
+|<？path04-F00>]
 
 [<？list05-0>*<？list05-1>|
 .+\.html?	 <li><？index05-@c></li>@E
@@ -1166,6 +1355,13 @@ entry
 [<？title05-1>|
 .*	⑤-1．電卓フォーマットの概要
 |<？title05-1>]
+[<？https05:LTsv_calc.py>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path05-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path05-F@0c>"><？path05-F@0c></a>
+.*	<？path05-F@0c>
+|<？https05:LTsv_calc.py>]
+[<？path05-F00>|
+.*	LTsv/LTsv_calc.py
+|<？path05-F00>]
 
 [<？list06-0>*<？list06-1>*<？list06-2>|
 .+\.html?	 <li><？index06-@c></li>@E
@@ -1184,6 +1380,19 @@ entry
 [<？title06-2>|
 .*	⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
 |<？title06-2>]
+[<？https06:LTsv_joy.py>*<？https06:LTsv_joy.tsv>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path06-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path06-F@0c>"><？path06-F@0c></a>
+.*	<？path06-F@0c>
+|<？https06:LTsv_joy.py>*<？https06:LTsv_joy.tsv>]
+[<？path06-F00>|
+.*	LTsv/LTsv_joy.py
+|<？path06-F00>]
+[<？path06-F01>|
+.*	LTsv/LTsv_joy.tsv
+|<？path06-F01>]
+[<？joyformat_label>|
+.*	joyformat縦軸ラベル(first)
+|<？joyformat_label>]
 
 [<？list07-0>*<？list07-1>|
 .+\.html?	 <li><？index07-@c></li>@E
@@ -1199,6 +1408,16 @@ entry
 [<？title07-1>|
 .*	⑦-1．「LTsv_kbd.tsv」のタグ解説
 |<？title07-1>]
+[<？https07:LTsv_kbd.py>*<？https07:LTsv_kbd.tsv>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path07-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path07-F@0c>"><？path07-F@0c></a>
+.*	<？path07-F@0c>
+|<？https07:LTsv_kbd.py>*<？https07:LTsv_kbd.tsv>]
+[<？path07-F00>|
+.*	LTsv/LTsv_kbd.py
+|<？path07-F00>]
+[<？path07-F01>|
+.*	LTsv/LTsv_kbd.tsv
+|<？path07-F01>]
 
 [<？list08-0>*<？list08-1>|
 .+\.html?	 <li><？index08-@c></li>@E
@@ -1214,6 +1433,13 @@ entry
 [<？title08-1>|
 .*	⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
 |<？title08-1>]
+[<？https08:LTsv_gui.py>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path08-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path08-F@0c>"><？path08-F@0c></a>
+.*	<？path08-F@0c>
+|<？https08:LTsv_gui.py>]
+[<？path08-F00>|
+.*	LTsv/LTsv_gui.py
+|<？path08-F00>]
 
 [<？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>|
 .+\.html?	 <li><？index09-@c></li>@E
@@ -1238,23 +1464,65 @@ entry
 [<？title09-4>|
 .*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
 |<？title09-4>]
+[<？https09:LTsv_glyph.py>*<？https09:LTsv_glyph.tsv>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path09-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path09-F@0c>"><？path09-F@0c></a>
+.*	<？path09-F@0c>
+|<？https09:LTsv_glyph.py>*<？https09:LTsv_glyph.tsv>]
+[<？path09-F00>|
+.*	LTsv/LTsv_glyph.py
+|<？path09-F00>]
+[<？path09-F01>|
+.*	LTsv/LTsv_glyph.tsv
+|<？path09-F01>]
 
+[<？list10-0>*<？list10-1>|
+.+\.html?	 <li><？index10-@c></li>@E
+.*	 <？index10-@c>@E
+|<？list10-0>*<？list10-1>]
+[<？index10-0>*<？index10-1>|
+.+\.html?	<a href="#index10-@c" title="<？title10-@c>"><？title10-@c></a>
+.*	<？title10-@c>
+|<？index10-0>*<？index10-1>]
+[<？title10-0>|
+.*	⑩-0．「LTsv_doc.py」の関数一覧
+|<？title10-0>]
+[<？title10-1>|
+.*	⑩-1．「LTsv_doc.tsv」のタグ解説
+|<？title10-1>]
+[<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>"><？path10-F@0c></a>
+.*	<？path10-F@0c>
+|<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>]
+[<？path10-F00>|
+.*	LTsv/LTsv_doc.py
+|<？path10-F00>]
+[<？path10-F01>|
+.*	LTsv/LTsv_doc.tsv
+|<？path10-F01>]
 
-[<？DICmap>|
-.*	漢字配列「<？https99-0:kanmap.tsv>」
-|<？DICmap>]
-[<？DICchar>|
-.*	単漢字辞書「<？https99-0:kanchar.tsv>」
-|<？DICchar>]
-[<？DICword>|
-.*	汎用辞書「<？https99-0:kanword.tsv>」
-|<？DICword>]
-[<？VRkeyboard>|
-.*	漢直鍵盤
-|<？VRkeyboard>]
-[<？VRcalc>|
-.*	テキスト入力欄(電卓)
-|<？VRcalc>]
+[<？list11-0>|
+.+\.html?	 <li><？index11-@c></li>@E
+.*	 <？index11-@c>@E
+|<？list11-0>]
+[<？index11-0>*<？index11-1>|
+.+\.html?	<a href="#index11-@c" title="<？title11-@c>"><？title11-@c></a>
+.*	<？title11-@c>
+|<？index11-0>*<？index11-1>]
+[<？title11-0>|
+.*	⑪-0．「L:Tsv」のＦＡＱ
+|<？title11-0>]
+
+[<？list12-0>|
+.+\.html?	 <li><？index12-@c></li>@E
+.*	 <？index12-@c>@E
+|<？list12-0>]
+[<？index12-0>*<？index12-1>|
+.+\.html?	<a href="#index12-@c" title="<？title12-@c>"><？title12-@c></a>
+.*	<？title12-@c>
+|<？index12-0>*<？index12-1>]
+[<？title12-0>|
+.*	⑫-0．作者について、例えば連絡先。
+|<？title12-0>]
 
 [<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:kanchar.tsv>*<？https99-0:kanword.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>"><？path99-0:LTsvFiles@0c></a>
@@ -1283,7 +1551,7 @@ entry
 |<？path99-0:LTsvFiles06>]
 
 [<？ooblog>|
-.+\.html?	# <？Copyright><？BR>@E# <？LicenseMIT><？BR>@E# <？https99-9:LTsv10LICENSE><？BR>@E
+.+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https99-9:LTsv10LICENSE><br />@E
 .*	# <？Copyright>@E# <？LicenseMIT>@E# <？https99-9:LTsv10LICENSE>@E
 |<？ooblog>]
 [<？https99-9:LTsv10LICENSE>|
@@ -1306,7 +1574,20 @@ entry
 [<？title99-9:LTsv10repository>|
 .*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
 |<？title99-9:LTsv10repository>]
+[<？https99-9:LTsv_doc.py>|
+.+\.html?	<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/<？url99-9:LTsv_doc.py>" title="<？title99-9:LTsv_doc.py>"><？url99-9:LTsv_doc.py></a>
+.*	<？url99-9:LTsv_doc.py>
+|<？https99-9:LTsv_doc.py>]
+[<？url99-9:LTsv_doc.py>|
+.*	LTsv_doc.py
+|<？url99-9:LTsv_doc.py>]
+[<？title99-9:LTsv_doc.py>|
+.*	LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit
+|<？title99-9:LTsv_doc.py>]
 
+[<？yakuyon>|
+.*	「約四文字」(http://ooblog.github.io/)
+|<？yakuyon>]
 [<？Copyright>|
 .*	Copyright (c) 2016 ooblog
 |<？Copyright>]
@@ -1340,6 +1621,15 @@ entry
 [<？GUIwidget>|
 .*	GUIオブジェクト(widget)
 |<？GUIwidget>]
+[<？reversi>|
+.*	リバーシー
+|<？reversi>]
+[<？VRkeyboard>|
+.*	漢直鍵盤
+|<？VRkeyboard>]
+[<？VRcalc>|
+.*	テキスト入力欄(電卓)
+|<？VRcalc>]
 
 [<？outlist>|
 .+\.html?	LTsv_doc.html
