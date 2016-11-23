@@ -9,7 +9,7 @@
 
  <header>
   <div class="yonmoji_root"><a href="https://ooblog.github.io/" rel="publisher" title="「約四文字」(http://ooblog.github.io/)">約四<br /></a><a href="https://ooblog.github.io/" rel="publisher" title="「約四文字」(http://ooblog.github.io/)">文字</a></div>
-  <span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - 「約四文字」(http://ooblog.github.io/)">LTSV</a> &#62; <mark>LTsv_doc</mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - 「約四文字」(http://ooblog.github.io/)">sitemap(404)</a></span>
+  <span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - 「約四文字」(http://ooblog.github.io/)">LTsv</a> &#62; <mark>LTsv_doc</mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - 「約四文字」(http://ooblog.github.io/)">sitemap(404)</a></span>
   <br class="yonmoji_both" />
  </header>
 
@@ -19,7 +19,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161121M125154<br />
+modify 20161123W134731<br />
 </p>
 
   <h2>目次</h2>
@@ -1686,10 +1686,10 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのイロハ鍵盤名リスト。<br />
 通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,゛,゜,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」</dd></dl>
 <dl><dt>LTsv_global_irohatypeN()</dt><dd>
-NFER鍵盤で表示するかな鍵盤名のリスト。<br />
+NFER鍵盤で表示するイロハ鍵盤名のリスト。<br />
 通常は「ぬ,ふ,あ,う,え,お,や,ゆ,よ,わ,ほ,へ,た,て,い,す,か,ん,な,に,ら,せ,＠,ぷ,ち,と,し,は,き,く,ま,の,り,れ,け,む,つ,さ,そ,ひ,こ,み,も,ね,る,め,ろ,￥」</dd></dl>
 <dl><dt>LTsv_global_irohatypeX()</dt><dd>
-XFER鍵盤で表示するかな鍵盤名のリスト。<br />
+XFER鍵盤で表示するイロハ鍵盤名のリスト。<br />
 通常は「ヌ,フ,ア,ウ,エ,オ,ヤ,ユ,ヨ,ワ,ホ,ヘ,タ,テ,イ,ス,カ,ン,ナ,ニ,ラ,セ,｀,プ,チ,ト,シ,ハ,キ,ク,マ,ノ,リ,レ,ケ,ム,ツ,サ,ソ,ヒ,コ,ミ,モ,ネ,ル,メ,ロ,｜」</dd></dl>
 <dl><dt>LTsv_global_alphatype()</dt><dd>
 漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのα鍵盤名のリスト。<br />
@@ -1923,84 +1923,370 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 <dl><dt>[kanglyph|</dt><dd>
 「LTsv/LTsv_glyph.py」の設定。</dd></dl>
 <dl><dt>dicname</dt><dd>
-</dd></dl>
+単漢字辞書を指定。初期値は「kanchar.tsv」。</dd></dl>
 <dl><dt>mapname</dt><dd>
-</dd></dl>
+漢直鍵盤の漢字配列を指定。初期値は「kanmap.tsv」。</dd></dl>
 <dl><dt>picklename</dt><dd>
-</dd></dl>
+グリフ座標データのパイクルを指定。初期値は「kanpickle.bin」。</dd></dl>
 <dl><dt>irohatype</dt><dd>
-</dd></dl>
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」項目名としてのイロハ鍵盤名リスト。<br />
+初期値は「ぬ\tふ\tあ\tう\tえ\tお\tや\tゆ\tよ\tわ\tほ\tへ\tた\tて\tい\tす\tか\tん\tな\tに\tら\tせ\t゛\t゜\tち\tと\tし\tは\tき\tく\tま\tの\tり\tれ\tけ\tむ\tつ\tさ\tそ\tひ\tこ\tみ\tも\tね\tる\tめ\tろ\t￥」</dd></dl>
 <dl><dt>irohatypeN</dt><dd>
-</dd></dl>
+NFER鍵盤におけるイロハ鍵盤名のリスト。<br />
+初期値は「ぬ\tふ\tあ\tう\tえ\tお\tや\tゆ\tよ\tわ\tほ\tへ\tた\tて\tい\tす\tか\tん\tな\tに\tら\tせ\t＠\tぷ\tち\tと\tし\tは\tき\tく\tま\tの\tり\tれ\tけ\tむ\tつ\tさ\tそ\tひ\tこ\tみ\tも\tね\tる\tめ\tろ\t￥」</dd></dl>
 <dl><dt>irohatypeX</dt><dd>
-</dd></dl>
+XFER鍵盤におけるイロハ鍵盤名のリスト。<br />
+初期値は「ヌ\tフ\tア\tウ\tエ\tオ\tヤ\tユ\tヨ\tワ\tホ\tヘ\tタ\tテ\tイ\tス\tカ\tン\tナ\tニ\tラ\tセ\t｀\tプ\tチ\tト\tシ\tハ\tキ\tク\tマ\tノ\tリ\tレ\tケ\tム\tツ\tサ\tソ\tヒ\tコ\tミ\tモ\tネ\tル\tメ\tロ\t｜」</dd></dl>
 <dl><dt>alphatype</dt><dd>
-</dd></dl>
+α鍵盤名のリスト。<br />
+初期値は「α\tβ\tγ\tδ\tε\tζ\tη\tθ\tι\tκ\tλ\tμ\tν\tξ\tο\tπ\tρ\tσ\tτ\tυ\tφ\tχ\tψ\tω\t○\t△\t□」</dd></dl>
 <dl><dt>alphatypeN</dt><dd>
-</dd></dl>
+NFER鍵盤におけるα鍵盤名のリスト。<br />
+初期値は「α\tβ\tγ\tδ\tε\tζ\tη\tθ\tι\tκ\tλ\tμ\tν\tξ\tο\tπ\tρ\tσ\tτ\tυ\tφ\tχ\tψ\tω\t○\t△\t□」</dd></dl>
 <dl><dt>alphatypeX</dt><dd>
-</dd></dl>
+XFER鍵盤におけるα鍵盤名のリスト。<br />
+初期値は「Α\tΒ\tΓ\tΔ\tΕ\tΖ\tΗ\tΘ\tΙ\tΚ\tΛ\tΜ\tΝ\tΞ\tΟ\tΠ\tΡ\tΣ\tΤ\tΥ\tΦ\tΧ\tΨ\tΩ\t●\t▲\t■」</dd></dl>
 <dl><dt>dictype</dt><dd>
-</dd></dl>
+辞書名のリスト。<br />
+初期値は「英\t名\t音\t訓\t送\t異\t俗\t熙\t簡\t繁\t越\t地\t顔\t鍵\t代\t逆\t非\t難\t活\t漫\t筆\t幅」</dd></dl>
 <dl><dt>glyphtype</dt><dd>
-</dd></dl>
+グリフ名のリスト。<br />
+初期値は「活\t漫\t筆」</dd></dl>
 <dl><dt>choice</dt><dd>
-</dd></dl>
+辞書変更鍵盤のリスト。<br />
+初期値は「名\t音\t訓\t送\t異\t俗\t簡\t繁\t越\t地\t逆\t非\t英\t顔\tε\tρ\tτ\tυ\tθ\tι\tο\tπ\t＠\tぷ\tα\tσ\tδ\tφ\tγ\tη\tξ\tκ\tλ\t代\t鍵\tぬ\tζ\tχ\tψ\tω\tβ\tν\tμ\t熙\t○\t△\t□\t￥\tσ」</dd></dl>
 <dl><dt>choiceN</dt><dd>
-</dd></dl>
+NFER鍵盤における辞書変更鍵盤。<br />
+初期値は「名\t音\t訓\t送\t異\t俗\t簡\t繁\t越\t地\t逆\t非\t英\t顔\tε\tρ\tτ\tυ\tθ\tι\tο\tπ\t＠\tぷ\tα\tσ\tδ\tφ\tγ\tη\tξ\tκ\tλ\t代\t鍵\tぬ\tζ\tχ\tψ\tω\tβ\tν\tμ\t熙\t○\t△\t□\t￥\tσ」</dd></dl>
 <dl><dt>choiceX</dt><dd>
-</dd></dl>
+XFER鍵盤における辞書変更鍵盤。<br />
+初期値は「名\t音\t訓\t送\t異\t俗\t簡\t繁\t越\t地\t逆\t非\t英\t顔\tΕ\tΡ\tΤ\tΥ\tΘ\tΙ\tΟ\tΠ\t｀\tプ\tΑ\tΣ\tΔ\tΦ\tΓ\tΗ\tΞ\tΚ\tΛ\t代\t鍵\tぬ\tΖ\tΧ\tΨ\tΩ\tΒ\tΝ\tΜ\t熙\t●\t▲\t■\t￥\tΣ」</dd></dl>
 <dl><dt>evaltype</dt><dd>
-</dd></dl>
+初期値は「平\t片\t大\t小\t半\t全\t＼\t￥\t清\tＨ\tＭ\t濁\tＢ\tＰ\t今\t⑩\t⑯\t⑧\t⓪\t照\t探\t〒\t汎\t算」</dd></dl>
 <dl><dt>eval_slash</dt><dd>
-</dd></dl>
+半角スラッシュ「/」を全角に変換(「全」だと曖昧な指示)する時、全角スラッシュ「／」と全角円記号「￥」のどっちに変換するか指定。<br />
+初期値は「￥」。</dd></dl>
 <dl><dt>eval_dakuon</dt><dd>
-</dd></dl>
+清音を濁音に(「濁」だと曖昧な指示)する時、ハ行は"ばびぶべぼ"のみを扱う「Ｂ」か"まみむめも"から"ぱぴぷぺぽ"に変換する「Ｐ」を指定。<br />
+初期値は「Ｐ」。</dd></dl>
 <dl><dt>eval_seion</dt><dd>
-</dd></dl>
+濁音を清音に(「清」だと曖昧な指示)する時、"ばびぶべぼ"も"ぱぴぷぺぽ"も"はひふへほ"に変換する「Ｈ」か"ぱぴぷぺぽ"は"まみむめも"に変換する「Ｍ」を指定。<br />
+初期値は「Ｈ」。</dd></dl>
 <dl><dt>eval_now</dt><dd>
-</dd></dl>
+入力欄で「今今」と入力した時に表示する現在時刻。<br />
+初期値は「年-月-日(週曜)時:分:秒」。</dd></dl>
 <dl><dt>eval_branch</dt><dd>
-</dd></dl>
+入力欄で「今枝」と入力した時に表示する現在時刻。<br />
+初期値は「@000y@0m@0dm@wdec@0h@0n@0s」。</dd></dl>
 <dl><dt>eval_overhour</dt><dd>
-</dd></dl>
+日時フォーマットの徹夜時刻の指定。24〜48のいずれか。</dd></dl>
 <dl><dt>eval_worddicname</dt><dd>
-</dd></dl>
+汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv">LTsv/kanword.tsv</a>」ファイルの指定(無くても動作)。<br />
+初期値は「../kanword.tsv」。</dd></dl>
 <dl><dt>eval_zipdicname</dt><dd>
-</dd></dl>
+郵便番号辞書ファイルの指定(無くても動作)。<br />
+初期値は「../kanzip.tsv」。</dd></dl>
 <dl><dt>last_alpha</dt><dd>
-</dd></dl>
+漢直鍵盤が最後に表示したα鍵盤を記録。</dd></dl>
 <dl><dt>last_dic</dt><dd>
-</dd></dl>
+漢直鍵盤が最後に表示した単漢字辞書の項目を記録。</dd></dl>
 <dl><dt>kbdTAG</dt><dd>
-</dd></dl>
+「Tkinter」で漢直鍵盤を再描画するため「LTsv_draw_tkTAG」とは別のタグが必要。<br />
+初期値は「kanglyphkbd」。</dd></dl>
 <dl><dt>fontcolor</dt><dd>
-</dd></dl>
+漢直鍵盤のグリフ描画色。<br />
+初期値は「black」。</dd></dl>
 <dl><dt>bgcolor</dt><dd>
-</dd></dl>
+漢直鍵盤の鍵盤背景色。<br />
+初期値は「#E1FFFA」。</dd></dl>
 <dl><dt>leavecolor</dt><dd>
-</dd></dl>
+テキスト入力欄(電卓)がフォーカス外の時の入力欄背景色。<br />
+初期値は「white」。</dd></dl>
 <dl><dt>kbddefsize</dt><dd>
-</dd></dl>
+漢直鍵盤の拡大倍率。<br />
+初期値は「1」。変更非推奨。</dd></dl>
 <dl><dt>[reversi|</dt><dd>
-</dd></dl>
+「LTsv_glyph.py」単体風テストのリバーシー設定。</dd></dl>
 <dl><dt>entry</dt><dd>
-</dd></dl>
+リバーシーの棋譜。</dd></dl>
 
 </section>
 <section>
  <h3><a name="index09-2">⑨-2．漢直鍵盤の操作方法</a></h3>
-⑨-2．漢直鍵盤の操作方法
+<h4>PCキーボード操作</h4>
+<dl><dt>
+  [NFER]+[ぬ〜ろ￥]</dt>
+<dd>
+                   NFER鍵盤切替。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。<br />
+</dd></dl>
+<dl><dt>
+  [XFER]+[ヌ〜ロ｜]</dt>
+<dd>
+                   XFER鍵盤切替。カタカナや大文字など。[XFER]キーを押すだけでも鍵盤は切り替わる。<br />
+</dd></dl>
+<dl><dt>
+  [NFER]+[XFER]or[XFER]+[NFER]</dt>
+<dd>
+       α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。<br />
+                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<br />
+</dd></dl>
+<dl><dt>
+  [KANA]+[NFER]or[NFER]+[KANA]</dt>
+<dd>
+       「σ」鍵盤表示。HJKLカーソル移動などに使います。<br />
+</dd></dl>
+<dl><dt>
+  [KANA]+[XFER]or[XFER]+[KANA]</dt>
+<dd>
+       「Σ」鍵盤表示。電卓用途。<br />
+</dd></dl>
+<dl><dt>
+  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]</dt>
+<dd>
+           単漢字辞書による字引入力。<br />
+</dd></dl>
+
+<h4>マウス操作</h4>
+
+<p>
+ ※漢直鍵盤の四隅ＮＸ等は実際には縦横２倍の大きさです。<br />
+</p>
+<p>
+  Ｎ　ぬふあうえおやゆよわほへ　Ｘ<br />
+  　　たていすかんなにらせ沼濡　　<br />
+  　　ちとしはきくまのりれけむ　　<br />
+  ぬ　つさそひこみもねるめろﾇ 　英<br />
+</p>
+<dl><dt>
+   小さい文字をタップ(押上)</dt>
+<dd>
+    文字入力。「σ」鍵盤ではHJKLでカーソル移動などにもなります。<br />
+</dd></dl>
+<dl><dt>
+   左上(Ｎ)からフリック</dt>
+<dd>
+        NFER鍵盤(ひらがな)の選択。Ｎの下にフリックでα鍵盤の「σ」(HJKL)。<br />
+</dd></dl>
+<dl><dt>
+   右上(Ｘ)からフリック</dt>
+<dd>
+        XFER鍵盤(カタカナ)の選択。Ｘの下にフリックでα鍵盤の「Σ」(電卓)。<br />
+</dd></dl>
+<dl><dt>
+   左下(Ｎの下)からフリック</dt>
+<dd>
+    α鍵盤の選択。もしくは辞書の変更。<br />
+</dd></dl>
+<dl><dt>
+   右下(Ｘの下)からフリック</dt>
+<dd>
+    字引入力。単漢字辞書の項目が代入。<br />
+</dd></dl>
 
 </section>
 <section>
  <h3><a name="index09-3">⑨-3．テキスト入力欄(電卓)の操作方法</a></h3>
-⑨-3．テキスト入力欄(電卓)の操作方法
+<h4>PCキーボード操作</h4>
+<h4>マウス操作</h4>
 
 </section>
 <section>
  <h3><a name="index09-4">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a></h3>
-⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+<p>
+ 「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、<br />
+ コマンドなのか単語なのか数式なのかで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。<br />
+</p>
+
+<dl><dt>
+  １文字のみ入力</dt>
+<dd>
+                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。<br />
+                                     「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字列が「&#」</dt>
+<dd>
+                 数値文字参照を文字列にデコード。<br />
+                                     「&#21654;&#21937;&#40634;&#40621;」→「照&#21654;&#21937;&#40634;&#40621;⇔咖喱麺麭」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「照」</dt>
+<dd>
+                   文字列を数値文字参照にエンコード。数値文字参照を文字列へのデコードも可能。<br />
+                                     「照咖喱麺麭&#21654;&#21937;&#40634;&#40621;」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「〒」</dt>
+<dd>
+                   郵便番号辞書「kantzip.tsv」から住所を表示。<br />
+                                     「〒1638001⇔東京都新宿区西新宿２丁目８－１東京都庁」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「平」</dt>
+<dd>
+                   カタカナをひらがな(平仮名)に変換。<br />
+                                     「平ヴァイオリン⇔ヴぁいおりん」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「片」</dt>
+<dd>
+                   ひらがなをカタカナ(片仮名)に変換。<br />
+                                     「片ヴぁいおりん⇔ヴァイオリン」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「半」</dt>
+<dd>
+                   全角アルファベットとカタカナをに半角に変換。<br />
+                                     「半ヴァイオリン⇔ｳﾞｧｲｵﾘﾝ」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「全」</dt>
+<dd>
+                   半角アルファベットとカタカナをに全角に変換(曖昧な指示)。初期設定では「￥」。<br />
+                                     「全ｳﾞｧｲｵﾘﾝ⇔ヴァイオリン」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「￥」</dt>
+<dd>
+                   半角アルファベットとカタカナをに全角に変換(バックスラッシュを全角円記号に)。<br />
+                                     「￥バックスラッシュ\円記号⇔バックスラッシュ￥円記号」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「＼」</dt>
+<dd>
+                   半角アルファベットとカタカナをに全角に変換(バックスラッシュを全角バックスラッシュに)。<br />
+                                     「＼バックスラッシュ\円記号⇔バックスラッシュ＼円記号」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「清」</dt>
+<dd>
+                   濁音を清音に変換(曖昧な指示)。初期設定では「Ｈ」。<br />
+                                     「清ヴァイオリン⇔ウァイオリン」。
+</dd></dl>
+<dl><dt>
+  先頭文字が「Ｈ」</dt>
+<dd>
+                   濁音を清音に変換("ばびぶべぼ"も"ぱぴぷぺぽ"も"はひふへほ"に)。<br />
+                                     「Ｈカエルぴょこぴょこみぴょこぴょこ、ぼうずがびょうぶにえをかいた⇔カエルひょこひょこみひょこひょこ、ほうすかひょうふにえをかいた」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「Ｍ」</dt>
+<dd>
+                   濁音を清音に変換("ぱぴぷぺぽ"は"まみむめも"に)。<br />
+                                     「Ｍカエルぴょこぴょこみぴょこぴょこ、ぼうずがびょうぶにえをかいた⇔カエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「濁」</dt>
+<dd>
+                   清音を濁音に変換(曖昧な指示)。初期設定では「Ｐ」。<br />
+                                     「濁ウァイオリン⇔ヴァイオリン」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「Ｂ」</dt>
+<dd>
+                   清音を濁音に変換("はひふへほ"は"ばびぶべぼ"に)。<br />
+                                     「Ｂカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルみょごみょごみみょごみょご、ぼゔずがびょゔぶにえをがいだ」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「Ｐ」</dt>
+<dd>
+                   清音を濁音に変換("まみむめも"も"ぱぴぷぺぽ"に)。<br />
+                                     「Ｐカエルみょこみょこみみょこみょこ、ほうすかひょうふにえをかいた⇔ガエルぴょごぴょごぴぴょごぴょご、ぼゔずがびょゔぶにえをがいだ」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「大」</dt>
+<dd>
+                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を大文字に変換。<br />
+                                     「大αAndΩ⇔ΑANDΩ」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「小」</dt>
+<dd>
+                   アルファベット(全角ギリシャ文字全角キリル文字を含む)を小文字に変換。<br />
+                                     「小ΑAndΩ⇔αandω」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「今」</dt>
+<dd>
+                   日時などを取得。「平,干,年,月,日,週,曜,時,分,秒,今,版,印」の他に「日時フォーマット」で詳細な指定も可能。<br />
+                                     「今年-月-日(週曜)時:分:秒」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:15」<br />
+                                     「今今」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:48」。「eval_now」を返す。<br />
+                                     「今版」→「今20160716S001619⇔20160716S001619」。[LTsv_time.py]の「LTsv_time_ver()」を返す。<br />
+                                     「今枝」→「今@000y@0m@0dm@wdec@0h@0n@0s⇔20160716S001619」。「eval_branch」を返す。<br />
+                                     日時の詳しい使い方は「<a href="#index04-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a>」を参考。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「⑧」</dt>
+<dd>
+                   UTF-8文字列を256進数としての8点点字(UTF-8点字)に変換。一般的な点字ではないので注意。<br />
+                                     「⑧点字に類似したもの⇔⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「⓪」</dt>
+<dd>
+                    UTF-8文字列を256進数としての8点点字(UTF-8点字)をUTF-8の文字列に復号。<br />
+                                     「⓪⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮⇔点字に類似したもの」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「⑯」</dt>
+<dd>
+                   10進数を16進数に変換。<br />
+                                     「⑯65535⇔0xffff」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「⑩」</dt>
+<dd>
+                   16進数を10進数に変換。<br />
+                                     「⑩FFFF⇔65535」「⑩0xFFFF⇔65535」。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「英」「名」「音」「訓」「送」「異」「俗」「熙」「簡」「繁」「越」「地」「顔」「鍵」「代」「逆」「非」<br /></dt>
+<dd>
+
+                                     単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「難」</dt>
+<dd>
+                   漢字の難読レベル(小学校N学年・常用漢字・人名・地名・幽霊文字など)を設定予定。難読の定義が不明瞭なので放置中。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「活」「漫」「筆」</dt>
+<dd>
+       「kant5x5comic」のグリフデータ。「kanfont」で編集可能。「活」では独自形式で圧縮される。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「幅」</dt>
+<dd>
+                   単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」上のデータの「kan5x5comic」のフォントの幅を表示。全角(1024)の場合省略できる。半角(624)と麻雀牌(824)しか種類はないはず。<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「探」</dt>
+<dd>
+                   文字列から漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」に含まれる漢字の探索。漢字逆引きの一種。文字が見つかり次第鍵盤切替。「探袮穃粫𡚴岾軅垉椦蟐靹駲閠墸壥⇔𡚴」<br />
+                                     漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」に見つからない文字の場合は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の「異」「簡」「繁」「代」項目からも探索を試みる。「探檪⇔櫟」「探⇔東」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「汎」その他数式以外</dt>
+<dd>
+      汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv">LTsv/kanword.tsv</a>」から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。<br />
+                                     「汎ヴァイオリン⇔提琴」「汎フカセツフカセツテン⇔不可説不可説転」<br />
+</dd></dl>
+<dl><dt>
+  先頭文字が「算」その他数式</dt>
+<dd>
+         数式とみなして分数計算。電卓の詳しい使い方は[LTsv.txt]の「<a href="#index05-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a>」を参考。<br />
+</dd></dl>
+<dl><dt>
+  「3927/1250」といった割り算</dt>
+<dd>
+        割り算に限らず計算結果は分数表示。「3927/1250⇔3927|1250」<br />
+</dd></dl>
+<dl><dt>
+  「3927|1250」といった分数のみ</dt>
+<dd>
+       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」<br />
+</dd></dl>
 
 </section>
 

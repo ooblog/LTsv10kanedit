@@ -92,7 +92,7 @@ def kanedit_keyrelease(window_objvoid=None,window_objptr=None):
 def kanedit_calculatoredit(calculatormouseinput):
     global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
     if calculatormouseinput == "":
-        pass
+        LTsv_glyph_calcresize(kanedit_canvas,calculatorT=LTsv_evaltext(LTsv_glyph_calcresize(kanedit_canvas)))
     if calculatormouseinput == "":
         kanedit_cursorY=min(kanedit_cursorY+1,LTsv_readlinedeno(kanedit_textvalue))
         LTsv_glyph_calcresize(kanedit_canvas,calculatorY=kanedit_cursorY*10)

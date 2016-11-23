@@ -179,6 +179,12 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                 if check_x ==6 and check_y == 6:
                     LTsv_kanmap_find()
 
+def LTsv_kanmap_keypress(window_objvoid=None,window_objptr=None):
+    LTsv_kanmap_kbdinput(LTsv_glyph_calctypelimited(kanmap_canvas,kanmap_kbdX,kanmap_kbdY))
+
+def LTsv_kanmap_keyrelease(window_objvoid=None,window_objptr=None):
+    LTsv_kanmap_keypress()
+
 def LTsv_kanmap_kbdinput(kbdinput):
     kanmap_clipfind=kbdinput[:1]
     LTsv_widget_settext(kanmap_clipboard,kanmap_clipfind)
@@ -242,7 +248,7 @@ if len(LTsv_GUI) > 0:
     kanmap_checkboxC[kanmap_checkboxN["kbdfind"]]=1
     for map_xy in range(len(kanmap_checkboxL)):
         kanmap_checkboxX[map_xy],kanmap_checkboxY[map_xy]=kanmap_checkboxL[map_xy]*LTsv_glyph_kbdW,LTsv_glyph_kbdH*6
-    kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=None,event_y=None)
+    kanmap_window=LTsv_window_new(widget_t="kanmap",event_b=kanmap_configsave_exit,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,event_k=LTsv_kanmap_keypress,event_y=LTsv_kanmap_keyrelease)
     kanmap_canvas=LTsv_canvas_new(kanmap_window,widget_x=0,widget_y=0,widget_w=kanmap_canvasW,widget_h=kanmap_canvasH,
      event_p=LTsv_kanmap_mousepress,event_m=LTsv_kanmap_mousemotion,event_r=LTsv_kanmap_mouserelease,event_e=None,event_l=None,event_w=50)
     kanmap_clipboard=LTsv_clipboard_new(kanmap_window)
