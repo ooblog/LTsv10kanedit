@@ -6,7 +6,7 @@ version(branch) 20161023U011852
  ０-0． ライセンス及びソフトの使用の補足ガイドライン
  ０-1． 現在わかっている不具合や今後の課題。
  １-0． 「漢直」のおさらい
- １-1a．「kanedit」の使い方(内容は「LTsv/LTsv.txt」と重複)。
+ １-1a．「kanedit」の使い方(内容は「LTsv/LTsv_doc.txt」と重複)。
  １-1b．漢直鍵盤の操作方法(マウス)。
  １-1c．漢直鍵盤の操作方法(PCキーボード)。
  １-1d．「メモ帳」と「電卓」、二つの入力欄。
@@ -62,12 +62,12 @@ version(branch) 20161023U011852
  ただし漢字配列をある程度は覚える必要があります。
 
 
-１-1a．「kanedit」の使い方(内容は「LTsv/LTsv.txt」と重複)。
+１-1a．「kanedit」の使い方(内容は「LTsv/LTsv_doc.txt」と重複)。
 
  「kanedit」には「メモ帳」と「電卓」の２つのテキスト入力欄が存在。
  「メモ帳」でテキストファイル編集(予定)。
- 「電卓」で電卓など。「LTsv/LTsv.txt」の「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」」を参考。
- 漢直鍵盤の操作方法自体は「LTsv/LTsv.txt」の「１-8b．漢直鍵盤の操作方法(マウス)」「１-8c．漢直鍵盤の操作方法(PCキーボード)」と基本的に重複。
+ 「電卓」で電卓など。「LTsv/LTsv_doc.txt」の「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
+ 漢直鍵盤の操作方法自体は「LTsv/LTsv_doc.txt」の「⑨-2．漢直鍵盤の操作方法」「⑨-3．テキスト入力欄(電卓)の操作方法」と基本的に重複。
 
 
 １-1b．漢直鍵盤の操作方法(マウス)。
@@ -120,7 +120,7 @@ version(branch) 20161023U011852
 
 １-1d．「メモ帳」と「電卓」、二つの入力欄。
 
- 「電卓」については「LTsv/LTsv.txt」の「１-8d．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
+ 「電卓」については「LTsv/LTsv_doc.txt」の「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
  「メモ帳」は現在開発中です。
 
 
@@ -1241,8 +1241,8 @@ version(branch) 20161023U011852
   ooblog/LTsv10kanedit(GitHub)
   https://github.com/ooblog/LTsv10kanedit
 
- [kantray] - 大風呂ダ敷
-  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
+ [kanedit] - 大風呂ダ敷
+  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
 
 
 # Copyright (c) 2016 ooblog

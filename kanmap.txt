@@ -80,8 +80,8 @@ version(branch) 20161023U011852
   ooblog/LTsv10kanedit(GitHub)
   https://github.com/ooblog/LTsv10kanedit
 
- [kantray] - 大風呂ダ敷
-  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
+ [kanedit] - 大風呂ダ敷
+  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
 
 
 # Copyright (c) 2016 ooblog

@@ -66,7 +66,7 @@ version(branch) 20161023U011852
    「ref」チェックボックス          グリフ編集中に参考までに別のフォントを表示。
    グリフラジオボタン(活,漫,筆)     キャンバスで編集するグリフを「活:kan5x5」「漫:kan5x5comic」「筆:kan5x5brush」から選択。
    右側の入力欄                     英名音訓送異俗熙簡繁越地顔鍵代逆非難は辞書項目になります。漢直鍵盤で入力。
-                                    辞書項目の入力、漢直鍵盤の操作は「LTsv/LTsv.txt」の「１-8b．漢直鍵盤の操作方法(マウス)」「１-8c．漢直鍵盤の操作方法(物理キーボード)」を参考。
+                                    辞書項目の入力、漢直鍵盤の操作は「LTsv/LTsv_doc.txt」の「⑨-2．漢直鍵盤の操作方法」「⑨-3．テキスト入力欄(電卓)の操作方法」を参考。
                                     活漫筆幅がグリフ項目になります。グリフキャンバスで編集。頂点はSVGパスから独自形式に圧縮される場合があります。
    右下の「save」ボタン             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。
 
@@ -188,8 +188,8 @@ version(branch) 20161023U011852
   ooblog/LTsv10kanedit(GitHub)
   https://github.com/ooblog/LTsv10kanedit
 
- [kantray] - 大風呂ダ敷
-  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
+ [kanedit] - 大風呂ダ敷
+  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
 
 
 # Copyright (c) 2016 ooblog

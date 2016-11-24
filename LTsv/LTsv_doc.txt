@@ -1,7 +1,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161124R104456
+modify 20161124R162215
 
 
 目次
@@ -74,7 +74,7 @@ modify 20161124R104456
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
- 「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  Windowsのエディタで漢字配列「LTsv/kanmap.tsv」を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
@@ -124,7 +124,7 @@ modify 20161124R104456
 ②-0．「LTsv_printf.py」の関数一覧
 
  「LTsv/LTsv_file.py」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。
- ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。
+ ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で範囲内の漢字が扱えるようになります。
  ・変換できない文字は数値文字参照に変換されます。
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
@@ -636,7 +636,7 @@ modify 20161124R104456
 
  「LTsv/LTsv_joy.py」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。
- ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。
+ ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv/LTsv_gui.py」でも挙動確認はできます。
  
  【LTsv_joyreset(LTsv_tsvpath)】
   「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「⑥-1．「LTsv_joy.tsv」のタグ解説」。
@@ -728,7 +728,7 @@ modify 20161124R104456
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。
- ・「LTsv_kbd.py」単独の単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。
+ ・「LTsv_kbd.py」単独の単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は「LTsv/LTsv_gui.py」を使います。
 
  【LTsv_kbdcatproc(LTsv_devname)】
   「cat /proc/bus/input/devices」からLTsv_devnameで検索して「event?」を返す。「?」の部分は数値。
@@ -1390,7 +1390,7 @@ modify 20161124R104456
 
 ⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
 
- 「LTsv_gui.py」では「GUIオブジェクト(widget)」を「L:Tsv」で管理してます。
+ 「LTsv/LTsv_gui.py」では「GUIオブジェクト(widget)」を「L:Tsv」で管理してます。
  ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。
  テキスト化できる項目とテキスト化できないので「LTsv_widget_newobj()」のIDだけを保管する項目とに仕分けるのが「LTsv_widgetPAGEXYWH()」の役割です。
  オブジェクトを「L:Tsv」で管理する理由はガベージコレクションで消えるのを予防とグローバル変数が散らかるのを予防するためです。
@@ -1447,8 +1447,8 @@ modify 20161124R104456
 ⑨-0．「LTsv_glyph.py」の関数一覧
 
  「LTsv/LTsv_glyph.py」は「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。
- ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。
- ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。
+ ・「LTsv/LTsv_gui.py」の「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。
+ ・ 「Tkinter」では表示できないCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えます。
  ・単体風テストとして漢直鍵盤でリバーシーを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用にテキスト入力欄(電卓)のテストも。
 
  【LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)】
@@ -1964,14 +1964,12 @@ modify 20161124R104456
   HJKL        カーソル移動。H←,J↓,K↑,L→(上下移動は「kanedit」用途)。
   YUBN        範囲選択調整。YUで左側、BNで右側。
   ;(+)       バックスペース。σ鍵盤じゃない状態の時も[BS]キーで左側1文字削除。
-  :(*)       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで左側1文字削除。
+  :(*)       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで右側1文字削除。
   ]          エンターキー。σ鍵盤じゃない状態の時も[Enter]キーで入力決定。
   A          テキスト全選択。σ鍵盤じゃない状態の時も[Ctrl]+[A]で全選択。
-  C          テキストをクリップボードにコピー。Ctrl+C。
-  X          テキスト切り取り(クリップボードにコピー)。Ctrl+X。
-  V          クリップボードからテキスト貼り付け。Ctrl+V。
-  T          タブ文字を入力。Ctrl+T。
-  I          半角スペース4文字を入力。Ctrl+I。
+  C          テキストをクリップボードにコピー。σ鍵盤じゃない状態の時も[Ctrl]+[C]で選択範囲コピー。
+  X          テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。
+  V          クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。
 
 
 ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
@@ -2055,14 +2053,61 @@ modify 20161124R104456
 
 ⑪-0．「L:Tsv」のＦＡＱ
 
- Ｑ．[kanfont.py]などをダブルクリックしても起動しない。
+ Ｑ．「LTsv/LTsv_glyph.py」などをダブルクリックしても起動しない。
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。
-     Wineで「python-*.msi」が動かないって話なら「wine_sh/python3install.sh」を参考。「msiexec /i python-3.4.3.msi」の様なコマンドが必要。
+     Wineで「python-3.4.4.msi」が動かないって話なら「wine_sh/python3install.sh」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。
+
+   Welcome to Python.org
+   https://www.python.org/
+
+   Python Release Python 3.4.4 | Python.org
+   https://www.python.org/downloads/release/python-344/
+
+ Ｑ．Pythonはもう3.5系出てますよね？
+ Ａ．「python-3.5.1.exe」が「wine-portable-1.7.18-1-p4.tar.gz」でエラーになるのでどうしようも。
+     「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。
+
+   Python Release Python 3.5.2 | Python.org
+   https://www.python.org/downloads/release/python-352/
+
+   Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita
+   http://qiita.com/methane/items/2210712763b91e75fdf0
+
+   Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
+   http://shinobar.server-on.net/puppy/opt/
+
+ Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。
+ Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接グリフは使えません。
+     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かグリフ「kan5x5comic.woff」をフォント「kan5x5comic.ttf」に変換してフォントをインストール。
+
+ Ｑ．「LTsv_draw_font(LTsv/LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv/LTsv_glyph.py)」系の違いはなんですか。
+ Ａ．「Tkinter」がCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示glyphsモジュール用意しました。
+    フォントをインストールしなくても漢直が使えるようにするために「kan5x5comic」という独自のフォントも用意しました。
+    「用意しました」と言いましたが一部の文字しか用意できてないので注意。
+
+ Ｑ．漢直鍵盤ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？
+ Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。
+     ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。
+     文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。
+
+ Ｑ．なんで中途半端にVimっぽい操作方法なんですか？
+ Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。
+
+ Ｑ．漢直鍵盤を使ったソフトが起動しない。
+ Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。
+     「LTsv/kanpickle.bin」を削除してから「kanmap.py」を起動することで初期化できます。
 
 
 ⑫-0．作者について、例えば連絡先。
 
-<？title12-@c>
+ 更新情報はGitHubやブログを確認してください。
+
+   ooblog/LTsv10kanedit(GitHub)
+   https://github.com/ooblog/LTsv10kanedit
+
+   [kanedit] - 大風呂ダ敷
+   http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
+
 
 
 # Copyright (c) 2016 ooblog

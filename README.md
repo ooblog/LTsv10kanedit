@@ -41,9 +41,8 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 
 ## 「L&#58;Tsv」は上記のようなソフトも作れるモジュール群です。
 
-「L&#58;Tsv」の詳細は「[LTsv/LTsv.txt](LTsv/LTsv.txt "LTsv.txt")」を参考。  
-ドキュメントは整理中につき「kantray」の話題が混在しています。  
-
+「L&#58;Tsv」の詳細は「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」を参考。  
+モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[LTsv/LTsv_doc.tsv](LTsv/LTsv_doc.tsv "LTsv_doc.tsv")」から錬成されてます。
 
 ## 動作環境。
 

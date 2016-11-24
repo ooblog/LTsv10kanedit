@@ -1058,11 +1058,8 @@ def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     LTsv_glyph_calcdelete(calc_canvas)
     if glyph_calcinput in "":
-#        if glyph_calcinput in "":
-#            LTsv_clippaste="\t"
         if glyph_calcinput in "":
             LTsv_clippaste=LTsv_widget_gettext(LTsv_calculatorUC[calc_canvas]) if LTsv_calculatorUC[calc_canvas] != None else ""
-#        if glyph_calcinput in "":
             LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+LTsv_clippaste+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
             LTsv_calculatorTR[calc_canvas]+=len(LTsv_clippaste)-1
         if glyph_calcinput in "":

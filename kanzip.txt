@@ -37,13 +37,14 @@ version(branch) 20161023U011852
 
 １．    使い方
 
- 「kanzip.py」を起動して「jigyosyo,zip」をダウンロードして「jigyosyo.csv」を取りだし「jigyosyo.tsv」に変換。
- 同じ事を47都道府県で実施し、「*.tsv」を最終的に「kanzip.tsv」にマージする。
+ 「kanzip.py」を起動すると「jigyosyo」など各都道府県のボタンがあり、
+ 「*.zip」のダウンロード→「*.csv」取りだし→「*.tsv」に変換。同じ事を47都道府県で手動。
+ 各「*.tsv」を最終的に「kanzip.tsv」にマージすると、「kanedit」などで使える郵便番号辞書の完成。
 
 
 ２．    ＦＡＱ
 
- Ｑ．ボタンを１個ずつ押していくのが面倒くさいです。
+ Ｑ．ボタンを手動で１個ずつ押していくのが面倒くさいです。
  Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので念のため手動確認は大事です。
 
 
@@ -54,8 +55,8 @@ version(branch) 20161023U011852
   ooblog/LTsv10kanedit(GitHub)
   https://github.com/ooblog/LTsv10kanedit
 
- [kantray] - 大風呂ダ敷
-  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kantray]
+ [kanedit] - 大風呂ダ敷
+  http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
 
 
 # Copyright (c) 2016 ooblog

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161124R104458
+modify	20161124R162218
 |L:Tsv]
 
 [LTsv_doc|
@@ -248,7 +248,7 @@ modify <？modify><？BR><？/P>
 [<＃contents00-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
- 「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<？BR>
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<？BR>
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<？https99-0:kanchar.tsv>」から直接生成したいけど優先順位が低い。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  Windowsのエディタで<？DICmap>を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
@@ -355,7 +355,7 @@ modify <？modify><？BR><？/P>
 
 [<＃contents02-0>|
 <？P> 「<？https02:LTsv_printf.py>」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<？BR>
- ・Wine上DOSのエラー要因だった<？CP932>などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<？BR>
+ ・Wine上DOSのエラー要因だった<？CP932>などに変換させる事で範囲内の漢字が扱えるようになります。<？BR>
  ・変換できない文字は数値文字参照に変換されます。<？BR>
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<？BR>
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<？BR><？/P>
@@ -686,7 +686,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 [<＃contents06-0>|
 <？P> 「<？https06:LTsv_joy.py>」は<？gamepad>の入力をLTSVに変換するモジュールです。<？BR>
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<？BR>
- ・単体風テストで<？gamepad>の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。<？BR><？/P>
+ ・単体風テストで<？gamepad>の挙動確認ができます。「<？https08:LTsv_gui.py>」でも挙動確認はできます。<？BR><？/P>
  
 <！LTsv_joy.py>
 |<＃contents06-0>]
@@ -740,7 +740,7 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<？BR>
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<？BR>
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。<？BR>
- ・「LTsv_kbd.py」単独の単体風テストでは<？PCkeyboard>の挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。<？BR><？/P>
+ ・「LTsv_kbd.py」単独の単体風テストでは<？PCkeyboard>の挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は「<？https08:LTsv_gui.py>」を使います。<？BR><？/P>
 
 <！LTsv_kbd.py>
 |<＃contents07-0>]
@@ -952,7 +952,7 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 |LTsv_gui.py]
 
 [<＃contents08-1>|
-<？P> 「LTsv_gui.py」では「<？GUIwidget>」を「L:Tsv」で管理してます。<？BR>
+<？P> 「<？https08:LTsv_gui.py>」では「<？GUIwidget>」を「L:Tsv」で管理してます。<？BR>
  ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。<？BR>
  テキスト化できる項目とテキスト化できないので「LTsv_widget_newobj()」のIDだけを保管する項目とに仕分けるのが「LTsv_widgetPAGEXYWH()」の役割です。<？BR>
  オブジェクトを「L:Tsv」で管理する理由はガベージコレクションで消えるのを予防とグローバル変数が散らかるのを予防するためです。<？BR><？/P>
@@ -1013,8 +1013,8 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 
 [<＃contents09-0>|
 <？P> 「<？https09:LTsv_glyph.py>」は「canvas」上でフォントグリフを描画するモジュールです。<？VRkeyboard>関連も扱います。<？BR>
- ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<？BR>
- ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。<？BR>
+ ・「<？https08:LTsv_gui.py>」の「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<？BR>
+ ・ 「Tkinter」では表示できない<？CP932>を越える3バイト以上のUTF-8文字を扱えます。<？BR>
  ・単体風テストとして<？VRkeyboard>で<？reversi>を操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用に<？VRcalc>のテストも。<？BR><？/P>
 
 <！LTsv_glyph.py>
@@ -1123,7 +1123,7 @@ debug_configsave_exit(window_objvoid=None,window_objptr=None)	単体風テスト
 |<＃contents09-1>]
 
 [LTsv_glyph.tsv|
-[kanglyph|	「LTsv/LTsv_glyph.py」の設定。
+[kanglyph|	「<？https09:LTsv_glyph.py>」の設定。
 dicname	単漢字辞書を指定。初期値は「kanchar.tsv」。
 mapname	<？VRkeyboard>の漢字配列を指定。初期値は「kanmap.tsv」。
 picklename	グリフ座標データのパイクルを指定。初期値は「kanpickle.bin」。
@@ -1190,13 +1190,12 @@ entry	<？reversi>の棋譜。
 <？DLDT>  HJKL<？/DTDD>        カーソル移動。H←,J↓,K↑,L→(上下移動は「kanedit」用途)。<？BR><？/DD/DL>
 <？DLDT>  YUBN<？/DTDD>        範囲選択調整。YUで左側、BNで右側。<？BR><？/DD/DL>
 <？DLDT>  ;(+)<？/DTDD>       バックスペース。σ鍵盤じゃない状態の時も[BS]キーで左側1文字削除。<？BR><？/DD/DL>
-<？DLDT>  :(*)<？/DTDD>       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで左側1文字削除。<？BR><？/DD/DL>
+<？DLDT>  :(*)<？/DTDD>       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで右側1文字削除。<？BR><？/DD/DL>
 <？DLDT>  ]<？/DTDD>          エンターキー。σ鍵盤じゃない状態の時も[Enter]キーで入力決定。<？BR><？/DD/DL>
-<？DLDT>  T<？/DTDD>          タブ文字を入力。σ鍵盤じゃない状態の時も[Ctrl]+[T]でTab入力。<？BR><？/DD/DL>
 <？DLDT>  A<？/DTDD>          テキスト全選択。σ鍵盤じゃない状態の時も[Ctrl]+[A]で全選択。<？BR><？/DD/DL>
-<？DLDT>  C<？/DTDD>          テキストをクリップボードにコピー。Ctrl+C。<？BR><？/DD/DL>
-<？DLDT>  X<？/DTDD>          テキスト切り取り(クリップボードにコピー)。Ctrl+X。<？BR><？/DD/DL>
-<？DLDT>  V<？/DTDD>          クリップボードからテキスト貼り付け。Ctrl+V。<？BR><？/DD/DL>
+<？DLDT>  C<？/DTDD>          テキストをクリップボードにコピー。σ鍵盤じゃない状態の時も[Ctrl]+[C]で選択範囲コピー。<？BR><？/DD/DL>
+<？DLDT>  X<？/DTDD>          テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。<？BR><？/DD/DL>
+<？DLDT>  V<？/DTDD>          クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。<？BR><？/DD/DL>
 |<＃contents09-3>]
 [<？index09:keyboard>|
 .+\.html?	<h4><？title09:keyboard></h4>
@@ -1339,16 +1338,45 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <？P> 「<？https10:LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時に「<？LTsv>」のモジュールドキュメントによる実例サンプルです。<？BR><？/P>
 |<＃contents10-1>]
 
-
 [<？section11-0>|
 .+\.html?	<section>@E <h3><a name="index11-@c"><？title11-@c></a></h3>@E<＃contents11-@c>@E</section>@E
 .*	@E<？title11-@c>@E@E<＃contents11-@c>@E
 |<？section11-0>]
 
 [<＃contents11-0>|
-<？DLDT> Ｑ．[kanfont.py]などをダブルクリックしても起動しない。<？/DTDD>
+<？DLDT> Ｑ．「<？https09:LTsv_glyph.py>」などをダブルクリックしても起動しない。<？/DTDD>
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<？BR>
-     Wineで「python-*.msi」が動かないって話なら「<？https11:python3install.sh>」を参考。「msiexec /i python-3.4.3.msi」の様なコマンドが必要。<？BR><？/DD/DL>
+     Wineで「python-3.4.4.msi」が動かないって話なら「<？https11:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<？BR>
+<？/DD/DL>
+<？https11:python.org>
+<？https11:python344>
+<？DLDT> Ｑ．Pythonはもう3.5系出てますよね？<？/DTDD>
+ Ａ．「python-3.5.1.exe」が「wine-portable-1.7.18-1-p4.tar.gz」でエラーになるのでどうしようも。<？BR>
+     「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<？BR>
+<？/DD/DL>
+<？https11:python352>
+<？https11:pythonMSVCRTQiita>
+<？https11:PortableWine>
+<？DLDT> Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。<？/DTDD>
+ Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接グリフは使えません。<？BR>
+     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かグリフ「kan5x5comic.woff」をフォント「kan5x5comic.ttf」に変換してフォントをインストール。<？BR><？/DD/DL>
+
+<？DLDT> Ｑ．「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
+ Ａ．「Tkinter」が<？CP932>を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示glyphsモジュール用意しました。<？BR>
+    フォントをインストールしなくても漢直が使えるようにするために「kan5x5comic」という独自のフォントも用意しました。<？BR>
+    「用意しました」と言いましたが一部の文字しか用意できてないので注意。<？BR><？/DD/DL>
+
+<？DLDT> Ｑ．<？VRkeyboard>ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？<？/DTDD>
+ Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。<？BR>
+     ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。<？BR>
+     文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。<？BR><？/DD/DL>
+
+<？DLDT> Ｑ．なんで中途半端にVimっぽい操作方法なんですか？<？/DTDD>
+ Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<？BR><？/DD/DL>
+
+<？DLDT> Ｑ．漢直鍵盤を使ったソフトが起動しない。<？/DTDD>
+ Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>
+     「LTsv/kanpickle.bin」を削除してから「<？https11:kanmap.py>」を起動することで初期化できます。<？BR><？/DD/DL>
 |<＃contents11-0>]
 
 [<？section12-0>|
@@ -1357,7 +1385,10 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 |<？section12-0>]
 
 [<＃contents12-0>|
-<？P><？title12-@c><？BR><？/P>
+<？P> 更新情報はGitHubやブログを確認してください。<？BR><？/P>
+
+<？https12:github_ooblog>
+<？https12:hatena_ooblog>
 |<＃contents12-0>]
 
 [<？DICmap>|
@@ -1672,13 +1703,50 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 [<？title11-0>|
 .*	⑪-0．「L:Tsv」のＦＡＱ
 |<？title11-0>]
-[<？https11:python3install.sh>|
+[<？https11:python.org>*<？https11:python344>*<？https11:python352>*<？https11:pythonMSVCRTQiita>*<？https11:PortableWine>|
+.+\.html?	<dl><dt><？web11-@c></dt><dd><a href="<？url11-@c>" title="<？web11-@c>"><？url11-@c></a></dd></dl>
+.*	   <？web11-@c><？BR>@E   <？url11-@c><？BR>@E
+|<？https11:python.org>*<？https11:python344>*<？https11:python352>*<？https11:pythonMSVCRTQiita>*<？https11:PortableWine>]
+[<？url11-0>|
+.*	https://www.python.org/
+|<？url11-0>]
+[<？web11-0>|
+.*	Welcome to Python.org
+|<？web11-0>]
+[<？url11-1>|
+.*	https://www.python.org/downloads/release/python-344/
+|<？url11-1>]
+[<？web11-1>|
+.*	Python Release Python 3.4.4 | Python.org
+|<？web11-1>]
+[<？url11-2>|
+.*	https://www.python.org/downloads/release/python-352/
+|<？url11-2>]
+[<？web11-2>|
+.*	Python Release Python 3.5.2 | Python.org
+|<？web11-2>]
+[<？url11-3>|
+.*	http://qiita.com/methane/items/2210712763b91e75fdf0
+|<？url11-3>]
+[<？web11-3>|
+.*	Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita
+|<？web11-3>]
+[<？url11-4>|
+.*	http://shinobar.server-on.net/puppy/opt/
+|<？url11-4>]
+[<？web11-4>|
+.*	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
+|<？web11-4>]
+[<？https11:python3install.sh>*<？https11:kanmap.py>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>"><？path11-F@0c></a>
 .*	<？path11-F@0c>
-|<？https11:python3install.sh>]
+|<？https11:python3install.sh>*<？https11:kanmap.py>]
 [<？path11-F00>|
 .*	wine_sh/python3install.sh
 |<？path11-F00>]
+[<？path11-F01>|
+.*	kanmap.py
+|<？path11-F01>]
 
 [<？list12-0>|
 .+\.html?	 <li><？index12-@c></li>@E
@@ -1691,6 +1759,22 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 [<？title12-0>|
 .*	⑫-0．作者について、例えば連絡先。
 |<？title12-0>]
+[<？https12:github_ooblog>*<？https12:hatena_ooblog>|
+.+\.html?	<dl><dt><？web12-@c></dt><dd><a href="<？url12-@c>" title="<？web12-@c>"><？url12-@c></a></dd></dl>
+.*	   <？web12-@c><？BR>@E   <？url12-@c><？BR>@E
+|<？https12:github_ooblog>*<？https12:hatena_ooblog>]
+[<？url12-0>|
+.*	https://github.com/ooblog/LTsv10kanedit
+|<？url12-0>]
+[<？web12-0>|
+.*	ooblog/LTsv10kanedit(GitHub)
+|<？web12-0>]
+[<？url12-1>|
+.*	http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
+|<？url12-1>]
+[<？web12-1>|
+.*	[kanedit] - 大風呂ダ敷
+|<？web12-1>]
 
 [<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:kanchar.tsv>*<？https99-0:kanword.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>"><？path99-0:LTsvFiles@0c></a>

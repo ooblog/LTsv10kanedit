@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	LTsv_kbd.py
 LTsvver	20161023U011852
-modify	20161124R110400
+modify	20161124R164315
 |L:Tsv]
 
 [kanglyph|
@@ -41,5 +41,5 @@ kbddefsize	1
 |kanglyph]
 
 [reversi|
-entry	ＴＵＶ８ｈ．ｅＳ３ｆ０ＷｇｐＫＲｑｎｍｕｖｗＬＣｄｋ
+entry	ＴＵＶ８ｈ．ｅＳ３ｆ０ＷｇｐＫＲｑｎｍｕｖｗＬＣｄｋＮｚ
 |reversi]

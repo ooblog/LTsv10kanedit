@@ -19,7 +19,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161124R104456<br />
+modify 20161124R162215<br />
 </p>
 
   <h2>目次</h2>
@@ -105,7 +105,7 @@ modify 20161124R104456<br />
 <p>
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
- 「kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。<br />
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」で解決できます。<br />
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
  人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
  Windowsのエディタで漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<br />
@@ -197,7 +197,7 @@ modify 20161124R104456<br />
  <h3><a name="index02-0">②-0．「LTsv_printf.py」の関数一覧</a></h3>
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_file.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_file.py">LTsv/LTsv_file.py</a>」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<br />
- ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で漢字をある程度(BMP基本多言語面0xffff範囲内)扱えるようになります。<br />
+ ・Wine上DOSのエラー要因だったCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)などに変換させる事で範囲内の漢字が扱えるようになります。<br />
  ・変換できない文字は数値文字参照に変換されます。<br />
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<br />
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<br />
@@ -872,7 +872,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_joy.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_joy.py">LTsv/LTsv_joy.py</a>」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。<br />
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<br />
- ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv_gui.py」でも挙動確認はできます。<br />
+ ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>」でも挙動確認はできます。<br />
 </p>
  
 <dl><dt>LTsv_joyreset(LTsv_tsvpath)</dt><dd>
@@ -966,7 +966,7 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<br />
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<br />
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv_kbd.tsv」で調整。<br />
- ・「LTsv_kbd.py」単独の単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は[LTsv_gui.py]を使います。<br />
+ ・「LTsv_kbd.py」単独の単体風テストではPCキーボードの挙動確認は難しい(Windows環境ではターミナルの「GetAsyncKeyState」がWineの外なので拾えない)ので挙動確認は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>」を使います。<br />
 </p>
 
 <dl><dt>LTsv_kbdcatproc(LTsv_devname)</dt><dd>
@@ -1465,7 +1465,7 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 <section>
  <h3><a name="index08-1">⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧</a></h3>
 <p>
- 「LTsv_gui.py」では「GUIオブジェクト(widget)」を「L:Tsv」で管理してます。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>」では「GUIオブジェクト(widget)」を「L:Tsv」で管理してます。<br />
  ページ名として「LTsv_widget_newUUID()」で発行されるユニークIDが付与されます。<br />
  テキスト化できる項目とテキスト化できないので「LTsv_widget_newobj()」のIDだけを保管する項目とに仕分けるのが「LTsv_widgetPAGEXYWH()」の役割です。<br />
  オブジェクトを「L:Tsv」で管理する理由はガベージコレクションで消えるのを予防とグローバル変数が散らかるのを予防するためです。<br />
@@ -1661,8 +1661,8 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
  <h3><a name="index09-0">⑨-0．「LTsv_glyph.py」の関数一覧</a></h3>
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」は「canvas」上でフォントグリフを描画するモジュールです。漢直鍵盤関連も扱います。<br />
- ・「LTsv_gui.py」「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<br />
- ・ 「Tkinter」では表示できない「U+FFFF(BMP)」を越える3バイト以上のUTF-8文字を扱えます。<br />
+ ・「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>」の「LTsv_draw_text」系列との違いはフォントを用いずにグリフを描画することです。<br />
+ ・ 「Tkinter」では表示できないCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えます。<br />
  ・単体風テストとして漢直鍵盤でリバーシーを操作するデモを作成。あくまでもデモなのでアルゴリズムは簡易。「entry」との比較用にテキスト入力欄(電卓)のテストも。<br />
 </p>
 
@@ -1921,7 +1921,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv">LTsv/LTsv_glyph.tsv</a>」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定ファイルです。<br />
 </p>
 <dl><dt>[kanglyph|</dt><dd>
-「LTsv/LTsv_glyph.py」の設定。</dd></dl>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定。</dd></dl>
 <dl><dt>dicname</dt><dd>
 単漢字辞書を指定。初期値は「kanchar.tsv」。</dd></dl>
 <dl><dt>mapname</dt><dd>
@@ -2151,7 +2151,7 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <dl><dt>
   :(*)</dt>
 <dd>
-       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで左側1文字削除。<br />
+       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで右側1文字削除。<br />
 </dd></dl>
 <dl><dt>
   ]</dt>
@@ -2166,27 +2166,17 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <dl><dt>
   C</dt>
 <dd>
-          テキストをクリップボードにコピー。Ctrl+C。<br />
+          テキストをクリップボードにコピー。σ鍵盤じゃない状態の時も[Ctrl]+[C]で選択範囲コピー。<br />
 </dd></dl>
 <dl><dt>
   X</dt>
 <dd>
-          テキスト切り取り(クリップボードにコピー)。Ctrl+X。<br />
+          テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。<br />
 </dd></dl>
 <dl><dt>
   V</dt>
 <dd>
-          クリップボードからテキスト貼り付け。Ctrl+V。<br />
-</dd></dl>
-<dl><dt>
-  T</dt>
-<dd>
-          タブ文字を入力。Ctrl+T。<br />
-</dd></dl>
-<dl><dt>
-  I</dt>
-<dd>
-          半角スペース4文字を入力。Ctrl+I。<br />
+          クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。<br />
 </dd></dl>
 
 </section>
@@ -2408,11 +2398,65 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <section>
  <h3><a name="index11-0">⑪-0．「L:Tsv」のＦＡＱ</a></h3>
 <dl><dt>
- Ｑ．[kanfont.py]などをダブルクリックしても起動しない。</dt>
+ Ｑ．「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」などをダブルクリックしても起動しない。</dt>
 <dd>
 
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<br />
-     Wineで「python-*.msi」が動かないって話なら「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh">wine_sh/python3install.sh</a>」を参考。「msiexec /i python-3.4.3.msi」の様なコマンドが必要。<br />
+     Wineで「python-3.4.4.msi」が動かないって話なら「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh">wine_sh/python3install.sh</a>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
+
+</dd></dl>
+<dl><dt>Welcome to Python.org</dt><dd><a href="https://www.python.org/" title="Welcome to Python.org">https://www.python.org/</a></dd></dl>
+<dl><dt>Python Release Python 3.4.4 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-344/" title="Python Release Python 3.4.4 | Python.org">https://www.python.org/downloads/release/python-344/</a></dd></dl>
+<dl><dt>
+ Ｑ．Pythonはもう3.5系出てますよね？</dt>
+<dd>
+
+ Ａ．「python-3.5.1.exe」が「wine-portable-1.7.18-1-p4.tar.gz」でエラーになるのでどうしようも。<br />
+     「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<br />
+
+</dd></dl>
+<dl><dt>Python Release Python 3.5.2 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-352/" title="Python Release Python 3.5.2 | Python.org">https://www.python.org/downloads/release/python-352/</a></dd></dl>
+<dl><dt>Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita</dt><dd><a href="http://qiita.com/methane/items/2210712763b91e75fdf0" title="Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita">http://qiita.com/methane/items/2210712763b91e75fdf0</a></dd></dl>
+<dl><dt>Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)</dt><dd><a href="http://shinobar.server-on.net/puppy/opt/" title="Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)">http://shinobar.server-on.net/puppy/opt/</a></dd></dl>
+<dl><dt>
+ Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。</dt>
+<dd>
+
+ Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接グリフは使えません。<br />
+     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かグリフ「kan5x5comic.woff」をフォント「kan5x5comic.ttf」に変換してフォントをインストール。<br />
+</dd></dl>
+
+<dl><dt>
+ Ｑ．「LTsv_draw_font(<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>)」系と「LTsv_draw_glyphs(<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>)」系の違いはなんですか。</dt>
+<dd>
+
+ Ａ．「Tkinter」がCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示glyphsモジュール用意しました。<br />
+    フォントをインストールしなくても漢直が使えるようにするために「kan5x5comic」という独自のフォントも用意しました。<br />
+    「用意しました」と言いましたが一部の文字しか用意できてないので注意。<br />
+</dd></dl>
+
+<dl><dt>
+ Ｑ．漢直鍵盤ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？</dt>
+<dd>
+
+ Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。<br />
+     ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。<br />
+     文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。<br />
+</dd></dl>
+
+<dl><dt>
+ Ｑ．なんで中途半端にVimっぽい操作方法なんですか？</dt>
+<dd>
+
+ Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<br />
+</dd></dl>
+
+<dl><dt>
+ Ｑ．漢直鍵盤を使ったソフトが起動しない。</dt>
+<dd>
+
+ Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<br />
+     「LTsv/kanpickle.bin」を削除してから「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動することで初期化できます。<br />
 </dd></dl>
 
 </section>
@@ -2420,8 +2464,11 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <section>
  <h3><a name="index12-0">⑫-0．作者について、例えば連絡先。</a></h3>
 <p>
-<？title12-@c><br />
+ 更新情報はGitHubやブログを確認してください。<br />
 </p>
+
+<dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
+<dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
 
 </section>
 
