@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161023U011852
-modify	20161123W134733
+modify	20161124R104458
 |L:Tsv]
 
 [LTsv_doc|
@@ -1159,6 +1159,14 @@ entry	<？reversi>の棋譜。
 |LTsv_glyph.tsv]
 
 [<＃contents09-2>|
+<？P><？index09:kbdimage><？/P>
+<？index09:mouse>
+<？DLDT>   小さい文字をタップ(押上)<？/DTDD>    文字入力。「σ」鍵盤ではHJKLでカーソル移動などにもなります。<？BR><？/DD/DL>
+<？DLDT>   左上(Ｎ)からフリック<？/DTDD>        NFER鍵盤(ひらがな)の選択。Ｎの下にフリックでα鍵盤の「σ」(HJKL)。<？BR><？/DD/DL>
+<？DLDT>   右上(Ｘ)からフリック<？/DTDD>        XFER鍵盤(カタカナ)の選択。Ｘの下にフリックでα鍵盤の「Σ」(電卓)。<？BR><？/DD/DL>
+<？DLDT>   左下(Ｎの下)からフリック<？/DTDD>    α鍵盤の選択。もしくは辞書の変更。<？BR><？/DD/DL>
+<？DLDT>   右下(Ｘの下)からフリック<？/DTDD>    字引入力。単漢字辞書の項目が代入。<？BR><？/DD/DL>
+
 <？index09:keyboard>
 <？DLDT>  [NFER]+[ぬ〜ろ￥]<？/DTDD>                   NFER鍵盤切替。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
 <？DLDT>  [XFER]+[ヌ〜ロ｜]<？/DTDD>                   XFER鍵盤切替。カタカナや大文字など。[XFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
@@ -1167,23 +1175,28 @@ entry	<？reversi>の棋譜。
 <？DLDT>  [KANA]+[NFER]or[NFER]+[KANA]<？/DTDD>       「σ」鍵盤表示。HJKLカーソル移動などに使います。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[XFER]or[XFER]+[KANA]<？/DTDD>       「Σ」鍵盤表示。電卓用途。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]<？/DTDD>           単漢字辞書による字引入力。<？BR><？/DD/DL>
-
-<？index09:mouse>
-
-<？P> ※<？VRkeyboard>の四隅ＮＸ等は実際には縦横２倍の大きさです。<？BR><？/P>
-<？P>  Ｎ　ぬふあうえおやゆよわほへ　Ｘ<？BR>
-  　　たていすかんなにらせ沼濡　　<？BR>
-  　　ちとしはきくまのりれけむ　　<？BR>
-  ぬ　つさそひこみもねるめろﾇ 　英<？BR><？/P>
-<？DLDT>   小さい文字をタップ(押上)<？/DTDD>    文字入力。「σ」鍵盤ではHJKLでカーソル移動などにもなります。<？BR><？/DD/DL>
-<？DLDT>   左上(Ｎ)からフリック<？/DTDD>        NFER鍵盤(ひらがな)の選択。Ｎの下にフリックでα鍵盤の「σ」(HJKL)。<？BR><？/DD/DL>
-<？DLDT>   右上(Ｘ)からフリック<？/DTDD>        XFER鍵盤(カタカナ)の選択。Ｘの下にフリックでα鍵盤の「Σ」(電卓)。<？BR><？/DD/DL>
-<？DLDT>   左下(Ｎの下)からフリック<？/DTDD>    α鍵盤の選択。もしくは辞書の変更。<？BR><？/DD/DL>
-<？DLDT>   右下(Ｘの下)からフリック<？/DTDD>    字引入力。単漢字辞書の項目が代入。<？BR><？/DD/DL>
 |<＃contents09-2>]
 [<＃contents09-3>|
-<？index09:keyboard>
+<？index09:calcimage>
 <？index09:mouse>
+<？DLDT>  テキスト選択<？/DTDD>                      文字選択とカーソルの区別は厳密ではないので、1文字選択がカーソル移動。<？BR><？/DD/DL>
+<？DLDT>  選択テキストドラッグ<？/DTDD>              選択した文字は移動できる。選択テキストはドラッグで持ち上げるタイミングでクリップボードにもコピー。<？BR><？/DD/DL>
+<？DLDT>  選択文字を欄外にドラッグ<？/DTDD>          選択した文字を削除もできる。<？BR><？/DD/DL>
+<？DLDT>  １秒入力欄を押し続ける<？/DTDD>            ドラッグじゃない状態でホールドするとクリップボードから貼り付けた文字がドラッグ状態になる。<？BR><？/DD/DL>
+<？DLDT>  入力欄の上端をスライド<？/DTDD>            文字の表示位置を移動。<？BR><？/DD/DL>
+<？DLDT>  表示位置スライド状態で押し続け<？/DTDD>    文字の表示位置をリセット。<？BR><？/DD/DL>
+
+<？index09:keyboard>
+<？DLDT>  HJKL<？/DTDD>        カーソル移動。H←,J↓,K↑,L→(上下移動は「kanedit」用途)。<？BR><？/DD/DL>
+<？DLDT>  YUBN<？/DTDD>        範囲選択調整。YUで左側、BNで右側。<？BR><？/DD/DL>
+<？DLDT>  ;(+)<？/DTDD>       バックスペース。σ鍵盤じゃない状態の時も[BS]キーで左側1文字削除。<？BR><？/DD/DL>
+<？DLDT>  :(*)<？/DTDD>       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで左側1文字削除。<？BR><？/DD/DL>
+<？DLDT>  ]<？/DTDD>          エンターキー。σ鍵盤じゃない状態の時も[Enter]キーで入力決定。<？BR><？/DD/DL>
+<？DLDT>  T<？/DTDD>          タブ文字を入力。σ鍵盤じゃない状態の時も[Ctrl]+[T]でTab入力。<？BR><？/DD/DL>
+<？DLDT>  A<？/DTDD>          テキスト全選択。σ鍵盤じゃない状態の時も[Ctrl]+[A]で全選択。<？BR><？/DD/DL>
+<？DLDT>  C<？/DTDD>          テキストをクリップボードにコピー。Ctrl+C。<？BR><？/DD/DL>
+<？DLDT>  X<？/DTDD>          テキスト切り取り(クリップボードにコピー)。Ctrl+X。<？BR><？/DD/DL>
+<？DLDT>  V<？/DTDD>          クリップボードからテキスト貼り付け。Ctrl+V。<？BR><？/DD/DL>
 |<＃contents09-3>]
 [<？index09:keyboard>|
 .+\.html?	<h4><？title09:keyboard></h4>
@@ -1199,6 +1212,52 @@ entry	<？reversi>の棋譜。
 [<？title09:mouse>|
 .*	マウス操作
 |<？title09:mouse>]
+[<？index09:kbdimage>|
+.+\.html?	<img src="data:image/png;base64,<？64base09:kbdimage>" width="96" height="24" alt="漢直鍵盤"><br />
+.*	<？textAA09:kbdimage>
+|<？index09:kbdimage>]
+[<？index09:calcimage>|
+.+\.html?	<p><img src="data:image/png;base64,<？64base09:calcmage>" width="200" height="24" alt="漢直鍵盤"><br /></p>
+.*	<？textAA09:calcmage>
+|<？index09:calcimage>]
+[<？64base09:kbdimage>|
+iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAMAAAAyNwimAAAABlBMVEXh//oAAABbwECnAAABf0lE
+QVR42r2W25LDMAhD0f//9LYTg45Iui97cWdax8GAQZJbxaHX5/UtXQ8znxW1zfVVYfg2ugzTqfx7
+HL3nZ0MYHhfvt2ebjmW/VZ0U4Tuc1rV5MuXmmhRV7ezycBmrvd8DqAPYec96A1b6BGN/QrZbV2Lq
+qz6WUKjOVJOTM6ypEFujKCfC1Kf2/GDIPexYXcJsl8t6B47Pir7YrWo1QqtaXSK3lOHPGmq8MROd
+nmL7HGxXd9foKncoT8CoIg+cUQYouijiZ4x1YykYE5hVYWmycpTiIZVwJHATpv86bjhRPhkIix9J
+kic1Iue0EaLhW1mL3B5qUe8MZvkBjOvaW07Q1hAJqItPsAJAORXFafmrkGUolYxeKsoM+0+uTNFC
+EHt961IZuNA30xaY/UUtIsNIDcBo0rU4Lva6XmjyNwGW/ogqDEKb93mhLhnkTfZ0XZjOlGAojhMi
+nJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CYUlsAAAAASUVORK5C
+YII=
+|<？64base09:kbdimage>]
+[<？textAA09:kbdimage>|
+ ※漢直鍵盤の四隅ＮＸ等は実際には縦横２倍の大きさです。
+  Ｎ　ぬふあうえおやゆよわほへ　Ｘ
+  　　たていすかんなにらせ沼濡　　
+  　　ちとしはきくまのりれけむ　　
+  ぬ　つさそひこみもねるめろﾇ 　英
+|<？textAA09:kbdimage>]
+[<？64base09:calcmage>|
+iVBORw0KGgoAAAANSUhEUgAAAMgAAAAYCAMAAACIuEKDAAAADFBMVEXg/vnh/vnh//oAAACCfcr1
+AAACHUlEQVR42sWXi5aDMAhElfn/f94qryEPa6t1c/a4RqNyAwN0WXUsNtYfzVfhAWA7tH/7rcEa
+Pfcrfo7yyp8D+FU3dLdtN7gckdf1InZTR8cAFX7nkyAYghgCAkG9MgUR99w/giBAQB6BZGghbQzH
+eFBJesz/xSufBoEUabS73etIhJTTLUnZPKwRcFzfM+Bb8KzYUbOQZNiUoxzdlaHjns5atn/VPMq6
+FEIkfIYqGqE8vKhvXh+2k9fQuZmwTfQWxobrQ9v5tkQf99V9+gXrtnhBhoro1pSsxaFlX/Xvk0Fq
+8DaBDwMwYAXSh2gDaDUXxMi+uCiKUkfiOADBO5Cw0u5/BCKXQaiyc/plD6TRFUQNdRAyM+mHITlt
+UX4w3oGgAykb/i0I0jnoFUFSib6F2rCip5MgoVo9tVBKkikIDkG42HlGkjblSpPTSulEiN3WtEFd
+xU6qsQUBFuvPaqQ6hH3Bu4wJDqpHkPI4A0JpLD0QCTVDbQjSt/H+mXsqutAbU+xDkIgr9CRZP6Ye
+aUFwJwg3KJx+WwUvozS8WczrJwUxksCojb+30+LQOgQpldzmhWMGEmm7r+zSSFt6aZdGhXuXPltd
+AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
+5LLUuU5KaVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
+|<？64base09:calcmage>]
+[<？textAA09:calcmage>|
+ ※σ鍵盤の←→↑↓は実際には[Home][End][PgUp][PgDn]です。
+  Ｎ　🎮☐☑☒✓✖♠♥♦♣↖↗　Ｘ
+  　　Q W E R T Y U I O P ↙↘　　
+  　　A S D F G H J K L bsdelenter
+  ぬ　Z X C V B N M ←→↑↓σ　英
+|<？textAA09:calcmage>]
 
 [<＃contents09-4>|
 <？P> 「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、<？BR>
@@ -1287,7 +1346,9 @@ entry	<？reversi>の棋譜。
 |<？section11-0>]
 
 [<＃contents11-0>|
-<？P><？title11-@c><？BR><？/P>
+<？DLDT> Ｑ．[kanfont.py]などをダブルクリックしても起動しない。<？/DTDD>
+ Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<？BR>
+     Wineで「python-*.msi」が動かないって話なら「<？https11:python3install.sh>」を参考。「msiexec /i python-3.4.3.msi」の様なコマンドが必要。<？BR><？/DD/DL>
 |<＃contents11-0>]
 
 [<？section12-0>|
@@ -1611,6 +1672,13 @@ entry	<？reversi>の棋譜。
 [<？title11-0>|
 .*	⑪-0．「L:Tsv」のＦＡＱ
 |<？title11-0>]
+[<？https11:python3install.sh>|
+.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>"><？path11-F@0c></a>
+.*	<？path11-F@0c>
+|<？https11:python3install.sh>]
+[<？path11-F00>|
+.*	wine_sh/python3install.sh
+|<？path11-F00>]
 
 [<？list12-0>|
 .+\.html?	 <li><？index12-@c></li>@E

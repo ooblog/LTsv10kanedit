@@ -93,6 +93,12 @@ def kanedit_calculatoredit(calculatormouseinput):
     global kanedit_texteditfilename,kanedit_textvalue,kanedit_cursorY
     if calculatormouseinput == "":
         LTsv_glyph_calcresize(kanedit_canvas,calculatorT=LTsv_evaltext(LTsv_glyph_calcresize(kanedit_canvas)))
+    if calculatormouseinput == "":
+        LTsv_glyph_calcinput(kanedit_canvas,"\t")
+    if calculatormouseinput == "":
+        LTsv_glyph_calcinput(kanedit_canvas,"    ")
+    if calculatormouseinput == "":
+        LTsv_glyph_calcinput(kanedit_canvas," ")
     if calculatormouseinput == "":
         kanedit_cursorY=min(kanedit_cursorY+1,LTsv_readlinedeno(kanedit_textvalue))
         LTsv_glyph_calcresize(kanedit_canvas,calculatorY=kanedit_cursorY*10)

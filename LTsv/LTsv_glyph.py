@@ -1058,13 +1058,11 @@ def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     LTsv_glyph_calcdelete(calc_canvas)
     if glyph_calcinput in "":
-        if glyph_calcinput in "":
-            LTsv_clippaste="\t"
-        if glyph_calcinput in "":
-            LTsv_clippaste="    "
+#        if glyph_calcinput in "":
+#            LTsv_clippaste="\t"
         if glyph_calcinput in "":
             LTsv_clippaste=LTsv_widget_gettext(LTsv_calculatorUC[calc_canvas]) if LTsv_calculatorUC[calc_canvas] != None else ""
-        if glyph_calcinput in "":
+#        if glyph_calcinput in "":
             LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+LTsv_clippaste+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
             LTsv_calculatorTR[calc_canvas]+=len(LTsv_clippaste)-1
         if glyph_calcinput in "":
@@ -1094,7 +1092,7 @@ def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput):
             LTsv_calculatorTL[calc_canvas]=LTsv_calculatorTR[calc_canvas]
     else:
         LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+glyph_calcinput+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
-        LTsv_calculatorTL[calc_canvas]+=1; LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTL[calc_canvas]
+        LTsv_calculatorTL[calc_canvas]+=len(glyph_calcinput); LTsv_calculatorTR[calc_canvas]=LTsv_calculatorTL[calc_canvas]
     LTsv_glyph_calcresize(calc_canvas); LTsv_glyph_calcdraw(calc_canvas); LTsv_draw_queue()
     return glyph_calcinput
 
@@ -1167,6 +1165,7 @@ def LTsv_glyph_calctype(calc_canvas):
     if "PgUp" in glyphtype_getkbdnames: glyph_calcinput= LTsv_glyph_calcinput(calc_canvas,"");
     if "PgDn" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
     if "Enter" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
+    if "Space" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
     if LTsv_glyph_kbdCTRL in glyphtype_getkbdnames:
         for ctrlAZ_key,ctrlAZ_data in LTsv_glyph_ctrlAZ.items():
             if ctrlAZ_key in glyphtype_getkbdkanas: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,ctrlAZ_data);
