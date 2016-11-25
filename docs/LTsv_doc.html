@@ -19,7 +19,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
 version(branch) 20161023U011852<br />
-modify 20161124R162215<br />
+modify 20161125F163806<br />
 </p>
 
   <h2>目次</h2>
@@ -60,6 +60,7 @@ modify 20161124R162215<br />
 
     <li><a href="#index10-0" title="⑩-0．「LTsv_doc.py」の関数一覧">⑩-0．「LTsv_doc.py」の関数一覧</a></li>
  <li><a href="#index10-1" title="⑩-1．「LTsv_doc.tsv」のタグ解説">⑩-1．「LTsv_doc.tsv」のタグ解説</a></li>
+ <li><a href="#index10-2" title="⑩-2．LTsv_docドキュメントの書き方">⑩-2．LTsv_docドキュメントの書き方</a></li>
 
     <li><a href="#index11-0" title="⑪-0．「L:Tsv」のＦＡＱ">⑪-0．「L:Tsv」のＦＡＱ</a></li>
 
@@ -141,6 +142,8 @@ modify 20161124R162215<br />
  first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
 </p><p>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
+
+</p>
 <dl><dt>
   [L:Tsv|</dt>
 <dd>
@@ -2383,15 +2386,158 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <section>
  <h3><a name="index10-0">⑩-0．「LTsv_doc.py」の関数一覧</a></h3>
 <p>
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」はモジュールそのものというよりは、モジュールのドキュメントを作成するソフトです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。<br />
+  ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。<br />
+  ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。<br />
 </p>
+
+<dl><dt>LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOCdef_python(LTsvDOClaunch_deffile)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)</dt><dd>
+</dd></dl>
+<dl><dt>LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)</dt><dd>
+</dd></dl>
 
 </section>
 <section>
  <h3><a name="index10-1">⑩-1．「LTsv_doc.tsv」のタグ解説</a></h3>
 <p>
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定ファイルと同時に「LTsv10kanedit(tsvtool10)」のモジュールドキュメントによる実例サンプルです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定ファイルと同時にドキュメント作成例サンプルです。<br />
+</p><p>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
+
 </p>
+<dl><dt>
+  [L:Tsv|</dt>
+<dd>
+                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<a href="#index01-1" title="①-1．「L:Tsv」ファイルの構造">①-1．「L:Tsv」ファイルの構造</a>」を参考。
+</dd></dl>
+<dl><dt>
+   1st</dt>
+<dd>
+                        「LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
+</dd></dl>
+<dl><dt>
+  [LTsv_doc|</dt>
+<dd>
+                  「LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。
+</dd></dl>
+<dl><dt>
+   window_size</dt>
+<dd>
+                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。
+</dd></dl>
+<dl><dt>
+   tsvlist</dt>
+<dd>
+                    ランチャーに管理させるLTsvファイルのリストを指定。
+</dd></dl>
+<dl><dt>
+   modify</dt>
+<dd>
+                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
+</dd></dl>
+<dl><dt>
+  [LTsv_doc_this|</dt>
+<dd>
+             「LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
+</dd></dl>
+<dl><dt>
+   main</dt>
+<dd>
+                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
+</dd></dl>
+<dl><dt>
+   tagseparate</dt>
+<dd>
+                ループタグ作成用のタグ区切りを指定。「LTsv_doc.tsv」では「*」を使用。
+</dd></dl>
+<dl><dt>
+   skplist</dt>
+<dd>
+                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+</dd></dl>
+<dl><dt>
+   outdir</dt>
+<dd>
+                     置換されたテキストの出力先フォルダ。
+</dd></dl>
+<dl><dt>
+   outlist</dt>
+<dd>
+                    置換されたテキストの出力ファイル名一覧。
+</dd></dl>
+<dl><dt>
+   defdir</dt>
+<dd>
+                     Pythonのモジュール等が置いてあるフォルダ。
+</dd></dl>
+<dl><dt>
+   deftag</dt>
+<dd>
+                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
+</dd></dl>
+<dl><dt>
+   defindent</dt>
+<dd>
+                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
+</dd></dl>
+
+</section>
+<section>
+ <h3><a name="index10-2">⑩-2．LTsv_docドキュメントの書き方</a></h3>
+<p>
+ 「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<br />
+ タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<br />
+</p> 
+<h4>大きく分けて3種類の置換タグとその他skplistに登録され置換対象にならないタグがあります。</h4>
+<dl><dt>
+<「＃」tag></dt>
+<dd>
+                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。
+</dd></dl>
+<dl><dt>
+<「！」tag></dt>
+<dd>
+                   ファイルタグと便宜上命名。「deftag」のソルトで囲んだファイル名はモジュール関数一覧管理用途。ページ内容を「defindent」で装飾して置換。
+</dd></dl>
+<dl><dt>
+<「？」tag></dt>
+<dd>
+                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。
+</dd></dl>
+<dl><dt>
+「L:Tsv」</dt>
+<dd>
+                     「L:Tsv」ファイルのメタタグです。skplist対象なので置換されません。
+</dd></dl>
+<dl><dt>
+LTsv_doc(LTsv_doc.py)</dt>
+<dd>
+         「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」設定ページもskplist対象なので置換されません。
+</dd></dl>
+<dl><dt>
+LTsv_doc_this(L:Tsv 1st)</dt>
+<dd>
+      skplist対象なので置換されません。
+</dd></dl>
+<dl><dt>
+<＃LTsv_doc_main></dt>
+<dd>
+             「main」指定のページもskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+</dd></dl>
+<h4>分岐タグ</h4>
+<h4>tagseparateによる繰り返し</h4>
 
 </section>
 
@@ -2452,11 +2598,12 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 </dd></dl>
 
 <dl><dt>
- Ｑ．漢直鍵盤を使ったソフトが起動しない。</dt>
+ Ｑ．起動できたたソフトがいつの間にか起動しなくなった。</dt>
 <dd>
 
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<br />
      「LTsv/kanpickle.bin」を削除してから「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動することで初期化できます。<br />
+    「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<br /> 
 </dd></dl>
 
 </section>
@@ -2474,7 +2621,7 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 
 
 <footer>
- <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
+ <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit">LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
  <p class="ooblog"># Copyright (c) 2016 ooblog<br />
 # License: MIT<br />
 # <a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit">https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE</a><br />

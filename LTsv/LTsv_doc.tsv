@@ -3,23 +3,27 @@ code	UTF-8
 enter	LF
 tab	4
 program	LTsv_doc.py
-1st		LTsv_doc
+1st		LTsv_doc_this
 LTsvver	20161023U011852
-modify	20161124R162218
+modify	20161125F163809
 |L:Tsv]
 
 [LTsv_doc|
-window_size	width:600	height:480	wait:100	fontsize:24
 tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	LTsv_debug.tsv
+window_size	width:600	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
+|LTsv_doc]
+
+[LTsv_doc_this|
 main	<＃LTsv_doc_main>
 tagseparate	*
+skplist	LTsv_doc
 outdir	./
 outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
 defdir	./
 deftag	L:<！	R:>
 defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
-|LTsv_doc]
+|LTsv_doc_this]
 
 [<＃LTsv_doc_main>|
 <？LTsv_doc_ext>
@@ -36,8 +40,8 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 目次
 
-<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4><？list10-0>*<？list10-1><？list11-0><？list12-0>
-<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4><？section10-0>*<？section10-1><？section11-0><？section12-0>
+<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4><？list10-0>*<？list10-1>*<？list10-2><？list11-0><？list12-0>
+<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4><？section10-0>*<？section10-1>*<？section10-2><？section11-0><？section12-0>
 <？ooblog>
 |<＃LTsv_doc_txt>]
 
@@ -72,7 +76,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
    <？list07-0>*<？list07-1>
    <？list08-0>*<？list08-1>
    <？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
-   <？list10-0>*<？list10-1>
+   <？list10-0>*<？list10-1>*<？list10-2>
    <？list11-0>
    <？list12-0>
   </ul>
@@ -88,12 +92,12 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 <？section07-0>*<？section07-1>
 <？section08-0>*<？section08-1>
 <？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
-<？section10-0>*<？section10-1>
+<？section10-0>*<？section10-1>*<？section10-2>
 <？section11-0>
 <？section12-0>
 
 <footer>
- <p>site generator "<？https99-0:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
+ <p>site generator "<？https99-9:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
  <p class="ooblog"><？ooblog></p>
 </footer>
 </body></html>
@@ -211,7 +215,7 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 [<＃summary>|
 <？P>「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。<？BR>
-このモジュール解説文書「<？outlist>」は「<？https99-0:LTsv_doc.py>」を使って「<？https99-0:LTsv_doc.tsv>」から錬成されてます。<？BR>
+このモジュール解説文書「<？outlist>」は「<？https10:LTsv_doc.py>」を使って「<？https10:LTsv_doc.tsv>」から錬成されてます。<？BR>
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
@@ -249,7 +253,7 @@ modify <？modify><？BR><？/P>
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<？BR>
- グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<？https99-0:kanchar.tsv>」から直接生成したいけど優先順位が低い。<？BR>
+ グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は<？DICchar>から直接生成したいけど優先順位が低い。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  Windowsのエディタで<？DICmap>を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
@@ -332,6 +336,7 @@ modify <？modify><？BR><？/P>
  first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
+<？/P>
 <？DLDT>  [L:Tsv|<？/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<？/DD/DL>
 <？DLDT>   code<？/DTDD>                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<？/DD/DL>
 <？DLDT>   enter<？/DTDD>                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<？/DD/DL>
@@ -613,12 +618,12 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
  Pythonには整数有効計算範囲の概念は存在しないはずですが、小数計算ではPythonの実装・環境に応じた丸め誤差などが発生します。<？BR>
  0で割るなどの計算できない場合は無限エラー扱いにして「n|0」と表示します。実際の無限には正負の概念が存在しますが電卓フォーマットの「n|0」は単に計算放棄です。<？BR><？/P>
 
-<？index05-1:number>
+<？index05:number>
 <？DLDT>  012456789 １２３４５６７８９０<？/DTDD>    アラビア数字は全角でも使用できます。<？/DD/DL>
 <？DLDT>  〇一二三四五六七八九<？/DTDD>              漢数字も使用できます。大字も「壱弐参肆伍陸漆捌玖零陌阡萬」が使用可能です。<？/DD/DL>
 <？DLDT>  垓京兆億万千百十 銭<？/DTDD>               漢数字の万単位の繰り上がりも垓までとりあえず対応しています。銭は百分の一になります。<？/DD/DL>
 
-<？index05-1:‎operator>
+<？index05:‎operator>
 <？DLDT>   . ．      小円<？/DTDD>                    小数点は「3.1416⇔3927|1250」の様にドットを使います。「円」は「3円14銭」のような表現用途。<？/DD/DL>
 <？DLDT>  | ｜      分<？/DTDD>                      分数を表します。分数中の小数は「0.5|3⇔1|6」のように通分されます。<？/DD/DL>
 <？DLDT>  p PｐＰ   正<？/DTDD>                      正の数を表現。符号が付加されてなければ0以上の数です。<？/DD/DL>
@@ -636,47 +641,47 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 <？DLDT>  y π      周<？/DTDD>                       円周率。math.pi(約3.14159265359)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
 <？DLDT>  e ｅ      底<？/DTDD>                      ネイピア数。math.e(約2.71828182846)が代入される。桁数はおそらくPython環境依存。<？/DD/DL>
 
-<？index05-1:bracket>
+<？index05:bracket>
 <？DLDT>  ()（）<？/DTDD>                            括弧の中を先に計算する「3(c+1)→3×(c+1)→3×(1+1)→3×2」。もしくは数列の表現にも使用。<？/DD/DL>
 <？DLDT>  c CＣｃ   数<？/DTDD>                      数列内で有効なカウント変数。括弧の内外で異なる数列を数えるので注意。初期値は「1」。<？/DD/DL>
 <？DLDT>  S SｓＳΣ 列但※<？/DTDD>                   数列和。「(cΣ1～5)→1＋2＋3＋4＋5」といった等差数列の和を想定。<？/DD/DL>
 <？DLDT>  ! ！      方<？/DTDD>                      数列積。「(2!1～4)→2×2×2×2」のような乗数や「(c!1～5)→1×2×3×4×5」のような階乗を想定。<？/DD/DL>
 <？DLDT>  ~ ～      ?<？/DTDD>                       数列和(もしくは数列積)の範囲指定。「(cΣ1~4)→1＋2＋3＋4」「(c!4～1)→4×3×2×1」と増減±1の計算は自動。<？/DD/DL>
 
-<？index05-1:nonuse>
+<？index05:nonuse>
 <？DLDT>  n NｎＮ∞ 無<？/DTDD>                      0で割った時など計算"できない"事を表す「n|0」と同じ。本当の無限には正負などがあるが、単純に未定というか計算放棄。<？/DD/DL>
 <？DLDT>  ,  <？/DTDD>                               「10,800⇔10800|1」とコンマ無しの計算結果を帰します。使用でき無い他の演算子もだいたいコンマ扱いです。<？/DD/DL>
 <？DLDT>  √<？/DTDD>                                平方根に使う予定の演算子。分数電卓なので無理数などの扱いに困ってる。<？/DD/DL>
 |<＃contents05-1>]
 
-[<？index05-1:number>|
-.+\.html?	<h4><？title05-1:number></h4>
-.*	 <？title05-1:number>
-|<？index05-1:number>]
-[<？title05-1:number>|
+[<？index05:number>|
+.+\.html?	<h4><？title05:number></h4>
+.*	 <？title05:number>
+|<？index05:number>]
+[<？title05:number>|
 .*	使用できる数字
-|<？title05-1:number>]
-[<？index05-1:‎operator>|
-.+\.html?	<h4><？title05-1:‎operator></h4>
-.*	 <？title05-1:‎operator>
-|<？index05-1:‎operator>]
-[<？title05-1:‎operator>|
+|<？title05:number>]
+[<？index05:‎operator>|
+.+\.html?	<h4><？title05:‎operator></h4>
+.*	 <？title05:‎operator>
+|<？index05:‎operator>]
+[<？title05:‎operator>|
 .*	使用できる演算子
-|<？title05-1:‎operator>]
-[<？index05-1:bracket>|
-.+\.html?	<h4><？title05-1:bracket></h4>
-.*	 <？title05-1:bracket>
-|<？index05-1:bracket>]
-[<？title05-1:bracket>|
+|<？title05:‎operator>]
+[<？index05:bracket>|
+.+\.html?	<h4><？title05:bracket></h4>
+.*	 <？title05:bracket>
+|<？index05:bracket>]
+[<？title05:bracket>|
 .*	括弧および関数用途の演算子
-|<？title05-1:bracket>]
-[<？index05-1:nonuse>|
-.+\.html?	<h4><？title05-1:nonuse></h4>
-.*	 <？title05-1:nonuse>
-|<？index05-1:nonuse>]
-[<？title05-1:nonuse>|
+|<？title05:bracket>]
+[<？index05:nonuse>|
+.+\.html?	<h4><？title05:nonuse></h4>
+.*	 <？title05:nonuse>
+|<？index05:nonuse>]
+[<？title05:nonuse>|
 .*	未実装等で使用できない演算子
-|<？title05-1:nonuse>]
+|<？title05:nonuse>]
 
 [<？section06-0>*<？section06-1>*<？section06-2>|
 .+\.html?	<section>@E <h3><a name="index06-@c"><？title06-@c></a></h3>@E<＃contents06-@c>@E</section>@E
@@ -945,8 +950,8 @@ debug_color_combo(window_objvoid=None,window_objptr=None)	単体風テスト専�
 debug_edit_clip(window_objvoid=None,window_objptr=None)	単体風テスト専用。クリップボード「clipboard」の動作確認。
 debug_checkbutton_shell(checkNumber)	単体風テスト専用。「check」のコールバック用関数の例。「radio」と比較用途。	同じような動作をする<？GUIwidget>を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。
 debug_radiobutton_shell(radioNumber)	単体風テスト専用。「radio」のコールバック用関数の例。「check」と比較用途。	同じような動作をする<？GUIwidget>を複数連続で作る場合、関数をネストして関数自体を返り値にする関数を使います(クロージャ・関数閉包・高階関数…呼び名は色々)。
-debug_keypress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押下)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https99-0:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
-debug_keyrelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押上)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https99-0:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
+debug_keypress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押下)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https07:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
+debug_keyrelease(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？PCkeyboard>入力(押上)の動作検証。	「GTK2」の場合コールバック構造体から値を取り出す方法が不明なので、キー取得に別途「<？https07:LTsv_kbd.py>」によるキー入力取得が必要です。詳細は「<？index07-0>」を参考。
 debug_filedialog(window_objvoid=None,window_objptr=None)	単体風テスト専用。「filedialog」の表示テスト。
 debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テスト専用。「filedialog」のレスポンステスト。	「GTK2」で「GTK_RESPONSE_ACCEPT」を取り出す方法が不明なので、ファイルダイアログのキャンセル方法が不明。
 |LTsv_gui.py]
@@ -1326,17 +1331,87 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <？DLDT>  「3927|1250」といった分数のみ<？/DTDD>       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」<？BR><？/DD/DL>
 |<＃contents09-4>]
 
-[<？section10-0>*<？section10-1>|
+[<？section10-0>*<？section10-1>*<？section10-2>|
 .+\.html?	<section>@E <h3><a name="index10-@c"><？title10-@c></a></h3>@E<＃contents10-@c>@E</section>@E
 .*	@E<？title10-@c>@E@E<＃contents10-@c>@E
-|<？section10-0>*<？section10-1>]
+|<？section10-0>*<？section10-1>*<？section10-2>]
 
 [<＃contents10-0>|
-<？P> 「<？https10:LTsv_doc.py>」はモジュールそのものというよりは、モジュールのドキュメントを作成するソフトです。<？BR><？/P>
+<？P> 「<？https10:LTsv_doc.py>」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。<？BR>
+  ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。<？BR>
+  ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。<？BR><？/P>
+
+<！LTsv_doc.py>
 |<＃contents10-0>]
+
+[LTsv_doc.py|
+LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)	
+LTsvDOCdef_python(LTsvDOClaunch_deffile)	
+LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)	
+LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	
+LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	
+LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile)	
+LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	
+LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	
+|LTsv_doc.py]
+
 [<＃contents10-1>|
-<？P> 「<？https10:LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時に「<？LTsv>」のモジュールドキュメントによる実例サンプルです。<？BR><？/P>
+<？P> 「<？https10:LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<？BR>
+<？/PP>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
+<？/P>
+<？DLDT>  [L:Tsv|<？/DTDD>                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<？index01-1>」を参考。<？/DD/DL>
+<？DLDT>   1st<？/DTDD>                        「LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。<？/DD/DL>
+<？DLDT>  [LTsv_doc|<？/DTDD>                  「LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
+<？DLDT>   window_size<？/DTDD>                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。<？/DD/DL>
+<？DLDT>   tsvlist<？/DTDD>                    ランチャーに管理させるLTsvファイルのリストを指定。<？/DD/DL>
+<？DLDT>   modify<？/DTDD>                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。<？/DD/DL>
+<？DLDT>  [LTsv_doc_this|<？/DTDD>             「LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
+<？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
+<？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「LTsv_doc.tsv」では「*」を使用。<？/DD/DL>
+<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
+<？DLDT>   outdir<？/DTDD>                     置換されたテキストの出力先フォルダ。<？/DD/DL>
+<？DLDT>   outlist<？/DTDD>                    置換されたテキストの出力ファイル名一覧。<？/DD/DL>
+<？DLDT>   defdir<？/DTDD>                     Pythonのモジュール等が置いてあるフォルダ。<？/DD/DL>
+<？DLDT>   deftag<？/DTDD>                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。<？/DD/DL>
+<？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
 |<＃contents10-1>]
+
+[<＃contents10-2>|
+<？P> 「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<？BR>
+ タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<？BR><？/P> 
+<？index10:skplist>
+<？DLDT><「＃」tag><？/DTDD>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。<？/DD/DL>
+<？DLDT><「！」tag><？/DTDD>                   ファイルタグと便宜上命名。「deftag」のソルトで囲んだファイル名はモジュール関数一覧管理用途。ページ内容を「defindent」で装飾して置換。<？/DD/DL>
+<？DLDT><「？」tag><？/DTDD>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。<？/DD/DL>
+<？DLDT>「L:Tsv」<？/DTDD>                     「L:Tsv」ファイルのメタタグです。skplist対象なので置換されません。<？/DD/DL>
+<？DLDT>LTsv_doc(LTsv_doc.py)<？/DTDD>         「<？https10:LTsv_doc.py>」設定ページもskplist対象なので置換されません。<？/DD/DL>
+<？DLDT>LTsv_doc_this(L:Tsv 1st)<？/DTDD>      skplist対象なので置換されません。<？/DD/DL>
+<？DLDT><＃LTsv_doc_main><？/DTDD>             「main」指定のページもskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。<？/DD/DL>
+<？index10:re.search>
+<？index10:separate>
+|<＃contents10-2>]
+[<？index10:skplist>|
+.+\.html?	<h4><？title10:skplist></h4>
+.*	 <？title10:skplist>
+|<？index10:skplist>]
+[<？title10:skplist>|
+.*	大きく分けて3種類の置換タグとその他skplistに登録され置換対象にならないタグがあります。
+|<？title10:skplist>]
+[<？index10:re.search>|
+.+\.html?	<h4><？title10:re.search></h4>
+.*	 <？title10:re.search>
+|<？index10:re.search>]
+[<？title10:re.search>|
+.*	分岐タグ
+|<？title10:re.search>]
+[<？index10:separate>|
+.+\.html?	<h4><？title10:separate></h4>
+.*	 <？title10:separate>
+|<？index10:separate>]
+[<？title10:separate>|
+.*	tagseparateによる繰り返し
+|<？title10:separate>]
 
 [<？section11-0>|
 .+\.html?	<section>@E <h3><a name="index11-@c"><？title11-@c></a></h3>@E<＃contents11-@c>@E</section>@E
@@ -1374,9 +1449,10 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 <？DLDT> Ｑ．なんで中途半端にVimっぽい操作方法なんですか？<？/DTDD>
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．漢直鍵盤を使ったソフトが起動しない。<？/DTDD>
+<？DLDT> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>
-     「LTsv/kanpickle.bin」を削除してから「<？https11:kanmap.py>」を起動することで初期化できます。<？BR><？/DD/DL>
+     「LTsv/kanpickle.bin」を削除してから「<？https11:kanmap.py>」を起動することで初期化できます。<？BR>
+    「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<？BR> <？/DD/DL>
 |<＃contents11-0>]
 
 [<？section12-0>|
@@ -1667,20 +1743,23 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 .*	LTsv/LTsv_glyph.tsv
 |<？path09-F01>]
 
-[<？list10-0>*<？list10-1>|
+[<？list10-0>*<？list10-1>*<？list10-2>|
 .+\.html?	 <li><？index10-@c></li>@E
 .*	 <？index10-@c>@E
-|<？list10-0>*<？list10-1>]
-[<？index10-0>*<？index10-1>|
+|<？list10-0>*<？list10-1>*<？list10-2>]
+[<？index10-0>*<？index10-1>*<？index10-2>|
 .+\.html?	<a href="#index10-@c" title="<？title10-@c>"><？title10-@c></a>
 .*	<？title10-@c>
-|<？index10-0>*<？index10-1>]
+|<？index10-0>*<？index10-1>*<？index10-2>]
 [<？title10-0>|
 .*	⑩-0．「LTsv_doc.py」の関数一覧
 |<？title10-0>]
 [<？title10-1>|
 .*	⑩-1．「LTsv_doc.tsv」のタグ解説
 |<？title10-1>]
+[<？title10-2>|
+.*	⑩-2．LTsv_docドキュメントの書き方
+|<？title10-2>]
 [<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>"><？path10-F@0c></a>
 .*	<？path10-F@0c>
@@ -1775,32 +1854,6 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 [<？web12-1>|
 .*	[kanedit] - 大風呂ダ敷
 |<？web12-1>]
-
-[<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:kanchar.tsv>*<？https99-0:kanword.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path99-0:LTsvFiles@0c>"><？path99-0:LTsvFiles@0c></a>
-.*	<？path99-0:LTsvFiles@0c>
-|<？https99-0:LTsv_doc.py>*<？https99-0:LTsv_doc.tsv>*<？https99-0:kanmap.tsv>*<？https99-0:kanchar.tsv>*<？https99-0:kanword.tsv>*<？https99-0:LTsv_kbd.py>*<？https99-0:LICENSE>]
-[<？path99-0:LTsvFiles00>|
-.*	LTsv/LTsv_doc.py
-|<？path99-0:LTsvFiles00>]
-[<？path99-0:LTsvFiles01>|
-.*	LTsv/LTsv_doc.tsv
-|<？path99-0:LTsvFiles01>]
-[<？path99-0:LTsvFiles02>|
-.*	LTsv/kanmap.tsv
-|<？path99-0:LTsvFiles02>]
-[<？path99-0:LTsvFiles03>|
-.*	LTsv/kanchar.tsv
-|<？path99-0:LTsvFiles03>]
-[<？path99-0:LTsvFiles04>|
-.*	LTsv/kanword.tsv
-|<？path99-0:LTsvFiles04>]
-[<？path99-0:LTsvFiles05>|
-.*	LTsv/LTsv_kbd.py
-|<？path99-0:LTsvFiles05>]
-[<？path99-0:LTsvFiles06>|
-.*	LICENSE
-|<？path99-0:LTsvFiles06>]
 
 [<？ooblog>|
 .+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https99-9:LTsv10LICENSE><br />@E
