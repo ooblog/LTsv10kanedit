@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_this
 LTsvver	20161023U011852
-modify	20161127U143549
+modify	20161127U234918
 |L:Tsv]
 
 [LTsv_doc|
@@ -19,7 +19,7 @@ main	<＃LTsv_doc_main>
 tagseparate	*
 skplist	LTsv_doc
 outdir	./
-outlist	LTsv_doc.txt	../docs/LTsv_doc.html	../docs/LTsv_doc.css
+outlist	<＃LTsv_doc_outlist>
 defdir	./
 deftag	L:<！	R:>
 defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
@@ -222,7 +222,7 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 [<＃summary>|
 <？P>「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。<？BR>
-このモジュール解説文書「<？outlist>」は「<？https10:LTsv_doc.py>」を使って「<？https10:LTsv_doc.tsv>」から錬成されてます。<？BR>
+このモジュール解説文書「<＃LTsv_doc_outlist>」も「<？https10:LTsv_doc.py>」を使って「<？https10:LTsv_doc.tsv>」から錬成されてます。<？BR>
 version(branch) <！L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
@@ -271,10 +271,9 @@ modify <？modify><？BR><？/P>
  「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<？BR>
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は<？DICchar>から直接生成したいけど優先順位が低い。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
- Windowsのエディタで<？DICmap>を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
- outlistページ化未実装。<？BR>
+ 「kanedit.txt」「kanfont.txt」「kanmap.txt」「kanzip.txt」のHTML版は準備中(未着手)。
 |<＃contents00-2>]
 
 [<？https00:mit>*<？https00:osdn>*<？https00:postd>*<？https00:LTsv10kanedit>*<？https00:ooblog.github.io>*<？https00:woffconv>|
@@ -446,8 +445,8 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 [LTsv_file.py|
 LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index01-1>」も参考。
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
-LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
-LTsv_64load(LTsv_path,LTsv_codewidth=128)	
+LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。元のzipファイルはそのまま。
+LTsv_64load(LTsv_path,LTsv_codewidth=128)	ローカル上の画像ファイルなどをテキスト(base64)に変換した形で読み込む。元の画像ファイルはそのまま。
 LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<？CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
 LTsv_readlinepages(LTsv_text)	LTsv_textテキスト内のタグ「[tag<？&#x7C;>」一覧を1行のLTSVとして取得する。
 LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれた範囲のLTSVページを取得。	LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。
@@ -1371,11 +1370,14 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)	「<？https10:LTsv_doc.py>」専用。置換処理のコア部分。ファイル名分岐やタグセパレート繰り返しのカウンター処理など。
 LTsvDOCdef_python(LTsvDOClaunch_deffile)	Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。
 LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)	「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
-LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	Pythonの関数一覧などに装飾処理。
+LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	「<？https10:LTsv_doc.py>」専用。Pythonの関数一覧などに装飾処理。
 LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	未実装。フォルダ指定の場合でファイル一覧を作成する予定。
-LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
-LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
+LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagname)	「<？https10:LTsv_doc.py>」専用。outlistページタグの時、エイリアスが有ればエイリアスに、無ければファイル名に置換。
+LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	「<？https10:LTsv_doc.py>」専用。LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
+LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	「<？https10:LTsv_doc.py>」専用。ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
 |LTsv_doc.py]
+#LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	Pythonの関数一覧などに装飾処理。
+#LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	未実装。フォルダ指定の場合でファイル一覧を作成する予定。
 
 [<＃contents10-1>|
 <？P> 「<？https10:LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<？BR>
@@ -1391,9 +1393,12 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？DLDT>  [LTsv_doc_this|<？/DTDD>             「<？https10:LTsv_doc.tsv>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
 <？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
 <？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「<？https10:LTsv_doc.tsv>」では「*」を使用。<？/DD/DL>
-<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「<？https10:LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
+<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「<？https10:LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
 <？DLDT>   outdir<？/DTDD>                     置換されたテキストの出力先フォルダ。<？/DD/DL>
-<？DLDT>   outlist<？/DTDD>                    置換されたテキストの出力ファイル名一覧。<？/DD/DL>
+<？DLDT>   outlist<？/DTDD>                    置換されたテキストの出力ファイル名一覧(tsv)。<？BR>
+                              tsvのファイル名一覧の代わりにファイル一覧ページのタグ指定もできる。<？BR>
+                              ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。<？BR>
+                              ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。<？BR><？/DD/DL>
 <？DLDT>   defdir<？/DTDD>                     Pythonのモジュール等が置いてあるフォルダ。<？/DD/DL>
 <？DLDT>   deftag<？/DTDD>                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。<？/DD/DL>
 <？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
@@ -1997,12 +2002,6 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	テキスト入力欄(電卓)
 |<？VRcalc>]
 
-[<？outlist>|
-.+\.html?	LTsv_doc.html
-.+\.css	LTsv_doc.css
-.*	LTsv_doc.txt
-|<？outlist>]
-
 [<？P>|
 .+\.html?	<p>@E
 .*	
@@ -2072,6 +2071,12 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？@T>|
 .*	@T
 |<？@T>]
+
+[<＃LTsv_doc_outlist>|
+LTsv_doc.txt
+../docs/LTsv_doc.css	LTsv_doc.css
+../docs/LTsv_doc.html	LTsv_doc.html
+|<＃LTsv_doc_outlist>]
 
 
 # Copyright (c) 2016 ooblog

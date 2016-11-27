@@ -1,7 +1,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
+このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161127U143546
+modify 20161127U234915
 
 
 目次
@@ -85,10 +85,9 @@ modify 20161127U143546
  「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
- Windowsのエディタで漢字配列「LTsv/kanmap.tsv」を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
- outlistページ化未実装。
+ 「kanedit.txt」「kanfont.txt」「kanmap.txt」「kanzip.txt」のHTML版は準備中(未着手)。
 
 
 ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
@@ -214,10 +213,10 @@ modify 20161127U143546
   ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 
  【LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)】
-  ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
+  ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。元のzipファイルはそのまま。
 
  【LTsv_64load(LTsv_path,LTsv_codewidth=128)】
-  
+  ローカル上の画像ファイルなどをテキスト(base64)に変換した形で読み込む。元の画像ファイルはそのまま。
 
  【LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)】
   ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。
@@ -2071,16 +2070,19 @@ modify 20161127U143546
   「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
 
  【LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)】
-  Pythonの関数一覧などに装飾処理。
+  「LTsv/LTsv_doc.py」専用。Pythonの関数一覧などに装飾処理。
 
  【LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)】
   未実装。フォルダ指定の場合でファイル一覧を作成する予定。
 
+ 【LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagname)】
+  「LTsv/LTsv_doc.py」専用。outlistページタグの時、エイリアスが有ればエイリアスに、無ければファイル名に置換。
+
  【LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)】
-  LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
+  「LTsv/LTsv_doc.py」専用。LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
 
  【LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)】
-  ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
+  「LTsv/LTsv_doc.py」専用。ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
 
 
 ⑩-1．「LTsv_doc.tsv」のタグ解説
@@ -2098,9 +2100,12 @@ modify 20161127U143546
   [LTsv_doc_this|             「LTsv/LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
    main                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
    tagseparate                ループタグ作成用のタグ区切りを指定。「LTsv/LTsv_doc.tsv」では「*」を使用。
-   skplist                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+   skplist                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
    outdir                     置換されたテキストの出力先フォルダ。
-   outlist                    置換されたテキストの出力ファイル名一覧。
+   outlist                    置換されたテキストの出力ファイル名一覧(tsv)。
+                              tsvのファイル名一覧の代わりにファイル一覧ページのタグ指定もできる。
+                              ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。
+                              ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。
    defdir                     Pythonのモジュール等が置いてあるフォルダ。
    deftag                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
    defindent                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。

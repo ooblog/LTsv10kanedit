@@ -18,7 +18,7 @@ from LTsv_glyph  import *
 LTsvDOClaunch_tagseparate="*"
 def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
-    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+    global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
     LTsv_settimerCounter(0)
     if '\t' in LTsvDOC_tagpage:
@@ -76,7 +76,7 @@ LTsvDOCdefextlist={".py":LTsvDOCdef_python,".tsv":LTsvDOCdef_LTSV,".ltsv":LTsvDO
 LTsvDOCbase64extlist=[".png",".gif",".jpg",".jpeg"]
 def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
-    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+    global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagdata=""
     LTsvDOC_defnameext=os.path.splitext(LTsvDOC_tagname)[1]
     if LTsvDOC_defnameext in LTsvDOCdefextlist:
@@ -110,7 +110,13 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
 
 def LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
-    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+    return LTsvDOClaunch_main
+
+def LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagname):
+    global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
+    LTsvDOC_tagdata=LTsv_readlinerest(LTsvDOClaunch_outlistP,LTsvDOC_outname)
+    if len(LTsvDOC_tagdata) == 0: LTsvDOC_tagdata=LTsvDOC_outname
+    LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 
 LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag="","","",""
@@ -123,7 +129,8 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
     global LTsvDOClaunch_tagseparate
-    global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+    global LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP
+    global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     global LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR
     global LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast
     global LTsvDOClaunch_LTsvver
@@ -139,7 +146,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_maintag=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_maintag,"<#LTsv_doc_main>")
         LTsvDOClaunch_tagseparate=LTsv_readlinerest(LTsvDOClaunch_config,"tagseparate","*")
-        LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
+#        LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag","L:<！\tR:>"),"L","R"),2)
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<！firstL>\tfirstR:<！firstR>\trestL:<！restL>\trestC:<！restC>\trestR:<！restR>\trestRLast:<！restRLast>"),"firstL","firstR","restL","restC","restR","restRLast"),6)
         LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<！L:TsvLTsvver>")
@@ -147,6 +154,14 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,LTsvDOClaunch_maintag))
         LTsvDOClaunch_skplistT=LTsv_readlinerest(LTsvDOClaunch_config,"skplist"); LTsvDOClaunch_skplist=LTsvDOClaunch_skplistT.split('\t') if len(LTsvDOClaunch_skplistT) else []
         LTsvDOClaunch_skplist.extend([LTsvDOClaunch_headtag,LTsvDOClaunch_configtag,LTsvDOClaunch_maintag])
+        LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist")
+        LTsvDOClaunch_outlistP=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_outlistT)
+        if len(LTsvDOClaunch_outlistP):
+            LTsvDOClaunch_outlist=LTsv_readlinefirsts(LTsvDOClaunch_outlistP)
+            LTsvDOClaunch_outlist=LTsvDOClaunch_outlist.strip('\t').split('\t')
+        else:
+            LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.strip('\t').split('\t') if len(LTsvDOClaunch_outlistT) else []
+        LTsvDOClaunch_skplist.extend(LTsvDOClaunch_outlist)
         for skplist in LTsvDOClaunch_skplist:
             LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,skplist))
         LTsvDOClaunch_reglist=LTsvDOClaunch_pages.split('\t') if len(LTsvDOClaunch_pages) else []
@@ -160,10 +175,13 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
                 LTsvDOClaunch_main=LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagnames)
             elif os.path.isdir(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagnames):
                 LTsvDOClaunch_main=LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagnames)
+            elif LTsvDOC_tagnames == LTsvDOClaunch_outlistT:
+                LTsvDOClaunch_main=LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagnames)
             else:
                 LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOClaunch_LTsvver,LTsv_file_ver())
-        LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
+        if os.path.isfile(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname)):
+            LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
         LTsvDOClaunch_outcount+=1
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_maintag)
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=LTsvDOC_T)
@@ -178,10 +196,12 @@ def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
         LTsv_putdaytimenow()
         global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
         global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
-        global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+        global LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP
+        global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
         LTsvDOClaunch_kernel_clickID=LTsvDOClaunch_tsvcount
         LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],False)
         LTsvDOClaunch_outcount=-1
+        LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP=[],"",""
         LTsvDOClaunch_deflist=[]
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=10)
     return LTsvDOClaunch_kernel

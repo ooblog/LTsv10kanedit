@@ -125,7 +125,7 @@ def LTsv_readlinefirsts(LTsv_text):
         if LTsv_posR >= 0:
             LTsv_line+='\t'+LTsv_split[0:LTsv_posR]
         else:
-            LTsv_posR=LTsv_split
+             LTsv_line+='\t'+LTsv_split
     LTsv_line=LTsv_line.lstrip('\t')
     return LTsv_line
 
