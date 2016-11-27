@@ -10,6 +10,14 @@ mark{
   background-color: white;
   border: 1px pink solid;
 }
+mark.applogo{
+  border: 0px;
+}
+ mark.applogo > img{
+   margin: -1rem 0rem -1rem;
+   vertical-align: middle;
+   border: 1px pink solid;
+ }
 header{
   border: 1px gray dotted;
   padding: 1rem;
@@ -103,5 +111,4 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 # https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
 
 */
-
 

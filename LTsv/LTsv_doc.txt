@@ -1,12 +1,12 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」は「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161023U011852
-modify 20161125F163806
+modify 20161127U143546
 
 
 目次
 
- ⓪-0．ライセンス及びソフトの使用の補足ガイドライン
+ ⓪-0．ライセンス及びソフト使用の補足ガイドライン
  ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
  ⓪-2．その他現在わかっている不具合や今後の課題
  ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
@@ -37,14 +37,18 @@ modify 20161125F163806
  ⑫-0．作者について、例えば連絡先。
 
 
-⓪-0．ライセンス及びソフトの使用の補足ガイドライン
+⓪-0．ライセンス及びソフト使用の補足ガイドライン
 
  ※「MIT License」準拠。
+
    MIT License - Choose a License
    http://choosealicense.com/licenses/mit/
 
    licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
    https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
+
+   MITライセンスを1行1行読んでいく | プログラミング | POSTD
+   http://postd.cc/mit-license-line-by-line/
 
  ※口語的説明。
    ・「LICENSE」も含めソースコードの閲覧やコピーに制限を設けない事。
@@ -56,19 +60,22 @@ modify 20161125F163806
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「⑪-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、
  Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。「kanfont.txt」も参考。
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。
+
+   ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
+   https://github.com/ooblog/LTsv10kanedit
+
    ふぉんと - 「約四文字」(http://ooblog.github.io/)
    https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
 
    WOFFコンバータ
    http://opentype.jp/woffconv.htm
-
 
 
 ⓪-2．その他現在わかっている不具合や今後の課題
@@ -81,6 +88,7 @@ modify 20161125F163806
  Windowsのエディタで漢字配列「LTsv/kanmap.tsv」を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ outlistページ化未実装。
 
 
 ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
@@ -141,7 +149,7 @@ modify 20161125F163806
   上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
 
  【LTsv_libc_printf_type(LTsv_text,LTsv_log=None)】
-  Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。
+  Python2では「<type 'str'>」Python3だと「<class 'bytes'>」のようにprintfに渡すバイナリ文字列の変数の型を表示。
   LTsv_logと返り値を指定する事で変数にも出力追記できる。
 
  【LTsv_utf2xml(LTsv_text)】
@@ -207,6 +215,9 @@ modify 20161125F163806
 
  【LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)】
   ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
+
+ 【LTsv_64load(LTsv_path,LTsv_codewidth=128)】
+  
 
  【LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)】
   ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。
@@ -2048,30 +2059,28 @@ modify 20161125F163806
  「LTsv/LTsv_doc.py」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。
   ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。
   ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。
+  ・「約四文字」(http://ooblog.github.io/)のサイトもLTsv_docドキュメントによる生成で置き換える予定。
 
  【LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)】
-  
+  「LTsv/LTsv_doc.py」専用。置換処理のコア部分。ファイル名分岐やタグセパレート繰り返しのカウンター処理など。
 
  【LTsvDOCdef_python(LTsvDOClaunch_deffile)】
-  
+  Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。
 
  【LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)】
-  
+  「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
 
  【LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)】
-  
+  Pythonの関数一覧などに装飾処理。
 
  【LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)】
-  
-
- 【LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile)】
-  
+  未実装。フォルダ指定の場合でファイル一覧を作成する予定。
 
  【LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)】
-  
+  LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
 
  【LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)】
-  
+  ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
 
 
 ⑩-1．「LTsv_doc.tsv」のタグ解説
@@ -2081,15 +2090,15 @@ modify 20161125F163806
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
 
   [L:Tsv|                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「①-1．「L:Tsv」ファイルの構造」を参考。
-   1st                        「LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
-  [LTsv_doc|                  「LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。
+   1st                        「LTsv/LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
+  [LTsv_doc|                  「LTsv/LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。
    window_size                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。
    tsvlist                    ランチャーに管理させるLTsvファイルのリストを指定。
    modify                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
-  [LTsv_doc_this|             「LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
+  [LTsv_doc_this|             「LTsv/LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
    main                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
-   tagseparate                ループタグ作成用のタグ区切りを指定。「LTsv_doc.tsv」では「*」を使用。
-   skplist                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+   tagseparate                ループタグ作成用のタグ区切りを指定。「LTsv/LTsv_doc.tsv」では「*」を使用。
+   skplist                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
    outdir                     置換されたテキストの出力先フォルダ。
    outlist                    置換されたテキストの出力ファイル名一覧。
    defdir                     Pythonのモジュール等が置いてあるフォルダ。
@@ -2099,18 +2108,49 @@ modify 20161125F163806
 
 ⑩-2．LTsv_docドキュメントの書き方
 
+ 前提は「L:Tsv」なので「①-1．「L:Tsv」ファイルの構造」も確認。
  「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。 
- 大きく分けて3種類の置換タグとその他skplistに登録され置換対象にならないタグがあります。
-<「＃」tag>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。
-<「！」tag>                   ファイルタグと便宜上命名。「deftag」のソルトで囲んだファイル名はモジュール関数一覧管理用途。ページ内容を「defindent」で装飾して置換。
-<「？」tag>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。
-「L:Tsv」                     「L:Tsv」ファイルのメタタグです。skplist対象なので置換されません。
-LTsv_doc(LTsv_doc.py)         「LTsv/LTsv_doc.py」設定ページもskplist対象なので置換されません。
-LTsv_doc_this(L:Tsv 1st)      skplist対象なので置換されません。
-<＃LTsv_doc_main>             「main」指定のページもskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
- 分岐タグ
- tagseparateによる繰り返し
+
+ 置換タグ説明の前にskplistに登録され置換対象にならないタグがあります。
+  <L:Tsv>                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。
+  <LTsv_doc_this>(L:Tsv 1st)    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。
+  <＃LTsv_doc_main(main)>       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+  <LTsv_doc>(skplist)           「LTsv/LTsv_doc.tsv」では「LTsv/LTsv_doc.py」設定ページをskplistに登録してるので置換されません。
+
+ 大きく分けて3種類の置換タグがあります。
+  <「＃」tag>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。
+  <「！」tag>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。
+                                置換用タグは「<！tag>」形式でもドキュメントのページタグは「[tag|」「|tag]」形式な事に注意。
+                                ページ内容は「*.py」「*.tsv」「*.ltsv」の場合「defindent」で装飾して置換。
+                                「*.png」「*.gif」「*.jpg」「*.jpeg」の場合base64に変換。htmlへの画像埋め込みを想定。画像を再度読み込む場合はページを空にする。
+  <「？」tag>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。
+                                firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。
+                                日時フォーマットの詳細は「④-1．日時フォーマットの概要」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。
+
+   6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
+   http://docs.python.jp/3/library/re.html
+
+ tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
+ [<tagA>*<tagB>*<tagC>]のようにタグの中でtagseparate「*」で区切ると、<tagA><tagB><tagC>それぞれのタグを同じページの内容で置換します。
+tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。
+<tagA>*<tagB>*<tagC>タグの条件文内で<text@c>を呼ぶと<text0><text1><text2>を呼ぶことができます。
+
+[<tagA>*<tagB>*<tagC>|
+.+\.html?	<a href="#text@c" title="<？text@c>"><？text@c></a>
+.*	<？text@c>
+|<tagA>*<tagB>*<tagC>]
+[<text0>|
+.*	text0
+|<text0>]
+[<text1>|
+.*	text1
+|<text1>]
+[<text2>|
+.*	text2
+|<text2>]
+例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。
 
 
 ⑪-0．「L:Tsv」のＦＡＱ
@@ -2126,7 +2166,7 @@ LTsv_doc_this(L:Tsv 1st)      skplist対象なので置換されません。
    https://www.python.org/downloads/release/python-344/
 
  Ｑ．Pythonはもう3.5系出てますよね？
- Ａ．「python-3.5.1.exe」が「wine-portable-1.7.18-1-p4.tar.gz」でエラーになるのでどうしようも。
+ Ａ．「python-3.5.1.exe」を「wine-portable-1.7.18-1-p4.tar.gz」で試した時エラーになったので放置。
      「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。
 
    Python Release Python 3.5.2 | Python.org
@@ -2138,21 +2178,21 @@ LTsv_doc_this(L:Tsv 1st)      skplist対象なので置換されません。
    Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
    http://shinobar.server-on.net/puppy/opt/
 
- Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。
- Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接グリフは使えません。
-     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かグリフ「kan5x5comic.woff」をフォント「kan5x5comic.ttf」に変換してフォントをインストール。
-
- Ｑ．「LTsv_draw_font(LTsv/LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv/LTsv_glyph.py)」系の違いはなんですか。
- Ａ．「Tkinter」がCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示glyphsモジュール用意しました。
-    フォントをインストールしなくても漢直が使えるようにするために「kan5x5comic」という独自のフォントも用意しました。
+ Ｑ．文字表示が複数あるというか、「LTsv_draw_font(LTsv/LTsv_gui.py)」系と「LTsv_draw_glyphs(LTsv/LTsv_glyph.py)」系の違いはなんですか。
+ Ａ．フォント表示とグリフ描画の違いです。
+    「Tkinter」がCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える3バイト以上のUTF-8文字を扱えないので独自にグリフ描画モジュール用意しました。
     「用意しました」と言いましたが一部の文字しか用意できてないので注意。
+
+ Ｑ．ボタンなどのGUIにグリフ「kan5x5comic」を用いるにはどうすればいいですか。
+ Ａ．GUIのボタン等に直接グリフは使えません。「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」などは「canvas」に描画する命令です。
+     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かwebフォント「kan5x5comic.woff」をOSフォント「kan5x5comic.ttf」に変換してフォントをインストール。
 
  Ｑ．漢直鍵盤ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？
  Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。
      ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。
      文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。
 
- Ｑ．なんで中途半端にVimっぽい操作方法なんですか？
+ Ｑ．なんで中途半端にVimっぽいHJKL移動なんですか？
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。
 
  Ｑ．起動できたたソフトがいつの間にか起動しなくなった。

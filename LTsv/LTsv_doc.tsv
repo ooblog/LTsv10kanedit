@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_this
 LTsvver	20161023U011852
-modify	20161125F163809
+modify	20161127U143549
 |L:Tsv]
 
 [LTsv_doc|
@@ -52,12 +52,12 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
  <meta name="description" content="">
  <title><？title></title>
  <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
- <link rel="icon" type="image/png" href="" />
+ <link rel="icon" type="image/png" href="LTsv_doc_logo.png" />
 </head><body>
 
  <header>
-  <div class="yonmoji_root"><a href="<？link00-1>" rel="publisher" title="<？yakuyon>">約四<br /></a><a href="<？link00-1>" rel="publisher" title="<？yakuyon>">文字</a></div>
-  <span> &#62; <a href="<？link00-1>LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark>LTsv_doc</mark></span> <span class="yonmoji_sitemap"><a href="<？link00-1>404.html" title="404 - <？yakuyon>">sitemap(404)</a></span>
+  <div class="yonmoji_root"><a href="https://ooblog.github.io/" rel="publisher" title="<？yakuyon>">約四<br /></a><a href="https://ooblog.github.io/" rel="publisher" title="<？yakuyon>">文字</a></div>
+  <span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark class="applogo"><img src="LTsv_doc_logo.png" width="48" height="48" alt="LTsv_doc" title="LTsv_doc"></mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - <？yakuyon>">sitemap(404)</a></span>
   <br class="yonmoji_both" />
  </header>
 
@@ -107,7 +107,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 @charset "utf-8";
 @font-face{
   font-family: "kan5x5comic";
-  src: url("<？https00:kan5x5comic.woff>") format('woff');
+  src: url("https://ooblog.github.io/kan5x5comic.woff") format('woff');
 }
 body{
   background-color: white;
@@ -116,6 +116,14 @@ mark{
   background-color: white;
   border: 1px pink solid;
 }
+mark.applogo{
+  border: 0px;
+}
+ mark.applogo > img{
+   margin: -1rem 0rem -1rem;
+   vertical-align: middle;
+   border: 1px pink solid;
+ }
 header{
   border: 1px gray dotted;
   padding: 1rem;
@@ -206,7 +214,6 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 /*
 <？ooblog>
 */
-
 |<＃LTsv_doc_css>]
 
 [<？title>|
@@ -226,9 +233,14 @@ modify <？modify><？BR><？/P>
 |<？section00-0>*<？section00-1>*<？section00-2>]
 
 [<＃contents00-0>|
-<？P> ※「MIT License」準拠。<？BR><？/P>
+<？P> ※「MIT License」準拠。<？BR>
+<？/P>
 <？https00:mit>
+
 <？https00:osdn>
+
+<？https00:postd>
+
 <？P> ※口語的説明。<？BR>
    ・「<？https00:LICENSE>」も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
    ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR>
@@ -238,14 +250,18 @@ modify <？modify><？BR><？/P>
 |<＃contents00-0>]
 
 [<＃contents00-1>|
-<？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？ＦＡＱ>」も参考)。<？BR>
+<？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<？BR>
  ダウンロードは「<？https99-9:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<？BR>
  Windowsの場合は「<？https00:yakuyon>」からWebフォント「<？https00:kan5x5comic.woff>」をダウンロードして「WOFFコンバーター」で変換。「<？https00:kanfont.txt>」も参考。<？BR>
- フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<？BR><？/P>
+ フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<？BR>
+<？/P>
+<？https00:LTsv10kanedit>
+
 <？https00:ooblog.github.io>
+
 <？https00:woffconv>
 |<＃contents00-1>]
 
@@ -258,12 +274,13 @@ modify <？modify><？BR><？/P>
  Windowsのエディタで<？DICmap>を編集すると3バイト以上の文字が「?」に置き換えられる恐れがある。カレー()がよく巻き添え<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
+ outlistページ化未実装。<？BR>
 |<＃contents00-2>]
 
-[<？https00:mit>*<？https00:osdn>*<？https00:ooblog.github.io>*<？https00:woffconv>|
+[<？https00:mit>*<？https00:osdn>*<？https00:postd>*<？https00:LTsv10kanedit>*<？https00:ooblog.github.io>*<？https00:woffconv>|
 .+\.html?	<dl><dt><？web00-@c></dt><dd><a href="<？url00-@c>" title="<？web00-@c>"><？url00-@c></a></dd></dl>
-.*	   <？web00-@c><？BR>@E   <？url00-@c><？BR>@E
-|<？https00:mit>*<？https00:osdn>*<？https00:ooblog.github.io>*<？https00:woffconv>]
+.*	   <？web00-@c><？BR>@E   <？url00-@c><？BR>
+|<？https00:mit>*<？https00:osdn>*<？https00:postd>*<？https00:LTsv10kanedit>*<？https00:ooblog.github.io>*<？https00:woffconv>]
 [<？url00-0>|
 .*	http://choosealicense.com/licenses/mit/
 |<？url00-0>]
@@ -277,17 +294,29 @@ modify <？modify><？BR><？/P>
 .*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
 |<？web00-1>]
 [<？url00-2>|
-.*	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+.*	http://postd.cc/mit-license-line-by-line/
 |<？url00-2>]
 [<？web00-2>|
-.*	ふぉんと - 「約四文字」(http://ooblog.github.io/)
+.*	MITライセンスを1行1行読んでいく | プログラミング | POSTD
 |<？web00-2>]
 [<？url00-3>|
-.*	http://opentype.jp/woffconv.htm
+.*	<？url99-9:LTsv10repository>
 |<？url00-3>]
 [<？web00-3>|
-.*	WOFFコンバータ
+.*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
 |<？web00-3>]
+[<？url00-4>|
+.*	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+|<？url00-4>]
+[<？web00-4>|
+.*	ふぉんと - 「約四文字」(http://ooblog.github.io/)
+|<？web00-4>]
+[<？url00-5>|
+.*	http://opentype.jp/woffconv.htm
+|<？url00-5>]
+[<？web00-5>|
+.*	WOFFコンバータ
+|<？web00-5>]
 
 
 [<？section01-0>*<？section01-1>|
@@ -331,7 +360,7 @@ modify <？modify><？BR><？/P>
 <？P>  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<？BR>
  先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<？BR>
  firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<？BR>
- LTSVを「[tag|」と「|tag]」の様に<？contents01-1:tagsplit><？BR>
+ LTSVを「[tag<？&#x7C;>」と「<？&#x7C;>tag]」の様に<？contents01-1:tagsplit><？BR>
  拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<？BR>
  first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
 <？/PP>
@@ -418,8 +447,9 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index01-1>」も参考。
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。
+LTsv_64load(LTsv_path,LTsv_codewidth=128)	
 LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)	ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。	LTsv_encodingにテキストのコード指定。例えば<？CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。	LTsv_defaultは読み込みできなかった場合の初期値を指定。
-LTsv_readlinepages(LTsv_text)	LTsv_textテキスト内のタグ「[tag|」一覧を1行のLTSVとして取得する。
+LTsv_readlinepages(LTsv_text)	LTsv_textテキスト内のタグ「[tag<？&#x7C;>」一覧を1行のLTSVとして取得する。
 LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)	タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれた範囲のLTSVページを取得。	LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。
 LTsv_readlinedeno(LTsv_text)	LTSVページの行数を数える。LTsv_textに改行が無くても1行とみなす。	LTsv_textの文字列長が0の場合0を返す。
 LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)	0から数えた行数でLTSVページから1行読み込む。	LTsv_default(LTsv_line)は読み込めなかった場合の初期値を指定。
@@ -1225,15 +1255,11 @@ entry	<？reversi>の棋譜。
 .*	<？textAA09:calcmage>
 |<？index09:calcimage>]
 [<？64base09:kbdimage>|
-iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAMAAAAyNwimAAAABlBMVEXh//oAAABbwECnAAABf0lE
-QVR42r2W25LDMAhD0f//9LYTg45Iui97cWdax8GAQZJbxaHX5/UtXQ8znxW1zfVVYfg2ugzTqfx7
-HL3nZ0MYHhfvt2ebjmW/VZ0U4Tuc1rV5MuXmmhRV7ezycBmrvd8DqAPYec96A1b6BGN/QrZbV2Lq
-qz6WUKjOVJOTM6ypEFujKCfC1Kf2/GDIPexYXcJsl8t6B47Pir7YrWo1QqtaXSK3lOHPGmq8MROd
-nmL7HGxXd9foKncoT8CoIg+cUQYouijiZ4x1YykYE5hVYWmycpTiIZVwJHATpv86bjhRPhkIix9J
-kic1Iue0EaLhW1mL3B5qUe8MZvkBjOvaW07Q1hAJqItPsAJAORXFafmrkGUolYxeKsoM+0+uTNFC
-EHt961IZuNA30xaY/UUtIsNIDcBo0rU4Lva6XmjyNwGW/ogqDEKb93mhLhnkTfZ0XZjOlGAojhMi
-nJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CYUlsAAAAASUVORK5C
-YII=
+iVBORw0KGgoAAAANSUhEUgAAAGAAAAAYCAMAAAAyNwimAAAABlBMVEXh//oAAABbwECnAAABf0lEQVR42r2W25LDMAhD0f//9LYTg45Iui97cWdax8GAQZJbxaHX5/Ut
+XQ8znxW1zfVVYfg2ugzTqfx7HL3nZ0MYHhfvt2ebjmW/VZ0U4Tuc1rV5MuXmmhRV7ezycBmrvd8DqAPYec96A1b6BGN/QrZbV2Lqqz6WUKjOVJOTM6ypEFujKCfC1Kf2
+/GDIPexYXcJsl8t6B47Pir7YrWo1QqtaXSK3lOHPGmq8MROdnmL7HGxXd9foKncoT8CoIg+cUQYouijiZ4x1YykYE5hVYWmycpTiIZVwJHATpv86bjhRPhkIix9Jkic1
+Iue0EaLhW1mL3B5qUe8MZvkBjOvaW07Q1hAJqItPsAJAORXFafmrkGUolYxeKsoM+0+uTNFCEHt961IZuNA30xaY/UUtIsNIDcBo0rU4Lva6XmjyNwGW/ogqDEKb93mh
+LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CYUlsAAAAASUVORK5CYII=
 |<？64base09:kbdimage>]
 [<？textAA09:kbdimage>|
  ※漢直鍵盤の四隅ＮＸ等は実際には縦横２倍の大きさです。
@@ -1243,17 +1269,13 @@ YII=
   ぬ　つさそひこみもねるめろﾇ 　英
 |<？textAA09:kbdimage>]
 [<？64base09:calcmage>|
-iVBORw0KGgoAAAANSUhEUgAAAMgAAAAYCAMAAACIuEKDAAAADFBMVEXg/vnh/vnh//oAAACCfcr1
-AAACHUlEQVR42sWXi5aDMAhElfn/f94qryEPa6t1c/a4RqNyAwN0WXUsNtYfzVfhAWA7tH/7rcEa
-Pfcrfo7yyp8D+FU3dLdtN7gckdf1InZTR8cAFX7nkyAYghgCAkG9MgUR99w/giBAQB6BZGghbQzH
-eFBJesz/xSufBoEUabS73etIhJTTLUnZPKwRcFzfM+Bb8KzYUbOQZNiUoxzdlaHjns5atn/VPMq6
-FEIkfIYqGqE8vKhvXh+2k9fQuZmwTfQWxobrQ9v5tkQf99V9+gXrtnhBhoro1pSsxaFlX/Xvk0Fq
-8DaBDwMwYAXSh2gDaDUXxMi+uCiKUkfiOADBO5Cw0u5/BCKXQaiyc/plD6TRFUQNdRAyM+mHITlt
-UX4w3oGgAykb/i0I0jnoFUFSib6F2rCip5MgoVo9tVBKkikIDkG42HlGkjblSpPTSulEiN3WtEFd
-xU6qsQUBFuvPaqQ6hH3Bu4wJDqpHkPI4A0JpLD0QCTVDbQjSt/H+mXsqutAbU+xDkIgr9CRZP6Ye
-aUFwJwg3KJx+WwUvozS8WczrJwUxksCojb+30+LQOgQpldzmhWMGEmm7r+zSSFt6aZdGhXuXPltd
-AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
-5LLUuU5KaVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
+iVBORw0KGgoAAAANSUhEUgAAAMgAAAAYCAMAAACIuEKDAAAADFBMVEXg/vnh/vnh//oAAACCfcr1AAACHUlEQVR42sWXi5aDMAhElfn/f94qryEPa6t1c/a4RqNyAwN0
+WXUsNtYfzVfhAWA7tH/7rcEaPfcrfo7yyp8D+FU3dLdtN7gckdf1InZTR8cAFX7nkyAYghgCAkG9MgUR99w/giBAQB6BZGghbQzHeFBJesz/xSufBoEUabS73etIhJTT
+LUnZPKwRcFzfM+Bb8KzYUbOQZNiUoxzdlaHjns5atn/VPMq6FEIkfIYqGqE8vKhvXh+2k9fQuZmwTfQWxobrQ9v5tkQf99V9+gXrtnhBhoro1pSsxaFlX/Xvk0Fq8DaB
+DwMwYAXSh2gDaDUXxMi+uCiKUkfiOADBO5Cw0u5/BCKXQaiyc/plD6TRFUQNdRAyM+mHITltUX4w3oGgAykb/i0I0jnoFUFSib6F2rCip5MgoVo9tVBKkikIDkG42HlG
+kjblSpPTSulEiN3WtEFdxU6qsQUBFuvPaqQ6hH3Bu4wJDqpHkPI4A0JpLD0QCTVDbQjSt/H+mXsqutAbU+xDkIgr9CRZP6YeaUFwJwg3KJx+WwUvozS8WczrJwUxksCo
+jb+30+LQOgQpldzmhWMGEmm7r+zSSFt6aZdGhXuXPltdAKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE5LLUuU5K
+aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 |<？64base09:calcmage>]
 [<？textAA09:calcmage>|
  ※σ鍵盤の←→↑↓は実際には[Home][End][PgUp][PgDn]です。
@@ -1339,20 +1361,20 @@ AKktyHcgpRURmQsc1me2P7vo1w11v9FrdbG+rlT2Ys5xM++1jkHQeKRvF7mCSNtAlp7xa5CFjPwE
 [<＃contents10-0>|
 <？P> 「<？https10:LTsv_doc.py>」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。<？BR>
   ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。<？BR>
-  ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。<？BR><？/P>
+  ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。<？BR>
+  ・<？yakuyon>のサイトもLTsv_docドキュメントによる生成で置き換える予定。<？BR><？/P>
 
 <！LTsv_doc.py>
 |<＃contents10-0>]
 
 [LTsv_doc.py|
-LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)	
-LTsvDOCdef_python(LTsvDOClaunch_deffile)	
-LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)	
-LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	
-LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	
-LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile)	
-LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	
-LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	
+LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)	「<？https10:LTsv_doc.py>」専用。置換処理のコア部分。ファイル名分岐やタグセパレート繰り返しのカウンター処理など。
+LTsvDOCdef_python(LTsvDOClaunch_deffile)	Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。
+LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)	「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
+LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	Pythonの関数一覧などに装飾処理。
+LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	未実装。フォルダ指定の場合でファイル一覧を作成する予定。
+LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
+LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
 |LTsv_doc.py]
 
 [<＃contents10-1>|
@@ -1361,15 +1383,15 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
 <？DLDT>  [L:Tsv|<？/DTDD>                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<？index01-1>」を参考。<？/DD/DL>
-<？DLDT>   1st<？/DTDD>                        「LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。<？/DD/DL>
-<？DLDT>  [LTsv_doc|<？/DTDD>                  「LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
+<？DLDT>   1st<？/DTDD>                        「<？https10:LTsv_doc.tsv>」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。<？/DD/DL>
+<？DLDT>  [LTsv_doc|<？/DTDD>                  「<？https10:LTsv_doc.py>」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
 <？DLDT>   window_size<？/DTDD>                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。<？/DD/DL>
 <？DLDT>   tsvlist<？/DTDD>                    ランチャーに管理させるLTsvファイルのリストを指定。<？/DD/DL>
 <？DLDT>   modify<？/DTDD>                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。<？/DD/DL>
-<？DLDT>  [LTsv_doc_this|<？/DTDD>             「LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
+<？DLDT>  [LTsv_doc_this|<？/DTDD>             「<？https10:LTsv_doc.tsv>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
 <？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
-<？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「LTsv_doc.tsv」では「*」を使用。<？/DD/DL>
-<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
+<？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「<？https10:LTsv_doc.tsv>」では「*」を使用。<？/DD/DL>
+<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「<？https10:LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
 <？DLDT>   outdir<？/DTDD>                     置換されたテキストの出力先フォルダ。<？/DD/DL>
 <？DLDT>   outlist<？/DTDD>                    置換されたテキストの出力ファイル名一覧。<？/DD/DL>
 <？DLDT>   defdir<？/DTDD>                     Pythonのモジュール等が置いてあるフォルダ。<？/DD/DL>
@@ -1378,39 +1400,68 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 |<＃contents10-1>]
 
 [<＃contents10-2>|
-<？P> 「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<？BR>
+<？P> 前提は「L:Tsv」なので「<？index01-1>」も確認。<？BR>
+ 「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<？BR>
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<？BR><？/P> 
+
 <？index10:skplist>
-<？DLDT><「＃」tag><？/DTDD>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。<？/DD/DL>
-<？DLDT><「！」tag><？/DTDD>                   ファイルタグと便宜上命名。「deftag」のソルトで囲んだファイル名はモジュール関数一覧管理用途。ページ内容を「defindent」で装飾して置換。<？/DD/DL>
-<？DLDT><「？」tag><？/DTDD>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。<？/DD/DL>
-<？DLDT>「L:Tsv」<？/DTDD>                     「L:Tsv」ファイルのメタタグです。skplist対象なので置換されません。<？/DD/DL>
-<？DLDT>LTsv_doc(LTsv_doc.py)<？/DTDD>         「<？https10:LTsv_doc.py>」設定ページもskplist対象なので置換されません。<？/DD/DL>
-<？DLDT>LTsv_doc_this(L:Tsv 1st)<？/DTDD>      skplist対象なので置換されません。<？/DD/DL>
-<？DLDT><＃LTsv_doc_main><？/DTDD>             「main」指定のページもskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。<？/DD/DL>
+<？DLDT>  <？&lt;>L:Tsv<？&gt;><？/DTDD>                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。<？/DD/DL>
+<？DLDT>  <？&lt;>LTsv_doc_this<？&gt;>(L:Tsv 1st)<？/DTDD>    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。<？/DD/DL>
+<？DLDT>  <？&lt;>＃LTsv_doc_main(main)<？&gt;><？/DTDD>       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。<？/DD/DL>
+<？DLDT>  <？&lt;>LTsv_doc<？&gt;>(skplist)<？/DTDD>           「<？https10:LTsv_doc.tsv>」では「<？https10:LTsv_doc.py>」設定ページをskplistに登録してるので置換されません。<？/DD/DL>
+
 <？index10:re.search>
+<？DLDT>  <？&lt;>「＃」tag<？&gt;><？/DTDD>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。<？/DD/DL>
+<？DLDT>  <？&lt;>「！」tag<？&gt;><？/DTDD>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。<？BR>
+                                置換用タグは「<？&lt;>！tag<？&gt;>」形式でもドキュメントのページタグは「[tag<？&#x7C;>」「<？&#x7C;>tag]」形式な事に注意。<？BR>
+                                ページ内容は「*.py」「*.tsv」「*.ltsv」の場合「defindent」で装飾して置換。<？BR>
+                                「*.png」「*.gif」「*.jpg」「*.jpeg」の場合base64に変換。htmlへの画像埋め込みを想定。画像を再度読み込む場合はページを空にする。<？BR><？/DD/DL>
+<？DLDT>  <？&lt;>「？」tag<？&gt;><？/DTDD>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。<？BR>
+                                firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。<？BR>
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。<？BR>
+                                日時フォーマットの詳細は「<？index04-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<？BR><？/DD/DL>
+
+<？https10:Python_re>
 <？index10:separate>
+<？P> [<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>]のようにタグの中でtagseparate「*」で区切ると、<？&lt;>tagA<？&gt;><？&lt;>tagB<？&gt;><？&lt;>tagC<？&gt;>それぞれのタグを同じページの内容で置換します。<？BR>
+tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<？BR>
+<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>タグの条件文内で<？&lt;>text@c<？&gt;>を呼ぶと<？&lt;>text0<？&gt;><？&lt;>text1<？&gt;><？&lt;>text2<？&gt;>を呼ぶことができます。<？BR>
+<？/PP>
+[<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;><？&#x7C;><？BR>
+.+\.html?<？@T><？&lt;>a href="#text@c" title="<？&lt;>？text@c<？&gt;>"<？&gt;><？&lt;>？text@c<？&gt;><？&lt;>/a<？&gt;><？BR>
+.*<？@T><？&lt;>？text@c<？&gt;><？BR>
+<？&#x7C;><？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>]<？BR>
+[<？&lt;>text0<？&gt;><？&#x7C;><？BR>
+.*<？@T>text0<？BR>
+<？&#x7C;><？&lt;>text0<？&gt;>]<？BR>
+[<？&lt;>text1<？&gt;><？&#x7C;><？BR>
+.*<？@T>text1<？BR>
+<？&#x7C;><？&lt;>text1<？&gt;>]<？BR>
+[<？&lt;>text2<？&gt;><？&#x7C;><？BR>
+.*<？@T>text2<？BR>
+<？&#x7C;><？&lt;>text2<？&gt;>]<？BR>
+例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。<？BR><？/P>
 |<＃contents10-2>]
 [<？index10:skplist>|
 .+\.html?	<h4><？title10:skplist></h4>
 .*	 <？title10:skplist>
 |<？index10:skplist>]
 [<？title10:skplist>|
-.*	大きく分けて3種類の置換タグとその他skplistに登録され置換対象にならないタグがあります。
+.*	置換タグ説明の前にskplistに登録され置換対象にならないタグがあります。
 |<？title10:skplist>]
 [<？index10:re.search>|
 .+\.html?	<h4><？title10:re.search></h4>
 .*	 <？title10:re.search>
 |<？index10:re.search>]
 [<？title10:re.search>|
-.*	分岐タグ
+.*	大きく分けて3種類の置換タグがあります。
 |<？title10:re.search>]
 [<？index10:separate>|
 .+\.html?	<h4><？title10:separate></h4>
 .*	 <？title10:separate>
 |<？index10:separate>]
 [<？title10:separate>|
-.*	tagseparateによる繰り返し
+.*	tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
 |<？title10:separate>]
 
 [<？section11-0>|
@@ -1426,27 +1477,27 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 <？https11:python.org>
 <？https11:python344>
 <？DLDT> Ｑ．Pythonはもう3.5系出てますよね？<？/DTDD>
- Ａ．「python-3.5.1.exe」が「wine-portable-1.7.18-1-p4.tar.gz」でエラーになるのでどうしようも。<？BR>
+ Ａ．「python-3.5.1.exe」を「wine-portable-1.7.18-1-p4.tar.gz」で試した時エラーになったので放置。<？BR>
      「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<？BR>
 <？/DD/DL>
 <？https11:python352>
 <？https11:pythonMSVCRTQiita>
 <？https11:PortableWine>
-<？DLDT> Ｑ．ボタンなどのGUIにフォント「kan5x5comic」を用いるにはどうすればいいですか。<？/DTDD>
- Ａ．「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」は「canvas」に描画する命令なのでGUIのボタン等に直接グリフは使えません。<？BR>
-     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かグリフ「kan5x5comic.woff」をフォント「kan5x5comic.ttf」に変換してフォントをインストール。<？BR><？/DD/DL>
-
-<？DLDT> Ｑ．「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
- Ａ．「Tkinter」が<？CP932>を越える3バイト以上のUTF-8文字を扱えないので独自に文字表示glyphsモジュール用意しました。<？BR>
-    フォントをインストールしなくても漢直が使えるようにするために「kan5x5comic」という独自のフォントも用意しました。<？BR>
+<？DLDT> Ｑ．文字表示が複数あるというか、「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
+ Ａ．フォント表示とグリフ描画の違いです。<？BR>
+    「Tkinter」が<？CP932>を越える3バイト以上のUTF-8文字を扱えないので独自にグリフ描画モジュール用意しました。<？BR>
     「用意しました」と言いましたが一部の文字しか用意できてないので注意。<？BR><？/DD/DL>
+
+<？DLDT> Ｑ．ボタンなどのGUIにグリフ「kan5x5comic」を用いるにはどうすればいいですか。<？/DTDD>
+ Ａ．GUIのボタン等に直接グリフは使えません。「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」などは「canvas」に描画する命令です。<？BR>
+     GUIでフォントを表示する場合はグリフ「kan5x5.svg」かwebフォント「kan5x5comic.woff」をOSフォント「kan5x5comic.ttf」に変換してフォントをインストール。<？BR><？/DD/DL>
 
 <？DLDT> Ｑ．<？VRkeyboard>ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？<？/DTDD>
  Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。<？BR>
      ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。<？BR>
      文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．なんで中途半端にVimっぽい操作方法なんですか？<？/DTDD>
+<？DLDT> Ｑ．なんで中途半端にVimっぽいHJKL移動なんですか？<？/DTDD>
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<？BR><？/DD/DL>
 
 <？DLDT> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
@@ -1486,7 +1537,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 .*	<？title00-@c>
 |<？index00-0>*<？index00-1>*<？index00-2>]
 [<？title00-0>|
-.*	⓪-0．ライセンス及びソフトの使用の補足ガイドライン
+.*	⓪-0．ライセンス及びソフト使用の補足ガイドライン
 |<？title00-0>]
 [<？title00-1>|
 .*	⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
@@ -1760,6 +1811,16 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 [<？title10-2>|
 .*	⑩-2．LTsv_docドキュメントの書き方
 |<？title10-2>]
+[<？https10:Python_re>|
+.+\.html?	<dl><dt><？web10-@c></dt><dd><a href="<？url10-@c>" title="<？web10-@c>"><？url10-@c></a></dd></dl>
+.*	   <？web10-@c><？BR>@E   <？url10-@c><？BR>@E
+|<？https10:Python_re>]
+[<？url10-0>|
+.*	http://docs.python.jp/3/library/re.html
+|<？url10-0>]
+[<？web10-0>|
+.*	6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
+|<？web10-0>]
 [<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>|
 .+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>"><？path10-F@0c></a>
 .*	<？path10-F@0c>
@@ -1843,7 +1904,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 .*	   <？web12-@c><？BR>@E   <？url12-@c><？BR>@E
 |<？https12:github_ooblog>*<？https12:hatena_ooblog>]
 [<？url12-0>|
-.*	https://github.com/ooblog/LTsv10kanedit
+.*	<？url99-9:LTsv10repository>
 |<？url12-0>]
 [<？web12-0>|
 .*	ooblog/LTsv10kanedit(GitHub)
@@ -1864,7 +1925,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 .*	<？url99-9:LTsv10LICENSE>
 |<？https99-9:LTsv10LICENSE>]
 [<？url99-9:LTsv10LICENSE>|
-.*	https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
+.*	<？url99-9:LTsv10repository>/blob/master/LICENSE
 |<？url99-9:LTsv10LICENSE>]
 [<？title99-9:LTsv10LICENSE>|
 .*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
@@ -1998,12 +2059,19 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)
 
 [<？&lt;>|
 .+\.html?	&lt;
-.*	&lt;
+.*	<
 |<？&lt;>]
 [<？&gt;>|
 .+\.html?	&gt;
-.*	&gt;
+.*	>
 |<？&gt;>]
+[<？&#x7C;>|
+.+\.html?	&#x7C;
+.*	|
+|<？&#x7C;>]
+[<？@T>|
+.*	@T
+|<？@T>]
 
 
 # Copyright (c) 2016 ooblog

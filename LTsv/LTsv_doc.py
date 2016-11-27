@@ -73,14 +73,15 @@ def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
     return LTsvDOClaunch_defnewfile
 
 LTsvDOCdefextlist={".py":LTsvDOCdef_python,".tsv":LTsvDOCdef_LTSV,".ltsv":LTsvDOCdef_LTSV}
+LTsvDOCbase64extlist=[".png",".gif",".jpg",".jpeg"]
 def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagdata=""
-    LTsvDOClaunch_deffile=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagname))
     LTsvDOC_defnameext=os.path.splitext(LTsvDOC_tagname)[1]
     if LTsvDOC_defnameext in LTsvDOCdefextlist:
         if not LTsvDOC_tagname in LTsvDOClaunch_deflist:
+            LTsvDOClaunch_deffile=LTsv_loadfile(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagname))
             LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
             LTsvDOClaunch_deffile=LTsvDOCdefextlist[LTsvDOC_defnameext](LTsvDOClaunch_deffile)
             LTsvDOC_defcases=LTsvDOClaunch_deffile.rstrip('\n').split('\n')
@@ -97,6 +98,13 @@ def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
             LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
             LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst); LTsvDOC_caserest=LTsvDOC_caserest.rstrip('\t'); LTsvDOC_caserestL=LTsvDOC_caserest.split('\t')
             LTsvDOC_tagdata+="{0}{1}{2}{3}{4}{5}".format(LTsvDOClaunch_firstL,LTsvDOC_casefirst,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC.join(LTsvDOC_caserestL),LTsvDOClaunch_restR if LTsvDOClaunch_tagcount < LTsvDOC_tagcasesLast else LTsvDOClaunch_restRLast)
+    elif LTsvDOC_defnameext in LTsvDOCbase64extlist:
+        if not LTsvDOC_tagname in LTsvDOClaunch_deflist:
+            LTsvDOClaunch_defpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname)
+            if len(LTsvDOClaunch_defpage) == 0:
+                LTsvDOC_tagdata=LTsv_64load(os.path.normpath(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagname))
+                LTsvDOClaunch_ltsv=LTsv_putpage(LTsvDOClaunch_ltsv,LTsvDOC_tagname,LTsvDOC_tagdata)
+            LTsvDOClaunch_deflist=LTsvDOClaunch_deflist+[LTsvDOC_tagname]
     LTsvDOClaunch_main=LTsvDOClaunch_main.replace("{0}{1}{2}".format(LTsvDOClaunch_deftagL,LTsvDOC_tagname,LTsvDOClaunch_deftagR),LTsvDOC_tagdata)
     return LTsvDOClaunch_main
 
@@ -104,10 +112,6 @@ def LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
     global LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     return LTsvDOClaunch_main
-
-LTsvDOCbase64extlist=[".png",".gif",".jpg",".jpeg"]
-def LTsvDOClaunch_kernel_base64(LTsvDOClaunch_deffile):
-    return LTsvDOClaunch_deffile
 
 LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag="","","",""
 LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir=0,0,"",""

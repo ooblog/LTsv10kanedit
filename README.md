@@ -5,7 +5,7 @@
 
 ## 「kanedit」は漢直エディタです&#40;開発中&#41;。NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字を直接入力します。
 
-![kanedit_512](icon_cap/kanedit_512.png "kanedit")  
+![kanedit_512x384](docs/kanedit_512x384.png "kanedit")  
 ※エディタ「kanedit」は現在１行テキストの「電卓」だけ動いてます。テキストファイルの編集などはまだ実装してません。  
 
 「kanedit」の詳細は「[kanedit.txt](kanedit.txt "kanedit.txt")」を参考。  
@@ -13,7 +13,7 @@
 
 ## 「kanfont」は単漢字辞書「kanchar.tsv」を編集するソフトです。辞書の項目にはフォント「kan5x5cmic」のグリフデザインも含まれます。
 
-![kanfont_512](icon_cap/kanfont_512.png "kanfont")  
+![kanfont_512x384](docs/kanfont_512x384.png "kanfont")  
 「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して、「[FontForge](http://fontforge.github.io/ja/ "FontForge")」で変換してもらう事でフォント「kan5x5comic.ttf」が作成できます。
 FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備中&#41;」を「[WOFFコンバータ](http://opentype.jp/woffconv.htm "WOFFコンバータ")」でTTFに変換してください。  
 
@@ -22,7 +22,7 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 
 ## 「kanzip」は郵便番号辞書「kanzip.tsv」を作成するソフトです。
 
-![kanzip_512](icon_cap/kanzip_512.png "kanzip")  
+![kanzip_512x384](docs/kanzip_512x384.png "kanzip")  
 「[〒郵便番号](http://www.post.japanpost.jp/zipcode/dl/readme.html "郵便番号データの説明 - 日本郵便")」からzipをダウンロードして郵便番号辞書「kanzip.tsv」を作成します。  
 郵便番号辞書あ「kanedit」の「電卓」で使用できます。  
 
@@ -31,7 +31,7 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 
 ## 「kanmap」は漢字配列「kanmap.tsv」を編集する…事はまだできませんがパイクル「kanpickle.bin」に「kan5x5comic」を積み込む事ができます。
 
-![kanmap_512](icon_cap/kanmap_512.png "kanmap")  
+![kanmap_512x384](docs/kanmap_512x384.png "kanmap")  
 「[LTsv/kanmap.tsv](LTsv/kanmap.tsv "LTsv/kanmap.tsv")」から「kanpickle.bin」と「kanmap.png」を生成します&#40;PNGの生成はGTKのみ&#41;。  
 不足しているグリフを「kanfont」で「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」に追加していく流れです。  
 「kan5x5comic」グリフ作成の進捗状況が確認できます。  
@@ -41,8 +41,10 @@ FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備�
 
 ## 「L&#58;Tsv」は上記のようなソフトも作れるモジュール群です。
 
+![LTsv_doc_512x384](docs/LTsv_doc_512x384.png "LTsv_doc")  
 「L&#58;Tsv」の詳細は「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」を参考。  
-モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[LTsv/LTsv_doc.tsv](LTsv/LTsv_doc.tsv "LTsv_doc.tsv")」から錬成されてます。
+モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[LTsv/LTsv_doc.tsv](LTsv/LTsv_doc.tsv "LTsv_doc.tsv")」から錬成されてます。  
+
 
 ## 動作環境。
 
