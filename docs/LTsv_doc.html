@@ -18,8 +18,8 @@
   <p>
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。<br />
 このモジュール解説文書「LTsv_doc.html」も「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」を使って「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」から錬成されてます。<br />
-version(branch) 20161023U011852<br />
-modify 20161128M121957<br />
+version(branch) 20161128M153500<br />
+modify 20161128M161554<br />
 </p>
 
   <h2>目次</h2>
@@ -95,7 +95,7 @@ modify 20161128M121957<br />
  <h3><a name="index00-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></h3>
 <p>
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="#index11-0" title="⑪-0．「L:Tsv」のＦＡＱ">⑪-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
- ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
+ ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」ファイルの読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<br />
@@ -479,7 +479,7 @@ LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化
 <dl><dt>LTsv_dict2label(LTsv_dict)</dt><dd>
 Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。</dd></dl>
 <dl><dt>LTsv_file_ver()</dt><dd>
-「LTsv_file.py」のバージョン表示(20161023U011852)。</dd></dl>
+「LTsv_file.py」のバージョン表示(20161128M153500)。</dd></dl>
 <dl><dt>LTsv_issue()</dt><dd>
 「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。</dd></dl>
 
@@ -490,7 +490,7 @@ Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_time.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_time.py">LTsv/LTsv_time.py</a>」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<br />
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<br />
- ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。<br />
+ ・20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。<br />
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<br />
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。<br />
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<br />
@@ -533,7 +533,7 @@ LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putd
 追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。<br />
 OSやファイルシステム毎に秒や分の精度に違いがあると思う。</dd></dl>
 <dl><dt>LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)</dt><dd>
-「LTsv_time_ver()」などの20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。<br />
+「LTsv_time_ver()」などの20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。<br />
 追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
 <dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
 日付フォーマットtimeformatを各種日時変数で置換する。<br />
@@ -2460,7 +2460,7 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
 <dl><dt>
    main</dt>
 <dd>
-                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
+                       置換される前の元文書。今回は「&lt;＠LTsv_doc_main&gt;」。置換タグが無ければページの内容がファイルに保存される。
 </dd></dl>
 <dl><dt>
    tagseparate</dt>
@@ -2470,7 +2470,7 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
 <dl><dt>
    skplist</dt>
 <dd>
-                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
 </dd></dl>
 <dl><dt>
    outdir</dt>
@@ -2481,7 +2481,7 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
    outlist</dt>
 <dd>
                     置換されたテキストの出力ファイル名一覧(tsv)。<br />
-                              tsvのファイル名一覧の代わりにファイル一覧ページのタグ指定もできる。<br />
+                              tsvのファイル名一覧の代わりに「&lt;＠LTsv_doc_outlist&gt;」の様にファイル一覧ページのタグ指定もできる。<br />
                               ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。<br />
                               ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。<br />
 </dd></dl>
@@ -2499,6 +2499,12 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
    defindent</dt>
 <dd>
                   モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
+</dd></dl>
+<dl><dt>
+   LTsvver</dt>
+<dd>
+                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「&lt;＠L:TsvLTsvver&gt;」。<br />
+                              詳細は「<a href="#index03-0" title="③-0．「LTsv_file.py」の関数一覧">③-0．「LTsv_file.py」の関数一覧</a>」参考。<br />
 </dd></dl>
 
 </section>
@@ -2522,7 +2528,7 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
     「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。
 </dd></dl>
 <dl><dt>
-  &lt;＃LTsv_doc_main(main)&gt;</dt>
+  &lt;＠LTsv_doc_main&gt;(main)</dt>
 <dd>
        「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
 </dd></dl>
@@ -2532,7 +2538,12 @@ Pythonのソースから「def 」で始まる行を抜き出して関数一覧�
            「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」では「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」設定ページをskplistに登録してるので置換されません。
 </dd></dl>
 
-<h4>大きく分けて3種類の置換タグがあります。</h4>
+<h4>大きく分けて4種類の置換タグがあるものとします。</h4>
+<dl><dt>
+  &lt;「＠」tag&gt;</dt>
+<dd>
+                   コンフィグタグと便宜上命名。「main&lt;＠LTsv_doc_main&gt;」「outlist&lt;＠LTsv_doc_outlist&gt;」「LTsvver&lt;＠L:TsvLTsvver&gt;」といったドキュメント本文ではなくメタ的な内容のページタグ。
+</dd></dl>
 <dl><dt>
   &lt;「＃」tag&gt;</dt>
 <dd>
@@ -2668,7 +2679,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 
 
 <footer>
- <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit">LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
+ <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit">LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」ファイルの読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
  <p class="ooblog"># Copyright (c) 2016 ooblog<br />
 # License: MIT<br />
 # <a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit">https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE</a><br />

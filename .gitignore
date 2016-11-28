@@ -91,24 +91,24 @@ ENV/
 
 # git status
 # git push github:ooblog/LTsv10kanedit.git master
-# git push github:ooblog/LTsv10kanedit.git 20161023U011852
+# git push github:ooblog/LTsv10kanedit.git 20161128M153500
 # git log
 # git ls-files
 # git commit -a -m ""
 # git branch
 # git checkout master
-# git merge 20161023U011852
-# git branch -d 20161023U011852
-# git push github:ooblog/LTsv10kanedit.git :20161023U011852
+# git merge 20161128M153500
+# git branch -d 20161128M153500
+# git push github:ooblog/LTsv10kanedit.git :20161128M153500
 kan5x5.svg
 kanmap.png
+kanmap/
 kanzip.tsv
+kanzip/
 LTsv/testfile/
 LTsv/kanpickle.bin
 LTsv/LTsv_debug.tsv
 LTsv/LTsv_debug.txt
 LTsv/LTsv_debug.html
-kanzip/
-kanmap/
 LTsv_soundtest.py
 soundtest/

@@ -124,7 +124,7 @@ LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOC
 LTsvDOClaunch_outlist,LTsvDOClaunch_reglist,LTsvDOClaunch_deflist=[],[],[]
 LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR="<！",">"
 LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast="【","】","  ","\n  ","\n",""
-LTsvDOClaunch_LTsvver="<！L:TsvLTsvver>"
+LTsvDOClaunch_LTsvver="<＠L:TsvLTsvver>"
 def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
     global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
@@ -148,7 +148,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_tagseparate=LTsv_readlinerest(LTsvDOClaunch_config,"tagseparate","*")
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag","L:<！\tR:>"),"L","R"),2)
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<！firstL>\tfirstR:<！firstR>\trestL:<！restL>\trestC:<！restC>\trestR:<！restR>\trestRLast:<！restRLast>"),"firstL","firstR","restL","restC","restR","restRLast"),6)
-        LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<！L:TsvLTsvver>")
+        LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<＠L:TsvLTsvver>")
         LTsvDOClaunch_pages=LTsv_readlinepages(LTsvDOClaunch_ltsv)
         LTsvDOClaunch_pages=LTsv_setdatanum(LTsvDOClaunch_pages,LTsv_pickdatafind(LTsvDOClaunch_pages,LTsvDOClaunch_maintag))
         LTsvDOClaunch_skplistT=LTsv_readlinerest(LTsvDOClaunch_config,"skplist"); LTsvDOClaunch_skplist=LTsvDOClaunch_skplistT.split('\t') if len(LTsvDOClaunch_skplistT) else []

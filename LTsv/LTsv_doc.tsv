@@ -4,8 +4,8 @@ enter	LF
 tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_this
-LTsvver	20161023U011852
-modify	20161128M122000
+LTsvver	20161128M153500
+modify	20161128M161557
 |L:Tsv]
 
 [LTsv_doc|
@@ -15,19 +15,20 @@ modify	@000y@0m@0dm@wdec@0h@0n@0s
 |LTsv_doc]
 
 [LTsv_doc_this|
-main	<＃LTsv_doc_main>
+main	<＠LTsv_doc_main>
 tagseparate	*
 skplist	LTsv_doc
 outdir	./
-outlist	<＃LTsv_doc_outlist>
+outlist	<＠LTsv_doc_outlist>
 defdir	./
 deftag	L:<！	R:>
 defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
+LTsvver	<＠L:TsvLTsvver>
 |LTsv_doc_this]
 
-[<＃LTsv_doc_main>|
+[<＠LTsv_doc_main>|
 <？LTsv_doc_ext>
-|<＃LTsv_doc_main>]
+|<＠LTsv_doc_main>]
 
 [<？LTsv_doc_ext>|
 .+\.html?	<＃LTsv_doc_html>
@@ -222,8 +223,8 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 
 [<＃summary>|
 <？P>「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。<？BR>
-このモジュール解説文書「<＃LTsv_doc_outlist>」も「<？https10:LTsv_doc.py>」を使って「<？https10:LTsv_doc.tsv>」から錬成されてます。<？BR>
-version(branch) <！L:TsvLTsvver><？BR>
+このモジュール解説文書「<＠LTsv_doc_outlist>」も「<？https10:LTsv_doc.py>」を使って「<？https10:LTsv_doc.tsv>」から錬成されてます。<？BR>
+version(branch) <＠L:TsvLTsvver><？BR>
 modify <？modify><？BR><？/P>
 |<＃summary>]
 
@@ -487,7 +488,7 @@ LTsv_tsv2tuple(LTsv_line,LTsv_len=None)	「LTsv_tsv2list()」のタプルバー�
 LTsv_label2dictint(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。	複数行あっても1つのLTSVとみなす。
 LTsv_label2dictstr(LTsv_line)	LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。	複数行あっても1つのLTSVとみなす。
 LTsv_dict2label(LTsv_dict)	Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
-LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<！L:TsvLTsvver>)。
+LTsv_file_ver()	「LTsv_file.py」のバージョン表示(<＠L:TsvLTsvver>)。
 LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
 |LTsv_file.py]
 
@@ -1392,17 +1393,19 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	「<？https10:LTsv_doc.py>」専用
 <？DLDT>   tsvlist<？/DTDD>                    ランチャーに管理させるLTsvファイルのリストを指定。<？/DD/DL>
 <？DLDT>   modify<？/DTDD>                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。<？/DD/DL>
 <？DLDT>  [LTsv_doc_this|<？/DTDD>             「<？https10:LTsv_doc.tsv>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
-<？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
+<？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<？&lt;>＠LTsv_doc_main<？&gt;>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
 <？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「<？https10:LTsv_doc.tsv>」では「*」を使用。<？/DD/DL>
-<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「<？https10:LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
+<？DLDT>   skplist<？/DTDD>                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「<？https10:LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
 <？DLDT>   outdir<？/DTDD>                     置換されたテキストの出力先フォルダ。<？/DD/DL>
 <？DLDT>   outlist<？/DTDD>                    置換されたテキストの出力ファイル名一覧(tsv)。<？BR>
-                              tsvのファイル名一覧の代わりにファイル一覧ページのタグ指定もできる。<？BR>
+                              tsvのファイル名一覧の代わりに「<？&lt;>＠LTsv_doc_outlist<？&gt;>」の様にファイル一覧ページのタグ指定もできる。<？BR>
                               ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。<？BR>
                               ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。<？BR><？/DD/DL>
 <？DLDT>   defdir<？/DTDD>                     Pythonのモジュール等が置いてあるフォルダ。<？/DD/DL>
 <？DLDT>   deftag<？/DTDD>                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。<？/DD/DL>
 <？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
+<？DLDT>   LTsvver<？/DTDD>                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「<？&lt;>＠L:TsvLTsvver<？&gt;>」。<？BR>
+                              詳細は「<？index03-0>」参考。<？BR><？/DD/DL>
 |<＃contents10-1>]
 
 [<＃contents10-2>|
@@ -1413,10 +1416,11 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	「<？https10:LTsv_doc.py>」専用
 <？index10:skplist>
 <？DLDT>  <？&lt;>L:Tsv<？&gt;><？/DTDD>                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。<？/DD/DL>
 <？DLDT>  <？&lt;>LTsv_doc_this<？&gt;>(L:Tsv 1st)<？/DTDD>    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。<？/DD/DL>
-<？DLDT>  <？&lt;>＃LTsv_doc_main(main)<？&gt;><？/DTDD>       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。<？/DD/DL>
+<？DLDT>  <？&lt;>＠LTsv_doc_main<？&gt;>(main)<？/DTDD>       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。<？/DD/DL>
 <？DLDT>  <？&lt;>LTsv_doc<？&gt;>(skplist)<？/DTDD>           「<？https10:LTsv_doc.tsv>」では「<？https10:LTsv_doc.py>」設定ページをskplistに登録してるので置換されません。<？/DD/DL>
 
 <？index10:re.search>
+<？DLDT>  <？&lt;>「＠」tag<？&gt;><？/DTDD>                   コンフィグタグと便宜上命名。「main<？&lt;>＠LTsv_doc_main<？&gt;>」「outlist<？&lt;>＠LTsv_doc_outlist<？&gt;>」「LTsvver<？&lt;>＠L:TsvLTsvver<？&gt;>」といったドキュメント本文ではなくメタ的な内容のページタグ。<？/DD/DL>
 <？DLDT>  <？&lt;>「＃」tag<？&gt;><？/DTDD>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。<？/DD/DL>
 <？DLDT>  <？&lt;>「！」tag<？&gt;><？/DTDD>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。<？BR>
                                 置換用タグは「<？&lt;>！tag<？&gt;>」形式でもドキュメントのページタグは「[tag<？&#x7C;>」「<？&#x7C;>tag]」形式な事に注意。<？BR>
@@ -1460,7 +1464,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	 <？title10:re.search>
 |<？index10:re.search>]
 [<？title10:re.search>|
-.*	大きく分けて3種類の置換タグがあります。
+.*	大きく分けて4種類の置換タグがあるものとします。
 |<？title10:re.search>]
 [<？index10:separate>|
 .+\.html?	<h4><？title10:separate></h4>
@@ -1974,7 +1978,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	LTsv10kanedit(tsvtool10)
 |<？LTsv>]
 [<？modify_style>|
-.*	<！L:TsvLTsvver>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
+.*	<＠L:TsvLTsvver>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
 |<？modify_style>]
 [<？modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
@@ -2077,11 +2081,11 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	@T
 |<？@T>]
 
-[<＃LTsv_doc_outlist>|
+[<＠LTsv_doc_outlist>|
 LTsv_doc.txt
 ../docs/LTsv_doc.css	LTsv_doc.css
 ../docs/LTsv_doc.html	LTsv_doc.html
-|<＃LTsv_doc_outlist>]
+|<＠LTsv_doc_outlist>]
 
 
 # Copyright (c) 2016 ooblog

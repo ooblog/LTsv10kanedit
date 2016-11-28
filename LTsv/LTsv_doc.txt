@@ -1,7 +1,7 @@
-「LTsv10kanedit(tsvtool10)」は「L:Tsv」ファイルの読み書きを中心としたモジュール群です。
+「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
-version(branch) 20161023U011852
-modify 20161128M121957
+version(branch) 20161128M153500
+modify 20161128M161554
 
 
 目次
@@ -382,7 +382,7 @@ modify 20161128M121957
   Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
 
  【LTsv_file_ver()】
-  「LTsv_file.py」のバージョン表示(20161023U011852)。
+  「LTsv_file.py」のバージョン表示(20161128M153500)。
 
  【LTsv_issue()】
   「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
@@ -392,7 +392,7 @@ modify 20161128M121957
 
  「LTsv/LTsv_time.py」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
+ ・20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -447,7 +447,7 @@ modify 20161128M121957
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの20161023U011852形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
@@ -2099,17 +2099,19 @@ modify 20161128M121957
    tsvlist                    ランチャーに管理させるLTsvファイルのリストを指定。
    modify                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
   [LTsv_doc_this|             「LTsv/LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
-   main                       置換される前の元文書。今回は「<＃LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
+   main                       置換される前の元文書。今回は「<＠LTsv_doc_main>」。置換タグが無ければページの内容がファイルに保存される。
    tagseparate                ループタグ作成用のタグ区切りを指定。「LTsv/LTsv_doc.tsv」では「*」を使用。
-   skplist                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＃LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+   skplist                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
    outdir                     置換されたテキストの出力先フォルダ。
    outlist                    置換されたテキストの出力ファイル名一覧(tsv)。
-                              tsvのファイル名一覧の代わりにファイル一覧ページのタグ指定もできる。
+                              tsvのファイル名一覧の代わりに「LTsv_doc.txt」の様にファイル一覧ページのタグ指定もできる。
                               ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。
                               ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。
    defdir                     Pythonのモジュール等が置いてあるフォルダ。
    deftag                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
    defindent                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
+   LTsvver                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「20161128M153500」。
+                              詳細は「③-0．「LTsv_file.py」の関数一覧」参考。
 
 
 ⑩-2．LTsv_docドキュメントの書き方
@@ -2121,10 +2123,11 @@ modify 20161128M121957
  置換タグ説明の前にskplistに登録され置換対象にならないタグがあります。
   <L:Tsv>                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。
   <LTsv_doc_this>(L:Tsv 1st)    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。
-  <＃LTsv_doc_main(main)>       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+  <＠LTsv_doc_main>(main)       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
   <LTsv_doc>(skplist)           「LTsv/LTsv_doc.tsv」では「LTsv/LTsv_doc.py」設定ページをskplistに登録してるので置換されません。
 
- 大きく分けて3種類の置換タグがあります。
+ 大きく分けて4種類の置換タグがあるものとします。
+  <「＠」tag>                   コンフィグタグと便宜上命名。「main<＠LTsv_doc_main>」「outlistLTsv_doc.txt」「LTsvver20161128M153500」といったドキュメント本文ではなくメタ的な内容のページタグ。
   <「＃」tag>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。
   <「！」tag>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。
                                 置換用タグは「<！tag>」形式でもドキュメントのページタグは「[tag|」「|tag]」形式な事に注意。
