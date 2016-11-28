@@ -146,7 +146,6 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsvDOClaunch_maintag=os.path.normpath(LTsv_readlinerest(LTsvDOClaunch_config,"main","LTsv_doc_main"))
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_maintag,"<#LTsv_doc_main>")
         LTsvDOClaunch_tagseparate=LTsv_readlinerest(LTsvDOClaunch_config,"tagseparate","*")
-#        LTsvDOClaunch_outlistT=LTsv_readlinerest(LTsvDOClaunch_config,"outlist"); LTsvDOClaunch_outlist=LTsvDOClaunch_outlistT.split('\t') if len(LTsvDOClaunch_outlistT) else []
         LTsvDOClaunch_deftagL,LTsvDOClaunch_deftagR=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"deftag","L:<！\tR:>"),"L","R"),2)
         LTsvDOClaunch_firstL,LTsvDOClaunch_firstR,LTsvDOClaunch_restL,LTsvDOClaunch_restC,LTsvDOClaunch_restR,LTsvDOClaunch_restRLast=LTsv_tsv2list(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOClaunch_config,"defindent","firstL:<！firstL>\tfirstR:<！firstR>\trestL:<！restL>\trestC:<！restC>\trestR:<！restR>\trestRLast:<！restRLast>"),"firstL","firstR","restL","restC","restR","restRLast"),6)
         LTsvDOClaunch_LTsvver=LTsv_readlinerest(LTsvDOClaunch_config,"LTsvver","<！L:TsvLTsvver>")
@@ -180,8 +179,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
             else:
                 LTsvDOClaunch_main=LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOClaunch_LTsvver,LTsv_file_ver())
-        if os.path.isfile(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname)):
-            LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
+        LTsv_saveplain(os.path.normpath(LTsvDOClaunch_outdir+"/"+LTsvDOC_outname),LTsvDOClaunch_main)
         LTsvDOClaunch_outcount+=1
         LTsvDOClaunch_main=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOClaunch_maintag)
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=LTsvDOC_T)
