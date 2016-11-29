@@ -1,7 +1,7 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 このモジュール解説文書「LTsv_doc.txt」も「LTsv/LTsv_doc.py」を使って「LTsv/LTsv_doc.tsv」から錬成されてます。
 version(branch) 20161128M153500
-modify 20161128M161554
+modify 20161130W012711
 
 
 目次

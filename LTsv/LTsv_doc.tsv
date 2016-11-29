@@ -5,11 +5,11 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_this
 LTsvver	20161128M153500
-modify	20161128M161557
+modify	20161130W012714
 |L:Tsv]
 
 [LTsv_doc|
-tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	LTsv_debug.tsv
+tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	../docs/kanedit_etc.tsv
 window_size	width:600	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 |LTsv_doc]
@@ -62,6 +62,17 @@ LTsvver	<＠L:TsvLTsvver>
   <br class="yonmoji_both" />
  </header>
 
+ <aside class="sidepages"><nav>
+  <ul>
+   <li><a href="index.html"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)"></a></li>
+   <li><a href="kanfont.html"><img src="kanfont_logo.png" width="48" height="48" alt="kanedit" title="kanfont"></a></li>
+   <li><a href="kanmap.html"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap"></a></li>
+   <li><a href="kanedit.html"><img src="kanedit_logo.png" width="48" height="48" alt="kanedit" title="kanedit"></a></li>
+   <li><a href="kanzip.html"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip"></a></li>
+   <li><a href="LTsv_doc.html"><img src="LTsv_doc_logo.png" width="48" height="48" alt="LTsv_doc" title="LTsv_doc"></a></li>
+  </ul>
+ </nav></aside>
+
  <section>
   <h1><？title></h1>
   <＃summary>
@@ -97,10 +108,10 @@ LTsvver	<＠L:TsvLTsvver>
 <？section11-0>
 <？section12-0>
 
-<footer>
- <p>site generator "<？https99-9:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
- <p class="ooblog"><？ooblog></p>
-</footer>
+ <footer><address>
+  <p>site generator "<？https99-9:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
+  <p class="ooblog"><？ooblog></p>
+ </address></footer>
 </body></html>
 |<＃LTsv_doc_html>]
 
@@ -145,7 +156,7 @@ header{
  yonmoji_both{
    float: both;
  }
-section{
+section,aside,article{
   margin-top: 1rem;
   border: 2px black solid;
   padding: 1rem;
@@ -176,18 +187,26 @@ input.yonmoji_entry:focus{
    float: left;
    margin: 0rem;
  }
-article{
+ .mainpages{
+  float: left;
+ }
+ .sidepages{
+  width: 20%; min-width: 230px;
+  padding: 0rem;
+  float: right;
+ }
+ .sidepages ui{
+  list-style-type: none;
+  padding: 0rem;
+ }
+ .sidepages li{
+  display: inline-block;
+ }
+ article > div{
   margin-top: 0.5rem;
   border: 1px gray solid;
   padding: 1rem;
-}
-aside{
-  border: 1px gray dotted;
-  float: right;
-  width: 12rem;
-  margin-top: 1rem;
-  padding: 1rem;
-}
+ }
 footer{
   margin-top:1rem;
   float: both;
@@ -229,7 +248,7 @@ modify <？modify><？BR><？/P>
 |<＃summary>]
 
 [<？section00-0>*<？section00-1>*<？section00-2>|
-.+\.html?	<section>@E <h3><a name="index00-@c"><？title00-@c></a></h3>@E<＃contents00-@c>@E</section>@E
+.+\.html?	<section>@E <h3><a id="index00-@c"><？title00-@c></a></h3>@E<＃contents00-@c>@E</section>@E
 .*	@E<？title00-@c>@E@E<＃contents00-@c>@E
 |<？section00-0>*<？section00-1>*<？section00-2>]
 
@@ -321,7 +340,7 @@ modify <？modify><？BR><？/P>
 
 
 [<？section01-0>*<？section01-1>|
-.+\.html?	<section>@E <h3><a name="index01-@c"><？title01-@c></a></h3>@E<＃contents01-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index01-@c"><？title01-@c></h3>@E<＃contents01-@c>@E</section>@E
 .*	@E<？title01-@c>@E@E<＃contents01-@c>@E
 |<？section01-0>*<？section01-1>]
 
@@ -384,7 +403,7 @@ modify <？modify><？BR><？/P>
 |<？contents01-1:tagsplit>]
 
 [<？section02-0>*<？section02-1>|
-.+\.html?	<section>@E <h3><a name="index02-@c"><？title02-@c></a></h3>@E<＃contents02-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index02-@c"><？title02-@c></h3>@E<＃contents02-@c>@E</section>@E
 .*	@E<？title02-@c>@E@E<＃contents02-@c>@E
 |<？section02-0>*<？section02-1>]
 
@@ -431,7 +450,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<＃contents02-1>]
 
 [<？section03-0>|
-.+\.html?	<section>@E <h3><a name="index03-@c"><？title03-@c></a></h3>@E<＃contents03-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index03-@c"><？title03-@c></h3>@E<＃contents03-@c>@E</section>@E
 .*	@E<？title03-@c>@E@E<＃contents03-@c>@E
 |<？section03-0>]
 
@@ -493,7 +512,7 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 |LTsv_file.py]
 
 [<？section04-0>*<？section04-1>|
-.+\.html?	<section>@E <h3><a name="index04-@c"><？title04-@c></a></h3>@E<＃contents04-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index04-@c"><？title04-@c></h3>@E<＃contents04-@c>@E</section>@E
 .*	@E<？title04-@c>@E@E<＃contents04-@c>@E
 |<？section04-0>*<？section04-1>]
 
@@ -615,7 +634,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 |<＃contents04-1>]
 
 [<？section05-0>*<？section05-1>|
-.+\.html?	<section>@E <h3><a name="index05-@c"><？title05-@c></a></h3>@E<＃contents05-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index05-@c"><？title05-@c></h3>@E<＃contents05-@c>@E</section>@E
 .*	@E<？title05-@c>@E@E<＃contents05-@c>@E
 |<？section05-0>*<？section05-1>]
 
@@ -715,7 +734,7 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 |<？title05:nonuse>]
 
 [<？section06-0>*<？section06-1>*<？section06-2>|
-.+\.html?	<section>@E <h3><a name="index06-@c"><？title06-@c></a></h3>@E<＃contents06-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index06-@c"><？title06-@c></h3>@E<＃contents06-@c>@E</section>@E
 .*	@E<？title06-@c>@E@E<＃contents06-@c>@E
 |<？section06-0>*<？section06-1>*<？section06-2>]
 
@@ -767,7 +786,7 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
 |<＃contents06-2>]
 
 [<？section07-0>*<？section07-1>|
-.+\.html?	<section>@E <h3><a name="index07-@c"><？title07-@c></a></h3>@E<＃contents07-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index07-@c"><？title07-@c></h3>@E<＃contents07-@c>@E</section>@E
 .*	@E<？title07-@c>@E@E<＃contents07-@c>@E
 |<？section07-0>*<？section07-1>]
 
@@ -821,7 +840,7 @@ mouse	初期想定は「/dev/input/event?」。	万が一「LTsv_kbdreset()」�
 |LTsv_kbd.tsv]
 
 [<？section08-0>*<？section08-1>|
-.+\.html?	<section>@E <h3><a name="index08-@c"><？title08-@c></a></h3>@E<＃contents08-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index08-@c"><？title08-@c></h3>@E<＃contents08-@c>@E</section>@E
 .*	@E<？title08-@c>@E@E<＃contents08-@c>@E
 |<？section08-0>*<？section08-1>]
 
@@ -1043,7 +1062,7 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 |<＃contents08-1>]
 
 [<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>|
-.+\.html?	<section>@E <h3><a name="index09-@c"><？title09-@c></a></h3>@E<＃contents09-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index09-@c"><？title09-@c></h3>@E<＃contents09-@c>@E</section>@E
 .*	@E<？title09-@c>@E@E<＃contents09-@c>@E
 |<？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>]
 
@@ -1355,7 +1374,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 |<＃contents09-4>]
 
 [<？section10-0>*<？section10-1>*<？section10-2>|
-.+\.html?	<section>@E <h3><a name="index10-@c"><？title10-@c></a></h3>@E<＃contents10-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index10-@c"><？title10-@c></h3>@E<＃contents10-@c>@E</section>@E
 .*	@E<？title10-@c>@E@E<＃contents10-@c>@E
 |<？section10-0>*<？section10-1>*<？section10-2>]
 
@@ -1475,7 +1494,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 |<？title10:separate>]
 
 [<？section11-0>|
-.+\.html?	<section>@E <h3><a name="index11-@c"><？title11-@c></a></h3>@E<＃contents11-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index11-@c"><？title11-@c></h3>@E<＃contents11-@c>@E</section>@E
 .*	@E<？title11-@c>@E@E<＃contents11-@c>@E
 |<？section11-0>]
 
@@ -1521,7 +1540,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 |<＃contents11-0>]
 
 [<？section12-0>|
-.+\.html?	<section>@E <h3><a name="index12-@c"><？title12-@c></a></h3>@E<＃contents12-@c>@E</section>@E
+.+\.html?	<section>@E <h3 id="index12-@c"><？title12-@c></h3>@E<＃contents12-@c>@E</section>@E
 .*	@E<？title12-@c>@E@E<＃contents12-@c>@E
 |<？section12-0>]
 

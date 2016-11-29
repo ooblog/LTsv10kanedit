@@ -38,7 +38,7 @@ header{
  yonmoji_both{
    float: both;
  }
-section{
+section,aside,article{
   margin-top: 1rem;
   border: 2px black solid;
   padding: 1rem;
@@ -69,18 +69,26 @@ input.yonmoji_entry:focus{
    float: left;
    margin: 0rem;
  }
-article{
+ .mainpages{
+  float: left;
+ }
+ .sidepages{
+  width: 20%; min-width: 230px;
+  padding: 0rem;
+  float: right;
+ }
+ .sidepages ui{
+  list-style-type: none;
+  padding: 0rem;
+ }
+ .sidepages li{
+  display: inline-block;
+ }
+ article > div{
   margin-top: 0.5rem;
   border: 1px gray solid;
   padding: 1rem;
-}
-aside{
-  border: 1px gray dotted;
-  float: right;
-  width: 12rem;
-  margin-top: 1rem;
-  padding: 1rem;
-}
+ }
 footer{
   margin-top:1rem;
   float: both;
