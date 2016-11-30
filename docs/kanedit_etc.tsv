@@ -24,8 +24,124 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 
 [<？kanedit_etc_ext>|
 .+\.html?	<＃kanedit_etc_html>
+.+\.css	<＃kanedit_etc_css>
 .*	<＃kanedit_etc_txt>
 |<？kanedit_etc_ext>]
+
+[<＃kanedit_etc_css>|
+@charset "utf-8";
+@font-face{
+  font-family: "kan5x5comic";
+  src: url("https://ooblog.github.io/kan5x5comic.woff") format('woff');
+}
+body{
+  background-color: white;
+}
+mark{
+  background-color: white;
+  border: 1px pink solid;
+}
+mark.applogo{
+  border: 0px;
+}
+ mark.applogo > img{
+   margin: -1rem 0rem -1rem;
+   vertical-align: middle;
+   border: 1px pink solid;
+ }
+header{
+  border: 1px gray dotted;
+  padding: 1rem;
+}
+ .yonmoji_root{
+   font-family: "kan5x5comic";  font-size: 1rem;
+   line-height: 1rem;
+   float: left;
+   margin-top: -0.5rem;
+   padding-right: 0.5rem;
+ }
+ .yonmoji_root > a:nth-child(odd){
+   text-decoration: none;
+ }
+ .yonmoji_sitemap{
+   float: right;
+ }
+ yonmoji_both{
+   float: both;
+ }
+section,aside,article{
+  margin-top: 1rem;
+  border: 2px black solid;
+  padding: 1rem;
+}
+input.yonmoji_entry{
+  border: solid 1px orange;
+  width: 12rem;
+}
+input.yonmoji_entry:focus{
+  border: solid 2px IndianRed;
+}
+ .yonmoji{
+   width: 100%;  margin: 0 auto;
+   text-align: center;
+   padding-top: 1rem;
+   padding-bottom: 0rem;
+ }
+ .yonmoji_logo{
+   font-family: "kan5x5comic";  font-size: 5rem;
+   line-height: 5rem;
+   width: 10rem;
+   height: 10rem;
+   margin: 0 auto;
+ }
+ .yonmoji_word{
+   font-family: "kan5x5comic";  font-size: 2rem;
+   line-height: 2rem;
+   float: left;
+   margin: 0rem;
+ }
+ .sidepages{
+  width: 20%; min-width: 230px;
+  padding: 0rem;
+  float: right;
+ }
+ .sidepages li{
+  list-style-type: none;
+  display: inline-block;
+ }
+ article > div{
+  margin-top: 0.5rem;
+  border: 1px gray solid;
+  padding: 1rem;
+ }
+footer{
+  margin-top:1rem;
+  float: both;
+  border: 1px gray dotted;
+  text-align: center;
+}
+p.ooblog{
+  text-align: left;
+  padding: 1rem 1rem 0em;
+}
+dt{
+  font-weight: bold;
+  word-wrap: break-word; word-break: break-all;
+}
+dd{
+  word-wrap: break-word; word-break: break-all;
+}
+h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
+h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
+h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }
+h4{ font-size: 1.4rem; margin: 1rem 0.5rem 0.5rem; }
+h5{ font-size: 1.2rem; margin: 1rem 0.5rem 0.5rem; }
+h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
+
+/*
+<？ooblog>
+*/
+|<＃kanedit_etc_css>]
 
 [<＃kanedit_etc_txt>|
 <？P>version(branch) <＠L:TsvLTsvver><？BR>
@@ -33,9 +149,7 @@ modify <？modify><？BR><？/P>
 
 目次
 
-<？list00-0>*<？list00-1>*<？list00-2><？list/address-0>
-<？section00-0>*<？section00-1>*<？section00-2><？section/address-0>
-<？ooblog>
+<＃kanedit_menus><＃kanedit_pages><？ooblog>
 |<＃kanedit_etc_txt>]
 
 [<＃kanedit_etc_html>|
@@ -56,15 +170,15 @@ modify <？modify><？BR><？/P>
  <aside class="sidepages"><nav>
   <ul>
    <li><a href="index.html"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)"></a></li>
-   <li><a href="kanfont.html"><img src="kanfont_logo.png" width="48" height="48" alt="kanedit" title="kanfont"></a></li>
-   <li><a href="kanmap.html"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap"></a></li>
-   <li><a href="kanedit.html"><img src="kanedit_logo.png" width="48" height="48" alt="kanedit" title="kanedit"></a></li>
-   <li><a href="kanzip.html"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip"></a></li>
-   <li><a href="LTsv_doc.html"><img src="LTsv_doc_logo.png" width="48" height="48" alt="LTsv_doc" title="LTsv_doc"></a></li>
+   <li><a href="kanfont.html"><？titleimg/software-1></a></li>
+   <li><a href="kanmap.html"><？titleimg/software-2></a></li>
+   <li><a href="kanedit.html"><？titleimg/software-0></a></li>
+   <li><a href="kanzip.html"><？titleimg/software-3></a></li>
+   <li><a href="LTsv_doc.html"><？titleimg/software-4></a></li>
   </ul>
  </nav></aside>
 
- <section>
+ <section class="mainpages">
   <h1><？title></h1>
   <？P>
    version(branch) <＠L:TsvLTsvver><？BR>
@@ -72,13 +186,11 @@ modify <？modify><？BR><？/P>
   <？/P>
   <h2>目次</h2>
   <ul>
-   <？list00-0>*<？list00-1>*<？list00-2>
-   <？list/address-0>
+   <＃kanedit_menus>
   </ul>
  </section>
 
-<？section00-0>*<？section00-1>*<？section00-2>
-<？section/address-0>
+<＃kanedit_pages>
 
  <footer>
   <p>site generator "<？https/ooblog:LTsv_doc.py>" repository：<？https/ooblog:LTsv10repository></p>
@@ -87,19 +199,19 @@ modify <？modify><？BR><？/P>
 </body></html>
 |<＃kanedit_etc_html>]
 
+[<＃kanedit_menus>|
+^(index|404)	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>
+.*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
+|<＃kanedit_menus>]
 
-[<？title>|
-^index\.html?	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-^404\.html?	404エラーページなのでソフトの説明はありません。
-^kanedit\.html?	「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
-^kanfont\.html?	「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。
-^kanmap\.html?	「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
-^kanzip\.html?	「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
-|<？title>]
+[<＃kanedit_pages>|
+^(index|404)	
+.*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
+|<＃kanedit_pages>]
 
 [<？breadcrumbs>|
 ^404\.html?	<span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark>404</mark> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - <？yakuyon>">「約四文字」のsitemap(404)</a></span>
-.*	<span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark class="applogo"><？applogo></mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - <？yakuyon>">sitemap(404)</a></span>
+.*	<span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark class="applogo"><？applogo></mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - <？yakuyon>">「約四文字」のsitemap(404)</a></span>
 |<？breadcrumbs>]
 [<？applogo>|
 ^index\.html?	<img src="<？favicon>" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">
@@ -107,6 +219,7 @@ modify <？modify><？BR><？/P>
 ^kanfont\.html?	<img src="<？favicon>" width="48" height="48" alt="kanfont" title="kanfont">
 ^kanmap\.html?	<img src="<？favicon>" width="48" height="48" alt="kanmap" title="kanmap">
 ^kanzip\.html?	<img src="<？favicon>" width="48" height="48" alt="kanzip" title="kanzip">
+^LTsv_doc\.html?	<img src="<？favicon>" width="48" height="48" alt="kanzip" title="LTsv_doc">
 |<？applogo>]
 
 [<？favicon>|
@@ -115,6 +228,7 @@ modify <？modify><？BR><？/P>
 ^kanfont\.html?	kanfont_logo.png
 ^kanmap\.html?	kanmap_logo.png
 ^kanzip\.html?	kanzip_logo.png
+^LTsv_doc\.html?	LTsv_doc_logo.png
 |<？favicon>]
 
 [<？body>|
@@ -124,47 +238,49 @@ modify <？modify><？BR><？/P>
 ^kanfont\.html?	<＃kanedit_doc:kanfont>
 ^kanmap\.html?	<＃kanedit_doc:kanmap>
 ^kanzip\.html?	<＃kanedit_doc:kanzip>
+^LTsv_doc\.html?	<＃kanedit_doc:LTsv_doc>
 |<？body>]
 
-[<？section00-0>*<？section00-1>*<？section00-2>|
-.+\.html?	<section>@E <h3 id="index00-@c"><？title00-@c></h3>@E<＃contents00-@c>@E</section>@E
-.*	@E<？title00-@c>@E@E<＃contents00-@c>@E
-|<？section00-0>*<？section00-1>*<？section00-2>]
+[<？section/License-0>*<？section/License-1>*<？section/License-2>|
+.+\.html?	<section>@E <h3 id="License-@c"><？title/License-@c></h3>@E<＃contents/License-@c>@E</section>@E
+.*	@E<？title/License-@c>@E@E<＃contents/License-@c>@E
+|<？section/License-0>*<？section/License-1>*<？section/License-2>]
 
-[<＃contents00-0>|
+[<＃contents/License-0>|
 <？P> ※「MIT License」準拠。<？BR>
 <？/P>
-<？https00:mit>
+<？https/License:mit>
 
-<？https00:osdn>
+<？https/License:osdn>
 
-<？https00:postd>
+<？https/License:postd>
 
 <？P> ※口語的説明。<？BR>
-   ・「<？https00:LICENSE>」も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
-   ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR>
-<？/PP>
- ※「<？LTsv>」固有の問題への言及。<？BR>
-   ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
-|<＃contents00-0>]
+   ・「<？https/License:LICENSE>」も含めソースコードの閲覧やコピーに制限を設けない事。<？BR>
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。<？BR><？/P><＃contents/License-0:kandic>
+|<＃contents/License-0>]
 
-[<＃contents00-1>|
+[<＃contents/License-0:kandic>|
+^kanedit\.html?	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。<？BR>@E   ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
+|<＃contents/License-0:kandic>]
+
+[<＃contents/License-1>|
 <？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<？BR>
  ダウンロードは「<？https/ooblog:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<？BR>
- Windowsの場合は「<？https00:yakuyon>」からWebフォント「<？https00:kan5x5comic.woff>」をダウンロードして「WOFFコンバーター」で変換。「<？https00:kanfont.txt>」も参考。<？BR>
+ Windowsの場合は「<？https/License:yakuyon>」からWebフォント「<？https/License:kan5x5comic.woff>」をダウンロードして「WOFFコンバーター」で変換。「<？https/License:kanfont.txt>」も参考。<？BR>
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<？BR>
 <？/P>
-<？https00:LTsv10kanedit>
+<？https/License:LTsv10kanedit>
 
-<？https00:ooblog.github.io>
+<？https/License:ooblog.github.io>
 
-<？https00:woffconv>
-|<＃contents00-1>]
+<？https/License:woffconv>
+|<＃contents/License-1>]
 
-[<＃contents00-2>|
+[<＃contents/License-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<？BR>
@@ -174,52 +290,52 @@ modify <？modify><？BR><？/P>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
  「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「kanedit.txt」「kanfont.txt」「kanmap.txt」「kanzip.txt」のHTML版は準備中(未着手)。
-|<＃contents00-2>]
+|<＃contents/License-2>]
 
-[<？https00:mit>*<？https00:osdn>*<？https00:postd>*<？https00:LTsv10kanedit>*<？https00:ooblog.github.io>*<？https00:woffconv>|
-.+\.html?	<dl><dt><？web00-@c></dt><dd><a href="<？url00-@c>" title="<？web00-@c>"><？url00-@c></a></dd></dl>
-.*	   <？web00-@c><？BR>@E   <？url00-@c><？BR>
-|<？https00:mit>*<？https00:osdn>*<？https00:postd>*<？https00:LTsv10kanedit>*<？https00:ooblog.github.io>*<？https00:woffconv>]
-[<？url00-0>|
+[<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>*<？https/License:ooblog.github.io>*<？https/License:woffconv>|
+.+\.html?	<dl><dt><？web/License-@c></dt><dd><a href="<？url/License-@c>" title="<？web/License-@c>"><？url/License-@c></a></dd></dl>
+.*	   <？web/License-@c><？BR>@E   <？url/License-@c><？BR>
+|<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>*<？https/License:ooblog.github.io>*<？https/License:woffconv>]
+[<？url/License-0>|
 .*	http://choosealicense.com/licenses/mit/
-|<？url00-0>]
-[<？web00-0>|
+|<？url/License-0>]
+[<？web/License-0>|
 .*	MIT License - Choose a License
-|<？web00-0>]
-[<？url00-1>|
+|<？web/License-0>]
+[<？url/License-1>|
 .*	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
-|<？url00-1>]
-[<？web00-1>|
+|<？url/License-1>]
+[<？web/License-1>|
 .*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
-|<？web00-1>]
-[<？url00-2>|
+|<？web/License-1>]
+[<？url/License-2>|
 .*	http://postd.cc/mit-license-line-by-line/
-|<？url00-2>]
-[<？web00-2>|
+|<？url/License-2>]
+[<？web/License-2>|
 .*	MITライセンスを1行1行読んでいく | プログラミング | POSTD
-|<？web00-2>]
-[<？url00-3>|
+|<？web/License-2>]
+[<？url/License-3>|
 .*	<？url/ooblog:LTsv10repository>
-|<？url00-3>]
-[<？web00-3>|
+|<？url/License-3>]
+[<？web/License-3>|
 .*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
-|<？web00-3>]
-[<？url00-4>|
+|<？web/License-3>]
+[<？url/License-4>|
 .*	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
-|<？url00-4>]
-[<？web00-4>|
+|<？url/License-4>]
+[<？web/License-4>|
 .*	ふぉんと - 「約四文字」(http://ooblog.github.io/)
-|<？web00-4>]
-[<？url00-5>|
+|<？web/License-4>]
+[<？url/License-5>|
 .*	http://opentype.jp/woffconv.htm
-|<？url00-5>]
-[<？web00-5>|
+|<？url/License-5>]
+[<？web/License-5>|
 .*	WOFFコンバータ
-|<？web00-5>]
+|<？web/License-5>]
 
 [<？section/address-0>|
-.+\.html?	<section>@E <h3 id="index12-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
-.*	@E<？title/address-0>-@c>@E@E<＃contents/address-@c>@E
+.+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
+.*	@E<？title/address-@c>@E<＃contents/address-@c>@E
 |<？section/address-0>]
 
 [<＃contents/address-0>|
@@ -231,80 +347,87 @@ modify <？modify><？BR><？/P>
 
 
 [<？DICmap>|
-.*	漢字配列「<？https00:kanmap.tsv>」
+.*	漢字配列「<？https/License:kanmap.tsv>」
 |<？DICmap>]
 [<？DICchar>|
-.*	単漢字辞書「<？https00:kanchar.tsv>」
+.*	単漢字辞書「<？https/License:kanchar.tsv>」
 |<？DICchar>]
 [<？DICword>|
-.*	汎用辞書「<？https00:kanword.tsv>」
+.*	汎用辞書「<？https/License:kanword.tsv>」
 |<？DICword>]
 
-[<？list00-0>*<？list00-1>*<？list00-2>|
-.+\.html?	 <li><？index00-@c></li>@E
-.*	 <？index00-@c>@E
-|<？list00-0>*<？list00-1>*<？list00-2>]
-[<？index00-0>*<？index00-1>*<？index00-2>|
-.+\.html?	<a href="#index00-@c" title="<？title00-@c>"><？title00-@c></a>
-.*	<？title00-@c>
-|<？index00-0>*<？index00-1>*<？index00-2>]
-[<？title00-0>|
+[<？list/License-0>*<？list/License-1>*<？list/License-2>|
+.+\.html?	 <li><？index/License-@c></li>@E
+.*	 <？index/License-@c>@E
+|<？list/License-0>*<？list/License-1>*<？list/License-2>]
+[<？index/License-0>*<？index/License-1>*<？index/License-2>|
+.+\.html?	<a href="#License-@c" title="<？title/License-@c>"><？title/License-@c></a>
+.*	<？title/License-@c>
+|<？index/License-0>*<？index/License-1>*<？index/License-2>]
+[<？title/License-0>|
 .*	⓪-0．ライセンス及びソフト使用の補足ガイドライン
-|<？title00-0>]
-[<？title00-1>|
+|<？title/License-0>]
+[<？title/License-1>|
 .*	⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
-|<？title00-1>]
-[<？title00-2>|
+|<？title/License-1>]
+[<？title/License-2>|
 .*	⓪-2．その他現在わかっている不具合や今後の課題
-|<？title00-2>]
-[<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path00-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path00-F@0c>"><？path00-F@0c></a>
-.*	<？path00-F@0c>
-|<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>]
-[<？path00-F00>|
+|<？title/License-2>]
+[<？https/License:LICENSE>*<？https/License:kanmap.tsv>*<？https/License:kanchar.tsv>*<？https/License:kanword.tsv>*<？https/License:kanfont.txt>|
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/License-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/License-@c>"><？path/License-@c></a>
+.*	<？path/License-@c>
+|<？https/License:LICENSE>*<？https/License:kanmap.tsv>*<？https/License:kanchar.tsv>*<？https/License:kanword.tsv>*<？https/License:kanfont.txt>]
+[<？path/License-0>|
 .*	LICENSE
-|<？path00-F00>]
-[<？path00-F01>|
+|<？path/License-0>]
+[<？path/License-1>|
 .*	LTsv/kanmap.tsv
-|<？path00-F01>]
-[<？path00-F02>|
+|<？path/License-1>]
+[<？path/License-2>|
 .*	LTsv/kanchar.tsv
-|<？path00-F02>]
-[<？path00-F03>|
+|<？path/License-2>]
+[<？path/License-3>|
 .*	LTsv/kanword.tsv
-|<？path00-F03>]
-[<？path00-F04>|
+|<？path/License-3>]
+[<？path/License-4>|
 .*	kanfont.txt
-|<？path00-F04>]
-[<？https00:kan5x5comic.woff>*<？https00:yakuyon>|
-.+\.html?	<a href="<？link00-@c>" title="<？word00-@c>"><？word00-@c></a>
-.+\.css	<？link00-@c>
-.*	<？word00-@c>
-|<？https00:kan5x5comic.woff>*<？https00:yakuyon>]
-[<？link00-0>|
+|<？path/License-4>]
+[<？https/License:kan5x5comic.woff>*<？https/License:yakuyon>|
+.+\.html?	<a href="<？link/License-@c>" title="<？word/License-@c>"><？word/License-@c></a>
+.+\.css	<？link/License-@c>
+.*	<？word/License-@c>
+|<？https/License:kan5x5comic.woff>*<？https/License:yakuyon>]
+[<？link/License-0>|
 .*	https://ooblog.github.io/kan5x5comic.woff
-|<？link00-0>]
-[<？word00-0>|
+|<？link/License-0>]
+[<？word/License-0>|
 .*	kan5x5comic.woff
-|<？word00-0>]
-[<？link00-1>|
+|<？word/License-0>]
+[<？link/License-1>|
 .*	https://ooblog.github.io/
-|<？link00-1>]
-[<？word00-1>|
+|<？link/License-1>]
+[<？word/License-1>|
 .*	約四文字
-|<？word00-1>]
+|<？word/License-1>]
 
 [<？list/address-0>|
 .+\.html?	 <li><？index/address-@c></li>@E
 .*	 <？index/address-@c>@E
 |<？list/address-0>]
 [<？index/address-0>|
-.+\.html?	<a href="#index12-@c" title="<？title/address-@c>"><？title/address-@c></a>
+.+\.html?	<a href="#address-@c" title="<？title/address-@c>"><？title/address-@c></a>
 .*	<？title/address-@c>
 |<？index/address-0>]
 [<？title/address-0>|
-.*	⑫-0．作者について、例えば連絡先。
+^kanedit	⑫-0．<？title/address>
+^kanfont	⑫-0．<？title/address>
+^kanmap	⑫-0．<？title/address>
+^kanzip	⑫-0．<？title/address>
+^LTsv_doc	⑫-0．<？title/address>
 |<？title/address-0>]
+[<？title/address>|
+作者について、例えば連絡先。
+|<？title/address>]
 [<？https12:github_ooblog>*<？https12:hatena_ooblog>|
 .+\.html?	<dl><dt><？web/address-@c></dt><dd><a href="<？url/address-@c>" title="<？web/address-@c>"><？url/address-@c></a></dd></dl>
 .*	   <？web/address-@c><？BR>@E   <？url/address-@c><？BR>@E
@@ -321,6 +444,84 @@ modify <？modify><？BR><？/P>
 [<？web/address-1>|
 .*	[kanedit] - 大風呂ダ敷
 |<？web/address-1>]
+
+[<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>|
+.+\.html?	 <li><？index/software-@c></li>@E
+.*	 <？index/software-@c>@E
+|<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>]
+[<？index/software-0>*<？index/software-1>*<？index/software-2>*<？index/software-3>*<？index/software-4>|
+.+\.html?	<a href="<？url/software-@c>" title="<？title/software-@c>"><？titleimg/software-@c><？title/software-@c></a>
+.*	<？title/software-@c>
+|<？index/software-0>*<？index/software-1>*<？index/software-2>*<？index/software-3>*<？index/software-4>]
+[<？titleimg/software-0>|
+.*	<img src="kanedit_logo.png" width="48" height="48" alt="kanedit" title="kanedit">
+|<？titleimg/software-0>]
+[<？title/software-0>|
+.*	<？title:kanedit>
+|<？title/software-0>]
+[<？url/software-0>|
+.*	kanedit.html
+|<？url/software-0>]
+[<？titleimg/software-1>|
+.*	<img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">
+|<？titleimg/software-1>]
+[<？title/software-1>|
+.*	<？title:kanfont>
+|<？title/software-1>]
+[<？url/software-1>|
+.*	kanfont.html
+|<？url/software-1>]
+[<？titleimg/software-2>|
+.*	<img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap">
+|<？titleimg/software-2>]
+[<？title/software-2>|
+.*	<？title:kanmap>
+|<？title/software-2>]
+[<？url/software-2>|
+.*	kanmap.html
+|<？url/software-2>]
+[<？titleimg/software-3>|
+.*	<img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">
+|<？titleimg/software-3>]
+[<？title/software-3>|
+.*	<？title:kanzip>
+|<？title/software-3>]
+[<？url/software-3>|
+.*	kanzip.html
+|<？url/software-3>]
+[<？titleimg/software-4>|
+.*	<img src="LTsv_doc_logo.png" width="48" height="48" alt="LTsv_doc" title="LTsv_doc">
+|<？titleimg/software-4>]
+[<？title/software-4>|
+.*	<？title:LTsv_doc>
+|<？title/software-4>]
+[<？url/software-4>|
+.*	LTsv_doc.html
+|<？url/software-4>]
+
+[<？title>|
+^(index|404)\.html?	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+^kanedit\.html?	<？title:kanedit>
+^kanfont\.html?	<？title:kanfont>
+^kanmap\.html?	<？title:kanmap>
+^kanzip\.html?	<？title:kanzip>
+^LTsv_doc\.html?	<？title:LTsv_doc>
+|<？title>]
+[<？title:kanedit>|
+.*	「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
+|<？title:kanedit>]
+[<？title:kanfont>|
+.*	「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。
+|<？title:kanfont>]
+[<？title:kanmap>|
+.*	「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
+|<？title:kanmap>]
+[<？title:kanzip>|
+.*	「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
+|<？title:kanzip>]
+[<？title:LTsv_doc>|
+.*	「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
+|<？title:LTsv_doc>]
 
 [<？ooblog>|
 .+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https/ooblog:LTsv10LICENSE><br />@E
@@ -448,12 +649,19 @@ modify <？modify><？BR><？/P>
 |<？@T>]
 
 [<＠kanedit_etc_outlist>|
-index.html
-404.html
-kanedit.html
-kanfont.html
-kanmap.html
-kanzip.html
+LTsv_doc.css
+index.html	
+404.html	
+kanedit.html	kanedit
+kanfont.html	kanfont
+kanmap.html	kanmap
+kanzip.html	kanzip
+LTsv_doc.html	LTsv_doc
+kanedit.txt	kanedit
+kanfont.txt	kanfont
+kanmap.txt	kanmap
+kanzip.txt	kanzip
+LTsv_doc.txt	LTsv_doc
 |<＠kanedit_etc_outlist>]
 
 # Copyright (c) 2016 ooblog

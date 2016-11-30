@@ -69,19 +69,13 @@ input.yonmoji_entry:focus{
    float: left;
    margin: 0rem;
  }
- .mainpages{
-  float: left;
- }
  .sidepages{
   width: 20%; min-width: 230px;
   padding: 0rem;
   float: right;
  }
- .sidepages ui{
-  list-style-type: none;
-  padding: 0rem;
- }
  .sidepages li{
+  list-style-type: none;
   display: inline-block;
  }
  article > div{

@@ -5,11 +5,11 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc_this
 LTsvver	20161128M153500
-modify	20161130W012714
+modify	20161130W154333
 |L:Tsv]
 
 [LTsv_doc|
-tsvlist	LTsv_doc.tsv	../../ooblog.github.io/yakuyon.tsv	../docs/kanedit_etc.tsv
+tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv
 window_size	width:600	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 |LTsv_doc]
@@ -41,9 +41,8 @@ LTsvver	<＠L:TsvLTsvver>
 
 目次
 
-<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4><？list10-0>*<？list10-1>*<？list10-2><？list11-0><？list12-0>
-<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4><？section10-0>*<？section10-1>*<？section10-2><？section11-0><？section12-0>
-<？ooblog>
+<？list00-0>*<？list00-1>*<？list00-2><？list01-0>*<？list01-1><？list02-0>*<？list02-1><？list03-0><？list04-0>*<？list04-1><？list05-0>*<？list05-1><？list06-0>*<？list06-1>*<？list06-2><？list07-0>*<？list07-1><？list08-0>*<？list08-1><？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4><？list10-0>*<？list10-1>*<？list10-2><？list11-0><？list/address-0>
+<？section00-0>*<？section00-1>*<？section00-2><？section01-0>*<？section01-1><？section02-0>*<？section02-1><？section03-0><？section04-0>*<？section04-1><？section05-0>*<？section05-1><？section06-0>*<？section06-1>*<？section06-2><？section07-0>*<？section07-1><？section08-0>*<？section08-1><？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4><？section10-0>*<？section10-1>*<？section10-2><？section11-0><？section/address-0><？ooblog>
 |<＃LTsv_doc_txt>]
 
 [<＃LTsv_doc_html>|
@@ -90,7 +89,7 @@ LTsvver	<＠L:TsvLTsvver>
    <？list09-0>*<？list09-1>*<？list09-2>*<？list09-3>*<？list09-4>
    <？list10-0>*<？list10-1>*<？list10-2>
    <？list11-0>
-   <？list12-0>
+   <？list/address-0>
   </ul>
  </section>
 
@@ -106,10 +105,10 @@ LTsvver	<＠L:TsvLTsvver>
 <？section09-0>*<？section09-1>*<？section09-2>*<？section09-3>*<？section09-4>
 <？section10-0>*<？section10-1>*<？section10-2>
 <？section11-0>
-<？section12-0>
+<？section/address-0>
 
  <footer><address>
-  <p>site generator "<？https99-9:LTsv_doc.py>" repository：<？https99-9:LTsv10repository></p>
+  <p>site generator "<？https/ooblog:LTsv_doc.py>" repository：<？https/ooblog:LTsv10repository></p>
   <p class="ooblog"><？ooblog></p>
  </address></footer>
 </body></html>
@@ -271,7 +270,7 @@ modify <？modify><？BR><？/P>
 
 [<＃contents00-1>|
 <？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<？BR>
- ダウンロードは「<？https99-9:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
+ ダウンロードは「<？https/ooblog:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<？BR>
@@ -320,7 +319,7 @@ modify <？modify><？BR><？/P>
 .*	MITライセンスを1行1行読んでいく | プログラミング | POSTD
 |<？web00-2>]
 [<？url00-3>|
-.*	<？url99-9:LTsv10repository>
+.*	<？url/ooblog:LTsv10repository>
 |<？url00-3>]
 [<？web00-3>|
 .*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
@@ -1539,16 +1538,16 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<？BR><？/DD/DL>
 |<＃contents11-0>]
 
-[<？section12-0>|
-.+\.html?	<section>@E <h3 id="index12-@c"><？title12-@c></h3>@E<＃contents12-@c>@E</section>@E
-.*	@E<？title12-@c>@E@E<＃contents12-@c>@E
-|<？section12-0>]
+[<？section/address-0>|
+.+\.html?	<section>@E <h3 id="index12-@c"><？title/address-@c></h3>@E<＃contents12-@c>@E</section>@E
+.*	@E<？title/address-@c>@E@E<＃contents12-@c>@E
+|<？section/address-0>]
 
 [<＃contents12-0>|
 <？P> 更新情報はGitHubやブログを確認してください。<？BR><？/P>
 
-<？https12:github_ooblog>
-<？https12:hatena_ooblog>
+<？https/address:github_ooblog>
+<？https/address:hatena_ooblog>
 |<＃contents12-0>]
 
 [<？DICmap>|
@@ -1579,7 +1578,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⓪-2．その他現在わかっている不具合や今後の課題
 |<？title00-2>]
 [<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path00-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path00-F@0c>"><？path00-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path00-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path00-F@0c>"><？path00-F@0c></a>
 .*	<？path00-F@0c>
 |<？https00:LICENSE>*<？https00:kanmap.tsv>*<？https00:kanchar.tsv>*<？https00:kanword.tsv>*<？https00:kanfont.txt>]
 [<？path00-F00>|
@@ -1645,7 +1644,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 |<？title02-1>]
 [<？https02:LTsv_printf.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path02-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path02-F@0c>"><？path02-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path02-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path02-F@0c>"><？path02-F@0c></a>
 .*	<？path02-F@0c>
 |<？https02:LTsv_printf.py>]
 [<？path02-F00>|
@@ -1664,7 +1663,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	③-0．「LTsv_file.py」の関数一覧
 |<？title03-0>]
 [<？https03:LTsv_file.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path03-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path03-F@0c>"><？path03-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path03-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path03-F@0c>"><？path03-F@0c></a>
 .*	<？path03-F@0c>
 |<？https03:LTsv_file.py>]
 [<？path03-F00>|
@@ -1686,7 +1685,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	④-1．日時フォーマットの概要
 |<？title04-1>]
 [<？https04:LTsv_time.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path04-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path04-F@0c>"><？path04-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path04-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path04-F@0c>"><？path04-F@0c></a>
 .*	<？path04-F@0c>
 |<？https04:LTsv_time.py>]
 [<？path04-F00>|
@@ -1708,7 +1707,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⑤-1．電卓フォーマットの概要
 |<？title05-1>]
 [<？https05:LTsv_calc.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path05-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path05-F@0c>"><？path05-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path05-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path05-F@0c>"><？path05-F@0c></a>
 .*	<？path05-F@0c>
 |<？https05:LTsv_calc.py>]
 [<？path05-F00>|
@@ -1733,7 +1732,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
 |<？title06-2>]
 [<？https06:LTsv_joy.py>*<？https06:LTsv_joy.tsv>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path06-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path06-F@0c>"><？path06-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path06-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path06-F@0c>"><？path06-F@0c></a>
 .*	<？path06-F@0c>
 |<？https06:LTsv_joy.py>*<？https06:LTsv_joy.tsv>]
 [<？path06-F00>|
@@ -1761,7 +1760,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⑦-1．「LTsv_kbd.tsv」のタグ解説
 |<？title07-1>]
 [<？https07:LTsv_kbd.py>*<？https07:LTsv_kbd.tsv>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path07-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path07-F@0c>"><？path07-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path07-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path07-F@0c>"><？path07-F@0c></a>
 .*	<？path07-F@0c>
 |<？https07:LTsv_kbd.py>*<？https07:LTsv_kbd.tsv>]
 [<？path07-F00>|
@@ -1786,7 +1785,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
 |<？title08-1>]
 [<？https08:LTsv_gui.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path08-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path08-F@0c>"><？path08-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path08-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path08-F@0c>"><？path08-F@0c></a>
 .*	<？path08-F@0c>
 |<？https08:LTsv_gui.py>]
 [<？path08-F00>|
@@ -1817,7 +1816,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
 |<？title09-4>]
 [<？https09:LTsv_glyph.py>*<？https09:LTsv_glyph.tsv>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path09-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path09-F@0c>"><？path09-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path09-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path09-F@0c>"><？path09-F@0c></a>
 .*	<？path09-F@0c>
 |<？https09:LTsv_glyph.py>*<？https09:LTsv_glyph.tsv>]
 [<？path09-F00>|
@@ -1855,7 +1854,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
 |<？web10-0>]
 [<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path10-F@0c>"><？path10-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path10-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path10-F@0c>"><？path10-F@0c></a>
 .*	<？path10-F@0c>
 |<？https10:LTsv_doc.py>*<？https10:LTsv_doc.tsv>]
 [<？path10-F00>|
@@ -1911,7 +1910,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
 |<？web11-4>]
 [<？https11:python3install.sh>*<？https11:kanmap.py>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>" title="<？url99-9:LTsv10repository>/blob/master/<？path11-F@0c>"><？path11-F@0c></a>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path11-F@0c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path11-F@0c>"><？path11-F@0c></a>
 .*	<？path11-F@0c>
 |<？https11:python3install.sh>*<？https11:kanmap.py>]
 [<？path11-F00>|
@@ -1921,68 +1920,68 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	kanmap.py
 |<？path11-F01>]
 
-[<？list12-0>|
-.+\.html?	 <li><？index12-@c></li>@E
-.*	 <？index12-@c>@E
-|<？list12-0>]
-[<？index12-0>*<？index12-1>|
-.+\.html?	<a href="#index12-@c" title="<？title12-@c>"><？title12-@c></a>
-.*	<？title12-@c>
-|<？index12-0>*<？index12-1>]
-[<？title12-0>|
+[<？list/address-0>|
+.+\.html?	 <li><？index/address-@c></li>@E
+.*	 <？index/address-@c>@E
+|<？list/address-0>]
+[<？index/address-0>*<？index/address-1>|
+.+\.html?	<a href="#index12-@c" title="<？title/address-@c>"><？title/address-@c></a>
+.*	<？title/address-@c>
+|<？index/address-0>*<？index/address-1>]
+[<？title/address-0>|
 .*	⑫-0．作者について、例えば連絡先。
-|<？title12-0>]
-[<？https12:github_ooblog>*<？https12:hatena_ooblog>|
-.+\.html?	<dl><dt><？web12-@c></dt><dd><a href="<？url12-@c>" title="<？web12-@c>"><？url12-@c></a></dd></dl>
-.*	   <？web12-@c><？BR>@E   <？url12-@c><？BR>@E
-|<？https12:github_ooblog>*<？https12:hatena_ooblog>]
-[<？url12-0>|
-.*	<？url99-9:LTsv10repository>
-|<？url12-0>]
-[<？web12-0>|
+|<？title/address-0>]
+[<？https/address:github_ooblog>*<？https/address:hatena_ooblog>|
+.+\.html?	<dl><dt><？web/address-@c></dt><dd><a href="<？url/address-@c>" title="<？web/address-@c>"><？url/address-@c></a></dd></dl>
+.*	   <？web/address-@c><？BR>@E   <？url/address-@c><？BR>@E
+|<？https/address:github_ooblog>*<？https/address:hatena_ooblog>]
+[<？url/address-0>|
+.*	<？url/ooblog:LTsv10repository>
+|<？url/address-0>]
+[<？web/address-0>|
 .*	ooblog/LTsv10kanedit(GitHub)
-|<？web12-0>]
-[<？url12-1>|
+|<？web/address-0>]
+[<？url/address-1>|
 .*	http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-|<？url12-1>]
-[<？web12-1>|
+|<？url/address-1>]
+[<？web/address-1>|
 .*	[kanedit] - 大風呂ダ敷
-|<？web12-1>]
+|<？web/address-1>]
 
 [<？ooblog>|
-.+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https99-9:LTsv10LICENSE><br />@E
-.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https99-9:LTsv10LICENSE>@E
+.+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https/ooblog:LTsv10LICENSE><br />@E
+.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https/ooblog:LTsv10LICENSE>@E
 |<？ooblog>]
-[<？https99-9:LTsv10LICENSE>|
-.+\.html?	<a href="<？url99-9:LTsv10LICENSE>" title="<？title99-9:LTsv10LICENSE>"><？url99-9:LTsv10LICENSE></a>
-.*	<？url99-9:LTsv10LICENSE>
-|<？https99-9:LTsv10LICENSE>]
-[<？url99-9:LTsv10LICENSE>|
-.*	<？url99-9:LTsv10repository>/blob/master/LICENSE
-|<？url99-9:LTsv10LICENSE>]
-[<？title99-9:LTsv10LICENSE>|
+[<？https/ooblog:LTsv10LICENSE>|
+.+\.html?	<a href="<？url/ooblog:LTsv10LICENSE>" title="<？title/ooblog:LTsv10LICENSE>"><？url/ooblog:LTsv10LICENSE></a>
+.*	<？url/ooblog:LTsv10LICENSE>
+|<？https/ooblog:LTsv10LICENSE>]
+[<？url/ooblog:LTsv10LICENSE>|
+.*	<？url/ooblog:LTsv10repository>/blob/master/LICENSE
+|<？url/ooblog:LTsv10LICENSE>]
+[<？title/ooblog:LTsv10LICENSE>|
 .*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
-|<？title99-9:LTsv10LICENSE>]
-[<？https99-9:LTsv10repository>|
-.+\.html?	<a href="<？url99-9:LTsv10repository>" title="<？title99-9:LTsv10repository>"><？url99-9:LTsv10repository></a>
-.*	<？url99-9:LTsv10repository>
-|<？https99-9:LTsv10repository>]
-[<？url99-9:LTsv10repository>|
+|<？title/ooblog:LTsv10LICENSE>]
+[<？https/ooblog:LTsv10repository>|
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>" title="<？title/ooblog:LTsv10repository>"><？url/ooblog:LTsv10repository></a>
+.*	<？url/ooblog:LTsv10repository>
+|<？https/ooblog:LTsv10repository>]
+[<？url/ooblog:LTsv10repository>|
 .*	https://github.com/ooblog/LTsv10kanedit
-|<？url99-9:LTsv10repository>]
-[<？title99-9:LTsv10repository>|
+|<？url/ooblog:LTsv10repository>]
+[<？title/ooblog:LTsv10repository>|
 .*	ooblog/LTsv10kanedit: 「L:Tsv」ファイルの読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
-|<？title99-9:LTsv10repository>]
-[<？https99-9:LTsv_doc.py>|
-.+\.html?	<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/<？url99-9:LTsv_doc.py>" title="<？title99-9:LTsv_doc.py>"><？url99-9:LTsv_doc.py></a>
-.*	<？url99-9:LTsv_doc.py>
-|<？https99-9:LTsv_doc.py>]
-[<？url99-9:LTsv_doc.py>|
+|<？title/ooblog:LTsv10repository>]
+[<？https/ooblog:LTsv_doc.py>|
+.+\.html?	<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/<？url/ooblog:LTsv_doc.py>" title="<？title/ooblog:LTsv_doc.py>"><？url/ooblog:LTsv_doc.py></a>
+.*	<？url/ooblog:LTsv_doc.py>
+|<？https/ooblog:LTsv_doc.py>]
+[<？url/ooblog:LTsv_doc.py>|
 .*	LTsv_doc.py
-|<？url99-9:LTsv_doc.py>]
-[<？title99-9:LTsv_doc.py>|
+|<？url/ooblog:LTsv_doc.py>]
+[<？title/ooblog:LTsv_doc.py>|
 .*	LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit
-|<？title99-9:LTsv_doc.py>]
+|<？title/ooblog:LTsv_doc.py>]
 
 [<？yakuyon>|
 .*	「約四文字」(http://ooblog.github.io/)
