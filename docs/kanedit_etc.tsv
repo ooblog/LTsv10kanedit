@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161128M161557
+modify	20161201R105157
 |L:Tsv]
 
 [LTsv_doc|
@@ -13,7 +13,7 @@ main	<＠kanedit_etc_main>
 tagseparate	*
 outdir	../docs/
 outlist	<＠kanedit_etc_outlist>
-defdir	../
+defdir	../LTsv/
 deftag	L:<！	R:>
 defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
 |LTsv_doc]
@@ -103,9 +103,11 @@ input.yonmoji_entry:focus{
  .sidepages{
   width: 20%; min-width: 230px;
   padding: 0rem;
+  text-align: center;
   float: right;
  }
  .sidepages li{
+  margin-left: 0rem;
   list-style-type: none;
   display: inline-block;
  }
@@ -121,6 +123,7 @@ footer{
   text-align: center;
 }
 p.ooblog{
+  margin-top:-1rem;
   text-align: left;
   padding: 1rem 1rem 0em;
 }
@@ -144,8 +147,8 @@ h6{ font-size: 1.0rem; margin: 1rem 0.5rem 0.5rem; }
 |<＃kanedit_etc_css>]
 
 [<＃kanedit_etc_txt>|
-<？P>version(branch) <＠L:TsvLTsvver><？BR>
-modify <？modify><？BR><？/P>
+<？title>
+version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 
 目次
 
@@ -176,13 +179,15 @@ modify <？modify><？BR><？/P>
    <li><a href="kanzip.html"><？titleimg/software-3></a></li>
    <li><a href="LTsv_doc.html"><？titleimg/software-4></a></li>
   </ul>
+  <？P>
+   <a href="404.html" title="404">「L:Tsv」のsitemap(404)</a>
+  <？/P>
  </nav></aside>
 
  <section class="mainpages">
   <h1><？title></h1>
   <？P>
-   version(branch) <＠L:TsvLTsvver><？BR>
-   modify <？modify><？BR>
+   version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify><？BR>
   <？/P>
   <h2>目次</h2>
   <ul>
@@ -201,11 +206,13 @@ modify <？modify><？BR><？/P>
 
 [<＃kanedit_menus>|
 ^(index|404)	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>
+^LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
 
 [<＃kanedit_pages>|
 ^(index|404)	
+^LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
 
@@ -289,7 +296,7 @@ modify <？modify><？BR><？/P>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
  「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
- 「kanedit.txt」「kanfont.txt」「kanmap.txt」「kanzip.txt」のHTML版は準備中(未着手)。
+ 「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。
 |<＃contents/License-2>]
 
 [<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>*<？https/License:ooblog.github.io>*<？https/License:woffconv>|
@@ -332,6 +339,116 @@ modify <？modify><？BR><？/P>
 [<？web/License-5>|
 .*	WOFFコンバータ
 |<？web/License-5>]
+
+[<？section/aboutLTsv-0>*<？section/aboutLTsv-1>|
+.+\.html?	<section>@E <h3 id="aboutLTsv-@c"><？title/aboutLTsv-@c></h3>@E<＃contents/aboutLTsv-@c>@E</section>@E
+.*	@E<？title/aboutLTsv-@c>@E@E<＃contents/aboutLTsv-@c>@E
+|<？section/aboutLTsv-0>*<？section/aboutLTsv-1>]
+
+[<＃contents/aboutLTsv-0>|
+<？P> データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<？BR>
+ 素のLTSVファイル自体は単なるログのフォーマットです。<？BR>
+<？/P>
+<？https01-0:ltsvorg>
+<？https01-0:ltsvfaq>
+<？P> 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<？BR>
+ 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<？BR>
+ LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<？BR><？/P>
+|<＃contents/aboutLTsv-0>]
+[<？https01-0:ltsvorg>|
+.+\.html?	<dl><dt><？title01-0:ltsvorg></dt><dd><a href="<？url01-0:ltsvorg>" title="<？title01-0:ltsvorg>"><？url01-0:ltsvorg></a></dd></dl>
+.*	   <？title01-0:ltsvorg><？BR>@E   <？url01-0:ltsvorg><？BR>@E
+|<？https01-0:ltsvorg>]
+[<？url01-0:ltsvorg>|
+.*	http://ltsv.org/
+|<？url01-0:ltsvorg>]
+[<？title01-0:ltsvorg>|
+.*	Labeled Tab-separated Values (LTSV)
+|<？title01-0:ltsvorg>]
+[<？https01-0:ltsvfaq>|
+.+\.html?	<dl><dt><？title01-0:ltsvfaq></dt><dd><a href="<？url01-0:ltsvfaq>" title="<？title01-0:ltsvfaq>"><？url01-0:ltsvfaq></a></dd></dl>
+.*	   <？title01-0:ltsvfaq><？BR>@E   <？url01-0:ltsvfaq><？BR>@E
+|<？https01-0:ltsvfaq>]
+[<？url01-0:ltsvfaq>|
+.*	http://d.hatena.ne.jp/naoya/20130209/1360381374
+|<？url01-0:ltsvfaq>]
+[<？title01-0:ltsvfaq>|
+.*	LTSV FAQ - LTSV って何? どういうところが良いの?
+|<？title01-0:ltsvfaq>]
+|<？title$http://d.hatena.ne.jp/naoya/20130209/1360381374>]
+
+[<＃contents/aboutLTsv-1>|
+<？P>  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<？BR>
+ 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<？BR>
+ firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<？BR>
+ LTSVを「[tag<？&#x7C;>」と「<？&#x7C;>tag]」の様に<？contents01-1:tagsplit><？BR>
+ 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<？BR>
+ first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
+<？/PP>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
+<？/P>
+<？DLDT>  [L:Tsv|<？/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<？/DD/DL>
+<？DLDT>   code<？/DTDD>                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<？/DD/DL>
+<？DLDT>   enter<？/DTDD>                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<？/DD/DL>
+<？DLDT>   tab<？/DTDD>                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<？/DD/DL>
+<？DLDT>   program<？/DTDD>                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。<？/DD/DL>
+<？DLDT>   1st<？/DTDD>                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<？/DD/DL>
+<？DLDT>   LTsvver<？/DTDD>                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<？/DD/DL>
+<？DLDT>   modify <？/DTDD>                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<？/DD/DL>
+<？DLDT>  |L:Tsv]<？/DTDD>                    メタタグ「L:Tsv」を閉じます。<？contents01-1:tagsplit><？/DD/DL>
+<？P>
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。<？BR><？/P>
+|<＃contents/aboutLTsv-1>]
+[<？contents01-1:tagsplit>|
+.*	タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
+|<？contents01-1:tagsplit>]
+
+[<？section/LTsv_printf-0>*<？section/LTsv_printf-1>|
+.+\.html?	<section>@E <h3 id="LTsv_printf-@c"><？title/LTsv_printf-@c></h3>@E<＃contents/LTsv_printf-@c>@E</section>@E
+.*	@E<？title/LTsv_printf-@c>@E@E<＃contents/LTsv_printf-@c>@E
+|<？section/LTsv_printf-0>*<？section/LTsv_printf-1>]
+
+[<＃contents/LTsv_printf-0>|
+<？P> 「<？https02:LTsv_printf.py>」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<？BR>
+ ・Wine上DOSのエラー要因だった<？CP932>などに変換させる事で範囲内の漢字が扱えるようになります。<？BR>
+ ・変換できない文字は数値文字参照に変換されます。<？BR>
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<？BR>
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<？BR><？/P>
+
+<！LTsv_printf.py>
+|<＃contents/LTsv_printf-0>]
+
+[LTsv_printf.py|
+LTsv_libc_printf(LTsv_text,LTsv_log=None)	LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。	LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。	扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。	「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。
+LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。
+LTsv_libc_printf_type(LTsv_text,LTsv_log=None)	Python2では「<？&lt;>type 'str'<？&gt;>」Python3だと「<？&lt;>class 'bytes'<？&gt;>」のようにprintfに渡すバイナリ文字列の変数の型を表示。	LTsv_logと返り値を指定する事で変数にも出力追記できる。
+LTsv_utf2xml(LTsv_text)	LTsv_textの文字列を数値文字参照に変換。
+LTsv_xml2utf(LTsv_text)	LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
+LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。
+LTsv_utf2ink(LTsv_text)	UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。	点字フォントが表示できる環境にないと動作確認は困難なので注意。
+LTsv_ink2utf(LTsv_text)	上記「UTF-8点字」をUTF-8に戻す。	 データ破損を補完する機能はないので注意。
+LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミナルにコマンドを送る。実行結果も取得できる。	「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
+|LTsv_printf.py]
+
+[<＃contents/LTsv_printf-1>|
+<？DLDT>   "Hira2Kata"<？/DTDD>         ひらがなをカタカナに。<？/DD/DL>
+<？DLDT>   "Kata2Hira"<？/DTDD>         カタカナをひらがなに。<？/DD/DL>
+<？DLDT>   "HiraKana2SeiH"<？/DTDD>     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。<？/DD/DL>
+<？DLDT>   "HiraKana2SeiM"<？/DTDD>     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。<？/DD/DL>
+<？DLDT>   "HiraKana2DakB"<？/DTDD>     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。<？/DD/DL>
+<？DLDT>   "HiraKana2DakP"<？/DTDD>     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。<？/DD/DL>
+<？DLDT>   "HiraKana2Han"<？/DTDD>      ひらがなもカタカナも半角に。<？/DD/DL>
+<？DLDT>   "HiraKana2HanKaKe"<？/DTDD>  ひらがなもカタカナも「ヵヶ」も半角に。<？/DD/DL>
+<？DLDT>   "Han2HiraEz"<？/DTDD>        半角をひらがなに(濁音は分離したまま)。<？/DD/DL>
+<？DLDT>   "Han2KataEz"<？/DTDD>        半角をカタカナに(濁音は分離したまま)。<？/DD/DL>
+<？DLDT>   "Han2Hira"<？/DTDD>          半角をひらがなに(濁音があっても１つの文字に統合)。<？/DD/DL>
+<？DLDT>   "Han2Kata"<？/DTDD>          半角をカタカナに(濁音があっても１つの文字に統合)。<？/DD/DL>
+<？DLDT>   "Alpha2BIG"<？/DTDD>         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。<？/DD/DL>
+<？DLDT>   "Alpha2SML"<？/DTDD>         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。<？/DD/DL>
+<？DLDT>   "Alpha2HAN"<？/DTDD>         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。<？/DD/DL>
+<？DLDT>   "Alpha2ZENBS"<？/DTDD>       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。<？/DD/DL>
+<？DLDT>   "Alpha2ZENYen"<？/DTDD>      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。<？/DD/DL>
+|<＃contents/LTsv_printf-1>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -409,6 +526,49 @@ modify <？modify><？BR><？/P>
 [<？word/License-1>|
 .*	約四文字
 |<？word/License-1>]
+
+[<？list/aboutLTsv-0>*<？list/aboutLTsv-1>|
+.+\.html?	 <li><？index/aboutLTsv-@c></li>@E
+.*	 <？index/aboutLTsv-@c>@E
+|<？list/aboutLTsv-0>*<？list/aboutLTsv-1>]
+[<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>|
+.+\.html?	<a href="#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？title/aboutLTsv-@c></a>
+.*	<？title/aboutLTsv-@c>
+|<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>]
+[<？title/aboutLTsv-0>|
+.*	①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
+|<？title/aboutLTsv-0>]
+[<？url/aboutLTsv-0>|
+.*	kanfont.html
+|<？url/aboutLTsv-0>]
+[<？title/aboutLTsv-1>|
+.*	①-1．「L:Tsv」ファイルの構造
+|<？title/aboutLTsv-1>]
+[<？url/aboutLTsv-1>|
+.*	kanmap.html
+|<？url/aboutLTsv-1>]
+
+[<？list/LTsv_printf-0>*<？list/LTsv_printf-1>|
+.+\.html?	 <li><？index/LTsv_printf-@c></li>@E
+.*	 <？index/LTsv_printf-@c>@E
+|<？list/LTsv_printf-0>*<？list/LTsv_printf-1>]
+[<？index/LTsv_printf-0>*<？index/LTsv_printf-1>|
+.+\.html?	<a href="#index02-@c" title="<？title/LTsv_printf-@c>"><？title/LTsv_printf-@c></a>
+.*	<？title/LTsv_printf-@c>
+|<？index/LTsv_printf-0>*<？index/LTsv_printf-1>]
+[<？title/LTsv_printf-0>|
+.*	②-0．「LTsv_printf.py」の関数一覧
+|<？title/LTsv_printf-0>]
+[<？title/LTsv_printf-1>|
+.*	②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
+|<？title/LTsv_printf-1>]
+[<？https02:LTsv_printf.py>|
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_printf-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_printf-@c>"><？path/LTsv_printf-@c></a>
+.*	<？path/LTsv_printf-@c>
+|<？https02:LTsv_printf.py>]
+[<？path/LTsv_printf-0>|
+.*	LTsv/LTsv_file.py
+|<？path/LTsv_printf-0>]
 
 [<？list/address-0>|
 .+\.html?	 <li><？index/address-@c></li>@E
@@ -500,12 +660,12 @@ modify <？modify><？BR><？/P>
 |<？url/software-4>]
 
 [<？title>|
-^(index|404)\.html?	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-^kanedit\.html?	<？title:kanedit>
-^kanfont\.html?	<？title:kanfont>
-^kanmap\.html?	<？title:kanmap>
-^kanzip\.html?	<？title:kanzip>
-^LTsv_doc\.html?	<？title:LTsv_doc>
+^(index|404)	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+^kanedit	<？title:kanedit>
+^kanfon	<？title:kanfont>
+^kanmap	<？title:kanmap>
+^kanzip	<？title:kanzip>
+^LTsv_doc	<？title:LTsv_doc>
 |<？title>]
 [<？title:kanedit>|
 .*	「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。

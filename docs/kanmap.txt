@@ -1,5 +1,5 @@
-version(branch) 20161128M153500
-modify 20161130W221226
+「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
+version(branch):20161128M153500	modify:20161201R105154
 
 目次
 
@@ -57,7 +57,7 @@ modify 20161130W221226
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。
  「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
- 「kanedit.txt」「kanfont.txt」「kanmap.txt」「kanzip.txt」のHTML版は準備中(未着手)。
+ 「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。
 
 
 ⑫-0．作者について、例えば連絡先。

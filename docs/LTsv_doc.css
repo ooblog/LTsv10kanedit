@@ -72,9 +72,11 @@ input.yonmoji_entry:focus{
  .sidepages{
   width: 20%; min-width: 230px;
   padding: 0rem;
+  text-align: center;
   float: right;
  }
  .sidepages li{
+  margin-left: 0rem;
   list-style-type: none;
   display: inline-block;
  }
@@ -90,6 +92,7 @@ footer{
   text-align: center;
 }
 p.ooblog{
+  margin-top:-1rem;
   text-align: left;
   padding: 1rem 1rem 0em;
 }

@@ -186,18 +186,18 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     else:
         if len(LTsvDOClaunch_deflist) > 0:
             LTsv_savefile(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
-        LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],True)
         LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}({1})".format(LTsvDOClaunch_tsvname,LTsv_getdaytimestr(LTsvDOClaunch_modify)))
+        for button in LTsvDOC_button: LTsv_widget_disableenable(button,True);
 
 def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
     def LTsvDOClaunch_kernel(window_objvoid=None,window_objptr=None):
-        LTsv_putdaytimenow()
+        for button in LTsvDOC_button: LTsv_widget_disableenable(button,False);
         global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
         global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
         global LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP
         global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
+        LTsv_putdaytimenow()
         LTsvDOClaunch_kernel_clickID=LTsvDOClaunch_tsvcount
-        LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],False)
         LTsvDOClaunch_outcount=-1
         LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP=[],"",""
         LTsvDOClaunch_deflist=[]
