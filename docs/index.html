@@ -32,20 +32,656 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161201R105154<br />
+   version(branch):20161128M153500	modify:20161201R195256<br />
   
 </p>
   <h2>目次</h2>
   <ul>
-    <li><a href="kanedit.html" title="「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。"><img src="kanedit_logo.png" width="48" height="48" alt="kanedit" title="kanedit">「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。</a></li>
- <li><a href="kanfont.html" title="「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。</a></li>
- <li><a href="kanmap.html" title="「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap">「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。</a></li>
- <li><a href="kanzip.html" title="「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。</a></li>
- <li><a href="LTsv_doc.html" title="「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。"><img src="LTsv_doc_logo.png" width="48" height="48" alt="LTsv_doc" title="LTsv_doc">「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</a></li>
+    <li><a href="#License-0" title="⓪-0．ライセンス及びソフト使用の補足ガイドライン">⓪-0．ライセンス及びソフト使用の補足ガイドライン</a></li>
+ <li><a href="#License-1" title="⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
+ <li><a href="#License-2" title="⓪-2．その他現在わかっている不具合や今後の課題">⓪-2．その他現在わかっている不具合や今後の課題</a></li>
+ <li><a href="#aboutLTsv-0" title="①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)">①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)</a></li>
+ <li><a href="#aboutLTsv-1" title="①-1．「L:Tsv」ファイルの構造">①-1．「L:Tsv」ファイルの構造</a></li>
+ <li><a href="#LTsv_printf-0" title="②-0．「LTsv_printf.py」の関数一覧">②-0．「LTsv_printf.py」の関数一覧</a></li>
+ <li><a href="#LTsv_printf-1" title="②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧">②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a></li>
+ <li><a href="#LTsv_file-0" title="③-0．「LTsv_file.py」の関数一覧">③-0．「LTsv_file.py」の関数一覧</a></li>
+ <li><a href="#LTsv_time-0" title="④-0．「LTsv_time.py」の関数一覧">④-0．「LTsv_time.py」の関数一覧</a></li>
+ <li><a href="#LTsv_time-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a></li>
+ <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。
+">⑪-0．作者について、例えば連絡先。
+</a></li>
 
   </ul>
  </section>
 
+<section>
+ <h3 id="License-0">⓪-0．ライセンス及びソフト使用の補足ガイドライン</h3>
+<p>
+ ※「MIT License」準拠。<br />
+
+</p>
+<dl><dt>MIT License - Choose a License</dt><dd><a href="http://choosealicense.com/licenses/mit/" title="MIT License - Choose a License">http://choosealicense.com/licenses/mit/</a></dd></dl>
+
+<dl><dt>licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN</dt><dd><a href="https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license" title="licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN">https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license</a></dd></dl>
+
+<dl><dt>MITライセンスを1行1行読んでいく | プログラミング | POSTD</dt><dd><a href="http://postd.cc/mit-license-line-by-line/" title="MITライセンスを1行1行読んでいく | プログラミング | POSTD">http://postd.cc/mit-license-line-by-line/</a></dd></dl>
+
+<p>
+ ※口語的説明。<br />
+   ・「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE">LICENSE</a>」も含めソースコードの閲覧やコピーに制限を設けない事。<br />
+   ・いかなる場合においても作者または著作権者は一切責任を負わない事。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="License-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</h3>
+<p>
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<br />
+ ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
+ 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
+ フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<br />
+ Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt">kanfont.txt</a>」も参考。<br />
+ フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<br />
+
+</p>
+<dl><dt>ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
+
+<dl><dt>ふぉんと - 「約四文字」(http://ooblog.github.io/)</dt><dd><a href="https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html" title="ふぉんと - 「約四文字」(http://ooblog.github.io/)">https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html</a></dd></dl>
+
+<dl><dt>WOFFコンバータ</dt><dd><a href="http://opentype.jp/woffconv.htm" title="WOFFコンバータ">http://opentype.jp/woffconv.htm</a></dd></dl>
+
+</section>
+<section>
+ <h3 id="License-2">⓪-2．その他現在わかっている不具合や今後の課題</h3>
+<p>
+ Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
+ フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<br />
+ グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
+ 人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
+ マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<br />
+ 「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
+ 「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。
+
+</section>
+<section>
+ <h3 id="aboutLTsv-0">①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)</h3>
+<p>
+ データ間の区切りをタブ(\t)、「label:data」の様にコロン(:)でデータにラベルを付けたのが「LTSV」です。<br />
+ 素のLTSVファイル自体は単なるログのフォーマットです。<br />
+
+</p>
+<dl><dt>Labeled Tab-separated Values (LTSV)</dt><dd><a href="http://ltsv.org/" title="Labeled Tab-separated Values (LTSV)">http://ltsv.org/</a></dd></dl>
+<dl><dt>LTSV FAQ - LTSV って何? どういうところが良いの?</dt><dd><a href="http://d.hatena.ne.jp/naoya/20130209/1360381374" title="LTSV FAQ - LTSV って何? どういうところが良いの?">http://d.hatena.ne.jp/naoya/20130209/1360381374</a></dd></dl>
+<p>
+ 「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。<br />
+ 複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<br />
+ LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="aboutLTsv-1">①-1．「L:Tsv」ファイルの構造</h3>
+<p>
+  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<br />
+ 先頭データの事をfirst、先頭以降のデータの事をrestと呼びます。例えばLispでも、car関数の代わりにfirst関数、cdr関数の代わりにrest関数が使えたはず。<br />
+ firstは縦軸ラベルとして使う場合があります。restでは「label:data」の様なラベルとデータをコロン(:)で区切る形の軸ラベルが付けられます。簡単に言うとrestでLTSVが使えます。<br />
+ LTSVを「[tag&#x7C;」と「&#x7C;tag]」の様にタグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。<br />
+ 拡張子は「.ltsv」か「.tsv」。メモリ上など拡張子で区別できない場合でもメタタグで判定。メタタグが存在しない場合ファイル全体を１つのページとみなす。<br />
+ first縦軸ラベル自体にコロン(:)が含まれる(「label:data」のようになってる)場合、ページ全体を１つのLTSVとみなす場合がある(「LTsv_label2dictint()」「LTsv_label2dictstr()」など)。
+</p><p>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
+
+</p>
+<dl><dt>
+  [L:Tsv|</dt>
+<dd>
+                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。
+</dd></dl>
+<dl><dt>
+   code</dt>
+<dd>
+                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。
+</dd></dl>
+<dl><dt>
+   enter</dt>
+<dd>
+                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。
+</dd></dl>
+<dl><dt>
+   tab</dt>
+<dd>
+                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。
+</dd></dl>
+<dl><dt>
+   program</dt>
+<dd>
+                    「L:Tsv」ファイルをどの様に扱うかを表す規格名(プログラム名)を記述。例えば「LTsv_doc」では「LTsv_doc.py」。
+</dd></dl>
+<dl><dt>
+   1st</dt>
+<dd>
+                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。
+</dd></dl>
+<dl><dt>
+   LTsvver</dt>
+<dd>
+                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。
+</dd></dl>
+<dl><dt>
+   modify </dt>
+<dd>
+                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
+</dd></dl>
+<dl><dt>
+  |L:Tsv]</dt>
+<dd>
+                    メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
+</dd></dl>
+<p>
+
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="LTsv_printf-0">②-0．「LTsv_printf.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_printf.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_printf.py">LTsv/LTsv_printf.py</a>」はPythonのprint関数の代わりにlibcのprintfを呼び出すモジュールです。<br />
+ ・Wine上DOSのエラー要因だった<？CP932>などに変換させる事で範囲内の漢字が扱えるようになります。<br />
+ ・変換できない文字は数値文字参照に変換されます。<br />
+ ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。<br />
+ ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<br />
+</p>
+
+<dl><dt>LTsv_libc_printf(LTsv_text,LTsv_log=None)</dt><dd>
+LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。<br />
+LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。<br />
+扱えない文字は数値文字参照(「咖喱」が「&#21654;&#21937;」)に変換される。<br />
+「ctypes.cdll.msvcrt(MS-DOS)」は1024バイト(文字数ではなくバイト)を超える文字列を扱えない様子。</dd></dl>
+<dl><dt>LTsv_libc_printcat(LTsv_text)</dt><dd>
+上記LTsv_libc_printfからログ保存やL:Tsvタグエスケープ処理などを取り除いたもの。</dd></dl>
+<dl><dt>LTsv_libc_printf_type(LTsv_text,LTsv_log=None)</dt><dd>
+Python2では「&lt;type 'str'&gt;」Python3だと「&lt;class 'bytes'&gt;」のようにprintfに渡すバイナリ文字列の変数の型を表示。<br />
+LTsv_logと返り値を指定する事で変数にも出力追記できる。</dd></dl>
+<dl><dt>LTsv_utf2xml(LTsv_text)</dt><dd>
+LTsv_textの文字列を数値文字参照に変換。</dd></dl>
+<dl><dt>LTsv_xml2utf(LTsv_text)</dt><dd>
+LTsv_textの文字参照(数値文字参照含む)を文字列に変換。</dd></dl>
+<dl><dt>LTsv_kanare(LTsv_before,LTsv_recase)</dt><dd>
+全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。<br />
+変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。</dd></dl>
+<dl><dt>LTsv_utf2ink(LTsv_text)</dt><dd>
+UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br />
+点字フォントが表示できる環境にないと動作確認は困難なので注意。</dd></dl>
+<dl><dt>LTsv_ink2utf(LTsv_text)</dt><dd>
+上記「UTF-8点字」をUTF-8に戻す。<br />
+ データ破損を補完する機能はないので注意。</dd></dl>
+<dl><dt>LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)</dt><dd>
+ターミナルにコマンドを送る。実行結果も取得できる。<br />
+「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_printf-1">②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</h3>
+<dl><dt>
+   "Hira2Kata"</dt>
+<dd>
+         ひらがなをカタカナに。
+</dd></dl>
+<dl><dt>
+   "Kata2Hira"</dt>
+<dd>
+         カタカナをひらがなに。
+</dd></dl>
+<dl><dt>
+   "HiraKana2SeiH"</dt>
+<dd>
+     濁音を清音に。「ぱぴぷぺぽ」と「ぱぴぷぺぽ」は「はひふへほ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2SeiM"</dt>
+<dd>
+     濁音を清音に。「ばびぶべぼ」は「はひふへほ」に、「ぱぴぷぺぽ」を「まみむめも」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2DakB"</dt>
+<dd>
+     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2DakP"</dt>
+<dd>
+     清音を濁音に。「はひふへほ」は「ばびぶべぼ」に、「まみむめも」を「ぱぴぷぺぽ」に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2Han"</dt>
+<dd>
+      ひらがなもカタカナも半角に。
+</dd></dl>
+<dl><dt>
+   "HiraKana2HanKaKe"</dt>
+<dd>
+  ひらがなもカタカナも「ヵヶ」も半角に。
+</dd></dl>
+<dl><dt>
+   "Han2HiraEz"</dt>
+<dd>
+        半角をひらがなに(濁音は分離したまま)。
+</dd></dl>
+<dl><dt>
+   "Han2KataEz"</dt>
+<dd>
+        半角をカタカナに(濁音は分離したまま)。
+</dd></dl>
+<dl><dt>
+   "Han2Hira"</dt>
+<dd>
+          半角をひらがなに(濁音があっても１つの文字に統合)。
+</dd></dl>
+<dl><dt>
+   "Han2Kata"</dt>
+<dd>
+          半角をカタカナに(濁音があっても１つの文字に統合)。
+</dd></dl>
+<dl><dt>
+   "Alpha2BIG"</dt>
+<dd>
+         半角全角にかかわらずアルファベットを大文字に(キリル文字ギリシャ文字含む)。
+</dd></dl>
+<dl><dt>
+   "Alpha2SML"</dt>
+<dd>
+         半角全角にかかわらずアルファベットを小文字に(キリル文字ギリシャ文字含む)。
+</dd></dl>
+<dl><dt>
+   "Alpha2HAN"</dt>
+<dd>
+         大文字小文字にかかわらずアルファベットを半角に(キリル文字ギリシャ文字含まない)。
+</dd></dl>
+<dl><dt>
+   "Alpha2ZENBS"</dt>
+<dd>
+       大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「＼」へ。
+</dd></dl>
+<dl><dt>
+   "Alpha2ZENYen"</dt>
+<dd>
+      大文字小文字にかかわらずアルファベットを全角に(キリル文字ギリシャ文字含まない)。バックスラッシュは「￥」へ。
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_file-0">③-0．「LTsv_file.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_file.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_file.py">LTsv/LTsv_file.py</a>」は「L;Tsv」ファイルの基本的な読み書きモジュールです。
+ ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。<br />
+ ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。<br />
+ ・modify項目で「LTsv_getdaytimestr()」を使うので「LTsv_time.py」モジュールも必要。<br />
+</p>
+
+<dl><dt>LTsv_newfile(LTsv_program,LTsv_default=None)</dt><dd>
+「L:Tsv」ファイルを変数上に作成する。<br />
+ LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
+LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
+メタタグについては「<？index01-1>」も参考。</dd></dl>
+<dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
+ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
+ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
+<dl><dt>LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)</dt><dd>
+ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。元のzipファイルはそのまま。</dd></dl>
+<dl><dt>LTsv_64load(LTsv_path,LTsv_codewidth=128)</dt><dd>
+ローカル上の画像ファイルなどをテキスト(base64)に変換した形で読み込む。元の画像ファイルはそのまま。</dd></dl>
+<dl><dt>LTsv_loadfile(LTsv_path,LTsv_encoding="utf-8",LTsv_default=None)</dt><dd>
+ローカル上のLTsv_pathから「L:Tsv」ファイルを読み込む。<br />
+LTsv_encodingにテキストのコード指定。例えば<？CP932>を読み込むときは「LTsv_encoding="cp932"」が必要。<br />
+LTsv_defaultは読み込みできなかった場合の初期値を指定。</dd></dl>
+<dl><dt>LTsv_readlinepages(LTsv_text)</dt><dd>
+LTsv_textテキスト内のタグ「[tag&#x7C;」一覧を1行のLTSVとして取得する。</dd></dl>
+<dl><dt>LTsv_getpage(LTsv_text,LTsv_tag,LTsv_default=None)</dt><dd>
+タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれた範囲のLTSVページを取得。<br />
+LTsv_default(LTsv_page)はページを取得できなかった場合の初期値を指定。</dd></dl>
+<dl><dt>LTsv_readlinedeno(LTsv_text)</dt><dd>
+LTSVページの行数を数える。LTsv_textに改行が無くても1行とみなす。<br />
+LTsv_textの文字列長が0の場合0を返す。</dd></dl>
+<dl><dt>LTsv_readlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)</dt><dd>
+0から数えた行数でLTSVページから1行読み込む。<br />
+LTsv_default(LTsv_line)は読み込めなかった場合の初期値を指定。</dd></dl>
+<dl><dt>LTsv_readlinefirsts(LTsv_text)</dt><dd>
+LTSVページのfirst(縦軸ラベル)一覧を1行のLTSVとして取得。</dd></dl>
+<dl><dt>LTsv_readlinerest(LTsv_text,LTsv_first,LTsv_default=None)</dt><dd>
+LTSVページからfirst(縦軸ラベル)指定で先頭以下データrestを1行読み込む。first(縦軸ラベル)の取得にはタブ文字が必要。<br />
+LTsv_default(LTsv_rest)はrestが読み込めなかった場合の初期値を指定。</dd></dl>
+<dl><dt>LTsv_pickdatadeno(LTsv_line)</dt><dd>
+1行のLTSVに含まれるデータ個数を取得(firstも0個目のデータとみなす)。<br />
+「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。</dd></dl>
+<dl><dt>LTsv_pickdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)</dt><dd>
+1行のLTSVから0から数えた項目数指定で1個読み込む(firstも0個目のデータとみなす)。<br />
+「label:data」をラベルとデータに分ける場合は「LTsv_split_label_data()」などを併用する。</dd></dl>
+<dl><dt>LTsv_split_label_data(LTsv_labeldata,LTsv_seldata=True)</dt><dd>
+「label:data」からlabelかdataのどちらかを取得。LTsv_seldataがTrueならdata部分を、Falseならlabel部分を返す。</dd></dl>
+<dl><dt>LTsv_pickdatas(LTsv_line,LTsv_dataL=0,LTsv_dataR=0)</dt><dd>
+1行のLTSVから0から数えた項目数指定で範囲内の複数データを読み込む(firstも0個目のデータとみなす)。いわゆるスライス操作。<br />
+LTsv_dataLとLTsv_dataRが逆(Tsv_dataRの方が小さい)の場合でも関数内で自動的に並び替える。<br />
+LTsv_dataLとLTsv_dataRが同じ場合差分が無いので読み込まない。</dd></dl>
+<dl><dt>LTsv_pickdatafind(LTsv_line,LTsv_find)</dt><dd>
+LTsv_findが1行のLTSVの何項目にデータがあるか0から数える(firstも0個目のデータとみなす)。</dd></dl>
+<dl><dt>LTsv_joindatanum(LTsv_line,LTsv_datanum,LTsv_default=None)</dt><dd>
+1行のLTSVのLTsv_datanum項目目にLTsv_default(LTsv_data)を追加する。<br />
+LTsv_datanumが0以下の場合先頭firstに追加。項目数以上の場合末尾に追加。<br />
+省略もしくは文字列長0の場合は何もしない。</dd></dl>
+<dl><dt>LTsv_setdatanum(LTsv_line,LTsv_datanum,LTsv_default=None)</dt><dd>
+1行のLTSVのLTsv_datanum項目目にデータLTsv_default(LTsv_data)を上書する。<br />
+負数の場合や項目数以上の場合は何もしない。<br />
+ LTsv_default(LTsv_data)を省略もしくは文字列長0のデータの場合は項目を削除。</dd></dl>
+<dl><dt>LTsv_pickdatalabel(LTsv_line,LTsv_label,LTsv_default=None)</dt><dd>
+1行のLTSVから「label:data」形式の横軸ラベル(LTsv_label)指定で1個読み込む。<br />
+LTsv_default(LTsv_data)は読み込みできなかった場合の初期値を指定。</dd></dl>
+<dl><dt>LTsv_pickdic(LTsv_text,LTsv_first,LTsv_label)</dt><dd>
+「LTsv_readlinerest()」と「LTsv_pickdatalabel()」をひとまとめに。単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」読込用途。<br />
+first(縦軸ラベル)で指定行、restの横軸ラベル(LTsv_label)で指定列、データ1個を読み込む。</dd></dl>
+<dl><dt>LTsv_setdatalabel(LTsv_line,LTsv_label,LTsv_default=None)</dt><dd>
+1行のLTSVの「label:data」形式横軸ベル(LTsv_label)項指定でデータLTsv_default(LTsv_data)を上書する。<br />
+元LTSVに存在しない横軸ラベル(LTsv_label)の場合末尾に追加。<br />
+LTsv_default(LTsv_data)を省略した場合に項目はラベルごと削除。<br />
+文字列長0のデータLTsv_default(LTsv_data)であっても省略しなかった場合は横軸ラベル項目を追加もしくは上書き。<br />
+上記LTsv_joindatanumやLTsv_setdatanumと事なりLTsv_setdatalabelでは「label:」が単独で存在(文字列0の「data」が存在できる)違いがあるので注意。</dd></dl>
+<dl><dt>LTsv_sievelabels(LTsv_rest,LTsv_labels="")</dt><dd>
+データそのままにラベルを取り替える。<br />
+文字列0の「data」(データ数よりラベル数が多い場合を想定)は項目が消えるので注意。</dd></dl>
+<dl><dt>LTsv_sievetuplelabels(LTsv_rest,*LTsv_labels)</dt><dd>
+「LTsv_sievelabels()」とほぼ同じだが、LTsv_labelがLTSVではなくタプル。</dd></dl>
+<dl><dt>LTsv_pushlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)</dt><dd>
+LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を追加する。<br />
+1行追加想定だけど複数行のテキスト挿入も可能。<br />
+LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は何もしない。</dd></dl>
+<dl><dt>LTsv_overlinenum(LTsv_text,LTsv_linenum,LTsv_default=None)</dt><dd>
+LTSVページに0から数えた行数指定で1行LTsv_default(LTsv_line)を上書する。<br />
+1行上書想定だけど複数行のテキスト挿入も可能。<br />
+LTsv_default(LTsv_line)を省略もしくは文字列長0のデータの場合は1行削除。</dd></dl>
+<dl><dt>LTsv_pushlinerest(LTsv_page,LTsv_first,LTsv_default=None)</dt><dd>
+LTSVページにfirst(縦軸ラベル)指定でFirstにrest(LTsv_default)を追加する。<br />
+LTsv_page内にLTsv_firstが存在しない場合LTsv_page末尾に追加。<br />
+LTsv_rest(LTsv_default)を省略した場合に項目を削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。<br />
+文字列長0のrestデータでも縦軸ラベルfirst(縦軸ラベル)の末尾にはタブ文字が付加(「first\t\n」)。</dd></dl>
+<dl><dt>LTsv_putpage(LTsv_text,LTsv_tag,LTsv_default=None)</dt><dd>
+タグ「[LTsv_tag|」「|LTsv_tag]」で囲まれたLTSVページとしてLTsv_default(LTsv_page)を上書き。<br />
+LTsv_text内にLTsv_tagタグが存在しない場合末尾に追加。タグ名が文字列長0の場合は何もしない。<br />
+LTsv_page(LTsv_default)を省略の場合はページ削除。文字列長0であっても省略しなかった場合は追加もしくは上書き。</dd></dl>
+<dl><dt>LTsv_putmodify(LTsv_text)</dt><dd>
+メタタグ「L:Tsv」の「modify」の更新のみを行う。「LTsv_getdaytimestr()」を使うので[LTsv_time.py]モジュールが必要。<br />
+「LTsv_newfile()」や「LTsv_savefile()」実行時と「LTsv_putmodify()」の時間はズレる場合がある事に注意。</dd></dl>
+<dl><dt>LTsv_savedir(LTsv_path)</dt><dd>
+「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が1個フォルダを必要とする場合、1個フォルダを作成する。<br />
+「os.mkdir()」を使うので、一気に深い階層のフォルダを作ろうとするとエラーになる。<br />
+「LTsv_savefile()」「LTsv_saveplain()」の内部で使用。</dd></dl>
+<dl><dt>LTsv_savedirs(LTsv_path)</dt><dd>
+「LTsv_savefile()」「LTsv_saveplain()」で保存予定のファイル名が複数のフォルダを必要とする場合、複数のフォルダを作成する。<br />
+「os.makedirs()」を使って一気に深い階層のフォルダを作れてしまうので取扱い注意。</dd></dl>
+<dl><dt>LTsv_savefile(LTsv_path,LTsv_default=None)</dt><dd>
+ローカルのLTsv_pathに「L:Tsv」ファイル、LTsv_default(LTsv_text)を書き込む。ファイル保存時にメタタグ「L:Tsv」の「modify」の更新。<br />
+「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成。<br />
+LTsv_default(LTsv_text)を省略の場合はファイル削除(フォルダはそのまま)。</dd></dl>
+<dl><dt>LTsv_saveplain(LTsv_path,LTsv_plain)</dt><dd>
+ローカルのLTsv_pathにテキストファイルLTsv_plainを(LTsv_text)書き込む。<br />
+「LTsv_savedir()」を内部で呼び出すのでフォルダ1個分の階層なら自動でフォルダ作成される。</dd></dl>
+<dl><dt>LTsv_labelzip(LTsv_labels,LTsv_datas)</dt><dd>
+LTsv_labelsを横軸ラベル、LTsv_datasをデータとして、<br />
+「label/tlabel/t…」と「data/tdata/t…」を1行のLTSV「label:data/tlabel:data/t…」に束ねる。</dd></dl>
+<dl><dt>LTsv_unziplabel(LTsv_line)</dt><dd>
+1行のLTSV「label:data/tlabel:data/t…」からラベルだけを取り出して「label/tlabel/t…」に。</dd></dl>
+<dl><dt>LTsv_unzipdata(LTsv_line)</dt><dd>
+1行のLTSV「label:data/tlabel:data/t…」からデータだけを取り出して「data/tdata/t…」に。</dd></dl>
+<dl><dt>LTsv_unziplabelsdata(LTsv_line,LTsv_labels)</dt><dd>
+1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。<br />
+LTsv_labelsはtsv形式。</dd></dl>
+<dl><dt>LTsv_unziptuplelabelsdata(LTsv_line,*LTsv_labels)</dt><dd>
+1行のラベル有りLTSV「label:data/tlabel:data/t…」からラベル該当データだけ取り出して「label:data/tlabel:data/t…」に。<br />
+LTsv_labelsはPythonのタプル形式。</dd></dl>
+<dl><dt>LTsv_tuple2tsv(LTsv_tuple)</dt><dd>
+Pythonのタプルやリストをtsvに。<br />
+forループよりjoin使った方が速い的なPythonあるある。</dd></dl>
+<dl><dt>LTsv_tsv2list(LTsv_line,LTsv_len=None)</dt><dd>
+tsvをPythonのリストに。<br />
+左辺でunpackする場合受けとる変数の個数をLTsv_lenで指定。<br />
+LTsv_lenがデータ数より多い場合は0文字列が補完される。</dd></dl>
+<dl><dt>LTsv_tsv2tuple(LTsv_line,LTsv_len=None)</dt><dd>
+「LTsv_tsv2list()」のタプルバージョン。</dd></dl>
+<dl><dt>LTsv_label2dictint(LTsv_line)</dt><dd>
+LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは数値化。<br />
+複数行あっても1つのLTSVとみなす。</dd></dl>
+<dl><dt>LTsv_label2dictstr(LTsv_line)</dt><dd>
+LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化。<br />
+複数行あっても1つのLTSVとみなす。</dd></dl>
+<dl><dt>LTsv_dict2label(LTsv_dict)</dt><dd>
+Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。</dd></dl>
+<dl><dt>LTsv_file_ver()</dt><dd>
+「LTsv_file.py」のバージョン表示(20161128M153500)。</dd></dl>
+<dl><dt>LTsv_issue()</dt><dd>
+「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_time-0">④-0．「LTsv_time.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_time.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_time.py">LTsv/LTsv_time.py</a>」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<br />
+ ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<br />
+ ・<？modify_style>だと困るのであればフォーマット指定。<br />
+ ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<br />
+ ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。<br />
+ ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<br />
+</p>
+
+<dl><dt>LTsv_yearleap(LTsv_toyear)</dt><dd>
+閏年ならTrue。</dd></dl>
+<dl><dt>LTsv_yearweeks(LTsv_toyear)</dt><dd>
+一年の間に週(ISOカレンダーの週)が何回あるか、年間の週数52〜53を返す。</dd></dl>
+<dl><dt>LTsv_monthleap(LTsv_toyear,LTsv_tomonth)</dt><dd>
+一月の間に日が何回あるか、28〜31を返す。閏年なら2月は29日。</dd></dl>
+<dl><dt>LTsv_beat864(LTsv_tohour,LTsv_tominute,LTsv_tosecond)</dt><dd>
+(LTsv_Beat,LTsv_BeatInteger,LTsv_BeatPoint)のタプルを返す。<br />
+LTsv_Beatは1日の秒数0?86399(86400)。@Beatはその秒数を86.4で割った一日を1000分割する数。<br />
+LTsv_BeatIntegerは@Beatの整数部分。LTsv_BeatPointは@Beatの小数部分。</dd></dl>
+<dl><dt>LTsv_intstr0x(LTsv_code)</dt><dd>
+"0xff","$80"のように16進数っぽいものは16進数で数値に、そうでないものは10進数と思ってint変換。<br />
+try節で囲む手間を省きたい場合に便利。</dd></dl>
+<dl><dt>LTsv_settimerCounter(counter=None)</dt><dd>
+LTsv_timerCounter「@c」の値を設定する(取得のみも可能)。</dd></dl>
+<dl><dt>LTsv_checkFPS()</dt><dd>
+LTsv_checkFPS()自身を1秒間に何回実行できるか計測。0〜999の範囲。</dd></dl>
+<dl><dt>LTsv_setdaytimeshift()</dt><dd>
+日時フォーマット用の日時変数(LTsv_meridian_nowなど)を再計算する。<br />
+通常は「LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()」から呼び出される内部関数。</dd></dl>
+<dl><dt>LTsv_setdaytimeoption(overhour=None,diffminute=None)</dt><dd>
+LTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定。<br />
+LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putdaytimemodify(),LTsv_putdaytimever()にも同等機能のオプションがある。</dd></dl>
+<dl><dt>LTsv_putdaytimenow(overhour=None,diffminute=None)</dt><dd>
+現在時刻を「LTsv_meridian_now」に格納。各種日時変数も計算。<br />
+追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
+<dl><dt>LTsv_putdaytimeearlier(overhour=None,diffminute=None)</dt><dd>
+最後に実行された「LTsv_putdaytimenow()」の時刻「LTsv_earlier_now」を再度「LTsv_meridian_now」に格納。各種日時変数も計算。<br />
+追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
+<dl><dt>LTsv_putdaytimespecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None,overhour=None,diffminute=None)</dt><dd>
+日時を指定して「LTsv_meridian_now」に格納。省略(Noneを代入)した項目は現在時刻などが代入。<br />
+追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
+<dl><dt>LTsv_putdaytimemodify(LTsv_path,overhour=None,diffminute=None)</dt><dd>
+ファイルLTsv_pathの更新時刻タイムスタンプをLTsv_meridian_nowに格納。各種日時変数も計算。<br />
+追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。<br />
+OSやファイルシステム毎に秒や分の精度に違いがあると思う。</dd></dl>
+<dl><dt>LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)</dt><dd>
+「LTsv_time_ver()」などの<？modify_style>をLTsv_meridian_nowに格納。各種日時変数も計算。<br />
+追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
+<dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
+日付フォーマットtimeformatを各種日時変数で置換する。<br />
+timeformatのデフォルト値は「@000y@0m@0dm@wdec@0h@0n@0s」。<br />
+日付フォーマットの概要は「<？index04-1>」を参照。</dd></dl>
+<dl><dt>LTsv_settimershift()</dt><dd>
+日時フォーマット用のタイマー変数(LTsv_lap_nowなど)を再計算する。<br />
+通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。</dd></dl>
+<dl><dt>LTsv_settimershiftoption()</dt><dd>
+LTsv_start_nowとLTsv_goal_nowの差分を再計算する。<br />
+通常は「LTsv_puttimerstartgoal()」から呼び出される内部関数。</dd></dl>
+<dl><dt>LTsv_puttimerstartgoal(microsecond=None,millisecond=None,seconds=None,minute=None,hour=None,day=None)</dt><dd>
+タイマーのLTsv_goal_nowを数秒後(seconds)・数分後(minute)・数時間後(hour)・数日後(day)などいずれかに設定する。<br />
+例えば三分後を指定する場合「LTsv_puttimerstartgoal(minute=3)」と入力。<br />
+複数のパラメータを同時指定した場合、例えば分と秒なら秒優先というように細かい方の単位が採用される(内部ではmicrosecondで計算)。</dd></dl>
+<dl><dt>LTsv_puttimerspecify(year=None,month=None,day=None,hour=None,minute=None,seconds=None,microsecond=None)</dt><dd>
+タイマーのLTsv_goal_nowを日時指定。省略(Noneを代入)した項目は現在時刻などが代入。</dd></dl>
+<dl><dt>LTsv_puttimerlap()</dt><dd>
+タイマーの経過時間をLTsv_passed_TotalSecondsに、残り時間をLTsv_timeleft_TotalSecondsに設定する。各種タイマー変数も計算。</dd></dl>
+<dl><dt>LTsv_gettimerstr(timeformat=None)</dt><dd>
+日付フォーマットtimeformatを各種タイマー変数で置換する。<br />
+timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマットの概要は「<？index04-1>」を参照。</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_time-1">④-1．日時フォーマットの概要</h3>
+<p>
+ 0.「@」で始まるキーワードが年月日等に置換される仕組み。「@」を表示する場合は「@@」と表記。<br />
+ 1.日付フォーマット(daytime系)では、小文字が現在時刻(meridian)、大文字が徹夜日時(allnight)です。分以下・Beat・timer系に徹夜日時はありません。<br />
+ 2.時間フォーマット(timer系)では、小文字が現在時刻(lap)、大文字が曲や動画などの長さ(limit)、「-」が先頭でタイマーの残り時間(timeleft)です。<br />
+ 3.分(miNute)は「n」で代用して月(Month)との変数名衝突防止してます。ミリ秒は「L」(miLlisecond)。マイクロ秒は「R」(micRoSecond)。<br />
+ 4.「_」(アンダースコア)を先頭に入れると0が空白に。0も空白も省くと数値は可変長。<br />
+ 5.月で「JFCAMNLUSOND」表記が使えます。曜で「UMTWRFS」表記が使えます。末尾に「ec」で英語1文字。末尾「j」で日本語表記。<br />
+ 5.日時の月,週,時,分,秒で2桁以下の数値項目の場合、末尾に「z」で１,２,３,４,５,６,７,８,９,10,11,12といった1桁の時全角数値の表現が可能。<br />
+
+</p>
+<dl><dt>
+ 年=@yzj,@yzc,@0yz,@_yz,@yz,@0yd,@_yd,@yd,@0yw,@_yw,@yw,@000yi,@___yi,@4yi,@0yi,@_yi,@2yi,@yi,@000y,@___y,@4y,@0y,@_y,@2y,@y,@Yzj,@Yzc,@0Yz,@_Yz,@Yz,@0Yd,@_Yd,@Yd,@0Yw,@_Yw,@Yw,@000Yi,@___Yi,@4Yi,@0Yi,@_Yi,@2Yi,@Yi,@000Y,@___Y,@4Y,@0Y,@_Y,@2Y,@Y</dt>
+<dd>
+
+  000y,___y,4y系は4桁の年(Year)。000y,___y,4y系は2桁の年(Yearlower)。<br />
+  yz系は干支(YearZodiac)。@yzjで鼠,牛,虎,兎,龍,蛇,馬,羊,猿,鶏,犬,猪。@yzcで子,丑,寅,卯,辰,巳,午,未,申,酉,戌,亥<br />
+  yi系はISOカレンダーの年(YearIso)。第1週に突入した時点で年が明けるので、年末年始の間は西暦カレンダーの年とズレる場合があります。<br />
+  ywi系は年間の週数(YearWeeksIso)。年間約52〜53回。1月4日が含まれる週が第1週(第1木曜日が含まれる週)。<br />
+  yd系は年間の日数(YearDays)。年間約365〜366日。閏年の時に1日増える。<br />
+</dd></dl>
+
+<dl><dt>
+ 月=@0md,@_md,@md,@mec,@mes,@mel,@_mel,@meh,@_meh,@mjiz,@_mjiz,@mj,@_mj,@0m,@_m,@mz,@m,@0Md,@_Md,@Md,@Mec,@Mes,@Mel,@_Mel,@Meh,@_Meh,@Mjiz,@_Mjiz,@Mj,@_Mj,@0M,@_M,@Mz,@M</dt>
+<dd>
+
+  m系は月の数値(Month)。1?12。<br />
+  me系は月の英語表記。末尾「c」で一文字(JFCAMNLUSOND)、末尾「s」で三文字、末尾「l」で単語、末尾「h」で一文字の箇所大文字。<br />
+   (January,February,marCh,April,May,juNe,juLy,aUgust,September,October,November,December)<br />
+  mj系は神無月、mjiz系は神有月(睦月,如月,弥生,卯月,皐月,水無月,文月,葉月,長月,神有月,霜月,師走)表記の旧暦の月名。<br />
+  md系は月間の日数(MonthDays)。31,28,31,30,31,30,31,31,30,31,30,31。閏年は31,29,31,30,31,30,31,31,30,31,30,31と2月が29日になる。<br />
+</dd></dl>
+
+<dl><dt>
+ 週=@0wnyi,@_wnyi,@wnyiz,@wnyi,@0Wnyi,@_Wnyi,@Wnyiz,@Wnyi,@0wnm,@_wnm,@wnmz,@wnm,@0Wnm,@_Wnm,@Wnmz,@Wnm</dt>
+<dd>
+
+  wnyi系はISOカレンダーの週番号(WeekNumberYearIso)。年間約52〜53回。1月4日が含まれる週が第1週(第1木曜日が含まれる週)。<br />
+  wnm系は月毎の曜番号(WeekNumberMonth)。月間約4?5回。単純に月内の日数を7で割った数。<br />
+</dd></dl>
+
+<dl><dt>
+ 曜=@wdj,@wdec,@wdes,@wdel,@_wdel,@wdeh,@_wdeh,@wdi,@wd,@Wdj,@Wdec,@Wdes,@Wdel,@_Wdel,@Wdeh,@_Wdeh,@Wdi,@Wd</dt>
+<dd>
+
+  wd系は曜の数値(WeekDay)。月曜が0で土曜が5、日曜が6。<br />
+  we系は曜の英語表記。末尾「c」で一文字(MTWRFSU)、末尾「s」で三文字、末尾「l」で単語、末尾「h」で一文字の箇所大文字。<br />
+   (Monday,Tuesday,Wednesday,thuRsday,Friday,Saturday,sUnday)<br />
+  wj系は月火水木金土日。<br />
+  wdi系はISOカレンダー曜日の数値(WeekDayIso)。月曜が1で土曜が6、日曜が7。<br />
+</dd></dl>
+
+<dl><dt>
+ 日(日付)=@0dm,@_dm,@dmz,@dm,@0dy,@_dy,@dy,@0Dm,@_Dm,@Dmz,@Dm,@0Dy,@_Dy,@Dy</dt>
+<dd>
+
+ 日(時間)=@000d,@___d,@00d,@__d,@0d,@_d,@d,@-000d,@-___d,@-00d,@-__d,@-0d,@-_d,@-d,@000D,@___D,@00D,@__D,@0D,@_D,@D<br />
+  dm系は月換算の日数(DayMonth)。31,28,31,30,31,30,31,31,30,31,30,31。閏年は31,29,31,30,31,30,31,31,30,31,30,31と2月が29日になる。<br />
+  dy系は年換算の日数(DayYear)。年間約365〜366日。閏年の時に1日増える。<br />
+  時間フォーマット(timer系)では日は4桁まで使えます。<br />
+</dd></dl>
+
+<dl><dt>
+ 時(日付)=@apj,@apel,@apeu,@ap,@Apj,@Apel,@Apeu,@Ap,@0hap,@_hap,@hapz,@hap,@0h,@_h,@hz,@h,@0H,@_H,@Hz,@H</dt>
+<dd>
+
+ 時(時間)=@0dh,@_dh,@dh,@-0dh,@-_dh,@-dh,@0Dh,@_Dh,@Dh,@0h,@_h,@h,@-0h,@-_h,@-h,@0H,@_H,@H<br />
+  h系は時の数値(Hour)。1?24。大文字の「H」を使うと徹夜日時を表示(overhour)。1〜48。<br />
+  hap系は午前午後表記の数値(HourAP)。1〜12。<br />
+  apj系は午前午後徹夜表記。大文字の「A」を使うと徹夜日時を表示(overhour)。36時を過ぎようが徹夜日時の時は「徹夜」と表示される。<br />
+  ape系はam,pm,al表記。大文字の「A」を使うと徹夜日時を表示(overhour)。末尾「l」で小文字、末尾「u」で大文字。<br />
+  ap系は午前午後を0,1で。大文字の「A」を使うと午前午後徹夜を0,1,2で。何を言ってるか分からないだろうがoverhourの設定次第では昼の12時だろうが徹夜と表示。<br />
+  午前午後徹夜は時間フォーマット(timer系)には存在しません。<br />
+</dd></dl>
+
+<dl><dt>
+ 分(日付)=@0n,@_n,@nz,@n,@0N,@_N,@Nz,@N</dt>
+<dd>
+
+ 分(時間)=@0n,@_n,@n,@-0n,@-_n,@-n,@0N,@_N,@N<br />
+  n系は分(miNute)。0〜59。<br />
+</dd></dl>
+
+<dl><dt>
+ 秒(日付)=@0s,@_s,@sz,@s,@0S,@_S,@Sz,@S,@0ls,@_ls,@ls,@0rs,@_rs,@rs,@0Ls,@_Ls,@Ls,@0Rs,@_Rs,@Rs<br />
+ 秒(時間)=@0s,@_s,@s,@-0s,@-_s,@-s,@0S,@_S,@S,@0ls,@_ls,@ls,@-0ls,@-_ls,@-ls,@0Ls,@_Ls,@Ls,@0rs,@_rs,@rs,@-0rs,@-_rs,@-rs,@0Rs,@_Rs,@Rs</dt>
+<dd>
+
+  s系は秒(Second)。0〜59。<br />
+  ls系はミリ秒(miLlisecond)。ミリ秒は3桁、0〜999。<br />
+  rs系はマイクロ秒(micRoSecond)。マイクロ秒は6桁、0〜999999。<br />
+</dd></dl>
+
+<dl><dt>
+ @Beat(日付)=@0bti,@_bti,@bti,@0btp,@_btp,@btp,@bt</dt>
+<dd>
+
+ @Beat(時間)=@0bti,@_bti,@bti,@0btp,@_btp,@btp,@0bt,@_bt,@bt,@-0bti,@-_bti,@-bti,@-0btp,@-_btp,@-btp,@-0bt,@-_bt,@-bt,@0Bti,@_Bti,@Bti,@0Btp,@_Btp,@Btp,@0Bt,@_Bt,@Bt</dt>
+<dd>
+
+  bt系はビート(Beat)の途中計算。1日の秒数0〜86399(86400)をそのまま表示。本当のビートは86.4秒。<br />
+  bti系はビートの整数部分(BeatInteger)。0?999。ビートとして使う場合、日本だと時差の指定「diffminute=8」が必要。<br />
+  btp系はビートの小数部分(BeatPoint)。0?999。ビートとして使う場合、日本だと時差の指定「diffminute=8」が必要。<br />
+  時間フォーマット(timer系)としてビートを用いる場合時差は関係無し。<br />
+</dd></dl>
+
+<dl><dt>
+ 正負符号(時間)=@+-,@_-,@--</dt>
+<dd>
+
+  LTsv_lap_nowがLTsv_goal_nowを通りすぎた、いわゆるタイムオーバーの時はLTsv_lap_nowが負の数に。<br />
+  @+-はプラスマイナス両方表示。<br />
+  @_-はプラスの時は空白を表示。<br />
+  @--はマイナスのみ表示。プラスの時は一文字詰める。<br />
+</dd></dl>
+
+<dl><dt>
+ @c(カウンター)=@000c,@00c,@0c,@c</dt>
+<dd>
+
+  「LTsv_getdaytimestr()」もしくは「LTsv_gettimerstr()」が実行される度にカウンター(LTsv_timerCounter)が加算される。<br />
+  カウンターの値を変更は「LTsv_settimerCounter()」。<br />
+</dd></dl>
+
+<dl><dt>
+ その他エスケープ文字</dt>
+<dd>
+
+  @T=\t。タブ文字用。<br />
+  @E=\n。改行文字用。<br />
+  @Z=\0。文字列長0用。<br />
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="address-0">⑪-0．作者について、例えば連絡先。
+</h3>
+<p>
+ 更新情報はGitHubやブログを確認してください。<br />
+</p>
+
+<address><dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl></address>
+<dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
+
+</section>
 
 
  <footer>
