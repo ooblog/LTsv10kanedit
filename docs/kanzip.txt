@@ -1,5 +1,5 @@
 「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
-version(branch):20161128M153500	modify:20161201R195256
+version(branch):20161128M153500	modify:20161202F222138
 
 目次
 
@@ -55,8 +55,8 @@ version(branch):20161128M153500	modify:20161201R195256
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。
- 「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ 「LTsv/LTsv_doc.py」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。
 
 
@@ -64,9 +64,9 @@ version(branch):20161128M153500	modify:20161201R195256
 
  更新情報はGitHubやブログを確認してください。
 
-<address>   ooblog/LTsv10kanedit(GitHub)
+   ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
-</address>
+
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
 

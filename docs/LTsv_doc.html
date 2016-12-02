@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161201R195256<br />
+   version(branch):20161128M153500	modify:20161202F222138<br />
   
 </p>
   <h2>目次</h2>
@@ -40,8 +40,12 @@
     <li><a href="#License-0" title="⓪-0．ライセンス及びソフト使用の補足ガイドライン">⓪-0．ライセンス及びソフト使用の補足ガイドライン</a></li>
  <li><a href="#License-1" title="⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
  <li><a href="#License-2" title="⓪-2．その他現在わかっている不具合や今後の課題">⓪-2．その他現在わかっている不具合や今後の課題</a></li>
- <li><a href="#address-0" title="⑫-0．作者について、例えば連絡先。
-">⑫-0．作者について、例えば連絡先。
+ <li><a href="#LTsv_doc-0" title="①-0．「LTsv_doc.py」の関数一覧">①-0．「LTsv_doc.py」の関数一覧</a></li>
+ <li><a href="#LTsv_doc-1" title="①-1．「LTsv_doc.tsv」のタグ解説">①-1．「LTsv_doc.tsv」のタグ解説</a></li>
+ <li><a href="#LTsv_doc-2" title="①-2．LTsv_docドキュメントの書き方">①-2．LTsv_docドキュメントの書き方</a></li>
+ <li><a href="#LTsv_docfaq-0" title="②-0．「LTsv_doc」のＦＡＱ">②-0．「LTsv_doc」のＦＡＱ</a></li>
+ <li><a href="#address-0" title="③-0．作者について、例えば連絡先。
+">③-0．作者について、例えば連絡先。
 </a></li>
 
   </ul>
@@ -94,19 +98,233 @@
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
  人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<br />
- 「<？https10:LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
+ GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。
 
 </section>
 <section>
- <h3 id="address-0">⑫-0．作者について、例えば連絡先。
+ <h3 id="LTsv_doc-0">①-0．「LTsv_doc.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。<br />
+  ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。<br />
+  ・項目一覧ページの、例えばPythonのdef一覧とかは、ランチャーで更新する度に項目を入れ替えるので、目視で関数増減チェックする手間が軽減されます。<br />
+  ・「約四文字」(http://ooblog.github.io/)のサイトもLTsv_docドキュメントによる生成で置き換える予定。<br />
+</p>
+
+<dl><dt>LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)</dt><dd>
+置換処理のコア部分。ファイル名分岐やタグセパレート繰り返しのカウンター処理など。</dd></dl>
+<dl><dt>LTsvDOCdef_python(LTsvDOClaunch_deffile)</dt><dd>
+Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。</dd></dl>
+<dl><dt>LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)</dt><dd>
+「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)</dt><dd>
+Pythonの関数一覧などに装飾処理。</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)</dt><dd>
+未実装。フォルダ指定の場合でファイル一覧を作成する予定。</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagname)</dt><dd>
+outlistページタグの時、エイリアスが有ればエイリアスに、無ければファイル名に置換。</dd></dl>
+<dl><dt>LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)</dt><dd>
+LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。</dd></dl>
+<dl><dt>LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)</dt><dd>
+ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_doc-1">①-1．「LTsv_doc.tsv」のタグ解説</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<br />
+</p><p>
+ メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
+
+</p>
+<dl><dt>
+  [L:Tsv|</dt>
+<dd>
+                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<？index01-1>」を参考。
+</dd></dl>
+<dl><dt>
+   1st</dt>
+<dd>
+                        「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
+</dd></dl>
+<dl><dt>
+  [LTsv_doc|</dt>
+<dd>
+                  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」の設定です。ドキュメントの設定ではなくアプリの設定です。
+</dd></dl>
+<dl><dt>
+   window_size</dt>
+<dd>
+                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。
+</dd></dl>
+<dl><dt>
+   tsvlist</dt>
+<dd>
+                    ランチャーに管理させるLTsvファイルのリストを指定。
+</dd></dl>
+<dl><dt>
+   modify</dt>
+<dd>
+                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
+</dd></dl>
+<dl><dt>
+  [LTsv_doc_this|</dt>
+<dd>
+             「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
+</dd></dl>
+<dl><dt>
+   main</dt>
+<dd>
+                       置換される前の元文書。今回は「&lt;＠LTsv_doc_main&gt;」。置換タグが無ければページの内容がファイルに保存される。
+</dd></dl>
+<dl><dt>
+   tagseparate</dt>
+<dd>
+                ループタグ作成用のタグ区切りを指定。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」では「*」を使用。
+</dd></dl>
+<dl><dt>
+   skplist</dt>
+<dd>
+                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
+</dd></dl>
+<dl><dt>
+   outdir</dt>
+<dd>
+                     置換されたテキストの出力先フォルダ。
+</dd></dl>
+<dl><dt>
+   outlist</dt>
+<dd>
+                    置換されたテキストの出力ファイル名一覧(tsv)。<br />
+                              tsvのファイル名一覧の代わりに「&lt;＠LTsv_doc_outlist&gt;」の様にファイル一覧ページのタグ指定もできる。<br />
+                              ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。<br />
+                              ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。<br />
+</dd></dl>
+<dl><dt>
+   defdir</dt>
+<dd>
+                     Pythonのモジュール等が置いてあるフォルダ。
+</dd></dl>
+<dl><dt>
+   deftag</dt>
+<dd>
+                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
+</dd></dl>
+<dl><dt>
+   defindent</dt>
+<dd>
+                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
+</dd></dl>
+<dl><dt>
+   LTsvver</dt>
+<dd>
+                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「&lt;＠L:TsvLTsvver&gt;」。<br />
+                              詳細は「<？index03-0>」参考。<br />
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="LTsv_doc-2">①-2．LTsv_docドキュメントの書き方</h3>
+<p>
+ 前提は「L:Tsv」なので「<？index01-1>」も確認。<br />
+ 「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<br />
+ タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<br />
+</p> 
+
+<h4>置換タグ説明の前にskplistに登録され置換対象にならないタグがあります。</h4>
+<dl><dt>
+  &lt;L:Tsv&gt;</dt>
+<dd>
+                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。
+</dd></dl>
+<dl><dt>
+  &lt;LTsv_doc_this&gt;(L:Tsv 1st)</dt>
+<dd>
+    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。
+</dd></dl>
+<dl><dt>
+  &lt;＠LTsv_doc_main&gt;(main)</dt>
+<dd>
+       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+</dd></dl>
+<dl><dt>
+  &lt;LTsv_doc&gt;(skplist)</dt>
+<dd>
+           「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」では「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」設定ページをskplistに登録してるので置換されません。
+</dd></dl>
+
+<h4>大きく分けて4種類の置換タグがあるものとします。</h4>
+<dl><dt>
+  &lt;「＠」tag&gt;</dt>
+<dd>
+                   コンフィグタグと便宜上命名。「main&lt;＠LTsv_doc_main&gt;」「outlist&lt;＠LTsv_doc_outlist&gt;」「LTsvver&lt;＠L:TsvLTsvver&gt;」といったドキュメント本文ではなくメタ的な内容のページタグ。
+</dd></dl>
+<dl><dt>
+  &lt;「＃」tag&gt;</dt>
+<dd>
+                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。
+</dd></dl>
+<dl><dt>
+  &lt;「！」tag&gt;</dt>
+<dd>
+                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。<br />
+                                置換用タグは「&lt;！tag&gt;」形式でもドキュメントのページタグは「[tag&#x7C;」「&#x7C;tag]」形式な事に注意。<br />
+                                ページ内容は「*.py」「*.tsv」「*.ltsv」の場合「defindent」で装飾して置換。<br />
+                                「*.png」「*.gif」「*.jpg」「*.jpeg」の場合base64に変換。htmlへの画像埋め込みを想定。画像を再度読み込む場合はページを空にする。<br />
+</dd></dl>
+<dl><dt>
+  &lt;「？」tag&gt;</dt>
+<dd>
+                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。<br />
+                                firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。<br />
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。<br />
+                                日時フォーマットの詳細は「<？index04-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<br />
+</dd></dl>
+
+<dl><dt>6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント</dt><dd><a href="http://docs.python.jp/3/library/re.html" title="6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント">http://docs.python.jp/3/library/re.html</a></dd></dl>
+<h4>tagseparateによる繰り返し記述でタグの過剰生産を抑制します。</h4>
+<p>
+ [&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;]のようにタグの中でtagseparate「*」で区切ると、&lt;tagA&gt;&lt;tagB&gt;&lt;tagC&gt;それぞれのタグを同じページの内容で置換します。<br />
+tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<br />
+&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;タグの条件文内で&lt;text@c&gt;を呼ぶと&lt;text0&gt;&lt;text1&gt;&lt;text2&gt;を呼ぶことができます。<br />
+</p><p>
+[&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;&#x7C;<br />
+.+\.html?	&lt;a href="#text@c" title="&lt;？text@c&gt;"&gt;&lt;？text@c&gt;&lt;/a&gt;<br />
+.*	&lt;？text@c&gt;<br />
+&#x7C;&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;]<br />
+[&lt;text0&gt;&#x7C;<br />
+.*	text0<br />
+&#x7C;&lt;text0&gt;]<br />
+[&lt;text1&gt;&#x7C;<br />
+.*	text1<br />
+&#x7C;&lt;text1&gt;]<br />
+[&lt;text2&gt;&#x7C;<br />
+.*	text2<br />
+&#x7C;&lt;text2&gt;]<br />
+例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="LTsv_docfaq-0">②-0．「LTsv_doc」のＦＡＱ</h3>
+<dl><dt>
+ Ｑ．「<？https10:LTsv_doc.py>」で置換されないタグが山ほど。</dt>
+<dd>
+
+ Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。<br />
+      タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<br />
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="address-0">③-0．作者について、例えば連絡先。
 </h3>
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
 
-<address><dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl></address>
+<dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
 <dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
 
 </section>
