@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161202F222138<br />
+   version(branch):20161128M153500	modify:20161203S222609<br />
   
 </p>
   <h2>目次</h2>
@@ -61,10 +61,8 @@
  <li><a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
  <li><a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
  <li><a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a></li>
- <li><a href="#LTsv10faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a></li>
- <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。
-">⑪-0．作者について、例えば連絡先。
-</a></li>
+ <li><a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a></li>
+ <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。">⑪-0．作者について、例えば連絡先。</a></li>
 
   </ul>
  </section>
@@ -1989,7 +1987,7 @@ XFER鍵盤における辞書変更鍵盤。<br />
 <dl><dt>eval_zipdicname</dt><dd>
 郵便番号辞書ファイルの指定(無くても動作)。<br />
 初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」を用いる。<br />
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」の詳細は「<h4><？title/LTsv_calc:number></h4>」を参考。</dd></dl>
+詳細は「<a href="kanzip.html#LTsv_doc_usage-0" title="<？title/kanzip_usage-0>"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip"><？title/kanzip_usage-0></a>」を参考。</dd></dl>
 <dl><dt>last_alpha</dt><dd>
 漢直鍵盤が最後に表示したα鍵盤を記録。</dd></dl>
 <dl><dt>last_dic</dt><dd>
@@ -2376,13 +2374,13 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 </section>
 <section>
- <h3 id="LTsv10faq-0">⑩-0．「L:Tsv」のＦＡＱ</h3>
+ <h3 id="LTsv10_faq-0">⑩-0．「L:Tsv」のＦＡＱ</h3>
 <dl><dt>
  Ｑ．「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」などをダブルクリックしても起動しない。</dt>
 <dd>
 
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<br />
-     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
+     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10_faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
 
 </dd></dl>
 <dl><dt>Welcome to Python.org</dt><dd><a href="https://www.python.org/" title="Welcome to Python.org">https://www.python.org/</a></dd></dl>
@@ -2436,14 +2434,13 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dd>
 
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<br />
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10faq:kanmap.py>」を起動することで初期化できます。<br />
+     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。<br />
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<br />
 </dd></dl>
 
 </section>
 <section>
- <h3 id="address-0">⑪-0．作者について、例えば連絡先。
-</h3>
+ <h3 id="address-0">⑪-0．作者について、例えば連絡先。</h3>
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>

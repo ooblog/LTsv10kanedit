@@ -1,5 +1,5 @@
 
-version(branch):20161128M153500	modify:20161202F222138
+version(branch):20161128M153500	modify:20161203S222609
 
 目次
 
@@ -29,7 +29,6 @@ version(branch):20161128M153500	modify:20161202F222138
  ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
  ⑩-0．「L:Tsv」のＦＡＱ
  ⑪-0．作者について、例えば連絡先。
-
 
 ⓪-0．ライセンス及びソフト使用の補足ガイドライン
 
@@ -1889,7 +1888,7 @@ version(branch):20161128M153500	modify:20161202F222138
  【eval_zipdicname】
   郵便番号辞書ファイルの指定(無くても動作)。
   初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「kanzip.py」を用いる。
-  「kanzip.py」の詳細は「 <？title/LTsv_calc:number>」を参考。
+  詳細は「<？title/kanzip_usage-0>」を参考。
 
  【last_alpha】
   漢直鍵盤が最後に表示したα鍵盤を記録。
@@ -2050,7 +2049,7 @@ version(branch):20161128M153500	modify:20161202F222138
 
  Ｑ．「LTsv/LTsv_glyph.py」などをダブルクリックしても起動しない。
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。
-     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。
+     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10_faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。
 
    Welcome to Python.org
    https://www.python.org/
@@ -2090,12 +2089,11 @@ version(branch):20161128M153500	modify:20161202F222138
 
  Ｑ．起動できたたソフトがいつの間にか起動しなくなった。
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10faq:kanmap.py>」を起動することで初期化できます。
+     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。
 
 
 ⑪-0．作者について、例えば連絡先。
-
  更新情報はGitHubやブログを確認してください。
 
    ooblog/LTsv10kanedit(GitHub)

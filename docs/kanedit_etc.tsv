@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161202F222148
+modify	20161203S222619
 |L:Tsv]
 
 [LTsv_doc|
@@ -214,23 +214,23 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 
 [<＃kanedit_menus>|
 ^404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
-^index|^LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4><？list/LTsv10faq-0><？list/address-0>
-^kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
-^kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
-^kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
-^kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
-^LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_docfaq-0><？list/address-0>
+^index|^LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4><？list/LTsv10_faq-0><？list/address-0>
+^kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_faq-0><？list/address-0>
+^kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_faq-0><？list/address-0>
+^kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_faq-0><？list/address-0>
+^kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_faq-0><？list/address-0>
+^LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
 
 [<＃kanedit_pages>|
 ^404	
-^index|^LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph/LTsv_glyph-0>*<？section/LTsv_glyph/LTsv_glyph-1>*<？section/LTsv_glyph/LTsv_glyph-2>*<？section/LTsv_glyph/LTsv_glyph-3>*<？section/LTsv_glyph/LTsv_glyph-4><？section/LTsv10faq-0><？section/address-0>
+^index|^LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph/LTsv_glyph-0>*<？section/LTsv_glyph/LTsv_glyph-1>*<？section/LTsv_glyph/LTsv_glyph-2>*<？section/LTsv_glyph/LTsv_glyph-3>*<？section/LTsv_glyph/LTsv_glyph-4><？section/LTsv10_faq-0><？section/address-0>
 ^kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 ^kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 ^kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 ^kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
-^LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_docfaq-0><？section/address-0>
+^LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
 
@@ -1220,7 +1220,7 @@ eval_now	入力欄で「今今」と入力した時に表示する現在時刻�
 eval_branch	入力欄で「今枝」と入力した時に表示する現在時刻。	初期値は「@000y@0m@0dm@wdec@0h@0n@0s」。
 eval_overhour	日時フォーマットの徹夜時刻の指定。24〜48のいずれか。
 eval_worddicname	<？DICword>ファイルの指定(無くても動作)。	初期値は「../kanword.tsv」。
-eval_zipdicname	郵便番号辞書ファイルの指定(無くても動作)。	初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「<？https/kanzip.py>」を用いる。	「<？https/kanzip.py>」の詳細は「<？contents/LTsv_glyph-1:kanzip>」を参考。
+eval_zipdicname	郵便番号辞書ファイルの指定(無くても動作)。	初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「<？https/kanzip.py>」を用いる。	詳細は「<？contents/kanzip:kanzip_usage-0>」を参考。
 last_alpha	<？VRkeyboard>が最後に表示したα鍵盤を記録。
 last_dic	<？VRkeyboard>が最後に表示した単漢字辞書の項目を記録。
 kbdTAG	「Tkinter」で<？VRkeyboard>を再描画するため「LTsv_draw_tkTAG」とは別のタグが必要。	初期値は「kanglyphkbd」。
@@ -1231,11 +1231,10 @@ kbddefsize	<？VRkeyboard>の拡大倍率。	初期値は「1」。変更非推�
 [reversi|	「LTsv_glyph.py」単体風テストの<？reversi>設定。
 entry	<？reversi>の棋譜。
 |LTsv_glyph.tsv]
-
-[<？contents/LTsv_glyph-1:kanzip>|
-.+\.html?	<h4><？title/LTsv_calc:number></h4>
-.*	 <？title/LTsv_calc:number>
-|<？contents/LTsv_glyph-1:kanzip>]
+[<？contents/kanzip:kanzip_usage-0>|
+.+\.html?	<a href="kanzip.html#LTsv_doc_usage-0" title="<？title/kanzip_usage-0>"><？titleimg/software-4><？title/kanzip_usage-0></a>
+.*	<？title/kanzip_usage-0>
+|<？contents/kanzip:kanzip_usage-0>]
 
 [<＃contents/LTsv_glyph-2>|
 <？P><？index/LTsv_glyph:kbdimage><？/P>
@@ -1398,25 +1397,25 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <？DLDT>  「3927|1250」といった分数のみ<？/DTDD>       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-4>]
 
-[<？section/LTsv10faq-0>|
-.+\.html?	<section>@E <h3 id="LTsv10faq-@c"><？title/LTsv10faq-@c></h3>@E<＃contents/LTsv10faq-@c>@E</section>@E
-.*	@E<？title/LTsv10faq-@c>@E@E<＃contents/LTsv10faq-@c>@E
-|<？section/LTsv10faq-0>]
+[<？section/LTsv10_faq-0>|
+.+\.html?	<section>@E <h3 id="LTsv10_faq-@c"><？title/LTsv10_faq-@c></h3>@E<＃contents/LTsv10_faq-@c>@E</section>@E
+.*	@E<？title/LTsv10_faq-@c>@E@E<＃contents/LTsv10_faq-@c>@E
+|<？section/LTsv10_faq-0>]
 
-[<＃contents/LTsv10faq-0>|
+[<＃contents/LTsv10_faq-0>|
 <？DLDT> Ｑ．「<？https/LTsv_glyph.py>」などをダブルクリックしても起動しない。<？/DTDD>
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<？BR>
-     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<？BR>
+     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10_faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<？BR>
 <？/DD/DL>
-<？https/LTsv10faq:python.org>
-<？https/LTsv10faq:python344>
+<？https/LTsv10_faq:python.org>
+<？https/LTsv10_faq:python344>
 <？DLDT> Ｑ．Pythonはもう3.5系出てますよね？<？/DTDD>
  Ａ．「python-3.5.1.exe」を「wine-portable-1.7.18-1-p4.tar.gz」で試した時エラーになったので放置。<？BR>
      「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<？BR>
 <？/DD/DL>
-<？https/LTsv10faq:python352>
-<？https/LTsv10faq:pythonMSVCRTQiita>
-<？https/LTsv10faq:PortableWine>
+<？https/LTsv10_faq:python352>
+<？https/LTsv10_faq:pythonMSVCRTQiita>
+<？https/LTsv10_faq:PortableWine>
 <？DLDT> Ｑ．文字表示が複数あるというか、「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
  Ａ．フォント表示とグリフ描画の違いです。<？BR>
     「Tkinter」が<？CP932>を越える3バイト以上のUTF-8文字を扱えないので独自にグリフ描画モジュール用意しました。<？BR>
@@ -1436,9 +1435,28 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 <？DLDT> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10faq:kanmap.py>」を起動することで初期化できます。<？BR>
+     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。<？BR>
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<？BR><？/DD/DL>
-|<＃contents/LTsv10faq-0>]
+|<＃contents/LTsv10_faq-0>]
+
+[<？section/LTsv_doc_usage-0>|
+.+\.html?	<section>@E <h3 id="LTsv_doc_usage-@c"><？title/LTsv_doc_usage-@c></h3>@E<＃contents/LTsv_doc_usage-@c>@E</section>@E
+.*	@E<？title/LTsv_doc_usage-@c>@E@E<＃contents/LTsv_doc_usage-@c>@E
+|<？section/LTsv_doc_usage-0>]
+
+[<＃contents/LTsv_doc_usage-0>|
+<？P><？index/LTsv_doc_usage:capture><？BR>
+<？/P>
+<？DLDT>  「../docs/kanedit_etc.tsv」ボタン<？/DTDD>             「LTsv10kanedit(tsvtool10)」のドキュメント作成。<？/DD/DL>
+<？DLDT>  「../../ooblog.github.io/yakuyon.tsv」ボタン<？/DTDD>  「約四文字」のドキュメント作成。<？/DD/DL>
+<？P>  ボタン(LTsv_docドキュメント)編集は「<？https/LTsv_doc.tsv>」。詳細は「<？index/LTsv_doc-1>」を参考。<？BR><？/P>
+|<＃contents/LTsv_doc_usage-0>]
+[<？index/LTsv_doc_usage:capture>|
+.+\.html?	<img src="LTsv_doc_512x384.png" width="512" height="384" alt="漢直鍵盤"><br />
+.*	<？textAA/LTsv_doc_usage:capture>
+|<？index/LTsv_doc_usage:capture>]
+[<？textAA/LTsv_doc_usage:capture>|
+|<？textAA/LTsv_doc_usage:capture>]
 
 [<？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2>|
 .+\.html?	<section>@E <h3 id="LTsv_doc-@c"><？title/LTsv_doc-@c></h3>@E<＃contents/LTsv_doc-@c>@E</section>@E
@@ -1466,7 +1484,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 |LTsv_doc.py]
 
 [<＃contents/LTsv_doc-1>|
-<？P> 「<？https/LTsv_doc.tsv>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<？BR>
+<？P> 「<？https/LTsv_doc.tsv>」は「<？https/LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<？BR>
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
@@ -1489,11 +1507,11 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？DLDT>   deftag<？/DTDD>                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。<？/DD/DL>
 <？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
 <？DLDT>   LTsvver<？/DTDD>                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「<？&lt;>＠L:TsvLTsvver<？&gt;>」。<？BR>
-                              詳細は「<？index03-0>」参考。<？BR><？/DD/DL>
+                              詳細は「<？contents/LTsv_doc:LTsv_file-0>」参考。<？BR><？/DD/DL>
 |<＃contents/LTsv_doc-1>]
 
 [<＃contents/LTsv_doc-2>|
-<？P> 前提は「L:Tsv」なので「<？index01-1>」も確認。<？BR>
+<？P> 前提は「L:Tsv」なので「<？https/LTsv_doc:aboutLTsv-1>」も確認。<？BR>
  「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<？BR>
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<？BR><？/P> 
 
@@ -1557,17 +1575,25 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？title/separate>|
 .*	tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
 |<？title/separate>]
+[<？contents/LTsv_doc:LTsv_file-0>|
+.+\.html?	<a href="index.html#LTsv_file-0" title="<？title/LTsv_file-0>"><？titleimg/software-0><？title/LTsv_file-0></a>
+.*	<？title/LTsv_file-0>
+|<？contents/LTsv_doc:LTsv_file-0>]
+[<？https/LTsv_doc:aboutLTsv-1>|
+.+\.html?	<a href="index.html#aboutLTsv-1" title="<？title/aboutLTsv-1"><？titleimg/software-0><？title/aboutLTsv-1></a>
+.*	<？title/aboutLTsv-1>
+|<？https/LTsv_doc:aboutLTsv-1>]
 
-[<？section/LTsv_docfaq-0>|
-.+\.html?	<section>@E <h3 id="LTsv_docfaq-@c"><？title/LTsv_docfaq-@c></h3>@E<＃contents/LTsv_docfaq-@c>@E</section>@E
-.*	@E<？title/LTsv_docfaq-@c>@E@E<＃contents/LTsv_docfaq-@c>@E
-|<？section/LTsv_docfaq-0>]
+[<？section/LTsv_doc_faq-0>|
+.+\.html?	<section>@E <h3 id="LTsv_doc_faq-@c"><？title/LTsv_doc_faq-@c></h3>@E<＃contents/LTsv_doc_faq-@c>@E</section>@E
+.*	@E<？title/LTsv_doc_faq-@c>@E@E<＃contents/LTsv_doc_faq-@c>@E
+|<？section/LTsv_doc_faq-0>]
 
-[<＃contents/LTsv_docfaq-0>|
+[<＃contents/LTsv_doc_faq-0>|
 <？DLDT> Ｑ．「<？https10:LTsv_doc.py>」で置換されないタグが山ほど。<？/DTDD>
  Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。<？BR>
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<？BR><？/DD/DL>
-|<＃contents/LTsv_docfaq-0>]
+|<＃contents/LTsv_doc_faq-0>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -1656,15 +1682,9 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？title/aboutLTsv-0>|
 .*	①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
 |<？title/aboutLTsv-0>]
-[<？url/aboutLTsv-0>|
-.*	kanfont.html
-|<？url/aboutLTsv-0>]
 [<？title/aboutLTsv-1>|
 .*	①-1．「L:Tsv」ファイルの構造
 |<？title/aboutLTsv-1>]
-[<？url/aboutLTsv-1>|
-.*	kanmap.html
-|<？url/aboutLTsv-1>]
 
 [<？list/LTsv_printf-0>*<？list/LTsv_printf-1>|
 .+\.html?	 <li><？index/LTsv_printf-@c></li>@E
@@ -1866,61 +1886,73 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	kanzip.py
 |<？path/LTsv_glyph-2>]
 
-[<？list/LTsv10faq-0>|
-.+\.html?	 <li><？index/LTsv10faq-@c></li>@E
-.*	 <？index/LTsv10faq-@c>@E
-|<？list/LTsv10faq-0>]
-[<？index/LTsv10faq-0>*<？index/LTsv10faq-1>|
-.+\.html?	<a href="#LTsv10faq-@c" title="<？title/LTsv10faq-@c>"><？title/LTsv10faq-@c></a>
-.*	<？title/LTsv10faq-@c>
-|<？index/LTsv10faq-0>*<？index/LTsv10faq-1>]
-[<？title/LTsv10faq-0>|
+[<？list/LTsv10_faq-0>|
+.+\.html?	 <li><？index/LTsv10_faq-@c></li>@E
+.*	 <？index/LTsv10_faq-@c>@E
+|<？list/LTsv10_faq-0>]
+[<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>|
+.+\.html?	<a href="#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？title/LTsv10_faq-@c></a>
+.*	<？title/LTsv10_faq-@c>
+|<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>]
+[<？title/LTsv10_faq-0>|
 .*	⑩-0．「L:Tsv」のＦＡＱ
-|<？title/LTsv10faq-0>]
-[<？https/LTsv10faq:python.org>*<？https/LTsv10faq:python344>*<？https/LTsv10faq:python352>*<？https/LTsv10faq:pythonMSVCRTQiita>*<？https/LTsv10faq:PortableWine>|
-.+\.html?	<dl><dt><？web/LTsv10faq-@c></dt><dd><a href="<？url/LTsv10faq-@c>" title="<？web/LTsv10faq-@c>"><？url/LTsv10faq-@c></a></dd></dl>
-.*	   <？web/LTsv10faq-@c><？BR>@E   <？url/LTsv10faq-@c><？BR>@E
-|<？https/LTsv10faq:python.org>*<？https/LTsv10faq:python344>*<？https/LTsv10faq:python352>*<？https/LTsv10faq:pythonMSVCRTQiita>*<？https/LTsv10faq:PortableWine>]
-[<？url/LTsv10faq-0>|
+|<？title/LTsv10_faq-0>]
+[<？https/LTsv10_faq:python.org>*<？https/LTsv10_faq:python344>*<？https/LTsv10_faq:python352>*<？https/LTsv10_faq:pythonMSVCRTQiita>*<？https/LTsv10_faq:PortableWine>|
+.+\.html?	<dl><dt><？web/LTsv10_faq-@c></dt><dd><a href="<？url/LTsv10_faq-@c>" title="<？web/LTsv10_faq-@c>"><？url/LTsv10_faq-@c></a></dd></dl>
+.*	   <？web/LTsv10_faq-@c><？BR>@E   <？url/LTsv10_faq-@c><？BR>@E
+|<？https/LTsv10_faq:python.org>*<？https/LTsv10_faq:python344>*<？https/LTsv10_faq:python352>*<？https/LTsv10_faq:pythonMSVCRTQiita>*<？https/LTsv10_faq:PortableWine>]
+[<？url/LTsv10_faq-0>|
 .*	https://www.python.org/
-|<？url/LTsv10faq-0>]
-[<？web/LTsv10faq-0>|
+|<？url/LTsv10_faq-0>]
+[<？web/LTsv10_faq-0>|
 .*	Welcome to Python.org
-|<？web/LTsv10faq-0>]
-[<？url/LTsv10faq-1>|
+|<？web/LTsv10_faq-0>]
+[<？url/LTsv10_faq-1>|
 .*	https://www.python.org/downloads/release/python-344/
-|<？url/LTsv10faq-1>]
-[<？web/LTsv10faq-1>|
+|<？url/LTsv10_faq-1>]
+[<？web/LTsv10_faq-1>|
 .*	Python Release Python 3.4.4 | Python.org
-|<？web/LTsv10faq-1>]
-[<？url/LTsv10faq-2>|
+|<？web/LTsv10_faq-1>]
+[<？url/LTsv10_faq-2>|
 .*	https://www.python.org/downloads/release/python-352/
-|<？url/LTsv10faq-2>]
-[<？web/LTsv10faq-2>|
+|<？url/LTsv10_faq-2>]
+[<？web/LTsv10_faq-2>|
 .*	Python Release Python 3.5.2 | Python.org
-|<？web/LTsv10faq-2>]
-[<？url/LTsv10faq-3>|
+|<？web/LTsv10_faq-2>]
+[<？url/LTsv10_faq-3>|
 .*	http://qiita.com/methane/items/2210712763b91e75fdf0
-|<？url/LTsv10faq-3>]
-[<？web/LTsv10faq-3>|
+|<？url/LTsv10_faq-3>]
+[<？web/LTsv10_faq-3>|
 .*	Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita
-|<？web/LTsv10faq-3>]
-[<？url/LTsv10faq-4>|
+|<？web/LTsv10_faq-3>]
+[<？url/LTsv10_faq-4>|
 .*	http://shinobar.server-on.net/puppy/opt/
-|<？url/LTsv10faq-4>]
-[<？web/LTsv10faq-4>|
+|<？url/LTsv10_faq-4>]
+[<？web/LTsv10_faq-4>|
 .*	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
-|<？web/LTsv10faq-4>]
+|<？web/LTsv10_faq-4>]
 [<？https/python3install.sh>*<？https/kanmap.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10faq-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10faq-@c>"><？path/LTsv10faq-@c></a>
-.*	<？path/LTsv10faq-@c>
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10_faq-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10_faq-@c>"><？path/LTsv10_faq-@c></a>
+.*	<？path/LTsv10_faq-@c>
 |<？https/python3install.sh>*<？https/kanmap.py>]
-[<？path/LTsv10faq-0>|
+[<？path/LTsv10_faq-0>|
 .*	wine_sh/python3install.sh
-|<？path/LTsv10faq-0>]
-[<？path/LTsv10faq-1>|
+|<？path/LTsv10_faq-0>]
+[<？path/LTsv10_faq-1>|
 .*	kanmap.py
-|<？path/LTsv10faq-1>]
+|<？path/LTsv10_faq-1>]
+
+[<？list/LTsv_doc_usage-0>|
+.+\.html?	 <li><？index/LTsv_doc_usage-@c></li>@E
+.*	 <？index/LTsv_doc_usage-@c>@E
+|<？list/LTsv_doc_usage-0>]
+[<？index/LTsv_doc_usage-0>|
+.+\.html?	<a href="#LTsv_doc_usage-@c" title="<？title/LTsv_doc_usage-@c>"><？title/LTsv_doc_usage-@c></a>
+.*	<？title/LTsv_doc_usage-@c>
+|<？index/LTsv_doc_usage-0>]
+[<？title/LTsv_doc_usage-0>|
+.*	①-0．「LTsv_doc」の使い方
+|<？title/LTsv_doc_usage-0>]
 
 [<？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2>|
 .+\.html?	 <li><？index/LTsv_doc-@c></li>@E
@@ -1931,13 +1963,13 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	<？title/LTsv_doc-@c>
 |<？index/LTsv_doc-0>*<？index/LTsv_doc-1>*<？index/LTsv_doc-2>]
 [<？title/LTsv_doc-0>|
-.*	①-0．「LTsv_doc.py」の関数一覧
+.*	②-0．「LTsv_doc.py」の関数一覧
 |<？title/LTsv_doc-0>]
 [<？title/LTsv_doc-1>|
-.*	①-1．「LTsv_doc.tsv」のタグ解説
+.*	②-1．「LTsv_doc.tsv」のタグ解説
 |<？title/LTsv_doc-1>]
 [<？title/LTsv_doc-2>|
-.*	①-2．LTsv_docドキュメントの書き方
+.*	②-2．LTsv_docドキュメントの書き方
 |<？title/LTsv_doc-2>]
 [<？https/Python_re>|
 .+\.html?	<dl><dt><？web/LTsv_doc-@c></dt><dd><a href="<？url/LTsv_doc-@c>" title="<？web/LTsv_doc-@c>"><？url/LTsv_doc-@c></a></dd></dl>
@@ -1960,17 +1992,65 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	LTsv/LTsv_doc.tsv
 |<？path/LTsv_doc-1>]
 
-[<？list/LTsv_docfaq-0>|
-.+\.html?	 <li><？index/LTsv_docfaq-@c></li>@E
-.*	 <？index/LTsv_docfaq-@c>@E
-|<？list/LTsv_docfaq-0>]
-[<？index/LTsv_docfaq-0>*<？index/LTsv_docfaq-1>|
-.+\.html?	<a href="#LTsv_docfaq-@c" title="<？title/LTsv_docfaq-@c>"><？title/LTsv_docfaq-@c></a>
-.*	<？title/LTsv_docfaq-@c>
-|<？index/LTsv_docfaq-0>*<？index/LTsv_docfaq-1>]
-[<？title/LTsv_docfaq-0>|
-.*	②-0．「LTsv_doc」のＦＡＱ
-|<？title/LTsv_docfaq-0>]
+[<？list/LTsv_doc_faq-0>|
+.+\.html?	 <li><？index/LTsv_doc_faq-@c></li>@E
+.*	 <？index/LTsv_doc_faq-@c>@E
+|<？list/LTsv_doc_faq-0>]
+[<？index/LTsv_doc_faq-0>|
+.+\.html?	<a href="#LTsv_doc_faq-@c" title="<？title/LTsv_doc_faq-@c>"><？title/LTsv_doc_faq-@c></a>
+.*	<？title/LTsv_doc_faq-@c>
+|<？index/LTsv_doc_faq-0>]
+[<？title/LTsv_doc_faq-0>|
+.*	③-0．「LTsv_doc」のＦＡＱ
+|<？title/LTsv_doc_faq-0>]
+
+[<？list/kanedit_faq-0>|
+.+\.html?	 <li><？index/kanedit_faq-@c></li>@E
+.*	 <？index/kanedit_faq-@c>@E
+|<？list/kanedit_faq-0>]
+[<？index/kanedit_faq-0>|
+.+\.html?	<a href="#kanedit_faq-@c" title="<？title/kanedit_faq-@c>"><？title/kanedit_faq-@c></a>
+.*	<？title/kanedit_faq-@c>
+|<？index/kanedit_faq-0>]
+[<？title/kanedit_faq-0>|
+.*	③-0．「kanedit」のＦＡＱ
+|<？title/kanedit_faq-0>]
+
+[<？list/kanfont_faq-0>|
+.+\.html?	 <li><？index/kanfont_faq-@c></li>@E
+.*	 <？index/kanfont_faq-@c>@E
+|<？list/kanfont_faq-0>]
+[<？index/kanfont_faq-0>|
+.+\.html?	<a href="#kanfont_faq-@c" title="<？title/kanfont_faq-@c>"><？title/kanfont_faq-@c></a>
+.*	<？title/kanfont_faq-@c>
+|<？index/kanfont_faq-0>]
+[<？title/kanfont_faq-0>|
+.*	③-0．「kanfont」のＦＡＱ
+|<？title/kanfont_faq-0>]
+
+[<？list/kanmap_faq-0>|
+.+\.html?	 <li><？index/kanmap_faq-@c></li>@E
+.*	 <？index/kanmap_faq-@c>@E
+|<？list/kanmap_faq-0>]
+[<？index/kanmap_faq-0>|
+.+\.html?	<a href="#kanmap_faq-@c" title="<？title/kanmap_faq-@c>"><？title/kanmap_faq-@c></a>
+.*	<？title/kanmap_faq-@c>
+|<？index/kanmap_faq-0>]
+[<？title/kanmap_faq-0>|
+.*	③-0．「kanmap」のＦＡＱ
+|<？title/kanmap_faq-0>]
+
+[<？list/kanzip_faq-0>|
+.+\.html?	 <li><？index/kanzip_faq-@c></li>@E
+.*	 <？index/kanzip_faq-@c>@E
+|<？list/kanzip_faq-0>]
+[<？index/kanzip_faq-0>|
+.+\.html?	<a href="#kanzip_faq-@c" title="<？title/kanzip_faq-@c>"><？title/kanzip_faq-@c></a>
+.*	<？title/kanzip_faq-@c>
+|<？index/kanzip_faq-0>]
+[<？title/kanzip_faq-0>|
+.*	③-0．「kanzip」のＦＡＱ
+|<？title/kanzip_faq-0>]
 
 [<？list/address-0>|
 .+\.html?	 <li><？index/address-@c></li>@E
@@ -1982,14 +2062,14 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 |<？index/address-0>]
 [<？title/address-0>|
 ^index|^LTsv10	⑪-0．<？title/address>
-^kanedit	⑫-0．<？title/address>
-^kanfont	⑫-0．<？title/address>
-^kanmap	⑫-0．<？title/address>
-^kanzip	⑫-0．<？title/address>
-^LTsv_doc	③-0．<？title/address>
+^kanedit	④-0．<？title/address>
+^kanfont	④-0．<？title/address>
+^kanmap	④-0．<？title/address>
+^kanzip	④-0．<？title/address>
+^LTsv_doc	④-0．<？title/address>
 |<？title/address-0>]
 [<？title/address>|
-作者について、例えば連絡先。
+.*	作者について、例えば連絡先。
 |<？title/address>]
 [<？https12:github_ooblog>*<？https12:hatena_ooblog>|
 .+\.html?	<dl><dt><？web/address-@c></dt><dd><a href="<？url/address-@c>" title="<？web/address-@c>"><？url/address-@c></a></dd></dl>

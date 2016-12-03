@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161202F222138<br />
+   version(branch):20161128M153500	modify:20161203S222609<br />
   
 </p>
   <h2>目次</h2>
@@ -40,13 +40,12 @@
     <li><a href="#License-0" title="⓪-0．ライセンス及びソフト使用の補足ガイドライン">⓪-0．ライセンス及びソフト使用の補足ガイドライン</a></li>
  <li><a href="#License-1" title="⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
  <li><a href="#License-2" title="⓪-2．その他現在わかっている不具合や今後の課題">⓪-2．その他現在わかっている不具合や今後の課題</a></li>
- <li><a href="#LTsv_doc-0" title="①-0．「LTsv_doc.py」の関数一覧">①-0．「LTsv_doc.py」の関数一覧</a></li>
- <li><a href="#LTsv_doc-1" title="①-1．「LTsv_doc.tsv」のタグ解説">①-1．「LTsv_doc.tsv」のタグ解説</a></li>
- <li><a href="#LTsv_doc-2" title="①-2．LTsv_docドキュメントの書き方">①-2．LTsv_docドキュメントの書き方</a></li>
- <li><a href="#LTsv_docfaq-0" title="②-0．「LTsv_doc」のＦＡＱ">②-0．「LTsv_doc」のＦＡＱ</a></li>
- <li><a href="#address-0" title="③-0．作者について、例えば連絡先。
-">③-0．作者について、例えば連絡先。
-</a></li>
+ <li><a href="#LTsv_doc_usage-0" title="①-0．「LTsv_doc」の使い方">①-0．「LTsv_doc」の使い方</a></li>
+ <li><a href="#LTsv_doc-0" title="②-0．「LTsv_doc.py」の関数一覧">②-0．「LTsv_doc.py」の関数一覧</a></li>
+ <li><a href="#LTsv_doc-1" title="②-1．「LTsv_doc.tsv」のタグ解説">②-1．「LTsv_doc.tsv」のタグ解説</a></li>
+ <li><a href="#LTsv_doc-2" title="②-2．LTsv_docドキュメントの書き方">②-2．LTsv_docドキュメントの書き方</a></li>
+ <li><a href="#LTsv_doc_faq-0" title="③-0．「LTsv_doc」のＦＡＱ">③-0．「LTsv_doc」のＦＡＱ</a></li>
+ <li><a href="#address-0" title="④-0．作者について、例えば連絡先。">④-0．作者について、例えば連絡先。</a></li>
 
   </ul>
  </section>
@@ -104,7 +103,28 @@
 
 </section>
 <section>
- <h3 id="LTsv_doc-0">①-0．「LTsv_doc.py」の関数一覧</h3>
+ <h3 id="LTsv_doc_usage-0">①-0．「LTsv_doc」の使い方</h3>
+<p>
+<img src="LTsv_doc_512x384.png" width="512" height="384" alt="漢直鍵盤"><br /><br />
+
+</p>
+<dl><dt>
+  「../docs/kanedit_etc.tsv」ボタン</dt>
+<dd>
+             「LTsv10kanedit(tsvtool10)」のドキュメント作成。
+</dd></dl>
+<dl><dt>
+  「../../ooblog.github.io/yakuyon.tsv」ボタン</dt>
+<dd>
+  「約四文字」のドキュメント作成。
+</dd></dl>
+<p>
+  ボタン(LTsv_docドキュメント)編集は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」。詳細は「<a href="#LTsv_doc-1" title="②-1．「LTsv_doc.tsv」のタグ解説">②-1．「LTsv_doc.tsv」のタグ解説</a>」を参考。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="LTsv_doc-0">②-0．「LTsv_doc.py」の関数一覧</h3>
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」はモジュールそのものというよりは、モジュールのドキュメントを作成(関数一覧を作成)するソフトです。<br />
   ・ファイル名と同名のタグを作成すると項目一覧ページを作成します(現在Pythonと「L:Tsv」ファイルのみ)。<br />
@@ -131,9 +151,9 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 
 </section>
 <section>
- <h3 id="LTsv_doc-1">①-1．「LTsv_doc.tsv」のタグ解説</h3>
+ <h3 id="LTsv_doc-1">②-1．「LTsv_doc.tsv」のタグ解説</h3>
 <p>
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<？https09:LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定ファイルと同時にドキュメント作成例サンプルです。<br />
 </p><p>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
 
@@ -220,14 +240,14 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
    LTsvver</dt>
 <dd>
                     バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「&lt;＠L:TsvLTsvver&gt;」。<br />
-                              詳細は「<？index03-0>」参考。<br />
+                              詳細は「<a href="index.html#LTsv_file-0" title="③-0．「LTsv_file.py」の関数一覧"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">③-0．「LTsv_file.py」の関数一覧</a>」参考。<br />
 </dd></dl>
 
 </section>
 <section>
- <h3 id="LTsv_doc-2">①-2．LTsv_docドキュメントの書き方</h3>
+ <h3 id="LTsv_doc-2">②-2．LTsv_docドキュメントの書き方</h3>
 <p>
- 前提は「L:Tsv」なので「<？index01-1>」も確認。<br />
+ 前提は「L:Tsv」なので「<a href="index.html#aboutLTsv-1" title="<？title/aboutLTsv-1"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">①-1．「L:Tsv」ファイルの構造</a>」も確認。<br />
  「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。<br />
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。<br />
 </p> 
@@ -307,7 +327,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 
 </section>
 <section>
- <h3 id="LTsv_docfaq-0">②-0．「LTsv_doc」のＦＡＱ</h3>
+ <h3 id="LTsv_doc_faq-0">③-0．「LTsv_doc」のＦＡＱ</h3>
 <dl><dt>
  Ｑ．「<？https10:LTsv_doc.py>」で置換されないタグが山ほど。</dt>
 <dd>
@@ -318,8 +338,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 
 </section>
 <section>
- <h3 id="address-0">③-0．作者について、例えば連絡先。
-</h3>
+ <h3 id="address-0">④-0．作者について、例えば連絡先。</h3>
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
