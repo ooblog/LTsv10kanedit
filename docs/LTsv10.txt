@@ -1,5 +1,5 @@
 
-version(branch):20161128M153500	modify:20161203S222609
+version(branch):20161128M153500	modify:20161204U230727
 
 目次
 
@@ -382,7 +382,6 @@ version(branch):20161128M153500	modify:20161203S222609
 
  「LTsv/LTsv_time.py」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。
- ・<？modify_style>だと困るのであればフォーマット指定。
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。
@@ -437,7 +436,7 @@ version(branch):20161128M153500	modify:20161203S222609
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの<？modify_style>をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
@@ -1888,7 +1887,7 @@ version(branch):20161128M153500	modify:20161203S222609
  【eval_zipdicname】
   郵便番号辞書ファイルの指定(無くても動作)。
   初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「kanzip.py」を用いる。
-  詳細は「<？title/kanzip_usage-0>」を参考。
+  詳細は「「kanzip.txt」の①-0．「kanzip」の使い方」を参考。
 
  【last_alpha】
   漢直鍵盤が最後に表示したα鍵盤を記録。

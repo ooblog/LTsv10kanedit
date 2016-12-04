@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161128M153500	modify:20161203S222609
+version(branch):20161128M153500	modify:20161204U230727
 
 目次
 
@@ -66,11 +66,12 @@ version(branch):20161128M153500	modify:20161203S222609
 
 ①-0．「LTsv_doc」の使い方
 
-<？textAA/LTsv_doc_usage:capture>
+ LTsv_docドキュメントを編集して保存してからボタンを押す。
+ LTsv_docドキュメントの詳細は「②-2．LTsv_docドキュメントの書き方」を参考。
 
-  「../docs/kanedit_etc.tsv」ボタン             「LTsv10kanedit(tsvtool10)」のドキュメント作成。
-  「../../ooblog.github.io/yakuyon.tsv」ボタン  「約四文字」のドキュメント作成。
-  ボタン(LTsv_docドキュメント)編集は「LTsv/LTsv_doc.tsv」。詳細は「②-1．「LTsv_doc.tsv」のタグ解説」を参考。
+ 「../docs/kanedit_etc.tsv」ボタン             「LTsv10kanedit(tsvtool10)」のドキュメント作成。
+ 「../../ooblog.github.io/yakuyon.tsv」ボタン  「約四文字」のドキュメント作成。
+ ボタン編集(LTsv_docドキュメントの登録)は「LTsv/LTsv_doc.tsv」を編集。詳細は「②-1．「LTsv_doc.tsv」のタグ解説」を参考。
 
 
 ②-0．「LTsv_doc.py」の関数一覧
@@ -107,7 +108,7 @@ version(branch):20161128M153500	modify:20161203S222609
 
 ②-1．「LTsv_doc.tsv」のタグ解説
 
- 「LTsv/LTsv_doc.tsv」は「LTsv/LTsv_glyph.py」の設定ファイルと同時にドキュメント作成例サンプルです。
+ 「LTsv/LTsv_doc.tsv」は「LTsv/LTsv_glyph.py」の設定ファイルです。
 
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
 
@@ -130,12 +131,12 @@ version(branch):20161128M153500	modify:20161203S222609
    deftag                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
    defindent                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
    LTsvver                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「20161128M153500」。
-                              詳細は「③-0．「LTsv_file.py」の関数一覧」参考。
+                              詳細は「「LTsv_doc.txt」の③-0．「LTsv_file.py」の関数一覧」参考。
 
 
 ②-2．LTsv_docドキュメントの書き方
 
- 前提は「L:Tsv」なので「①-1．「L:Tsv」ファイルの構造」も確認。
+ 前提は「L:Tsv」なので「「LTsv_doc.txt」の①-1．「L:Tsv」ファイルの構造」も確認。
  「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。 
 

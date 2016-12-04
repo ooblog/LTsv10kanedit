@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161203S222619
+modify	20161204U230738
 |L:Tsv]
 
 [LTsv_doc|
@@ -215,10 +215,10 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 [<＃kanedit_menus>|
 ^404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
 ^index|^LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4><？list/LTsv10_faq-0><？list/address-0>
-^kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_faq-0><？list/address-0>
-^kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_faq-0><？list/address-0>
-^kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_faq-0><？list/address-0>
-^kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_faq-0><？list/address-0>
+^kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit_faq-0><？list/address-0>
+^kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont_faq-0><？list/address-0>
+^kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0><？list/kanmap_faq-0><？list/address-0>
+^kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip_faq-0><？list/address-0>
 ^LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
@@ -226,10 +226,10 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 [<＃kanedit_pages>|
 ^404	
 ^index|^LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph/LTsv_glyph-0>*<？section/LTsv_glyph/LTsv_glyph-1>*<？section/LTsv_glyph/LTsv_glyph-2>*<？section/LTsv_glyph/LTsv_glyph-3>*<？section/LTsv_glyph/LTsv_glyph-4><？section/LTsv10_faq-0><？section/address-0>
-^kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
-^kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
-^kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
-^kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
+^kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit_faq-0><？section/address-0>
+^kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont_faq-0><？section/address-0>
+^kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0><？section/kanmap_faq-0><？section/address-0>
+^kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip_faq-0><？section/address-0>
 ^LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
@@ -239,7 +239,7 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 .*	<span> &#62; <a href="https://ooblog.github.io/LTsv.html" title="LTsv - <？yakuyon>">LTsv</a> &#62; <mark class="applogo"><？applogo></mark></span> <span class="yonmoji_sitemap"><a href="https://ooblog.github.io/404.html" title="404 - <？yakuyon>">「約四文字」のsitemap(404)</a></span>
 |<？breadcrumbs>]
 [<？applogo>|
-^index\.html?	<img src="<？favicon>" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">
+^index\.html?	<img src="<？favicon>" width="48" height="48" alt="<？LTsv>" title="<？LTsv>">
 ^kanedit\.html?	<img src="<？favicon>" width="48" height="48" alt="kanedit" title="kanedit">
 ^kanfont\.html?	<img src="<？favicon>" width="48" height="48" alt="kanfont" title="kanfont">
 ^kanmap\.html?	<img src="<？favicon>" width="48" height="48" alt="kanmap" title="kanmap">
@@ -475,7 +475,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 
 [<＃contents/LTsv_file-0>|
 <？P> 「<？https/LTsv_file.py>」は「L;Tsv」ファイルの基本的な読み書きモジュールです。
- ・「LTsv10kanedit(tsvtool10)」の本編です。主に「L:Tsv」の読み書きです。<？BR>
+ ・「<？LTsv>」の本編です。主に「L:Tsv」の読み書きです。<？BR>
  ・Python2とPython3のテキストファイル読み込み方法の違いを吸収する手段にも使えます。<？BR>
  ・modify項目で「LTsv_getdaytimestr()」を使うので「LTsv_time.py」モジュールも必要。<？BR><？/P>
 
@@ -538,7 +538,6 @@ LTsv_issue()	「/etc/issue」を開いてLinuxのディストリビューショ�
 [<＃contents/LTsv_time-0>|
 <？P> 「<？https/LTsv_time.py>」は日時フォーマットモジュールです。FPSも扱います。徹夜日時という概念があります。<？BR>
  ・とりあえず日時を取得する場合は「LTsv_getdaytimestr(overhour=24,diffminute=0)」で。<？BR>
- ・<？modify_style>だと困るのであればフォーマット指定。<？BR>
  ・徹夜日時とは正子(夜中の午前0時)を24時として日付を切り替えずに25時(夜中の1時)、26時(夜中の2時)…と時だけが過ぎる状態です。<？BR>
  ・ISOカレンダーの週はISO8601の1月4日を含む週(最初の木曜日を含む週)を第1週と数える方法。曜日は月曜から始まるので土日は週末。ISOカレンダーの曜は月曜が1で土曜が6、日曜が7。<？BR>
  ・単体風テストでは複数の日時フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
@@ -1233,7 +1232,7 @@ entry	<？reversi>の棋譜。
 |LTsv_glyph.tsv]
 [<？contents/kanzip:kanzip_usage-0>|
 .+\.html?	<a href="kanzip.html#LTsv_doc_usage-0" title="<？title/kanzip_usage-0>"><？titleimg/software-4><？title/kanzip_usage-0></a>
-.*	<？title/kanzip_usage-0>
+.*	「kanzip.txt」の<？title/kanzip_usage-0>
 |<？contents/kanzip:kanzip_usage-0>]
 
 [<＃contents/LTsv_glyph-2>|
@@ -1445,18 +1444,17 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 |<？section/LTsv_doc_usage-0>]
 
 [<＃contents/LTsv_doc_usage-0>|
-<？P><？index/LTsv_doc_usage:capture><？BR>
+<？P><？index/LTsv_doc_usage:capture><？BR> LTsv_docドキュメントを編集して保存してからボタンを押す。<？BR>
+ LTsv_docドキュメントの詳細は「<？index/LTsv_doc-2>」を参考。<？BR>
 <？/P>
-<？DLDT>  「../docs/kanedit_etc.tsv」ボタン<？/DTDD>             「LTsv10kanedit(tsvtool10)」のドキュメント作成。<？/DD/DL>
-<？DLDT>  「../../ooblog.github.io/yakuyon.tsv」ボタン<？/DTDD>  「約四文字」のドキュメント作成。<？/DD/DL>
-<？P>  ボタン(LTsv_docドキュメント)編集は「<？https/LTsv_doc.tsv>」。詳細は「<？index/LTsv_doc-1>」を参考。<？BR><？/P>
+<？DLDT> 「../docs/kanedit_etc.tsv」ボタン<？/DTDD>             「<？LTsv>」のドキュメント作成。<？/DD/DL>
+<？DLDT> 「../../ooblog.github.io/yakuyon.tsv」ボタン<？/DTDD>  「約四文字」のドキュメント作成。<？/DD/DL>
+<？P> ボタン編集(LTsv_docドキュメントの登録)は「<？https/LTsv_doc.tsv>」を編集。詳細は「<？index/LTsv_doc-1>」を参考。<？BR><？/P>
 |<＃contents/LTsv_doc_usage-0>]
 [<？index/LTsv_doc_usage:capture>|
-.+\.html?	<img src="LTsv_doc_512x384.png" width="512" height="384" alt="漢直鍵盤"><br />
-.*	<？textAA/LTsv_doc_usage:capture>
+.+\.html?	<img src="LTsv_doc_512x384.png" width="512" height="384" alt="LTsv_doc"><br />
+.*	
 |<？index/LTsv_doc_usage:capture>]
-[<？textAA/LTsv_doc_usage:capture>|
-|<？textAA/LTsv_doc_usage:capture>]
 
 [<？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2>|
 .+\.html?	<section>@E <h3 id="LTsv_doc-@c"><？title/LTsv_doc-@c></h3>@E<＃contents/LTsv_doc-@c>@E</section>@E
@@ -1484,7 +1482,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 |LTsv_doc.py]
 
 [<＃contents/LTsv_doc-1>|
-<？P> 「<？https/LTsv_doc.tsv>」は「<？https/LTsv_glyph.py>」の設定ファイルと同時にドキュメント作成例サンプルです。<？BR>
+<？P> 「<？https/LTsv_doc.tsv>」は「<？https/LTsv_glyph.py>」の設定ファイルです。<？BR>
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
@@ -1577,11 +1575,11 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 |<？title/separate>]
 [<？contents/LTsv_doc:LTsv_file-0>|
 .+\.html?	<a href="index.html#LTsv_file-0" title="<？title/LTsv_file-0>"><？titleimg/software-0><？title/LTsv_file-0></a>
-.*	<？title/LTsv_file-0>
+.*	「LTsv_doc.txt」の<？title/LTsv_file-0>
 |<？contents/LTsv_doc:LTsv_file-0>]
 [<？https/LTsv_doc:aboutLTsv-1>|
 .+\.html?	<a href="index.html#aboutLTsv-1" title="<？title/aboutLTsv-1"><？titleimg/software-0><？title/aboutLTsv-1></a>
-.*	<？title/aboutLTsv-1>
+.*	「LTsv_doc.txt」の<？title/aboutLTsv-1>
 |<？https/LTsv_doc:aboutLTsv-1>]
 
 [<？section/LTsv_doc_faq-0>|
@@ -1594,6 +1592,103 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
  Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。<？BR>
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<？BR><？/DD/DL>
 |<＃contents/LTsv_doc_faq-0>]
+
+[<？section/kanedit_usage-0>|
+.+\.html?	<section>@E <h3 id="kanedit_usage-@c"><？title/kanedit_usage-@c></h3>@E<＃contents/kanedit_usage-@c>@E</section>@E
+.*	@E<？title/kanedit_usage-@c>@E@E<＃contents/kanedit_usage-@c>@E
+|<？section/kanedit_usage-0>]
+
+[<＃contents/kanedit_usage-0>|
+<？P><？index/kanedit_usage:capture><？BR>
+<？/P>
+|<＃contents/kanedit_usage-0>]
+[<？index/kanedit_usage:capture>|
+.+\.html?	<img src="kanedit_512x384.png" width="512" height="384" alt="漢直鍵盤"><br />
+.*	
+|<？index/kanedit_usage:capture>]
+
+[<？section/kanedit_faq-0>|
+.+\.html?	<section>@E <h3 id="kanedit_faq-@c"><？title/kanedit_faq-@c></h3>@E<＃contents/kanedit_faq-@c>@E</section>@E
+.*	@E<？title/kanedit_faq-@c>@E@E<＃contents/kanedit_faq-@c>@E
+|<？section/kanedit_faq-0>]
+
+[<＃contents/kanedit_faq-0>|
+<？DLDT> Ｑ．表示されない文字が多々あるのですが。<？/DTDD>
+ Ａ．グリフが不足しています。「kanfont」でグリフを作成していく事で表示できる文字が増えていきます。<？BR><？/DD/DL>
+|<＃contents/kanedit_faq-0>]
+
+[<？section/kanfont_usage-0>|
+.+\.html?	<section>@E <h3 id="kanfont_usage-@c"><？title/kanfont_usage-@c></h3>@E<＃contents/kanfont_usage-@c>@E</section>@E
+.*	@E<？title/kanfont_usage-@c>@E@E<＃contents/kanfont_usage-@c>@E
+|<？section/kanfont_usage-0>]
+
+[<＃contents/kanfont_usage-0>|
+<？P><？index/kanfont_usage:capture><？BR>
+<？/P>
+|<＃contents/kanfont_usage-0>]
+[<？index/kanfont_usage:capture>|
+.+\.html?	<img src="kanfont_512x384.png" width="512" height="384" alt="kanfont"><br />
+.*	
+|<？index/kanfont_usage:capture>]
+
+[<？section/kanfont_faq-0>|
+.+\.html?	<section>@E <h3 id="kanfont_faq-@c"><？title/kanfont_faq-@c></h3>@E<＃contents/kanfont_faq-@c>@E</section>@E
+.*	@E<？title/kanfont_faq-@c>@E@E<＃contents/kanfont_faq-@c>@E
+|<？section/kanfont_faq-0>]
+
+[<＃contents/kanfont_faq-0>|
+<？DLDT> Ｑ．「kanfont」で他のフォントを編集できますか？<？/DTDD>
+ Ａ．「kanfont」はフォントファイルを読み込めないので「kan5x5comic」のグリフ編集しかできません。<？BR>
+     既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<？BR><？/DD/DL>
+|<＃contents/kanfont_faq-0>]
+
+[<？section/kanmap_usage-0>|
+.+\.html?	<section>@E <h3 id="kanmap_usage-@c"><？title/kanmap_usage-@c></h3>@E<＃contents/kanmap_usage-@c>@E</section>@E
+.*	@E<？title/kanmap_usage-@c>@E@E<＃contents/kanmap_usage-@c>@E
+|<？section/kanmap_usage-0>]
+
+[<＃contents/kanmap_usage-0>|
+<？P><？index/kanmap_usage:capture><？BR>
+<？/P>
+|<＃contents/kanmap_usage-0>]
+[<？index/kanmap_usage:capture>|
+.+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
+.*	
+|<？index/kanmap_usage:capture>]
+
+[<？section/kanmap_faq-0>|
+.+\.html?	<section>@E <h3 id="kanmap_faq-@c"><？title/kanmap_faq-@c></h3>@E<＃contents/kanmap_faq-@c>@E</section>@E
+.*	@E<？title/kanmap_faq-@c>@E@E<＃contents/kanmap_faq-@c>@E
+|<？section/kanmap_faq-0>]
+
+[<＃contents/kanmap_faq-0>|
+<？DLDT> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
+ Ａ．「Tkinter」では「canvas」を画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。<？BR><？/DD/DL>
+|<＃contents/kanmap_faq-0>]
+
+[<？section/kanzip_usage-0>|
+.+\.html?	<section>@E <h3 id="kanzip_usage-@c"><？title/kanzip_usage-@c></h3>@E<＃contents/kanzip_usage-@c>@E</section>@E
+.*	@E<？title/kanzip_usage-@c>@E@E<＃contents/kanzip_usage-@c>@E
+|<？section/kanzip_usage-0>]
+
+[<＃contents/kanzip_usage-0>|
+<？P><？index/kanzip_usage:capture><？BR>
+<？/P>
+|<＃contents/kanzip_usage-0>]
+[<？index/kanzip_usage:capture>|
+.+\.html?	<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br />
+.*	
+|<？index/kanzip_usage:capture>]
+
+[<？section/kanzip_faq-0>|
+.+\.html?	<section>@E <h3 id="kanzip_faq-@c"><？title/kanzip_faq-@c></h3>@E<＃contents/kanzip_faq-@c>@E</section>@E
+.*	@E<？title/kanzip_faq-@c>@E@E<＃contents/kanzip_faq-@c>@E
+|<？section/kanzip_faq-0>]
+
+[<＃contents/kanzip_faq-0>|
+<？DLDT> Ｑ．ボタンを手動で１個ずつ押していくのが面倒くさいです。<？/DTDD>
+ Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。<？/DD/DL>
+|<＃contents/kanzip_faq-0>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -2004,6 +2099,18 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	③-0．「LTsv_doc」のＦＡＱ
 |<？title/LTsv_doc_faq-0>]
 
+[<？list/kanedit_usage-0>|
+.+\.html?	 <li><？index/kanedit_usage-@c></li>@E
+.*	 <？index/kanedit_usage-@c>@E
+|<？list/kanedit_usage-0>]
+[<？index/kanedit_usage-0>|
+.+\.html?	<a href="#kanedit_usage-@c" title="<？title/kanedit_usage-@c>"><？title/kanedit_usage-@c></a>
+.*	<？title/kanedit_usage-@c>
+|<？index/kanedit_usage-0>]
+[<？title/kanedit_usage-0>|
+.*	①-0．「kanedit」の使い方
+|<？title/kanedit_usage-0>]
+
 [<？list/kanedit_faq-0>|
 .+\.html?	 <li><？index/kanedit_faq-@c></li>@E
 .*	 <？index/kanedit_faq-@c>@E
@@ -2015,6 +2122,18 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？title/kanedit_faq-0>|
 .*	③-0．「kanedit」のＦＡＱ
 |<？title/kanedit_faq-0>]
+
+[<？list/kanfont_usage-0>|
+.+\.html?	 <li><？index/kanfont_usage-@c></li>@E
+.*	 <？index/kanfont_usage-@c>@E
+|<？list/kanfont_usage-0>]
+[<？index/kanfont_usage-0>|
+.+\.html?	<a href="#kanfont_usage-@c" title="<？title/kanfont_usage-@c>"><？title/kanfont_usage-@c></a>
+.*	<？title/kanfont_usage-@c>
+|<？index/kanfont_usage-0>]
+[<？title/kanfont_usage-0>|
+.*	①-0．「kanfont」の使い方
+|<？title/kanfont_usage-0>]
 
 [<？list/kanfont_faq-0>|
 .+\.html?	 <li><？index/kanfont_faq-@c></li>@E
@@ -2028,6 +2147,18 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	③-0．「kanfont」のＦＡＱ
 |<？title/kanfont_faq-0>]
 
+[<？list/kanmap_usage-0>|
+.+\.html?	 <li><？index/kanmap_usage-@c></li>@E
+.*	 <？index/kanmap_usage-@c>@E
+|<？list/kanmap_usage-0>]
+[<？index/kanmap_usage-0>|
+.+\.html?	<a href="#kanmap_usage-@c" title="<？title/kanmap_usage-@c>"><？title/kanmap_usage-@c></a>
+.*	<？title/kanmap_usage-@c>
+|<？index/kanmap_usage-0>]
+[<？title/kanmap_usage-0>|
+.*	①-0．「kanmap」の使い方
+|<？title/kanmap_usage-0>]
+
 [<？list/kanmap_faq-0>|
 .+\.html?	 <li><？index/kanmap_faq-@c></li>@E
 .*	 <？index/kanmap_faq-@c>@E
@@ -2039,6 +2170,18 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？title/kanmap_faq-0>|
 .*	③-0．「kanmap」のＦＡＱ
 |<？title/kanmap_faq-0>]
+
+[<？list/kanzip_usage-0>|
+.+\.html?	 <li><？index/kanzip_usage-@c></li>@E
+.*	 <？index/kanzip_usage-@c>@E
+|<？list/kanzip_usage-0>]
+[<？index/kanzip_usage-0>|
+.+\.html?	<a href="#kanzip_usage-@c" title="<？title/kanzip_usage-@c>"><？title/kanzip_usage-@c></a>
+.*	<？title/kanzip_usage-@c>
+|<？index/kanzip_usage-0>]
+[<？title/kanzip_usage-0>|
+.*	①-0．「kanzip」の使い方
+|<？title/kanzip_usage-0>]
 
 [<？list/kanzip_faq-0>|
 .+\.html?	 <li><？index/kanzip_faq-@c></li>@E
@@ -2097,7 +2240,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	<？title/software-@c>
 |<？index/software-0>*<？index/software-1>*<？index/software-2>*<？index/software-3>*<？index/software-4>*<？index/software-5>]
 [<？titleimg/software-0>|
-.*	<img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">
+.*	<img src="LTsv10_logo.png" width="48" height="48" alt="<？LTsv>" title="<？LTsv>">
 |<？titleimg/software-0>]
 [<？title/software-0>|
 .*	<？title:LTsv10>
@@ -2160,22 +2303,22 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 ^LTsv_doc	<？title:LTsv_doc>
 |<？title>]
 [<？title:LTsv10>|
-.*	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+.*	「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。
 |<？title:LTsv10>]
 [<？title:kanedit>|
-.*	「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
+.*	「kanedit」は「<？LTsv>」を用いた漢直テキストエディタの予定です。
 |<？title:kanedit>]
 [<？title:kanfont>|
-.*	「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。
+.*	「kanfont」は「<？LTsv>」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。
 |<？title:kanfont>]
 [<？title:kanmap>|
-.*	「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
+.*	「kanmap」は「<？LTsv>」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。
 |<？title:kanmap>]
 [<？title:kanzip>|
-.*	「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
+.*	「kanzip」は「<？LTsv>」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
 |<？title:kanzip>]
 [<？title:LTsv_doc>|
-.*	「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
+.*	「LTsv_doc」は「<？LTsv>」を用いたドキュメントジェネレーターです。
 |<？title:LTsv_doc>]
 
 [<？ooblog>|
@@ -2222,6 +2365,12 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 [<？LicenseMIT>|
 .*	License: MIT
 |<？LicenseMIT>]
+[<？LTsv>|
+.*	LTsv10kanedit(tsvtool10)
+|<？LTsv>]
+[<？modify_style>|
+.*	<＠L:TsvLTsvver>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
+|<？modify_style>]
 [<？modify>|
 .*	@000y@0m@0dm@wdec@0h@0n@0s
 |<？modify>]
