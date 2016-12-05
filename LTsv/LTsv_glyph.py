@@ -155,14 +155,13 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
     LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_readlinerest(LTsv_glyph_config,"last_dic",LTsv_glyph_kbdchars[LTsv_glyph_SandS])[:1]
     LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])
 
-#def LTsv_global_kandic():                              return LTsv_glyph_kandic
 def LTsv_global_kandic(new_kandic=None):
     global LTsv_glyph_kandic
     LTsv_glyph_kandic=LTsv_glyph_kandic if new_kandic == None else new_kandic
     return LTsv_glyph_kandic
-def LTsv_global_kanmap():                              return LTsv_glyph_kanmap
-def LTsv_global_kanmapN():                             return LTsv_glyph_kanmapN
-def LTsv_global_kanmapX():                             return LTsv_glyph_kanmapX
+def LTsv_global_kanmap():                             return LTsv_glyph_kanmap
+def LTsv_global_kanmapN():                            return LTsv_glyph_kanmapN
+def LTsv_global_kanmapX():                            return LTsv_glyph_kanmapX
 def LTsv_global_kanpickle():                          return LTsv_glyph_kanpickle
 def LTsv_global_irohatype():                          return LTsv_glyph_irohatype
 def LTsv_global_irohatypeN():                         return LTsv_glyph_irohatypeN
@@ -170,20 +169,24 @@ def LTsv_global_irohatypeX():                         return LTsv_glyph_irohatyp
 def LTsv_global_alphatype():                          return LTsv_glyph_alphatype
 def LTsv_global_alphatypeN():                         return LTsv_glyph_alphatypeN
 def LTsv_global_alphatypeX():                         return LTsv_glyph_alphatypeX
-def LTsv_global_dictype():                             return LTsv_glyph_dictype
+def LTsv_global_dictype():                            return LTsv_glyph_dictype
 def LTsv_global_glyphtype():                          return LTsv_glyph_glyphtype
-def LTsv_global_choice():                              return LTsv_glyph_choice
-def LTsv_global_choiceN():                             return LTsv_glyph_choiceN
-def LTsv_global_choiceX():                             return LTsv_glyph_choiceX
-def LTsv_global_evaltype():                             return LTsv_glyph_evaltype
-def LTsv_global_irohaalpha():                            return LTsv_glyph_irohaalpha
-def LTsv_global_irohaalphaN():                           return LTsv_glyph_irohaalphaN
-def LTsv_global_irohaalphaX():                           return LTsv_glyph_irohaalphaX
-def LTsv_global_kbdchars():                          return LTsv_glyph_kbdchars
-def LTsv_global_glyphkbdH():                           return LTsv_glyph_kbdH
-def LTsv_global_glyphkbdW():                           return LTsv_glyph_kbdW
-def LTsv_global_glyphkbdF():                           return LTsv_glyph_kbdF
-def LTsv_global_kbdcursorNone():                           return LTsv_glyph_None
+def LTsv_global_choice():                             return LTsv_glyph_choice
+def LTsv_global_choiceN():                            return LTsv_glyph_choiceN
+def LTsv_global_choiceX():                            return LTsv_glyph_choiceX
+def LTsv_global_evaltype():                           return LTsv_glyph_evaltype
+def LTsv_global_irohaalpha():                         return LTsv_glyph_irohaalpha
+def LTsv_global_irohaalphaN():                        return LTsv_glyph_irohaalphaN
+def LTsv_global_irohaalphaX():                        return LTsv_glyph_irohaalphaX
+def LTsv_global_kbdchars():                           return LTsv_glyph_kbdchars
+def LTsv_global_glyphkbdH():                          return LTsv_glyph_kbdH
+def LTsv_global_glyphkbdW():                          return LTsv_glyph_kbdW
+def LTsv_global_glyphkbdF():                          return LTsv_glyph_kbdF
+def LTsv_global_kbdcursorNone():                      return LTsv_glyph_None
+def LTsv_global_kanmappath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanmapname)
+def LTsv_global_kandicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kandicname)
+def LTsv_global_worddicpath():                        return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_worddicname)
+def LTsv_global_zipdicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_zipdicname)
 
 LTsv_glyphSVG5xdic={"M ":"[","z ":"]",
  "0,1000 ":"0","200,1000 ":"1","400,1000 ":"2","600,1000 ":"3","800,1000 ":"4","1000,1000 ":"5",
@@ -789,13 +792,15 @@ def LTsv_evaltext(calc_value=""):
         calc_A=LTsv_getdaytimestr(calc_Q)
     elif calc_K == "〒":
         if len(LTsv_glyph_zipdic) == 0:
-            LTsv_glyph_zipdic=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_zipdicname))
+#            LTsv_glyph_worddic=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_zipdicname))
+            LTsv_glyph_zipdic=LTsv_loadfile(LTsv_global_zipdicpath())
         calc_Q=LTsv_kanare(calc_Q,"HiraKana2HanKaKe"); calc_Q=LTsv_kanare(calc_Q,"Alpha2HAN")
         calc_Q=(calc_Q.replace('-','').replace('ｰ','')+'0'*7)[:7]
         calc_A=LTsv_readlinerest(LTsv_glyph_zipdic,calc_Q)
     elif calc_K == "汎":
         if len(LTsv_glyph_worddic) == 0:
             LTsv_glyph_worddic=LTsv_loadfile(os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_worddicname))
+            LTsv_glyph_zipdic=LTsv_loadfile(LTsv_global_worddicpath())
         calc_A=LTsv_readlinerest(LTsv_glyph_worddic,calc_Q)
         if calc_A == "":
             calc_A=LTsv_readlinerest(LTsv_glyph_worddic,LTsv_kanare(calc_Q,"Kata2Hira"))

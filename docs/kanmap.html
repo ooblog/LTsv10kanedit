@@ -32,7 +32,7 @@
   <h1>「kanmap」は「LTsv10kanedit(tsvtool10)」を用いた「kan5x5comic(LTsv/kanchar.tsv)」グリフ進捗ビュアーです。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161204U230727<br />
+   version(branch):20161128M153500	modify:20161205M225226<br />
   
 </p>
   <h2>目次</h2>
@@ -40,7 +40,9 @@
     <li><a href="#License-0" title="⓪-0．ライセンス及びソフト使用の補足ガイドライン">⓪-0．ライセンス及びソフト使用の補足ガイドライン</a></li>
  <li><a href="#License-1" title="⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
  <li><a href="#License-2" title="⓪-2．その他現在わかっている不具合や今後の課題">⓪-2．その他現在わかっている不具合や今後の課題</a></li>
- <li><a href="#kanmap_usage-0" title="①-0．「kanmap」の使い方">①-0．「kanmap」の使い方</a></li>
+ <li><a href="#kanmap_usage-0" title="①-0．「kanmap」の使い方(初回起動・表示編)">①-0．「kanmap」の使い方(初回起動・表示編)</a></li>
+ <li><a href="#kanmap_usage-1" title="①-1．「kanmap」の使い方(漢字配列編集編)">①-1．「kanmap」の使い方(漢字配列編集編)</a></li>
+ <li><a href="#kanmap-0" title="②-0．「kanmap.py」の関数一覧">②-0．「kanmap.py」の関数一覧</a></li>
  <li><a href="#kanmap_faq-0" title="③-0．「kanmap」のＦＡＱ">③-0．「kanmap」のＦＡＱ</a></li>
  <li><a href="#address-0" title="④-0．作者について、例えば連絡先。">④-0．作者について、例えば連絡先。</a></li>
 
@@ -100,10 +102,59 @@
 
 </section>
 <section>
- <h3 id="kanmap_usage-0">①-0．「kanmap」の使い方</h3>
+ <h3 id="kanmap_usage-0">①-0．「kanmap」の使い方(初回起動・表示編)</h3>
 <p>
-<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br /><br />
+ 事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動すると上部に漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」、下部に単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」を表示します。<br />
+ 「kanmap」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<br />
+</p>
 
+</section>
+<section>
+ <h3 id="kanmap_usage-1">①-1．「kanmap」の使い方(漢字配列編集編)</h3>
+<p>
+<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
+</p><dl><dt>
+  漢直鍵盤</dt>
+<dd>
+          漢直鍵盤の操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参照。<br />
+</dd></dl>
+<dl><dt>
+  小さい文字の上でタップ</dt>
+<dd>
+          カーソル点灯。クリップボードに１文字転送。<br />
+</dd></dl>
+<dl><dt>
+  「find」をタップ</dt>
+<dd>
+          クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<br />
+</dd></dl>
+<dl><dt>
+  「update☐」にチェック</dt>
+<dd>
+    ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。<br />
+</dd></dl>
+<dl><dt>
+  「kbdfind☐」にチェック</dt>
+<dd>
+    ONにすると「find」をタップしなくても漢直鍵盤の操作だけで検索してカーソル点灯。<br />
+</dd></dl>
+<dl><dt>
+  「rewrite☐」にチェック</dt>
+<dd>
+   ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップで漢字配列の文字を上書き(予定)。<br />
+</dd></dl>
+<dl><dt>
+  「swap☐」にチェック</dt>
+<dd>
+      ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。<br />
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="kanmap-0">②-0．「kanmap.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」の解説は準備中です。<br />
 </p>
 
 </section>
@@ -119,6 +170,7 @@
 </section>
 <section>
  <h3 id="address-0">④-0．作者について、例えば連絡先。</h3>
+
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>

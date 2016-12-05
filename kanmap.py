@@ -218,6 +218,8 @@ def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     if kanmap_checkboxC[kanmap_checkboxN["update"]] != 0:
         pass
     LTsv_window_exit()
+#LTsv_global_kanmappath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanmapname)
+#LTsv_global_kandicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kandicname)
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:

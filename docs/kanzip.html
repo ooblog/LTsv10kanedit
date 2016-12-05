@@ -32,7 +32,7 @@
   <h1>「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161204U230727<br />
+   version(branch):20161128M153500	modify:20161205M225226<br />
   
 </p>
   <h2>目次</h2>
@@ -41,6 +41,7 @@
  <li><a href="#License-1" title="⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</a></li>
  <li><a href="#License-2" title="⓪-2．その他現在わかっている不具合や今後の課題">⓪-2．その他現在わかっている不具合や今後の課題</a></li>
  <li><a href="#kanzip_usage-0" title="①-0．「kanzip」の使い方">①-0．「kanzip」の使い方</a></li>
+ <li><a href="#kanzip-0" title="②-0．「kanzip.py」の関数一覧">②-0．「kanzip.py」の関数一覧</a></li>
  <li><a href="#kanzip_faq-0" title="③-0．「kanzip」のＦＡＱ">③-0．「kanzip」のＦＡＱ</a></li>
  <li><a href="#address-0" title="④-0．作者について、例えば連絡先。">④-0．作者について、例えば連絡先。</a></li>
 
@@ -102,8 +103,18 @@
 <section>
  <h3 id="kanzip_usage-0">①-0．「kanzip」の使い方</h3>
 <p>
-<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br /><br />
+<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br /><br /> まず「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」配下に作業用の「kanzip」フォルダが作成されます。<br />
+ 初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。<br />
+ 「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。<br />
+ 全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、<br />
+ 最終的に「kanzip.tsv」にマージする事で郵便番号辞書の完成。<br />
+</p>
 
+</section>
+<section>
+ <h3 id="kanzip-0">②-0．「kanzip.py」の関数一覧</h3>
+<p>
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」の解説は準備中です。<br />
 </p>
 
 </section>
@@ -115,10 +126,19 @@
 
  Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。
 </dd></dl>
+<dl><dt>
+ Ｑ．ダウンロードできなくなりました。</dt>
+<dd>
+
+ Ａ．日本郵便にあるはずのzipファイルのURL変更などが考えられますが、ブラウザでzipをダウンロードして「kanzip」フォルダにコピーすれば作業続行可能なはずです。
+</dd></dl>
+<dl><dt>事業所の個別郵便番号のダウンロード zip形式 - 日本郵便</dt><dd><a href="http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html" title="事業所の個別郵便番号のダウンロード zip形式 - 日本郵便">http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html</a></dd></dl>
+<dl><dt>読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便</dt><dd><a href="http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html" title="読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便">http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html</a></dd></dl>
 
 </section>
 <section>
  <h3 id="address-0">④-0．作者について、例えば連絡先。</h3>
+
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>

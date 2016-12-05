@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。
-version(branch):20161128M153500	modify:20161204U230727
+version(branch):20161128M153500	modify:20161205M225226
 
 目次
 
@@ -7,6 +7,8 @@ version(branch):20161128M153500	modify:20161204U230727
  ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
  ⓪-2．その他現在わかっている不具合や今後の課題
  ①-0．「kanfont」の使い方
+ ②-0．「kanfont.py」の関数一覧
+ ②-1．「kanfont.tsv」のタグ解説
  ③-0．「kanfont」のＦＡＱ
  ④-0．作者について、例えば連絡先。
 
@@ -67,6 +69,15 @@ version(branch):20161128M153500	modify:20161204U230727
 
 
 
+②-0．「kanfont.py」の関数一覧
+
+ 「<？https/kanfont.py>」の解説は準備中です。
+
+
+②-1．「kanfont.tsv」のタグ解説
+
+<＃contents/kanfont-1>
+
 ③-0．「kanfont」のＦＡＱ
 
  Ｑ．「kanfont」で他のフォントを編集できますか？
@@ -75,6 +86,7 @@ version(branch):20161128M153500	modify:20161204U230727
 
 
 ④-0．作者について、例えば連絡先。
+
  更新情報はGitHubやブログを確認してください。
 
    ooblog/LTsv10kanedit(GitHub)

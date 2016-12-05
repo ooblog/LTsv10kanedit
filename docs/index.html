@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161204U230727<br />
+   version(branch):20161128M153500	modify:20161205M225226<br />
   
 </p>
   <h2>目次</h2>
@@ -1733,6 +1733,14 @@ LTsv_glyph_kbddefsizeが1の時、グリフサイズが5になるので時余白
 <dl><dt>LTsv_global_kbdcursorNone()</dt><dd>
 52。<br />
 文字入力48鍵+鍵盤制御4鍵(IME想定では4鍵だったが漢直専用エディタでは3鍵に減らせた)の合計。</dd></dl>
+<dl><dt>LTsv_global_kanmappath()</dt><dd>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」のファイルパス。</dd></dl>
+<dl><dt>LTsv_global_kandicpath()</dt><dd>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」のファイルパス。</dd></dl>
+<dl><dt>LTsv_global_worddicpath()</dt><dd>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv">kanword.tsv</a>」のファイルパス。</dd></dl>
+<dl><dt>LTsv_global_zipdicpath()</dt><dd>
+「kanzip.tsv」のファイルパス。</dd></dl>
 <dl><dt>LTsv_glyphSVG5x10x(LTsv_glyph_path)</dt><dd>
 グリフの圧縮された座標データをSVGパスに(伸張)。<br />
 「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」<br />
@@ -1981,7 +1989,7 @@ XFER鍵盤における辞書変更鍵盤。<br />
 <dl><dt>eval_overhour</dt><dd>
 日時フォーマットの徹夜時刻の指定。24〜48のいずれか。</dd></dl>
 <dl><dt>eval_worddicname</dt><dd>
-汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv">LTsv/kanword.tsv</a>」ファイルの指定(無くても動作)。<br />
+汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv">kanword.tsv</a>」ファイルの指定(無くても動作)。<br />
 初期値は「../kanword.tsv」。</dd></dl>
 <dl><dt>eval_zipdicname</dt><dd>
 郵便番号辞書ファイルの指定(無くても動作)。<br />
@@ -2352,7 +2360,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   先頭文字が「汎」その他数式以外</dt>
 <dd>
-      汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanword.tsv">LTsv/kanword.tsv</a>」から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。<br />
+      汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv">kanword.tsv</a>」から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。<br />
                                      「汎ヴァイオリン⇔提琴」「汎フカセツフカセツテン⇔不可説不可説転」<br />
 </dd></dl>
 <dl><dt>
@@ -2440,6 +2448,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 </section>
 <section>
  <h3 id="address-0">⑪-0．作者について、例えば連絡先。</h3>
+
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>

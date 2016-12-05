@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161204U230727<br />
+   version(branch):20161128M153500	modify:20161205M225226<br />
   
 </p>
   <h2>目次</h2>
@@ -330,16 +330,23 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 <section>
  <h3 id="LTsv_doc_faq-0">③-0．「LTsv_doc」のＦＡＱ</h3>
 <dl><dt>
- Ｑ．「<？https10:LTsv_doc.py>」で置換されないタグが山ほど。</dt>
+ Ｑ．「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」で置換されないタグが山ほど。</dt>
 <dd>
 
  Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。<br />
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<br />
 </dd></dl>
+<dl><dt>
+ Ｑ．「docs/kanedit_etc.tsv」で余分なタグと錯覚するコピペ多すぎる。</dt>
+<dd>
+
+ Ａ．タグを合成するメタプログラミングとかマクロとかコンパイル時計算的な何かの仕組みが必要なのかも。今後の課題。<br />
+</dd></dl>
 
 </section>
 <section>
  <h3 id="address-0">④-0．作者について、例えば連絡先。</h3>
+
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
