@@ -23,9 +23,12 @@ def LTsv_kanmap_drawline(kanmap_linecount):
         LTsv_draw_glyphskbd(draw_t=kanmap_chars[kanmap_linecount][map_xy][:1],draw_x=map_xy*LTsv_glyph_kbdF,draw_y=drawline_y)
     LTsv_draw_queue()
 
+kanmap_drawwait=20
 kanmap_linecount=0
 kanmap_linefix=False
-def kanmap_KBDstart():
+def kanmap_KBDstart(drawwait):
+    global kanmap_drawwait
+    kanmap_drawwait=min(max(drawwait,5),1000)
     LTsv_widget_settext(kanmap_window,"kanmap:pickling kanmap.tsv")
     for map_xy in range(len(LTsv_global_irohaalpha())):
         map_x,map_y=kanmap_irohaalphaNX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaNY[map_xy]//LTsv_glyph_kbdF-2
@@ -38,13 +41,13 @@ def kanmap_KBDstart():
             kanmap_chars[kbd_y][kbd_x]=LTsv_glyph_kanmapX[LTsv_global_irohaalpha()[map_xy]][kbd_xy]
     global kanmap_linecount
     kanmap_linecount=0
-    LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=20)
+    LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=kanmap_drawwait)
 
 def kanmap_KBDcount(window_objvoid=None,window_objptr=None):
     global kanmap_linecount
     LTsv_kanmap_drawline(kanmap_linecount); kanmap_linecount+=1
     if kanmap_linecount < kanmap_charsH:
-        LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=20)
+        LTsv_window_after(kanmap_window,event_b=kanmap_KBDcount,event_i="kanmap_KBDcount",event_w=kanmap_drawwait)
     else:
         kanmap_KBDfinishDICstart()
 
@@ -78,13 +81,13 @@ def kanmap_KBDfinishDICstart():
             kanmap_chars[kanmap_charsY+dic_xy][map_xy]=kanmap_dicsplits[dicpos][0:1]
     global kanmap_linecount
     kanmap_linecount=kanmap_charsH+1
-    LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=20)
+    LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=kanmap_drawwait)
 
 def kanmap_DICcount(window_objvoid=None,window_objptr=None):
     global kanmap_linecount
     LTsv_kanmap_drawline(kanmap_linecount); kanmap_linecount+=1
     if kanmap_linecount < kandic_charsdicH:
-        LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=20)
+        LTsv_window_after(kanmap_window,event_b=kanmap_DICcount,event_i="kanmap_DICcount",event_w=kanmap_drawwait)
     else:
         kanmap_DICfinish()
 
@@ -266,7 +269,7 @@ if len(LTsv_GUI) > 0:
     LTsv_glyph_tapcallback_shell(kanmap_canvas,LTsv_kanmap_kbdinput)
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_delete(); LTsv_draw_queue();
     LTsv_glyph_kbddelete(kanmap_canvas); LTsv_glyph_kbddraw(kanmap_canvas,kanmap_kbdX,kanmap_kbdY); LTsv_draw_queue();
-    kanmap_KBDstart()
+    kanmap_KBDstart(5 if os.path.isfile(LTsv_global_picklepath()) else 50)
     LTsv_window_main(kanmap_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")

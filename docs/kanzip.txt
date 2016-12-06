@@ -1,5 +1,5 @@
-「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。郵便番号辞書「kanzip.tsv」に合成します。
-version(branch):20161128M153500	modify:20161205M225226
+「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。
+version(branch):20161128M153500	modify:20161207W012342
 
 目次
 
@@ -31,12 +31,12 @@ version(branch):20161128M153500	modify:20161205M225226
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、
- Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。「kanfont.txt」も参考。
+ Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。
 
    ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
@@ -68,7 +68,7 @@ version(branch):20161128M153500	modify:20161205M225226
  初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。
  「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。
  全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、
- 最終的に「kanzip.tsv」にマージする事で郵便番号辞書の完成。
+ 最終的に「郵便番号辞書「kanzip.tsv」kanzip.tsv」にマージして完成。
 
 
 ②-0．「kanzip.py」の関数一覧

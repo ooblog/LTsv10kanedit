@@ -1,5 +1,5 @@
 「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
-version(branch):20161128M153500	modify:20161205M225226
+version(branch):20161128M153500	modify:20161207W012342
 
 目次
 
@@ -34,12 +34,12 @@ version(branch):20161128M153500	modify:20161205M225226
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、
- Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。「kanfont.txt」も参考。
+ Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。
 
    ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。

@@ -1,5 +1,5 @@
 
-version(branch):20161128M153500	modify:20161205M225226
+version(branch):20161128M153500	modify:20161207W012342
 
 目次
 
@@ -50,12 +50,12 @@ version(branch):20161128M153500	modify:20161205M225226
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、
- Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。「kanfont.txt」も参考。
+ Windowsの場合は「約四文字」からWebフォント「kan5x5comic.woff」をダウンロードして「WOFFコンバーター」で変換。
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。
 
    ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
@@ -636,7 +636,7 @@ version(branch):20161128M153500	modify:20161205M225226
 
 ⑥-0．「LTsv_joy.py」の関数一覧
 
- 「<？https/LTsv_joy:LTsv_joy.py>」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
+ 「LTsv/LTsv_joy.py」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。
  ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv/LTsv_gui.py」でも挙動確認はできます。
  
@@ -1547,16 +1547,19 @@ version(branch):20161128M153500	modify:20161205M225226
   文字入力48鍵+鍵盤制御4鍵(IME想定では4鍵だったが漢直専用エディタでは3鍵に減らせた)の合計。
 
  【LTsv_global_kanmappath()】
-  「LTsv/kanmap.tsv」のファイルパス。
+  漢字配列「LTsv/kanmap.tsv」のファイルパス。
 
  【LTsv_global_kandicpath()】
-  「LTsv/kanchar.tsv」のファイルパス。
+  単漢字辞書「LTsv/kanchar.tsv」のファイルパス。
 
  【LTsv_global_worddicpath()】
-  「kanword.tsv」のファイルパス。
+  汎用辞書「kanword.tsv」のファイルパス。
 
  【LTsv_global_zipdicpath()】
-  「kanzip.tsv」のファイルパス。
+  郵便番号辞書「kanzip.tsv」のファイルパス。
+
+ 【LTsv_global_picklepath()】
+  グリフ座標データ「kanpickle.bin」のファイルパス。
 
  【LTsv_glyphSVG5x10x(LTsv_glyph_path)】
   グリフの圧縮された座標データをSVGパスに(伸張)。
@@ -1898,7 +1901,7 @@ version(branch):20161128M153500	modify:20161205M225226
 
  【eval_zipdicname】
   郵便番号辞書ファイルの指定(無くても動作)。
-  初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「kanzip.py」を用いる。
+  初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「kanzip.py」を用いる。
   詳細は「「kanzip.txt」の①-0．「kanzip」の使い方」を参考。
 
  【last_alpha】
@@ -1992,13 +1995,14 @@ version(branch):20161128M153500	modify:20161205M225226
  「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、
  コマンドなのか単語なのか数式なのかで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。
 
-  １文字のみ入力                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。
+  １文字のみ入力                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書の項目表示、
+                                     単漢字辞書に無い文字は「照」数値文字参照。
                                      「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」
   先頭文字列が「&#」                 数値文字参照を文字列にデコード。
                                      「&#21654;&#21937;&#40634;&#40621;」→「照&#21654;&#21937;&#40634;&#40621;⇔咖喱麺麭」
   先頭文字が「照」                   文字列を数値文字参照にエンコード。数値文字参照を文字列へのデコードも可能。
                                      「照咖喱麺麭&#21654;&#21937;&#40634;&#40621;」
-  先頭文字が「〒」                   郵便番号辞書「kantzip.tsv」から住所を表示。
+  先頭文字が「〒」                   郵便番号辞書「kanzip.tsv」から住所を表示。
                                      「〒1638001⇔東京都新宿区西新宿２丁目８－１東京都庁」
   先頭文字が「平」                   カタカナをひらがな(平仮名)に変換。
                                      「平ヴァイオリン⇔ヴぁいおりん」
@@ -2060,7 +2064,7 @@ version(branch):20161128M153500	modify:20161205M225226
 
  Ｑ．「LTsv/LTsv_glyph.py」などをダブルクリックしても起動しない。
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。
-     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10_faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。
+     Wineで「python-3.4.4.msi」が動かないって話なら「wine_sh/python3install.sh」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。
 
    Welcome to Python.org
    https://www.python.org/

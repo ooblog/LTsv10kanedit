@@ -88,6 +88,9 @@ input.yonmoji_entry:focus{
   border: 1px gray solid;
   padding: 1rem;
  }
+p.capcenter{
+  text-align: center;
+}
 footer{
   margin-top:1rem;
   float: both;

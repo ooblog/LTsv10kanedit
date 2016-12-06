@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161205M225226<br />
+   version(branch):20161128M153500	modify:20161207W012342<br />
   
 </p>
   <h2>目次</h2>
@@ -89,12 +89,12 @@
 <section>
  <h3 id="License-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</h3>
 <p>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="index.html#LTsv10_faq-0" title="<？title/LTsv10_faq-0"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<br />
- Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt">kanfont.txt</a>」も参考。<br />
+ Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。<br />
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<br />
 
 </p>
@@ -873,7 +873,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 <section>
  <h3 id="LTsv_joy-0">⑥-0．「LTsv_joy.py」の関数一覧</h3>
 <p>
- 「<？https/LTsv_joy:LTsv_joy.py>」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_joy.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_joy.py">LTsv/LTsv_joy.py</a>」はジョイスティック(ゲームPAD)の入力をLTSVに変換するモジュールです。<br />
  ・WindowsでもPOVをPxPyの2軸として扱います。極座標変換は「LTsv_atanscalar()」と「LTsv_atanclock()」。<br />
  ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_gui.py">LTsv/LTsv_gui.py</a>」でも挙動確認はできます。<br />
 </p>
@@ -1734,13 +1734,15 @@ LTsv_glyph_kbddefsizeが1の時、グリフサイズが5になるので時余白
 52。<br />
 文字入力48鍵+鍵盤制御4鍵(IME想定では4鍵だったが漢直専用エディタでは3鍵に減らせた)の合計。</dd></dl>
 <dl><dt>LTsv_global_kanmappath()</dt><dd>
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」のファイルパス。</dd></dl>
+漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」のファイルパス。</dd></dl>
 <dl><dt>LTsv_global_kandicpath()</dt><dd>
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」のファイルパス。</dd></dl>
+単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」のファイルパス。</dd></dl>
 <dl><dt>LTsv_global_worddicpath()</dt><dd>
-「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv">kanword.tsv</a>」のファイルパス。</dd></dl>
+汎用辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanword.tsv">kanword.tsv</a>」のファイルパス。</dd></dl>
 <dl><dt>LTsv_global_zipdicpath()</dt><dd>
-「kanzip.tsv」のファイルパス。</dd></dl>
+郵便番号辞書「kanzip.tsv」のファイルパス。</dd></dl>
+<dl><dt>LTsv_global_picklepath()</dt><dd>
+グリフ座標データ「kanpickle.bin」のファイルパス。</dd></dl>
 <dl><dt>LTsv_glyphSVG5x10x(LTsv_glyph_path)</dt><dd>
 グリフの圧縮された座標データをSVGパスに(伸張)。<br />
 「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」<br />
@@ -1993,7 +1995,7 @@ XFER鍵盤における辞書変更鍵盤。<br />
 初期値は「../kanword.tsv」。</dd></dl>
 <dl><dt>eval_zipdicname</dt><dd>
 郵便番号辞書ファイルの指定(無くても動作)。<br />
-初期値は「../kanzip.tsv」。「kanzip.tsv」の作成には「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」を用いる。<br />
+初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」を用いる。<br />
 詳細は「<a href="kanzip.html#LTsv_doc_usage-0" title="①-0．「kanzip」の使い方"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">①-0．「kanzip」の使い方</a>」を参考。</dd></dl>
 <dl><dt>last_alpha</dt><dd>
 漢直鍵盤が最後に表示したα鍵盤を記録。</dd></dl>
@@ -2191,7 +2193,8 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   １文字のみ入力</dt>
 <dd>
-                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書[kanchar.tsv]の項目表示、単漢字辞書に無い文字は「照」数値文字参照。<br />
+                     漢字逆引き。入力した文字が存在する鍵盤に切替。同時に単漢字辞書の項目表示、
+                                     単漢字辞書に無い文字は「照」数値文字参照。<br />
                                      「走⇔」→「英走⇔run」「名走⇔はしる」「照走⇔&#36208;」<br />
 </dd></dl>
 <dl><dt>
@@ -2209,7 +2212,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   先頭文字が「〒」</dt>
 <dd>
-                   郵便番号辞書「kantzip.tsv」から住所を表示。<br />
+                   郵便番号辞書「kanzip.tsv」から住所を表示。<br />
                                      「〒1638001⇔東京都新宿区西新宿２丁目８－１東京都庁」<br />
 </dd></dl>
 <dl><dt>
@@ -2387,7 +2390,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dd>
 
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<br />
-     Wineで「python-3.4.4.msi」が動かないって話なら「<？https/LTsv10_faq:python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
+     Wineで「python-3.4.4.msi」が動かないって話なら「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh">wine_sh/python3install.sh</a>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
 
 </dd></dl>
 <dl><dt>Welcome to Python.org</dt><dd><a href="https://www.python.org/" title="Welcome to Python.org">https://www.python.org/</a></dd></dl>

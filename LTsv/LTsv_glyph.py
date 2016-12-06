@@ -187,6 +187,7 @@ def LTsv_global_kanmappath():                         return os.path.normpath(LT
 def LTsv_global_kandicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kandicname)
 def LTsv_global_worddicpath():                        return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_worddicname)
 def LTsv_global_zipdicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_zipdicname)
+def LTsv_global_picklepath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpicklename)
 
 LTsv_glyphSVG5xdic={"M ":"[","z ":"]",
  "0,1000 ":"0","200,1000 ":"1","400,1000 ":"2","600,1000 ":"3","800,1000 ":"4","1000,1000 ":"5",

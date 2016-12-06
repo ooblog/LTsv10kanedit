@@ -1,7 +1,7 @@
 <html lang="ja"><head>
  <meta charset="UTF-8" />
  <meta name="description" content="">
- <title>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。</title>
+ <title>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。</title>
  <link rel="stylesheet" type="text/css" href="LTsv_doc.css" />
  <link rel="icon" type="image/png" href="kanfont_logo.png" />
 </head><body>
@@ -29,10 +29,10 @@
  </nav></aside>
 
  <section class="mainpages">
-  <h1>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。単漢字辞書「kanchar.tsv」を編集します。</h1>
+  <h1>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161205M225226<br />
+   version(branch):20161128M153500	modify:20161207W012342<br />
   
 </p>
   <h2>目次</h2>
@@ -43,6 +43,7 @@
  <li><a href="#kanfont_usage-0" title="①-0．「kanfont」の使い方">①-0．「kanfont」の使い方</a></li>
  <li><a href="#kanfont-0" title="②-0．「kanfont.py」の関数一覧">②-0．「kanfont.py」の関数一覧</a></li>
  <li><a href="#kanfont-1" title="②-1．「kanfont.tsv」のタグ解説">②-1．「kanfont.tsv」のタグ解説</a></li>
+ <li><a href="#kanfont-2" title="②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説">②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説</a></li>
  <li><a href="#kanfont_faq-0" title="③-0．「kanfont」のＦＡＱ">③-0．「kanfont」のＦＡＱ</a></li>
  <li><a href="#address-0" title="④-0．作者について、例えば連絡先。">④-0．作者について、例えば連絡先。</a></li>
 
@@ -71,12 +72,12 @@
 <section>
  <h3 id="License-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</h3>
 <p>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index11-0>」も参考)。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="index.html#LTsv10_faq-0" title="<？title/LTsv10_faq-0"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
  フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<br />
- Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.txt">kanfont.txt</a>」も参考。<br />
+ Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。<br />
  フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<br />
 
 </p>
@@ -103,10 +104,113 @@
 </section>
 <section>
  <h3 id="kanfont_usage-0">①-0．「kanfont」の使い方</h3>
-<p>
+<p class="capcenter">
 <img src="kanfont_512x384.png" width="512" height="384" alt="kanfont"><br /><br />
-
-</p>
+</p><dl><dt>
+   左上の漢直鍵盤</dt>
+<dd>
+                   グリフ編集する漢字などを選択。漢直鍵盤の入力操作は「<a href="index.html#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-1．「LTsv_glyph.tsv」のタグ解説</a>」を参考。<br /><br />
+</dd></dl>
+<dl><dt>
+   縦のスケール</dt>
+<dd>
+                     グリフを編集する文字を選択。漢直鍵盤に無い漢字も選択可能。<br />
+</dd></dl>
+<dl><dt>
+   縦スケールのスピンボックス</dt>
+<dd>
+       グリフを編集する文字を選択。縦のスケールと連動。<br />
+</dd></dl>
+<dl><dt>
+   U+ffff表記下の「CP」ボタン</dt>
+<dd>
+       クリップボードに縦スケールで選択されてる文字をコピー。<br />
+</dd></dl>
+<dl><dt>
+   U+ffff表記下の「PT」ボタン</dt>
+<dd>
+       クリップボードの先頭１文字を使って文字を選択。左上の漢直鍵盤にも反映。<br />
+</dd></dl>
+<dl><dt>
+   真ん中のキャンバス</dt>
+<dd>
+               グリフを編集。右回転の青色ポリゴンが描画用途、左回転の緑色ポリゴンがフォントだと反転消去グリフだと背景色消去。<br />
+                                    クリックで頂点追加、ドラッグで頂点移動。ドラッグだけど頂点を動かさずクリックを離すと頂点は消える。<br />
+                                    線分(長方形じゃなくて円の部分)をクリックで頂点を増やせる。<br />
+                                    頂点を全て消すとポリゴンが１枚消える。<br />
+</dd></dl>
+<dl><dt>
+   横のスケール</dt>
+<dd>
+                     編集するポリゴンの変更。または新規ポリゴンレイヤーを選択。<br />
+</dd></dl>
+<dl><dt>
+   横スケール下の「COPY」ボタン</dt>
+<dd>
+     ポリゴンレイヤーを複製。「PASTE」で貼り直す事が可能。クリップボード不使用。<br />
+</dd></dl>
+<dl><dt>
+   横スケール下の「CUT」ボタン</dt>
+<dd>
+      ポリゴンレイヤーを削除。「PASTE」で貼り直す事が可能。クリップボード不使用。<br />
+</dd></dl>
+<dl><dt>
+   横スケール下の「PASTE」ボタン</dt>
+<dd>
+      「COPY」「CUT」したポリゴンレイヤーを貼り直す。クリップボード不使用。<br />
+</dd></dl>
+<dl><dt>
+   横スケール下の「UP」ボタン</dt>
+<dd>
+       ポリゴンレイヤーを重ねる順番を変更。左回転のポリゴンを浮上。<br />
+</dd></dl>
+<dl><dt>
+   横スケール下の「DOWN」ボタン</dt>
+<dd>
+     ポリゴンレイヤーを重ねる順番を変更。右回転のポリゴンを沈める。<br />
+</dd></dl>
+<dl><dt>
+   「grid」スピンボックス</dt>
+<dd>
+           ポリゴンの頂点位置を揃える。「活(5x)」では100「漫(10x)」では50を想定。<br />
+</dd></dl>
+<dl><dt>
+   「grid」チェックボックス</dt>
+<dd>
+         通常OFF。スピンボックスの値より1少ない数値にグリッド指定する事も可能。グリフデザインでは杞憂だった機能。<br />
+</dd></dl>
+<dl><dt>
+   「seg」チェックボックス</dt>
+<dd>
+          通常ON。ポリゴンの線分を表示＆操作許可。<br />
+</dd></dl>
+<dl><dt>
+   「Pce(piece)」チェックボックス</dt>
+<dd>
+   番号付き頂点を移動するとポリゴン1枚まるごと移動。頂点はキャンバスの外に移動できないので図形が潰れる場合に注意。必要に応じてOFF。Pce=piece。<br />
+</dd></dl>
+<dl><dt>
+   「ref」チェックボックス</dt>
+<dd>
+          グリフ編集中に参考までに別のフォントを表示。<br />
+</dd></dl>
+<dl><dt>
+   「活」「漫」「筆」ラジオボタン</dt>
+<dd>
+   キャンバスで編集するグリフを「活:kan5x5」「漫:kan5x5comic」「筆:kan5x5brush」から選択。<br />
+</dd></dl>
+<dl><dt>
+   右側の入力欄</dt>
+<dd>
+                     辞書項目「英名音訓送異俗熙簡繁越地顔鍵代逆非難活漫筆幅」を漢直鍵盤で入力します。クリップボード使用可能。<br />
+                                    活漫筆幅がグリフ項目になります。グリフキャンバスで編集。頂点はSVGパスから独自形式に圧縮される場合があります。<br />
+                                    テキスト入力欄(電卓)の入力操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+</dd></dl>
+<dl><dt>
+   右下の「save」ボタン</dt>
+<dd>
+             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。<br />
+</dd></dl>
 
 </section>
 <section>
@@ -118,7 +222,25 @@
 </section>
 <section>
  <h3 id="kanfont-1">②-1．「kanfont.tsv」のタグ解説</h3>
-<＃contents/kanfont-1>
+<p>
+ 「<？https/kanfont.tsv>」の解説も準備中です。<br />
+</p>
+
+</section>
+<section>
+ <h3 id="kanfont-2">②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説</h3>
+ 「kanfont」のグリフキャンバスサイズは512ですがSVGパスの想定サイズは1024です。  
+ グリフキャンバスは左上が&#40;0,0&#41;ですがSVGパスは左下が&#40;0,0&#41;です。  
+ 「kanfont」は直線しか編集できないポリゴン限定ばので、SVGパスは「M」と「z」しか対応してないことに注意。  
+ そしてSVGパスを「LTsv/kanchar.tsv」に保存する際に独自形式5x10xで圧縮します。
+ SVGパスの「M,z」の代わりに半角角括弧「[,]」で座標を囲む事でポリゴン１枚を表現します。
+ 「活」用途の5x系は正方形を25分割するので36個のxy座標(0123456789abcdefghijklmnopqrstuvwxyz)で表現する事で圧縮します。
+  「kanfont」フォントキャンバス上は100pxになります。
+ 「漫」用途の10x系。縦横それぞれ10分割するのでX軸Y軸それぞれ11個のx座標(ABCDEFGHIJK)y座標(OPQRSTUVWXY)で表現する事で圧縮します。
+  「kanfont」フォントキャンバス上は50pxを想定していますが、複雑な図形だと25pxも使うので、「漫」グリフでも圧縮できないパターンも存在します。
+ 「筆」用途の20x系は予定ありません。圧縮できない場合は数値とコンマで座標を表現します。
+  「kanfont」フォントキャンバス上は25pxなどを想定していますが都道府県アイコンが10pxで描画、麻雀牌で5pxで位置調整してます。
+
 </section>
 <section>
  <h3 id="kanfont_faq-0">③-0．「kanfont」のＦＡＱ</h3>
@@ -128,6 +250,37 @@
 
  Ａ．「kanfont」はフォントファイルを読み込めないので「kan5x5comic」のグリフ編集しかできません。<br />
      既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<br />
+</dd></dl>
+<dl><dt>
+ Ｑ．「漫」フォント座標が圧縮できない場合がある。</dt>
+<dd>
+
+ Ａ．グリフの「grid」が100または50以外の数値を扱うと圧縮効かなくなります。<br />
+</dd></dl>
+<dl><dt>
+</dt>
+<dd>
+<br />
+</dd></dl>
+<dl><dt>
+</dt>
+<dd>
+<br />
+</dd></dl>
+<dl><dt>
+</dt>
+<dd>
+<br />
+</dd></dl>
+<dl><dt>
+</dt>
+<dd>
+<br />
+</dd></dl>
+<dl><dt>
+</dt>
+<dd>
+<br />
 </dd></dl>
 
 </section>
