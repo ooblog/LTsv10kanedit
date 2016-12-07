@@ -88,6 +88,9 @@ input.yonmoji_entry:focus{
   border: 1px gray solid;
   padding: 1rem;
  }
+span.kan5x5comic{
+ font-family: "kan5x5comic";
+}
 p.capcenter{
   text-align: center;
 }

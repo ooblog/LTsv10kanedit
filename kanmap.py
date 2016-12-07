@@ -216,6 +216,7 @@ def LTsv_kanmap_find():
         LTsv_glyph_kbddelete(kanmap_canvas); LTsv_glyph_kbddraw(kanmap_canvas,kanmap_kbdX,kanmap_kbdY); LTsv_draw_queue();
 
 def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
+#    LTsv_widget_showhide(kanmap_window,False)
     LTsv_glyph_picklesave()
     LTsv_draw_canvas_save(kanmap_canvas,"kanmap.png")
     if kanmap_checkboxC[kanmap_checkboxN["update"]] != 0:

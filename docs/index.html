@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161207W012342<br />
+   version(branch):20161128M153500	modify:20161207W212955<br />
   
 </p>
   <h2>目次</h2>
@@ -93,16 +93,10 @@
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
- フォント「kan5x5comic.ttf」を用意する場合はLinuxなら「kan5x5.svg」から「FontForge」で変換するか、<br />
- Windowsの場合は「<a href="https://ooblog.github.io/" title="約四文字">約四文字</a>」からWebフォント「<a href="https://ooblog.github.io/kan5x5comic.woff" title="kan5x5comic.woff">kan5x5comic.woff</a>」をダウンロードして「WOFFコンバーター」で変換。<br />
- フォント「kan5x5comic.ttf」を用意しない場合は適宜「*.tsv」のフォントに関する設定を修正。<br />
+ フォント「kan5x5comic.ttf」を用意する場合は「<a href="kanfont.html#kanfont_faq-0" title="<？title/kanfont_faq-0"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
 
 </p>
 <dl><dt>ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
-
-<dl><dt>ふぉんと - 「約四文字」(http://ooblog.github.io/)</dt><dd><a href="https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html" title="ふぉんと - 「約四文字」(http://ooblog.github.io/)">https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html</a></dd></dl>
-
-<dl><dt>WOFFコンバータ</dt><dd><a href="http://opentype.jp/woffconv.htm" title="WOFFコンバータ">http://opentype.jp/woffconv.htm</a></dd></dl>
 
 </section>
 <section>
@@ -110,7 +104,7 @@
 <p>
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https11:kanmap.py>」で解決できます。<br />
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」で解決できます。<br />
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
  人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
@@ -2061,6 +2055,11 @@ LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CY
 
 <h4>PCキーボード操作</h4>
 <dl><dt>
+  [ぬ〜ろ￥]or[ヌ〜ロ｜]</dt>
+<dd>
+               文字入力。「σ」鍵盤ではHJKLでカーソル移動などにもなります。<br />
+</dd></dl>
+<dl><dt>
   [NFER]+[ぬ〜ろ￥]</dt>
 <dd>
                    NFER鍵盤切替。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。<br />
@@ -2139,47 +2138,48 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   HJKL</dt>
 <dd>
-        カーソル移動。H←,J↓,K↑,L→(上下移動は「kanedit」用途)。<br />
+         カーソル移動。σ鍵盤じゃない状態の時も[Ctrl]+[H]で左、[Ctrl]+[L]で右移動。<br />
+               H←,J↓,K↑,L→(上下移動は「kanedit」用途)。<br />
 </dd></dl>
 <dl><dt>
   YUBN</dt>
 <dd>
-        範囲選択調整。YUで左側、BNで右側。<br />
+         範囲選択調整。YUで左側、BNで右側。<br />
 </dd></dl>
 <dl><dt>
-  ;(+)</dt>
+  ;+(<span class="kan5x5comic">&#61649;</span>)</dt>
 <dd>
-       バックスペース。σ鍵盤じゃない状態の時も[BS]キーで左側1文字削除。<br />
+ バックスペース。σ鍵盤じゃない状態の時も[BS]キーで左側1文字削除。<br />
 </dd></dl>
 <dl><dt>
-  :(*)</dt>
+  :*(<span class="kan5x5comic">&#61650;</span>)</dt>
 <dd>
-       カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで右側1文字削除。<br />
+ カーソルから右の文字デリート。σ鍵盤じゃない状態の時も[DEL]キーで右側1文字削除。<br />
 </dd></dl>
 <dl><dt>
-  ]</dt>
+  ](<span class="kan5x5comic">&#61651;</span>)</dt>
 <dd>
-          エンターキー。σ鍵盤じゃない状態の時も[Enter]キーで入力決定。<br />
+  エンターキー。σ鍵盤じゃない状態の時も[Enter]キーで入力決定。<br />
 </dd></dl>
 <dl><dt>
   A</dt>
 <dd>
-          テキスト全選択。σ鍵盤じゃない状態の時も[Ctrl]+[A]で全選択。<br />
+            テキスト全選択。σ鍵盤じゃない状態の時も[Ctrl]+[A]で全選択。<br />
 </dd></dl>
 <dl><dt>
   C</dt>
 <dd>
-          テキストをクリップボードにコピー。σ鍵盤じゃない状態の時も[Ctrl]+[C]で選択範囲コピー。<br />
+            テキストをクリップボードにコピー。σ鍵盤じゃない状態の時も[Ctrl]+[C]で選択範囲コピー。<br />
 </dd></dl>
 <dl><dt>
   X</dt>
 <dd>
-          テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。<br />
+            テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。<br />
 </dd></dl>
 <dl><dt>
   V</dt>
 <dd>
-          クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。<br />
+            クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。<br />
 </dd></dl>
 
 </section>
@@ -2358,7 +2358,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
   先頭文字が「探」</dt>
 <dd>
                    文字列から漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」に含まれる漢字の探索。漢字逆引きの一種。文字が見つかり次第鍵盤切替。「探袮穃粫𡚴岾軅垉椦蟐靹駲閠墸壥⇔𡚴」<br />
-                                     漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」に見つからない文字の場合は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の「異」「簡」「繁」「代」項目からも探索を試みる。「探檪⇔櫟」「探⇔東」<br />
+                                     漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」に見つからない文字の場合は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の「異」「簡」「繁」「代」項目からも探索を試みる。「探檪⇔櫟」「探<span class="kan5x5comic">&#61580;</span>⇔東」<br />
 </dd></dl>
 <dl><dt>
   先頭文字が「汎」その他数式以外</dt>

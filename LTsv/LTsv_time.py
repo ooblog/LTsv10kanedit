@@ -13,14 +13,14 @@ LTsv_zodiacjp=("鼠","牛","虎","兎","龍","蛇","馬","羊","猿","鶏","犬"
 LTsv_zodiacch=("子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥")
 LTsv_maxmonth=    (31,31,28,31,30,31,30,31,31,30,31,30,31,31)
 LTsv_maxmonthleep=(31,31,29,31,30,31,30,31,31,30,31,30,31,31)
-LTsv_monthjp=   (  "睦月",   "如月",  "弥生",   "卯月",  "皐月","水無月",  "文月",  "葉月",  "長月",   "神無月",   "霜月",  "師走")
-LTsv_month_jp=  ("　睦月", "　如月","　弥生", "　卯月","　皐月","水無月","　文月","　葉月","　長月",   "神無月", "　霜月","　師走")
-LTsv_monthjpiz= (  "睦月",   "如月",  "弥生",   "卯月",  "皐月","水無月",  "文月",  "葉月",  "長月",   "神有月",   "霜月",  "師走")
-LTsv_month_jpiz=("　睦月", "　如月","　弥生", "　卯月","　皐月","水無月","　文月","　葉月","　長月",   "神有月", "　霜月","　師走")
-LTsv_monthenl=  ("January","February","March","April", "May",   "June",  "July",  "August","September","October","November","December")
-LTsv_monthens=  ("Jan",    "Feb",     "Mar",  "Apr"  , "May",   "Jun",   "Jul",   "Aug",   "Sep",      "Oct",    "Nov",     "Dec")
-LTsv_monthenc=  ("J",      "F",          "C", "A",     "M",       "N",     "L",    "U",    "S",        "O",      "N"       ,"D")
-LTsv_monthenh=  ("January","February","marCh","April", "May",   "juNe",  "juLy",  "aUgust","September","October","November","December")
+LTsv_monthjp=   (  "師走",  "睦月",   "如月",  "弥生",   "卯月",  "皐月","水無月",  "文月",  "葉月",  "長月",   "神無月",   "霜月",  "師走",  "睦月")
+LTsv_month_jp=  ("　師走","　睦月", "　如月","　弥生", "　卯月","　皐月","水無月","　文月","　葉月","　長月",   "神無月", "　霜月","　師走","　睦月")
+LTsv_monthjpiz= (  "師走",  "睦月",   "如月",  "弥生",   "卯月",  "皐月","水無月",  "文月",  "葉月",  "長月",   "神有月",   "霜月",  "師走",  "睦月")
+LTsv_month_jpiz=("　師走","　睦月", "　如月","　弥生", "　卯月","　皐月","水無月","　文月","　葉月","　長月",   "神有月", "　霜月","　師走","　睦月")
+LTsv_monthenl=  ("December","January","February","March","April", "May",   "June",  "July",  "August","September","October","November","December","January")
+LTsv_monthens=  ("Dec",     "Jan",    "Feb",     "Mar",  "Apr"  , "May",   "Jun",   "Jul",   "Aug",   "Sep",      "Oct",    "Nov",     "Dec",      "Jan")
+LTsv_monthenc=  ("D",       "J",      "F",          "C", "A",     "M",       "N",     "L",    "U",    "S",        "O",      "N"       ,"D",        "J")
+LTsv_monthenh=  ("December","January","February","marCh","April", "May",   "juNe",  "juLy",  "aUgust","September","October","November","December","January")
 LTsv_weekdayjp =("月",    "火",     "水",       "木",      "金",    "土",     "日")
 LTsv_weekdayens=("Mon",   "Tue",    "Wed"      ,"Thu",     "Fri",   "Sat",     "Sun")
 LTsv_weekdayenl=("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
@@ -134,7 +134,7 @@ def LTsv_intstr0x(LTsv_code):
         LTsv_codeint=int(float(LTsv_codestr))
     except ValueError:
         pass
-    for LTsv_hexstr in ["0x","$"]:
+    for LTsv_hexstr in ["0x","U+","$"]:
         if LTsv_hexstr in LTsv_codestr:
             try:
                 LTsv_codeint=int(LTsv_codestr.replace(LTsv_hexstr,""),16)
@@ -769,8 +769,8 @@ if __name__=="__main__":
     print("")
     LTsv_checkFPS()
     test_workdir="./testfile/"; txtpath=test_workdir+"testtime.txt"; printlog=""
-    timeformat24="@yzj年@000y-@0m-@0dm@mes(@0dy/@0yd日@0wnyi/@ywi週@wdes第@wnm@wdj曜@apj@hap時)@0h:@0n:@0s.@0rs"
-    timeformat30="@Yzj年@000Y-@Mz-@Dmz@Mes(@0Dy/@0Yd日@Wnyiz/@Ywi週@Wdes第@Wnmz@Wdj曜@Apj@Hz時)@Hz:@Nz:@Sz.@0Rs"
+    timeformat24="@mjiz@yzj年@000y-@0m-@0dm@mes(@0dy/@0yd日@0wnyi/@ywi週@wdes第@wnm@wdj曜@apj@hap時)@0h:@0n:@0s.@0rs"
+    timeformat30="@mj@Yzj年@000Y-@Mz-@Dmz@Mes(@0Dy/@0Yd日@Wnyiz/@Ywi週@Wdes第@Wnmz@Wdj曜@Apj@Hz時)@Hz:@Nz:@Sz.@0Rs"
     timeformatBT="@000y-@0m-@0dm@mes(@0dy/@0yd,@0wn/@yw.@wdes)@bt:@@@0bti.@0btp"
     timeformatsec="@0h:@0n:@0s.@0rs(@+-@-0h:@-0n:@-0s.@-0rs)@@@0bti.@0btp(@+-@-0bti.@-0btp)/@0H:@0N:@0S.@0Rs FPS:@0fpk Counter:@0c"
     timeformatday="2020年東京オリンピックまで@000D日"
