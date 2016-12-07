@@ -1060,10 +1060,12 @@ def LTsv_glyph_calcleave(calc_canvas):
     LTsv_glyph_calcdrawplane(calc_canvas,calc_canvasbgcolor=LTsv_glyph_kbdleavecolor); LTsv_draw_queue()
     return LTsv_calculatorTT[calc_canvas]
 
-def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput):
+def LTsv_glyph_calcinput(calc_canvas,glyph_calcinput=""):
     global LTsv_calculatorTX,LTsv_calculatorTY,LTsv_calculatorTW,LTsv_calculatorTL,LTsv_calculatorTC,LTsv_calculatorTR,LTsv_calculatorTT,LTsv_calculatorTF,LTsv_calculatorTG
     LTsv_glyph_calcdelete(calc_canvas)
-    if glyph_calcinput in "":
+    if len(glyph_calcinput)==0:
+        pass
+    elif glyph_calcinput in "":
         if glyph_calcinput in "":
             LTsv_clippaste=LTsv_widget_gettext(LTsv_calculatorUC[calc_canvas]) if LTsv_calculatorUC[calc_canvas] != None else ""
             LTsv_calculatorTT[calc_canvas]=LTsv_calculatorTT[calc_canvas][:LTsv_calculatorTL[calc_canvas]]+LTsv_clippaste+LTsv_calculatorTT[calc_canvas][LTsv_calculatorTL[calc_canvas]:]
@@ -1131,7 +1133,8 @@ def LTsv_glyph_typeNXK(glyphtype_getkbdnames):
 #
 LTsv_glyph_ctrlAZ={"た":"","て":"","い":"","す":"","か":"","ん":"","な":"","に":"","ら":"","せ":"",
 "ち":"","と":"","し":"","は":"","き":"","く":"","ま":"","の":"","り":"","れ":"","け":"","む":"",
-"つ":"","さ":"","そ":"","ひ":"","こ":"","み":"","も":"","ね":"","る":"","め":"","ろ":""}
+"つ":"","さ":"","そ":"","ひ":"","こ":"","み":"","も":"","ね":"","る":"","め":"","ろ":"","　":""}
+LTsv_glyph_ctrlSP={"Tab":"","BS":"","DEL":"","Left":"","Down":"","Up":"","Right":"","Home":"","End":"","PgUp":"","PgDn":"","Enter":"","Space":""}
 def LTsv_glyph_calctype(calc_canvas):
     global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     glyph_calcinput=""
@@ -1158,21 +1161,23 @@ def LTsv_glyph_calctype(calc_canvas):
                 LTsv_glyph_kbdselect(LTsv_glyph_irohaalphaX[LTsv_glyph_choiceNX(LTsv_glyph_kbdchars[LTsv_glyph_KANA])])
     if LTsv_glyph_kbdCTRL in glyphtype_getkbdnames:
         for ctrlAZ_key,ctrlAZ_data in LTsv_glyph_ctrlAZ.items():
-            if ctrlAZ_key in glyphtype_getkbdkanas: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,ctrlAZ_data);
+            if ctrlAZ_key in glyphtype_getkbdkanas: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,ctrlAZ_data)
     else:
-        if "Tab" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-        if "BS" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "DEL" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "Left" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "Down" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "Up" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "Right" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "Home" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "End" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-        if "PgUp" in glyphtype_getkbdnames: glyph_calcinput= LTsv_glyph_calcinput(calc_canvas,"");
-        if "PgDn" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-        if "Enter" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-        if "Space" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
+        for ctrlSP_key,ctrlSP_data in LTsv_glyph_ctrlSP.items():
+            if ctrlSP_key in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,ctrlSP_data)
+#        if "Tab" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
+#        if "BS" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "DEL" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "Left" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "Down" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "Up" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "Right" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "Home" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "End" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
+#        if "PgUp" in glyphtype_getkbdnames: glyph_calcinput= LTsv_glyph_calcinput(calc_canvas,"");
+#        if "PgDn" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
+#        if "Enter" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
+#        if "Space" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
         for kbdkanas in glyphtype_getkbdkanas.split('\t') if len(glyphtype_getkbdkanas) > 0 else []:
             if kbdkanas in LTsv_glyph_irohatype:
                 LTsv_kbdcursor=LTsv_glyph_irohatype.index(kbdkanas)
@@ -1261,6 +1266,7 @@ def debug_calculatormouseinput(calculatormouseinput):
 def debug_calculatorcommand(glyph_calcinput):
     if glyph_calcinput == "":
         LTsv_glyph_calcresize(debug_calculator_canvas,calculatorT=LTsv_evaltext(LTsv_glyph_calcresize(debug_calculator_canvas)))
+        LTsv_glyph_calcinput(debug_calculator_canvas)
 
 def debug_reversi_mousepress(window_objvoid=None,window_objptr=None):
     if LTsv_glyph_mousepress(debug_reversi_canvas,debug_kbdX,debug_kbdY) == LTsv_global_kbdcursorNone():

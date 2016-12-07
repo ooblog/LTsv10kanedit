@@ -359,6 +359,7 @@ def kanfont_calculatormouseinput_shell(calculator_canvas):
         LTsv_glyph_calcinput(calculator_canvas,calculatormouseinput)
         if calculatormouseinput == "":
             kanfont_calculatormouseinput_enter(calculator_canvas)
+            LTsv_glyph_calcinput(calculator_canvas)
     kanfont_calculatormouseinput[calculator_canvas]=kanfont_calculatormouseinput_kernel
     return kanfont_calculatormouseinput_kernel
 

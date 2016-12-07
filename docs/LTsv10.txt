@@ -1,5 +1,5 @@
 
-version(branch):20161128M153500	modify:20161207W212955
+version(branch):20161128M153500	modify:20161207W233650
 
 目次
 
@@ -1718,8 +1718,9 @@ version(branch):20161128M153500	modify:20161207W212955
   「canvas」の「event_l=*_mouserelease」系コールバック関数内に設置。
   返り値は入力欄のテキスト。
 
- 【LTsv_glyph_calcinput(calc_canvas,glyph_calcinput)】
+ 【LTsv_glyph_calcinput(calc_canvas,glyph_calcinput="")】
   glyph_calcinputが文字ならテキスト入力欄(電卓)に文字入力、カーソル移動など編集指示ならテキスト処理。
+  glyph_calcinputを省略すると再描画のみ。
 
  【LTsv_glyph_typeNXK(glyphtype_getkbdnames)】
   「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。
