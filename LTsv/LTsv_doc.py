@@ -29,7 +29,8 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
             LTsvDOC_tagdata=""
             LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
             for LTsvDOC_tagcase in LTsvDOC_tagcases:
-                LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
+#                LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
+                LTsv_posR=LTsvDOC_tagcase.find('\t'); LTsvDOC_casefirst=LTsvDOC_tagcase[0:LTsv_posR] if LTsv_posR >= 0 else LTsvDOC_tagcase
                 LTsvDOC_research=None
                 try:
                     LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
@@ -37,7 +38,8 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
                     continue
                 else:
                     if LTsvDOC_research:
-                        LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
+#                        LTsvDOC_caserest=LTsv_readlinerest(LTsvDOC_tagpage,LTsvDOC_casefirst)
+                        LTsvDOC_caserest=LTsvDOC_tagcase[LTsv_posR+1:] if LTsv_posR >= 0 else ""
                         if len(LTsvDOC_caserest) > 0:
                             LTsvDOC_caseline=LTsv_getdaytimestr(LTsvDOC_caserest)
                             LTsvDOC_tagdata=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_caseline)

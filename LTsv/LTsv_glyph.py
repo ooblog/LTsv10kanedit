@@ -1129,8 +1129,6 @@ def LTsv_glyph_typeNXK(glyphtype_getkbdnames):
 #        LTsv_glyph_NXK=LTsv_glyph_None
 #    return LTsv_glyph_NXK
 
-#たていすかんなにらせちとしはきくまのりれけむつさそひこみもねるめろ
-#
 LTsv_glyph_ctrlAZ={"た":"","て":"","い":"","す":"","か":"","ん":"","な":"","に":"","ら":"","せ":"",
 "ち":"","と":"","し":"","は":"","き":"","く":"","ま":"","の":"","り":"","れ":"","け":"","む":"",
 "つ":"","さ":"","そ":"","ひ":"","こ":"","み":"","も":"","ね":"","る":"","め":"","ろ":"","　":""}
@@ -1165,19 +1163,6 @@ def LTsv_glyph_calctype(calc_canvas):
     else:
         for ctrlSP_key,ctrlSP_data in LTsv_glyph_ctrlSP.items():
             if ctrlSP_key in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,ctrlSP_data)
-#        if "Tab" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-#        if "BS" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "DEL" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "Left" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "Down" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "Up" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "Right" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "Home" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "End" in glyphtype_getkbdnames: glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"")
-#        if "PgUp" in glyphtype_getkbdnames: glyph_calcinput= LTsv_glyph_calcinput(calc_canvas,"");
-#        if "PgDn" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-#        if "Enter" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
-#        if "Space" in glyphtype_getkbdnames:  glyph_calcinput=LTsv_glyph_calcinput(calc_canvas,"");
         for kbdkanas in glyphtype_getkbdkanas.split('\t') if len(glyphtype_getkbdkanas) > 0 else []:
             if kbdkanas in LTsv_glyph_irohatype:
                 LTsv_kbdcursor=LTsv_glyph_irohatype.index(kbdkanas)
