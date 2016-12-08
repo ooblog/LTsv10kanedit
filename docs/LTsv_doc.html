@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161208R213648<br />
+   version(branch):20161128M153500	modify:20161209F000437<br />
   
 </p>
   <h2>目次</h2>
@@ -271,7 +271,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
            「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」では「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」設定ページをskplistに登録してるので置換されません。
 </dd></dl>
 
-<h4>大きく分けて4種類の置換タグがあるものとします。</h4>
+<h4>分類すると5種類の置換タグがあるものとします。</h4>
 <dl><dt>
   &lt;「＠」tag&gt;</dt>
 <dd>
@@ -295,31 +295,59 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 <dd>
                    分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。<br />
                                 firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。<br />
-                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。<br />
-                                日時フォーマットの詳細は「<？index04-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<br />
+                                tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<br />
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象。<br />
+                                日時フォーマットの詳細は「<a href="index.html#LTsv_time-1" title="④-1．日時フォーマットの概要"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">④-1．日時フォーマットの概要</a>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<br />
+</dd></dl>
+<dl><dt>
+  &lt;「＄」tag&gt;</dt>
+<dd>
+                   内包タグと便宜上命名。置換結果をさらに置換します。分岐タグのコロン「:」が先頭のfirstがタグrestが置換内容。<br />
+                                内包タグは分岐タグの内部でしか使えませんが、使い回さないデータの圧縮および置換処理の高速化に繋がります。<br />
 </dd></dl>
 
 <dl><dt>6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント</dt><dd><a href="http://docs.python.jp/3/library/re.html" title="6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント">http://docs.python.jp/3/library/re.html</a></dd></dl>
 <h4>tagseparateによる繰り返し記述でタグの過剰生産を抑制します。</h4>
 <p>
- [&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;]のようにタグの中でtagseparate「*」で区切ると、&lt;tagA&gt;&lt;tagB&gt;&lt;tagC&gt;それぞれのタグを同じページの内容で置換します。<br />
-tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<br />
-&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;タグの条件文内で&lt;text@c&gt;を呼ぶと&lt;text0&gt;&lt;text1&gt;&lt;text2&gt;を呼ぶことができます。<br />
+同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。<br />
+[&lt;？tagA&gt;&#x7C;<br />
+.+\.html?	&lt;a href="#text0" title="data-a"&gt;data-a&lt;/a&gt;<br />
+.*	data-a<br />
+&#x7C;&lt;？tagA&gt;]<br />
+
+[&lt;？tagB&gt;&#x7C;<br />
+.+\.html?	&lt;a href="#text1" title="data-b"&gt;data-b&lt;/a&gt;<br />
+.*	data-b<br />
+&#x7C;&lt;？tagB&gt;]<br />
+
+[&lt;？tagC&gt;&#x7C;<br />
+.+\.html?	&lt;a href="#text2" title="data-c"&gt;data-c&lt;/a&gt;<br />
+.*	data-a　←コピペ漏れ<br />
+&#x7C;&lt;？tagC&gt;]<br />
 </p><p>
-[&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;&#x7C;<br />
+tagseparateを用いることで同じ構文の繰り返しとデータの分離ができるのですが、タグが増える事で読みづらくなるデメリットがあります。<br />
+[&lt;？tagA&gt;*&lt;？tagB&gt;*&lt;？tagC&gt;&#x7C;<br />
 .+\.html?	&lt;a href="#text@c" title="&lt;？text@c&gt;"&gt;&lt;？text@c&gt;&lt;/a&gt;<br />
 .*	&lt;？text@c&gt;<br />
-&#x7C;&lt;tagA&gt;*&lt;tagB&gt;*&lt;tagC&gt;]<br />
-[&lt;text0&gt;&#x7C;<br />
-.*	text0<br />
-&#x7C;&lt;text0&gt;]<br />
-[&lt;text1&gt;&#x7C;<br />
-.*	text1<br />
-&#x7C;&lt;text1&gt;]<br />
-[&lt;text2&gt;&#x7C;<br />
-.*	text2<br />
-&#x7C;&lt;text2&gt;]<br />
-例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。<br />
+&#x7C;&lt;？tagA&gt;*&lt;？tagB&gt;*&lt;？tagC&gt;]<br />
+[&lt;？text0&gt;&#x7C;<br />
+.*	data-a<br />
+&#x7C;&lt;？text0&gt;]<br />
+[&lt;？text1&gt;&#x7C;<br />
+.*	data-b<br />
+&#x7C;&lt;？text1&gt;]<br />
+[&lt;？text2&gt;&#x7C;<br />
+.*	data-c<br />
+&#x7C;&lt;？text2&gt;]<br />
+</p><p>
+内包タグで上記のタグ群をコンパクトにできます。<br />
+[&lt;？tagA&gt;*&lt;？tagB&gt;*&lt;？tagC&gt;&#x7C;<br />
+:&lt;＄text0&gt;	data-a<br />
+:&lt;＄text1&gt;	data-b<br />
+:&lt;＄text2&gt;	data-c<br />
+.+\.html?	&lt;a href="#text@c" title="&lt;＄text@c&gt;"&gt;&lt;＄text@c&gt;&lt;/a&gt;<br />
+.*	&lt;＄text@c&gt;<br />
+&#x7C;&lt;？tagA&gt;*&lt;？tagB&gt;*&lt;？tagC&gt;]<br />
 </p>
 
 </section>

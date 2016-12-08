@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161128M153500	modify:20161208R213648
+version(branch):20161128M153500	modify:20161209F000437
 
 目次
 
@@ -140,7 +140,7 @@ version(branch):20161128M153500	modify:20161208R213648
   <＠LTsv_doc_main>(main)       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
   <LTsv_doc>(skplist)           「LTsv/LTsv_doc.tsv」では「LTsv/LTsv_doc.py」設定ページをskplistに登録してるので置換されません。
 
- 大きく分けて4種類の置換タグがあるものとします。
+ 分類すると5種類の置換タグがあるものとします。
   <「＠」tag>                   コンフィグタグと便宜上命名。「main<＠LTsv_doc_main>」「outlist<＠LTsv_doc_outlist>」「LTsvver20161128M153500」といったドキュメント本文ではなくメタ的な内容のページタグ。
   <「＃」tag>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。
   <「！」tag>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。
@@ -149,31 +149,55 @@ version(branch):20161128M153500	modify:20161208R213648
                                 「*.png」「*.gif」「*.jpg」「*.jpeg」の場合base64に変換。htmlへの画像埋め込みを想定。画像を再度読み込む場合はページを空にする。
   <「？」tag>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。
                                 firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。
-                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。
-                                日時フォーマットの詳細は「<？index04-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。
+                                tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象。
+                                日時フォーマットの詳細は「「LTsv_doc.txt」の④-1．日時フォーマットの概要」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。
+  <「＄」tag>                   内包タグと便宜上命名。置換結果をさらに置換します。分岐タグのコロン「:」が先頭のfirstがタグrestが置換内容。
+                                内包タグは分岐タグの内部でしか使えませんが、使い回さないデータの圧縮および置換処理の高速化に繋がります。
 
    6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
    http://docs.python.jp/3/library/re.html
 
  tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
- [<tagA>*<tagB>*<tagC>]のようにタグの中でtagseparate「*」で区切ると、<tagA><tagB><tagC>それぞれのタグを同じページの内容で置換します。
-tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。
-<tagA>*<tagB>*<tagC>タグの条件文内で<text@c>を呼ぶと<text0><text1><text2>を呼ぶことができます。
+同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。
+[<？tagA>|
+.+\.html?	<a href="#text0" title="data-a">data-a</a>
+.*	data-a
+|<？tagA>]
 
-[<tagA>*<tagB>*<tagC>|
+[<？tagB>|
+.+\.html?	<a href="#text1" title="data-b">data-b</a>
+.*	data-b
+|<？tagB>]
+
+[<？tagC>|
+.+\.html?	<a href="#text2" title="data-c">data-c</a>
+.*	data-a　←コピペ漏れ
+|<？tagC>]
+
+tagseparateを用いることで同じ構文の繰り返しとデータの分離ができるのですが、タグが増える事で読みづらくなるデメリットがあります。
+[<？tagA>*<？tagB>*<？tagC>|
 .+\.html?	<a href="#text@c" title="<？text@c>"><？text@c></a>
 .*	<？text@c>
-|<tagA>*<tagB>*<tagC>]
-[<text0>|
-.*	text0
-|<text0>]
-[<text1>|
-.*	text1
-|<text1>]
-[<text2>|
-.*	text2
-|<text2>]
-例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。
+|<？tagA>*<？tagB>*<？tagC>]
+[<？text0>|
+.*	data-a
+|<？text0>]
+[<？text1>|
+.*	data-b
+|<？text1>]
+[<？text2>|
+.*	data-c
+|<？text2>]
+
+内包タグで上記のタグ群をコンパクトにできます。
+[<？tagA>*<？tagB>*<？tagC>|
+:<＄text0>	data-a
+:<＄text1>	data-b
+:<＄text2>	data-c
+.+\.html?	<a href="#text@c" title="<＄text@c>"><＄text@c></a>
+.*	<＄text@c>
+|<？tagA>*<？tagB>*<？tagC>]
 
 
 ③-0．「LTsv_doc」のＦＡＱ

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161208R213701
+modify	20161209F000454
 |L:Tsv]
 
 [LTsv_doc|
@@ -1411,7 +1411,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
                                      「今今」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:48」。「eval_now」を返す。<？BR>
                                      「今版」→「今20160716S001619⇔20160716S001619」。[LTsv_time.py]の「LTsv_time_ver()」を返す。<？BR>
                                      「今枝」→「今@000y@0m@0dm@wdec@0h@0n@0s⇔20160716S001619」。「eval_branch」を返す。<？BR>
-                                     日時の詳しい使い方は「<？index04-1>」を参考。<？BR><？/DD/DL>
+                                     日時フォーマットの詳しい使い方は「<？contents/LTsv_doc:LTsv_time-1>」を参考。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「⑧」<？/DTDD>                   UTF-8文字列を256進数としての8点点字(UTF-8点字)に変換。一般的な点字ではないので注意。<？BR>
                                      「⑧点字に類似したもの⇔⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮」。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「⓪」<？/DTDD>                    UTF-8文字列を256進数としての8点点字(UTF-8点字)をUTF-8の文字列に復号。<？BR>
@@ -1566,29 +1566,53 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
                                 「*.png」「*.gif」「*.jpg」「*.jpeg」の場合base64に変換。htmlへの画像埋め込みを想定。画像を再度読み込む場合はページを空にする。<？BR><？/DD/DL>
 <？DLDT>  <？&lt;>「？」tag<？&gt;><？/DTDD>                   分岐タグと便宜上命名。タブ文字「\t」を含むページは正規表現による分岐が発生。1行を想定なので末尾に改行は入らない。<？BR>
                                 firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。<？BR>
-                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象に(コメントタグなどの末尾改行が付与される可能性)。<？BR>
-                                日時フォーマットの詳細は「<？index04-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<？BR><？/DD/DL>
+                                tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<？BR>
+                                restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象。<？BR>
+                                日時フォーマットの詳細は「<？contents/LTsv_doc:LTsv_time-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<？BR><？/DD/DL>
+<？DLDT>  <？&lt;>「＄」tag<？&gt;><？/DTDD>                   内包タグと便宜上命名。置換結果をさらに置換します。分岐タグのコロン「:」が先頭のfirstがタグrestが置換内容。<？BR>
+                                内包タグは分岐タグの内部でしか使えませんが、使い回さないデータの圧縮および置換処理の高速化に繋がります。<？BR><？/DD/DL>
 
 <？https/Python_re>
 <？index/LTsv_doc:separate>
-<？P> [<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>]のようにタグの中でtagseparate「*」で区切ると、<？&lt;>tagA<？&gt;><？&lt;>tagB<？&gt;><？&lt;>tagC<？&gt;>それぞれのタグを同じページの内容で置換します。<？BR>
-tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<？BR>
-<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>タグの条件文内で<？&lt;>text@c<？&gt;>を呼ぶと<？&lt;>text0<？&gt;><？&lt;>text1<？&gt;><？&lt;>text2<？&gt;>を呼ぶことができます。<？BR>
+<？P>同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。<？BR>
+[<？&lt;>？tagA<？&gt;><？&#x7C;><？BR>
+.+\.html?<？@T><？&lt;>a href="#text0" title="data-a"<？&gt;>data-a<？&lt;>/a<？&gt;><？BR>
+.*<？@T>data-a<？BR>
+<？&#x7C;><？&lt;>？tagA<？&gt;>]<？BR>
+
+[<？&lt;>？tagB<？&gt;><？&#x7C;><？BR>
+.+\.html?<？@T><？&lt;>a href="#text1" title="data-b"<？&gt;>data-b<？&lt;>/a<？&gt;><？BR>
+.*<？@T>data-b<？BR>
+<？&#x7C;><？&lt;>？tagB<？&gt;>]<？BR>
+
+[<？&lt;>？tagC<？&gt;><？&#x7C;><？BR>
+.+\.html?<？@T><？&lt;>a href="#text2" title="data-c"<？&gt;>data-c<？&lt;>/a<？&gt;><？BR>
+.*<？@T>data-a　←コピペ漏れ<？BR>
+<？&#x7C;><？&lt;>？tagC<？&gt;>]<？BR>
 <？/PP>
-[<？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;><？&#x7C;><？BR>
+tagseparateを用いることで同じ構文の繰り返しとデータの分離ができるのですが、タグが増える事で読みづらくなるデメリットがあります。<？BR>
+[<？&lt;>？tagA<？&gt;>*<？&lt;>？tagB<？&gt;>*<？&lt;>？tagC<？&gt;><？&#x7C;><？BR>
 .+\.html?<？@T><？&lt;>a href="#text@c" title="<？&lt;>？text@c<？&gt;>"<？&gt;><？&lt;>？text@c<？&gt;><？&lt;>/a<？&gt;><？BR>
 .*<？@T><？&lt;>？text@c<？&gt;><？BR>
-<？&#x7C;><？&lt;>tagA<？&gt;>*<？&lt;>tagB<？&gt;>*<？&lt;>tagC<？&gt;>]<？BR>
-[<？&lt;>text0<？&gt;><？&#x7C;><？BR>
-.*<？@T>text0<？BR>
-<？&#x7C;><？&lt;>text0<？&gt;>]<？BR>
-[<？&lt;>text1<？&gt;><？&#x7C;><？BR>
-.*<？@T>text1<？BR>
-<？&#x7C;><？&lt;>text1<？&gt;>]<？BR>
-[<？&lt;>text2<？&gt;><？&#x7C;><？BR>
-.*<？@T>text2<？BR>
-<？&#x7C;><？&lt;>text2<？&gt;>]<？BR>
-例えば上記の様に1つのページで複数のタグに同じ装飾指示が出せるという寸法です。<？BR><？/P>
+<？&#x7C;><？&lt;>？tagA<？&gt;>*<？&lt;>？tagB<？&gt;>*<？&lt;>？tagC<？&gt;>]<？BR>
+[<？&lt;>？text0<？&gt;><？&#x7C;><？BR>
+.*<？@T>data-a<？BR>
+<？&#x7C;><？&lt;>？text0<？&gt;>]<？BR>
+[<？&lt;>？text1<？&gt;><？&#x7C;><？BR>
+.*<？@T>data-b<？BR>
+<？&#x7C;><？&lt;>？text1<？&gt;>]<？BR>
+[<？&lt;>？text2<？&gt;><？&#x7C;><？BR>
+.*<？@T>data-c<？BR>
+<？&#x7C;><？&lt;>？text2<？&gt;>]<？BR>
+<？/PP>
+内包タグで上記のタグ群をコンパクトにできます。<？BR>
+[<？&lt;>？tagA<？&gt;>*<？&lt;>？tagB<？&gt;>*<？&lt;>？tagC<？&gt;><？&#x7C;><？BR>
+:<？&lt;>＄text0<？&gt;><？@T>data-a<？BR>
+:<？&lt;>＄text1<？&gt;><？@T>data-b<？BR>
+:<？&lt;>＄text2<？&gt;><？@T>data-c<？BR>
+.+\.html?<？@T><？&lt;>a href="#text@c" title="<？&lt;>＄text@c<？&gt;>"<？&gt;><？&lt;>＄text@c<？&gt;><？&lt;>/a<？&gt;><？BR>
+.*<？@T><？&lt;>＄text@c<？&gt;><？BR>
+<？&#x7C;><？&lt;>？tagA<？&gt;>*<？&lt;>？tagB<？&gt;>*<？&lt;>？tagC<？&gt;>]<？BR><？/P>
 |<＃contents/LTsv_doc-2>]
 [<？index/LTsv_doc:skplist>|
 .+\.html?	<h4><？title/skplist></h4>
@@ -1602,7 +1626,7 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .*	 <？title/re.search>
 |<？index/LTsv_doc:re.search>]
 [<？title/re.search>|
-.*	大きく分けて4種類の置換タグがあるものとします。
+.*	分類すると5種類の置換タグがあるものとします。
 |<？title/re.search>]
 [<？index/LTsv_doc:separate>|
 .+\.html?	<h4><？title/separate></h4>
@@ -1615,6 +1639,10 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 .+\.html?	<a href="index.html#LTsv_file-0" title="<？title/LTsv_file-0>"><？titleimg/software-0><？title/LTsv_file-0></a>
 .*	「LTsv_doc.txt」の<？title/LTsv_file-0>
 |<？contents/LTsv_doc:LTsv_file-0>]
+[<？contents/LTsv_doc:LTsv_time-1>|
+.+\.html?	<a href="index.html#LTsv_time-1" title="<？title/LTsv_time-1>"><？titleimg/software-0><？title/LTsv_time-1></a>
+.*	「LTsv_doc.txt」の<？title/LTsv_time-1>
+|<？contents/LTsv_doc:LTsv_time-1>]
 [<？contents/LTsv_doc:aboutLTsv-1>|
 .+\.html?	<a href="index.html#aboutLTsv-1" title="<？title/aboutLTsv-1"><？titleimg/software-0><？title/aboutLTsv-1></a>
 .*	「LTsv_doc.txt」の<？title/aboutLTsv-1>
@@ -1688,8 +1716,12 @@ tagseparateを使った時は日時フォーマットの「@c(カウンター)�
 <？https/reference:country>
 |<＃contents/kanedit_faq-2>]
 [<？https/reference:radical>*<？https/reference:country>|
-.+\.html?	<dl><dt><？web/reference-@c></dt><dd><a href="<？url/reference-@c>" title="<？web/reference-@c>"><？url/reference-@c></a></dd></dl>
-.*	@E   <？web/reference-@c><？BR>@E   <？url/reference-@c><？BR>
+:<＄web/reference-0>	部首 - Wikipedia
+:<＄url/reference-0>	http://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
+:<＄web/reference-1>	国名の漢字表記一覧 - Wikipedia
+:<＄url/reference-1>	https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%90%8D%E3%81%AE%E6%BC%A2%E5%AD%97%E8%A1%A8%E8%A8%98%E4%B8%80%E8%A6%A7
+.+\.html?	<dl><dt><＄web/reference-@c></dt><dd><a href="<＄url/reference-@c>" title="<＄web/reference-@c>"><＄url/reference-@c></a></dd></dl>
+.*	@E   <＄web/reference-@c><？BR>@E   <＄url/reference-@c><？BR>
 |<？https/reference:radical>*<？https/reference:country>]
 [<？web/reference-0>|
 .*	部首 - Wikipedia

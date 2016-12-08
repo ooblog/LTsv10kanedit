@@ -21,6 +21,7 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
     global LTsvDOClaunch_reglist,LTsvDOClaunch_deflist
     LTsvDOC_tagpage=LTsv_getpage(LTsvDOClaunch_ltsv,LTsvDOC_tagnames)
     LTsv_settimerCounter(0)
+    LTsv_posR=0
     if '\t' in LTsvDOC_tagpage:
         LTsvDOC_tagnamesL=LTsvDOC_tagnames.split(LTsvDOClaunch_tagseparate) if len(LTsvDOClaunch_tagseparate) > 0 else [LTsvDOC_tagnames]
         LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,"".join(LTsvDOC_tagnamesL))
@@ -28,10 +29,14 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
             if len(LTsvDOC_tagname) == 0: continue;
             LTsvDOC_tagdata=""
             LTsvDOC_tagcases=LTsvDOC_tagpage.rstrip('\n').split('\n')
+            LTsvDOC_connote=[]
             for LTsvDOC_tagcase in LTsvDOC_tagcases:
+                LTsvDOC_research=None
+                if LTsvDOC_tagcase.startswith(':'):
+                    LTsvDOC_connote.extend([LTsvDOC_tagcase.lstrip(':')])
+                    continue
 #                LTsvDOC_casefirst=LTsv_readlinefirsts(LTsvDOC_tagcase)
                 LTsv_posR=LTsvDOC_tagcase.find('\t'); LTsvDOC_casefirst=LTsvDOC_tagcase[0:LTsv_posR] if LTsv_posR >= 0 else LTsvDOC_tagcase
-                LTsvDOC_research=None
                 try:
                     LTsvDOC_research=re.search(re.compile(LTsvDOC_casefirst),LTsvDOC_outname)
                 except re.error:
@@ -46,6 +51,12 @@ def LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames):
                             if len(LTsvDOC_tagdata) == 0 or '\t' in LTsvDOC_tagdata:
                                 LTsvDOC_tagdata=LTsvDOC_caseline
                         break
+            if len(LTsvDOC_connote):
+                for LTsvDOC_conline in LTsvDOC_connote:
+                    LTsv_posR=LTsvDOC_conline.find('\t'); LTsvDOC_confirst=LTsvDOC_conline[0:LTsv_posR] if LTsv_posR >= 0 else LTsvDOC_conline
+                    LTsvDOC_conrest=LTsvDOC_conline[LTsv_posR+1:] if LTsv_posR >= 0 else ""
+                    if len(LTsvDOC_conrest) > 0:
+                        LTsvDOC_tagdata=LTsvDOC_tagdata.replace(LTsvDOC_confirst,LTsvDOC_conrest)
             LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagname,LTsvDOC_tagdata)
     if len(LTsvDOC_tagpage) > 0:
          LTsvDOClaunch_main=LTsvDOClaunch_main.replace(LTsvDOC_tagnames,LTsvDOC_tagpage)
