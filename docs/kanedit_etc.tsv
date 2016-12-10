@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161211U000851
+modify	20161211U022937
 |L:Tsv]
 
 [LTsv_doc|
@@ -296,30 +296,21 @@ LTsv_doc\.html?	LTsv_doc_logo.png
 kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。<？BR>@E   ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
 |<＃contents/License-0:kandic>]
 
-<？contents/LTsv_doc:LTsv10_faq-0>
 [<＃contents/License-1>|
 <？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index/LTsv10_faq-0>」も参考)。<？BR>
  ダウンロードは「<？https/ooblog:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<？https/License:wine_sh>」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
- フォント「kan5x5comic.ttf」を用意する場合は「<？contents/kanfont:kanfont_faq-0>」を参考。<？BR>
+ フォント「kan5x5comic.ttf」を用意する場合は「<？index/kanfont_faq-0>」を参考。<？BR>
 <？/P>
 <？https/License:LTsv10kanedit>
 |<＃contents/License-1>]
-[<？contents/LTsv_doc:LTsv10_faq-0>|
-.+\.html?	<a href="index.html#LTsv10_faq-0" title="<？title/LTsv10_faq-0"><？titleimg/software-0><？title/LTsv10_faq-0></a>
-.*	「LTsv_doc.txt」の<？title/LTsv10_faq-0>
-|<？contents/LTsv_doc:LTsv10_faq-0>]
-[<？contents/kanfont:kanfont_faq-0>|
-.+\.html?	<a href="kanfont.html#kanfont_faq-0" title="<？title/kanfont_faq-0"><？titleimg/software-2><？title/kanfont_faq-0></a>
-.*	「LTsv_doc.txt」の<？title/kanfont_faq-0>
-|<？contents/kanfont:kanfont_faq-0>]
 
 [<＃contents/License-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  逆に私用領域と呼ばれる環境に左右される文字コードを<？VRkeyboard>の制御に用いてます。<？BR>
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https/kanmap.py>」で解決できます。詳細は「<？contents/kanmap:kanmap_usage-0>」を参考。<？BR>
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https/kanmap.py>」で解決できます。詳細は「<？index/kanmap_usage-0>」を参考。<？BR>
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は<？DICchar>から直接生成したいけど優先順位が低い。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
@@ -1176,7 +1167,7 @@ eval_now	入力欄で「今今」と入力した時に表示する現在時刻�
 eval_branch	入力欄で「今枝」と入力した時に表示する現在時刻。	初期値は「@000y@0m@0dm@wdec@0h@0n@0s」。
 eval_overhour	日時フォーマットの徹夜時刻の指定。24〜48のいずれか。
 eval_worddicname	<？DICword>ファイルの指定(無くても動作)。	初期値は「../kanword.tsv」。
-eval_zipdicname	郵便番号辞書ファイルの指定(無くても動作)。	初期値は「../kanzip.tsv」。<？DICzip>の作成には「<？https/kanzip.py>」を用いる。	詳細は「<？contents/kanzip:kanzip_usage-0>」を参考。
+eval_zipdicname	郵便番号辞書ファイルの指定(無くても動作)。	初期値は「../kanzip.tsv」。<？DICzip>の作成には「<？https/kanzip.py>」を用いる。	詳細は「<？index/kanzip_usage-0>」を参考。
 last_alpha	<？VRkeyboard>が最後に表示したα鍵盤を記録。
 last_dic	<？VRkeyboard>が最後に表示した単漢字辞書の項目を記録。
 kbdTAG	「Tkinter」で<？VRkeyboard>を再描画するため「LTsv_draw_tkTAG」とは別のタグが必要。	初期値は「kanglyphkbd」。
@@ -1339,7 +1330,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
                                      「今今」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:48」。「eval_now」を返す。<？BR>
                                      「今版」→「今20160716S001619⇔20160716S001619」。[LTsv_time.py]の「LTsv_time_ver()」を返す。<？BR>
                                      「今枝」→「今@000y@0m@0dm@wdec@0h@0n@0s⇔20160716S001619」。「eval_branch」を返す。<？BR>
-                                     日時フォーマットの詳しい使い方は「<？contents/LTsv_doc:LTsv_time-1>」を参考。<？BR><？/DD/DL>
+                                     日時フォーマットの詳しい使い方は「<？index/LTsv_time-1>」を参考。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「⑧」<？/DTDD>                   UTF-8文字列を256進数としての8点点字(UTF-8点字)に変換。一般的な点字ではないので注意。<？BR>
                                      「⑧点字に類似したもの⇔⣧⢂⢹⣥⢭⢗⣣⢁⢫⣩⢡⢞⣤⢼⢼⣣⢁⢗⣣⢁⢟⣣⢂⢂⣣⢁⢮」。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「⓪」<？/DTDD>                    UTF-8文字列を256進数としての8点点字(UTF-8点字)をUTF-8の文字列に復号。<？BR>
@@ -1471,7 +1462,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？DLDT>   deftag<？/DTDD>                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。<？/DD/DL>
 <？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
 <？DLDT>   LTsvver<？/DTDD>                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「<？&lt;>＠L:TsvLTsvver<？&gt;>」。<？BR>
-                              詳細は「<？contents/LTsv_doc:LTsv_file-0>」参考。<？BR><？/DD/DL>
+                              詳細は「<？index/LTsv_file-0>」参考。<？BR><？/DD/DL>
 |<＃contents/LTsv_doc-1>]
 
 [<＃contents/LTsv_doc-2>|
@@ -1496,7 +1487,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
                                 firstの正規表現にoutlistのファイル名が該当する場合にrest1行に置き換えられます。restには日時フォーマットが使えます。<？BR>
                                 tagseparateを使った時は日時フォーマットの「@c(カウンター)」が使えます。カウンターは0から開始します。<？BR>
                                 restを日時フォーマット(カウンター)で置換した結果ページタグ名になった場合、当然の様にページタグの置換対象。<？BR>
-                                日時フォーマットの詳細は「<？contents/LTsv_doc:LTsv_time-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<？BR><？/DD/DL>
+                                日時フォーマットの詳細は「<？index/LTsv_time-1>」を参考。Pythonで使える正規表現はPythonのドキュメントを参考。<？BR><？/DD/DL>
 <？DLDT>  <？&lt;>「＄」tag<？&gt;><？/DTDD>                   内包タグと便宜上命名。置換結果をさらに置換します。分岐タグのコロン「:」が先頭のfirstがタグrestが置換内容。<？BR>
                                 内包タグは分岐タグの内部でしか使えませんが、使い回さないデータの圧縮および置換処理の高速化に繋がります。<？BR><？/DD/DL>
 
@@ -1563,13 +1554,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/separate>|
 .*	tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
 |<？title/separate>]
-
-[<？contents/LTsv_doc:LTsv_file-0>*<？contents/LTsv_doc:LTsv_time-1>|
-:<＄link/LTsv_doc-0>	LTsv_file-0
-:<＄link/LTsv_doc-1>	LTsv_time-1
-.+\.html?	<a href="index.html#<＄link/LTsv_doc-@c>" title="<？title/<＄link/LTsv_doc-@c>>"><？titleimg/software-0><？title/<＄link/LTsv_doc-@c>></a>
-.*	「LTsv_doc.txt」の<？title/<＄link/LTsv_doc-@c>>
-|<？contents/LTsv_doc:LTsv_file-0>*<？contents/LTsv_doc:LTsv_time-1>]
 
 [<？section/LTsv_doc_faq-0>|
 .+\.html?	<section>@E <h3 id="LTsv_doc_faq-@c"><？title/LTsv_doc_faq-@c></h3>@E<＃contents/LTsv_doc_faq-@c>@E</section>@E
@@ -1639,20 +1623,16 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？/DD/DL>
 <？DLDT> <？DICzip>が見つからない。<？/DTDD>
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。<？BR>
-     詳細は「<？contents/kanzip:kanzip_usage-0>」を参考。<？BR>
+     詳細は「<？index/kanzip_usage-0>」を参考。<？BR>
 <？/DD/DL>
 |<＃contents/kanedit_faq-0>]
-[<？contents/kanzip:kanzip_usage-0>|
-.+\.html?	<a href="kanzip.html#kanzip_usage-0" title="<？title/kanzip_usage-0>"><？titleimg/software-4><？title/kanzip_usage-0></a>
-.*	「kanzip.txt」の<？title/kanzip_usage-0>
-|<？contents/kanzip:kanzip_usage-0>]
 
 [<＃contents/kanedit_faq-1>|
 <？P> 漢字を音読み訓読みなど理由を付けて<？VRkeyboard>の[ぬ〜ろ][ヌ〜ロ]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<？BR>
  そこで入りきらない文字を「相席」というレトリックで分散しています。<？BR><？/P>
 
 <？DLDT>  「[5(え)]」<？/DTDD>   記号XOR(⊕)を相席。<？/DD/DL>
-  「[5(エ)]」   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。
+<？DLDT>  「[5(エ)]」<？/DTDD>   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。<？/DD/DL>
   「[7(や)]」   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。
   「[7(ヤ)]」   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。
   「[8(ゆ)]」   ユーロ記号(€)を相席。
@@ -1945,18 +1925,14 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDT>  「swap☐」にチェック<？/DTDD>      ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。<？BR><？/DD/DL>
 |<＃contents/kanmap_usage-1>]
 [<？VRkeyboard/howto>|
-.*	<？VRkeyboard>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-2>」を参考。
+.*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
 |<？VRkeyboard/howto>]
 [<？VRcalc/howto>|
-.*	<？VRcalc>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-3>」を参考。
+.*	<？VRcalc>の入力操作は「<？index/LTsv_glyph-3>」を参考。
 |<？VRcalc/howto>]
 [<？VReval/howto>|
-.*	<？VRcalc>の演算結果は「<？contents/LTsv_doc:LTsv_glyph-4>」を参考。
+.*	<？VRcalc>の演算結果は「<？index/LTsv_glyph-4>」を参考。
 |<？VReval/howto>]
-[<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>*<？contents/LTsv_doc:LTsv_glyph-4>|
-.+\.html?	<a href="index.html#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？titleimg/software-0><？title/LTsv_glyph-@c></a>
-.*	「LTsv_doc.txt」の<？title/LTsv_glyph-@c>
-|<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>*<？contents/LTsv_doc:LTsv_glyph-4>]
 
 [<？index/kanmap_usage:capture>|
 .+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
@@ -1977,10 +1953,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<section>@E <h3 id="kanmap_faq-@c"><？title/kanmap_faq-@c></h3>@E<＃contents/kanmap_faq-@c>@E</section>@E
 .*	@E<？title/kanmap_faq-@c>@E@E<＃contents/kanmap_faq-@c>@E
 |<？section/kanmap_faq-0>]
-[<？contents/kanmap:kanmap_usage-0>|
-.+\.html?	<a href="kanmap.html#kanmap_usage-0" title="<？title/kanmap_usage-0>"><？titleimg/software-3><？title/kanmap_usage-0></a>
-.*	「kanmap.txt」の<？title/kanmap_usage-0>
-|<？contents/kanmap:kanmap_usage-0>]
 
 [<＃contents/kanmap_faq-0>|
 <？DLDT> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
@@ -2135,8 +2107,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/aboutLTsv-@c>@E
 |<？list/aboutLTsv-0>*<？list/aboutLTsv-1>]
 [<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>|
-.+\.html?	<a href="#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？title/aboutLTsv-@c></a>
-.*	<？title/aboutLTsv-@c>
+^index\.html?	<a href="#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？title/aboutLTsv-@c></a>
+.+\.html?	<a href="index.html#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？titleimg/software-0><？title/aboutLTsv-@c></a>
+^LTsv10\.txt	<？title/aboutLTsv-@c>
+.*	「LTsv10.txt」の<？title/aboutLTsv-@c>
 |<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>]
 [<？title/aboutLTsv-0>|
 .*	①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
@@ -2150,8 +2124,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_printf-@c>@E
 |<？list/LTsv_printf-0>*<？list/LTsv_printf-1>]
 [<？index/LTsv_printf-0>*<？index/LTsv_printf-1>|
-.+\.html?	<a href="#LTsv_printf-@c" title="<？title/LTsv_printf-@c>"><？title/LTsv_printf-@c></a>
-.*	<？title/LTsv_printf-@c>
+^index\.html?	<a href="#LTsv_printf-@c" title="<？title/LTsv_printf-@c>"><？title/LTsv_printf-@c></a>
+.+\.html?	<a href="index.html#LTsv_printf-@c" title="<？title/LTsv_printf-@c>"><？titleimg/software-0><？title/LTsv_printf-@c></a>
+^LTsv10\.txt	<？title/LTsv_printf-@c>
+.*	「LTsv10.txt」の<？title/LTsv_printf-@c>
 |<？index/LTsv_printf-0>*<？index/LTsv_printf-1>]
 [<？title/LTsv_printf-0>|
 .*	②-0．「LTsv_printf.py」の関数一覧
@@ -2170,8 +2146,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_file-@c>@E
 |<？list/LTsv_file-0>]
 [<？index/LTsv_file-0>|
-.+\.html?	<a href="#LTsv_file-@c" title="<？title/LTsv_file-@c>"><？title/LTsv_file-@c></a>
-.*	<？title/LTsv_file-@c>
+^index\.html?	<a href="#LTsv_file-@c" title="<？title/LTsv_file-@c>"><？title/LTsv_file-@c></a>
+.+\.html?	<a href="index.html#LTsv_file-@c" title="<？title/LTsv_file-@c>"><？titleimg/software-0><？title/LTsv_file-@c></a>
+^LTsv10\.txt	<？title/LTsv_file-@c>
+.*	「LTsv10.txt」の<？title/LTsv_file-@c>
 |<？index/LTsv_file-0>]
 [<？title/LTsv_file-0>|
 .*	③-0．「LTsv_file.py」の関数一覧
@@ -2187,8 +2165,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_time-@c>@E
 |<？list/LTsv_time-0>*<？list/LTsv_time-1>]
 [<？index/LTsv_time-0>*<？index/LTsv_time-1>|
-.+\.html?	<a href="#LTsv_time-@c" title="<？title/LTsv_time-@c>"><？title/LTsv_time-@c></a>
-.*	<？title/LTsv_time-@c>
+^index\.html?	<a href="#LTsv_time-@c" title="<？title/LTsv_time-@c>"><？title/LTsv_time-@c></a>
+.+\.html?	<a href="index.html#LTsv_time-@c" title="<？title/LTsv_time-@c>"><？titleimg/software-0><？title/LTsv_time-@c></a>
+^LTsv10\.txt	<？title/LTsv_time-@c>
+.*	「LTsv10.txt」の<？title/LTsv_time-@c>
 |<？index/LTsv_time-0>*<？index/LTsv_time-1>]
 [<？title/LTsv_time-0>|
 .*	④-0．「LTsv_time.py」の関数一覧
@@ -2207,8 +2187,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_calc-@c>@E
 |<？list/LTsv_calc-0>*<？list/LTsv_calc-1>]
 [<？index/LTsv_calc-0>*<？index/LTsv_calc-1>|
-.+\.html?	<a href="#LTsv_calc-@c" title="<？title/LTsv_calc-@c>"><？title/LTsv_calc-@c></a>
-.*	<？title/LTsv_calc-@c>
+^index\.html?	<a href="#LTsv_calc-@c" title="<？title/LTsv_calc-@c>"><？title/LTsv_calc-@c></a>
+.+\.html?	<a href="index.html#LTsv_calc-@c" title="<？title/LTsv_calc-@c>"><？titleimg/software-0><？title/LTsv_calc-@c></a>
+^LTsv10\.txt	<？title/LTsv_calc-@c>
+.*	「LTsv10.txt」の<？title/LTsv_calc-@c>
 |<？index/LTsv_calc-0>*<？index/LTsv_calc-1>]
 [<？title/LTsv_calc-0>|
 .*	⑤-0．「LTsv_calc.py」の関数一覧
@@ -2227,8 +2209,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_joy-@c>@E
 |<？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2>]
 [<？index/LTsv_joy-0>*<？index/LTsv_joy-1>*<？index/LTsv_joy-2>|
-.+\.html?	<a href="#LTsv_joy-@c" title="<？title/LTsv_joy-@c>"><？title/LTsv_joy-@c></a>
-.*	<？title/LTsv_joy-@c>
+^index\.html?	<a href="#LTsv_joy-@c" title="<？title/LTsv_joy-@c>"><？title/LTsv_joy-@c></a>
+.+\.html?	<a href="index.html#LTsv_joy-@c" title="<？title/LTsv_joy-@c>"><？titleimg/software-0><？title/LTsv_joy-@c></a>
+^LTsv10\.txt	<？title/LTsv_joy-@c>
+.*	「LTsv10.txt」の<？title/LTsv_joy-@c>
 |<？index/LTsv_joy-0>*<？index/LTsv_joy-1>*<？index/LTsv_joy-2>]
 [<？title/LTsv_joy-0>|
 .*	⑥-0．「LTsv_joy.py」の関数一覧
@@ -2254,8 +2238,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_kbd-@c>@E
 |<？list/LTsv_kbd-0>*<？list/LTsv_kbd-1>]
 [<？index/LTsv_kbd-0>*<？index/LTsv_kbd-1>|
-.+\.html?	<a href="#LTsv_kbd-@c" title="<？title/LTsv_kbd-@c>"><？title/LTsv_kbd-@c></a>
-.*	<？title/LTsv_kbd-@c>
+^index\.html?	<a href="#LTsv_kbd-@c" title="<？title/LTsv_kbd-@c>"><？title/LTsv_kbd-@c></a>
+.+\.html?	<a href="index.html#LTsv_kbd-@c" title="<？title/LTsv_kbd-@c>"><？titleimg/software-0><？title/LTsv_kbd-@c></a>
+^LTsv10\.txt	<？title/LTsv_kbd-@c>
+.*	「LTsv10.txt」の<？title/LTsv_kbd-@c>
 |<？index/LTsv_kbd-0>*<？index/LTsv_kbd-1>]
 [<？title/LTsv_kbd-0>|
 .*	⑦-0．「LTsv_kbd.py」の関数一覧
@@ -2275,8 +2261,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_gui-@c>@E
 |<？list/LTsv_gui-0>*<？list/LTsv_gui-1>]
 [<？index/LTsv_gui-0>*<？index/LTsv_gui-1>|
-.+\.html?	<a href="#LTsv_gui-@c" title="<？title/LTsv_gui-@c>"><？title/LTsv_gui-@c></a>
+^index\.html?	<a href="#LTsv_gui-@c" title="<？title/LTsv_gui-@c>"><？title/LTsv_gui-@c></a>
+.+\.html?	<a href="index.html#LTsv_gui-@c" title="<？title/LTsv_gui-@c>"><？titleimg/software-0><？title/LTsv_gui-@c></a>
 .*	<？title/LTsv_gui-@c>
+.*	「LTsv10.txt」の<？title/LTsv_gui-@c>
 |<？index/LTsv_gui-0>*<？index/LTsv_gui-1>]
 [<？title/LTsv_gui-0>|
 .*	⑧-0．「LTsv_gui.py」の関数一覧
@@ -2295,8 +2283,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_glyph-@c>@E
 |<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>]
 [<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>|
-.+\.html?	<a href="#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？title/LTsv_glyph-@c></a>
-.*	<？title/LTsv_glyph-@c>
+^index\.html?		<a href="#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？title/LTsv_glyph-@c></a>
+.+\.html?	<a href="index.html#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？titleimg/software-0><？title/LTsv_glyph-@c></a>
+^LTsv10\.txt	<？title/LTsv_glyph-@c>
+.*	「LTsv10.txt」の<？title/LTsv_glyph-@c>
 |<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>]
 [<？title/LTsv_glyph-0>|
 .*	⑨-0．「LTsv_glyph.py」の関数一覧
@@ -2360,8 +2350,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_doc_usage-@c>@E
 |<？list/LTsv_doc_usage-0>]
 [<？index/LTsv_doc_usage-0>|
-.+\.html?	<a href="#LTsv_doc_usage-@c" title="<？title/LTsv_doc_usage-@c>"><？title/LTsv_doc_usage-@c></a>
-.*	<？title/LTsv_doc_usage-@c>
+^LTsv_doc\.html?	<a href="#LTsv_doc_usage-@c" title="<？title/LTsv_doc_usage-@c>"><？title/LTsv_doc_usage-@c></a>
+.+\.html?	<a href="LTsv_doc.html#LTsv_doc_usage-@c" title="<？title/LTsv_doc_usage-@c>"><？titleimg/software-5><？title/LTsv_doc_usage-@c></a>
+^LTsv_doc\.txt	<？title/LTsv_doc_usage-@c>
+.*	「LTsv_doc.txt」の<？title/LTsv_doc_usage-@c>
 |<？index/LTsv_doc_usage-0>]
 [<？title/LTsv_doc_usage-0>|
 .*	①-0．「LTsv_doc」の使い方
@@ -2372,8 +2364,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_doc-@c>@E
 |<？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2>]
 [<？index/LTsv_doc-0>*<？index/LTsv_doc-1>*<？index/LTsv_doc-2>|
-.+\.html?	<a href="#LTsv_doc-@c" title="<？title/LTsv_doc-@c>"><？title/LTsv_doc-@c></a>
-.*	<？title/LTsv_doc-@c>
+^LTsv_doc\.html?	<a href="#LTsv_doc-@c" title="<？title/LTsv_doc-@c>"><？title/LTsv_doc-@c></a>
+.+\.html?	<a href="LTsv_doc.html#LTsv_doc-@c" title="<？title/LTsv_doc-@c>"><？titleimg/software-5><？title/LTsv_doc-@c></a>
+^LTsv_doc\.txt	<？title/LTsv_doc-@c>
+.*	「LTsv_doc.txt」の<？title/LTsv_doc-@c>
 |<？index/LTsv_doc-0>*<？index/LTsv_doc-1>*<？index/LTsv_doc-2>]
 [<？title/LTsv_doc-0>|
 .*	②-0．「LTsv_doc.py」の関数一覧
@@ -2397,8 +2391,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/LTsv_doc_faq-@c>@E
 |<？list/LTsv_doc_faq-0>]
 [<？index/LTsv_doc_faq-0>|
-.+\.html?	<a href="#LTsv_doc_faq-@c" title="<？title/LTsv_doc_faq-@c>"><？title/LTsv_doc_faq-@c></a>
-.*	<？title/LTsv_doc_faq-@c>
+^LTsv_doc\.html?	<a href="#LTsv_doc_faq-@c" title="<？title/LTsv_doc_faq-@c>"><？title/LTsv_doc_faq-@c></a>
+.+\.html?	<a href="LTsv_doc.html#LTsv_doc_faq-@c" title="<？title/LTsv_doc_faq-@c>"><？titleimg/software-5><？title/LTsv_doc_faq-@c></a>
+^LTsv_doc\.txt	<？title/LTsv_doc_faq-@c>
+.*	「LTsv_doc.txt」の<？title/LTsv_doc_faq-@c>
 |<？index/LTsv_doc_faq-0>]
 [<？title/LTsv_doc_faq-0>|
 .*	③-0．「LTsv_doc」のＦＡＱ
@@ -2409,8 +2405,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanedit_usage-@c>@E
 |<？list/kanedit_usage-0>]
 [<？index/kanedit_usage-0>|
-.+\.html?	<a href="#kanedit_usage-@c" title="<？title/kanedit_usage-@c>"><？title/kanedit_usage-@c></a>
-.*	<？title/kanedit_usage-@c>
+^kanedit\.html?	<a href="#kanedit_usage-@c" title="<？title/kanedit_usage-@c>"><？title/kanedit_usage-@c></a>
+.+\.html?	<a href="kanedit.html#kanedit_usage-@c" title="<？title/kanedit_usage-@c>"><？titleimg/software-1><？title/kanedit_usage-@c></a>
+^kanedit\.txt	<？title/kanedit_usage-@c>
+.*	「kanedit.txt」の<？title/kanedit_usage-@c>
 |<？index/kanedit_usage-0>]
 [<？title/kanedit_usage-0>|
 .*	①-0．「kanedit」の使い方(予定)
@@ -2421,8 +2419,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanedit-@c>@E
 |<？list/kanedit-0>*<？list/kanedit-1>]
 [<？index/kanedit-0>*<？index/kanedit-1>|
-.+\.html?	<a href="#kanedit-@c" title="<？title/kanedit-@c>"><？title/kanedit-@c></a>
-.*	<？title/kanedit-@c>
+^kanedit\.html?	<a href="#kanedit-@c" title="<？title/kanedit-@c>"><？title/kanedit-@c></a>
+.+\.html?	<a href="kanedit.html#kanedit-@c" title="<？title/kanedit-@c>"><？titleimg/software-1><？title/kanedit-@c></a>
+^kanedit\.txt	<？title/kanedit-@c>
+.*	「kanedit.txt」の<？title/kanedit-@c>
 |<？index/kanedit-0>*<？index/kanedit-1>]
 [<？title/kanedit-0>|
 .*	②-0．「kanedit.py」の関数一覧
@@ -2436,8 +2436,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanedit_faq-@c>@E
 |<？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5>]
 [<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>*<？index/kanedit_faq-3>*<？index/kanedit_faq-4>*<？index/kanedit_faq-5>|
-.+\.html?	<a href="#kanedit_faq-@c" title="<？title/kanedit_faq-@c>"><？title/kanedit_faq-@c></a>
-.*	<？title/kanedit_faq-@c>
+^kanedit\.html?	<a href="#kanedit_faq-@c" title="<？title/kanedit_faq-@c>"><？title/kanedit_faq-@c></a>
+.+\.html?	<a href="kanedit.html#kanedit_faq-@c" title="<？title/kanedit_faq-@c>"><？titleimg/software-1><？title/kanedit_faq-@c></a>
+^kanedit\.txt	<？title/kanedit_faq-@c>
+.*	「kanedit.txt」の<？title/kanedit_faq-@c>
 |<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>*<？index/kanedit_faq-3>*<？index/kanedit_faq-4>*<？index/kanedit_faq-5>]
 [<？title/kanedit_faq-0>|
 .*	③-0．「kanedit」のＦＡＱ
@@ -2463,8 +2465,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanfont_usage-@c>@E
 |<？list/kanfont_usage-0>]
 [<？index/kanfont_usage-0>|
-.+\.html?	<a href="#kanfont_usage-@c" title="<？title/kanfont_usage-@c>"><？title/kanfont_usage-@c></a>
-.*	<？title/kanfont_usage-@c>
+^kanfont\.html?	<a href="#kanfont_usage-@c" title="<？title/kanfont_usage-@c>"><？title/kanfont_usage-@c></a>
+.+\.html?	<a href="kanfont.html#kanfont_usage-@c" title="<？title/kanfont_usage-@c>"><？titleimg/software-2><？title/kanfont_usage-@c></a>
+^kanfont\.txt	<？title/kanfont_usage-@c>
+.*	「kanfont.txt」の<？title/kanfont-@c>
 |<？index/kanfont_usage-0>]
 [<？title/kanfont_usage-0>|
 .*	①-0．「kanfont」の使い方
@@ -2475,8 +2479,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanfont-@c>@E
 |<？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>]
 [<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>|
-.+\.html?	<a href="#kanfont-@c" title="<？title/kanfont-@c>"><？title/kanfont-@c></a>
-.*	<？title/kanfont-@c>
+^kanfont\.html?	<a href="#kanfont-@c" title="<？title/kanfont-@c>"><？title/kanfont-@c></a>
+.+\.html?	<a href="kanfont.html#kanfont-@c" title="<？title/kanfont-@c>"><？titleimg/software-2><？title/kanfont-@c></a>
+^kanfont\.txt	<？title/kanfont-@c>
+.*	「kanfont.txt」の<？title/kanfont-@c>
 |<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>]
 [<？title/kanfont-0>|
 .*	②-0．「kanfont.py」の関数一覧
@@ -2493,8 +2499,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanfont_faq-@c>@E
 |<？list/kanfont_faq-0>]
 [<？index/kanfont_faq-0>|
-.+\.html?	<a href="#kanfont_faq-@c" title="<？title/kanfont_faq-@c>"><？title/kanfont_faq-@c></a>
-.*	<？title/kanfont_faq-@c>
+^kanfont\.html?	<a href="#kanfont_faq-@c" title="<？title/kanfont_faq-@c>"><？title/kanfont_faq-@c></a>
+.+\.html?	<a href="kanfont.html#kanfont_faq-@c" title="<？title/kanfont_faq-@c>"><？titleimg/software-2><？title/kanfont_faq-@c></a>
+^kanfont\.txt	<？title/kanfont_faq-@c>
+.*	「kanfont.txt」の<？title/kanfont_faq-@c>
 |<？index/kanfont_faq-0>]
 [<？title/kanfont_faq-0>|
 .*	③-0．「kanfont」のＦＡＱ
@@ -2505,8 +2513,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanmap_usage-@c>@E
 |<？list/kanmap_usage-0>*<？list/kanmap_usage-1>]
 [<？index/kanmap_usage-0>*<？index/kanmap_usage-1>|
-.+\.html?	<a href="#kanmap_usage-@c" title="<？title/kanmap_usage-@c>"><？title/kanmap_usage-@c></a>
-.*	<？title/kanmap_usage-@c>
+^kanmap\.html?	<a href="#kanmap_usage-@c" title="<？title/kanmap_usage-@c>"><？title/kanmap_usage-@c></a>
+.+\.html?	<a href="kanmap.html#kanmap_usage-@c" title="<？title/kanmap_usage-@c>"><？titleimg/software-3><？title/kanmap_usage-@c></a>
+^kanmap\.txt	<？title/kanmap_usage-@c>
+.*	「kanmap.txt」の<？title/kanmap-@c>
 |<？index/kanmap_usage-0>*<？index/kanmap_usage-1>]
 [<？title/kanmap_usage-0>|
 .*	①-0．「kanmap」の使い方(初回起動・表示編)
@@ -2520,8 +2530,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanmap-@c>@E
 |<？list/kanmap-0>]
 [<？index/kanmap-0>|
-.+\.html?	<a href="#kanmap-@c" title="<？title/kanmap-@c>"><？title/kanmap-@c></a>
-.*	<？title/kanmap-@c>
+^kanmap\.html?	<a href="#kanmap-@c" title="<？title/kanmap-@c>"><？title/kanmap-@c></a>
+.+\.html?	<a href="kanmap.html#kanmap-@c" title="<？title/kanmap-@c>"><？titleimg/software-3><？title/kanmap-@c></a>
+^kanmap\.txt	<？title/kanmap-@c>
+.*	「kanmap.txt」の<？title/kanmap-@c>
 |<？index/kanmap-0>]
 [<？title/kanmap-0>|
 .*	②-0．「kanmap.py」の関数一覧
@@ -2532,8 +2544,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanmap_faq-@c>@E
 |<？list/kanmap_faq-0>]
 [<？index/kanmap_faq-0>|
-.+\.html?	<a href="#kanmap_faq-@c" title="<？title/kanmap_faq-@c>"><？title/kanmap_faq-@c></a>
-.*	<？title/kanmap_faq-@c>
+^kanmap\.html?	<a href="#kanmap_faq-@c" title="<？title/kanmap_faq-@c>"><？title/kanmap_faq-@c></a>
+.+\.html?	<a href="kanmap.html#kanmap_faq-@c" title="<？title/kanmap_faq-@c>"><？titleimg/software-3><？title/kanmap_faq-@c></a>
+^kanmap\.txt	<？title/kanmap_faq-@c>
+.*	「kanmap.txt」の<？title/kanmap_faq-@c>
 |<？index/kanmap_faq-0>]
 [<？title/kanmap_faq-0>|
 .*	③-0．「kanmap」のＦＡＱ
@@ -2544,8 +2558,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanzip_usage-@c>@E
 |<？list/kanzip_usage-0>]
 [<？index/kanzip_usage-0>|
-.+\.html?	<a href="#kanzip_usage-@c" title="<？title/kanzip_usage-@c>"><？title/kanzip_usage-@c></a>
-.*	<？title/kanzip_usage-@c>
+^kanzip\.html?	<a href="#kanzip_usage-@c" title="<？title/kanzip_usage-@c>"><？title/kanzip_usage-@c></a>
+.+\.html?	<a href="kanzip.html#kanzip_usage-@c" title="<？title/kanzip_usage-@c>"><？titleimg/software-4><？title/kanzip_usage-@c></a>
+^kanzip\.txt	<？title/kanzip_usage-@c>
+.*	「kanzip.txt」の<？title/kanzip-@c>
 |<？index/kanzip_usage-0>]
 [<？title/kanzip_usage-0>|
 .*	①-0．「kanzip」の使い方
@@ -2556,8 +2572,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanzip-@c>@E
 |<？list/kanzip-0>]
 [<？index/kanzip-0>|
-.+\.html?	<a href="#kanzip-@c" title="<？title/kanzip-@c>"><？title/kanzip-@c></a>
-.*	<？title/kanzip-@c>
+^kanzip\.html?	<a href="#kanzip-@c" title="<？title/kanzip-@c>"><？title/kanzip-@c></a>
+.+\.html?	<a href="kanzip.html#kanzip-@c" title="<？title/kanzip-@c>"><？titleimg/software-4><？title/kanzip-@c></a>
+^kanzip\.txt	<？title/kanzip-@c>
+.*	「kanzip.txt」の<？title/kanzip-@c>
 |<？index/kanzip-0>]
 [<？title/kanzip-0>|
 .*	②-0．「kanzip.py」の関数一覧
@@ -2568,8 +2586,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <？index/kanzip_faq-@c>@E
 |<？list/kanzip_faq-0>]
 [<？index/kanzip_faq-0>|
-.+\.html?	<a href="#kanzip_faq-@c" title="<？title/kanzip_faq-@c>"><？title/kanzip_faq-@c></a>
-.*	<？title/kanzip_faq-@c>
+^kanzip\.html?	<a href="#kanzip_faq-@c" title="<？title/kanzip_faq-@c>"><？title/kanzip_faq-@c></a>
+.+\.html?	<a href="kanzip.html#kanzip_faq-@c" title="<？title/kanzip_faq-@c>"><？titleimg/software-4><？title/kanzip_faq-@c></a>
+^kanzip\.txt	<？title/kanzip_faq-@c>
+.*	「kanzip.txt」の<？title/kanzip_faq-@c>
 |<？index/kanzip_faq-0>]
 [<？title/kanzip_faq-0>|
 .*	③-0．「kanzip」のＦＡＱ

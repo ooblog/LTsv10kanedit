@@ -1,5 +1,5 @@
 「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
-version(branch):20161128M153500	modify:20161211U000839
+version(branch):20161128M153500	modify:20161211U022923
 
 目次
 
@@ -43,7 +43,7 @@ version(branch):20161128M153500	modify:20161211U000839
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
- フォント「kan5x5comic.ttf」を用意する場合は「「LTsv_doc.txt」の③-0．「kanfont」のＦＡＱ」を参考。
+ フォント「kan5x5comic.ttf」を用意する場合は「「kanfont.txt」の③-0．「kanfont」のＦＡＱ」を参考。
 
    ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
    https://github.com/ooblog/LTsv10kanedit
@@ -54,7 +54,7 @@ version(branch):20161128M153500	modify:20161211U000839
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の①-0．「kanmap」の使い方(初回起動・表示編)」を参考。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の②-0．「kanmap.py」の関数一覧」を参考。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
@@ -66,8 +66,8 @@ version(branch):20161128M153500	modify:20161211U000839
 
 ①-0．「kanedit」の使い方(予定)
 
- 漢直鍵盤の入力操作は「「LTsv_doc.txt」の⑨-2．漢直鍵盤の操作方法」を参考。
- テキスト入力欄(電卓)の入力操作は「「LTsv_doc.txt」の⑨-3．テキスト入力欄(電卓)の操作方法」を参考。
+ 漢直鍵盤の入力操作は「「LTsv10.txt」の⑨-2．漢直鍵盤の操作方法」を参考。
+ テキスト入力欄(電卓)の入力操作は「「LTsv10.txt」の⑨-3．テキスト入力欄(電卓)の操作方法」を参考。
  ここでは「kanedit」に追加された(予定含む)操作の説明になります。
 
   [Space]               いわゆる半角スペース「 」。
@@ -76,7 +76,7 @@ version(branch):20161128M153500	modify:20161211U000839
   [Ctrl]+[I]            現状では半角スペース4つ固定「    」。インデント自動調整予定(未定)。
   [Ctrl]+[J]or[Down]    編集行(テキスト入力欄(電卓))を下に移動。
   [Ctrl]+[K]or[Up]      編集行(テキスト入力欄(電卓))を上に移動。
-  [Ctrl]+[E]            電卓演算。テキスト入力欄(電卓)の演算結果は「「LTsv_doc.txt」の⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細」を参考。
+  [Ctrl]+[E]            電卓演算。テキスト入力欄(電卓)の演算結果は「「LTsv10.txt」の⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細」を参考。
   [Ctrl]+[Enter]        現状では電卓演算。改行入力に変更予定(未定)。
   [Ctrl]+[O]            ファイルダイアログ予定(未定)。
   [Ctrl]+[S]            ファイル保存予定(未定)。
@@ -104,7 +104,7 @@ version(branch):20161128M153500	modify:20161211U000839
 
  郵便番号辞書「kanzip.tsv」が見つからない。
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。
-     詳細は「「kanzip.txt」の①-0．「kanzip」の使い方」を参考。
+     詳細は「「kanzip.txt」の②-0．「kanzip.py」の関数一覧」を参考。
 
 
 

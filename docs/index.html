@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161211U000839<br />
+   version(branch):20161128M153500	modify:20161211U022923<br />
   
 </p>
   <h2>目次</h2>
@@ -56,11 +56,11 @@
  <li><a href="#LTsv_kbd-1" title="⑦-1．「LTsv_kbd.tsv」のタグ解説">⑦-1．「LTsv_kbd.tsv」のタグ解説</a></li>
  <li><a href="#LTsv_gui-0" title="⑧-0．「LTsv_gui.py」の関数一覧">⑧-0．「LTsv_gui.py」の関数一覧</a></li>
  <li><a href="#LTsv_gui-1" title="⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧">⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧</a></li>
- <li><a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a></li>
- <li><a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a></li>
- <li><a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
- <li><a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
- <li><a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a></li>
+ <li>	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a></li>
+ <li>	<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a></li>
+ <li>	<a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
+ <li>	<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
+ <li>	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a></li>
  <li><a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a></li>
  <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。">⑪-0．作者について、例えば連絡先。</a></li>
 
@@ -93,7 +93,7 @@
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh">wine_sh</a>」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
- フォント「kan5x5comic.ttf」を用意する場合は「<a href="kanfont.html#kanfont_faq-0" title="<？title/kanfont_faq-0"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
+ フォント「kan5x5comic.ttf」を用意する場合は「<a href="kanfont.html#kanfont_faq-0" title="③-0．「kanfont」のＦＡＱ"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
 
 </p>
 <dl><dt>ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
@@ -1362,10 +1362,10 @@ draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角�
 「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-グリフでのテキスト描画は「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」を参考。</dd></dl>
+グリフでのテキスト描画は「	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」も参考。</dd></dl>
+「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」も参考。</dd></dl>
 <dl><dt>LTsv_draw_text_shell(LTsv_GUI)</dt><dd>
 「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。<br />
 「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
@@ -1819,7 +1819,7 @@ find_tは複数の文字が使用できるので、先頭文字から順に見�
 グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。</dd></dl>
 <dl><dt>LTsv_evaltext(calc_value="")</dt><dd>
 calc_valueに数式などを入れると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「テキスト入力欄(電卓)」で使用します。<br />
-詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
+詳細は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")</dt><dd>
 「テキスト入力欄(電卓)(漢直鍵盤含む)」の初期設定。calculatorTは初期テキスト。<br />
 calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(漢直鍵盤より大きくする必要)、<br />
@@ -1840,7 +1840,7 @@ calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。</dd>
 テキスト入力欄(電卓)のテキストの文字一個一個の座標を記録。</dd></dl>
 <dl><dt>LTsv_glyph_calcglyphs(calc_canvas)</dt><dd>
 テキスト入力欄(電卓)内でテキスト表示。選択テキスト(カーソル)のワイヤーフレーム表示や、入力欄からはみ出る文字を非表示にしたりする。<br />
-入力欄操作の詳細は「<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a>」を参考。</dd></dl>
+入力欄操作の詳細は「	<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcpress(calc_canvas)</dt><dd>
 「canvas」のマウス押下動作に対応するテキスト入力欄(電卓)を描画。<br />
 「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。<br />
@@ -1890,7 +1890,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 単体風テスト専用。テキスト入力欄(電卓)の文字入力を受け取るコールバック関数の指定。</dd></dl>
 <dl><dt>debug_calculatorcommand(glyph_calcinput)</dt><dd>
 単体風テスト専用。Enter機ーを押した時に電卓機能を発動。<br />
-電卓機能の詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
+電卓機能の詳細は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>debug_reversi_mousepress(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押下のコールバック。</dd></dl>
 <dl><dt>debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)</dt><dd>
@@ -1917,7 +1917,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 単体風テスト専用。リバーシーの升に何らかの方法で石を置く時の動作。試合が決着してる場合は盤面初期化。</dd></dl>
 <dl><dt>debug_configload()</dt><dd>
 単体風テスト専用。「LTsv/kanglyph.tsv」から棋譜を読み込む。<br />
-「LTsv/kanglyph.tsv」の詳細は「<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a>」を参考。</dd></dl>
+「LTsv/kanglyph.tsv」の詳細は「	<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a>」を参考。</dd></dl>
 <dl><dt>debug_configsave_exit(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。「LTsv/kanglyph.tsv」にリバーシーの棋譜を保存。グリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。</dd></dl>
 
@@ -2330,7 +2330,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
                                      「今今」→「今@000y-@0m-@0dm(@0wnyi@wdj)@0h:@0n:@0s⇔2016-03-01(09火)02:15:48」。「eval_now」を返す。<br />
                                      「今版」→「今20160716S001619⇔20160716S001619」。[LTsv_time.py]の「LTsv_time_ver()」を返す。<br />
                                      「今枝」→「今@000y@0m@0dm@wdec@0h@0n@0s⇔20160716S001619」。「eval_branch」を返す。<br />
-                                     日時フォーマットの詳しい使い方は「<a href="index.html#LTsv_time-1" title="④-1．日時フォーマットの概要"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">④-1．日時フォーマットの概要</a>」を参考。<br />
+                                     日時フォーマットの詳しい使い方は「<a href="#LTsv_time-1" title="④-1．日時フォーマットの概要">④-1．日時フォーマットの概要</a>」を参考。<br />
 </dd></dl>
 <dl><dt>
   先頭文字が「⑧」</dt>
@@ -2392,7 +2392,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   先頭文字が「算」その他数式</dt>
 <dd>
-         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
+         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
 </dd></dl>
 <dl><dt>
   「3927/1250」といった割り算</dt>
