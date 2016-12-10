@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161128M153500	modify:20161209F000437
+version(branch):20161128M153500	modify:20161211U000839
 
 目次
 
@@ -33,7 +33,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
@@ -48,7 +48,7 @@ version(branch):20161128M153500	modify:20161209F000437
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の①-0．「kanmap」の使い方(初回起動・表示編)」を参考。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
@@ -106,7 +106,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
 
-  [L:Tsv|                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<？index01-1>」を参考。
+  [L:Tsv|                     「L:Tsv」ファイルの宣言です。
    1st                        「LTsv/LTsv_doc.tsv」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
   [LTsv_doc|                  「LTsv/LTsv_doc.py」の設定です。ドキュメントの設定ではなくアプリの設定です。
    window_size                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。
@@ -130,7 +130,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ②-2．LTsv_docドキュメントの書き方
 
- 前提は「L:Tsv」なので「「LTsv_doc.txt」の①-1．「L:Tsv」ファイルの構造」も確認。
+ 前提は「L:Tsv」なので「<？contents/LTsv_doc:aboutLTsv-1>」も確認。
  「main」で指定したページの内容をタグ名で置換していくことで目的の文章を作成します。
  タグ名自体はかなり自由に変更できますが、命名規則に規則性があると説明がしやすいので便宜上のルールを用いた解説になります。 
 
@@ -155,8 +155,8 @@ version(branch):20161128M153500	modify:20161209F000437
   <「＄」tag>                   内包タグと便宜上命名。置換結果をさらに置換します。分岐タグのコロン「:」が先頭のfirstがタグrestが置換内容。
                                 内包タグは分岐タグの内部でしか使えませんが、使い回さないデータの圧縮および置換処理の高速化に繋がります。
 
-   6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
-   http://docs.python.jp/3/library/re.html
+    6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
+    http://docs.python.jp/3/library/re.html
 
  tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
 同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。
@@ -205,20 +205,18 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
  Ｑ．「LTsv/LTsv_doc.py」で置換されないタグが山ほど。
  Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz
- Ｑ．「docs/kanedit_etc.tsv」で余分なタグと錯覚するコピペ多すぎる。
- Ａ．タグを合成するメタプログラミングとかマクロとかコンパイル時計算的な何かの仕組みが必要なのかも。今後の課題。
 
 
 ④-0．作者について、例えば連絡先。
 
  更新情報はGitHubやブログを確認してください。
 
+
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-
 
 # Copyright (c) 2016 ooblog
 # License: MIT

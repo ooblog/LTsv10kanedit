@@ -1,5 +1,5 @@
 
-version(branch):20161128M153500	modify:20161209F000437
+version(branch):20161128M153500	modify:20161211U000839
 
 目次
 
@@ -26,7 +26,7 @@ version(branch):20161128M153500	modify:20161209F000437
  ⑨-1．「LTsv_glyph.tsv」のタグ解説
  ⑨-2．漢直鍵盤の操作方法
  ⑨-3．テキスト入力欄(電卓)の操作方法
- ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+ ⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細
  ⑩-0．「L:Tsv」のＦＡＱ
  ⑪-0．作者について、例えば連絡先。
 
@@ -50,7 +50,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
@@ -65,7 +65,7 @@ version(branch):20161128M153500	modify:20161209F000437
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の①-0．「kanmap」の使い方(初回起動・表示編)」を参考。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
@@ -82,10 +82,8 @@ version(branch):20161128M153500	modify:20161209F000437
 
    Labeled Tab-separated Values (LTSV)
    http://ltsv.org/
-
    LTSV FAQ - LTSV って何? どういうところが良いの?
    http://d.hatena.ne.jp/naoya/20130209/1360381374
-
  「L:Tsv」は「*.tsv」「*.ltsv」ファイルの事を差す場合もありますがLTSVパーサ類を含めた「tsvtool」も含めて「L:Tsv」と呼ぶ場合があります。
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。
@@ -112,7 +110,7 @@ version(branch):20161128M153500	modify:20161209F000437
    modify                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
   |L:Tsv]                    メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「③-0．「LTsv_file.py」の関数一覧」も参考。
 
 
 ②-0．「LTsv_printf.py」の関数一覧
@@ -144,7 +142,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  【LTsv_kanare(LTsv_before,LTsv_recase)】
   全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。
-  変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。
+  変換辞書LTsv_recaseのパラメータは「②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧」を参考。
 
  【LTsv_utf2ink(LTsv_text)】
   UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。
@@ -191,7 +189,7 @@ version(branch):20161128M153500	modify:20161209F000437
   「L:Tsv」ファイルを変数上に作成する。
    LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。
   LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。
-  メタタグについては「<？index01-1>」も参考。
+  メタタグについては「①-1．「L:Tsv」ファイルの構造」も参考。
 
  【LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)】
   ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。
@@ -547,7 +545,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⑤-0．「LTsv_calc.py」の関数一覧
 
- 「<？https05:LTsv_calc.py>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「⑤-1．電卓フォーマットの概要」を参照。
+ 「LTsv/LTsv_calc.py」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「⑤-1．電卓フォーマットの概要」を参照。
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。
 
@@ -635,7 +633,7 @@ version(branch):20161128M153500	modify:20161209F000437
  ・単体風テストでジョイスティック(ゲームPAD)の挙動確認ができます。「LTsv/LTsv_gui.py」でも挙動確認はできます。
  
  【LTsv_joyreset(LTsv_tsvpath)】
-  「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。
+  「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「⑥-1．「LTsv_joy.tsv」のタグ解説」。
 
  【LTsv_joyexit()】
   ジョイスティック(ゲームPAD)の変数初期化です。Linuxではデバイスをクローズします。
@@ -652,7 +650,7 @@ version(branch):20161128M153500	modify:20161209F000437
  【LTsv_getjoystr(LTsv_joyid,joyformat=None)】
   スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。
   LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。
-  項目一覧の詳細は「<？index06-2>」。
+  項目一覧の詳細は「⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧」。
 
  【LTsv_atanscalar(LTsv_atanX,LTsv_atanY)】
   スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。
@@ -720,7 +718,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⑦-0．「LTsv_kbd.py」の関数一覧
 
- 「LTsv/LTsv_kbd.tsv」はPCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。
+ 「LTsv/LTsv_kbd.py」はPCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「LTsv/LTsv_kbd.tsv」で調整。
@@ -750,7 +748,7 @@ version(branch):20161128M153500	modify:20161209F000437
  【LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)】
   PCキーボードの準備です。Linuxではデバイスをオープンします。
   Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。
-  マウスボタンの配置は「<？index07-1>」を参考。
+  マウスボタンの配置は「⑦-1．「LTsv_kbd.tsv」のタグ解説」を参考。
   Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
 
  【LTsv_kbdEVIOCGRAB(LTsv_grabflag)】
@@ -934,7 +932,7 @@ version(branch):20161128M153500	modify:20161209F000437
   「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
 
  【LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)】
-  詳細は「<？index08-1>」参考。
+  詳細は「⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧」参考。
 
  【LTsv_fonttuple(LTsv_line)】
   「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
@@ -1255,11 +1253,11 @@ version(branch):20161128M153500	modify:20161209F000437
 
  【LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)】
   「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。
-  グリフでのテキスト描画は「<？index09-0>」を参考。
+  グリフでのテキスト描画は「⑨-0．「LTsv_glyph.py」の関数一覧」を参考。
 
  【LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)】
   「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。
-  「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<？index09-0>」も参考。
+  「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「⑨-0．「LTsv_glyph.py」の関数一覧」も参考。
 
  【LTsv_draw_text_shell(LTsv_GUI)】
   「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。
@@ -1665,7 +1663,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  【LTsv_evaltext(calc_value="")】
   calc_valueに数式などを入れると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「テキスト入力欄(電卓)」で使用します。
-  詳細は「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
+  詳細は「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細」を参考。
 
  【LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")】
   「テキスト入力欄(電卓)(漢直鍵盤含む)」の初期設定。calculatorTは初期テキスト。
@@ -1759,7 +1757,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  【debug_calculatorcommand(glyph_calcinput)】
   単体風テスト専用。Enter機ーを押した時に電卓機能を発動。
-  電卓機能の詳細は「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細」を参考。
+  電卓機能の詳細は「⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細」を参考。
 
  【debug_reversi_mousepress(window_objvoid=None,window_objptr=None)】
   単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押下のコールバック。
@@ -1896,7 +1894,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  【eval_zipdicname】
   郵便番号辞書ファイルの指定(無くても動作)。
-  初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「kanzip.py」を用いる。
+  初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「LTsv/kanzip.py」を用いる。
   詳細は「「kanzip.txt」の①-0．「kanzip」の使い方」を参考。
 
  【last_alpha】
@@ -1991,7 +1989,7 @@ version(branch):20161128M153500	modify:20161209F000437
   V            クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。
 
 
-⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細
 
  「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、
  コマンドなのか単語なのか数式なのかで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。
@@ -2056,7 +2054,7 @@ version(branch):20161128M153500	modify:20161209F000437
                                      漢字配列「LTsv/kanmap.tsv」に見つからない文字の場合は単漢字辞書「LTsv/kanchar.tsv」の「異」「簡」「繁」「代」項目からも探索を試みる。「探檪⇔櫟」「探&#61580;⇔東」
   先頭文字が「汎」その他数式以外      汎用辞書「kanword.tsv」から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。
                                      「汎ヴァイオリン⇔提琴」「汎フカセツフカセツテン⇔不可説不可説転」
-  先頭文字が「算」その他数式         数式とみなして分数計算。電卓の詳しい使い方は[LTsv.txt]の「<？index05-1>」を参考。
+  先頭文字が「算」その他数式         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「「LTsv_doc.txt」の⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細」を参考。
   「3927/1250」といった割り算        割り算に限らず計算結果は分数表示。「3927/1250⇔3927|1250」
   「3927|1250」といった分数のみ       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」
 
@@ -2105,7 +2103,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
  Ｑ．起動できたたソフトがいつの間にか起動しなくなった。
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。
+     「LTsv/kanpickle.bin」を削除してから「kanmap.py」を起動することで初期化できます。
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。
 
 
@@ -2113,12 +2111,12 @@ version(branch):20161128M153500	modify:20161209F000437
 
  更新情報はGitHubやブログを確認してください。
 
+
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-
 
 # Copyright (c) 2016 ooblog
 # License: MIT

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161209F000454
+modify	20161211U000851
 |L:Tsv]
 
 [LTsv_doc|
@@ -128,9 +128,19 @@ p.capcenter{
 footer{
   margin-top:1rem;
   float: both;
-  border: 1px gray dotted;
+  border: 0px;
   text-align: center;
 }
+ .gotop{
+  margin-top:1rem;
+  padding: 0rem;
+  width: 7rem;
+  height: 2rem;
+  float: right;
+  border: 0px;
+  text-align: right;
+  background-image: linear-gradient(to top right, transparent 48%, gray 50%, transparent 51%);
+ }
 p.ooblog{
   margin-top:-1rem;
   text-align: left;
@@ -206,6 +216,7 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 
 <＃kanedit_pages>
 
+ <div class="gotop"><a href="#top">&uarr;Top</a></div>
  <footer>
   <p>site generator "<？https/ooblog:LTsv_doc.py>" repository：<？https/ooblog:LTsv10repository></p>
   <p class="ooblog"><？ooblog></p>
@@ -221,7 +232,7 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 [<＃kanedit_menus>|
 404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
 index|LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4><？list/LTsv10_faq-0><？list/address-0>
-kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2><？list/address-0>
+kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5><？list/address-0>
 kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2><？list/kanfont_faq-0><？list/address-0>
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
 kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip-0><？list/kanzip_faq-0><？list/address-0>
@@ -232,7 +243,7 @@ LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTs
 [<＃kanedit_pages>|
 404	
 index|LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4><？section/LTsv10_faq-0><？section/address-0>
-kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2><？section/address-0>
+kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5><？section/address-0>
 kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2><？section/kanfont_faq-0><？section/address-0>
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
 kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip-0><？section/kanzip_faq-0><？section/address-0>
@@ -262,16 +273,6 @@ kanzip\.html?	kanzip_logo.png
 LTsv_doc\.html?	LTsv_doc_logo.png
 |<？favicon>]
 
-[<？body>|
-index\.html?	<＃kanedit_doc:index>
-404\.html?	<＃kanedit_doc:404>
-kanedit\.html?	<＃kanedit_doc:kanedit>
-kanfont\.html?	<＃kanedit_doc:kanfont>
-kanmap\.html?	<＃kanedit_doc:kanmap>
-kanzip\.html?	<＃kanedit_doc:kanzip>
-LTsv_doc\.html?	<＃kanedit_doc:LTsv_doc>
-|<？body>]
-
 [<？section/License-0>*<？section/License-1>*<？section/License-2>|
 .+\.html?	<section>@E <h3 id="License-@c"><？title/License-@c></h3>@E<＃contents/License-@c>@E</section>@E
 .*	@E<？title/License-@c>@E@E<＃contents/License-@c>@E
@@ -295,11 +296,12 @@ LTsv_doc\.html?	<＃kanedit_doc:LTsv_doc>
 kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。<？BR>@E   ・<？DICchar><？DICword>などで翻訳ミスもしくは言い回しが古くなるなど日本語(英語中国語なども含む)の不具合に対しても作者または著作権者にはメンテナンス義務等はありません。<？BR><？/P>
 |<＃contents/License-0:kandic>]
 
+<？contents/LTsv_doc:LTsv10_faq-0>
 [<＃contents/License-1>|
-<？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？contents/LTsv_doc:LTsv10_faq-0>」も参考)。<？BR>
+<？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index/LTsv10_faq-0>」も参考)。<？BR>
  ダウンロードは「<？https/ooblog:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
- 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
+ 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<？https/License:wine_sh>」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
  フォント「kan5x5comic.ttf」を用意する場合は「<？contents/kanfont:kanfont_faq-0>」を参考。<？BR>
 <？/P>
 <？https/License:LTsv10kanedit>
@@ -317,44 +319,28 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
  逆に私用領域と呼ばれる環境に左右される文字コードを<？VRkeyboard>の制御に用いてます。<？BR>
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https/kanmap.py>」で解決できます。<？BR>
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https/kanmap.py>」で解決できます。詳細は「<？contents/kanmap:kanmap_usage-0>」を参考。<？BR>
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は<？DICchar>から直接生成したいけど優先順位が低い。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
  「<？https/LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<？BR>
- 「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
+ 「docs/」フォルダ内のドキュメントを「<？https/kanedit_etc.tsv>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<？BR>
 |<＃contents/License-2>]
 
 [<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>|
-.+\.html?	<dl><dt><？web/License-@c></dt><dd><a href="<？url/License-@c>" title="<？web/License-@c>"><？url/License-@c></a></dd></dl>
-.*	   <？web/License-@c><？BR>@E   <？url/License-@c><？BR>
+:<＄web/License-0>	MIT License - Choose a License
+:<＄url/License-0>	http://choosealicense.com/licenses/mit/
+:<＄web/License-1>	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
+:<＄url/License-1>	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
+:<＄web/License-2>	MITライセンスを1行1行読んでいく | プログラミング | POSTD
+:<＄url/License-2>	http://postd.cc/mit-license-line-by-line/
+:<＄web/License-3>	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
+:<＄url/License-3>	<？url/ooblog:LTsv10repository>
+.+\.html?	<dl><dt><＄web/License-@c></dt><dd><a href="<＄url/License-@c>" title="<＄web/License-@c>"><＄url/License-@c></a></dd></dl>
+.*	   <＄web/License-@c><？BR>@E   <＄url/License-@c><？BR>
 |<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>]
-[<？url/License-0>|
-.*	http://choosealicense.com/licenses/mit/
-|<？url/License-0>]
-[<？web/License-0>|
-.*	MIT License - Choose a License
-|<？web/License-0>]
-[<？url/License-1>|
-.*	https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
-|<？url/License-1>]
-[<？web/License-1>|
-.*	licenses/MIT_license - Open Source Group Japan Wiki - Open Source Group Japan - OSDN
-|<？web/License-1>]
-[<？url/License-2>|
-.*	http://postd.cc/mit-license-line-by-line/
-|<？url/License-2>]
-[<？web/License-2>|
-.*	MITライセンスを1行1行読んでいく | プログラミング | POSTD
-|<？web/License-2>]
-[<？url/License-3>|
-.*	<？url/ooblog:LTsv10repository>
-|<？url/License-3>]
-[<？web/License-3>|
-.*	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
-|<？web/License-3>]
 
 [<？section/aboutLTsv-0>*<？section/aboutLTsv-1>|
 .+\.html?	<section>@E <h3 id="aboutLTsv-@c"><？title/aboutLTsv-@c></h3>@E<＃contents/aboutLTsv-@c>@E</section>@E
@@ -371,27 +357,15 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
  複数のLTSVを１つのファイルで保存できるようタグで区切ったり、日時処理や分数電卓やGTK＆Tkinterなどを加えたり、Python2,3のprint関数バージョン違いを吸収させたりと、<？BR>
  LTSVパーサに雑多な拡張を重ねていった結果、漢直エディタ環境と化したモジュール群が今の「L:Tsv」です。<？BR><？/P>
 |<＃contents/aboutLTsv-0>]
-[<？https01-0:ltsvorg>|
-.+\.html?	<dl><dt><？title01-0:ltsvorg></dt><dd><a href="<？url01-0:ltsvorg>" title="<？title01-0:ltsvorg>"><？url01-0:ltsvorg></a></dd></dl>
-.*	   <？title01-0:ltsvorg><？BR>@E   <？url01-0:ltsvorg><？BR>@E
-|<？https01-0:ltsvorg>]
-[<？url01-0:ltsvorg>|
-.*	http://ltsv.org/
-|<？url01-0:ltsvorg>]
-[<？title01-0:ltsvorg>|
-.*	Labeled Tab-separated Values (LTSV)
-|<？title01-0:ltsvorg>]
-[<？https01-0:ltsvfaq>|
-.+\.html?	<dl><dt><？title01-0:ltsvfaq></dt><dd><a href="<？url01-0:ltsvfaq>" title="<？title01-0:ltsvfaq>"><？url01-0:ltsvfaq></a></dd></dl>
-.*	   <？title01-0:ltsvfaq><？BR>@E   <？url01-0:ltsvfaq><？BR>@E
-|<？https01-0:ltsvfaq>]
-[<？url01-0:ltsvfaq>|
-.*	http://d.hatena.ne.jp/naoya/20130209/1360381374
-|<？url01-0:ltsvfaq>]
-[<？title01-0:ltsvfaq>|
-.*	LTSV FAQ - LTSV って何? どういうところが良いの?
-|<？title01-0:ltsvfaq>]
-|<？title$http://d.hatena.ne.jp/naoya/20130209/1360381374>]
+
+[<？https01-0:ltsvorg>*<？https01-0:ltsvfaq>|
+:<＄web/ltsv-0>	Labeled Tab-separated Values (LTSV)
+:<＄url/ltsv-0>	http://ltsv.org/
+:<＄web/ltsv-1>	LTSV FAQ - LTSV って何? どういうところが良いの?
+:<＄url/ltsv-1>	http://d.hatena.ne.jp/naoya/20130209/1360381374
+.+\.html?	<dl><dt><＄web/ltsv-@c></dt><dd><a href="<＄url/ltsv-@c>" title="<＄web/ltsv-@c>"><＄url/ltsv-@c></a></dd></dl>
+.*	   <＄web/ltsv-@c><？BR>@E   <＄url/ltsv-@c><？BR>
+|<？https01-0:ltsvorg>*<？https01-0:ltsvfaq>]
 
 [<＃contents/aboutLTsv-1>|
 <？P>  データ間の区切りはタブ(\t)です。一般的なCSVやLTSV等と事なり、複数のタブがあっても1つのタブとみなします(文字列長0のデータを扱う場合はラベル推奨)。<？BR>
@@ -413,7 +387,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 <？DLDT>   modify <？/DTDD>                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<？/DD/DL>
 <？DLDT>  |L:Tsv]<？/DTDD>                    メタタグ「L:Tsv」を閉じます。<？contents01-1:tagsplit><？/DD/DL>
 <？P>
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。<？BR><？/P>
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index/LTsv_file-0>」も参考。<？BR><？/P>
 |<＃contents/aboutLTsv-1>]
 [<？contents01-1:tagsplit>|
 .*	タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
@@ -440,7 +414,7 @@ LTsv_libc_printcat(LTsv_text)	上記LTsv_libc_printfからログ保存やL:Tsv�
 LTsv_libc_printf_type(LTsv_text,LTsv_log=None)	Python2では「<？&lt;>type 'str'<？&gt;>」Python3だと「<？&lt;>class 'bytes'<？&gt;>」のようにprintfに渡すバイナリ文字列の変数の型を表示。	LTsv_logと返り値を指定する事で変数にも出力追記できる。
 LTsv_utf2xml(LTsv_text)	LTsv_textの文字列を数値文字参照に変換。
 LTsv_xml2utf(LTsv_text)	LTsv_textの文字参照(数値文字参照含む)を文字列に変換。
-LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。
+LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。	変換辞書LTsv_recaseのパラメータは「<？index/LTsv_printf-1>」を参考。
 LTsv_utf2ink(LTsv_text)	UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。	点字フォントが表示できる環境にないと動作確認は困難なので注意。
 LTsv_ink2utf(LTsv_text)	上記「UTF-8点字」をUTF-8に戻す。	 データ破損を補完する機能はないので注意。
 LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミナルにコマンドを送る。実行結果も取得できる。	「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
@@ -481,7 +455,7 @@ LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミ�
 |<＃contents/LTsv_file-0>]
 
 [LTsv_file.py|
-LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index01-1>」も参考。
+LTsv_newfile(LTsv_program,LTsv_default=None)	「L:Tsv」ファイルを変数上に作成する。	 LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。	LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。	メタタグについては「<？index/aboutLTsv-1>」も参考。
 LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)	ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。	ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。
 LTsv_zipload(LTsv_zip,LTsv_name,LTsv_path)	ローカル上のLTsv_zipにあるファイルをローカルのLTsv_pathに解凍する。元のzipファイルはそのまま。
 LTsv_64load(LTsv_path,LTsv_codewidth=128)	ローカル上の画像ファイルなどをテキスト(base64)に変換した形で読み込む。元の画像ファイルはそのまま。
@@ -655,7 +629,7 @@ LTsv_gettimerstr(timeformat=None)	日付フォーマットtimeformatを各種タ
 |<？section/LTsv_calc-0>*<？section/LTsv_calc-1>]
 
 [<＃contents/LTsv_calc-0>|
-<？P> 「<？https05:LTsv_calc.py>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index/LTsv_calc-1>」を参照。<？BR>
+<？P> 「<？https/LTsv_calc.py>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<？index/LTsv_calc-1>」を参照。<？BR>
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<？BR>
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<？BR><？/P>
 
@@ -720,34 +694,14 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 <？DLDT>  √<？/DTDD>                                平方根に使う予定の演算子。分数電卓なので無理数などの扱いに困ってる。<？/DD/DL>
 |<＃contents/LTsv_calc-1>]
 
-[<？index/LTsv_calc:number>|
-.+\.html?	<h4><？title/LTsv_calc:number></h4>
-.*	 <？title/LTsv_calc:number>
-|<？index/LTsv_calc:number>]
-[<？title/LTsv_calc:number>|
-.*	使用できる数字
-|<？title/LTsv_calc:number>]
-[<？index/LTsv_calc:‎operator>|
-.+\.html?	<h4><？title/LTsv_calc:‎operator></h4>
-.*	 <？title/LTsv_calc:‎operator>
-|<？index/LTsv_calc:‎operator>]
-[<？title/LTsv_calc:‎operator>|
-.*	使用できる演算子
-|<？title/LTsv_calc:‎operator>]
-[<？index/LTsv_calc:bracket>|
-.+\.html?	<h4><？title/LTsv_calc:bracket></h4>
-.*	 <？title/LTsv_calc:bracket>
-|<？index/LTsv_calc:bracket>]
-[<？title/LTsv_calc:bracket>|
-.*	括弧および関数用途の演算子
-|<？title/LTsv_calc:bracket>]
-[<？index/LTsv_calc:nonuse>|
-.+\.html?	<h4><？title/LTsv_calc:nonuse></h4>
-.*	 <？title/LTsv_calc:nonuse>
-|<？index/LTsv_calc:nonuse>]
-[<？title/LTsv_calc:nonuse>|
-.*	未実装等で使用できない演算子
-|<？title/LTsv_calc:nonuse>]
+[<？index/LTsv_calc:number>*<？index/LTsv_calc:‎operator>*<？index/LTsv_calc:bracket>*<？index/LTsv_calc:nonuse>|
+:<＄title/LTsv_calc-0>	使用できる数字
+:<＄title/LTsv_calc-1>	使用できる演算子
+:<＄title/LTsv_calc-2>	括弧および関数用途の演算子
+:<＄title/LTsv_calc-3>	未実装等で使用できない演算子
+.+\.html?	<h4><＄title/LTsv_calc-@c></h4>
+.*	 <＄title/LTsv_calc-@c>
+|<？index/LTsv_calc:number>*<？index/LTsv_calc:‎operator>*<？index/LTsv_calc:bracket>*<？index/LTsv_calc:nonuse>]
 
 [<？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2>|
 .+\.html?	<section>@E <h3 id="LTsv_joy-@c"><？title/LTsv_joy-@c></h3>@E<＃contents/LTsv_joy-@c>@E</section>@E
@@ -763,11 +717,11 @@ LTsv_calc_multiplication(LTsv_calcQbase)	主に分数の積(分数の割り算�
 |<＃contents/LTsv_joy-0>]
 
 [LTsv_joy.py|
-LTsv_joyreset(LTsv_tsvpath)	「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。
+LTsv_joyreset(LTsv_tsvpath)	「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index/LTsv_joy-1>」。
 LTsv_joyexit()	<？gamepad>の変数初期化です。Linuxではデバイスをクローズします。
 LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")	<？gamepad>の準備です。Linuxではデバイスをオープンします。	「LTsv_joyinit()」のタイミングで<？gamepad>ので個数を受けとる。	0を受け取った場合<？gamepad>を見つけれてない状態。
 LTsv_setjoydata(LTsv_joyid,LTsv_default=None)	スティック(axisW/axisL)とボタン(button)の状態を読み込む。	axisリストとbuttonリストのタプルで返り値も受け取れる。
-LTsv_getjoystr(LTsv_joyid,joyformat=None)	スティックとボタンの状態を<？joyformat_label>のrestへLTSVで返す。	LTsv_joyidには<？gamepad>の番号を指定。	項目一覧の詳細は「<？index06-2>」。
+LTsv_getjoystr(LTsv_joyid,joyformat=None)	スティックとボタンの状態を<？joyformat_label>のrestへLTSVで返す。	LTsv_joyidには<？gamepad>の番号を指定。	項目一覧の詳細は「<？index/LTsv_joy-2>」。
 LTsv_atanscalar(LTsv_atanX,LTsv_atanY)	スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。
 LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)	ラジアン角度円周2πをLTsv_labelsのラベルに置き換え。	<？gamepad>の方角、上下左右東西南北などの表現を想定。
 LTsv_joyaxis_label()	Windowsなら「axisW」を返す。Windowsなら「axisL」を返す。	「LTsv_getjoystr()」でどのaxisを取得するべきかの調査用途。
@@ -807,7 +761,7 @@ buttonP	いわゆるソニー(PS4)配列風。「△\t□\t×\t○\tL1\tR1\tL2\t
 |<？section/LTsv_kbd-0>*<？section/LTsv_kbd-1>]
 
 [<＃contents/LTsv_kbd-0>|
-<？P> 「<？https/LTsv_kbd.tsv>」は<？PCkeyboard>の入力(マウスのボタン含む)をLTSVに変換するモジュールです。<？BR>
+<？P> 「<？https/LTsv_kbd.py>」は<？PCkeyboard>の入力(マウスのボタン含む)をLTSVに変換するモジュールです。<？BR>
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<？BR>
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<？BR>
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「<？https/LTsv_kbd.tsv>」で調整。<？BR>
@@ -824,7 +778,7 @@ LTsv_kbdgettypekana(LTsv_code)	<？keycode00FF>をキー名称に変換。かな
 LTsv_kbdgettypecode(LTsv_name)	キー名称を<？keycode00FF>に変換。
 LTsv_kbdgettypegana(LTsv_gana)	ひらがなキー名称を<？keycode00FF>に変換。ひらがな以外のキー名称も使用可能。
 LTsv_kbdexit()	<？PCkeyboard>(マウス含む)の変数初期化です。Linuxではデバイスをクローズします。
-LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)	<？PCkeyboard>の準備です。Linuxではデバイスをオープンします。	Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。	マウスボタンの配置は「<？index07-1>」を参考。	Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
+LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)	<？PCkeyboard>の準備です。Linuxではデバイスをオープンします。	Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。	マウスボタンの配置は「<？index/LTsv_kbd-1>」を参考。	Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。
 LTsv_kbdEVIOCGRAB(LTsv_grabflag)	※Linux専用命令です。<？PCkeyboard>の入力をターミナルやテキストエリアなどに出力しないようにします。	Windowsのキーフックとすり合わせる過程で別の名前になる可能性があります。	漢直とかで<？PCkeyboard>のアルファベット入力を漢字出力に置き換える用途です。
 LTsv_kbdwrite(LTsv_code,LTsv_press)	※Linux専用命令です。<？PCkeyboard>を入力した事にします。	「LTsv_kbdEVIOCGRAB()」実行中は動作しません。
 LTsv_kbdwriteCtrl(LTsv_ganastsv)	※Linux専用命令です。「Ctrl」など複数のキーを押しながら入力みたいな動作を再現します。	「LTsv_kbdEVIOCGRAB()」実行中は動作しません。
@@ -902,7 +856,7 @@ LTsv_global_popupmenuOBJ(LTsv_objid)	ポップアップメニューのオブジ�
 LTsv_widget_newUUID(LTsv_widgetID=None)	<？GUIwidget>管理用にユニークIDを発行する。	「uuid.uuid4()」と「str(time.time())」の組み合わせ。1秒未満以内に122bitの乱数が重複する事はほぼないと思うが重複する確率は理論上ゼロではないので注意。	LTsv_widgetIDにFalseを指定することで前回と同じIDを再発行できる。コールバック関数に自身のIDを渡す必要がある場合に必要。
 LTsv_widget_newobj(LTsv_widgetPAGE,LTsv_widgetoption,widget_obj)	 「LTsv_widgetPAGEXYWH()」のオブジェクト管理で番号が被らないようにするカウンター。
 LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。
-LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index08-1>」参考。
+LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index/LTsv_gui-1>」参考。
 LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
 LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。	widget_dは「gtk_bin_get_child」が要求される場合の分岐。
 LTsv_hideondelete_shell(LTsv_windowPAGENAME)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
@@ -987,8 +941,8 @@ LTsv_draw_arcfill_shell(LTsv_GUI)	「LTsv_drawGTK_arcfill()」か「LTsv_drawTki
 LTsv_drawGTK_font(draw_f="")	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
 LTsv_drawTkinter_font(draw_f=None)	「canvas」のフォント指定。widget_fにCSVで「widget_f="kan5x5comic,10"」のようにフォント指定。	「LTsv_fonttuple()」も参考。
 LTsv_draw_font_shell(LTsv_GUI)	「LTsv_drawGTK_font()」か「LTsv_drawTkinter_font()」の関数取得。	「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
-LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	グリフでのテキスト描画は「<？index09-0>」を参考。
-LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	「Tkinter」には「<？CP932>」の制限があるのでグリフでのテキスト描画「<？index09-0>」も参考。
+LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	グリフでのテキスト描画は「<？index/LTsv_glyph-0>」を参考。
+LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)	「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。	「Tkinter」には「<？CP932>」の制限があるのでグリフでのテキスト描画「<？index/LTsv_glyph-0>」も参考。
 LTsv_draw_text_shell(LTsv_GUI)	「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。	「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。
 LTsv_draw_picture_load(LTsv_picturepath)	「canvas」用の画像を読み込む。LTsv_picturepathはローカルの画像ファイルのパス。	GUIオブジェクト(widget)の「image」とは別腹。	「Tkinter」では先に「LTsv_canvas_new()」で「canvas」を作って置く必要がある。
 LTsv_draw_picture_celldiv(LTsv_picturepath,picture_divw,picture_divh)	「LTsv_draw_picture_load()」で読み込んだ(読み込んでなければ読み込む)画像を分割して「filepath[num]」の様に番号を付けることができる。	「GTK2」でのみ実装。
@@ -1233,10 +1187,6 @@ kbddefsize	<？VRkeyboard>の拡大倍率。	初期値は「1」。変更非推�
 [reversi|	「LTsv_glyph.py」単体風テストの<？reversi>設定。
 entry	<？reversi>の棋譜。
 |LTsv_glyph.tsv]
-[<？contents/kanzip:kanzip_usage-0>|
-.+\.html?	<a href="kanzip.html#LTsv_doc_usage-0" title="<？title/kanzip_usage-0>"><？titleimg/software-4><？title/kanzip_usage-0></a>
-.*	「kanzip.txt」の<？title/kanzip_usage-0>
-|<？contents/kanzip:kanzip_usage-0>]
 
 [<＃contents/LTsv_glyph-2>|
 <？P><？index/LTsv_glyph:kbdimage><？/P>
@@ -1284,20 +1234,14 @@ entry	<？reversi>の棋譜。
 <？DLDT>  X<？/DTDD>            テキスト切り取り(クリップボードにコピー)。σ鍵盤じゃない状態の時も[Ctrl]+[X]で選択範囲切り取り。<？BR><？/DD/DL>
 <？DLDT>  V<？/DTDD>            クリップボードからテキスト貼り付け。σ鍵盤じゃない状態の時も[Ctrl]+[V]でペースト。<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-3>]
-[<？index/LTsv_glyph:keyboard>|
-.+\.html?	<h4><？title/LTsv_glyph:keyboard></h4>
-.*	 <？title/LTsv_glyph:keyboard>
-|<？index/LTsv_glyph:keyboard>]
-[<？title/LTsv_glyph:keyboard>|
-.*	<？PCkeyboard>操作
-|<？title/LTsv_glyph:keyboard>]
-[<？index/LTsv_glyph:mouse>|
-.+\.html?	<h4><？title/LTsv_glyph:mouse></h4>
-.*	 <？title/LTsv_glyph:mouse>
-|<？index/LTsv_glyph:mouse>]
-[<？title/LTsv_glyph:mouse>|
-.*	マウス操作
-|<？title/LTsv_glyph:mouse>]
+
+[<？index/LTsv_glyph:keyboard>*<？index/LTsv_glyph:mouse>|
+:<＄title/LTsv_glyph-0>	<？PCkeyboard>操作
+:<＄title/LTsv_glyph-1>	マウス操作
+.+\.html?	<h4><＄title/LTsv_glyph-@c></h4>
+.*	 <＄title/LTsv_glyph-@c>
+|<？index/LTsv_glyph:keyboard>*<？index/LTsv_glyph:mouse>]
+
 [<？index/LTsv_glyph:kbdimage>|
 .+\.html?	<img src="data:image/png;base64,<？base64/LTsv_glyph:kbdimage>" width="96" height="24" alt="漢直鍵盤"><br />
 .*	<？textAA/LTsv_glyph:kbdimage>
@@ -1336,34 +1280,18 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
   　　A S D F G H J K L bsdelenter
   ぬ　Z X C V B N M ←→↑↓σ　英
 |<？textAA/LTsv_glyph:calcmage>]
-[<？contents/bsicon>|
-.+\.html?	<span class="kan5x5comic">&#61649;</span>
-.*	&#61649;
-|<？contents/bsicon>]
-[<？contents/delicon>|
-.+\.html?	<span class="kan5x5comic">&#61650;</span>
-.*	&#61650;
-|<？contents/delicon>]
-[<？contents/entericon>|
-.+\.html?	<span class="kan5x5comic">&#61651;</span>
-.*	&#61651;
-|<？contents/entericon>]
-[<？contents/homeicon>|
-.+\.html?	<span class="kan5x5comic">&#61659;</span>
-.*	&#61659;
-|<？contents/homeicon>]
-[<？contents/endicon>|
-.+\.html?	<span class="kan5x5comic">&#61660;</span>
-.*	&#61660;
-|<？contents/endicon>]
-[<？contents/pageupicon>|
-.+\.html?	<span class="kan5x5comic">&#61661;</span>
-.*	&#61661;
-|<？contents/pageupicon>]
-[<？contents/pagedownicon>|
-.+\.html?	<span class="kan5x5comic">&#61662;</span>
-.*	&#61662;
-|<？contents/pagedownicon>]
+
+[<？contents/bsicon>*<？contents/delicon>*<？contents/entericon>*<？contents/homeicon>*<？contents/endicon>*<？contents/pageupicon>*<？contents/pagedownicon>|
+:<＄icon-0>	&#61649;
+:<＄icon-1>	&#61650;
+:<＄icon-2>	&#61651;
+:<＄icon-3>	&#61659;
+:<＄icon-4>	&#61660;
+:<＄icon-5>	&#61661;
+:<＄icon-6>	&#61662;
+.+\.html?	<span class="kan5x5comic"><＄icon-@c></span>
+.*	<＄icon-@c>
+|<？contents/bsicon>*<？contents/delicon>*<？contents/entericon>*<？contents/homeicon>*<？contents/endicon>*<？contents/pageupicon>*<？contents/pagedownicon>]
 
 [<＃contents/LTsv_glyph-4>|
 <？P> 「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、<？BR>
@@ -1429,7 +1357,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
                                      <？DICmap>に見つからない文字の場合は<？DICchar>の「異」「簡」「繁」「代」項目からも探索を試みる。「探檪⇔櫟」「探<？contents/tokyoicon>⇔東」<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「汎」その他数式以外<？/DTDD>      <？DICword>から単語を取得。単語にヒットしなければ数式扱い。２文字以上の単語は「汎」を省略できるが数式と区別するため「汎」は付加される。<？BR>
                                      「汎ヴァイオリン⇔提琴」「汎フカセツフカセツテン⇔不可説不可説転」<？BR><？/DD/DL>
-<？DLDT>  先頭文字が「算」その他数式<？/DTDD>         数式とみなして分数計算。電卓の詳しい使い方は[LTsv.txt]の「<？index05-1>」を参考。<？BR><？/DD/DL>
+<？DLDT>  先頭文字が「算」その他数式<？/DTDD>         数式とみなして分数計算。<？VReval/howto><？BR><？/DD/DL>
 <？DLDT>  「3927/1250」といった割り算<？/DTDD>        割り算に限らず計算結果は分数表示。「3927/1250⇔3927|1250」<？BR><？/DD/DL>
 <？DLDT>  「3927|1250」といった分数のみ<？/DTDD>       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-4>]
@@ -1472,7 +1400,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 <？DLDT> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。<？BR>
+     「LTsv/kanpickle.bin」を削除してから「<？https/kanmap.py>」を起動することで初期化できます。<？BR>
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<？BR><？/DD/DL>
 |<＃contents/LTsv10_faq-0>]
 
@@ -1524,7 +1452,7 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
-<？DLDT>  [L:Tsv|<？/DTDD>                     「L:Tsv」ファイルの宣言です。「L:Tsv」ファイルの詳細は「<？index01-1>」を参考。<？/DD/DL>
+<？DLDT>  [L:Tsv|<？/DTDD>                     「L:Tsv」ファイルの宣言です。<？/DD/DL>
 <？DLDT>   1st<？/DTDD>                        「<？https/LTsv_doc.tsv>」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。<？/DD/DL>
 <？DLDT>  [LTsv_doc|<？/DTDD>                  「<？https/LTsv_doc.py>」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
 <？DLDT>   window_size<？/DTDD>                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。<？/DD/DL>
@@ -1635,18 +1563,13 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/separate>|
 .*	tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
 |<？title/separate>]
-[<？contents/LTsv_doc:LTsv_file-0>|
-.+\.html?	<a href="index.html#LTsv_file-0" title="<？title/LTsv_file-0>"><？titleimg/software-0><？title/LTsv_file-0></a>
-.*	「LTsv_doc.txt」の<？title/LTsv_file-0>
-|<？contents/LTsv_doc:LTsv_file-0>]
-[<？contents/LTsv_doc:LTsv_time-1>|
-.+\.html?	<a href="index.html#LTsv_time-1" title="<？title/LTsv_time-1>"><？titleimg/software-0><？title/LTsv_time-1></a>
-.*	「LTsv_doc.txt」の<？title/LTsv_time-1>
-|<？contents/LTsv_doc:LTsv_time-1>]
-[<？contents/LTsv_doc:aboutLTsv-1>|
-.+\.html?	<a href="index.html#aboutLTsv-1" title="<？title/aboutLTsv-1"><？titleimg/software-0><？title/aboutLTsv-1></a>
-.*	「LTsv_doc.txt」の<？title/aboutLTsv-1>
-|<？contents/LTsv_doc:aboutLTsv-1>]
+
+[<？contents/LTsv_doc:LTsv_file-0>*<？contents/LTsv_doc:LTsv_time-1>|
+:<＄link/LTsv_doc-0>	LTsv_file-0
+:<＄link/LTsv_doc-1>	LTsv_time-1
+.+\.html?	<a href="index.html#<＄link/LTsv_doc-@c>" title="<？title/<＄link/LTsv_doc-@c>>"><？titleimg/software-0><？title/<＄link/LTsv_doc-@c>></a>
+.*	「LTsv_doc.txt」の<？title/<＄link/LTsv_doc-@c>>
+|<？contents/LTsv_doc:LTsv_file-0>*<？contents/LTsv_doc:LTsv_time-1>]
 
 [<？section/LTsv_doc_faq-0>|
 .+\.html?	<section>@E <h3 id="LTsv_doc_faq-@c"><？title/LTsv_doc_faq-@c></h3>@E<＃contents/LTsv_doc_faq-@c>@E</section>@E
@@ -1657,8 +1580,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDT> Ｑ．「<？https/LTsv_doc.py>」で置換されないタグが山ほど。<？/DTDD>
  Ａ．タグに実行順番があるので、後発ページ内容を先発タグで置換できない問題があります。当面は手動で並び替えです。<？BR>
       タグの順番を仮に解決できたとして今度は再帰無限ループをどう解決するのかという問題があるのですorz<？BR><？/DD/DL>
-<？DLDT> Ｑ．「docs/kanedit_etc.tsv」で余分なタグと錯覚するコピペ多すぎる。<？/DTDD>
- Ａ．タグを合成するメタプログラミングとかマクロとかコンパイル時計算的な何かの仕組みが必要なのかも。今後の課題。<？BR><？/DD/DL>
 |<＃contents/LTsv_doc_faq-0>]
 
 [<？section/kanedit_usage-0>|
@@ -1667,8 +1588,22 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanedit_usage-0>]
 
 [<＃contents/kanedit_usage-0>|
-<？Pcenter><？index/kanedit_usage:capture><？BR>
+<？Pcenter><？index/kanedit_usage:capture><？BR><？/PP> <？VRkeyboard/howto><？BR>
+ <？VRcalc/howto><？BR>
+ ここでは「kanedit」に追加された(予定含む)操作の説明になります。<？BR>
 <？/P>
+<？DLDT>  [Space]<？/DTDD>               いわゆる半角スペース「 」。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[Space]<？/DTDD>        いわゆる全角スペース「　」。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[T]<？/DTDD>            タブ文字「\t」。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[I]<？/DTDD>            現状では半角スペース4つ固定「    」。インデント自動調整予定(未定)。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[J]or[Down]<？/DTDD>    編集行(<？VRcalc>)を下に移動。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[K]or[Up]<？/DTDD>      編集行(<？VRcalc>)を上に移動。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[E]<？/DTDD>            電卓演算。<？VReval/howto><？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[Enter]<？/DTDD>        現状では電卓演算。改行入力に変更予定(未定)。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[O]<？/DTDD>            ファイルダイアログ予定(未定)。<？BR><？/DD/DL>
+<？DLDT>  [Ctrl]+[S]<？/DTDD>            ファイル保存予定(未定)。<？BR><？/DD/DL>
+<？P>
+ 漢直の詳細は「<？index/kanedit_faq-1>」を参考。<？/P>
 |<＃contents/kanedit_usage-0>]
 [<？index/kanedit_usage:capture>|
 .+\.html?	<img src="kanedit_512x384.png" width="512" height="384" alt="漢直鍵盤"><br />
@@ -1690,31 +1625,147 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<＃contents/kanedit-1>]
 <！kanedit.tsv>
 
-[<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>|
+[<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5>|
 .+\.html?	<section>@E <h3 id="kanedit_faq-@c"><？title/kanedit_faq-@c></h3>@E<＃contents/kanedit_faq-@c>@E</section>@E
 .*	@E<？title/kanedit_faq-@c>@E@E<＃contents/kanedit_faq-@c>@E
-|<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>]
+|<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5>]
 
 [<＃contents/kanedit_faq-0>|
 <？DLDT> Ｑ．表示されない文字が多々あるのですが。<？/DTDD>
- Ａ．グリフが不足しています。「kanfont」でグリフを作成していく事で表示できる文字を増やしていく予定です。<？BR><？/DD/DL>
+ Ａ．グリフが不足しています。「kanfont」でグリフを作成していく事で表示できる文字を増やしていく予定です。<？BR>
+<？/DD/DL>
 <？DLDT> Ｑ．普通にフォント使えばよかったんじゃないですか？<？/DTDD>
- Ａ．「Tkinter」は<？CP932>を越える文字を扱えない問題があったので、独自にフォントモジュールを作る必要に迫られました。<？BR><？/DD/DL>
+ Ａ．「Tkinter」は<？CP932>を越える文字を扱えない問題があったので、独自にフォントモジュールを作る必要に迫られました。<？BR>
+<？/DD/DL>
+<？DLDT> <？DICzip>が見つからない。<？/DTDD>
+ Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。<？BR>
+     詳細は「<？contents/kanzip:kanzip_usage-0>」を参考。<？BR>
+<？/DD/DL>
 |<＃contents/kanedit_faq-0>]
+[<？contents/kanzip:kanzip_usage-0>|
+.+\.html?	<a href="kanzip.html#kanzip_usage-0" title="<？title/kanzip_usage-0>"><？titleimg/software-4><？title/kanzip_usage-0></a>
+.*	「kanzip.txt」の<？title/kanzip_usage-0>
+|<？contents/kanzip:kanzip_usage-0>]
 
 [<＃contents/kanedit_faq-1>|
-<？DLDT> Ｑ．<？/DTDD>
- Ａ．<？BR><？/DD/DL>
-<？DLDT> Ｑ．<？/DTDD>
- Ａ．<？BR><？/DD/DL>
+<？P> 漢字を音読み訓読みなど理由を付けて<？VRkeyboard>の[ぬ〜ろ][ヌ〜ロ]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<？BR>
+ そこで入りきらない文字を「相席」というレトリックで分散しています。<？BR><？/P>
+
+<？DLDT>  「[5(え)]」<？/DTDD>   記号XOR(⊕)を相席。<？/DD/DL>
+  「[5(エ)]」   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。
+  「[7(や)]」   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。
+  「[7(ヤ)]」   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。
+  「[8(ゆ)]」   ユーロ記号(€)を相席。
+  「[8(ユ)]」   [D(し)]に入り切らなかった「しゅ」読みの漢字を相席。
+  「[9(ヨ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
+  「[0(ワ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
+  「[^(へ)]」   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。
+  「[^(ヘ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。
+  「[W(テ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。
+  「[Y(ん)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
+  「[Y(ン)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
+  「[U(な)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。性別記号(♂♀)と虹を表す漢字(虹霓蜺蝃螮蝀)を相席。
+  「[I(に)]」   [U(な)]に入り切らなかった「な」読みの漢字を相席。
+  「[I(ニ)]」   [S(と)]に入り切らなかった「と」読みの漢字を相席。
+  「[O(ら)]」   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。
+  「[O(ラ)]」   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。
+  「[P(せ)]」   摂氏セルシウス度(°℃)を相席。
+  「[@(｀)]」   U+ff02の方のダブルクォート(＂)を相席。
+  「[{(ぷ)]」   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。
+  「[{(プ)]」   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。
+  「[D(し)]」   短剣符(†)と段落記号(¶)を相席。
+  「[D(シ)]」   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。
+  「[H(ク)]」   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
+  「[K(ノ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。
+  「[L(リ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。
+  「[;(れ)]」　 記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。
+  「[;(レ)]」   [G(き)]に入り切らなかった「き」読みの漢字を相席。
+  「[}(む)]」   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。
+  「[}(ム)]」   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。
+  「[N(ミ)]」   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。
+  「[M(モ)]」   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。
+  「[,(ね)]」   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。
+  「[,(ネ)]」   [V(ひ)]に入り切らなかった「ひ」読みの漢字を相席。著作権表示記号(©®℗™℠)の記号を相席
+  「[.(る)]」   罫線(├┼┤┣╋┫)と記号(☆★○●◇◆□■△▲▽▼◎※)と郵便マーク(〒)を相席。
+  「[.(ル)]」   [B(こ)]に入り切らなかった「こ」読みの漢字を相席。ルーブル記号(₽)を相席。
+  「[?(め)]」   [.(る)]に入り切らなかった「る」読みの漢字を相席。
+  「[?(メ)]」   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。
+  「[_(ろ)]」   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。
+  「[_(ロ)]」   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。
+  「[A(α)]」   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。
+  「[A(Α)]」   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。
+  「[B(β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[B(Β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[G(γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[G(Γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[D(δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[D(Δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[E(ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[E(Ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[Z(ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[Z(Ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[H(η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[H(Η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[U(θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[U(Θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[I(ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[I(Ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+  「[K(κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[K(Κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[L(λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[L(Λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+  「[M(μ)]」   康熙部首専用コード(⼀〜⼮)。
+  「[M(Μ)]」   康熙部首専用コード(⼯〜⽝)。
+  「[J(ξ)]」   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。
+  「[J(Ξ)]」   康熙部首コード以外の偏旁冠脚構垂繞(冫〜氺)。
+  「[O(ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(灬〜辶)。
+  「[O(Ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(阝〜龠)。漢字が３つ(㐂厵刕驫垚畾矗飍猋孨芔鑫卉惢劦众姦)の仮置き。
+  「[P(π)]」   元素の中国語(氫〜銀)。
+  「[P(Π)]」   元素の中国語(鎘〜鈽)。
+  「[R(ρ)]」   元素の中国語(鋂〜鎶)。
+  「[R(Ρ)]」   「なんだかとっても！いいかんじ」の「閄」など。
+  「[S(σ)]」   「HJKL」といったカーソル移動や「ZXCVS」といったショートカットなどのキーバインド。斜め矢印など一部絵文字(✖🎮↖↗↘↙♠♥♦♣)を相席。
+  「[S(Σ)]」   分数電卓(＋+－-×*÷/#|)。10進数16進数変換(⑩⑯)も相席。「平片半全大小清濁」といった文字置換、時刻取得「今干」コマンドも相席。
+  「[T(τ)]」   Dvorak配列風。
+  「[T(Τ)]」   Dvorak配列風。
+  「[Y(υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
+  「[Y(Υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
+  「[F(φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
+  「[F(Φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
+  「[X(χ)]」   xvkbd-RussianALTアレンジ。
+  「[X(Χ)]」   xvkbd-RussianALTアレンジ。
+  「[C(ψ)]」   xvkbd-latin1ALTアレンジ。
+  「[C(Ψ)]」   xvkbd-latin1ALTアレンジ。
+  「[V(ω)]」   xvkbd-french2ALTアレンジ。
+  「[V(Ω)]」   xvkbd-french2ALTアレンジ。
+  「[.(○)]」   base64風6点字(一般的な点字とは異なります)。「a⠁ b⠂ c⠃ d⠄ e⠅ f⠆ g⠇ h⠈ i⠉ j⠊ k⠋ l⠌ m⠍ n⠎ o⠏ p⠐ q⠑ r⠒ s⠓ t⠔ u⠕ v⠖ w⠗ x⠘ y⠙ z⠚ 0⠵ 1⠶ 2⠷ 3⠸ 4⠹ 5⠺ 6⠻ 7⠼ 8⠽ 9⠾ .⠿ _⠀」。
+  「[.(●)]」   base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。
+  「[/(△)]」   UTF-8点字(⡀〜⡮)。
+  「[/(▲)]」   UTF-8点字(⡰〜⢞)。
+  「[_(□)]」   UTF-8点字(⢠〜⣎)。
+  「[_(■)]」   UTF-8点字(⣐〜⣾)。
+
+
 |<＃contents/kanedit_faq-1>]
 
 [<＃contents/kanedit_faq-2>|
+<？P> 音読み訓読みの限界を飛び越えるため熟語は隣接してると便利で覚えやすいという理屈で飛び地します。<？BR><？/P>
+|<＃contents/kanedit_faq-2>]
+
+[<＃contents/kanedit_faq-3>|
+<？P> 相席ではないのですが字引入力を使ったショートカットの事例もついでに。<？BR><？/P>
+|<＃contents/kanedit_faq-3>]
+
+[<＃contents/kanedit_faq-4>|
+<？P> 地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<？BR><？/P>
+|<＃contents/kanedit_faq-4>]
+
+[<＃contents/kanedit_faq-5>|
 <？DLDT> Ｑ．辞書作成の際に参考になったサイトとか教えていただけますか？<？/DTDD>
  Ａ．全部は無理ですが覚えがある範囲の一部なら。Yahoo!知恵袋やWeblioやgoo辞書やWikipediaやニコニコ大百科など様々なサイトを参考にしてます。<？BR><？/DD/DL>
 <？https/reference:radical>
 <？https/reference:country>
-|<＃contents/kanedit_faq-2>]
+|<＃contents/kanedit_faq-5>]
 [<？https/reference:radical>*<？https/reference:country>|
 :<＄web/reference-0>	部首 - Wikipedia
 :<＄url/reference-0>	http://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
@@ -1723,18 +1774,12 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<dl><dt><＄web/reference-@c></dt><dd><a href="<＄url/reference-@c>" title="<＄web/reference-@c>"><＄url/reference-@c></a></dd></dl>
 .*	@E   <＄web/reference-@c><？BR>@E   <＄url/reference-@c><？BR>
 |<？https/reference:radical>*<？https/reference:country>]
-[<？web/reference-0>|
-.*	部首 - Wikipedia
-|<？web/reference-0>]
-[<？url/reference-0>|
-.*	http://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
-|<？url/reference-0>]
-[<？web/reference-1>|
-.*	国名の漢字表記一覧 - Wikipedia
-|<？web/reference-1>]
-[<？url/reference-1>|
-.*	https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%90%8D%E3%81%AE%E6%BC%A2%E5%AD%97%E8%A1%A8%E8%A8%98%E4%B8%80%E8%A6%A7
-|<？url/reference-1>]
+[<？https/kanedit.py>*<？https/kanedit.tsv>|
+:<＄path/kanedit-0>	kanedit.py
+:<＄path/kanedit-1>	kanedit.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>"><＄path/kanedit-@c></a>
+.*	<＄path/kanedit-@c>
+|<？https/kanedit.py>*<？https/kanedit.tsv>]
 
 [<？section/kanfont_usage-0>|
 .+\.html?	<section>@E <h3 id="kanfont_usage-@c"><？title/kanfont_usage-@c></h3>@E<＃contents/kanfont_usage-@c>@E</section>@E
@@ -1742,7 +1787,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanfont_usage-0>]
 
 [<＃contents/kanfont_usage-0>|
-<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-1>」を参考。<？BR><？BR><？/DD/DL>
+<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard/howto><？BR><？BR><？/DD/DL>
 <？DLDT>   縦のスケール<？/DTDD>                     グリフを編集する文字を選択。<？VRkeyboard>に無い漢字も選択可能。<？BR><？/DD/DL>
 <？DLDT>   縦スケールのスピンボックス<？/DTDD>       グリフを編集する文字を選択。縦のスケールと連動。<？BR><？/DD/DL>
 <？DLDT>   U+ffff表記下の「CP」ボタン<？/DTDD>       クリップボードに縦スケールで選択されてる文字をコピー。<？BR><？/DD/DL>
@@ -1765,7 +1810,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDT>   「活」「漫」「筆」ラジオボタン<？/DTDD>   キャンバスで編集するグリフを「活:kan5x5」「漫:kan5x5comic」「筆:kan5x5brush」から選択。<？BR><？/DD/DL>
 <？DLDT>   右側の入力欄<？/DTDD>                     辞書項目「英名音訓送異俗熙簡繁越地顔鍵代逆非難活漫筆幅」を<？VRkeyboard>で入力します。クリップボード使用可能。<？BR>
                                     活漫筆幅がグリフ項目になります。グリフキャンバスで編集。頂点はSVGパスから独自形式に圧縮される場合があります。<？BR>
-                                    <？VRcalc>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-2>」を参考。<？BR><？/DD/DL>
+                                    <？VRcalc/howto><？BR><？/DD/DL>
 <？DLDT>   右下の「save」ボタン<？/DTDD>             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。<？BR><？/DD/DL>
 |<＃contents/kanfont_usage-0>]
 [<？index/kanfont_usage:capture>|
@@ -1791,7 +1836,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<＃contents/kanfont-2>|
 <？P> ・「kanfont」のグリフキャンバスサイズは512ですがSVGパスの想定サイズは1024です。<？BR>
  ・グリフキャンバスは左上が&#40;0,0&#41;ですがSVGパスは左下が&#40;0,0&#41;です。<？BR>
- ・そしてSVGパスを「<？https/kanchar.tsv>」に保存する際に独自形式5x10xで圧縮する場合があります(SVGパスの「M」「z」の代わりに半角角括弧「[」「]」)。<？BR>
+ ・そしてSVGパスを<？DICchar>に保存する際に独自形式5x10xで圧縮する場合があります(SVGパスの「M」「z」の代わりに半角角括弧「[」「]」)。<？BR>
  座標圧縮の話と直接関係ないが、「kanfont」はポリゴン限定(直線しか編集できない)ので、SVGパスの読込も「M」と「z」しか対応してないことに注意。<？BR>
 <？/P>
 <？DLDT>「活」用途の5x系(グリフキャンバス上「grid」100px)<？/DTDD>
@@ -1835,7 +1880,8 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？https/kanfont_faq:woffconv>
 <？DLDT> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
  Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
-     <？VRcalc>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-2>」「<？contents/LTsv_doc:LTsv_glyph-3>」を参考。<？BR>
+     <？VRkeyboard/howto><？BR>
+     <？VRcalc/howto><？BR>
 <？/DD/DL>
 <？DLDT> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
  Ａ．「LTsv/kanmap.tsv」に含まれてない漢字を探索するには「kanedit」の「探」コマンドを用いてください。<？BR>
@@ -1871,6 +1917,12 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？web/kanfont_faq-2>|
 .*	WOFFコンバータ
 |<？web/kanfont_faq-2>]
+[<？https/kanfont.py>*<？https/kanfont.tsv>|
+:<＄path/kanfont-0>	kanfont.py
+:<＄path/kanfont-1>	kanfont.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>"><＄path/kanfont-@c></a>
+.*	<＄path/kanfont-@c>
+|<？https/kanfont.py>*<？https/kanfont.tsv>]
 
 [<？section/kanmap_usage-0>*<？section/kanmap_usage-1>|
 .+\.html?	<section>@E <h3 id="kanmap_usage-@c"><？title/kanmap_usage-@c></h3>@E<＃contents/kanmap_usage-@c>@E</section>@E
@@ -1879,12 +1931,12 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 
 [<＃contents/kanmap_usage-0>|
 <？P> 事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<？BR>
- 「<？https/kanmap.py>」を起動すると上部に漢字配列「<？https/kanmap.tsv>」、下部に単漢字辞書「<？https/kanchar.tsv>」を表示します。<？BR>
+ 「<？https/kanmap.py>」を起動すると上部に漢字配列「<？https/kanmap.tsv>」、下部に<？DICchar>を表示します。<？BR>
  「kanmap」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<？BR><？/P>
 |<＃contents/kanmap_usage-0>]
 
 [<＃contents/kanmap_usage-1>|
-<？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard>の操作は「<？contents/LTsv_doc:LTsv_glyph-2>」を参照。<？BR><？/DD/DL>
+<？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard/howto><？BR><？/DD/DL>
 <？DLDT>  小さい文字の上でタップ<？/DTDD>          カーソル点灯。クリップボードに１文字転送。<？BR><？/DD/DL>
 <？DLDT>  「find」をタップ<？/DTDD>          クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
 <？DLDT>  「update☐」にチェック<？/DTDD>    ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。<？BR><？/DD/DL>
@@ -1892,10 +1944,19 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDT>  「rewrite☐」にチェック<？/DTDD>   ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップで漢字配列の文字を上書き(予定)。<？BR><？/DD/DL>
 <？DLDT>  「swap☐」にチェック<？/DTDD>      ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。<？BR><？/DD/DL>
 |<＃contents/kanmap_usage-1>]
-[<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>|
+[<？VRkeyboard/howto>|
+.*	<？VRkeyboard>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-2>」を参考。
+|<？VRkeyboard/howto>]
+[<？VRcalc/howto>|
+.*	<？VRcalc>の入力操作は「<？contents/LTsv_doc:LTsv_glyph-3>」を参考。
+|<？VRcalc/howto>]
+[<？VReval/howto>|
+.*	<？VRcalc>の演算結果は「<？contents/LTsv_doc:LTsv_glyph-4>」を参考。
+|<？VReval/howto>]
+[<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>*<？contents/LTsv_doc:LTsv_glyph-4>|
 .+\.html?	<a href="index.html#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？titleimg/software-0><？title/LTsv_glyph-@c></a>
 .*	「LTsv_doc.txt」の<？title/LTsv_glyph-@c>
-|<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>]
+|<？contents/LTsv_doc:LTsv_glyph-0>*<？contents/LTsv_doc:LTsv_glyph-1>*<？contents/LTsv_doc:LTsv_glyph-2>*<？contents/LTsv_doc:LTsv_glyph-3>*<？contents/LTsv_doc:LTsv_glyph-4>]
 
 [<？index/kanmap_usage:capture>|
 .+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
@@ -1916,6 +1977,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<section>@E <h3 id="kanmap_faq-@c"><？title/kanmap_faq-@c></h3>@E<＃contents/kanmap_faq-@c>@E</section>@E
 .*	@E<？title/kanmap_faq-@c>@E@E<＃contents/kanmap_faq-@c>@E
 |<？section/kanmap_faq-0>]
+[<？contents/kanmap:kanmap_usage-0>|
+.+\.html?	<a href="kanmap.html#kanmap_usage-0" title="<？title/kanmap_usage-0>"><？titleimg/software-3><？title/kanmap_usage-0></a>
+.*	「kanmap.txt」の<？title/kanmap_usage-0>
+|<？contents/kanmap:kanmap_usage-0>]
 
 [<＃contents/kanmap_faq-0>|
 <？DLDT> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
@@ -1923,7 +1988,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？/DD/DL>
 <？DLDT> Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」のフォントが保存されるのですか？<？/DTDD>
  Ａ．グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。<？BR>
-     単漢字辞書「<？https/kanchar.tsv>」のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。<？BR>
+     <？DICchar>のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。<？BR>
 <？/DD/DL>
 <？https/Python_pickle>
 <？DLDT> Ｑ．「kanmap.png」の空白が多い気がします。<？/DTDD>
@@ -1933,16 +1998,15 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDT> Ｑ．編集追加したはずのグリフが「kanedit」に反映されない。<？/DTDD>
  Ａ．「LTsv/kanpickle.bin」を一旦手動で削除して「<？https/kanmap.py>」をもう一度起動。「LTsv/kanpickle.bin」が初期化されるはずです。<？BR><？/DD/DL>
 |<＃contents/kanmap_faq-0>]
-[<？https/Python_pickle>|
-.+\.html?	<dl><dt><？web/Python_pickle-@c></dt><dd><a href="<？url/Python_pickle-@c>" title="<？web/Python_pickle-@c>"><？url/Python_pickle-@c></a></dd></dl>
-.*	   <？web/Python_pickle-@c><？BR>@E   <？url/Python_pickle-@c><？BR>@E
-|<？https/Python_pickle>]
-[<？url/Python_pickle-0>|
-.*	http://docs.python.jp/3/library/re.html
-|<？url/Python_pickle-0>]
-[<？web/Python_pickle-0>|
-.*	12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
-|<？web/Python_pickle-0>]
+
+[<？https/Python_pickle>*<？https/Python_re>|
+:<＄web/Python-0>	 12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
+:<＄url/Python-0>	 http://docs.python.jp/3/library/pickle.html
+:<＄web/Python-1>	 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
+:<＄url/Python-1>	 http://docs.python.jp/3/library/re.html
+.+\.html?	<dl><dt><＄web/Python-@c></dt><dd><a href="<＄url/Python-@c>" title="<＄web/Python-@c>"><＄url/Python-@c></a></dd></dl>
+.*	   <＄web/Python-@c><？BR>@E   <＄url/Python-@c><？BR>@E
+|<？https/Python_pickle>*<？https/Python_re>]
 
 [<？section/kanzip_usage-0>|
 .+\.html?	<section>@E <h3 id="kanzip_usage-@c"><？title/kanzip_usage-@c></h3>@E<＃contents/kanzip_usage-@c>@E</section>@E
@@ -1950,11 +2014,11 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanzip_usage-0>]
 
 [<＃contents/kanzip_usage-0>|
-<？Pcenter><？index/kanzip_usage:capture><？BR> まず「<？https/kanzip.py>」配下に作業用の「kanzip」フォルダが作成されます。<？BR>
+<？Pcenter><？index/kanzip_usage:capture><？BR><？/PP> まず「<？https/kanzip.py>」配下に作業用の「kanzip」フォルダが作成されます。<？BR>
  初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。<？BR>
  「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。<？BR>
  全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、<？BR>
- 最終的に「<？DICzip>kanzip.tsv」にマージして完成。<？BR><？/P>
+ 最終的に<？DICzip>にマージして完成。<？BR><？/P>
 |<＃contents/kanzip_usage-0>]
 [<？index/kanzip_usage:capture>|
 .+\.html?	<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br />
@@ -2045,42 +2109,26 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/License-2>|
 .*	⓪-2．その他現在わかっている不具合や今後の課題
 |<？title/License-2>]
-[<？https/License:LICENSE>*<？https/kanmap.tsv>*<？https/kanchar.tsv>*<？https/kanword.tsv>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/License-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/License-@c>"><？path/License-@c></a>
-.*	<？path/License-@c>
-|<？https/License:LICENSE>*<？https/kanmap.tsv>*<？https/kanchar.tsv>*<？https/kanword.tsv>]
-[<？path/License-0>|
-.*	LICENSE
-|<？path/License-0>]
-[<？path/License-1>|
-.*	LTsv/kanmap.tsv
-|<？path/License-1>]
-[<？path/License-2>|
-.*	LTsv/kanchar.tsv
-|<？path/License-2>]
-[<？path/License-3>|
-.*	kanword.tsv
-|<？path/License-3>]
-[<？path/License-4>|
-.*	kanfont.txt
-|<？path/License-4>]
+
+[<？https/License:LICENSE>*<？https/kanmap.tsv>*<？https/kanchar.tsv>*<？https/kanword.tsv>*<？https/License:wine_sh>|
+:<＄path/License-0>	LICENSE
+:<＄path/License-1>	LTsv/kanmap.tsv
+:<＄path/License-2>	LTsv/kanchar.tsv
+:<＄path/License-3>	kanword.tsv
+:<＄path/License-4>	wine_sh
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/License-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/License-@c>"><＄path/License-@c></a>
+.*	<＄path/License-@c>
+|<？https/License:LICENSE>*<？https/kanmap.tsv>*<？https/kanchar.tsv>*<？https/kanword.tsv>*<？https/License:wine_sh>]
+
 [<？https/License:kan5x5comic.woff>*<？https/License:yakuyon>|
-.+\.html?	<a href="<？link/License-@c>" title="<？word/License-@c>"><？word/License-@c></a>
-.+\.css	<？link/License-@c>
-.*	<？word/License-@c>
+:<＄word/Python-0>	kan5x5comic.woff
+:<＄link/Python-0>	https://ooblog.github.io/kan5x5comic.woff
+:<＄word/Python-1>	約四文字
+:<＄link/Python-1>	https://ooblog.github.io/
+.+\.html?	<a href="<＄link/License-@c>" title="<＄word/License-@c>"><＄word/License-@c></a>
+.+\.css	<＄link/License-@c>
+.*	<＄word/License-@c>
 |<？https/License:kan5x5comic.woff>*<？https/License:yakuyon>]
-[<？link/License-0>|
-.*	https://ooblog.github.io/kan5x5comic.woff
-|<？link/License-0>]
-[<？word/License-0>|
-.*	kan5x5comic.woff
-|<？word/License-0>]
-[<？link/License-1>|
-.*	https://ooblog.github.io/
-|<？link/License-1>]
-[<？word/License-1>|
-.*	約四文字
-|<？word/License-1>]
 
 [<？list/aboutLTsv-0>*<？list/aboutLTsv-1>|
 .+\.html?	 <li><？index/aboutLTsv-@c></li>@E
@@ -2112,12 +2160,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧
 |<？title/LTsv_printf-1>]
 [<？https/LTsv_printf.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_printf-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_printf-@c>"><？path/LTsv_printf-@c></a>
-.*	<？path/LTsv_printf-@c>
+:<＄path/LTsv_printf-0>	LTsv/LTsv_printf.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_printf-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_printf-@c>"><＄path/LTsv_printf-@c></a>
+.*	<＄path/LTsv_printf-@c>
 |<？https/LTsv_printf.py>]
-[<？path/LTsv_printf-0>|
-.*	LTsv/LTsv_printf.py
-|<？path/LTsv_printf-0>]
 
 [<？list/LTsv_file-0>|
 .+\.html?	 <li><？index/LTsv_file-@c></li>@E
@@ -2131,12 +2177,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	③-0．「LTsv_file.py」の関数一覧
 |<？title/LTsv_file-0>]
 [<？https/LTsv_file.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_file-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_file-@c>"><？path/LTsv_file-@c></a>
-.*	<？path/LTsv_file-@c>
+:<＄path/LTsv_file-0>	LTsv/LTsv_file.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_file-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_file-@c>"><＄path/LTsv_file-@c></a>
+.*	<＄path/LTsv_file-@c>
 |<？https/LTsv_file.py>]
-[<？path/LTsv_file-0>|
-.*	LTsv/LTsv_file.py
-|<？path/LTsv_file-0>]
 
 [<？list/LTsv_time-0>*<？list/LTsv_time-1>|
 .+\.html?	 <li><？index/LTsv_time-@c></li>@E
@@ -2153,12 +2197,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	④-1．日時フォーマットの概要
 |<？title/LTsv_time-1>]
 [<？https/LTsv_time.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_time-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_time-@c>"><？path/LTsv_time-@c></a>
-.*	<？path/LTsv_time-@c>
+:<＄path/LTsv_time-0>	LTsv/LTsv_time.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_time-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_time-@c>"><＄path/LTsv_time-@c></a>
+.*	<＄path/LTsv_time-@c>
 |<？https/LTsv_time.py>]
-[<？path/LTsv_time-0>|
-.*	LTsv/LTsv_time.py
-|<？path/LTsv_time-0>]
 
 [<？list/LTsv_calc-0>*<？list/LTsv_calc-1>|
 .+\.html?	 <li><？index/LTsv_calc-@c></li>@E
@@ -2175,12 +2217,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	⑤-1．電卓フォーマットの概要
 |<？title/LTsv_calc-1>]
 [<？https/LTsv_calc.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_calc-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_calc-@c>"><？path/LTsv_calc-@c></a>
-.*	<？path/LTsv_calc-@c>
+:<＄path/LTsv_calc-0>	LTsv/LTsv_calc.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_calc-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_calc-@c>"><＄path/LTsv_calc-@c></a>
+.*	<＄path/LTsv_calc-@c>
 |<？https/LTsv_calc.py>]
-[<？path/LTsv_calc-0>|
-.*	LTsv/LTsv_calc.py
-|<？path/LTsv_calc-0>]
 
 [<？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2>|
 .+\.html?	 <li><？index/LTsv_joy-@c></li>@E
@@ -2199,19 +2239,15 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/LTsv_joy-2>|
 .*	⑥-2．「LTsv_getjoystr()」の<？joyformat_label>一覧
 |<？title/LTsv_joy-2>]
-[<？https/LTsv_joy.py>*<？https/LTsv_joy.tsv>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_joy-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_joy-@c>"><？path/LTsv_joy-@c></a>
-.*	<？path/LTsv_joy-@c>
-|<？https/LTsv_joy.py>*<？https/LTsv_joy.tsv>]
-[<？path/LTsv_joy-0>|
-.*	LTsv/LTsv_joy.py
-|<？path/LTsv_joy-0>]
-[<？path/LTsv_joy-1>|
-.*	LTsv/LTsv_joy.tsv
-|<？path/LTsv_joy-1>]
 [<？joyformat_label>|
 .*	joyformat縦軸ラベル(first)
 |<？joyformat_label>]
+[<？https/LTsv_joy.py>*<？https/LTsv_joy.tsv>|
+:<＄path/LTsv_joy-0>	LTsv/LTsv_joy.py
+:<＄path/LTsv_joy-1>	LTsv/LTsv_joy.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_joy-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_joy-@c>"><＄path/LTsv_joy-@c></a>
+.*	<＄path/LTsv_joy-@c>
+|<？https/LTsv_joy.py>*<？https/LTsv_joy.tsv>]
 
 [<？list/LTsv_kbd-0>*<？list/LTsv_kbd-1>|
 .+\.html?	 <li><？index/LTsv_kbd-@c></li>@E
@@ -2228,15 +2264,11 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	⑦-1．「LTsv_kbd.tsv」のタグ解説
 |<？title/LTsv_kbd-1>]
 [<？https/LTsv_kbd.py>*<？https/LTsv_kbd.tsv>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_kbd-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_kbd-@c>"><？path/LTsv_kbd-@c></a>
-.*	<？path/LTsv_kbd-@c>
+:<＄path/LTsv_kbd-0>	LTsv/LTsv_kbd.py
+:<＄path/LTsv_kbd-1>	LTsv/LTsv_kbd.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_kbd-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_kbd-@c>"><＄path/LTsv_kbd-@c></a>
+.*	<＄path/LTsv_kbd-@c>
 |<？https/LTsv_kbd.py>*<？https/LTsv_kbd.tsv>]
-[<？path/LTsv_kbd-0>|
-.*	LTsv/LTsv_kbd.py
-|<？path/LTsv_kbd-0>]
-[<？path/LTsv_kbd-1>|
-.*	LTsv/LTsv_kbd.tsv
-|<？path/LTsv_kbd-1>]
 
 [<？list/LTsv_gui-0>*<？list/LTsv_gui-1>|
 .+\.html?	 <li><？index/LTsv_gui-@c></li>@E
@@ -2253,12 +2285,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧
 |<？title/LTsv_gui-1>]
 [<？https/LTsv_gui.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_gui-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_gui-@c>"><？path/LTsv_gui-@c></a>
-.*	<？path/LTsv_gui-@c>
+:<＄path/LTsv_gui-0>	LTsv/LTsv_gui.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_gui-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_gui-@c>"><＄path/LTsv_gui-@c></a>
+.*	<＄path/LTsv_gui-@c>
 |<？https/LTsv_gui.py>]
-[<？path/LTsv_gui-0>|
-.*	LTsv/LTsv_gui.py
-|<？path/LTsv_gui-0>]
 
 [<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>|
 .+\.html?	 <li><？index/LTsv_glyph-@c></li>@E
@@ -2281,77 +2311,49 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	⑨-3．<？VRcalc>の操作方法
 |<？title/LTsv_glyph-3>]
 [<？title/LTsv_glyph-4>|
-.*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細
+.*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細
 |<？title/LTsv_glyph-4>]
 [<？https/LTsv_glyph.py>*<？https/LTsv_glyph.tsv>*<？https/kanzip.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_glyph-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_glyph-@c>"><？path/LTsv_glyph-@c></a>
-.*	<？path/LTsv_glyph-@c>
+:<＄path/LTsv_glyph-0>	LTsv/LTsv_glyph.py
+:<＄path/LTsv_glyph-1>	LTsv/LTsv_glyph.tsv
+:<＄path/LTsv_glyph-2>	LTsv/kanzip.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_glyph-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_glyph-@c>"><＄path/LTsv_glyph-@c></a>
+.*	<＄path/LTsv_glyph-@c>
 |<？https/LTsv_glyph.py>*<？https/LTsv_glyph.tsv>*<？https/kanzip.py>]
-[<？path/LTsv_glyph-0>|
-.*	LTsv/LTsv_glyph.py
-|<？path/LTsv_glyph-0>]
-[<？path/LTsv_glyph-1>|
-.*	LTsv/LTsv_glyph.tsv
-|<？path/LTsv_glyph-1>]
-[<？path/LTsv_glyph-2>|
-.*	kanzip.py
-|<？path/LTsv_glyph-2>]
 
 [<？list/LTsv10_faq-0>|
 .+\.html?	 <li><？index/LTsv10_faq-@c></li>@E
 .*	 <？index/LTsv10_faq-@c>@E
 |<？list/LTsv10_faq-0>]
 [<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>|
-.+\.html?	<a href="#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？title/LTsv10_faq-@c></a>
-.*	<？title/LTsv10_faq-@c>
+^index\.html?	<a href="#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？title/LTsv10_faq-@c></a>
+.+\.html?	<a href="index.html#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？titleimg/software-0><？title/LTsv10_faq-@c></a>
+^LTsv10\.txt	<？title/LTsv10_faq-@c>
+.*	「LTsv10.txt」の<？title/LTsv10_faq-@c>
 |<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>]
 [<？title/LTsv10_faq-0>|
 .*	⑩-0．「L:Tsv」のＦＡＱ
 |<？title/LTsv10_faq-0>]
 [<？https/LTsv10_faq:python.org>*<？https/LTsv10_faq:python344>*<？https/LTsv10_faq:python352>*<？https/LTsv10_faq:pythonMSVCRTQiita>*<？https/LTsv10_faq:PortableWine>|
-.+\.html?	<dl><dt><？web/LTsv10_faq-@c></dt><dd><a href="<？url/LTsv10_faq-@c>" title="<？web/LTsv10_faq-@c>"><？url/LTsv10_faq-@c></a></dd></dl>
-.*	   <？web/LTsv10_faq-@c><？BR>@E   <？url/LTsv10_faq-@c><？BR>@E
+:<＄web/LTsv10_faq-0>	Welcome to Python.org
+:<＄url/LTsv10_faq-0>	https://www.python.org/
+:<＄web/LTsv10_faq-1>	Python Release Python 3.4.4 | Python.org
+:<＄url/LTsv10_faq-1>	https://www.python.org/downloads/release/python-344/
+:<＄web/LTsv10_faq-2>	Python Release Python 3.5.2 | Python.org
+:<＄url/LTsv10_faq-2>	https://www.python.org/downloads/release/python-352/
+:<＄web/LTsv10_faq-3>	Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita
+:<＄url/LTsv10_faq-3>	http://qiita.com/methane/items/2210712763b91e75fdf0
+:<＄web/LTsv10_faq-4>	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
+:<＄url/LTsv10_faq-4>	http://shinobar.server-on.net/puppy/opt/
+.+\.html?	<dl><dt><＄web/LTsv10_faq-@c></dt><dd><a href="<＄url/LTsv10_faq-@c>" title="<＄web/LTsv10_faq-@c>"><＄url/LTsv10_faq-@c></a></dd></dl>
+.*	   <＄web/LTsv10_faq-@c><？BR>@E   <＄url/LTsv10_faq-@c><？BR>@E
 |<？https/LTsv10_faq:python.org>*<？https/LTsv10_faq:python344>*<？https/LTsv10_faq:python352>*<？https/LTsv10_faq:pythonMSVCRTQiita>*<？https/LTsv10_faq:PortableWine>]
-[<？url/LTsv10_faq-0>|
-.*	https://www.python.org/
-|<？url/LTsv10_faq-0>]
-[<？web/LTsv10_faq-0>|
-.*	Welcome to Python.org
-|<？web/LTsv10_faq-0>]
-[<？url/LTsv10_faq-1>|
-.*	https://www.python.org/downloads/release/python-344/
-|<？url/LTsv10_faq-1>]
-[<？web/LTsv10_faq-1>|
-.*	Python Release Python 3.4.4 | Python.org
-|<？web/LTsv10_faq-1>]
-[<？url/LTsv10_faq-2>|
-.*	https://www.python.org/downloads/release/python-352/
-|<？url/LTsv10_faq-2>]
-[<？web/LTsv10_faq-2>|
-.*	Python Release Python 3.5.2 | Python.org
-|<？web/LTsv10_faq-2>]
-[<？url/LTsv10_faq-3>|
-.*	http://qiita.com/methane/items/2210712763b91e75fdf0
-|<？url/LTsv10_faq-3>]
-[<？web/LTsv10_faq-3>|
-.*	Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita
-|<？web/LTsv10_faq-3>]
-[<？url/LTsv10_faq-4>|
-.*	http://shinobar.server-on.net/puppy/opt/
-|<？url/LTsv10_faq-4>]
-[<？web/LTsv10_faq-4>|
-.*	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
-|<？web/LTsv10_faq-4>]
 [<？https/python3install.sh>*<？https/kanmap.py>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10_faq-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv10_faq-@c>"><？path/LTsv10_faq-@c></a>
-.*	<？path/LTsv10_faq-@c>
+:<＄path/LTsv10_faq-0>	wine_sh/python3install.sh
+:<＄path/LTsv10_faq-1>	kanmap.py
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv10_faq-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv10_faq-@c>"><＄path/LTsv10_faq-@c></a>
+.*	<＄path/LTsv10_faq-@c>
 |<？https/python3install.sh>*<？https/kanmap.py>]
-[<？path/LTsv10_faq-0>|
-.*	wine_sh/python3install.sh
-|<？path/LTsv10_faq-0>]
-[<？path/LTsv10_faq-1>|
-.*	kanmap.py
-|<？path/LTsv10_faq-1>]
 
 [<？list/LTsv_doc_usage-0>|
 .+\.html?	 <li><？index/LTsv_doc_usage-@c></li>@E
@@ -2382,26 +2384,13 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/LTsv_doc-2>|
 .*	②-2．LTsv_docドキュメントの書き方
 |<？title/LTsv_doc-2>]
-[<？https/Python_re>|
-.+\.html?	<dl><dt><？web/Python_re-@c></dt><dd><a href="<？url/Python_re-@c>" title="<？web/Python_re-@c>"><？url/Python_re-@c></a></dd></dl>
-.*	   <？web/Python_re-@c><？BR>@E   <？url/Python_re-@c><？BR>@E
-|<？https/Python_re>]
-[<？url/Python_re-0>|
-.*	http://docs.python.jp/3/library/re.html
-|<？url/Python_re-0>]
-[<？web/Python_re-0>|
-.*	6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
-|<？web/Python_re-0>]
-[<？https/LTsv_doc.py>*<？https/LTsv_doc.tsv>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_doc-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<？path/LTsv_doc-@c>"><？path/LTsv_doc-@c></a>
-.*	<？path/LTsv_doc-@c>
-|<？https/LTsv_doc.py>*<？https/LTsv_doc.tsv>]
-[<？path/LTsv_doc-0>|
-.*	LTsv/LTsv_doc.py
-|<？path/LTsv_doc-0>]
-[<？path/LTsv_doc-1>|
-.*	LTsv/LTsv_doc.tsv
-|<？path/LTsv_doc-1>]
+[<？https/LTsv_doc.py>*<？https/LTsv_doc.tsv>*<？https/kanedit_etc.tsv>|
+:<＄path/LTsv_doc-0>	LTsv/LTsv_doc.py
+:<＄path/LTsv_doc-1>	LTsv/LTsv_doc.tsv
+:<＄path/LTsv_doc-2>	docs/kanedit_etc.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_doc-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/LTsv_doc-@c>"><＄path/LTsv_doc-@c></a>
+.*	<＄path/LTsv_doc-@c>
+|<？https/LTsv_doc.py>*<？https/LTsv_doc.tsv>*<？https/kanedit_etc.tsv>]
 
 [<？list/LTsv_doc_faq-0>|
 .+\.html?	 <li><？index/LTsv_doc_faq-@c></li>@E
@@ -2442,23 +2431,32 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	②-1．「kanedit.tsv」のタグ解説
 |<？title/kanedit-1>]
 
-[<？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>|
+[<？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5>|
 .+\.html?	 <li><？index/kanedit_faq-@c></li>@E
 .*	 <？index/kanedit_faq-@c>@E
-|<？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>]
-[<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>|
+|<？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5>]
+[<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>*<？index/kanedit_faq-3>*<？index/kanedit_faq-4>*<？index/kanedit_faq-5>|
 .+\.html?	<a href="#kanedit_faq-@c" title="<？title/kanedit_faq-@c>"><？title/kanedit_faq-@c></a>
 .*	<？title/kanedit_faq-@c>
-|<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>]
+|<？index/kanedit_faq-0>*<？index/kanedit_faq-1>*<？index/kanedit_faq-2>*<？index/kanedit_faq-3>*<？index/kanedit_faq-4>*<？index/kanedit_faq-5>]
 [<？title/kanedit_faq-0>|
 .*	③-0．「kanedit」のＦＡＱ
 |<？title/kanedit_faq-0>]
 [<？title/kanedit_faq-1>|
-.*	③-1．漢直(漢字直接入力)のＦＡＱ
+.*	③-1．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席
 |<？title/kanedit_faq-1>]
 [<？title/kanedit_faq-2>|
-.*	③-2．難読漢字など参考資料リンク集
+.*	③-2．漢直(漢字直接入力)の解説・熟語隣接系相席
 |<？title/kanedit_faq-2>]
+[<？title/kanedit_faq-3>|
+.*	③-3．漢直(漢字直接入力)の解説・字引入力系の相席
+|<？title/kanedit_faq-3>]
+[<？title/kanedit_faq-4>|
+.*	③-4．漢直(漢字直接入力)の解説・都道府県国名などの字引
+|<？title/kanedit_faq-4>]
+[<？title/kanedit_faq-5>|
+.*	③-5．難読漢字など参考資料リンク集
+|<？title/kanedit_faq-5>]
 
 [<？list/kanfont_usage-0>|
 .+\.html?	 <li><？index/kanfont_usage-@c></li>@E
@@ -2597,21 +2595,13 @@ LTsv_doc	④-0．<？title/address>
 .*	作者について、例えば連絡先。
 |<？title/address>]
 [<？https12:github_ooblog>*<？https12:hatena_ooblog>|
-.+\.html?	<dl><dt><？web/address-@c></dt><dd><a href="<？url/address-@c>" title="<？web/address-@c>"><？url/address-@c></a></dd></dl>
-.*	   <？web/address-@c><？BR>@E   <？url/address-@c><？BR>@E
+:<＄web/ooblog-0>	ooblog/LTsv10kanedit(GitHub)
+:<＄url/ooblog-0>	<？url/ooblog:LTsv10repository>
+:<＄web/ooblog-1>	[kanedit] - 大風呂ダ敷
+:<＄url/ooblog-1>	http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
+.+\.html?	<dl><dt><＄web/ooblog-@c></dt><dd><a href="<＄url/ooblog-@c>" title="<＄web/ooblog-@c>"><＄url/ooblog-@c></a></dd></dl>
+.*	@E   <＄web/ooblog-@c><？BR>@E   <＄url/ooblog-@c><？BR>
 |<？https12:github_ooblog>*<？https12:hatena_ooblog>]
-[<？url/address-0>|
-.*	<？url/ooblog:LTsv10repository>
-|<？url/address-0>]
-[<？web/address-0>|
-.*	ooblog/LTsv10kanedit(GitHub)
-|<？web/address-0>]
-[<？url/address-1>|
-.*	http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-|<？url/address-1>]
-[<？web/address-1>|
-.*	[kanedit] - 大風呂ダ敷
-|<？web/address-1>]
 
 [<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>|
 .+\.html?	 <li><？index/software-@c></li>@E
@@ -2783,7 +2773,6 @@ LTsv_doc	<？title:LTsv_doc>
 [<？VRcalc>|
 .*	テキスト入力欄(電卓)
 |<？VRcalc>]
-
 
 [<？P>|
 .+\.html?	<p>@E

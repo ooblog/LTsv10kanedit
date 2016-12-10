@@ -97,9 +97,19 @@ p.capcenter{
 footer{
   margin-top:1rem;
   float: both;
-  border: 1px gray dotted;
+  border: 0px;
   text-align: center;
 }
+ .gotop{
+  margin-top:1rem;
+  padding: 0rem;
+  width: 7rem;
+  height: 2rem;
+  float: right;
+  border: 0px;
+  text-align: right;
+  background-image: linear-gradient(to top right, transparent 48%, gray 50%, transparent 51%);
+ }
 p.ooblog{
   margin-top:-1rem;
   text-align: left;

@@ -1,5 +1,5 @@
 「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。
-version(branch):20161128M153500	modify:20161209F000437
+version(branch):20161128M153500	modify:20161211U000839
 
 目次
 
@@ -31,7 +31,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
@@ -46,7 +46,7 @@ version(branch):20161128M153500	modify:20161209F000437
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の①-0．「kanmap」の使い方(初回起動・表示編)」を参考。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
@@ -58,16 +58,16 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ①-0．「kanzip」の使い方
 
- まず「kanzip.py」配下に作業用の「kanzip」フォルダが作成されます。
+ まず「LTsv/kanzip.py」配下に作業用の「kanzip」フォルダが作成されます。
  初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。
  「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。
  全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、
- 最終的に「郵便番号辞書「kanzip.tsv」kanzip.tsv」にマージして完成。
+ 最終的に郵便番号辞書「kanzip.tsv」にマージして完成。
 
 
 ②-0．「kanzip.py」の関数一覧
 
- 「kanzip.py」の解説は準備中です。
+ 「LTsv/kanzip.py」の解説は準備中です。
 
 
 ③-0．「kanzip」のＦＡＱ
@@ -86,12 +86,12 @@ version(branch):20161128M153500	modify:20161209F000437
 
  更新情報はGitHubやブログを確認してください。
 
+
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-
 
 # Copyright (c) 2016 ooblog
 # License: MIT

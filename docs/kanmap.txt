@@ -1,5 +1,5 @@
 「kanmap」は「LTsv10kanedit(tsvtool10)」を用いたグリフ進捗ビュアーです。
-version(branch):20161128M153500	modify:20161209F000437
+version(branch):20161128M153500	modify:20161211U000839
 
 目次
 
@@ -32,7 +32,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv_doc.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
@@ -47,7 +47,7 @@ version(branch):20161128M153500	modify:20161209F000437
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の①-0．「kanmap」の使い方(初回起動・表示編)」を参考。
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
@@ -66,7 +66,7 @@ version(branch):20161128M153500	modify:20161209F000437
 
 ①-1．「kanmap」の使い方(漢字配列編集編)
 
-  漢直鍵盤          漢直鍵盤の操作は「「LTsv_doc.txt」の⑨-2．漢直鍵盤の操作方法」を参照。
+  漢直鍵盤          漢直鍵盤の入力操作は「「LTsv_doc.txt」の⑨-2．漢直鍵盤の操作方法」を参考。
   小さい文字の上でタップ          カーソル点灯。クリップボードに１文字転送。
   「find」をタップ          クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。
   「update☐」にチェック    ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。
@@ -89,8 +89,8 @@ version(branch):20161128M153500	modify:20161209F000437
  Ａ．グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。
      単漢字辞書「LTsv/kanchar.tsv」のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。
 
-   12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
-   http://docs.python.jp/3/library/re.html
+    12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
+    http://docs.python.jp/3/library/pickle.html
 
  Ｑ．「kanmap.png」の空白が多い気がします。
  Ａ．単漢字辞書「LTsv/kanchar.tsv」で扱ってる文字がまだまだ不十分なので同時にグリフデータも不足するためです。いわゆる開発中の画面状態です。
@@ -104,12 +104,12 @@ version(branch):20161128M153500	modify:20161209F000437
 
  更新情報はGitHubやブログを確認してください。
 
+
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
-
 
 # Copyright (c) 2016 ooblog
 # License: MIT

@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161209F000437<br />
+   version(branch):20161128M153500	modify:20161211U000839<br />
   
 </p>
   <h2>目次</h2>
@@ -60,7 +60,7 @@
  <li><a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a></li>
  <li><a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
  <li><a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
- <li><a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a></li>
+ <li><a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a></li>
  <li><a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a></li>
  <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。">⑪-0．作者について、例えば連絡先。</a></li>
 
@@ -89,10 +89,10 @@
 <section>
  <h3 id="License-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</h3>
 <p>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="index.html#LTsv10_faq-0" title="<？title/LTsv10_faq-0"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
- 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
+ 「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh">wine_sh</a>」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
  フォント「kan5x5comic.ttf」を用意する場合は「<a href="kanfont.html#kanfont_faq-0" title="<？title/kanfont_faq-0"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
 
 </p>
@@ -105,13 +105,13 @@
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
  逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。<br />
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」で解決できます。<br />
+ 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」で解決できます。詳細は「<a href="kanmap.html#kanmap_usage-0" title="①-0．「kanmap」の使い方(初回起動・表示編)"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap">①-0．「kanmap」の使い方(初回起動・表示編)</a>」を参考。<br />
  グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
  人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<br />
- 「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<br />
+ 「docs/」フォルダ内のドキュメントを「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv">docs/kanedit_etc.tsv</a>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<br />
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<br />
 
 </section>
@@ -191,7 +191,7 @@
 </dd></dl>
 <p>
 
-「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index03-0>」も参考。<br />
+「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<a href="#LTsv_file-0" title="③-0．「LTsv_file.py」の関数一覧">③-0．「LTsv_file.py」の関数一覧</a>」も参考。<br />
 </p>
 
 </section>
@@ -221,7 +221,7 @@ LTsv_textの文字列を数値文字参照に変換。</dd></dl>
 LTsv_textの文字参照(数値文字参照含む)を文字列に変換。</dd></dl>
 <dl><dt>LTsv_kanare(LTsv_before,LTsv_recase)</dt><dd>
 全角半角大文字小文字ひらがなカタカナの変換を行います。LTsv_beforeに変換する文字列、LTsv_recaseで変換辞書指定。<br />
-変換辞書LTsv_recaseのパラメータは「<？index02-1>」を参考。</dd></dl>
+変換辞書LTsv_recaseのパラメータは「<a href="#LTsv_printf-1" title="②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧">②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧</a>」を参考。</dd></dl>
 <dl><dt>LTsv_utf2ink(LTsv_text)</dt><dd>
 UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br />
 点字フォントが表示できる環境にないと動作確認は困難なので注意。</dd></dl>
@@ -335,7 +335,7 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 「L:Tsv」ファイルを変数上に作成する。<br />
  LTsv_programには「L:Tsv」ファイルを扱うプログラムまたは規格を記述。<br />
 LTsv_defaultには「L:Tsv」ファイル自体をスクリプトとして実行する場合の1stページの指定。<br />
-メタタグについては「<？index01-1>」も参考。</dd></dl>
+メタタグについては「<a href="#aboutLTsv-1" title="①-1．「L:Tsv」ファイルの構造">①-1．「L:Tsv」ファイルの構造</a>」も参考。</dd></dl>
 <dl><dt>LTsv_download(LTsv_url,LTsv_path,LTsv_reporthook=None)</dt><dd>
 ネット上のLTsv_urlにあるファイルをローカルのLTsv_pathに保存する。<br />
 ダウンロード中にLTsv_reporthook(count,blocksize,totalsize)をコールバックして状況報告させる事は可能(スレッド関係の扱いに注意)。</dd></dl>
@@ -682,7 +682,7 @@ timeformatのデフォルト値は「@0h@0n@0s.0Rs」。時間フォーマット
 <section>
  <h3 id="LTsv_calc-0">⑤-0．「LTsv_calc.py」の関数一覧</h3>
 <p>
- 「<？https05:LTsv_calc.py>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#LTsv_calc-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a>」を参照。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_calc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_calc.py">LTsv/LTsv_calc.py</a>」は電卓フォーマットモジュールです。分数計算を扱います。電卓フォーマットの概要は「<a href="#LTsv_calc-1" title="⑤-1．電卓フォーマットの概要">⑤-1．電卓フォーマットの概要</a>」を参照。<br />
  ・「LTsv_calc()」に電卓フォーマットの計算式を渡すと分数が帰ってきます。通分できない分数の場合小数が帰ってきます。<br />
  ・単体風テストでは複数の電卓フォーマットを用いて関数群の挙動確認ができます。<br />
 </p>
@@ -875,7 +875,7 @@ LTsv_calc自体は主に括弧の正規表現による検索。括弧の内側�
 </p>
  
 <dl><dt>LTsv_joyreset(LTsv_tsvpath)</dt><dd>
-「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<？index06-1>」。</dd></dl>
+「LTsv_joy.tsv」からモジュールの初期設定を読み込む。詳細は「<a href="#LTsv_joy-1" title="⑥-1．「LTsv_joy.tsv」のタグ解説">⑥-1．「LTsv_joy.tsv」のタグ解説</a>」。</dd></dl>
 <dl><dt>LTsv_joyexit()</dt><dd>
 ジョイスティック(ゲームPAD)の変数初期化です。Linuxではデバイスをクローズします。</dd></dl>
 <dl><dt>LTsv_joyinit(LTsv_tsvpath="LTsv/LTsv_joy.tsv")</dt><dd>
@@ -888,7 +888,7 @@ axisリストとbuttonリストのタプルで返り値も受け取れる。</dd
 <dl><dt>LTsv_getjoystr(LTsv_joyid,joyformat=None)</dt><dd>
 スティックとボタンの状態をjoyformat縦軸ラベル(first)のrestへLTSVで返す。<br />
 LTsv_joyidにはジョイスティック(ゲームPAD)の番号を指定。<br />
-項目一覧の詳細は「<？index06-2>」。</dd></dl>
+項目一覧の詳細は「<a href="#LTsv_joy-2" title="⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧">⑥-2．「LTsv_getjoystr()」のjoyformat縦軸ラベル(first)一覧</a>」。</dd></dl>
 <dl><dt>LTsv_atanscalar(LTsv_atanX,LTsv_atanY)</dt><dd>
 スティック(axisW/axisL)の直交座標を極座標に変換、スティックの傾きを取得します。</dd></dl>
 <dl><dt>LTsv_atanclock(LTsv_atanX,LTsv_atanY,LTsv_labels)</dt><dd>
@@ -960,7 +960,7 @@ axisWが実際に6軸取得できる場合LTsv_getjoystr()に渡す配置「Lx\t
 <section>
  <h3 id="LTsv_kbd-0">⑦-0．「LTsv_kbd.py」の関数一覧</h3>
 <p>
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.tsv">LTsv/LTsv_kbd.tsv</a>」はPCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.py">LTsv/LTsv_kbd.py</a>」はPCキーボードの入力(マウスのボタン含む)をLTSVに変換するモジュールです。<br />
  ・ウィンドウがアクティブでない時にもキー入力を取得するので取扱い注意。<br />
  ・WindowsとLinuxではキーフックの手段が異なるので一部関数「LTsv_kbdEVIOCGRAB()」がOS依存になるので注意。<br />
  ・仮想キーの番号はWindowsとLinuxで異なるので注意。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_kbd.tsv">LTsv/LTsv_kbd.tsv</a>」で調整。<br />
@@ -984,7 +984,7 @@ PCキーボード(マウス含む)の変数初期化です。Linuxではデバ�
 <dl><dt>LTsv_kbdinit(LTsv_tsvpath="LTsv/LTsv_kbd.tsv",LTsv_initmouse=False)</dt><dd>
 PCキーボードの準備です。Linuxではデバイスをオープンします。<br />
 Linuxで複数のマウスボタンを使う場合LTsv_initmouseで監視許可も出すことが可能です。<br />
-マウスボタンの配置は「<？index07-1>」を参考。<br />
+マウスボタンの配置は「<a href="#LTsv_kbd-1" title="⑦-1．「LTsv_kbd.tsv」のタグ解説">⑦-1．「LTsv_kbd.tsv」のタグ解説</a>」を参考。<br />
 Windowsの場合逆にLTsv_initmouseと関係なくら最初から「MouseL:1\tMouseR:2\tMouseC:4」固定です。</dd></dl>
 <dl><dt>LTsv_kbdEVIOCGRAB(LTsv_grabflag)</dt><dd>
 ※Linux専用命令です。PCキーボードの入力をターミナルやテキストエリアなどに出力しないようにします。<br />
@@ -1126,7 +1126,7 @@ LTsv_widgetIDにFalseを指定することで前回と同じIDを再発行でき
 <dl><dt>LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)</dt><dd>
 「LTsv_widget_newobj()」で登録したオブジェクトを直接IDで吸い出す関数。</dd></dl>
 <dl><dt>LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)</dt><dd>
-詳細は「<？index08-1>」参考。</dd></dl>
+詳細は「<a href="#LTsv_gui-1" title="⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧">⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧</a>」参考。</dd></dl>
 <dl><dt>LTsv_fonttuple(LTsv_line)</dt><dd>
 「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。</dd></dl>
 <dl><dt>LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)</dt><dd>
@@ -1362,10 +1362,10 @@ draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角�
 「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-グリフでのテキスト描画は「<？index09-0>」を参考。</dd></dl>
+グリフでのテキスト描画は「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<？index09-0>」も参考。</dd></dl>
+「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」も参考。</dd></dl>
 <dl><dt>LTsv_draw_text_shell(LTsv_GUI)</dt><dd>
 「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。<br />
 「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
@@ -1819,7 +1819,7 @@ find_tは複数の文字が使用できるので、先頭文字から順に見�
 グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。</dd></dl>
 <dl><dt>LTsv_evaltext(calc_value="")</dt><dd>
 calc_valueに数式などを入れると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「テキスト入力欄(電卓)」で使用します。<br />
-詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a>」を参考。</dd></dl>
+詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")</dt><dd>
 「テキスト入力欄(電卓)(漢直鍵盤含む)」の初期設定。calculatorTは初期テキスト。<br />
 calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(漢直鍵盤より大きくする必要)、<br />
@@ -1890,7 +1890,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 単体風テスト専用。テキスト入力欄(電卓)の文字入力を受け取るコールバック関数の指定。</dd></dl>
 <dl><dt>debug_calculatorcommand(glyph_calcinput)</dt><dd>
 単体風テスト専用。Enter機ーを押した時に電卓機能を発動。<br />
-電卓機能の詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</a>」を参考。</dd></dl>
+電卓機能の詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>debug_reversi_mousepress(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押下のコールバック。</dd></dl>
 <dl><dt>debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)</dt><dd>
@@ -1992,8 +1992,8 @@ XFER鍵盤における辞書変更鍵盤。<br />
 初期値は「../kanword.tsv」。</dd></dl>
 <dl><dt>eval_zipdicname</dt><dd>
 郵便番号辞書ファイルの指定(無くても動作)。<br />
-初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanzip.py">kanzip.py</a>」を用いる。<br />
-詳細は「<a href="kanzip.html#LTsv_doc_usage-0" title="①-0．「kanzip」の使い方"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">①-0．「kanzip」の使い方</a>」を参考。</dd></dl>
+初期値は「../kanzip.tsv」。郵便番号辞書「kanzip.tsv」の作成には「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanzip.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanzip.py">LTsv/kanzip.py</a>」を用いる。<br />
+詳細は「<a href="kanzip.html#kanzip_usage-0" title="①-0．「kanzip」の使い方"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">①-0．「kanzip」の使い方</a>」を参考。</dd></dl>
 <dl><dt>last_alpha</dt><dd>
 漢直鍵盤が最後に表示したα鍵盤を記録。</dd></dl>
 <dl><dt>last_dic</dt><dd>
@@ -2207,7 +2207,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 </section>
 <section>
- <h3 id="LTsv_glyph-4">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書(LTsv_kbdentry_evaltext())」の詳細</h3>
+ <h3 id="LTsv_glyph-4">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</h3>
 <p>
  「kanedit」では省略して「電卓」と呼ぶテキスト入力欄の内容、「LTsv_kbdentry_evaltext()」の引数内容の状態により、<br />
  コマンドなのか単語なのか数式なのかで「漢字逆引き」「分数電卓」「文字参照」「簡易辞書」など分岐します。<br />
@@ -2392,7 +2392,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   先頭文字が「算」その他数式</dt>
 <dd>
-         数式とみなして分数計算。電卓の詳しい使い方は[LTsv.txt]の「<？index05-1>」を参考。<br />
+         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
 </dd></dl>
 <dl><dt>
   「3927/1250」といった割り算</dt>
@@ -2467,7 +2467,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dd>
 
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<br />
-     「LTsv/kanpickle.bin」を削除してから「<？https/LTsv10_faq:kanmap.py>」を起動することで初期化できます。<br />
+     「LTsv/kanpickle.bin」を削除してから「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動することで初期化できます。<br />
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<br />
 </dd></dl>
 
@@ -2485,6 +2485,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 </section>
 
 
+ <div class="gotop"><a href="#top">&uarr;Top</a></div>
  <footer>
   <p>site generator "<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit">LTsv_doc.py</a>" repository：<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></p>
   <p class="ooblog"># Copyright (c) 2016 ooblog<br />
