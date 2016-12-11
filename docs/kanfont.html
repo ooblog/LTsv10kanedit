@@ -32,7 +32,7 @@
   <h1>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161211U022923<br />
+   version(branch):20161128M153500	modify:20161212M020045<br />
   
 </p>
   <h2>目次</h2>
@@ -257,7 +257,7 @@
 </section>
 <section>
  <h3 id="kanfont_faq-0">③-0．「kanfont」のＦＡＱ</h3>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．「kanfont」で他のフォントを編集できますか？</dt>
 <dd>
 
@@ -265,7 +265,7 @@
      既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．「漫」フォント座標が圧縮できない場合がある。</dt>
 <dd>
 
@@ -273,33 +273,33 @@
  圧縮形式5x10xの詳細は「<a href="#kanfont-2" title="②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説">②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説</a>」を参考。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．圧縮されてない素のSVGを確認したい。</dt>
 <dd>
 
  Ａ．「save」ボタンで「kan5x5.svg」が保存できるのでそっちで確認できるはず。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．「kan5x5.svg」は何に使うんですか？</dt>
 <dd>
 
  Ａ．「kan5x5comic.svg」をFontForgeで「kan5x5comic.ttf」に変換できます。<br />
  
 </dd></dl>
-<dl><dt>FontForge</dt><dd><a href="http://fontforge.github.io/ja/" title="FontForge">http://fontforge.github.io/ja/</a></dd></dl>
+<dl class="faqlink"><dt>FontForge</dt><dd><a href="http://fontforge.github.io/ja/" title="FontForge">http://fontforge.github.io/ja/</a></dd></dl>
 
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．「FontForge」が使えない環境というかLinux以外のOSだと謎の環境構築が複雑なので簡単な方法お願い。</dt>
 <dd>
 
  Ａ．「約四文字」(http://ooblog.github.io/)から「kan5x5comic.woff」をダウンロードしてWOFFコンバータで「kan5x5comic.ttf」にする別ルートもあります。<br />
  
 </dd></dl>
-<dl><dt>ふぉんと - 「約四文字」(http://ooblog.github.io/)</dt><dd><a href="https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html" title="ふぉんと - 「約四文字」(http://ooblog.github.io/)">https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html</a></dd></dl>
+<dl class="faqlink"><dt>ふぉんと - 「約四文字」(http://ooblog.github.io/)</dt><dd><a href="https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html" title="ふぉんと - 「約四文字」(http://ooblog.github.io/)">https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html</a></dd></dl>
 
-<dl><dt>WOFFコンバータ</dt><dd><a href="http://opentype.jp/woffconv.htm" title="WOFFコンバータ">http://opentype.jp/woffconv.htm</a></dd></dl>
-<dl><dt>
+<dl class="faqlink"><dt>WOFFコンバータ</dt><dd><a href="http://opentype.jp/woffconv.htm" title="WOFFコンバータ">http://opentype.jp/woffconv.htm</a></dd></dl>
+<dl class="faq"><dt>
  Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。</dt>
 <dd>
 
@@ -308,7 +308,7 @@
      テキスト入力欄(電卓)の入力操作は「<a href="index.html#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-3．テキスト入力欄(電卓)の操作方法</a>」を参考。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。</dt>
 <dd>
 
@@ -316,7 +316,7 @@
      例えば都道府県アイコン「<span class="kan5x5comic">&#61580;</span>」は「kanedit」の「電卓」で「探<span class="kan5x5comic">&#61580;</span>」すると「探<span class="kan5x5comic">&#61580;</span>⇔東」が求められます。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．左回転のポリゴンがフォントに変換したときに描画されてましたよ？</dt>
 <dd>
 
@@ -331,9 +331,9 @@
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
-
 <dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
 <dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
+
 
 </section>
 

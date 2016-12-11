@@ -32,7 +32,7 @@
   <h1>「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161211U022923<br />
+   version(branch):20161128M153500	modify:20161212M020045<br />
   
 </p>
   <h2>目次</h2>
@@ -186,27 +186,26 @@
 </section>
 <section>
  <h3 id="kanedit_faq-0">③-0．「kanedit」のＦＡＱ</h3>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．表示されない文字が多々あるのですが。</dt>
 <dd>
 
  Ａ．グリフが不足しています。「kanfont」でグリフを作成していく事で表示できる文字を増やしていく予定です。<br />
 
 </dd></dl>
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．普通にフォント使えばよかったんじゃないですか？</dt>
 <dd>
 
  Ａ．「Tkinter」はCP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)を越える文字を扱えない問題があったので、独自にフォントモジュールを作る必要に迫られました。<br />
 
 </dd></dl>
-<dl><dt>
- 郵便番号辞書「kanzip.tsv」が見つからない。</dt>
+<dl class="faq"><dt>
+ Ｑ．郵便番号辞書「kanzip.tsv」が見つからない。</dt>
 <dd>
 
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。<br />
      詳細は「<a href="kanzip.html#kanzip_usage-0" title="①-0．「kanzip」の使い方"><img src="kanzip_logo.png" width="48" height="48" alt="kanzip" title="kanzip">①-0．「kanzip」の使い方</a>」を参考。<br />
-
 </dd></dl>
 
 </section>
@@ -215,132 +214,3350 @@
 <p>
  漢字を音読み訓読みなど理由を付けて漢直鍵盤の[ぬ〜ろ][ヌ〜ロ]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<br />
  そこで入りきらない文字を「相席」というレトリックで分散しています。<br />
-</p>
 
-<dl><dt>
+</p>
+<dl class="faq"><dt>
+ Ｑ．一ヶ所系相席の「[5(え)]」みたいなのはどういう入力ですか？</dt>
+<dd>
+
+ Ａ．「[5(え)]」は[NFER]+[5]、「[5(エ)]」は[XFER]+[5]です。ひらがながNFER、カタカナがXFERです。<br />
+     漢直鍵盤の入力操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+
+</dd></dl>
+<dl class="inputstroke"><dt>
   「[5(え)]」</dt>
 <dd>
    記号XOR(⊕)を相席。
 </dd></dl>
-<dl><dt>
+<dl class="inputstroke"><dt>
   「[5(エ)]」</dt>
 <dd>
    [3(あ)]に入り切らなかった「あ」読みの漢字を相席。
 </dd></dl>
-  「[7(や)]」   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。
-  「[7(ヤ)]」   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。
-  「[8(ゆ)]」   ユーロ記号(€)を相席。
-  「[8(ユ)]」   [D(し)]に入り切らなかった「しゅ」読みの漢字を相席。
-  「[9(ヨ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
-  「[0(ワ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
-  「[^(へ)]」   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。
-  「[^(ヘ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。
-  「[W(テ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。
-  「[Y(ん)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
-  「[Y(ン)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
-  「[U(な)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。性別記号(♂♀)と虹を表す漢字(虹霓蜺蝃螮蝀)を相席。
-  「[I(に)]」   [U(な)]に入り切らなかった「な」読みの漢字を相席。
-  「[I(ニ)]」   [S(と)]に入り切らなかった「と」読みの漢字を相席。
-  「[O(ら)]」   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。
-  「[O(ラ)]」   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。
-  「[P(せ)]」   摂氏セルシウス度(°℃)を相席。
-  「[@(｀)]」   U+ff02の方のダブルクォート(＂)を相席。
-  「[{(ぷ)]」   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。
-  「[{(プ)]」   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。
-  「[D(し)]」   短剣符(†)と段落記号(¶)を相席。
-  「[D(シ)]」   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。
-  「[H(ク)]」   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
-  「[K(ノ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。
-  「[L(リ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。
-  「[;(れ)]」　 記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。
-  「[;(レ)]」   [G(き)]に入り切らなかった「き」読みの漢字を相席。
-  「[}(む)]」   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。
-  「[}(ム)]」   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。
-  「[N(ミ)]」   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。
-  「[M(モ)]」   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。
-  「[,(ね)]」   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。
-  「[,(ネ)]」   [V(ひ)]に入り切らなかった「ひ」読みの漢字を相席。著作権表示記号(©®℗™℠)の記号を相席
-  「[.(る)]」   罫線(├┼┤┣╋┫)と記号(☆★○●◇◆□■△▲▽▼◎※)と郵便マーク(〒)を相席。
-  「[.(ル)]」   [B(こ)]に入り切らなかった「こ」読みの漢字を相席。ルーブル記号(₽)を相席。
-  「[?(め)]」   [.(る)]に入り切らなかった「る」読みの漢字を相席。
-  「[?(メ)]」   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。
-  「[_(ろ)]」   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。
-  「[_(ロ)]」   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。
-  「[A(α)]」   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。
-  「[A(Α)]」   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。
-  「[B(β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[B(Β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[G(γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[G(Γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[D(δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[D(Δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[E(ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[E(Ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[Z(ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[Z(Ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[H(η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[H(Η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[U(θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[U(Θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[I(ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[I(Ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[K(κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[K(Κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[L(λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[L(Λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[M(μ)]」   康熙部首専用コード(⼀〜⼮)。
-  「[M(Μ)]」   康熙部首専用コード(⼯〜⽝)。
-  「[J(ξ)]」   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。
-  「[J(Ξ)]」   康熙部首コード以外の偏旁冠脚構垂繞(冫〜氺)。
-  「[O(ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(灬〜辶)。
-  「[O(Ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(阝〜龠)。漢字が３つ(㐂厵刕驫垚畾矗飍猋孨芔鑫卉惢劦众姦)の仮置き。
-  「[P(π)]」   元素の中国語(氫〜銀)。
-  「[P(Π)]」   元素の中国語(鎘〜鈽)。
-  「[R(ρ)]」   元素の中国語(鋂〜鎶)。
-  「[R(Ρ)]」   「なんだかとっても！いいかんじ」の「閄」など。
-  「[S(σ)]」   「HJKL」といったカーソル移動や「ZXCVS」といったショートカットなどのキーバインド。斜め矢印など一部絵文字(✖🎮↖↗↘↙♠♥♦♣)を相席。
-  「[S(Σ)]」   分数電卓(＋+－-×*÷/#|)。10進数16進数変換(⑩⑯)も相席。「平片半全大小清濁」といった文字置換、時刻取得「今干」コマンドも相席。
-  「[T(τ)]」   Dvorak配列風。
-  「[T(Τ)]」   Dvorak配列風。
-  「[Y(υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
-  「[Y(Υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
-  「[F(φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
-  「[F(Φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
-  「[X(χ)]」   xvkbd-RussianALTアレンジ。
-  「[X(Χ)]」   xvkbd-RussianALTアレンジ。
-  「[C(ψ)]」   xvkbd-latin1ALTアレンジ。
-  「[C(Ψ)]」   xvkbd-latin1ALTアレンジ。
-  「[V(ω)]」   xvkbd-french2ALTアレンジ。
-  「[V(Ω)]」   xvkbd-french2ALTアレンジ。
-  「[.(○)]」   base64風6点字(一般的な点字とは異なります)。「a⠁ b⠂ c⠃ d⠄ e⠅ f⠆ g⠇ h⠈ i⠉ j⠊ k⠋ l⠌ m⠍ n⠎ o⠏ p⠐ q⠑ r⠒ s⠓ t⠔ u⠕ v⠖ w⠗ x⠘ y⠙ z⠚ 0⠵ 1⠶ 2⠷ 3⠸ 4⠹ 5⠺ 6⠻ 7⠼ 8⠽ 9⠾ .⠿ _⠀」。
-  「[.(●)]」   base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。
-  「[/(△)]」   UTF-8点字(⡀〜⡮)。
-  「[/(▲)]」   UTF-8点字(⡰〜⢞)。
-  「[_(□)]」   UTF-8点字(⢠〜⣎)。
-  「[_(■)]」   UTF-8点字(⣐〜⣾)。
-
-
+<dl class="inputstroke"><dt>
+  「[7(や)]」</dt>
+<dd>
+   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」</dt>
+<dd>
+   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ゆ)]」</dt>
+<dd>
+   ユーロ記号(€)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」</dt>
+<dd>
+   [D(し)]に入り切らなかった「しゅ」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」</dt>
+<dd>
+   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(ワ)]」</dt>
+<dd>
+   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(へ)]」</dt>
+<dd>
+   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(ヘ)]」</dt>
+<dd>
+   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[W(テ)]」</dt>
+<dd>
+   [Q(た)]に入り切らなかった「た」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」</dt>
+<dd>
+   [T(か)]に入り切らなかった「か」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」</dt>
+<dd>
+   [T(か)]に入り切らなかった「か」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」</dt>
+<dd>
+   [T(か)]に入り切らなかった「か」読みの漢字を相席。性別記号(♂♀)と虹を表す漢字(虹霓蜺蝃螮蝀)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」</dt>
+<dd>
+   [U(な)]に入り切らなかった「な」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」</dt>
+<dd>
+   [S(と)]に入り切らなかった「と」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」</dt>
+<dd>
+   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ラ)]」</dt>
+<dd>
+   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」</dt>
+<dd>
+   摂氏セルシウス度(°℃)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[@(｀)]」</dt>
+<dd>
+   U+ff02の方のダブルクォート(＂)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[{(ぷ)]」</dt>
+<dd>
+   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[{(プ)]」</dt>
+<dd>
+   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」</dt>
+<dd>
+   短剣符(†)と段落記号(¶)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」</dt>
+<dd>
+   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(ク)]」</dt>
+<dd>
+   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」</dt>
+<dd>
+   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」</dt>
+<dd>
+   [F(は)]に入り切らなかった「は」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(れ)]」</dt>
+<dd>
+   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」</dt>
+<dd>
+   [G(き)]に入り切らなかった「き」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[}(む)]」</dt>
+<dd>
+   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[}(ム)]」</dt>
+<dd>
+   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」</dt>
+<dd>
+   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」</dt>
+<dd>
+   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ね)]」</dt>
+<dd>
+   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」</dt>
+<dd>
+   [V(ひ)]に入り切らなかった「ひ」読みの漢字を相席。著作権表示記号(©®℗™℠)の記号を相席
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(る)]」</dt>
+<dd>
+   罫線(├┼┤┣╋┫)と記号(☆★○●◇◆□■△▲▽▼◎※)と郵便マーク(〒)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」</dt>
+<dd>
+   [B(こ)]に入り切らなかった「こ」読みの漢字を相席。ルーブル記号(₽)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[?(め)]」</dt>
+<dd>
+   [.(る)]に入り切らなかった「る」読みの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[?(メ)]」</dt>
+<dd>
+   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(ろ)]」</dt>
+<dd>
+   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(ロ)]」</dt>
+<dd>
+   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(α)]」</dt>
+<dd>
+   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(Α)]」</dt>
+<dd>
+   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(γ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(Γ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(δ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(Δ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(ε)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(Ε)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(ζ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(Ζ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(η)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(Η)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(θ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(Θ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ι)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(Ι)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(κ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(Κ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(λ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(Λ)]」</dt>
+<dd>
+   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(μ)]」</dt>
+<dd>
+   康熙部首専用コード(⼀〜⼮)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(Μ)]」</dt>
+<dd>
+   康熙部首専用コード(⼯〜⽝)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ξ)]」</dt>
+<dd>
+   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(Ξ)]」</dt>
+<dd>
+   康熙部首コード以外の偏旁冠脚構垂繞(冫〜氺)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ο)]」</dt>
+<dd>
+   康熙部首コード以外の偏旁冠脚構垂繞(灬〜辶)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(Ο)]」</dt>
+<dd>
+   康熙部首コード以外の偏旁冠脚構垂繞(阝〜龠)。漢字が３つ(㐂厵刕驫垚畾矗飍猋孨芔鑫卉惢劦众姦)の仮置き。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(π)]」</dt>
+<dd>
+   元素の中国語(氫〜銀)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(Π)]」</dt>
+<dd>
+   元素の中国語(鎘〜鈽)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(ρ)]」</dt>
+<dd>
+   元素の中国語(鋂〜鎶)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(Ρ)]」</dt>
+<dd>
+   「なんだかとっても！いいかんじ」の「閄」など。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(σ)]」</dt>
+<dd>
+   「HJKL」といったカーソル移動や「ZXCVS」といったショートカットなどのキーバインド。斜め矢印など一部絵文字(✖🎮↖↗↘↙♠♥♦♣)を相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(Σ)]」</dt>
+<dd>
+   分数電卓(＋+－-×*÷/#|)。10進数16進数変換(⑩⑯)も相席。「平片半全大小清濁」といった文字置換、時刻取得「今干」コマンドも相席。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(τ)]」</dt>
+<dd>
+   Dvorak配列風。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(Τ)]」</dt>
+<dd>
+   Dvorak配列風。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(υ)]」</dt>
+<dd>
+   xvkbd-germanアレンジ(QWERTZ配列風)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(Υ)]」</dt>
+<dd>
+   xvkbd-germanアレンジ(QWERTZ配列風)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(φ)]」</dt>
+<dd>
+   xvkbd-french1アレンジ(AZERTY配列風)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(Φ)]」</dt>
+<dd>
+   xvkbd-french1アレンジ(AZERTY配列風)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(χ)]」</dt>
+<dd>
+   xvkbd-RussianALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(Χ)]」</dt>
+<dd>
+   xvkbd-RussianALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ψ)]」</dt>
+<dd>
+   xvkbd-latin1ALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(Ψ)]」</dt>
+<dd>
+   xvkbd-latin1ALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ω)]」</dt>
+<dd>
+   xvkbd-french2ALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(Ω)]」</dt>
+<dd>
+   xvkbd-french2ALTアレンジ。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(○)]」</dt>
+<dd>
+   base64風6点字(一般的な点字とは異なります)。「a⠁ b⠂ c⠃ d⠄ e⠅ f⠆ g⠇ h⠈ i⠉ j⠊ k⠋ l⠌ m⠍ n⠎ o⠏ p⠐ q⠑ r⠒ s⠓ t⠔ u⠕ v⠖ w⠗ x⠘ y⠙ z⠚ 0⠵ 1⠶ 2⠷ 3⠸ 4⠹ 5⠺ 6⠻ 7⠼ 8⠽ 9⠾ .⠿ _⠀」。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(●)]」</dt>
+<dd>
+   base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。<br />
+「⑧⓪」コマンドの詳細は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参照。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(△)]」</dt>
+<dd>
+   UTF-8点字(⡀〜⡮)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(▲)]」</dt>
+<dd>
+   UTF-8点字(⡰〜⢞)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(□)]」</dt>
+<dd>
+   UTF-8点字(⢠〜⣎)。
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(■)]」</dt>
+<dd>
+   UTF-8点字(⣐〜⣾)。
+</dd></dl>
 
 </section>
 <section>
  <h3 id="kanedit_faq-2">③-2．漢直(漢字直接入力)の解説・熟語隣接系相席</h3>
 <p>
- 音読み訓読みの限界を飛び越えるため熟語は隣接してると便利で覚えやすいという理屈で飛び地します。<br />
+ 熟語は隣接してると便利で覚えやすいという理屈で音読み訓読みの枠を飛び飛び地します。<br />
+
 </p>
+<dl class="faq"><dt>
+ Ｑ．熟語隣接系相席の「茯苓(ぶくりょう)」の[^(へ)][^(ヘ)]みたいなのはどういう入力ですか？</dt>
+<dd>
+
+ Ａ．[NFER]+[[2(ふ)]]、[^(へ)]、[NFER]、[^(ヘ)]の順番です。ひらがながNFER、カタカナがXFERです。<br />
+     漢直鍵盤の入力操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+    フォントによってはひらがなの「へ」とカタカナの「ヘ」の区別が見辛いかと思います。「kan5x5comic.ttf」なら区別が付くはずです。<br />
+    フォント「kan5x5comic.ttf」を用意する場合は「<a href="kanfont.html#kanfont_faq-0" title="③-0．「kanfont」のＦＡＱ"><img src="kanfont_logo.png" width="48" height="48" alt="kanfont" title="kanfont">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
+
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[^(へ)][^(ヘ)]</dt>
+<dd>
+                「茯苓(ぶくりょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[J(ま)][K(の)]</dt>
+<dd>
+                「福祉(ふくし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[G(き)][G(キ)]</dt>
+<dd>
+                「蕗薹(ふきのとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[}(む)][}(ム)]</dt>
+<dd>
+                「踏鞴(たたら)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[Z(つ)][X(さ)]</dt>
+<dd>
+                「仏陀(ブッダ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(ふ)]」[V(ひ)][B(こ)]</dt>
+<dd>
+                「俯瞰(ふかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[3(ア)][3(あ)]</dt>
+<dd>
+                「瘋癲(ふうてん/フーテン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[0(ワ)][-(ホ)]</dt>
+<dd>
+                「葡萄(ぶどう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[A(チ)][S(ト)]</dt>
+<dd>
+                「坦懐(たんかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[Y(ン)][U(ナ)]</dt>
+<dd>
+                「憤慨(ふんがい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「芙蓉(ふよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「夫婦(ふうふ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「復讐(ふくしゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[;(レ)][:(ケ)]</dt>
+<dd>
+                「含羞(がんしゅう/はにかむ含羞むの"はにか")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[2(フ)]」[/(メ)][_(ロ)]</dt>
+<dd>
+                「不憫(ふびん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[9(よ)][9(ヨ)]</dt>
+<dd>
+                「曖昧(あいまい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[-(ほ)][-(ホ)]</dt>
+<dd>
+                「躊躇(ちゅうちょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[E(い)][R(す)]</dt>
+<dd>
+                「愛宕(あたご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[Y(ん)][Y(ン)]</dt>
+<dd>
+                「漉餡(こしあん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[Y(ん)][Y(ン)]</dt>
+<dd>
+                「憧憬(しょうけい/どうけい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「蘆薈(ろかい/アロエ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[5(エ)][6(オ)]</dt>
+<dd>
+                「伽藍(伽藍とバザールの"がらん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「挨拶(あいさつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「改竄(かいざん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[K(ノ)][K(の)]</dt>
+<dd>
+                「蒐集(しゅうしゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「昂揚(こうよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(ア)]」[C(ソ)][V(ヒ)]</dt>
+<dd>
+                「沐浴(もくよく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[5(え)][6(お)]</dt>
+<dd>
+                「隈魚(クマノミ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「禰宜(ねぎ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[H(く)][J(ま)]</dt>
+<dd>
+                「驢馬(ロバ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[P(せ)][@(゛)]</dt>
+<dd>
+                「蝸牛(カタツムリ/でんでんむし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「牛蒡(ごぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[S(と)][D(し)]</dt>
+<dd>
+                「饂飩(うどん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[N(み)][M(も)]</dt>
+<dd>
+                「海蘊(もずく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(ウ)]」[8(ユ)][9(ヨ)]</dt>
+<dd>
+                「齲蝕(うしょく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(ウ)]」[S(ト)][D(シ)]</dt>
+<dd>
+                「餺飥(ほうとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(ウ)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「杞憂(きゆう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(え)]」[8(ゆ)][9(よ)]</dt>
+<dd>
+                「盈虧(えいき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(え)]」[0(わ)][-(ほ)]</dt>
+<dd>
+                「冤枉(えんおう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(え)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「饗宴(きょうえん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(え)]」[L(り)][;(れ)]</dt>
+<dd>
+                「襟裳(えりも)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(エ)]」[2(フ)][3(ア)]</dt>
+<dd>
+                「聾唖(ろうあ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(エ)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「麻疹(はしか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(エ)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「蝦蟇(がまあぶら蝦蟇油の"がま")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「親戚(しんせき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[W(て)][W(テ)]</dt>
+<dd>
+                「男女(だんじょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[E(い)][E(イ)]</dt>
+<dd>
+                「甥姪(せいてつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「橄欖(かんらん/オリーブ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[S(と)][D(し)]</dt>
+<dd>
+                「驚愕(きょうがく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[.(る)][/(め)]</dt>
+<dd>
+                「鸚鵡(オウム)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[.(る)][.(ル)]</dt>
+<dd>
+                「鸚哥(インコ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「鴛鴦(おしどり)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[Q(タ)][W(テ)]</dt>
+<dd>
+                「乙女(おとめ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[R(ス)][R(す)]</dt>
+<dd>
+                「雌雄(しゆう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「老獪(ろうかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[Z(ツ)][Z(つ)]</dt>
+<dd>
+                「凹凸(おうとつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[N(み)][M(も)]</dt>
+<dd>
+                「錘重(すいじゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(オ)]」[M(モ)][,(ネ)]</dt>
+<dd>
+                「重鎮(じゅうちん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(や)]」[S(と)][S(ト)]</dt>
+<dd>
+                「宿泊(しゅくはく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(や)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「山車(だし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(や)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「安易(あんい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「茉莉(まつり/茉莉花で"ジャスミン")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[8(ユ)][9(ヨ)]</dt>
+<dd>
+                「揶揄(やゆ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[0(ワ)][-(ホ)]</dt>
+<dd>
+                「矩尺(かねじゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[W(テ)][E(イ)]</dt>
+<dd>
+                「厩舎(きゅうしゃ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[T(カ)][Y(ン)]</dt>
+<dd>
+                「釈迦(しゃか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[{(ﾟ )][{(゜)]</dt>
+<dd>
+                「辟易(へきえき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[7(ヤ)]」[F(ハ)][G(キ)]</dt>
+<dd>
+                「伯爵(はくしゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ゆ)]」[6(お)][7(や)]</dt>
+<dd>
+                「綬褒(しじゅほうしょう紫綬褒章などの"じゅほう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ゆ)]」[Y(ん)][U(な)]</dt>
+<dd>
+                「優雅(ゆうが)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ゆ)]」[F(は)][G(き)]</dt>
+<dd>
+                「融雪(ゆうせつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」[2(フ)][3(ア)]</dt>
+<dd>
+                「主宰(しゅさい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」[1(ヌ)][1(ぬ)]</dt>
+<dd>
+                「絨緞(じゅうたん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」[3(ア)][3(あ)]</dt>
+<dd>
+                「醇醴(じゅんれい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「蹂躙(じゅうりん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[8(ユ)]」[I(ニ)][I(に)]</dt>
+<dd>
+                「収穫(しゅうかく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[2(ふ)][2(フ)]</dt>
+<dd>
+                「余瀝(よれき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[4(う)][5(え)]</dt>
+<dd>
+                「涵養(かんよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[6(お)][7(や)]</dt>
+<dd>
+                「衒耀(げんよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[@(゛)][@(゛)]</dt>
+<dd>
+                「羊羹(ようかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[}(む)][}(ム)]</dt>
+<dd>
+                「読書(どくしょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[Z(つ)][X(さ)]</dt>
+<dd>
+                「窈窕(ようちょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(よ)]」[C(そ)][C(ソ)]</dt>
+<dd>
+                「醞醸(うんじょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[Y(ン)][Y(ん)]</dt>
+<dd>
+                「嗚呼(ああ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「醤油(しょうゆ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「情緒(じょうちょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[F(ハ)][G(キ)]</dt>
+<dd>
+                「秩序(ちつじょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「状況(じょうきょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「辞書(じしょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[M(モ)][,(ネ)]</dt>
+<dd>
+                「食戟(食戟のソーマの"しょくげき")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[9(ヨ)]」[.(ル)][.(る)]</dt>
+<dd>
+                「赫夜(かぐやひめ赫夜姫の"かぐや")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」[J(ま)][K(の)]</dt>
+<dd>
+                「我儘(わがまま)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「我侭(わがまま)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」[L(り)][;(れ)]</dt>
+<dd>
+                「餞別(せんべつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」[Z(つ)][Z(ツ)]</dt>
+<dd>
+                「猥褻(わいせつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」[M(も)][,(ね)]</dt>
+<dd>
+                「沸騰(ふっとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(ワ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「就職(しゅうしょく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(ワ)]」[^(ヘ)][^(へ)]</dt>
+<dd>
+                「昭和(しょうわ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(ワ)]」[Y(ン)][U(ナ)]</dt>
+<dd>
+                「芭蕉(ばしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(ワ)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「化粧(けしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[3(あ)][4(う)]</dt>
+<dd>
+                「報酬(ほうしゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「菠薐(じょうれんそう菠薐草の"ほうれん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[0(わ)][0(ワ)]</dt>
+<dd>
+                「菩薩(ぼさつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[E(い)][E(イ)]</dt>
+<dd>
+                「匍匐(ほふくぜんしん匍匐前進の"ほふく")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[I(に)][O(ら)]</dt>
+<dd>
+                「蓬莱(ほうらい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「放牧(ほうぼく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[D(し)][F(は)]</dt>
+<dd>
+                「彗星(すいせい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「孑孒(ぼうふら)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[;(れ)][;(レ)]</dt>
+<dd>
+                「鳳凰(ほうおう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[:(け)][:(ケ)]</dt>
+<dd>
+                「冒涜(ぼうとく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[Z(つ)][X(さ)]</dt>
+<dd>
+                「捕捉(ほそく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「細胞(さいぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[N(み)][N(ミ)]</dt>
+<dd>
+                「膀胱(ぼうこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[M(も)][M(モ)]</dt>
+<dd>
+                「砲熕(ほうこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ほ)]」[,(ね)][,(ネ)]</dt>
+<dd>
+                「骨董(こっとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「炮烙(ほうらく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[6(お)][7(や)]</dt>
+<dd>
+                「朴訥(ぼくとつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[8(ゆ)][9(よ)]</dt>
+<dd>
+                「紡績(ぼうせき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[^(ヘ)][|(￥)]</dt>
+<dd>
+                「彷彿(ほうふつ)」※髣髴は「[-(ホ)]」｛異:[^(ヘ)]｝｛異:[|(￥)]｝
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[^(ヘ)][^(へ)]</dt>
+<dd>
+                「彷徨(ほうこう/彷徨うの"さまよ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[-(ホ)]」[Y(ン)][U(ナ)]</dt>
+<dd>
+                「翻弄(ほんろう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(へ)]」[;(れ)][:(け)]</dt>
+<dd>
+                「兵站(へいたん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(へ)]」[.(る)][/(め)]</dt>
+<dd>
+                「弁慶(べんけい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(ヘ)]」[D(シ)][F(ハ)]</dt>
+<dd>
+                「弾劾(だんがいさいばん弾劾裁判の"だんがい")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(ヘ)]」[.(ル)][/(メ)]</dt>
+<dd>
+                「瀦溜(ちょりゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(た)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「瓢箪(ひょうたん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(た)]」[3(あ)][4(う)]</dt>
+<dd>
+                「箪笥(たんす)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(た)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「田圃(たんぼ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(た)]」[C(そ)][C(ソ)]</dt>
+<dd>
+                「胼胝(たこ/べんち)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(タ)]」<br />[2(フ)][3(ア)][4(ウ)]</dt>
+<dd>
+         「卓袱台(ちゃぶだい)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[Q(タ)]」[Y(ン)][U(ナ)]</dt>
+<dd>
+                「団欒(だんらん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[W(て)]」[8(ゆ)][9(よ)]</dt>
+<dd>
+                「停電(ていでん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[W(テ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「嘱託(しょくたく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[W(テ)]」[B(コ)][N(ミ)]</dt>
+<dd>
+                「槓杆(こうかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[W(テ)]」[,(ネ)][,(ね)]</dt>
+<dd>
+                「探偵(たんてい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(い)]」[D(し)][F(は)]</dt>
+<dd>
+                「石鹸(せっけん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(い)]」[V(ひ)][B(こ)]</dt>
+<dd>
+                「医院(いいん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(イ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「遺憾(いかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(イ)]」[;(レ)][:(ケ)]</dt>
+<dd>
+                「威嚇(いかく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(す)]」[U(な)][I(に)]</dt>
+<dd>
+                「砂漠(さばく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(す)]」[O(ら)][P(せ)]</dt>
+<dd>
+                「推敲(すいこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(す)]」[A(ち)][S(と)]</dt>
+<dd>
+                「垂綸(すいりん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(す)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「韈雀(エナガ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(す)]」[V(ひ)][V(ヒ)]</dt>
+<dd>
+                「昏睡(こんすい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(ス)]」[0(ワ)][-(ホ)]</dt>
+<dd>
+                「諏訪(すわ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(ス)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「炭坑(たんこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(ス)]」[O(ラ)][P(セ)]</dt>
+<dd>
+                「賚錫(らいせき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[R(ス)]」[S(ト)][D(シ)]</dt>
+<dd>
+                「鮒鮨(ふなずし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(か)]」[V(ひ)][V(ヒ)]</dt>
+<dd>
+                「瑕疵(かし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(か)]」[9(よ)][0(わ)]</dt>
+<dd>
+                「河川(かせん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(か)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「咖喱(カレー)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(カ)]」[A(オ)][S(ヤ)]</dt>
+<dd>
+                「薫蕕(くんゆう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(カ)]」[P(セ)][@(ﾞ )]</dt>
+<dd>
+                「風貌(ふうぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(カ)]」[A(チ)][S(ト)]</dt>
+<dd>
+                「価格(かかく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「萱葺(かやぶき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「解剖(かいぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[R(す)][T(か)]</dt>
+<dd>
+                「敦賀(するが)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[K(の)][L(り)]</dt>
+<dd>
+                「玄関(げんかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[F(は)][F(ハ)]</dt>
+<dd>
+                「見做(みなす見做すの"みな")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「画鋲(がびょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「駕籠(かご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「灌漑(かんがい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」[9(ヨ)][0(ワ)]</dt>
+<dd>
+                「乾杯(かんぱい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」[Z(ツ)][X(サ)]</dt>
+<dd>
+                「葛飾(かつしか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」[.(る)][/(め)]</dt>
+<dd>
+                「柑橘(かんきつるい柑橘類の"かんきつ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」[6(お)][6(オ)]</dt>
+<dd>
+                「直弼(いいなおすけ井伊直弼の"なおすけ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「尚且(なおかつ尚且つの"なおか")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(ナ)]」<br />[7(ヤ)][8(ユ)][9(ヨ)]</dt>
+<dd>
+         「柬埔寨(カンボジア)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[U(ナ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「癇癪(かんしゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(ナ)]」[H(ク)][J(マ)]</dt>
+<dd>
+                「恫喝(どうかつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(ナ)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「喝采(かっさい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(ナ)]」[/(メ)][_(ロ)]</dt>
+<dd>
+                「苟且(かりそめ/いんじゅんこうしょ因循苟且の"こうしょ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[3(あ)][4(う)]</dt>
+<dd>
+                「虹霓(こうげい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「螮蝀(たいとうせん螮蝀泉の"たいとう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「哺乳(哺乳類ほにゅうるいの"ほにゅう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[O(ら)][P(せ)]</dt>
+<dd>
+                「辣韮(らっきょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[A(ち)][S(と)]</dt>
+<dd>
+                「廿日(はつか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[J(ま)][K(の)]</dt>
+<dd>
+                「任侠(にんきょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」<br />[X(さ)][C(そ)][V(ひ)][B(こ)]</dt>
+<dd>
+  「弖爾乎波(てにをは)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[I(に)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「妊娠(にんしん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「貴賎(きせん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」[R(ス)][T(カ)]</dt>
+<dd>
+                「刁斗(ちょうと)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」[Z(ツ)][X(サ)]</dt>
+<dd>
+                「窰洞(ようどう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「洞窟(どうくつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」[,(ネ)][.(ル)]</dt>
+<dd>
+                「淘汰(とうた)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「駱駝(ラクダ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[E(い)][R(す)]</dt>
+<dd>
+                「雷汞(らいこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[B(こ)][N(み)]</dt>
+<dd>
+                「杮落(こけらおとし杮落しの"こけらおと")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」<br />[A(ち)][S(と)][D(し)]</dt>
+<dd>
+         「曼荼羅(まんだら)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[D(し)][F(は)]</dt>
+<dd>
+                「羅甸(ラテン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[;(れ)][;(け)]</dt>
+<dd>
+                「攪乱(ないぶんぴかくらんぶっしつ内分泌攪乱物質の"かくらん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[;(れ)][;(レ)]</dt>
+<dd>
+                「攪拌(かくはん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[X(さ)][C(そ)]</dt>
+<dd>
+                「氾濫(はんらん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ら)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「濫觴(らんしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ラ)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「脂肪(しぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ラ)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「疢疾(ちんしつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[O(ラ)]」[W(テ)][E(イ)]</dt>
+<dd>
+                「身体(しんたい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「節榑(ふしくれ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「頽勢(たいせい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[H(く)][J(ま)]</dt>
+<dd>
+                「逼迫(ひっぱく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[K(の)][L(り)]</dt>
+<dd>
+                「凱旋(がいせん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[X(さ)][C(そ)]</dt>
+<dd>
+                「先制(せんせい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[L(れ)][L(レ)]</dt>
+<dd>
+                「鶺鴒(セキレイ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[V(ひ)][B(こ)]</dt>
+<dd>
+                「是正(ぜせい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「征服(せいふく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(せ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「善哉(ぜんざい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[6(オ)][7(ヤ)]</dt>
+<dd>
+                「世代(せだい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[0(ワ)][-(ホ)]</dt>
+<dd>
+                「忽然(こつぜん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「狭窄(きょうさく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[}(ム)][}(む)]</dt>
+<dd>
+                「呵責(かしゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[P(セ)]」[,(ネ)][.(ル)]</dt>
+<dd>
+                「脊椎(せきつい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」[4(う)][5(え)]</dt>
+<dd>
+                「中庸(ちゅうよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「宇宙(うちゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」[S(と)][D(し)]</dt>
+<dd>
+                「撞着(どうちゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」[G(き)][H(く)]</dt>
+<dd>
+                「貯蓄(ちょちく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(チ)]」[X(さ)][X(サ)]</dt>
+<dd>
+                「著莪(シャガ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「丁寧(ていねい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(チ)]」[D(シ)][D(し)]</dt>
+<dd>
+                「纔着(さいじゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(チ)]」<br />[N(ミ)][M(モ)][,(ネ)][.(ル)]</dt>
+<dd>
+  「魑魅魍魎(ちみもうりょう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」[6(お)][7(や)]</dt>
+<dd>
+                「遠投(えんとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」[8(ゆ)][8(ユ)]</dt>
+<dd>
+                「螟蛉(めいれい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」[9(よ)][0(わ)]</dt>
+<dd>
+                「豊穣(ほうじょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」[Q(た)][W(て)]</dt>
+<dd>
+                「土壌(どじょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」[Q(れ)][W(レ)]</dt>
+<dd>
+                「恍惚(こうこつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(ト)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「蜻蛉(とんぼ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(ト)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「咄嗟(とっさ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[Q(た)][W(て)]</dt>
+<dd>
+                「下支(したざさえ下支えの"したざさ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「資質(ししつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[A(ち)][A(チ)]</dt>
+<dd>
+                「刺繍(ししゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[;(れ)][;(レ)]</dt>
+<dd>
+                「痔瘻(じろう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[}(む)][}(ム)]</dt>
+<dd>
+                「嫉妬(しっと)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[B(こ)][N(み)]</dt>
+<dd>
+                「仕事(しごと)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[N(み)][M(も)]</dt>
+<dd>
+                「事件(じけん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「諮詢(しじゅん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」[P(セ)][@(ﾞ )]</dt>
+<dd>
+                「果実(かじつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「実践(じっせん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」[/(メ)][_(ロ)]</dt>
+<dd>
+                「葛城(かつらぎ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「花魁(おいらん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「計測(けいそく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[R(す)][R(ス)]</dt>
+<dd>
+                「蓮托(いちれんたくしょう一蓮托生の"たくしょう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[B(こ)][N(み)]</dt>
+<dd>
+                「函渠(かんきょ/ボックスカルバート)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「初詣(はつもうで)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[M(も)][,(ね)]</dt>
+<dd>
+                「下支(はばたき羽搏き、はばたく羽搏くの"はばた")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(ハ)]」[9(ヨ)][0(ワ)]</dt>
+<dd>
+                「抜擢(ばってき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(ハ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「棕櫚(パーム)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(ハ)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「売買(ばいばい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(ハ)]」[N(ミ)][M(モ)]</dt>
+<dd>
+                「醗酵(はっこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[2(ふ)][2(フ)]</dt>
+<dd>
+                「伎癢(ぎよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[3(あ)][4(う)]</dt>
+<dd>
+                「佳境(かきょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[0(わ)][0(ワ)]</dt>
+<dd>
+                「究極(きゅうきょく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[T(か)][Y(ん)]</dt>
+<dd>
+                「鍍金(メッキ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[Y(ん)][U(な)]</dt>
+<dd>
+                「金券(きんけん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「蜀黍(もろこし/しょくしょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(き)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「聶記(アシタカ聶記の"せっき")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「桔梗(ききょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[4(ウ)][5(エ)]</dt>
+<dd>
+                「梗塞(こうそく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[W(テ)][E(イ)]</dt>
+<dd>
+                「基礎(きそ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[U(ナ)][I(ニ)]</dt>
+<dd>
+                「逆算(ぎやくさん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[U(セ)][@(゛)]</dt>
+<dd>
+                「犠牲(ぎせい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「麒麟(きりん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(キ)]」[,(ネ)][.(ル)]</dt>
+<dd>
+                「切磋(せっさたくま切磋琢磨の"せっさ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(く)]」[J(ま)][J(マ)]</dt>
+<dd>
+                「熊羆(ゆうひ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(く)]」[R(す)][T(か)]</dt>
+<dd>
+                「薬罐(やかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(く)]」[:(け)][}(む)]</dt>
+<dd>
+                「狂狷(きょうけん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(ク)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「懺悔(ざんげ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(ク)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「蜘蛛(クモ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「眩暈(めまい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[O(ら)][P(せ)]</dt>
+<dd>
+                「混沌(こんとん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[D(し)][F(は)]</dt>
+<dd>
+                「交渉(こうしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「痳痺(まひ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[B(こ)][N(み)]</dt>
+<dd>
+                「真鍮(しんちゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[/(め)][/(メ)]</dt>
+<dd>
+                「籩豆(たかつき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(マ)]」[6(オ)][7(ヤ)]</dt>
+<dd>
+                「舞妓(まいこ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(マ)]」[^(ヘ)][^(へ)]</dt>
+<dd>
+                「賄賂(わいろ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(マ)]」[O(ラ)][P(セ)]</dt>
+<dd>
+                「傲慢(ごうまん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(マ)]」[X(サ)][C(ソ)]</dt>
+<dd>
+                「摩擦(まさつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[J(マ)]」[.(ル)][/(メ)]</dt>
+<dd>
+                「豌豆(えんどうまめ豌豆豆の"えんどう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(の)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「嘉納(かのう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(の)]」[R(す)][R(ス)]</dt>
+<dd>
+                「觝触(ていしょく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(の)]」[A(ち)][S(と)]</dt>
+<dd>
+                「咽喉(いんこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(の)]」[X(さ)][C(そ)]</dt>
+<dd>
+                「残滓(ざんし/ざんさい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[4(ウ)][5(エ)]</dt>
+<dd>
+                「範疇(はんちゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[6(オ)][7(ヤ)]</dt>
+<dd>
+                「嘔吐(おうと)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「薔薇(ばら)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[R(ス)][T(カ)]</dt>
+<dd>
+                「触媒(しょくばい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[P(セ)][@(ﾞ )]</dt>
+<dd>
+                「齧歯(げっしるい齧歯類の"げっし")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[A(チ)][S(ト)]</dt>
+<dd>
+                「馳走(ごちそう御馳走の"ちそう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[F(ハ)][G(キ)]</dt>
+<dd>
+                「母趾(がいはんぼし外反母趾の"ぼし")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[K(リ)][;(レ)]</dt>
+<dd>
+                「配慮(はいりょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[N(ミ)][M(モ)]</dt>
+<dd>
+                「伐採(ばっさい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(ノ)]」[,(ネ)][.(ル)]</dt>
+<dd>
+                「晩餐(ばんさん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[0(わ)][0(ワ)]</dt>
+<dd>
+                「鍉鍼(ていしん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[I(に)][I(ニ)]</dt>
+<dd>
+                「鴻離(ぎょもうこうり魚網鴻離の"こうり")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「淋巴(リンパ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[B(こ)][N(み)]</dt>
+<dd>
+                「翰林(かんりん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[:(け)][}(む)]</dt>
+<dd>
+                「吝嗇(りんしょく/けち/吝さかで"やぶさか")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[N(み)][M(も)]</dt>
+<dd>
+                「林檎(りんご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(り)]」[.(る)][/(め)]</dt>
+<dd>
+                「流暢(りゅうちょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[4(ウ)][5(エ)]</dt>
+<dd>
+                「伴侶(はんりょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「吾輩(わがはい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[9(ヨ)][0(ワ)]</dt>
+<dd>
+                「鑱鍼(ざんしん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「徘徊(はいかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[W(テ)][E(イ)]</dt>
+<dd>
+                「派閥(はばつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[U(ナ)][I(ニ)]</dt>
+<dd>
+                「乖離(かいり)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[P(セ)][@(ﾞ )]</dt>
+<dd>
+                「逍遥(しょうよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[L(リ)]」[V(ヒ)][B(コ)]</dt>
+<dd>
+                「梯梧(でいこ/でいご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(れ)]」[P(せ)][@(゛)]</dt>
+<dd>
+                「熾烈(しれつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(れ)]」[D(し)][F(は)]</dt>
+<dd>
+                「玲瓏(れいろう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(れ)]」[M(も)][,(ね)]</dt>
+<dd>
+                「檸檬(レモン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「岐阜(ぎふ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」<br />[R(ス)][T(カ)][Y(ン)]</dt>
+<dd>
+         「枢機卿(すうききょう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」[T(カ)][T(か)]</dt>
+<dd>
+                「機械(きかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「僥倖(ぎょうこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(レ)]」[S(ト)][D(シ)]</dt>
+<dd>
+                「謹慎(きんしん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」[G(キ)][H(ク)]</dt>
+<dd>
+                「近畿(きんき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(レ)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「虚業(きょぎょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(レ)]」[C(ソ)][V(ヒ)]</dt>
+<dd>
+                「蜷局(とぐろ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(レ)]」[N(ミ)][M(モ)]</dt>
+<dd>
+                「軋轢(あつれき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「健康(けんこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[3(あ)][4(う)]</dt>
+<dd>
+                「遣隋(遣隋使の"けんずい")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[5(え)][6(お)]</dt>
+<dd>
+                「謙遜(けんそん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[Q(た)][W(て)]</dt>
+<dd>
+                「献血(けんけつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[W(て)][E(い)]</dt>
+<dd>
+                「血漿(けっしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[I(に)][O(ら)]</dt>
+<dd>
+                「迎賓(げいひん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[A(ち)][S(と)]</dt>
+<dd>
+                「検索(けんさく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[Z(つ)][X(さ)]</dt>
+<dd>
+                「怪傑(かいけつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[H(く)][H(く)][H(ク)][H(ク)]</dt>
+<dd>
+  「侃侃諤諤(かんかんがくがく)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[;(れ)][;(レ)]</dt>
+<dd>
+                「痙攣(けいれん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」[,(ね)][,(ネ)]</dt>
+<dd>
+                「喧嘩(けんか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(け)]」<br />[,(ね)][,(ね)][.(る)][.(る)]</dt>
+<dd>
+  「喧喧囂囂(けんけんごうごう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[:(ケ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「原稿(げんこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(ケ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「袈裟(けさ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(ケ)]」[^(ヘ)][^(へ)]</dt>
+<dd>
+                「畦畔(けいはん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(ケ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「経緯(けいい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[:(ケ)]」[N(ミ)][M(モ)]</dt>
+<dd>
+                「啓蟄(けいちつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[}(む)]」[3(あ)][4(う)]</dt>
+<dd>
+                「爬虫(爬虫類はちゅうるいの"はちゅう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[}(む)]」[5(え)][6(お)]</dt>
+<dd>
+                「娘婿(むすめむこ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(つ)]」[V(ひ)][B(こ)]</dt>
+<dd>
+                「韜晦(とうかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(つ)]」[M(も)][,(ね)]</dt>
+<dd>
+                「常套(じょうとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(つ)]」[D(し)][D(シ)]</dt>
+<dd>
+                「辻褄(つじつま)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(ツ)]」[C(ソ)][V(ヒ)]</dt>
+<dd>
+                「躑躅(つつじ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(さ)]」[0(わ)][-(ほ)]</dt>
+<dd>
+                「沢岻(沖縄県浦添市沢岻の"たくし")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(さ)]」[C(そ)][C(ソ)]</dt>
+<dd>
+                「誘拐(ゆうかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(サ)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「柘榴(ざくろ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(サ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「錯綜(さくそう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「想像(そうぞう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[8(ゆ)][9(よ)]</dt>
+<dd>
+                「祇園(ぎおん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「齟齬(そご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[Z(つ)][Z(ツ)]</dt>
+<dd>
+                「疎外(そがい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[G(き)][G(キ)]</dt>
+<dd>
+                「毀損(きそん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(そ)]」[Z(つ)][Z(ツ)]</dt>
+<dd>
+                「疏通(そつう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[1(ヌ)][1(ぬ)]</dt>
+<dd>
+                「艤装(ぎそう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[9(ヨ)][0(ワ)]</dt>
+<dd>
+                「訴訟(そしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[R(ス)][T(カ)]</dt>
+<dd>
+                「相続(そうぞく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「苑囿(えんゆう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[;(レ)][:(ケ)]</dt>
+<dd>
+                「蔚蒼(うっそう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[C(ソ)]」[V(ヒ)][V(ひ)]</dt>
+<dd>
+                「脾臓(ひぞう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「咖啡(コーヒー)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[1(ぬ)][2(ふ)][3(あ)]</dt>
+<dd>
+         「咖啡涅(カフェイン)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[3(あ)][3(ア)]</dt>
+<dd>
+                「涅槃(ねはんじゃくじょう涅槃寂静の"ねはん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[0(わ)][0(ワ)]</dt>
+<dd>
+                「枇杷(果物のビワ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[P(せ)][@(゛)]</dt>
+<dd>
+                「燧火(すいか)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」[S(と)][S(ト)]</dt>
+<dd>
+                「人蔘(にんじん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「珈琲(コーヒー)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「比較(ひかく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「檳榔(びんろう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[B(コ)][B(こ)]</dt>
+<dd>
+                「琵琶(楽器のビワ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」<br />[N(ミ)][N(ミ)][M(モ)][,(ネ)]</dt>
+<dd>
+  「蹇蹇匪躬(けんけんひきゅう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[3(あ)][3(ア)]</dt>
+<dd>
+                「頃合(ころあい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[}(む)][}(ム)]</dt>
+<dd>
+                「蒟蒻(こんにゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[K(の)][L(り)]</dt>
+<dd>
+                「碓氷(碓氷峠の"うすい")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[Z(つ)][Z(ツ)]</dt>
+<dd>
+                「胡椒(こしょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[N(み)][N(ミ)]</dt>
+<dd>
+                「蝙蝠(こうもり)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(こ)]」[,(ね)][.(る)]</dt>
+<dd>
+                「狡猾(こうかつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」[6(オ)][7(ヤ)]</dt>
+<dd>
+                「甲斐(生き甲斐の"かい")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「殊更(ことさら)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「鱣子(キャビア)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」[G(キ)][G(き)]</dt>
+<dd>
+                「拮抗(きっこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」[,(ネ)][.(ル)]</dt>
+<dd>
+                「誤謬(ごびゅう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[8(ゆ)][9(よ)]</dt>
+<dd>
+                「御輿(みこし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[W(て)][E(い)]</dt>
+<dd>
+                「蚯蚓(みみず)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[R(す)][R(ス)]</dt>
+<dd>
+                「水黽(あめんぼ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[R(す)][T(か)]</dt>
+<dd>
+                「水脈(すいみゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「味噌(みそ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[L(り)][L(リ)]</dt>
+<dd>
+                「緑礬(リョクバン/ろくばん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「琢磨(せっさたくま切磋琢磨の"たくま")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[1(ヌ)][1(ぬ)]</dt>
+<dd>
+                「嵯峨(さが)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[3(あ)][3(ア)]</dt>
+<dd>
+                「湘南(しょうなん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「毘沙(びしゃもん毘沙門の"びしゃ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[Q(タ)][W(テ)]</dt>
+<dd>
+                「燦爛(さんらん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[U(ナ)][I(ニ)]</dt>
+<dd>
+                「鏖殺(おうさつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[Z(ツ)][Z(つ)]</dt>
+<dd>
+                「稠密(ちゅうみつ/ちょうみつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」<br />[.(ル)][/(メ)][_(ロ)]</dt>
+<dd>
+         「珊瑚礁(さんごしょう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[M(も)]」[X(さ)][C(そ)]</dt>
+<dd>
+                「譫妄(せんもう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「咀嚼(そしゃく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」[E(イ)][R(ス)]</dt>
+<dd>
+                「総帥(そうすい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」[Z(ツ)][Z(つ)]</dt>
+<dd>
+                「矜持(きょうじ/きんじ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」[A(チ)][S(ト)]</dt>
+<dd>
+                「黙祷(もくとう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」[L(リ)][;(レ)]</dt>
+<dd>
+                「朦朧(もうろう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(モ)]」<br />[,(ネ)][.(ル)][/(メ)]</dt>
+<dd>
+         「絆創膏(ばんそうこう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[,(ね)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「年俸(ねんぽう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ね)]」[E(い)][R(す)]</dt>
+<dd>
+                「窮鼠(きゅうそねこをかむ窮鼠猫を噛むの"きゅうそ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ね)]」[N(み)][M(も)]</dt>
+<dd>
+                「根拠(こんきょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ね)]」[/(め)][_(ろ)]</dt>
+<dd>
+                「音叉(おんさ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「誹謗(ひぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「秘訣(ひけつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[:(ケ)][:(け)]</dt>
+<dd>
+                「秘鑰(ひやく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[R(ス)][T(カ)]</dt>
+<dd>
+                「俊敏(しゅんびん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[K(ノ)][K(の)]</dt>
+<dd>
+                「嗶哩(ビリビリどうが嗶哩嗶哩動画の"ビリ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[,(ネ)]」[C(ソ)][V(ヒ)]</dt>
+<dd>
+                「贔屓(ひいき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[8(ユ)][9(ヨ)]</dt>
+<dd>
+                「皇后(こうごう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[Y(ン)][U(ナ)]</dt>
+<dd>
+                「琥珀(こはく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[I(ニ)][O(ラ)]</dt>
+<dd>
+                「宏闊(こうかつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[K(ノ)][L(リ)]</dt>
+<dd>
+                「孝行(こうこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[;(レ)][:(ケ)]</dt>
+<dd>
+                「豪語(ごうご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「語彙(ごい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[B(コ)][N(ミ)]</dt>
+<dd>
+                「醍醐(だいご)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ル)]」[/(メ)][_(ロ)]</dt>
+<dd>
+                「竣工(しゅんこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「拉麺(ラーメン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[2(ふ)][3(あ)]</dt>
+<dd>
+                「麺麭(パン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[5(ふ)][5(あ)]</dt>
+<dd>
+                「五芒(五芒星の"ごぼう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[Q(た)][W(て)]</dt>
+<dd>
+                「酩酊(めいてい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[Q(た)][W(て)]</dt>
+<dd>
+                「牝牡(ひんぼ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[S(と)][D(し)]</dt>
+<dd>
+                「炊飯(すいはん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[U(な)][I(に)]</dt>
+<dd>
+                「氏名(しめい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[P(せ)][P(セ)]</dt>
+<dd>
+                「億劫(おっくう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[;(れ)][:(け)]</dt>
+<dd>
+                「明晰(めいせきむ明晰夢の"めいせき")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(め)]」[N(み)][M(も)]</dt>
+<dd>
+                「瑠璃(るり)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[8(ユ)][8(ゆ)]</dt>
+<dd>
+                「八紘(はっこういちう八紘一宇の"はっこう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[-(ホ)][-(ほ)]</dt>
+<dd>
+                「百閒(うちだひゃっけん内田百閒の"ひゃっけん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[^(ヘ)][^(へ)]</dt>
+<dd>
+                「千穐(せんしゅうばんざいだいだいかのう千穐万歳大々叶の"せんしゅう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[F(ハ)][F(は)]</dt>
+<dd>
+                「瓦礫(がれき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[L(リ)][L(り)]</dt>
+<dd>
+                「割烹(かっぽうぎ割烹着の"かっぽう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」[}(ム)][}(む)]</dt>
+<dd>
+                「毛氈(もうせん/フェルト)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(ろ)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「耄碌(もうろく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[_(ロ)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「狼狽(ろうばい)」
+</dd></dl>
+
+<p>
+以下「[B(β)]」から始まる「[A(α)]」から開始に移動予定。
+</p>
+
+<dl class="inputstroke"><dt>
+  「[B(β)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「禺彊(ぐうきょう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[3(あ)][4(う)]</dt>
+<dd>
+                「鞦韆(しゅうせん/ブランコ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[5(え)][6(お)]</dt>
+<dd>
+                「羌瘣(きょうかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「宥恕(ゆうじょ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[9(よ)][0(わ)]</dt>
+<dd>
+                「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[-(ほ)][^(へ)]</dt>
+<dd>
+                「吶喊(とっかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[Q(た)][W(て)]</dt>
+<dd>
+                「耆碩(きせき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[E(い)][R(す)]</dt>
+<dd>
+                「囐噠(エフタル)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[T(か)][Y(ん)]</dt>
+<dd>
+                「挹怛(エフタル)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[U(な)][I(に)]</dt>
+<dd>
+                「鑣轡(ひょうぐつわ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[O(ら)][P(せ)]</dt>
+<dd>
+                「呿呻(あくび)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[@(゛)][{(゜)]</dt>
+<dd>
+                「顑頷(かんがん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[A(ち)][S(と)]</dt>
+<dd>
+                「磊磈(らいかい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[D(し)][F(は)]</dt>
+<dd>
+                「潑溂(はつらつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[G(き)][H(く)]</dt>
+<dd>
+                「緂縅(だんおどし)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[J(ま)][K(の)]</dt>
+<dd>
+                「惝怳(しょうきょう/しょうこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[L(り)][;(れ)]</dt>
+<dd>
+                「憔悴(しょうすい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[:(け)][}(む)]</dt>
+<dd>
+                「狴犴(へいかん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[Z(つ)][X(さ)]</dt>
+<dd>
+                「薜荔(オオイタビ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[C(そ)][V(ひ)]</dt>
+<dd>
+                「瑙魯(ナウル)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[B(こ)][N(み)]</dt>
+<dd>
+                「艨艟(もうどう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[M(も)][,(ね)]</dt>
+<dd>
+                「枸櫞(クエンサン枸櫞酸の"クエン")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[.(る)][/(め)]</dt>
+<dd>
+                「邂逅(かいこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(β)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「曱甴(ゴキブリ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[1(ヌ)][2(フ)]</dt>
+<dd>
+                「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[3(ア)][4(ウ)]</dt>
+<dd>
+                「鷸蚌(鷸蚌の争いの"いつぼう")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[5(エ)][6(オ)]</dt>
+<dd>
+                「彌猴(キウイ彌猴桃の"彌猴")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[7(ヤ)][8(ユ)]</dt>
+<dd>
+                「胤裔(いんえい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[9(ヨ)][0(ワ)]</dt>
+<dd>
+                「孩嬰(がいえい)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[-(ホ)][^(ヘ)]</dt>
+<dd>
+                「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[Q(タ)][W(テ)]</dt>
+<dd>
+                「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[E(イ)][R(ス)]</dt>
+<dd>
+                「蟋蟀(コオロギ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[T(カ)][Y(ン)]</dt>
+<dd>
+                「螽蟖(キリギリス)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[U(ナ)][I(ニ)]</dt>
+<dd>
+                「旱魃(かんばつ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[O(ラ)][P(セ)]</dt>
+<dd>
+                「蜥蜴(トカゲ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[@(ﾞ )][{(ﾟ )]</dt>
+<dd>
+                「閨閤(けいこう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[A(チ)][S(ト)]</dt>
+<dd>
+                「茱萸(グミ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[D(シ)][F(ハ)]</dt>
+<dd>
+                「鮟鱇(アンコウ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[G(キ)][H(ク)]</dt>
+<dd>
+                「鎔笵(ようはん)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[J(マ)][K(ノ)]</dt>
+<dd>
+                「喇叭(ラッパ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[L(リ)][;(レ)]</dt>
+<dd>
+                「榠樝(カリン)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[:(ケ)][}(ム)]</dt>
+<dd>
+                「顰蹙(ひんしゅく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[Z(ツ)][X(サ)]</dt>
+<dd>
+                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[C(ソ)][V(ヒ)]</dt>
+<dd>
+                「轆轤(ろくろ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[B(コ)][N(ミ)]</dt>
+<dd>
+                「纐纈(こうけつ/こうけち)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[M(モ)][,(ネ)]</dt>
+<dd>
+                「螳螂(かまきり)」※蟷螂は辞書使用
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(Β)]」[.(ル)][/(メ)]</dt>
+<dd>
+                「霹靂(へきれき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(γ)]」[1(ぬ)][2(ふ)]</dt>
+<dd>
+                「抛擲(ほうてき)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(γ)]」[3(あ)][4(う)]</dt>
+<dd>
+                「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(γ)]」[5(あ)][6(う)]</dt>
+<dd>
+                「慟哭(どうこく)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(Α)]」[7(や)][8(ゆ)]</dt>
+<dd>
+                「渺茫(びょうぼう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(Α)]」[9(よ)][0(わ)]</dt>
+<dd>
+                「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[G(γ)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「蟑螂(ゴキブリ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(δ)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「蜚蠊(ゴキブリ)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(ε)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「癤癰(せつよう)」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Z(ζ)]」<br />[1(ぬ)][2(ふ)][3(あ)]</dt>
+<dd>
+         「珸瑶瑁(ごようまい)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[Z(ζ)]」[_(ろ)][_(ロ)]</dt>
+<dd>
+                「疔瘡(ちょうそう)」
+</dd></dl>
 
 </section>
 <section>
  <h3 id="kanedit_faq-3">③-3．漢直(漢字直接入力)の解説・字引入力系の相席</h3>
 <p>
- 相席ではないのですが字引入力を使ったショートカットの事例もついでに。<br />
+ 厳密には相席ではないのですが字引入力を使ったショートカット事例。<br />
+
 </p>
+<dl class="faq"><dt>
+ Ｑ．字引入力系の｛逆:[3(あ)]｝みたいなのはどういう入力ですか？</dt>
+<dd>
+
+ Ａ．[KANA]+[3(あ)]です。事前に字引入力の項目を「地」に変更する必要があります([NFER]押したまま[XFER]→[0(わ)])。<br />
+     漢直鍵盤の入力操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+     単漢字辞書の項目については「<a href="index.html#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-5．単漢字辞書の辞書項目</a>」を確認してください。<br />
+
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[4(う)]」[3(あ)]<br />｛逆:[3(あ)]｝</dt>
+<dd>
+         「上下(じょうげ)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[Q(タ)]<br />｛逆:[Q(タ)]｝</dt>
+<dd>
+         「左右(さゆう)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[J(ま)]」[5(え)]<br />｛逆:[5(え)]｝</dt>
+<dd>
+         「前後(ぜんご)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」[T(カ)]<br />｛逆:[T(カ)]｝</dt>
+<dd>
+         「東西(とうざい)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」[4(う)]<br />｛逆:[4(う)]｝</dt>
+<dd>
+         「南北(なんぼく)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」[_(ろ)]<br />｛逆:[_(ろ)]｝</dt>
+<dd>
+         「白黒(しろくろ)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[8(ゆ)]」[F(は)]<br />｛逆:[F(は)]｝</dt>
+<dd>
+         「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[T(カ)]」[A(チ)]<br />｛非:[A(チ)]｝</dt>
+<dd>
+         「価値(かち)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[F(は)]」[.(る)]<br />｛非:[.(る)]｝</dt>
+<dd>
+         「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」[G(き)]<br />｛非:[G(き)]｝</dt>
+<dd>
+         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」[Y(ん)]<br />｛非:[Y(ん)]｝</dt>
+<dd>
+         「温暖(おんだん)」
+</dd><br class="yonmoji_both" /></dl>
+<dl class="inputstroke"><dt>
+  「[N(ミ)]」[}(ム)]<br />｛非:[}(ム)]｝</dt>
+<dd>
+         「寒冷(かんれい)」
+</dd><br class="yonmoji_both" /></dl>
 
 </section>
 <section>
  <h3 id="kanedit_faq-4">③-4．漢直(漢字直接入力)の解説・都道府県国名などの字引</h3>
 <p>
  地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<br />
+
 </p>
+<dl class="faq"><dt>
+ Ｑ．漢直(漢字直接入力)の解説の「[1(ぬ)]」みたいなのはどういう入力ですか？</dt>
+<dd>
+
+ Ａ．「[1(ぬ)]」は[NFER]+[1]、「[1(ヌ)]」は[XFER]+[1]です。ひらがながNFER、カタカナがXFERです。<br />
+     漢直鍵盤の入力操作は「<a href="index.html#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+     地名入力などの｛地:[Q(た)]｝とかは[NFER]+[XFER]or[XFER]+[NFER]<br />
+     単漢字辞書の項目については「<a href="index.html#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-5．単漢字辞書の辞書項目</a>」を確認してください。<br />
+
+</dd></dl>
+<h4>都道府県の字引入力</h4>
+
+<dl class="inputstroke"><dt>
+  「[G(き)]」｛地:[Q(た)]｝</dt>
+<dd>
+                「地北⇔北海道」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」｛地:[6(お)]｝</dt>
+<dd>
+                「地青⇔青森」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(い)]」｛地:[0(わ)]｝</dt>
+<dd>
+                「地岩⇔岩手」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」｛地:[_(ロ)]｝</dt>
+<dd>
+                「地城⇔宮城」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[3(あ)]」｛地:[G(き)]｝</dt>
+<dd>
+                「地秋⇔秋田」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ン)]」｛地:[Q(タ)]｝</dt>
+<dd>
+                「地形⇔山形」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」｛地:[J(ま)]｝</dt>
+<dd>
+                「地島⇔福島」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(イ)]」｛地:[F(ハ)]｝</dt>
+<dd>
+                「地茨⇔茨城」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」｛地:[A(ち)]｝</dt>
+<dd>
+                「地栃⇔栃木」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(ク)]」｛地:[F(ハ)]｝</dt>
+<dd>
+                「地群⇔群馬」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(さ)]」｛地:[Q(た)]｝</dt>
+<dd>
+                「地埼⇔埼玉」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」｛地:[^(ヘ)]｝</dt>
+<dd>
+                「地千⇔千葉」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ヒ)]」｛地:[T(カ)]｝</dt>
+<dd>
+                「地東⇔東京」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」｛地:[N(み)]｝</dt>
+<dd>
+                「地神⇔神奈川」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Y(ん)]」｛地:[Q(た)]｝</dt>
+<dd>
+                「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」｛地:[N(み)]｝</dt>
+<dd>
+                「地富⇔富山」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(い)]」｛地:[D(し)]｝</dt>
+<dd>
+                「地石⇔石川」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[E(イ)]」｛地:[S(ト)]｝</dt>
+<dd>
+                「地井⇔福井」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」｛地:[D(し)]｝</dt>
+<dd>
+                「地梨⇔山梨」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[K(の)]」｛地:[7(や)]｝</dt>
+<dd>
+                「地野⇔長野」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[;(レ)]」｛地:[1(ヌ)]｝</dt>
+<dd>
+                「地岐⇔岐阜」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」｛地:[R(す)]｝</dt>
+<dd>
+                「地静⇔静岡」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」｛地:[@(゛)]｝</dt>
+<dd>
+                「地知⇔愛知」(「地愛⇔愛知/愛蘭」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」｛地:[3(ア)]｝</dt>
+<dd>
+                「地三⇔三重」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(シ)]」｛地:[9(ヨ)]｝</dt>
+<dd>
+                「地滋⇔滋賀」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」｛地:[}(ﾟ )]｝</dt>
+<dd>
+                「地京⇔京都」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[F(ハ)]」｛地:[Y(ン)]｝</dt>
+<dd>
+                「地阪⇔大阪」(「地大⇔大阪/大分」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[^(へ)]」｛地:[M(も)]｝</dt>
+<dd>
+                「地兵⇔兵庫」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」｛地:[O(ら)]｝</dt>
+<dd>
+                「地奈⇔奈良」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[0(わ)]」｛地:[^(へ)]｝</dt>
+<dd>
+                「地和⇔和歌山」(「地歌⇔和歌山」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[S(と)]」｛地:[L(り)]｝</dt>
+<dd>
+                「地鳥⇔鳥取」(「地取⇔鳥取」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[.(ね)]」｛地:[M(も)]｝</dt>
+<dd>
+                「地根⇔島根」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」｛地:[T(か)]｝</dt>
+<dd>
+                「地岡⇔岡山」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」｛地:[_(ろ)]｝</dt>
+<dd>
+                「地広⇔広島」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(く)]」｛地:[A(ち)]｝</dt>
+<dd>
+                「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[I(ニ)]」｛地:[H(ク)]｝</dt>
+<dd>
+                「地徳⇔徳島」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[T(か)]」｛地:[0(わ)]｝</dt>
+<dd>
+                「地川⇔香川」(「地香⇔香港/香川」)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[V(ひ)]」｛地:[/(め)]｝</dt>
+<dd>
+                「地媛⇔愛媛」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(た)]」｛地:[T(か)]｝</dt>
+<dd>
+                「地高⇔高知」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(ふ)]」｛地:[J(ま)]｝</dt>
+<dd>
+                「地福⇔福岡」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[X(サ)]」｛地:[T(カ)]｝</dt>
+<dd>
+                「地佐⇔佐賀」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[U(な)]」｛地:[E(い)]｝</dt>
+<dd>
+                「地長⇔長崎」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(く)]」｛地:[J(ま)]｝</dt>
+<dd>
+                「地熊⇔熊本」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」｛地:[L(レ)]｝</dt>
+<dd>
+                「地分⇔大分」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」｛地:[7(や)]｝</dt>
+<dd>
+                「地宮⇔宮崎」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[D(し)]」｛地:[T(か)]｝</dt>
+<dd>
+                「地鹿⇔鹿児島」
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[6(お)]」｛地:[G(き)]｝</dt>
+<dd>
+                「地沖⇔沖縄」
+</dd></dl>
+
+<h4>国名の字引入力</h4>
+
+<dl class="inputstroke"><dt>
+  「[I(に)]」｛地:[S(と)]｝</dt>
+<dd>
+                「地日⇔日本」(にっぽん)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[A(ち)]」｛地:[E(い)]｝</dt>
+<dd>
+                「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[Q(タ)]」｛地:[4(ウ)]｝</dt>
+<dd>
+                「地台⇔台湾」(たいわん)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[N(み)]」｛地:[S(と)]｝</dt>
+<dd>
+                「地港⇔香港」(ほんこん)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[B(コ)]」｛地:[^(ヘ)]｝</dt>
+<dd>
+                「地越⇔越南」(べとなむ)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[H(ク)]」｛地:[O(ラ)]｝</dt>
+<dd>
+                「地蔵⇔西蔵」(ちべっと)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[M(も)]」｛地:[B(こ)]｝</dt>
+<dd>
+                「地蒙⇔蒙古」(もんごる)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[5(え)]」｛地:[E(い)]｝</dt>
+<dd>
+                「地英⇔英吉利西」(イギリス)
+</dd></dl>
+<dl class="inputstroke"><dt>
+  「[/(メ)]」｛地:[T(カ)]｝</dt>
+<dd>
+                「地米⇔亜米利加」(アメリカ)
+</dd></dl>
 
 </section>
 <section>
@@ -361,9 +3578,9 @@
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
-
 <dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
 <dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
+
 
 </section>
 

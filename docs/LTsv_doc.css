@@ -36,7 +36,7 @@ header{
    float: right;
  }
  yonmoji_both{
-   float: both;
+   clear: both;
  }
 section,aside,article{
   margin-top: 1rem;
@@ -119,9 +119,25 @@ dt{
   font-weight: bold;
   word-wrap: break-word; word-break: break-all;
 }
+ dl.faqlink > dt{
+  margin-left: 3rem;
+ }
+ dl.inputstroke > dt{
+  width: 15rem;
+  float: left;
+ }
 dd{
   word-wrap: break-word; word-break: break-all;
 }
+ dl.faq > dd{
+  margin-left: 0px;
+ }
+ dl.faqlink > dd{
+  margin-left: 3rem;
+ }
+ dl.inputstroke > dd{
+  margin-left: 15rem;
+ }
 h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
 h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
 h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }

@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161211U022923<br />
+   version(branch):20161128M153500	modify:20161212M020045<br />
   
 </p>
   <h2>目次</h2>
@@ -56,11 +56,12 @@
  <li><a href="#LTsv_kbd-1" title="⑦-1．「LTsv_kbd.tsv」のタグ解説">⑦-1．「LTsv_kbd.tsv」のタグ解説</a></li>
  <li><a href="#LTsv_gui-0" title="⑧-0．「LTsv_gui.py」の関数一覧">⑧-0．「LTsv_gui.py」の関数一覧</a></li>
  <li><a href="#LTsv_gui-1" title="⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧">⑧-1．「LTsv_widgetPAGEXYWH()」のオプション一覧</a></li>
- <li>	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a></li>
- <li>	<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a></li>
- <li>	<a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
- <li>	<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
- <li>	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a></li>
+ <li><a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a></li>
+ <li><a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a></li>
+ <li><a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a></li>
+ <li><a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a></li>
+ <li><a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a></li>
+ <li><a href="#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目">⑨-5．単漢字辞書の辞書項目</a></li>
  <li><a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a></li>
  <li><a href="#address-0" title="⑪-0．作者について、例えば連絡先。">⑪-0．作者について、例えば連絡先。</a></li>
 
@@ -1362,10 +1363,10 @@ draw_sが弧の開始角度。draw_eは開始位置からの相対角度。角�
 「LTsv_draw_font=LTsv_draw_font_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
 <dl><dt>LTsv_drawGTK_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-グリフでのテキスト描画は「	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」を参考。</dd></dl>
+グリフでのテキスト描画は「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」を参考。</dd></dl>
 <dl><dt>LTsv_drawTkinter_text(draw_t="",draw_x=0,draw_y=0)</dt><dd>
 「canvas」にフォントでテキストを描画。draw_tに文字列。左上座標はdraw_x,draw_y。<br />
-「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「	<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」も参考。</dd></dl>
+「Tkinter」には「CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)」の制限があるのでグリフでのテキスト描画「<a href="#LTsv_glyph-0" title="⑨-0．「LTsv_glyph.py」の関数一覧">⑨-0．「LTsv_glyph.py」の関数一覧</a>」も参考。</dd></dl>
 <dl><dt>LTsv_draw_text_shell(LTsv_GUI)</dt><dd>
 「LTsv_drawGTK_text()」か「LTsv_drawTkinter_text()」の関数取得。<br />
 「LTsv_draw_text=LTsv_draw_text_shell(LTsv_GUI)」の様にプラットフォーム間差異吸収に使う。</dd></dl>
@@ -1819,7 +1820,7 @@ find_tは複数の文字が使用できるので、先頭文字から順に見�
 グリフの座標データpickleをセーブします。初期設定的には「LTsv/kanpickle.bin」のはず。</dd></dl>
 <dl><dt>LTsv_evaltext(calc_value="")</dt><dd>
 calc_valueに数式などを入れると「Q⇔A」形式で答えを返す関数です。「LTsv_glyph_kbdfind()」のように漢字探索もします。主に「テキスト入力欄(電卓)」で使用します。<br />
-詳細は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
+詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcsetup(calc_canvas,calculatorX=0,calculatorY=0,calculatorW=LTsv_global_glyphkbdW(),calculatorH=LTsv_global_glyphkbdH(),calculatorC=None,calculatorB=None,calculatorT="")</dt><dd>
 「テキスト入力欄(電卓)(漢直鍵盤含む)」の初期設定。calculatorTは初期テキスト。<br />
 calculatorX,calculatorYは表示位置座標、calculatorW,calculatorHは入力欄のサイズ(漢直鍵盤より大きくする必要)、<br />
@@ -1840,7 +1841,7 @@ calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。</dd>
 テキスト入力欄(電卓)のテキストの文字一個一個の座標を記録。</dd></dl>
 <dl><dt>LTsv_glyph_calcglyphs(calc_canvas)</dt><dd>
 テキスト入力欄(電卓)内でテキスト表示。選択テキスト(カーソル)のワイヤーフレーム表示や、入力欄からはみ出る文字を非表示にしたりする。<br />
-入力欄操作の詳細は「	<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a>」を参考。</dd></dl>
+入力欄操作の詳細は「<a href="#LTsv_glyph-3" title="⑨-3．テキスト入力欄(電卓)の操作方法">⑨-3．テキスト入力欄(電卓)の操作方法</a>」を参考。</dd></dl>
 <dl><dt>LTsv_glyph_calcpress(calc_canvas)</dt><dd>
 「canvas」のマウス押下動作に対応するテキスト入力欄(電卓)を描画。<br />
 「canvas」の「event_p=*_mousepress」系コールバック関数内に設置。<br />
@@ -1890,7 +1891,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 単体風テスト専用。テキスト入力欄(電卓)の文字入力を受け取るコールバック関数の指定。</dd></dl>
 <dl><dt>debug_calculatorcommand(glyph_calcinput)</dt><dd>
 単体風テスト専用。Enter機ーを押した時に電卓機能を発動。<br />
-電卓機能の詳細は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
+電卓機能の詳細は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。</dd></dl>
 <dl><dt>debug_reversi_mousepress(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。リバーシー漢直鍵盤用「canvas」マウス押下のコールバック。</dd></dl>
 <dl><dt>debug_reversi_mousemotion(window_objvoid=None,window_objptr=None)</dt><dd>
@@ -1917,7 +1918,7 @@ NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキ�
 単体風テスト専用。リバーシーの升に何らかの方法で石を置く時の動作。試合が決着してる場合は盤面初期化。</dd></dl>
 <dl><dt>debug_configload()</dt><dd>
 単体風テスト専用。「LTsv/kanglyph.tsv」から棋譜を読み込む。<br />
-「LTsv/kanglyph.tsv」の詳細は「	<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a>」を参考。</dd></dl>
+「LTsv/kanglyph.tsv」の詳細は「<a href="#LTsv_glyph-1" title="⑨-1．「LTsv_glyph.tsv」のタグ解説">⑨-1．「LTsv_glyph.tsv」のタグ解説</a>」を参考。</dd></dl>
 <dl><dt>debug_configsave_exit(window_objvoid=None,window_objptr=None)</dt><dd>
 単体風テスト専用。「LTsv/kanglyph.tsv」にリバーシーの棋譜を保存。グリフの座標データpickleも「LTsv_glyph_picklesave()」で保存。</dd></dl>
 
@@ -2077,6 +2078,8 @@ LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CY
 <dd>
        α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。<br />
                                      α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<br />
+                                     単漢字辞書の変更は「<a href="#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目">⑨-5．単漢字辞書の辞書項目</a>」を参考。
+                                     
 </dd></dl>
 <dl><dt>
   [KANA]+[NFER]or[NFER]+[KANA]</dt>
@@ -2361,6 +2364,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dd>
 
                                      単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。<br />
+                                     単漢字辞書の項目については「<a href="#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目">⑨-5．単漢字辞書の辞書項目</a>」を確認。
 </dd></dl>
 <dl><dt>
   先頭文字が「難」</dt>
@@ -2392,7 +2396,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dl><dt>
   先頭文字が「算」その他数式</dt>
 <dd>
-         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「	<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
+         数式とみなして分数計算。テキスト入力欄(電卓)の演算結果は「<a href="#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
 </dd></dl>
 <dl><dt>
   「3927/1250」といった割り算</dt>
@@ -2407,8 +2411,91 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 </section>
 <section>
- <h3 id="LTsv10_faq-0">⑩-0．「L:Tsv」のＦＡＱ</h3>
+ <h3 id="LTsv_glyph-5">⑨-5．単漢字辞書の辞書項目</h3>
+<p>
+ 漢直で使う単漢字辞書の項目について説明。「[Q(た)]」などはキーボード操作で[NFER]+[XFER]or[XFER]+[NFER]の後に押す鍵盤。<br />
+ 漢直鍵盤の入力操作は「<a href="#LTsv_glyph-2" title="⑨-2．漢直鍵盤の操作方法">⑨-2．漢直鍵盤の操作方法</a>」を参考。<br />
+
+</p>
 <dl><dt>
+  音:[2(ふ)]</dt>
+<dd>
+  漢字の音読みを字引。原子記号だとカタカナを字引。「音醤⇔ショウ/ジャン」「音銅⇔コッパー」。
+</dd></dl>
+<dl><dt>
+  訓:[3(あ)]</dt>
+<dd>
+  漢字の訓読みを字引。原子記号だと音訓両方を字引。「訓醤⇔ひしお」「訓銅⇔ドウ/あかがね」。
+</dd></dl>
+<dl><dt>
+  送:[4(う)]</dt>
+<dd>
+  漢字の送り仮名を字引。「送醤⇔醤油/豆板醤/醤酢」「送止⇔制止/差し止める/急に止まる/行き止まり/滑り止め/思い止まる/鳴り止む」。
+</dd></dl>
+<dl><dt>
+  異:[5(え)]</dt>
+<dd>
+  異体字や俗字や略字や通用や大字などを表示。「異壷⇔壺」「異青⇔靑」「異鼠⇔鼡」「異觜⇔嘴」「異七⇔漆」「異百⇔陌」「異晦⇔卅」。
+</dd></dl>
+<dl><dt>
+  俗:[6(お)]</dt>
+<dd>
+  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。「俗金⇔Au」「俗円⇔丸/￥/JPY」「俗鯖⇔server」「俗𡚴⇔妛→𡚴/木通/通草」。
+</dd></dl>
+<dl><dt>
+  簡:[7(や)]</dt>
+<dd>
+  中国の簡体字を字引。「簡氣⇔气」「簡範⇔笵」。
+</dd></dl>
+<dl><dt>
+  繁:[8(ゆ)]</dt>
+<dd>
+  中国や台湾の繁体字を字引。「繁气⇔氣」「繁笵⇔範」。
+</dd></dl>
+<dl><dt>
+  越:[9(よ)]</dt>
+<dd>
+  ベトナム(越南)のチュノム(字喃)を字引。「越頗⇔𬖾」
+</dd></dl>
+<dl><dt>
+  地:[0(わ)]</dt>
+<dd>
+  国名や地名や名字などを字引。「国日⇔日本」「国米⇔亜米利加」「国英⇔英吉利西」「国中⇔中華人民共和国」「国台⇔台湾」「国香⇔香港」「国澳⇔澳門」「国蒙⇔蒙古」「国蔵⇔西蔵」「国越⇔越南」。
+</dd></dl>
+<dl><dt>
+  逆:[-(ほ)]</dt>
+<dd>
+  反対の意味の漢字を字引(論理学等の逆ではない)。「逆暖⇔涼」「逆温⇔冷」。半角ｶﾀｶﾅの入力にも流用。
+</dd></dl>
+<dl><dt>
+  非:[^(へ)]</dt>
+<dd>
+  似て非なる意味の漢字を字引。「非描⇔書」("絵を描く"と"文章を書く"の違い)「非喩⇔例」("比喩表現"と"実例"の違い)「非熔⇔溶」("液状に熔解"と"液体へ溶融"の違い)。
+</dd></dl>
+<dl><dt>
+  英:[Q(た)]</dt>
+<dd>
+  英単語を字引(和英)。「英金⇔gold」「英円⇔circle/round/yen」「英鯖⇔mackerel」。
+</dd></dl>
+<dl><dt>
+  顔:[W(て)]</dt>
+<dd>
+  顔文字や１行AAや絵文字を字引。「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。
+</dd></dl>
+<dl><dt>
+  代:[;(れ])]</dt>
+<dd>
+  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。一部入力補佐としても。「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」。
+</dd></dl>
+<dl><dt>
+  鍵:[:(け)]</dt>
+<dd>
+  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。
+
+</section>
+<section>
+ <h3 id="LTsv10_faq-0">⑩-0．「L:Tsv」のＦＡＱ</h3>
+<dl class="faq"><dt>
  Ｑ．「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」などをダブルクリックしても起動しない。</dt>
 <dd>
 
@@ -2416,9 +2503,9 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
      Wineで「python-3.4.4.msi」が動かないって話なら「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh/python3install.sh">wine_sh/python3install.sh</a>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<br />
 
 </dd></dl>
-<dl><dt>Welcome to Python.org</dt><dd><a href="https://www.python.org/" title="Welcome to Python.org">https://www.python.org/</a></dd></dl>
-<dl><dt>Python Release Python 3.4.4 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-344/" title="Python Release Python 3.4.4 | Python.org">https://www.python.org/downloads/release/python-344/</a></dd></dl>
-<dl><dt>
+<dl class="faqlink"><dt>Welcome to Python.org</dt><dd><a href="https://www.python.org/" title="Welcome to Python.org">https://www.python.org/</a></dd></dl>
+<dl class="faqlink"><dt>Python Release Python 3.4.4 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-344/" title="Python Release Python 3.4.4 | Python.org">https://www.python.org/downloads/release/python-344/</a></dd></dl>
+<dl class="faq"><dt>
  Ｑ．Pythonはもう3.5系出てますよね？</dt>
 <dd>
 
@@ -2426,10 +2513,10 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
      「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<br />
 
 </dd></dl>
-<dl><dt>Python Release Python 3.5.2 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-352/" title="Python Release Python 3.5.2 | Python.org">https://www.python.org/downloads/release/python-352/</a></dd></dl>
-<dl><dt>Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita</dt><dd><a href="http://qiita.com/methane/items/2210712763b91e75fdf0" title="Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita">http://qiita.com/methane/items/2210712763b91e75fdf0</a></dd></dl>
-<dl><dt>Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)</dt><dd><a href="http://shinobar.server-on.net/puppy/opt/" title="Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)">http://shinobar.server-on.net/puppy/opt/</a></dd></dl>
-<dl><dt>
+<dl class="faqlink"><dt>Python Release Python 3.5.2 | Python.org</dt><dd><a href="https://www.python.org/downloads/release/python-352/" title="Python Release Python 3.5.2 | Python.org">https://www.python.org/downloads/release/python-352/</a></dd></dl>
+<dl class="faqlink"><dt>Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita</dt><dd><a href="http://qiita.com/methane/items/2210712763b91e75fdf0" title="Windows での Python 2.7, 3.4, 3.5 の拡張モジュールビルド環境 - Qiita">http://qiita.com/methane/items/2210712763b91e75fdf0</a></dd></dl>
+<dl class="faqlink"><dt>Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)</dt><dd><a href="http://shinobar.server-on.net/puppy/opt/" title="Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)">http://shinobar.server-on.net/puppy/opt/</a></dd></dl>
+<dl class="faq"><dt>
  Ｑ．文字表示が複数あるというか、「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。</dt>
 <dd>
 
@@ -2438,7 +2525,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
     「用意しました」と言いましたが一部の文字しか用意できてないので注意。<br />
 </dd></dl>
 
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．ボタンなどのGUIにグリフ「kan5x5comic」を用いるにはどうすればいいですか。</dt>
 <dd>
 
@@ -2446,7 +2533,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
      GUIでフォントを表示する場合はグリフ「kan5x5.svg」かwebフォント「kan5x5comic.woff」をOSフォント「kan5x5comic.ttf」に変換してフォントをインストール。<br />
 </dd></dl>
 
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．漢直鍵盤ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？</dt>
 <dd>
 
@@ -2455,14 +2542,14 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
      文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。<br />
 </dd></dl>
 
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．テキスト入力欄(電卓)はなんで中途半端にVimっぽいHJKL移動なんですか？</dt>
 <dd>
 
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<br />
 </dd></dl>
 
-<dl><dt>
+<dl class="faq"><dt>
  Ｑ．起動できたたソフトがいつの間にか起動しなくなった。</dt>
 <dd>
 
@@ -2478,9 +2565,9 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <p>
  更新情報はGitHubやブログを確認してください。<br />
 </p>
-
 <dl><dt>ooblog/LTsv10kanedit(GitHub)</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit(GitHub)">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
 <dl><dt>[kanedit] - 大風呂ダ敷</dt><dd><a href="http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]" title="[kanedit] - 大風呂ダ敷">http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]</a></dd></dl>
+
 
 </section>
 

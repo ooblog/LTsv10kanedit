@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161128M153500	modify:20161211U022923
+version(branch):20161128M153500	modify:20161212M020045
 
 目次
 
@@ -211,12 +211,12 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 
  更新情報はGitHubやブログを確認してください。
 
-
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
+
 
 # Copyright (c) 2016 ooblog
 # License: MIT

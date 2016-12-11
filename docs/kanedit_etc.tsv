@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161211U022937
+modify	20161212M020102
 |L:Tsv]
 
 [LTsv_doc|
@@ -67,7 +67,7 @@ header{
    float: right;
  }
  yonmoji_both{
-   float: both;
+   clear: both;
  }
 section,aside,article{
   margin-top: 1rem;
@@ -150,9 +150,25 @@ dt{
   font-weight: bold;
   word-wrap: break-word; word-break: break-all;
 }
+ dl.faqlink > dt{
+  margin-left: 3rem;
+ }
+ dl.inputstroke > dt{
+  width: 15rem;
+  float: left;
+ }
 dd{
   word-wrap: break-word; word-break: break-all;
 }
+ dl.faq > dd{
+  margin-left: 0px;
+ }
+ dl.faqlink > dd{
+  margin-left: 3rem;
+ }
+ dl.inputstroke > dd{
+  margin-left: 15rem;
+ }
 h1{ font-size: 2.0rem; margin: 1rem 0.5rem 0.5rem; }
 h2{ font-size: 1.8rem; margin: 1rem 0.5rem 0.5rem; }
 h3{ font-size: 1.6rem; margin: 1rem 0.5rem 0.5rem; }
@@ -231,7 +247,7 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 
 [<＃kanedit_menus>|
 404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
-index|LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4><？list/LTsv10_faq-0><？list/address-0>
+index|LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>*<？list/LTsv_glyph-5><？list/LTsv10_faq-0><？list/address-0>
 kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5><？list/address-0>
 kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2><？list/kanfont_faq-0><？list/address-0>
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
@@ -242,7 +258,7 @@ LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTs
 
 [<＃kanedit_pages>|
 404	
-index|LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4><？section/LTsv10_faq-0><？section/address-0>
+index|LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>*<？section/LTsv_glyph-5><？section/LTsv10_faq-0><？section/address-0>
 kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5><？section/address-0>
 kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2><？section/kanfont_faq-0><？section/address-0>
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
@@ -1022,10 +1038,10 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 <？DLDT>   dialog_c(dialog_close)<？/DTDD>               ファイルダイアログを閉じる時のコールバック関数。<？/DD/DL>
 |<＃contents/LTsv_gui-1>]
 
-[<？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>|
+[<？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>*<？section/LTsv_glyph-5>|
 .+\.html?	<section>@E <h3 id="LTsv_glyph-@c"><？title/LTsv_glyph-@c></h3>@E<＃contents/LTsv_glyph-@c>@E</section>@E
 .*	@E<？title/LTsv_glyph-@c>@E@E<＃contents/LTsv_glyph-@c>@E
-|<？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>]
+|<？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>*<？section/LTsv_glyph-5>]
 
 [<＃contents/LTsv_glyph-0>|
 <？P> 「<？https/LTsv_glyph.py>」は「canvas」上でフォントグリフを描画するモジュールです。<？VRkeyboard>関連も扱います。<？BR>
@@ -1193,7 +1209,9 @@ entry	<？reversi>の棋譜。
 <？DLDT>  [NFER]+[ぬ〜ろ￥]<？/DTDD>                   NFER鍵盤切替。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
 <？DLDT>  [XFER]+[ヌ〜ロ｜]<？/DTDD>                   XFER鍵盤切替。カタカナや大文字など。[XFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
 <？DLDT>  [NFER]+[XFER]or[XFER]+[NFER]<？/DTDD>       α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。<？BR>
-                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<？BR><？/DD/DL>
+                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<？BR>
+                                     単漢字辞書の変更は「<？index/LTsv_glyph-5>」を参考。
+                                     <？/DD/DL>
 <？DLDT>  [KANA]+[NFER]or[NFER]+[KANA]<？/DTDD>       「σ」鍵盤表示。HJKLカーソル移動などに使います。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[XFER]or[XFER]+[KANA]<？/DTDD>       「Σ」鍵盤表示。電卓用途。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]<？/DTDD>           単漢字辞書による字引入力。<？BR><？/DD/DL>
@@ -1340,7 +1358,8 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <？DLDT>  先頭文字が「⑩」<？/DTDD>                   16進数を10進数に変換。<？BR>
                                      「⑩FFFF⇔65535」「⑩0xFFFF⇔65535」「⑩U+ffff⇔65535」。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「英」「名」「音」「訓」「送」「異」「俗」「熙」「簡」「繁」「越」「地」「顔」「鍵」「代」「逆」「非」<？BR><？/DTDD>
-                                     <？DICchar>から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。<？BR><？/DD/DL>
+                                     <？DICchar>から該当する文字あるいは単語等を字引。字引入力の単漢字項目も変更。<？BR>
+                                     単漢字辞書の項目については「<？index/LTsv_glyph-5>」を確認。<？/DD/DL>
 <？DLDT>  先頭文字が「難」<？/DTDD>                   漢字の難読レベル(小学校N学年・常用漢字・人名・地名・幽霊文字など)を設定予定。難読の定義が不明瞭なので放置中。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「活」「漫」「筆」<？/DTDD>       「kant5x5comic」のグリフデータ。「kanfont」で編集可能。「活」では独自形式で圧縮される。<？BR><？/DD/DL>
 <？DLDT>  先頭文字が「幅」<？/DTDD>                   <？DICchar>上のデータの「kan5x5comic」のフォントの幅を表示。全角(1024)の場合省略できる。半角(624)と麻雀牌(824)しか種類はないはず。<？BR><？/DD/DL>
@@ -1353,43 +1372,64 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <？DLDT>  「3927|1250」といった分数のみ<？/DTDD>       約分できない分数に限り少数で表示。「3927|1250⇔3.1416」<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-4>]
 
+[<＃contents/LTsv_glyph-5>|
+<？P> 漢直で使う単漢字辞書の項目について説明。「[Q(た)]」などはキーボード操作で[NFER]+[XFER]or[XFER]+[NFER]の後に押す鍵盤。<？BR>
+ <？VRkeyboard/howto><？BR>
+<？/P>
+<？DLDT>  音:[2(ふ)]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。「音醤⇔ショウ/ジャン」「音銅⇔コッパー」。<？/DD/DL>
+<？DLDT>  訓:[3(あ)]<？/DTDD>  漢字の訓読みを字引。原子記号だと音訓両方を字引。「訓醤⇔ひしお」「訓銅⇔ドウ/あかがね」。<？/DD/DL>
+<？DLDT>  送:[4(う)]<？/DTDD>  漢字の送り仮名を字引。「送醤⇔醤油/豆板醤/醤酢」「送止⇔制止/差し止める/急に止まる/行き止まり/滑り止め/思い止まる/鳴り止む」。<？/DD/DL>
+<？DLDT>  異:[5(え)]<？/DTDD>  異体字や俗字や略字や通用や大字などを表示。「異壷⇔壺」「異青⇔靑」「異鼠⇔鼡」「異觜⇔嘴」「異七⇔漆」「異百⇔陌」「異晦⇔卅」。<？/DD/DL>
+<？DLDT>  俗:[6(お)]<？/DTDD>  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。「俗金⇔Au」「俗円⇔丸/￥/JPY」「俗鯖⇔server」「俗𡚴⇔妛→𡚴/木通/通草」。<？/DD/DL>
+<？DLDT>  簡:[7(や)]<？/DTDD>  中国の簡体字を字引。「簡氣⇔气」「簡範⇔笵」。<？/DD/DL>
+<？DLDT>  繁:[8(ゆ)]<？/DTDD>  中国や台湾の繁体字を字引。「繁气⇔氣」「繁笵⇔範」。<？/DD/DL>
+<？DLDT>  越:[9(よ)]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。「越頗⇔𬖾」<？/DD/DL>
+<？DLDT>  地:[0(わ)]<？/DTDD>  国名や地名や名字などを字引。「国日⇔日本」「国米⇔亜米利加」「国英⇔英吉利西」「国中⇔中華人民共和国」「国台⇔台湾」「国香⇔香港」「国澳⇔澳門」「国蒙⇔蒙古」「国蔵⇔西蔵」「国越⇔越南」。<？/DD/DL>
+<？DLDT>  逆:[-(ほ)]<？/DTDD>  反対の意味の漢字を字引(論理学等の逆ではない)。「逆暖⇔涼」「逆温⇔冷」。半角ｶﾀｶﾅの入力にも流用。<？/DD/DL>
+<？DLDT>  非:[^(へ)]<？/DTDD>  似て非なる意味の漢字を字引。「非描⇔書」("絵を描く"と"文章を書く"の違い)「非喩⇔例」("比喩表現"と"実例"の違い)「非熔⇔溶」("液状に熔解"と"液体へ溶融"の違い)。<？/DD/DL>
+<？DLDT>  英:[Q(た)]<？/DTDD>  英単語を字引(和英)。「英金⇔gold」「英円⇔circle/round/yen」「英鯖⇔mackerel」。<？/DD/DL>
+<？DLDT>  顔:[W(て)]<？/DTDD>  顔文字や１行AAや絵文字を字引。「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。<？/DD/DL>
+<？DLDT>  代:[;(れ])]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。一部入力補佐としても。「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」。<？/DD/DL>
+<？DLDT>  鍵:[:(け)]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。
+|<＃contents/LTsv_glyph-5>]
+
 [<？section/LTsv10_faq-0>|
 .+\.html?	<section>@E <h3 id="LTsv10_faq-@c"><？title/LTsv10_faq-@c></h3>@E<＃contents/LTsv10_faq-@c>@E</section>@E
 .*	@E<？title/LTsv10_faq-@c>@E@E<＃contents/LTsv10_faq-@c>@E
 |<？section/LTsv10_faq-0>]
 
 [<＃contents/LTsv10_faq-0>|
-<？DLDT> Ｑ．「<？https/LTsv_glyph.py>」などをダブルクリックしても起動しない。<？/DTDD>
+<？DLDTfaq> Ｑ．「<？https/LTsv_glyph.py>」などをダブルクリックしても起動しない。<？/DTDD>
  Ａ．Linuxの場合パーミッションで実行許可されてないのかも。もしWindowsの話でPythonをインストールしてなければ動くはずがないのでPythonをインストール。<？BR>
      Wineで「python-3.4.4.msi」が動かないって話なら「<？https/python3install.sh>」を参考。「msiexec /i python-3.4.4.msi」の様なコマンドが必要。<？BR>
 <？/DD/DL>
 <？https/LTsv10_faq:python.org>
 <？https/LTsv10_faq:python344>
-<？DLDT> Ｑ．Pythonはもう3.5系出てますよね？<？/DTDD>
+<？DLDTfaq> Ｑ．Pythonはもう3.5系出てますよね？<？/DTDD>
  Ａ．「python-3.5.1.exe」を「wine-portable-1.7.18-1-p4.tar.gz」で試した時エラーになったので放置。<？BR>
      「Visual C++ 2015」のランタイムをインストールすれば動くかもだけどランタイム自体をwineにインストール方法とか未確認。<？BR>
 <？/DD/DL>
 <？https/LTsv10_faq:python352>
 <？https/LTsv10_faq:pythonMSVCRTQiita>
 <？https/LTsv10_faq:PortableWine>
-<？DLDT> Ｑ．文字表示が複数あるというか、「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
+<？DLDTfaq> Ｑ．文字表示が複数あるというか、「LTsv_draw_font(<？https08:LTsv_gui.py>)」系と「LTsv_draw_glyphs(<？https09:LTsv_glyph.py>)」系の違いはなんですか。<？/DTDD>
  Ａ．フォント表示とグリフ描画の違いです。<？BR>
     「Tkinter」が<？CP932>を越える3バイト以上のUTF-8文字を扱えないので独自にグリフ描画モジュール用意しました。<？BR>
     「用意しました」と言いましたが一部の文字しか用意できてないので注意。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．ボタンなどのGUIにグリフ「kan5x5comic」を用いるにはどうすればいいですか。<？/DTDD>
+<？DLDTfaq> Ｑ．ボタンなどのGUIにグリフ「kan5x5comic」を用いるにはどうすればいいですか。<？/DTDD>
  Ａ．GUIのボタン等に直接グリフは使えません。「kanfont_drawGTK_glyph」「kanfont_drawTkinter_glyph」などは「canvas」に描画する命令です。<？BR>
      GUIでフォントを表示する場合はグリフ「kan5x5.svg」かwebフォント「kan5x5comic.woff」をOSフォント「kan5x5comic.ttf」に変換してフォントをインストール。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．<？VRkeyboard>ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？<？/DTDD>
+<？DLDTfaq> Ｑ．<？VRkeyboard>ですけど、なんでマウスボタンを押下(クリック)ではなく押上のタイミングで文字入力なんですか？<？/DTDD>
  Ａ．将来的に入力デバイスはタッチパネルに収束すると判断しました。タッチパネルではマウスカーソルの概念自体が希薄になると思います。<？BR>
      ペンタブレットだとペン先を少し浮かした状態でカーソル移動とかあるけど、タッチパネルには指先を少し浮かした状態とか存在しないはず。<？BR>
      文字入力タップ操作はＮＸ等にカーソルをそらすことで入力キャンセルが可能です。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．<？VRcalc>はなんで中途半端にVimっぽいHJKL移動なんですか？<？/DTDD>
+<？DLDTfaq> Ｑ．<？VRcalc>はなんで中途半端にVimっぽいHJKL移動なんですか？<？/DTDD>
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<？BR><？/DD/DL>
 
-<？DLDT> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
+<？DLDTfaq> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>
      「LTsv/kanpickle.bin」を削除してから「<？https/kanmap.py>」を起動することで初期化できます。<？BR>
     「kanedit」「kanfont」「kanmap」「kanzip」についてはモジュールのドキュメントではなくソフトのドキュメントで扱います。<？BR><？/DD/DL>
@@ -1615,130 +1655,727 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5>]
 
 [<＃contents/kanedit_faq-0>|
-<？DLDT> Ｑ．表示されない文字が多々あるのですが。<？/DTDD>
+<？DLDTfaq> Ｑ．表示されない文字が多々あるのですが。<？/DTDD>
  Ａ．グリフが不足しています。「kanfont」でグリフを作成していく事で表示できる文字を増やしていく予定です。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．普通にフォント使えばよかったんじゃないですか？<？/DTDD>
+<？DLDTfaq> Ｑ．普通にフォント使えばよかったんじゃないですか？<？/DTDD>
  Ａ．「Tkinter」は<？CP932>を越える文字を扱えない問題があったので、独自にフォントモジュールを作る必要に迫られました。<？BR>
 <？/DD/DL>
-<？DLDT> <？DICzip>が見つからない。<？/DTDD>
+<？DLDTfaq> Ｑ．<？DICzip>が見つからない。<？/DTDD>
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。<？BR>
-     詳細は「<？index/kanzip_usage-0>」を参考。<？BR>
-<？/DD/DL>
+     詳細は「<？index/kanzip_usage-0>」を参考。<？BR><？/DD/DL>
 |<＃contents/kanedit_faq-0>]
 
 [<＃contents/kanedit_faq-1>|
 <？P> 漢字を音読み訓読みなど理由を付けて<？VRkeyboard>の[ぬ〜ろ][ヌ〜ロ]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<？BR>
- そこで入りきらない文字を「相席」というレトリックで分散しています。<？BR><？/P>
-
-<？DLDT>  「[5(え)]」<？/DTDD>   記号XOR(⊕)を相席。<？/DD/DL>
-<？DLDT>  「[5(エ)]」<？/DTDD>   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。<？/DD/DL>
-  「[7(や)]」   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。
-  「[7(ヤ)]」   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。
-  「[8(ゆ)]」   ユーロ記号(€)を相席。
-  「[8(ユ)]」   [D(し)]に入り切らなかった「しゅ」読みの漢字を相席。
-  「[9(ヨ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
-  「[0(ワ)]」   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。
-  「[^(へ)]」   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。
-  「[^(ヘ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。
-  「[W(テ)]」   [Q(た)]に入り切らなかった「た」読みの漢字を相席。
-  「[Y(ん)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
-  「[Y(ン)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。
-  「[U(な)]」   [T(か)]に入り切らなかった「か」読みの漢字を相席。性別記号(♂♀)と虹を表す漢字(虹霓蜺蝃螮蝀)を相席。
-  「[I(に)]」   [U(な)]に入り切らなかった「な」読みの漢字を相席。
-  「[I(ニ)]」   [S(と)]に入り切らなかった「と」読みの漢字を相席。
-  「[O(ら)]」   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。
-  「[O(ラ)]」   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。
-  「[P(せ)]」   摂氏セルシウス度(°℃)を相席。
-  「[@(｀)]」   U+ff02の方のダブルクォート(＂)を相席。
-  「[{(ぷ)]」   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。
-  「[{(プ)]」   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。
-  「[D(し)]」   短剣符(†)と段落記号(¶)を相席。
-  「[D(シ)]」   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。
-  「[H(ク)]」   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
-  「[K(ノ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。
-  「[L(リ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。
-  「[;(れ)]」　 記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。
-  「[;(レ)]」   [G(き)]に入り切らなかった「き」読みの漢字を相席。
-  「[}(む)]」   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。
-  「[}(ム)]」   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。
-  「[N(ミ)]」   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。
-  「[M(モ)]」   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。
-  「[,(ね)]」   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。
-  「[,(ネ)]」   [V(ひ)]に入り切らなかった「ひ」読みの漢字を相席。著作権表示記号(©®℗™℠)の記号を相席
-  「[.(る)]」   罫線(├┼┤┣╋┫)と記号(☆★○●◇◆□■△▲▽▼◎※)と郵便マーク(〒)を相席。
-  「[.(ル)]」   [B(こ)]に入り切らなかった「こ」読みの漢字を相席。ルーブル記号(₽)を相席。
-  「[?(め)]」   [.(る)]に入り切らなかった「る」読みの漢字を相席。
-  「[?(メ)]」   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。
-  「[_(ろ)]」   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。
-  「[_(ロ)]」   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。
-  「[A(α)]」   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。
-  「[A(Α)]」   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。
-  「[B(β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[B(Β)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[G(γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[G(Γ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[D(δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[D(Δ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[E(ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[E(Ε)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[Z(ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[Z(Ζ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[H(η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[H(Η)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[U(θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[U(Θ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[I(ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[I(Ι)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。
-  「[K(κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[K(Κ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[L(λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[L(Λ)]」   未整理：難読漢字(難読名字とか難読地名など)の相席予定。
-  「[M(μ)]」   康熙部首専用コード(⼀〜⼮)。
-  「[M(Μ)]」   康熙部首専用コード(⼯〜⽝)。
-  「[J(ξ)]」   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。
-  「[J(Ξ)]」   康熙部首コード以外の偏旁冠脚構垂繞(冫〜氺)。
-  「[O(ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(灬〜辶)。
-  「[O(Ο)]」   康熙部首コード以外の偏旁冠脚構垂繞(阝〜龠)。漢字が３つ(㐂厵刕驫垚畾矗飍猋孨芔鑫卉惢劦众姦)の仮置き。
-  「[P(π)]」   元素の中国語(氫〜銀)。
-  「[P(Π)]」   元素の中国語(鎘〜鈽)。
-  「[R(ρ)]」   元素の中国語(鋂〜鎶)。
-  「[R(Ρ)]」   「なんだかとっても！いいかんじ」の「閄」など。
-  「[S(σ)]」   「HJKL」といったカーソル移動や「ZXCVS」といったショートカットなどのキーバインド。斜め矢印など一部絵文字(✖🎮↖↗↘↙♠♥♦♣)を相席。
-  「[S(Σ)]」   分数電卓(＋+－-×*÷/#|)。10進数16進数変換(⑩⑯)も相席。「平片半全大小清濁」といった文字置換、時刻取得「今干」コマンドも相席。
-  「[T(τ)]」   Dvorak配列風。
-  「[T(Τ)]」   Dvorak配列風。
-  「[Y(υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
-  「[Y(Υ)]」   xvkbd-germanアレンジ(QWERTZ配列風)。
-  「[F(φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
-  「[F(Φ)]」   xvkbd-french1アレンジ(AZERTY配列風)。
-  「[X(χ)]」   xvkbd-RussianALTアレンジ。
-  「[X(Χ)]」   xvkbd-RussianALTアレンジ。
-  「[C(ψ)]」   xvkbd-latin1ALTアレンジ。
-  「[C(Ψ)]」   xvkbd-latin1ALTアレンジ。
-  「[V(ω)]」   xvkbd-french2ALTアレンジ。
-  「[V(Ω)]」   xvkbd-french2ALTアレンジ。
-  「[.(○)]」   base64風6点字(一般的な点字とは異なります)。「a⠁ b⠂ c⠃ d⠄ e⠅ f⠆ g⠇ h⠈ i⠉ j⠊ k⠋ l⠌ m⠍ n⠎ o⠏ p⠐ q⠑ r⠒ s⠓ t⠔ u⠕ v⠖ w⠗ x⠘ y⠙ z⠚ 0⠵ 1⠶ 2⠷ 3⠸ 4⠹ 5⠺ 6⠻ 7⠼ 8⠽ 9⠾ .⠿ _⠀」。
-  「[.(●)]」   base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。
-  「[/(△)]」   UTF-8点字(⡀〜⡮)。
-  「[/(▲)]」   UTF-8点字(⡰〜⢞)。
-  「[_(□)]」   UTF-8点字(⢠〜⣎)。
-  「[_(■)]」   UTF-8点字(⣐〜⣾)。
-
-
+ そこで入りきらない文字を「相席」というレトリックで分散しています。<？BR>
+<？/P>
+<？DLDTfaq> Ｑ．一ヶ所系相席の「[5(え)]」みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．「[5(え)]」は[NFER]+[5]、「[5(エ)]」は[XFER]+[5]です。ひらがながNFER、カタカナがXFERです。<？BR>
+     <？VRkeyboard/howto><？BR>
+<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」<？/DTDD>   記号XOR(⊕)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[5(エ)]」<？/DTDD>   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[7(や)]」<？/DTDD>   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」<？/DTDD>   [D(し)]に入り切らなかった'しゃ'読みの漢字を相席。記号(￢￣∈∋⊆⊇⊂⊃∪∩)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[8(ゆ)]」<？/DTDD>   ユーロ記号(€)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」<？/DTDD>   [D(し)]に入り切らなかった「しゅ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」<？/DTDD>   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」<？/DTDD>   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[^(へ)]」<？/DTDD>   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[^(ヘ)]」<？/DTDD>   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[W(テ)]」<？/DTDD>   [Q(た)]に入り切らなかった「た」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」<？/DTDD>   [T(か)]に入り切らなかった「か」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」<？/DTDD>   [T(か)]に入り切らなかった「か」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」<？/DTDD>   [T(か)]に入り切らなかった「か」読みの漢字を相席。性別記号(♂♀)と虹を表す漢字(虹霓蜺蝃螮蝀)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」<？/DTDD>   [U(な)]に入り切らなかった「な」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」<？/DTDD>   [S(と)]に入り切らなかった「と」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」<？/DTDD>   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」<？/DTDD>   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」<？/DTDD>   摂氏セルシウス度(°℃)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[@(｀)]」<？/DTDD>   U+ff02の方のダブルクォート(＂)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[{(ぷ)]」<？/DTDD>   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[{(プ)]」<？/DTDD>   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」<？/DTDD>   短剣符(†)と段落記号(¶)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」<？/DTDD>   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」<？/DTDD>   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」<？/DTDD>   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」<？/DTDD>   [F(は)]に入り切らなかった「は」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」<？/DTDD>   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」<？/DTDD>   [G(き)]に入り切らなかった「き」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[}(む)]」<？/DTDD>   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[}(ム)]」<？/DTDD>   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」<？/DTDD>   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」<？/DTDD>   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[,(ね)]」<？/DTDD>   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」<？/DTDD>   [V(ひ)]に入り切らなかった「ひ」読みの漢字を相席。著作権表示記号(©®℗™℠)の記号を相席<？/DD/DL>
+<？DLDTinputstroke>  「[.(る)]」<？/DTDD>   罫線(├┼┤┣╋┫)と記号(☆★○●◇◆□■△▲▽▼◎※)と郵便マーク(〒)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」<？/DTDD>   [B(こ)]に入り切らなかった「こ」読みの漢字を相席。ルーブル記号(₽)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[?(め)]」<？/DTDD>   [.(る)]に入り切らなかった「る」読みの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[?(メ)]」<？/DTDD>   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[_(ろ)]」<？/DTDD>   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[_(ロ)]」<？/DTDD>   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」<？/DTDD>   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」<？/DTDD>   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[G(Γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[D(δ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[D(Δ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[E(ε)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[E(Ε)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[Z(ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[Z(Ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[H(η)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[H(Η)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[U(θ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[U(Θ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[I(ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[I(Ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[K(κ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[K(Κ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[L(λ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[L(Λ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[M(μ)]」<？/DTDD>   康熙部首専用コード(⼀〜⼮)。<？/DD/DL>
+<？DLDTinputstroke>  「[M(Μ)]」<？/DTDD>   康熙部首専用コード(⼯〜⽝)。<？/DD/DL>
+<？DLDTinputstroke>  「[J(ξ)]」<？/DTDD>   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[J(Ξ)]」<？/DTDD>   康熙部首コード以外の偏旁冠脚構垂繞(冫〜氺)。<？/DD/DL>
+<？DLDTinputstroke>  「[O(ο)]」<？/DTDD>   康熙部首コード以外の偏旁冠脚構垂繞(灬〜辶)。<？/DD/DL>
+<？DLDTinputstroke>  「[O(Ο)]」<？/DTDD>   康熙部首コード以外の偏旁冠脚構垂繞(阝〜龠)。漢字が３つ(㐂厵刕驫垚畾矗飍猋孨芔鑫卉惢劦众姦)の仮置き。<？/DD/DL>
+<？DLDTinputstroke>  「[P(π)]」<？/DTDD>   元素の中国語(氫〜銀)。<？/DD/DL>
+<？DLDTinputstroke>  「[P(Π)]」<？/DTDD>   元素の中国語(鎘〜鈽)。<？/DD/DL>
+<？DLDTinputstroke>  「[R(ρ)]」<？/DTDD>   元素の中国語(鋂〜鎶)。<？/DD/DL>
+<？DLDTinputstroke>  「[R(Ρ)]」<？/DTDD>   「なんだかとっても！いいかんじ」の「閄」など。<？/DD/DL>
+<？DLDTinputstroke>  「[S(σ)]」<？/DTDD>   「HJKL」といったカーソル移動や「ZXCVS」といったショートカットなどのキーバインド。斜め矢印など一部絵文字(✖🎮↖↗↘↙♠♥♦♣)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[S(Σ)]」<？/DTDD>   分数電卓(＋+－-×*÷/#|)。10進数16進数変換(⑩⑯)も相席。「平片半全大小清濁」といった文字置換、時刻取得「今干」コマンドも相席。<？/DD/DL>
+<？DLDTinputstroke>  「[T(τ)]」<？/DTDD>   Dvorak配列風。<？/DD/DL>
+<？DLDTinputstroke>  「[T(Τ)]」<？/DTDD>   Dvorak配列風。<？/DD/DL>
+<？DLDTinputstroke>  「[Y(υ)]」<？/DTDD>   xvkbd-germanアレンジ(QWERTZ配列風)。<？/DD/DL>
+<？DLDTinputstroke>  「[Y(Υ)]」<？/DTDD>   xvkbd-germanアレンジ(QWERTZ配列風)。<？/DD/DL>
+<？DLDTinputstroke>  「[F(φ)]」<？/DTDD>   xvkbd-french1アレンジ(AZERTY配列風)。<？/DD/DL>
+<？DLDTinputstroke>  「[F(Φ)]」<？/DTDD>   xvkbd-french1アレンジ(AZERTY配列風)。<？/DD/DL>
+<？DLDTinputstroke>  「[X(χ)]」<？/DTDD>   xvkbd-RussianALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[X(Χ)]」<？/DTDD>   xvkbd-RussianALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[C(ψ)]」<？/DTDD>   xvkbd-latin1ALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[C(Ψ)]」<？/DTDD>   xvkbd-latin1ALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[V(ω)]」<？/DTDD>   xvkbd-french2ALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[V(Ω)]」<？/DTDD>   xvkbd-french2ALTアレンジ。<？/DD/DL>
+<？DLDTinputstroke>  「[.(○)]」<？/DTDD>   base64風6点字(一般的な点字とは異なります)。「a⠁ b⠂ c⠃ d⠄ e⠅ f⠆ g⠇ h⠈ i⠉ j⠊ k⠋ l⠌ m⠍ n⠎ o⠏ p⠐ q⠑ r⠒ s⠓ t⠔ u⠕ v⠖ w⠗ x⠘ y⠙ z⠚ 0⠵ 1⠶ 2⠷ 3⠸ 4⠹ 5⠺ 6⠻ 7⠼ 8⠽ 9⠾ .⠿ _⠀」。<？/DD/DL>
+<？DLDTinputstroke>  「[.(●)]」<？/DTDD>   base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。<？BR>
+「⑧⓪」コマンドの詳細は「<？index/LTsv_glyph-4>」を参照。<？/DD/DL>
+<？DLDTinputstroke>  「[/(△)]」<？/DTDD>   UTF-8点字(⡀〜⡮)。<？/DD/DL>
+<？DLDTinputstroke>  「[/(▲)]」<？/DTDD>   UTF-8点字(⡰〜⢞)。<？/DD/DL>
+<？DLDTinputstroke>  「[_(□)]」<？/DTDD>   UTF-8点字(⢠〜⣎)。<？/DD/DL>
+<？DLDTinputstroke>  「[_(■)]」<？/DTDD>   UTF-8点字(⣐〜⣾)。<？/DD/DL>
 |<＃contents/kanedit_faq-1>]
 
 [<＃contents/kanedit_faq-2>|
-<？P> 音読み訓読みの限界を飛び越えるため熟語は隣接してると便利で覚えやすいという理屈で飛び地します。<？BR><？/P>
+<？P> 熟語は隣接してると便利で覚えやすいという理屈で音読み訓読みの枠を飛び飛び地します。<？BR>
+<？/P>
+<？DLDTfaq> Ｑ．熟語隣接系相席の「茯苓(ぶくりょう)」の[^(へ)][^(ヘ)]みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．[NFER]+[[2(ふ)]]、[^(へ)]、[NFER]、[^(ヘ)]の順番です。ひらがながNFER、カタカナがXFERです。<？BR>
+     <？VRkeyboard/howto><？BR>
+    フォントによってはひらがなの「へ」とカタカナの「ヘ」の区別が見辛いかと思います。「kan5x5comic.ttf」なら区別が付くはずです。<？BR>
+    フォント「kan5x5comic.ttf」を用意する場合は「<？index/kanfont_faq-0>」を参考。<？BR>
+<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[^(へ)][^(ヘ)]<？/DTDD>                「茯苓(ぶくりょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[J(ま)][K(の)]<？/DTDD>                「福祉(ふくし)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[G(き)][G(キ)]<？/DTDD>                「蕗薹(ふきのとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[}(む)][}(ム)]<？/DTDD>                「踏鞴(たたら)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[Z(つ)][X(さ)]<？/DTDD>                「仏陀(ブッダ)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[V(ひ)][B(こ)]<？/DTDD>                「俯瞰(ふかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[3(ア)][3(あ)]<？/DTDD>                「瘋癲(ふうてん/フーテン)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[0(ワ)][-(ホ)]<？/DTDD>                「葡萄(ぶどう)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[A(チ)][S(ト)]<？/DTDD>                「坦懐(たんかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[Y(ン)][U(ナ)]<？/DTDD>                「憤慨(ふんがい)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[I(ニ)][O(ラ)]<？/DTDD>                「芙蓉(ふよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「夫婦(ふうふ)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[J(マ)][K(ノ)]<？/DTDD>                「復讐(ふくしゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[;(レ)][:(ケ)]<？/DTDD>                「含羞(がんしゅう/はにかむ含羞むの"はにか")」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[/(メ)][_(ロ)]<？/DTDD>                「不憫(ふびん)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[9(よ)][9(ヨ)]<？/DTDD>                「曖昧(あいまい)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[-(ほ)][-(ホ)]<？/DTDD>                「躊躇(ちゅうちょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[E(い)][R(す)]<？/DTDD>                「愛宕(あたご)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[Y(ん)][Y(ン)]<？/DTDD>                「漉餡(こしあん)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[Y(ん)][Y(ン)]<？/DTDD>                「憧憬(しょうけい/どうけい)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蘆薈(ろかい/アロエ)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[5(エ)][6(オ)]<？/DTDD>                「伽藍(伽藍とバザールの"がらん")」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「挨拶(あいさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[I(ニ)][O(ラ)]<？/DTDD>                「改竄(かいざん)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[K(ノ)][K(の)]<？/DTDD>                「蒐集(しゅうしゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[:(ケ)][}(ム)]<？/DTDD>                「昂揚(こうよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[C(ソ)][V(ヒ)]<？/DTDD>                「沐浴(もくよく)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[5(え)][6(お)]<？/DTDD>                「隈魚(クマノミ)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[-(ほ)][^(へ)]<？/DTDD>                「禰宜(ねぎ)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[H(く)][J(ま)]<？/DTDD>                「驢馬(ロバ)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[P(せ)][@(゛)]<？/DTDD>                「蝸牛(カタツムリ/でんでんむし)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[@(゛)][{(゜)]<？/DTDD>                「牛蒡(ごぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[S(と)][D(し)]<？/DTDD>                「饂飩(うどん)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[N(み)][M(も)]<？/DTDD>                「海蘊(もずく)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(ウ)]」[8(ユ)][9(ヨ)]<？/DTDD>                「齲蝕(うしょく)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(ウ)]」[S(ト)][D(シ)]<？/DTDD>                「餺飥(ほうとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(ウ)]」[K(ノ)][L(リ)]<？/DTDD>                「杞憂(きゆう)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[8(ゆ)][9(よ)]<？/DTDD>                「盈虧(えいき)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[0(わ)][-(ほ)]<？/DTDD>                「冤枉(えんおう)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[@(゛)][{(゜)]<？/DTDD>                「饗宴(きょうえん)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[L(り)][;(れ)]<？/DTDD>                「襟裳(えりも)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(エ)]」[2(フ)][3(ア)]<？/DTDD>                「聾唖(ろうあ)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(エ)]」[X(サ)][C(ソ)]<？/DTDD>                「麻疹(はしか)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(エ)]」[X(サ)][C(ソ)]<？/DTDD>                「蝦蟇(がまあぶら蝦蟇油の"がま")」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[7(や)][8(ゆ)]<？/DTDD>                「親戚(しんせき)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[W(て)][W(テ)]<？/DTDD>                「男女(だんじょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[E(い)][E(イ)]<？/DTDD>                「甥姪(せいてつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[J(ま)][J(マ)]<？/DTDD>                「橄欖(かんらん/オリーブ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[S(と)][D(し)]<？/DTDD>                「驚愕(きょうがく)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[.(る)][/(め)]<？/DTDD>                「鸚鵡(オウム)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[.(る)][.(ル)]<？/DTDD>                「鸚哥(インコ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「鴛鴦(おしどり)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[Q(タ)][W(テ)]<？/DTDD>                「乙女(おとめ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[R(ス)][R(す)]<？/DTDD>                「雌雄(しゆう)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[@(゛)][{(゜)]<？/DTDD>                「老獪(ろうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[Z(ツ)][Z(つ)]<？/DTDD>                「凹凸(おうとつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[N(み)][M(も)]<？/DTDD>                「錘重(すいじゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[M(モ)][,(ネ)]<？/DTDD>                「重鎮(じゅうちん)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(や)]」[S(と)][S(ト)]<？/DTDD>                「宿泊(しゅくはく)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(や)]」[J(ま)][J(マ)]<？/DTDD>                「山車(だし)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(や)]」[@(゛)][{(゜)]<？/DTDD>                「安易(あんい)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[1(ヌ)][2(フ)]<？/DTDD>                「茉莉(まつり/茉莉花で"ジャスミン")」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[8(ユ)][9(ヨ)]<？/DTDD>                「揶揄(やゆ)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[0(ワ)][-(ホ)]<？/DTDD>                「矩尺(かねじゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[W(テ)][E(イ)]<？/DTDD>                「厩舎(きゅうしゃ)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[T(カ)][Y(ン)]<？/DTDD>                「釈迦(しゃか)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[{(ﾟ )][{(゜)]<？/DTDD>                「辟易(へきえき)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[F(ハ)][G(キ)]<？/DTDD>                「伯爵(はくしゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ゆ)]」[6(お)][7(や)]<？/DTDD>                「綬褒(しじゅほうしょう紫綬褒章などの"じゅほう")」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ゆ)]」[Y(ん)][U(な)]<？/DTDD>                「優雅(ゆうが)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ゆ)]」[F(は)][G(き)]<？/DTDD>                「融雪(ゆうせつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」[2(フ)][3(ア)]<？/DTDD>                「主宰(しゅさい)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」[1(ヌ)][1(ぬ)]<？/DTDD>                「絨緞(じゅうたん)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」[3(ア)][3(あ)]<？/DTDD>                「醇醴(じゅんれい)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」[K(ノ)][L(リ)]<？/DTDD>                「蹂躙(じゅうりん)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ユ)]」[I(ニ)][I(に)]<？/DTDD>                「収穫(しゅうかく)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[2(ふ)][2(フ)]<？/DTDD>                「余瀝(よれき)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[4(う)][5(え)]<？/DTDD>                「涵養(かんよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[6(お)][7(や)]<？/DTDD>                「衒耀(げんよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[@(゛)][@(゛)]<？/DTDD>                「羊羹(ようかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[}(む)][}(ム)]<？/DTDD>                「読書(どくしょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[Z(つ)][X(さ)]<？/DTDD>                「窈窕(ようちょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[C(そ)][C(ソ)]<？/DTDD>                「醞醸(うんじょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[Y(ン)][Y(ん)]<？/DTDD>                「嗚呼(ああ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「醤油(しょうゆ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「情緒(じょうちょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[F(ハ)][G(キ)]<？/DTDD>                「秩序(ちつじょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[J(マ)][K(ノ)]<？/DTDD>                「状況(じょうきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[:(ケ)][}(ム)]<？/DTDD>                「辞書(じしょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[M(モ)][,(ネ)]<？/DTDD>                「食戟(食戟のソーマの"しょくげき")」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[.(ル)][.(る)]<？/DTDD>                「赫夜(かぐやひめ赫夜姫の"かぐや")」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[J(ま)][K(の)]<？/DTDD>                「我儘(わがまま)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[J(ま)][J(マ)]<？/DTDD>                「我侭(わがまま)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[L(り)][;(れ)]<？/DTDD>                「餞別(せんべつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「猥褻(わいせつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[M(も)][,(ね)]<？/DTDD>                「沸騰(ふっとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「就職(しゅうしょく)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」[^(ヘ)][^(へ)]<？/DTDD>                「昭和(しょうわ)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」[Y(ン)][U(ナ)]<？/DTDD>                「芭蕉(ばしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」[:(ケ)][}(ム)]<？/DTDD>                「化粧(けしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[3(あ)][4(う)]<？/DTDD>                「報酬(ほうしゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[7(や)][8(ゆ)]<？/DTDD>                「菠薐(じょうれんそう菠薐草の"ほうれん")」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[0(わ)][0(ワ)]<？/DTDD>                「菩薩(ぼさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[E(い)][E(イ)]<？/DTDD>                「匍匐(ほふくぜんしん匍匐前進の"ほふく")」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[I(に)][O(ら)]<？/DTDD>                「蓬莱(ほうらい)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[@(゛)][{(゜)]<？/DTDD>                「放牧(ほうぼく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[D(し)][F(は)]<？/DTDD>                「彗星(すいせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[J(ま)][J(マ)]<？/DTDD>                「孑孒(ぼうふら)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[;(れ)][;(レ)]<？/DTDD>                「鳳凰(ほうおう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[:(け)][:(ケ)]<？/DTDD>                「冒涜(ぼうとく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[Z(つ)][X(さ)]<？/DTDD>                「捕捉(ほそく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[C(そ)][V(ひ)]<？/DTDD>                「細胞(さいぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[N(み)][N(ミ)]<？/DTDD>                「膀胱(ぼうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[M(も)][M(モ)]<？/DTDD>                「砲熕(ほうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[,(ね)][,(ネ)]<？/DTDD>                「骨董(こっとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[1(ヌ)][2(フ)]<？/DTDD>                「炮烙(ほうらく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[6(お)][7(や)]<？/DTDD>                「朴訥(ぼくとつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[8(ゆ)][9(よ)]<？/DTDD>                「紡績(ぼうせき)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[^(ヘ)][|(￥)]<？/DTDD>                「彷彿(ほうふつ)」※髣髴は「[-(ホ)]」｛異:[^(ヘ)]｝｛異:[|(￥)]｝<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[^(ヘ)][^(へ)]<？/DTDD>                「彷徨(ほうこう/彷徨うの"さまよ")」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[Y(ン)][U(ナ)]<？/DTDD>                「翻弄(ほんろう)」<？/DD/DL>
+<？DLDTinputstroke>  「[^(へ)]」[;(れ)][:(け)]<？/DTDD>                「兵站(へいたん)」<？/DD/DL>
+<？DLDTinputstroke>  「[^(へ)]」[.(る)][/(め)]<？/DTDD>                「弁慶(べんけい)」<？/DD/DL>
+<？DLDTinputstroke>  「[^(ヘ)]」[D(シ)][F(ハ)]<？/DTDD>                「弾劾(だんがいさいばん弾劾裁判の"だんがい")」<？/DD/DL>
+<？DLDTinputstroke>  「[^(ヘ)]」[.(ル)][/(メ)]<？/DTDD>                「瀦溜(ちょりゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」[2(ふ)][3(あ)]<？/DTDD>                「瓢箪(ひょうたん)」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」[3(あ)][4(う)]<？/DTDD>                「箪笥(たんす)」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」[-(ほ)][^(へ)]<？/DTDD>                「田圃(たんぼ)」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」[C(そ)][C(ソ)]<？/DTDD>                「胼胝(たこ/べんち)」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(タ)]」<？BR>[2(フ)][3(ア)][4(ウ)]<？/DTDD>         「卓袱台(ちゃぶだい)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[Q(タ)]」[Y(ン)][U(ナ)]<？/DTDD>                「団欒(だんらん)」<？/DD/DL>
+<？DLDTinputstroke>  「[W(て)]」[8(ゆ)][9(よ)]<？/DTDD>                「停電(ていでん)」<？/DD/DL>
+<？DLDTinputstroke>  「[W(テ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「嘱託(しょくたく)」<？/DD/DL>
+<？DLDTinputstroke>  「[W(テ)]」[B(コ)][N(ミ)]<？/DTDD>                「槓杆(こうかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[W(テ)]」[,(ネ)][,(ね)]<？/DTDD>                「探偵(たんてい)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」[D(し)][F(は)]<？/DTDD>                「石鹸(せっけん)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」[V(ひ)][B(こ)]<？/DTDD>                「医院(いいん)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」[3(ア)][4(ウ)]<？/DTDD>                「遺憾(いかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」[;(レ)][:(ケ)]<？/DTDD>                「威嚇(いかく)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(す)]」[U(な)][I(に)]<？/DTDD>                「砂漠(さばく)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(す)]」[O(ら)][P(せ)]<？/DTDD>                「推敲(すいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(す)]」[A(ち)][S(と)]<？/DTDD>                「垂綸(すいりん)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(す)]」[J(ま)][J(マ)]<？/DTDD>                「韈雀(エナガ)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(す)]」[V(ひ)][V(ヒ)]<？/DTDD>                「昏睡(こんすい)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(ス)]」[0(ワ)][-(ホ)]<？/DTDD>                「諏訪(すわ)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(ス)]」[7(ヤ)][8(ユ)]<？/DTDD>                「炭坑(たんこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(ス)]」[O(ラ)][P(セ)]<？/DTDD>                「賚錫(らいせき)」<？/DD/DL>
+<？DLDTinputstroke>  「[R(ス)]」[S(ト)][D(シ)]<？/DTDD>                「鮒鮨(ふなずし)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(か)]」[V(ひ)][V(ヒ)]<？/DTDD>                「瑕疵(かし)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(か)]」[9(よ)][0(わ)]<？/DTDD>                「河川(かせん)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(か)]」[_(ろ)][_(ロ)]<？/DTDD>                「咖喱(カレー)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(カ)]」[A(オ)][S(ヤ)]<？/DTDD>                「薫蕕(くんゆう)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(カ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「風貌(ふうぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(カ)]」[A(チ)][S(ト)]<？/DTDD>                「価格(かかく)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[1(ぬ)][2(ふ)]<？/DTDD>                「萱葺(かやぶき)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[-(ほ)][^(へ)]<？/DTDD>                「解剖(かいぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[R(す)][T(か)]<？/DTDD>                「敦賀(するが)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[K(の)][L(り)]<？/DTDD>                「玄関(げんかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[F(は)][F(ハ)]<？/DTDD>                「見做(みなす見做すの"みな")」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[C(そ)][V(ひ)]<？/DTDD>                「画鋲(がびょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[/(め)][_(ろ)]<？/DTDD>                「駕籠(かご)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」[3(ア)][4(ウ)]<？/DTDD>                「灌漑(かんがい)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」[9(ヨ)][0(ワ)]<？/DTDD>                「乾杯(かんぱい)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」[Z(ツ)][X(サ)]<？/DTDD>                「葛飾(かつしか)」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」[.(る)][/(め)]<？/DTDD>                「柑橘(かんきつるい柑橘類の"かんきつ")」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」[6(お)][6(オ)]<？/DTDD>                「直弼(いいなおすけ井伊直弼の"なおすけ")」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」[_(ろ)][_(ロ)]<？/DTDD>                「尚且(なおかつ尚且つの"なおか")」<？/DD/DL>
+<？DLDTinputstroke>  「[U(ナ)]」<？BR>[7(ヤ)][8(ユ)][9(ヨ)]<？/DTDD>         「柬埔寨(カンボジア)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[U(ナ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「癇癪(かんしゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[U(ナ)]」[H(ク)][J(マ)]<？/DTDD>                「恫喝(どうかつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[U(ナ)]」[J(マ)][K(ノ)]<？/DTDD>                「喝采(かっさい)」<？/DD/DL>
+<？DLDTinputstroke>  「[U(ナ)]」[/(メ)][_(ロ)]<？/DTDD>                「苟且(かりそめ/いんじゅんこうしょ因循苟且の"こうしょ")」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[3(あ)][4(う)]<？/DTDD>                「虹霓(こうげい)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[7(や)][8(ゆ)]<？/DTDD>                「螮蝀(たいとうせん螮蝀泉の"たいとう")」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[-(ほ)][^(へ)]<？/DTDD>                「哺乳(哺乳類ほにゅうるいの"ほにゅう")」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[O(ら)][P(せ)]<？/DTDD>                「辣韮(らっきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[A(ち)][S(と)]<？/DTDD>                「廿日(はつか)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[J(ま)][K(の)]<？/DTDD>                「任侠(にんきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」<？BR>[X(さ)][C(そ)][V(ひ)][B(こ)]<？/DTDD>  「弖爾乎波(てにをは)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[I(に)]」[/(め)][_(ろ)]<？/DTDD>                「妊娠(にんしん)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[1(ヌ)][2(フ)]<？/DTDD>                「貴賎(きせん)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[R(ス)][T(カ)]<？/DTDD>                「刁斗(ちょうと)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[Z(ツ)][X(サ)]<？/DTDD>                「窰洞(ようどう)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[X(サ)][C(ソ)]<？/DTDD>                「洞窟(どうくつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[,(ネ)][.(ル)]<？/DTDD>                「淘汰(とうた)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[-(ほ)][^(へ)]<？/DTDD>                「駱駝(ラクダ)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[E(い)][R(す)]<？/DTDD>                「雷汞(らいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[B(こ)][N(み)]<？/DTDD>                「杮落(こけらおとし杮落しの"こけらおと")」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」<？BR>[A(ち)][S(と)][D(し)]<？/DTDD>         「曼荼羅(まんだら)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[O(ら)]」[D(し)][F(は)]<？/DTDD>                「羅甸(ラテン)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[;(れ)][;(け)]<？/DTDD>                「攪乱(ないぶんぴかくらんぶっしつ内分泌攪乱物質の"かくらん")」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[;(れ)][;(レ)]<？/DTDD>                「攪拌(かくはん)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[X(さ)][C(そ)]<？/DTDD>                「氾濫(はんらん)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ら)]」[C(そ)][V(ひ)]<？/DTDD>                「濫觴(らんしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[K(ノ)][L(リ)]<？/DTDD>                「脂肪(しぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[X(サ)][C(ソ)]<？/DTDD>                「疢疾(ちんしつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[W(テ)][E(イ)]<？/DTDD>                「身体(しんたい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[2(ふ)][3(あ)]<？/DTDD>                「節榑(ふしくれ)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[2(ふ)][3(あ)]<？/DTDD>                「頽勢(たいせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[H(く)][J(ま)]<？/DTDD>                「逼迫(ひっぱく)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[K(の)][L(り)]<？/DTDD>                「凱旋(がいせん)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[X(さ)][C(そ)]<？/DTDD>                「先制(せんせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[L(れ)][L(レ)]<？/DTDD>                「鶺鴒(セキレイ)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[V(ひ)][B(こ)]<？/DTDD>                「是正(ぜせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[1(ヌ)][2(フ)]<？/DTDD>                「征服(せいふく)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(せ)]」[3(ア)][4(ウ)]<？/DTDD>                「善哉(ぜんざい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[6(オ)][7(ヤ)]<？/DTDD>                「世代(せだい)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[0(ワ)][-(ホ)]<？/DTDD>                「忽然(こつぜん)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[J(マ)][K(ノ)]<？/DTDD>                「狭窄(きょうさく)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[}(ム)][}(む)]<？/DTDD>                「呵責(かしゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[,(ネ)][.(ル)]<？/DTDD>                「脊椎(せきつい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[4(う)][5(え)]<？/DTDD>                「中庸(ちゅうよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[7(や)][8(ゆ)]<？/DTDD>                「宇宙(うちゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[S(と)][D(し)]<？/DTDD>                「撞着(どうちゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[G(き)][H(く)]<？/DTDD>                「貯蓄(ちょちく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(チ)]」[X(さ)][X(サ)]<？/DTDD>                「著莪(シャガ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[/(め)][_(ろ)]<？/DTDD>                「丁寧(ていねい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(チ)]」[D(シ)][D(し)]<？/DTDD>                「纔着(さいじゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(チ)]」<？BR>[N(ミ)][M(モ)][,(ネ)][.(ル)]<？/DTDD>  「魑魅魍魎(ちみもうりょう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[S(と)]」[6(お)][7(や)]<？/DTDD>                「遠投(えんとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[8(ゆ)][8(ユ)]<？/DTDD>                「螟蛉(めいれい)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[9(よ)][0(わ)]<？/DTDD>                「豊穣(ほうじょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[Q(た)][W(て)]<？/DTDD>                「土壌(どじょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[Q(れ)][W(レ)]<？/DTDD>                「恍惚(こうこつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(ト)]」[7(ヤ)][8(ユ)]<？/DTDD>                「蜻蛉(とんぼ)」<？/DD/DL>
+<？DLDTinputstroke>  「[S(ト)]」[X(サ)][C(ソ)]<？/DTDD>                「咄嗟(とっさ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[Q(た)][W(て)]<？/DTDD>                「下支(したざさえ下支えの"したざさ")」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[@(゛)][{(゜)]<？/DTDD>                「資質(ししつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[A(ち)][A(チ)]<？/DTDD>                「刺繍(ししゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[;(れ)][;(レ)]<？/DTDD>                「痔瘻(じろう)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[}(む)][}(ム)]<？/DTDD>                「嫉妬(しっと)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[B(こ)][N(み)]<？/DTDD>                「仕事(しごと)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[N(み)][M(も)]<？/DTDD>                「事件(じけん)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[3(ア)][4(ウ)]<？/DTDD>                「諮詢(しじゅん)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「果実(かじつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「実践(じっせん)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[/(メ)][_(ロ)]<？/DTDD>                「葛城(かつらぎ)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[1(ぬ)][2(ふ)]<？/DTDD>                「花魁(おいらん)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[@(゛)][{(゜)]<？/DTDD>                「計測(けいそく)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[R(す)][R(ス)]<？/DTDD>                「蓮托(いちれんたくしょう一蓮托生の"たくしょう")」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[B(こ)][N(み)]<？/DTDD>                「函渠(かんきょ/ボックスカルバート)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[/(め)][_(ろ)]<？/DTDD>                「初詣(はつもうで)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[M(も)][,(ね)]<？/DTDD>                「下支(はばたき羽搏き、はばたく羽搏くの"はばた")」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[9(ヨ)][0(ワ)]<？/DTDD>                「抜擢(ばってき)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「棕櫚(パーム)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「売買(ばいばい)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[N(ミ)][M(モ)]<？/DTDD>                「醗酵(はっこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[2(ふ)][2(フ)]<？/DTDD>                「伎癢(ぎよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[3(あ)][4(う)]<？/DTDD>                「佳境(かきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[0(わ)][0(ワ)]<？/DTDD>                「究極(きゅうきょく)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[T(か)][Y(ん)]<？/DTDD>                「鍍金(メッキ)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[Y(ん)][U(な)]<？/DTDD>                「金券(きんけん)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[C(そ)][V(ひ)]<？/DTDD>                「蜀黍(もろこし/しょくしょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[/(め)][_(ろ)]<？/DTDD>                「聶記(アシタカ聶記の"せっき")」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[3(ア)][4(ウ)]<？/DTDD>                「桔梗(ききょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[4(ウ)][5(エ)]<？/DTDD>                「梗塞(こうそく)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[W(テ)][E(イ)]<？/DTDD>                「基礎(きそ)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[U(ナ)][I(ニ)]<？/DTDD>                「逆算(ぎやくさん)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[U(セ)][@(゛)]<？/DTDD>                「犠牲(ぎせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[J(マ)][K(ノ)]<？/DTDD>                「麒麟(きりん)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[,(ネ)][.(ル)]<？/DTDD>                「切磋(せっさたくま切磋琢磨の"せっさ")」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[J(ま)][J(マ)]<？/DTDD>                「熊羆(ゆうひ)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[R(す)][T(か)]<？/DTDD>                「薬罐(やかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[:(け)][}(む)]<？/DTDD>                「狂狷(きょうけん)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「懺悔(ざんげ)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[:(ケ)][}(ム)]<？/DTDD>                「蜘蛛(クモ)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[2(ふ)][3(あ)]<？/DTDD>                「眩暈(めまい)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[O(ら)][P(せ)]<？/DTDD>                「混沌(こんとん)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[D(し)][F(は)]<？/DTDD>                「交渉(こうしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[C(そ)][V(ひ)]<？/DTDD>                「痳痺(まひ)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[B(こ)][N(み)]<？/DTDD>                「真鍮(しんちゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[/(め)][/(メ)]<？/DTDD>                「籩豆(たかつき)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(マ)]」[6(オ)][7(ヤ)]<？/DTDD>                「舞妓(まいこ)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(マ)]」[^(ヘ)][^(へ)]<？/DTDD>                「賄賂(わいろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(マ)]」[O(ラ)][P(セ)]<？/DTDD>                「傲慢(ごうまん)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(マ)]」[X(サ)][C(ソ)]<？/DTDD>                「摩擦(まさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(マ)]」[.(ル)][/(メ)]<？/DTDD>                「豌豆(えんどうまめ豌豆豆の"えんどう")」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」[1(ぬ)][2(ふ)]<？/DTDD>                「嘉納(かのう)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」[R(す)][R(ス)]<？/DTDD>                「觝触(ていしょく)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」[A(ち)][S(と)]<？/DTDD>                「咽喉(いんこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」[X(さ)][C(そ)]<？/DTDD>                「残滓(ざんし/ざんさい)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[4(ウ)][5(エ)]<？/DTDD>                「範疇(はんちゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[6(オ)][7(ヤ)]<？/DTDD>                「嘔吐(おうと)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「薔薇(ばら)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[R(ス)][T(カ)]<？/DTDD>                「触媒(しょくばい)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「齧歯(げっしるい齧歯類の"げっし")」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[A(チ)][S(ト)]<？/DTDD>                「馳走(ごちそう御馳走の"ちそう")」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[F(ハ)][G(キ)]<？/DTDD>                「母趾(がいはんぼし外反母趾の"ぼし")」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[K(リ)][;(レ)]<？/DTDD>                「配慮(はいりょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[N(ミ)][M(モ)]<？/DTDD>                「伐採(ばっさい)」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[,(ネ)][.(ル)]<？/DTDD>                「晩餐(ばんさん)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[0(わ)][0(ワ)]<？/DTDD>                「鍉鍼(ていしん)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[I(に)][I(ニ)]<？/DTDD>                「鴻離(ぎょもうこうり魚網鴻離の"こうり")」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[C(そ)][V(ひ)]<？/DTDD>                「淋巴(リンパ)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[B(こ)][N(み)]<？/DTDD>                「翰林(かんりん)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[:(け)][}(む)]<？/DTDD>                「吝嗇(りんしょく/けち/吝さかで"やぶさか")」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[N(み)][M(も)]<？/DTDD>                「林檎(りんご)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[.(る)][/(め)]<？/DTDD>                「流暢(りゅうちょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[4(ウ)][5(エ)]<？/DTDD>                「伴侶(はんりょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「吾輩(わがはい)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[9(ヨ)][0(ワ)]<？/DTDD>                「鑱鍼(ざんしん)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「徘徊(はいかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[W(テ)][E(イ)]<？/DTDD>                「派閥(はばつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[U(ナ)][I(ニ)]<？/DTDD>                「乖離(かいり)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「逍遥(しょうよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[V(ヒ)][B(コ)]<？/DTDD>                「梯梧(でいこ/でいご)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」[P(せ)][@(゛)]<？/DTDD>                「熾烈(しれつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」[D(し)][F(は)]<？/DTDD>                「玲瓏(れいろう)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」[M(も)][,(ね)]<？/DTDD>                「檸檬(レモン)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」[3(ア)][4(ウ)]<？/DTDD>                「岐阜(ぎふ)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」<？BR>[R(ス)][T(カ)][Y(ン)]<？/DTDD>         「枢機卿(すうききょう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[;(レ)]」[T(カ)][T(か)]<？/DTDD>                「機械(きかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」[I(ニ)][O(ラ)]<？/DTDD>                「僥倖(ぎょうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(レ)]」[S(ト)][D(シ)]<？/DTDD>                「謹慎(きんしん)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」[G(キ)][H(ク)]<？/DTDD>                「近畿(きんき)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(レ)]」[:(ケ)][}(ム)]<？/DTDD>                「虚業(きょぎょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(レ)]」[C(ソ)][V(ヒ)]<？/DTDD>                「蜷局(とぐろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(レ)]」[N(ミ)][M(モ)]<？/DTDD>                「軋轢(あつれき)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[1(ぬ)][2(ふ)]<？/DTDD>                「健康(けんこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[3(あ)][4(う)]<？/DTDD>                「遣隋(遣隋使の"けんずい")」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[5(え)][6(お)]<？/DTDD>                「謙遜(けんそん)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[Q(た)][W(て)]<？/DTDD>                「献血(けんけつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[W(て)][E(い)]<？/DTDD>                「血漿(けっしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[I(に)][O(ら)]<？/DTDD>                「迎賓(げいひん)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[A(ち)][S(と)]<？/DTDD>                「検索(けんさく)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[Z(つ)][X(さ)]<？/DTDD>                「怪傑(かいけつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[H(く)][H(く)][H(ク)][H(ク)]<？/DTDD>  「侃侃諤諤(かんかんがくがく)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[:(け)]」[;(れ)][;(レ)]<？/DTDD>                「痙攣(けいれん)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」[,(ね)][,(ネ)]<？/DTDD>                「喧嘩(けんか)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(け)]」<？BR>[,(ね)][,(ね)][.(る)][.(る)]<？/DTDD>  「喧喧囂囂(けんけんごうごう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[:(ケ)]」[1(ヌ)][2(フ)]<？/DTDD>                「原稿(げんこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(ケ)]」[3(ア)][4(ウ)]<？/DTDD>                「袈裟(けさ)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(ケ)]」[^(ヘ)][^(へ)]<？/DTDD>                「畦畔(けいはん)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(ケ)]」[I(ニ)][O(ラ)]<？/DTDD>                「経緯(けいい)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(ケ)]」[N(ミ)][M(モ)]<？/DTDD>                「啓蟄(けいちつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[}(む)]」[3(あ)][4(う)]<？/DTDD>                「爬虫(爬虫類はちゅうるいの"はちゅう")」<？/DD/DL>
+<？DLDTinputstroke>  「[}(む)]」[5(え)][6(お)]<？/DTDD>                「娘婿(むすめむこ)」<？/DD/DL>
+<？DLDTinputstroke>  「[Z(つ)]」[V(ひ)][B(こ)]<？/DTDD>                「韜晦(とうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[Z(つ)]」[M(も)][,(ね)]<？/DTDD>                「常套(じょうとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[Z(つ)]」[D(し)][D(シ)]<？/DTDD>                「辻褄(つじつま)」<？/DD/DL>
+<？DLDTinputstroke>  「[Z(ツ)]」[C(ソ)][V(ヒ)]<？/DTDD>                「躑躅(つつじ)」<？/DD/DL>
+<？DLDTinputstroke>  「[X(さ)]」[0(わ)][-(ほ)]<？/DTDD>                「沢岻(沖縄県浦添市沢岻の"たくし")」<？/DD/DL>
+<？DLDTinputstroke>  「[X(さ)]」[C(そ)][C(ソ)]<？/DTDD>                「誘拐(ゆうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[X(サ)]」[3(ア)][4(ウ)]<？/DTDD>                「柘榴(ざくろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[X(サ)]」[I(ニ)][O(ラ)]<？/DTDD>                「錯綜(さくそう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[2(ふ)][3(あ)]<？/DTDD>                「想像(そうぞう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[8(ゆ)][9(よ)]<？/DTDD>                「祇園(ぎおん)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[@(゛)][{(゜)]<？/DTDD>                「齟齬(そご)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「疎外(そがい)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[G(き)][G(キ)]<？/DTDD>                「毀損(きそん)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「疏通(そつう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[1(ヌ)][1(ぬ)]<？/DTDD>                「艤装(ぎそう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[9(ヨ)][0(ワ)]<？/DTDD>                「訴訟(そしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[R(ス)][T(カ)]<？/DTDD>                「相続(そうぞく)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[K(ノ)][L(リ)]<？/DTDD>                「苑囿(えんゆう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[;(レ)][:(ケ)]<？/DTDD>                「蔚蒼(うっそう)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(ソ)]」[V(ヒ)][V(ひ)]<？/DTDD>                「脾臓(ひぞう)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[1(ぬ)][2(ふ)]<？/DTDD>                「咖啡(コーヒー)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「咖啡涅(カフェイン)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[V(ひ)]」[3(あ)][3(ア)]<？/DTDD>                「涅槃(ねはんじゃくじょう涅槃寂静の"ねはん")」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[0(わ)][0(ワ)]<？/DTDD>                「枇杷(果物のビワ)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[P(せ)][@(゛)]<？/DTDD>                「燧火(すいか)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[S(と)][S(ト)]<？/DTDD>                「人蔘(にんじん)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[1(ヌ)][2(フ)]<？/DTDD>                「珈琲(コーヒー)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「比較(ひかく)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[K(ノ)][L(リ)]<？/DTDD>                「檳榔(びんろう)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[B(コ)][B(こ)]<？/DTDD>                「琵琶(楽器のビワ)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」<？BR>[N(ミ)][N(ミ)][M(モ)][,(ネ)]<？/DTDD>  「蹇蹇匪躬(けんけんひきゅう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[B(こ)]」[3(あ)][3(ア)]<？/DTDD>                「頃合(ころあい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[}(む)][}(ム)]<？/DTDD>                「蒟蒻(こんにゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[K(の)][L(り)]<？/DTDD>                「碓氷(碓氷峠の"うすい")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「胡椒(こしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[N(み)][N(ミ)]<？/DTDD>                「蝙蝠(こうもり)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[,(ね)][.(る)]<？/DTDD>                「狡猾(こうかつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[6(オ)][7(ヤ)]<？/DTDD>                「甲斐(生き甲斐の"かい")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[I(ニ)][O(ラ)]<？/DTDD>                「殊更(ことさら)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[@(゛)][{(゜)]<？/DTDD>                「鱣子(キャビア)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[G(キ)][G(き)]<？/DTDD>                「拮抗(きっこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[,(ネ)][.(ル)]<？/DTDD>                「誤謬(ごびゅう)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[8(ゆ)][9(よ)]<？/DTDD>                「御輿(みこし)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[W(て)][E(い)]<？/DTDD>                「蚯蚓(みみず)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[R(す)][R(ス)]<？/DTDD>                「水黽(あめんぼ)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[R(す)][T(か)]<？/DTDD>                「水脈(すいみゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[@(゛)][{(゜)]<？/DTDD>                「味噌(みそ)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[L(り)][L(リ)]<？/DTDD>                「緑礬(リョクバン/ろくばん)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[/(め)][_(ろ)]<？/DTDD>                「琢磨(せっさたくま切磋琢磨の"たくま")」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[1(ヌ)][1(ぬ)]<？/DTDD>                「嵯峨(さが)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[3(あ)][3(ア)]<？/DTDD>                「湘南(しょうなん)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「毘沙(びしゃもん毘沙門の"びしゃ")」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[Q(タ)][W(テ)]<？/DTDD>                「燦爛(さんらん)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[U(ナ)][I(ニ)]<？/DTDD>                「鏖殺(おうさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[Z(ツ)][Z(つ)]<？/DTDD>                「稠密(ちゅうみつ/ちょうみつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」<？BR>[.(ル)][/(メ)][_(ロ)]<？/DTDD>         「珊瑚礁(さんごしょう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[M(も)]」[X(さ)][C(そ)]<？/DTDD>                「譫妄(せんもう)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」[I(ニ)][O(ラ)]<？/DTDD>                「咀嚼(そしゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」[E(イ)][R(ス)]<？/DTDD>                「総帥(そうすい)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」[Z(ツ)][Z(つ)]<？/DTDD>                「矜持(きょうじ/きんじ)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」[A(チ)][S(ト)]<？/DTDD>                「黙祷(もくとう)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」[L(リ)][;(レ)]<？/DTDD>                「朦朧(もうろう)」<？/DD/DL>
+<？DLDTinputstroke>  「[M(モ)]」<？BR>[,(ネ)][.(ル)][/(メ)]<？/DTDD>         「絆創膏(ばんそうこう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[,(ね)]」[-(ほ)][^(へ)]<？/DTDD>                「年俸(ねんぽう)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ね)]」[E(い)][R(す)]<？/DTDD>                「窮鼠(きゅうそねこをかむ窮鼠猫を噛むの"きゅうそ")」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ね)]」[N(み)][M(も)]<？/DTDD>                「根拠(こんきょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ね)]」[/(め)][_(ろ)]<？/DTDD>                「音叉(おんさ)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「誹謗(ひぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[:(ケ)][}(ム)]<？/DTDD>                「秘訣(ひけつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[:(ケ)][:(け)]<？/DTDD>                「秘鑰(ひやく)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[R(ス)][T(カ)]<？/DTDD>                「俊敏(しゅんびん)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[K(ノ)][K(の)]<？/DTDD>                「嗶哩(ビリビリどうが嗶哩嗶哩動画の"ビリ")」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[C(ソ)][V(ヒ)]<？/DTDD>                「贔屓(ひいき)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[8(ユ)][9(ヨ)]<？/DTDD>                「皇后(こうごう)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[Y(ン)][U(ナ)]<？/DTDD>                「琥珀(こはく)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[I(ニ)][O(ラ)]<？/DTDD>                「宏闊(こうかつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[K(ノ)][L(リ)]<？/DTDD>                「孝行(こうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[;(レ)][:(ケ)]<？/DTDD>                「豪語(ごうご)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[:(ケ)][}(ム)]<？/DTDD>                「語彙(ごい)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[B(コ)][N(ミ)]<？/DTDD>                「醍醐(だいご)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[/(メ)][_(ロ)]<？/DTDD>                「竣工(しゅんこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[1(ぬ)][2(ふ)]<？/DTDD>                「拉麺(ラーメン)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[2(ふ)][3(あ)]<？/DTDD>                「麺麭(パン)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[5(ふ)][5(あ)]<？/DTDD>                「五芒(五芒星の"ごぼう")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[Q(た)][W(て)]<？/DTDD>                「酩酊(めいてい)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[Q(た)][W(て)]<？/DTDD>                「牝牡(ひんぼ)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[S(と)][D(し)]<？/DTDD>                「炊飯(すいはん)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[U(な)][I(に)]<？/DTDD>                「氏名(しめい)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[P(せ)][P(セ)]<？/DTDD>                「億劫(おっくう)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[;(れ)][:(け)]<？/DTDD>                「明晰(めいせきむ明晰夢の"めいせき")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[N(み)][M(も)]<？/DTDD>                「瑠璃(るり)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[8(ユ)][8(ゆ)]<？/DTDD>                「八紘(はっこういちう八紘一宇の"はっこう")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[-(ホ)][-(ほ)]<？/DTDD>                「百閒(うちだひゃっけん内田百閒の"ひゃっけん")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[^(ヘ)][^(へ)]<？/DTDD>                「千穐(せんしゅうばんざいだいだいかのう千穐万歳大々叶の"せんしゅう")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[F(ハ)][F(は)]<？/DTDD>                「瓦礫(がれき)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[L(リ)][L(り)]<？/DTDD>                「割烹(かっぽうぎ割烹着の"かっぽう")」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[}(ム)][}(む)]<？/DTDD>                「毛氈(もうせん/フェルト)」<？/DD/DL>
+<？DLDTinputstroke>  「[_(ろ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「耄碌(もうろく)」<？/DD/DL>
+<？DLDTinputstroke>  「[_(ロ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「狼狽(ろうばい)」<？/DD/DL>
+
+<？P>以下「[B(β)]」から始まる「[A(α)]」から開始に移動予定。<？/P>
+
+<？DLDTinputstroke>  「[B(β)]」[1(ぬ)][2(ふ)]<？/DTDD>                「禺彊(ぐうきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[3(あ)][4(う)]<？/DTDD>                「鞦韆(しゅうせん/ブランコ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[5(え)][6(お)]<？/DTDD>                「羌瘣(きょうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[7(や)][8(ゆ)]<？/DTDD>                「宥恕(ゆうじょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[9(よ)][0(わ)]<？/DTDD>                「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[-(ほ)][^(へ)]<？/DTDD>                「吶喊(とっかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[Q(た)][W(て)]<？/DTDD>                「耆碩(きせき)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[E(い)][R(す)]<？/DTDD>                「囐噠(エフタル)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[T(か)][Y(ん)]<？/DTDD>                「挹怛(エフタル)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[U(な)][I(に)]<？/DTDD>                「鑣轡(ひょうぐつわ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[O(ら)][P(せ)]<？/DTDD>                「呿呻(あくび)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[@(゛)][{(゜)]<？/DTDD>                「顑頷(かんがん)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[A(ち)][S(と)]<？/DTDD>                「磊磈(らいかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[D(し)][F(は)]<？/DTDD>                「潑溂(はつらつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[G(き)][H(く)]<？/DTDD>                「緂縅(だんおどし)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[J(ま)][K(の)]<？/DTDD>                「惝怳(しょうきょう/しょうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[L(り)][;(れ)]<？/DTDD>                「憔悴(しょうすい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[:(け)][}(む)]<？/DTDD>                「狴犴(へいかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[Z(つ)][X(さ)]<？/DTDD>                「薜荔(オオイタビ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[C(そ)][V(ひ)]<？/DTDD>                「瑙魯(ナウル)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[B(こ)][N(み)]<？/DTDD>                「艨艟(もうどう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[M(も)][,(ね)]<？/DTDD>                「枸櫞(クエンサン枸櫞酸の"クエン")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[.(る)][/(め)]<？/DTDD>                「邂逅(かいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[_(ろ)][_(ロ)]<？/DTDD>                「曱甴(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[1(ヌ)][2(フ)]<？/DTDD>                「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[3(ア)][4(ウ)]<？/DTDD>                「鷸蚌(鷸蚌の争いの"いつぼう")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[5(エ)][6(オ)]<？/DTDD>                「彌猴(キウイ彌猴桃の"彌猴")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[7(ヤ)][8(ユ)]<？/DTDD>                「胤裔(いんえい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[9(ヨ)][0(ワ)]<？/DTDD>                「孩嬰(がいえい)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[-(ホ)][^(ヘ)]<？/DTDD>                「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[Q(タ)][W(テ)]<？/DTDD>                「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[E(イ)][R(ス)]<？/DTDD>                「蟋蟀(コオロギ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[T(カ)][Y(ン)]<？/DTDD>                「螽蟖(キリギリス)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[U(ナ)][I(ニ)]<？/DTDD>                「旱魃(かんばつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[O(ラ)][P(セ)]<？/DTDD>                「蜥蜴(トカゲ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「閨閤(けいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[A(チ)][S(ト)]<？/DTDD>                「茱萸(グミ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[D(シ)][F(ハ)]<？/DTDD>                「鮟鱇(アンコウ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[G(キ)][H(ク)]<？/DTDD>                「鎔笵(ようはん)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[J(マ)][K(ノ)]<？/DTDD>                「喇叭(ラッパ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[L(リ)][;(レ)]<？/DTDD>                「榠樝(カリン)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[:(ケ)][}(ム)]<？/DTDD>                「顰蹙(ひんしゅく)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[Z(ツ)][X(サ)]<？/DTDD>                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[C(ソ)][V(ヒ)]<？/DTDD>                「轆轤(ろくろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[B(コ)][N(ミ)]<？/DTDD>                「纐纈(こうけつ/こうけち)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[M(モ)][,(ネ)]<？/DTDD>                「螳螂(かまきり)」※蟷螂は辞書使用<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」[.(ル)][/(メ)]<？/DTDD>                「霹靂(へきれき)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」[1(ぬ)][2(ふ)]<？/DTDD>                「抛擲(ほうてき)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」[3(あ)][4(う)]<？/DTDD>                「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」[5(あ)][6(う)]<？/DTDD>                「慟哭(どうこく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[7(や)][8(ゆ)]<？/DTDD>                「渺茫(びょうぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[9(よ)][0(わ)]<？/DTDD>                「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蟑螂(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(δ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蜚蠊(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(ε)]」[_(ろ)][_(ロ)]<？/DTDD>                「癤癰(せつよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[Z(ζ)]」<？BR>[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「珸瑶瑁(ごようまい)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[Z(ζ)]」[_(ろ)][_(ロ)]<？/DTDD>                「疔瘡(ちょうそう)」<？/DD/DL>
 |<＃contents/kanedit_faq-2>]
 
 [<＃contents/kanedit_faq-3>|
-<？P> 相席ではないのですが字引入力を使ったショートカットの事例もついでに。<？BR><？/P>
+<？P> 厳密には相席ではないのですが字引入力を使ったショートカット事例。<？BR>
+<？/P>
+<？DLDTfaq> Ｑ．字引入力系の｛逆:[3(あ)]｝みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．[KANA]+[3(あ)]です。事前に字引入力の項目を「地」に変更する必要があります([NFER]押したまま[XFER]→[0(わ)])。<？BR>
+     <？VRkeyboard/howto><？BR>
+     単漢字辞書の項目については「<？index/LTsv_glyph-5>」を確認してください。<？BR>
+<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[3(あ)]<？BR>｛逆:[3(あ)]｝<？/DTDD>         「上下(じょうげ)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[V(ヒ)]」[Q(タ)]<？BR>｛逆:[Q(タ)]｝<？/DTDD>         「左右(さゆう)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[J(ま)]」[5(え)]<？BR>｛逆:[5(え)]｝<？/DTDD>         「前後(ぜんご)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[V(ヒ)]」[T(カ)]<？BR>｛逆:[T(カ)]｝<？/DTDD>         「東西(とうざい)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[N(み)]」[4(う)]<？BR>｛逆:[4(う)]｝<？/DTDD>         「南北(なんぼく)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[D(し)]」[_(ろ)]<？BR>｛逆:[_(ろ)]｝<？/DTDD>         「白黒(しろくろ)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[8(ゆ)]」[F(は)]<？BR>｛逆:[F(は)]｝<？/DTDD>         「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[T(カ)]」[A(チ)]<？BR>｛非:[A(チ)]｝<？/DTDD>         「価値(かち)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[F(は)]」[.(る)]<？BR>｛非:[.(る)]｝<？/DTDD>         「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[3(あ)]」[G(き)]<？BR>｛非:[G(き)]｝<？/DTDD>         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[6(お)]」[Y(ん)]<？BR>｛非:[Y(ん)]｝<？/DTDD>         「温暖(おんだん)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[N(ミ)]」[}(ム)]<？BR>｛非:[}(ム)]｝<？/DTDD>         「寒冷(かんれい)」<？/DD/DLclearboth>
 |<＃contents/kanedit_faq-3>]
 
 [<＃contents/kanedit_faq-4>|
-<？P> 地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<？BR><？/P>
+<？P> 地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<？BR>
+<？/P>
+<？DLDTfaq> Ｑ．漢直(漢字直接入力)の解説の「[1(ぬ)]」みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．「[1(ぬ)]」は[NFER]+[1]、「[1(ヌ)]」は[XFER]+[1]です。ひらがながNFER、カタカナがXFERです。<？BR>
+     <？VRkeyboard/howto><？BR>
+     地名入力などの｛地:[Q(た)]｝とかは[NFER]+[XFER]or[XFER]+[NFER]<？BR>
+     単漢字辞書の項目については「<？index/LTsv_glyph-5>」を確認してください。<？BR>
+<？/DD/DL>
+<？index/kanedit_faq:prefectures>
+
+<？DLDTinputstroke>  「[G(き)]」｛地:[Q(た)]｝<？/DTDD>                「地北⇔北海道」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」｛地:[6(お)]｝<？/DTDD>                「地青⇔青森」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」｛地:[0(わ)]｝<？/DTDD>                「地岩⇔岩手」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」｛地:[_(ロ)]｝<？/DTDD>                「地城⇔宮城」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」｛地:[G(き)]｝<？/DTDD>                「地秋⇔秋田」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」｛地:[Q(タ)]｝<？/DTDD>                「地形⇔山形」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」｛地:[J(ま)]｝<？/DTDD>                「地島⇔福島」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」｛地:[F(ハ)]｝<？/DTDD>                「地茨⇔茨城」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」｛地:[A(ち)]｝<？/DTDD>                「地栃⇔栃木」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」｛地:[F(ハ)]｝<？/DTDD>                「地群⇔群馬」<？/DD/DL>
+<？DLDTinputstroke>  「[X(さ)]」｛地:[Q(た)]｝<？/DTDD>                「地埼⇔埼玉」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」｛地:[^(ヘ)]｝<？/DTDD>                「地千⇔千葉」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」｛地:[T(カ)]｝<？/DTDD>                「地東⇔東京」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」｛地:[N(み)]｝<？/DTDD>                「地神⇔神奈川」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」｛地:[Q(た)]｝<？/DTDD>                「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」｛地:[N(み)]｝<？/DTDD>                「地富⇔富山」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」｛地:[D(し)]｝<？/DTDD>                「地石⇔石川」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」｛地:[S(ト)]｝<？/DTDD>                「地井⇔福井」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」｛地:[D(し)]｝<？/DTDD>                「地梨⇔山梨」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」｛地:[7(や)]｝<？/DTDD>                「地野⇔長野」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」｛地:[1(ヌ)]｝<？/DTDD>                「地岐⇔岐阜」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」｛地:[R(す)]｝<？/DTDD>                「地静⇔静岡」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」｛地:[@(゛)]｝<？/DTDD>                「地知⇔愛知」(「地愛⇔愛知/愛蘭」)<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」｛地:[3(ア)]｝<？/DTDD>                「地三⇔三重」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」｛地:[9(ヨ)]｝<？/DTDD>                「地滋⇔滋賀」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」｛地:[}(ﾟ )]｝<？/DTDD>                「地京⇔京都」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」｛地:[Y(ン)]｝<？/DTDD>                「地阪⇔大阪」(「地大⇔大阪/大分」)<？/DD/DL>
+<？DLDTinputstroke>  「[^(へ)]」｛地:[M(も)]｝<？/DTDD>                「地兵⇔兵庫」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」｛地:[O(ら)]｝<？/DTDD>                「地奈⇔奈良」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」｛地:[^(へ)]｝<？/DTDD>                「地和⇔和歌山」(「地歌⇔和歌山」)<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」｛地:[L(り)]｝<？/DTDD>                「地鳥⇔鳥取」(「地取⇔鳥取」)<？/DD/DL>
+<？DLDTinputstroke>  「[.(ね)]」｛地:[M(も)]｝<？/DTDD>                「地根⇔島根」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」｛地:[T(か)]｝<？/DTDD>                「地岡⇔岡山」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」｛地:[_(ろ)]｝<？/DTDD>                「地広⇔広島」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」｛地:[A(ち)]｝<？/DTDD>                「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」｛地:[H(ク)]｝<？/DTDD>                「地徳⇔徳島」<？/DD/DL>
+<？DLDTinputstroke>  「[T(か)]」｛地:[0(わ)]｝<？/DTDD>                「地川⇔香川」(「地香⇔香港/香川」)<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」｛地:[/(め)]｝<？/DTDD>                「地媛⇔愛媛」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」｛地:[T(か)]｝<？/DTDD>                「地高⇔高知」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(ふ)]」｛地:[J(ま)]｝<？/DTDD>                「地福⇔福岡」<？/DD/DL>
+<？DLDTinputstroke>  「[X(サ)]」｛地:[T(カ)]｝<？/DTDD>                「地佐⇔佐賀」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」｛地:[E(い)]｝<？/DTDD>                「地長⇔長崎」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」｛地:[J(ま)]｝<？/DTDD>                「地熊⇔熊本」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」｛地:[L(レ)]｝<？/DTDD>                「地分⇔大分」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」｛地:[7(や)]｝<？/DTDD>                「地宮⇔宮崎」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」｛地:[T(か)]｝<？/DTDD>                「地鹿⇔鹿児島」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」｛地:[G(き)]｝<？/DTDD>                「地沖⇔沖縄」<？/DD/DL>
+
+<？index/kanedit_faq:country>
+
+<？DLDTinputstroke>  「[I(に)]」｛地:[S(と)]｝<？/DTDD>                「地日⇔日本」(にっぽん)<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」｛地:[E(い)]｝<？/DTDD>                「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)<？/DD/DL>
+<？DLDTinputstroke>  「[Q(タ)]」｛地:[4(ウ)]｝<？/DTDD>                「地台⇔台湾」(たいわん)<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」｛地:[S(と)]｝<？/DTDD>                「地港⇔香港」(ほんこん)<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」｛地:[^(ヘ)]｝<？/DTDD>                「地越⇔越南」(べとなむ)<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」｛地:[O(ラ)]｝<？/DTDD>                「地蔵⇔西蔵」(ちべっと)<？/DD/DL>
+<？DLDTinputstroke>  「[M(も)]」｛地:[B(こ)]｝<？/DTDD>                「地蒙⇔蒙古」(もんごる)<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」｛地:[E(い)]｝<？/DTDD>                「地英⇔英吉利西」(イギリス)<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」｛地:[T(カ)]｝<？/DTDD>                「地米⇔亜米利加」(アメリカ)<？/DD/DL>
 |<＃contents/kanedit_faq-4>]
+[<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>|
+:<＄title/kanedit_faq-0>	都道府県の字引入力
+:<＄title/kanedit_faq-1>	国名の字引入力
+.+\.html?	<h4><＄title/kanedit_faq-@c></h4>
+.*	 <＄title/kanedit_faq-@c>
+|<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>]
 
 [<＃contents/kanedit_faq-5>|
 <？DLDT> Ｑ．辞書作成の際に参考になったサイトとか教えていただけますか？<？/DTDD>
@@ -1836,38 +2473,38 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanfont_faq-0>]
 
 [<＃contents/kanfont_faq-0>|
-<？DLDT> Ｑ．「kanfont」で他のフォントを編集できますか？<？/DTDD>
+<？DLDTfaq> Ｑ．「kanfont」で他のフォントを編集できますか？<？/DTDD>
  Ａ．「kanfont」はフォントファイルを読み込めないので「kan5x5comic」のグリフ編集しかできません。<？BR>
      既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．「漫」フォント座標が圧縮できない場合がある。<？/DTDD>
+<？DLDTfaq> Ｑ．「漫」フォント座標が圧縮できない場合がある。<？/DTDD>
  Ａ．グリフの「grid」が100または50以外の数値を扱うと圧縮効かなくなります。<？BR>
  圧縮形式5x10xの詳細は「<？index/kanfont-2>」を参考。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．圧縮されてない素のSVGを確認したい。<？/DTDD>
+<？DLDTfaq> Ｑ．圧縮されてない素のSVGを確認したい。<？/DTDD>
  Ａ．「save」ボタンで「kan5x5.svg」が保存できるのでそっちで確認できるはず。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．「kan5x5.svg」は何に使うんですか？<？/DTDD>
+<？DLDTfaq> Ｑ．「kan5x5.svg」は何に使うんですか？<？/DTDD>
  Ａ．「kan5x5comic.svg」をFontForgeで「kan5x5comic.ttf」に変換できます。<？BR>
  <？/DD/DL>
 <？https/kanfont_faq:fontforge>
 
-<？DLDT> Ｑ．「FontForge」が使えない環境というかLinux以外のOSだと謎の環境構築が複雑なので簡単な方法お願い。<？/DTDD>
+<？DLDTfaq> Ｑ．「FontForge」が使えない環境というかLinux以外のOSだと謎の環境構築が複雑なので簡単な方法お願い。<？/DTDD>
  Ａ．<？yakuyon>から「kan5x5comic.woff」をダウンロードしてWOFFコンバータで「kan5x5comic.ttf」にする別ルートもあります。<？BR>
  <？/DD/DL>
 <？https/kanfont_faq:ooblog.github.io>
 
 <？https/kanfont_faq:woffconv>
-<？DLDT> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
+<？DLDTfaq> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
  Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
      <？VRkeyboard/howto><？BR>
      <？VRcalc/howto><？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
+<？DLDTfaq> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
  Ａ．「LTsv/kanmap.tsv」に含まれてない漢字を探索するには「kanedit」の「探」コマンドを用いてください。<？BR>
      例えば都道府県アイコン「<？contents/tokyoicon>」は「kanedit」の「電卓」で「探<？contents/tokyoicon>」すると「探<？contents/tokyoicon>⇔東」が求められます。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．左回転のポリゴンがフォントに変換したときに描画されてましたよ？<？/DTDD>
+<？DLDTfaq> Ｑ．左回転のポリゴンがフォントに変換したときに描画されてましたよ？<？/DTDD>
  Ａ．フォントの描画ルールでは、逆回転のポリゴンが重なった場所が透過になるアルゴリズムだからです。<？BR>
      「L:Tsv」のグリフは単純に順番に描画するアルゴリズムなので「UP」「DOWN」ボタンでポリゴン描画順の入れ替えてください。<？BR><？/DD/DL>
 |<＃contents/kanfont_faq-0>]
@@ -1875,28 +2512,18 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<span class="kan5x5comic">&#61580;</span>
 .*	&#61580;
 |<？contents/tokyoicon>]
+
 [<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>|
-.+\.html?	<dl><dt><？web/kanfont_faq-@c></dt><dd><a href="<？url/kanfont_faq-@c>" title="<？web/kanfont_faq-@c>"><？url/kanfont_faq-@c></a></dd></dl>
-.*	   <？web/kanfont_faq-@c><？BR>@E   <？url/kanfont_faq-@c><？BR>
+:<＄web/kanfont_faq-0>	ふぉんと - 「約四文字」(http://ooblog.github.io/)
+:<＄url/kanfont_faq-0>	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+:<＄web/kanfont_faq-1>	FontForge
+:<＄url/kanfont_faq-1>	http://fontforge.github.io/ja/
+:<＄web/kanfont_faq-2>	WOFFコンバータ
+:<＄url/kanfont_faq-2>	http://opentype.jp/woffconv.htm
+.+\.html?	<dl class="faqlink"><dt><＄web/kanfont_faq-@c></dt><dd><a href="<＄url/kanfont_faq-@c>" title="<＄web/kanfont_faq-@c>"><＄url/kanfont_faq-@c></a></dd></dl>
+.*	   <＄web/kanfont_faq-@c><？BR>@E   <＄url/kanfont_faq-@c><？BR>
 |<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>]
-[<？url/kanfont_faq-0>|
-.*	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
-|<？url/kanfont_faq-0>]
-[<？web/kanfont_faq-0>|
-.*	ふぉんと - 「約四文字」(http://ooblog.github.io/)
-|<？web/kanfont_faq-0>]
-[<？url/kanfont_faq-1>|
-.*	http://fontforge.github.io/ja/
-|<？url/kanfont_faq-1>]
-[<？web/kanfont_faq-1>|
-.*	FontForge
-|<？web/kanfont_faq-1>]
-[<？url/kanfont_faq-2>|
-.*	http://opentype.jp/woffconv.htm
-|<？url/kanfont_faq-2>]
-[<？web/kanfont_faq-2>|
-.*	WOFFコンバータ
-|<？web/kanfont_faq-2>]
+
 [<？https/kanfont.py>*<？https/kanfont.tsv>|
 :<＄path/kanfont-0>	kanfont.py
 :<＄path/kanfont-1>	kanfont.tsv
@@ -1955,19 +2582,19 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanmap_faq-0>]
 
 [<＃contents/kanmap_faq-0>|
-<？DLDT> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
+<？DLDTfaq> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
  Ａ．「Tkinter」では「canvas」を画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」のフォントが保存されるのですか？<？/DTDD>
+<？DLDTfaq> Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」のフォントが保存されるのですか？<？/DTDD>
  Ａ．グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。<？BR>
      <？DICchar>のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。<？BR>
 <？/DD/DL>
 <？https/Python_pickle>
-<？DLDT> Ｑ．「kanmap.png」の空白が多い気がします。<？/DTDD>
+<？DLDTfaq> Ｑ．「kanmap.png」の空白が多い気がします。<？/DTDD>
  Ａ．<？DICchar>で扱ってる文字がまだまだ不十分なので同時にグリフデータも不足するためです。いわゆる開発中の画面状態です。<？BR>
  一見表示されてない漢字も「<？https/kanmap.tsv>」で扱ってる漢字はクリップボードに取得できます。<？BR>
 <？/DD/DL>
-<？DLDT> Ｑ．編集追加したはずのグリフが「kanedit」に反映されない。<？/DTDD>
+<？DLDTfaq> Ｑ．編集追加したはずのグリフが「kanedit」に反映されない。<？/DTDD>
  Ａ．「LTsv/kanpickle.bin」を一旦手動で削除して「<？https/kanmap.py>」をもう一度起動。「LTsv/kanpickle.bin」が初期化されるはずです。<？BR><？/DD/DL>
 |<＃contents/kanmap_faq-0>]
 
@@ -1976,7 +2603,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 :<＄url/Python-0>	 http://docs.python.jp/3/library/pickle.html
 :<＄web/Python-1>	 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
 :<＄url/Python-1>	 http://docs.python.jp/3/library/re.html
-.+\.html?	<dl><dt><＄web/Python-@c></dt><dd><a href="<＄url/Python-@c>" title="<＄web/Python-@c>"><＄url/Python-@c></a></dd></dl>
+.+\.html?	<dl class="faqlink"><dt><＄web/Python-@c></dt><dd><a href="<＄url/Python-@c>" title="<＄web/Python-@c>"><＄url/Python-@c></a></dd></dl>
 .*	   <＄web/Python-@c><？BR>@E   <＄url/Python-@c><？BR>@E
 |<？https/Python_pickle>*<？https/Python_re>]
 
@@ -2013,30 +2640,22 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanzip_faq-0>]
 
 [<＃contents/kanzip_faq-0>|
-<？DLDT> Ｑ．ボタンを手動で１個ずつ押していくのが面倒くさいです。<？/DTDD>
+<？DLDTfaq> Ｑ．ボタンを手動で１個ずつ押していくのが面倒です。<？/DTDD>
  Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。<？/DD/DL>
-<？DLDT> Ｑ．ダウンロードできなくなりました。<？/DTDD>
+<？DLDTfaq> Ｑ．ダウンロードできなくなりました。<？/DTDD>
  Ａ．日本郵便にあるはずのzipファイルのURL変更などが考えられますが、ブラウザでzipをダウンロードして「kanzip」フォルダにコピーすれば作業続行可能なはずです。<？/DD/DL>
 <？https/kanzip_faq:jigyosyo>
 <？https/kanzip_faq:kogaki-zip>
 |<＃contents/kanzip_faq-0>]
 
 [<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>|
-.+\.html?	<dl><dt><？web/kanzip_faq-@c></dt><dd><a href="<？url/kanzip_faq-@c>" title="<？web/kanzip_faq-@c>"><？url/kanzip_faq-@c></a></dd></dl>
-.*	   <？web/kanzip_faq-@c><？BR>@E   <？url/kanzip_faq-@c><？BR>
+:<＄web/kanzip_faq-0>	事業所の個別郵便番号のダウンロード zip形式 - 日本郵便
+:<＄url/kanzip_faq-0>	http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html
+:<＄web/kanzip_faq-1>	読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便
+:<＄url/kanzip_faq-1>	http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html
+.+\.html?	<dl class="faqlink"><dt><＄web/kanzip_faq-@c></dt><dd><a href="<＄url/kanzip_faq-@c>" title="<＄web/kanzip_faq-@c>"><＄url/kanzip_faq-@c></a></dd></dl>
+.*	   <＄web/kanzip_faq-@c><？BR>@E   <＄url/kanzip_faq-@c><？BR>
 |<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>]
-[<？url/kanzip_faq-0>|
-.*	http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html
-|<？url/kanzip_faq-0>]
-[<？web/kanzip_faq-0>|
-.*	事業所の個別郵便番号のダウンロード zip形式 - 日本郵便
-|<？web/kanzip_faq-0>]
-[<？url/kanzip_faq-1>|
-.*	http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html
-|<？url/kanzip_faq-1>]
-[<？web/kanzip_faq-1>|
-.*	読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便
-|<？web/kanzip_faq-1>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -2046,9 +2665,9 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<＃contents/address-0>|
 
 <？P> 更新情報はGitHubやブログを確認してください。<？BR><？/P>
-
 <？https12:github_ooblog>
 <？https12:hatena_ooblog>
+
 |<＃contents/address-0>]
 
 [<？DICmap>|
@@ -2278,16 +2897,16 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	<＄path/LTsv_gui-@c>
 |<？https/LTsv_gui.py>]
 
-[<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>|
+[<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>*<？list/LTsv_glyph-5>|
 .+\.html?	 <li><？index/LTsv_glyph-@c></li>@E
 .*	 <？index/LTsv_glyph-@c>@E
-|<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>]
-[<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>|
-^index\.html?		<a href="#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？title/LTsv_glyph-@c></a>
+|<？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>*<？list/LTsv_glyph-5>]
+[<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>*<？index/LTsv_glyph-5>|
+^index\.html?	<a href="#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？title/LTsv_glyph-@c></a>
 .+\.html?	<a href="index.html#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？titleimg/software-0><？title/LTsv_glyph-@c></a>
 ^LTsv10\.txt	<？title/LTsv_glyph-@c>
 .*	「LTsv10.txt」の<？title/LTsv_glyph-@c>
-|<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>]
+|<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>*<？index/LTsv_glyph-5>]
 [<？title/LTsv_glyph-0>|
 .*	⑨-0．「LTsv_glyph.py」の関数一覧
 |<？title/LTsv_glyph-0>]
@@ -2303,6 +2922,9 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？title/LTsv_glyph-4>|
 .*	⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細
 |<？title/LTsv_glyph-4>]
+[<？title/LTsv_glyph-5>|
+.*	⑨-5．単漢字辞書の辞書項目
+|<？title/LTsv_glyph-5>]
 [<？https/LTsv_glyph.py>*<？https/LTsv_glyph.tsv>*<？https/kanzip.py>|
 :<＄path/LTsv_glyph-0>	LTsv/LTsv_glyph.py
 :<＄path/LTsv_glyph-1>	LTsv/LTsv_glyph.tsv
@@ -2335,7 +2957,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 :<＄url/LTsv10_faq-3>	http://qiita.com/methane/items/2210712763b91e75fdf0
 :<＄web/LTsv10_faq-4>	Index of /puppy/opt (Portable Wine:wine-portable-HELP_ja.html)
 :<＄url/LTsv10_faq-4>	http://shinobar.server-on.net/puppy/opt/
-.+\.html?	<dl><dt><＄web/LTsv10_faq-@c></dt><dd><a href="<＄url/LTsv10_faq-@c>" title="<＄web/LTsv10_faq-@c>"><＄url/LTsv10_faq-@c></a></dd></dl>
+.+\.html?	<dl class="faqlink"><dt><＄web/LTsv10_faq-@c></dt><dd><a href="<＄url/LTsv10_faq-@c>" title="<＄web/LTsv10_faq-@c>"><＄url/LTsv10_faq-@c></a></dd></dl>
 .*	   <＄web/LTsv10_faq-@c><？BR>@E   <＄url/LTsv10_faq-@c><？BR>@E
 |<？https/LTsv10_faq:python.org>*<？https/LTsv10_faq:python344>*<？https/LTsv10_faq:python352>*<？https/LTsv10_faq:pythonMSVCRTQiita>*<？https/LTsv10_faq:PortableWine>]
 [<？https/python3install.sh>*<？https/kanmap.py>|
@@ -2814,6 +3436,18 @@ LTsv_doc	<？title:LTsv_doc>
 .+\.html?	<dl><dt>@E
 .*	
 |<？DLDT>]
+[<？DLDTfaq>|
+.+\.html?	<dl class="faq"><dt>@E
+.*	
+|<？DLDTfaq>]
+[<？DLDTfaqlink>|
+.+\.html?	<dl class="faqlink"><dt>@E
+.*	
+|<？DLDTfaqlink>]
+[<？DLDTinputstroke>|
+.+\.html?	<dl class="inputstroke"><dt>@E
+.*	
+|<？DLDTinputstroke>]
 [<？/DTDD>|
 .+\.html?	</dt>@E<dd>@E
 .*	
@@ -2822,6 +3456,10 @@ LTsv_doc	<？title:LTsv_doc>
 .+\.html?	@E</dd></dl>
 .*	
 |<？/DD/DL>]
+[<？/DD/DLclearboth>|
+.+\.html?	@E</dd><br class="yonmoji_both" /></dl>
+.*	
+|<？/DD/DLclearboth>]
 [<？BR>|
 .+\.html?	<br />
 .*	

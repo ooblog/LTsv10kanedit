@@ -1,5 +1,5 @@
 「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。
-version(branch):20161128M153500	modify:20161211U022923
+version(branch):20161128M153500	modify:20161212M020045
 
 目次
 
@@ -72,7 +72,7 @@ version(branch):20161128M153500	modify:20161211U022923
 
 ③-0．「kanzip」のＦＡＱ
 
- Ｑ．ボタンを手動で１個ずつ押していくのが面倒くさいです。
+ Ｑ．ボタンを手動で１個ずつ押していくのが面倒です。
  Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。
  Ｑ．ダウンロードできなくなりました。
  Ａ．日本郵便にあるはずのzipファイルのURL変更などが考えられますが、ブラウザでzipをダウンロードして「kanzip」フォルダにコピーすれば作業続行可能なはずです。
@@ -86,12 +86,12 @@ version(branch):20161128M153500	modify:20161211U022923
 
  更新情報はGitHubやブログを確認してください。
 
-
    ooblog/LTsv10kanedit(GitHub)
    https://github.com/ooblog/LTsv10kanedit
 
    [kanedit] - 大風呂ダ敷
    http://d.hatena.ne.jp/ooblog/searchdiary?word=*[kanedit]
+
 
 # Copyright (c) 2016 ooblog
 # License: MIT
