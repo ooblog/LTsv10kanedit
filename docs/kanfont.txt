@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20161128M153500	modify:20161212M020045
+version(branch):20161128M153500	modify:20161213T025331
 
 目次
 

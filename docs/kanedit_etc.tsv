@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161212M020102
+modify	20161213T025347
 |L:Tsv]
 
 [LTsv_doc|
@@ -2302,11 +2302,9 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<＃contents/kanedit_faq-4>|
 <？P> 地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<？BR>
 <？/P>
-<？DLDTfaq> Ｑ．漢直(漢字直接入力)の解説の「[1(ぬ)]」みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．「[1(ぬ)]」は[NFER]+[1]、「[1(ヌ)]」は[XFER]+[1]です。ひらがながNFER、カタカナがXFERです。<？BR>
-     <？VRkeyboard/howto><？BR>
-     地名入力などの｛地:[Q(た)]｝とかは[NFER]+[XFER]or[XFER]+[NFER]<？BR>
-     単漢字辞書の項目については「<？index/LTsv_glyph-5>」を確認してください。<？BR>
+<？DLDTfaq> Ｑ．都道府県国名の解説の「地北⇔北海道」みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？VReval/howto><？BR>
+     [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<？BR>
 <？/DD/DL>
 <？index/kanedit_faq:prefectures>
 
@@ -2378,19 +2376,145 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>]
 
 [<＃contents/kanedit_faq-5>|
-<？DLDT> Ｑ．辞書作成の際に参考になったサイトとか教えていただけますか？<？/DTDD>
+<？DLDTfaq> Ｑ．辞書作成の際に参考になったサイトとか教えていただけますか？<？/DTDD>
  Ａ．全部は無理ですが覚えがある範囲の一部なら。Yahoo!知恵袋やWeblioやgoo辞書やWikipediaやニコニコ大百科など様々なサイトを参考にしてます。<？BR><？/DD/DL>
-<？https/reference:radical>
-<？https/reference:country>
+<？https/ref:radical>
+<？https/ref:木>
+<？https/ref:魚>
+<？https/ref:草>
+<？https/ref:Fish!>
+<？https/ref:Bird!>
+<？https/ref:flesh>
+<？https/ref:ネ示>
+<？https/ref:攪拌>
+<？https/ref:鯟(魚+東)>
+<？https/ref:団欒>
+<？https/ref:噛嚙>
+<？https/ref:脹張>
+<？https/ref:舗鋪>
+<？https/ref:檞>
+<？https/ref:㓛>
+<？https/ref:ghost>
+<？https/ref:‎samesound>
+<？https/ref:country>
+<？https/ref:rareplace>
+<？https/ref:72pentads>
+<？https/ref:28lunarmansions>
+<？https/ref:24seasons>
+<？https/ref:Japanesecolors>
+<？https/ref:element>
+<？https/ref:chemical>
+<？https/ref:10^68>
+<？https/ref:閄>
+<？https/ref:longreadingchar>
+<？https/ref:surname1char>
+<？https/ref:Kanjinames>
+<？https/ref:zinmei1>
+<？https/ref:zinmei2>
+<？https/ref:animal>
+<？https/ref:baseball>
+<？https/ref:prefectures>
+<？https/ref:sports>
+<？https/ref:梅龱>
+<？https/ref:BA-90>
+<？https/ref:Tomato>
+<？https/ref:braille>
+<？https/ref:Mahjong>
+<？https/ref:tkinter>
+<？https/ref:BMP>
 |<＃contents/kanedit_faq-5>]
-[<？https/reference:radical>*<？https/reference:country>|
-:<＄web/reference-0>	部首 - Wikipedia
-:<＄url/reference-0>	http://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
-:<＄web/reference-1>	国名の漢字表記一覧 - Wikipedia
-:<＄url/reference-1>	https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%90%8D%E3%81%AE%E6%BC%A2%E5%AD%97%E8%A1%A8%E8%A8%98%E4%B8%80%E8%A6%A7
-.+\.html?	<dl><dt><＄web/reference-@c></dt><dd><a href="<＄url/reference-@c>" title="<＄web/reference-@c>"><＄url/reference-@c></a></dd></dl>
-.*	@E   <＄web/reference-@c><？BR>@E   <＄url/reference-@c><？BR>
-|<？https/reference:radical>*<？https/reference:country>]
+[<？https/ref:radical>*<？https/ref:木>*<？https/ref:魚>*<？https/ref:草>*<？https/ref:Fish!>*<？https/ref:Bird!>*<？https/ref:flesh>*<？https/ref:ネ示>*<？https/ref:攪拌>*<？https/ref:鯟(魚+東)>*<？https/ref:団欒>*<？https/ref:噛嚙>*<？https/ref:脹張>*<？https/ref:舗鋪>*<？https/ref:檞>*<？https/ref:㓛>*<？https/ref:ghost>*<？https/ref:‎samesound>*<？https/ref:country>*<？https/ref:rareplace>*<？https/ref:72pentads>*<？https/ref:28lunarmansions>*<？https/ref:24seasons>*<？https/ref:Japanesecolors>*<？https/ref:element>*<？https/ref:chemical>*<？https/ref:10^68>*<？https/ref:閄>*<？https/ref:longreadingchar>*<？https/ref:surname1char>*<？https/ref:Kanjinames>*<？https/ref:zinmei1>*<？https/ref:zinmei2>*<？https/ref:animal>*<？https/ref:baseball>*<？https/ref:prefectures>*<？https/ref:sports>*<？https/ref:梅龱>*<？https/ref:BA-90>*<？https/ref:Tomato>*<？https/ref:braille>*<？https/ref:Mahjong>*<？https/ref:tkinter>*<？https/ref:BMP>|
+:<＄web/ref-00>	部首 - Wikipedia
+:<＄url/ref-00>	https://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
+:<＄web/ref-01>	「木」へんの漢字 「季節の花300」
+:<＄url/ref-01>	http://www.hana300.com/aakanji1.html
+:<＄web/ref-02>	「魚」へん の漢字 「季節の花300」
+:<＄url/ref-02>	http://www.hana300.com/sakana.html
+:<＄web/ref-03>	「草かんむり」の漢字 「季節の花300」
+:<＄url/ref-03>	http://www.hana300.com/aakanji2.html
+:<＄web/ref-04>	魚偏の漢字（さかなへんのかんじ）Mitsu Kono
+:<＄url/ref-04>	http://people.physics.anu.edu.au/~mxk121/research/data/sakana.html
+:<＄web/ref-05>	鳥偏旁の漢字（とりへんぼうのかんじ）Mitsu Kono
+:<＄url/ref-05>	http://people.physics.anu.edu.au/~mxk121/research/data/tori.html
+:<＄web/ref-06>	Wiktionary:漢字索引 部首 肉 - ウィクショナリー日本語版
+:<＄url/ref-06>	https://ja.wiktionary.org/wiki/Wiktionary:%E6%BC%A2%E5%AD%97%E7%B4%A2%E5%BC%95_%E9%83%A8%E9%A6%96_%E8%82%89
+:<＄web/ref-07>	しめすへん 【示偏】は、「ネ」と「示」と両方ありますが、単純に新字と旧字の違いではないようですね。 なぜ、このような違いが生じてしまったのでしょうか？ - Yahoo!知恵袋
+:<＄url/ref-07>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1470818294
+:<＄web/ref-08>	てへんに覚と、絆の左がわをなくし、てへんで ２文字なんて読むんでしょうか？ - 日本語 | Yahoo!知恵袋
+:<＄url/ref-08>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1311776823
+:<＄web/ref-09>	ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「トウ」、鯉に似た魚。)
+:<＄url/ref-09>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818
+:<＄web/ref-10>	楽 ←この漢字の白の左右の点々が「糸」になった漢字ってなんて読むんでしょうか？ - Yahoo!知恵袋
+:<＄url/ref-10>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1169119381
+:<＄web/ref-11>	「かむ」の漢字は「噛む」が正しいのでしょうか。それとも「嚙む」が正しいのでしょうか。 - Yahoo!知恵袋
+:<＄url/ref-11>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12108518122
+:<＄web/ref-12>	「膨脹」と「膨張」って何が違うんですか?? - 日本語 | Yahoo!知恵袋
+:<＄url/ref-12>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1133514731
+:<＄web/ref-13>	店舗と店鋪の違い - 国語 解決済 | 教えて！goo(舗」には別に『品物を売るところ』『店』の意味がありますが、「鋪」にはその意味がありません。)
+:<＄url/ref-13>	http://oshiete.goo.ne.jp/qa/1185390.html
+:<＄web/ref-14>	木へんに解で何と読みますか？ - Yahoo!知恵袋
+:<＄url/ref-14>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1456495174
+:<＄web/ref-15>	お寺で見た第3水準漢字 - yanok.net(「㓛」一文字だけでも「くぬぎ」というようです。)
+:<＄url/ref-15>	http://yanok.net/2011/06/3-18.html
+:<＄web/ref-16>	同音の漢字による書きかえ - Wikipedia
+:<＄url/ref-16>	https://ja.wikipedia.org/wiki/%E5%90%8C%E9%9F%B3%E3%81%AE%E6%BC%A2%E5%AD%97%E3%81%AB%E3%82%88%E3%82%8B%E6%9B%B8%E3%81%8D%E3%81%8B%E3%81%88
+:<＄web/ref-17>	幽霊文字 ‐ 通信用語の基礎知識
+:<＄url/ref-17>	http://www.wdic.org/w/WDIC/%E5%B9%BD%E9%9C%8A%E6%96%87%E5%AD%97
+:<＄web/ref-18>	稀少地名漢字リスト
+:<＄url/ref-18>	http://pyrite.s54.xrea.com/timei/index.html
+:<＄web/ref-19>	国名の漢字表記一覧 - Wikipedia
+:<＄url/ref-19>	https://ja.wikipedia.org/wiki/%E5%9B%BD%E5%90%8D%E3%81%AE%E6%BC%A2%E5%AD%97%E8%A1%A8%E8%A8%98%E4%B8%80%E8%A6%A7
+:<＄web/ref-20>	七十二候 - Wikipedia
+:<＄url/ref-20>	https://ja.wikipedia.org/wiki/%E4%B8%83%E5%8D%81%E4%BA%8C%E5%80%99
+:<＄web/ref-21>	二十八宿 - Wikipedia
+:<＄url/ref-21>	https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E5%85%AB%E5%AE%BF
+:<＄web/ref-22>	二十四節気 - Wikipedia
+:<＄url/ref-22>	https://ja.wikipedia.org/wiki/%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AF%80%E6%B0%97
+:<＄web/ref-23>	日本の伝統色 和色大辞典
+:<＄url/ref-23>	http://www.colordic.org/w/
+:<＄web/ref-24>	化学物質の和名 - Wikipedia
+:<＄url/ref-24>	https://ja.wikipedia.org/wiki/%E5%85%83%E7%B4%A0%E3%81%AE%E4%B8%AD%E5%9B%BD%E8%AA%9E%E5%90%8D%E7%A7%B0
+:<＄web/ref-25>	元素の中国語名称 - Wikipedia
+:<＄url/ref-25>	https://ja.wikipedia.org/wiki/%E5%8C%96%E5%AD%A6%E7%89%A9%E8%B3%AA%E3%81%AE%E5%92%8C%E5%90%8D
+:<＄web/ref-26>	無量大数の彼方へとは (ムリョウタイスウノカナタヘとは) [単語記事] - ニコニコ大百科
+:<＄url/ref-26>	http://dic.nicovideo.jp/a/%E7%84%A1%E9%87%8F%E5%A4%A7%E6%95%B0%E3%81%AE%E5%BD%BC%E6%96%B9%E3%81%B8
+:<＄web/ref-27>	なんだかとっても！いいかんじとは (ナンダカトッテモイイカンジとは) [単語記事] - ニコニコ大百科
+:<＄url/ref-27>	http://dic.nicovideo.jp/a/%E3%81%AA%E3%82%93%E3%81%A0%E3%81%8B%E3%81%A8%E3%81%A3%E3%81%A6%E3%82%82!%E3%81%84%E3%81%84%E3%81%8B%E3%82%93%E3%81%98
+:<＄web/ref-28>	訓読みが長い漢字 - Enpedia
+:<＄url/ref-28>	http://enpedia.rxy.jp/wiki/%E8%A8%93%E8%AA%AD%E3%81%BF%E3%81%8C%E9%95%B7%E3%81%84%E6%BC%A2%E5%AD%97
+:<＄web/ref-29>	一文字で珍しい名字(苗字)を教えてください。 哘(さそう)、杠(ゆずりは)など  - Yahoo!知恵袋
+:<＄url/ref-29>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1425563724
+:<＄web/ref-30>	人名用漢字一覧 - Wikipedia
+:<＄url/ref-30>	https://ja.wikipedia.org/wiki/%E4%BA%BA%E5%90%8D%E7%94%A8%E6%BC%A2%E5%AD%97%E4%B8%80%E8%A6%A7
+:<＄web/ref-31>	人名用漢字（表一）漢字辞典
+:<＄url/ref-31>	http://kanjitisiki.com/zinmei/
+:<＄web/ref-32>	人名用漢字一覧表（表二）漢字辞典
+:<＄url/ref-32>	http://kanjitisiki.com/zinmei02/
+:<＄web/ref-33>	難しすぎて読めない動物の名前ランキング - gooランキング
+:<＄url/ref-33>	http://ranking.goo.ne.jp/ranking/category/999/nhMmHOggHfeF/
+:<＄web/ref-34>	なんJでよく見る鷲鴎檻鷹鯉猫公兎虎竜燕星についてどれがどの球団ですか？ - Yahoo!知恵袋
+:<＄url/ref-34>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11110526351
+:<＄web/ref-35>	[都道府県を漢字１文字で表すと？] by 何カト見聞録
+:<＄url/ref-35>	http://vicroad.blog31.fc2.com/blog-entry-405.html
+:<＄web/ref-36>	「十柱戯」これ読める？漢字で書くと読めなくなる球技ランキング:哲学ニュースnwk
+:<＄url/ref-36>	http://blog.livedoor.jp/nwknews/archives/5110539.html
+:<＄web/ref-37>	大阪人しか読めない「謎の漢字」があるらしい - ニュース - Jタウンネット　東京都(阪急の梅田の龱)
+:<＄url/ref-37>	http://j-town.net/tokyo/news/localnews/208767.html
+:<＄web/ref-38>	ユニコード6.0以降で使用できる絵文字(自然編) - 世界の特殊文字ウィキ（約物記号BA-90🌝）
+:<＄url/ref-38>	http://seesaawiki.jp/w/qvarie/d/%A5%E6%A5%CB%A5%B3%A1%BC%A5%C96.0%B0%CA%B9%DF%A4%C7%BB%C8%CD%D1%A4%C7%A4%AD%A4%EB%B3%A8%CA%B8%BB%FA(%BC%AB%C1%B3%CA%D4)
+:<＄web/ref-39>	🍅 Tomato Emoji
+:<＄url/ref-39>	http://emojipedia.org/tomato/
+:<＄web/ref-40>	点字 - Wikipedia
+:<＄url/ref-40>	https://ja.wikipedia.org/wiki/%E7%82%B9%E5%AD%97
+:<＄web/ref-41>	麻雀牌 - Wikipedia
+:<＄url/ref-41>	https://ja.wikipedia.org/wiki/%E9%BA%BB%E9%9B%80%E7%89%8C
+:<＄web/ref-42>	tkinterでは基本多言語面しか使えない - かせきのうさぎさん
+:<＄url/ref-42>	http://d.hatena.ne.jp/itasuke/20141110/p1
+:<＄web/ref-43>	基本多言語面 ‐ 通信用語の基礎知識
+:<＄url/ref-43>	http://www.wdic.org/w/WDIC/%E5%9F%BA%E6%9C%AC%E5%A4%9A%E8%A8%80%E8%AA%9E%E9%9D%A2
+.+\.html?	<dl><dt><＄web/ref-@0c></dt><dd><a href="<＄url/ref-@0c>" title="<＄web/ref-@0c>"><＄url/ref-@0c></a></dd></dl>
+.*	@E   <＄web/ref-@0c><？BR>@E   <＄url/ref-@0c><？BR>
+|<？https/ref:radical>*<？https/ref:木>*<？https/ref:魚>*<？https/ref:草>*<？https/ref:Fish!>*<？https/ref:Bird!>*<？https/ref:flesh>*<？https/ref:ネ示>*<？https/ref:攪拌>*<？https/ref:鯟(魚+東)>*<？https/ref:団欒>*<？https/ref:噛嚙>*<？https/ref:脹張>*<？https/ref:舗鋪>*<？https/ref:檞>*<？https/ref:㓛>*<？https/ref:ghost>*<？https/ref:‎samesound>*<？https/ref:country>*<？https/ref:rareplace>*<？https/ref:72pentads>*<？https/ref:28lunarmansions>*<？https/ref:24seasons>*<？https/ref:Japanesecolors>*<？https/ref:element>*<？https/ref:chemical>*<？https/ref:10^68>*<？https/ref:閄>*<？https/ref:longreadingchar>*<？https/ref:surname1char>*<？https/ref:Kanjinames>*<？https/ref:zinmei1>*<？https/ref:zinmei2>*<？https/ref:animal>*<？https/ref:baseball>*<？https/ref:prefectures>*<？https/ref:sports>*<？https/ref:梅龱>*<？https/ref:BA-90>*<？https/ref:Tomato>*<？https/ref:braille>*<？https/ref:Mahjong>*<？https/ref:tkinter>*<？https/ref:BMP>]
 [<？https/kanedit.py>*<？https/kanedit.tsv>|
 :<＄path/kanedit-0>	kanedit.py
 :<＄path/kanedit-1>	kanedit.tsv
