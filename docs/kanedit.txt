@@ -1,5 +1,5 @@
 「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
-version(branch):20161128M153500	modify:20161213T025331
+version(branch):20161128M153500	modify:20161214W030143
 
 目次
 
@@ -105,6 +105,45 @@ version(branch):20161128M153500	modify:20161213T025331
  Ｑ．郵便番号辞書「kanzip.tsv」が見つからない。
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。
      詳細は「「kanzip.txt」の②-0．「kanzip.py」の関数一覧」を参考。
+
+  Ｑ．葛城と葛飾で「葛」が同じ字だ。
+ Ａ．異体字セレクタで切り替えなのですが、サロゲートペアとか結合文字列とか１文字を１コードポイントで表現できない系は「LTsv/LTsv_glyph.py」で扱わない予定です。
+
+   異体字セレクタ - Wikipedia
+   https://ja.wikipedia.org/wiki/%E7%95%B0%E4%BD%93%E5%AD%97%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF
+   文字って何かね？ - Qiita
+   http://qiita.com/matarillo/items/91b9656428bed7a1a797
+  「[Y(ン)]」[Z(ツ)][X(サ)]                「葛飾(かつしか)」
+  「[D(シ)]」[/(メ)][_(ロ)]                「葛城(かつらぎ)」
+
+  Ｑ．「咖」も２つあったよー。
+ Ａ．コーヒー(珈琲/咖啡)が２通りあったので相席の都合でカレー(咖喱)と重複。
+
+     「[V(ひ)]」[1(ぬ)][2(ふ)]                「咖啡(コーヒー)」
+     「[V(ヒ)]」[1(ヌ)][2(フ)]                「珈琲(コーヒー)」
+     「[T(か)]」[_(ろ)][_(ロ)]                「咖喱(カレー)」
+
+  「煉」はあるけど「練」と「錬」が見つからない。
+ 「煉」は「火柬」なので「練」も「糸柬」だし「鍊」も「金柬」。古いフォントだと「煉」が「火東」になってる。
+ 「練(糸東)」「錬(金東)」の入力は「異」で字引入力。
+
+   中国語「練」と「東」の違い 「练」と「东」 - 文字化けしてませんか？「练」と「东」は明朝体で書くと、「東」の字が違います。 - Yahoo!知恵袋(2004年のJIS改正で[火東]は[火柬]に戻されました。)
+   http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1135243926
+   「鰊」（魚+柬）と「鯟」（魚+東）ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「鯟」（魚+東） は別字です。音「トウ」、鯉に似た魚)
+   http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818
+   漢字の成り立ち 柬: 風船あられの漢字ブログ
+   http://huusennarare.cocolog-nifty.com/blog/2015/07/post-0eb0.html
+     「[,(ね)]」｛異:[P(せ)]｝                 「異練⇔練」
+     「[,(ね)]」｛異:[L(り)]｝                 「異鍊⇔錬」
+     「[,(ね)]」[;(れ)]                        「煉」
+     「E(イ)」[/(メ)]                        「諫」
+     「[I(ニ)]」[D(シ)]                        「鰊」
+
+ Ｑ．α鍵盤の説明にあるxvkbdって何。
+ Ａ．X Window System 用仮想キーボードというものがあります。 QWERTZやAZERTYなどキーボードのレイアウトはxvkbdを参考にしました。
+     JISキーボード(109キーボード)を想定してるので配置は多少アレンジしてます。
+   xvkbd - Virtual Keyboard for X Window System
+   http://t-sato.in.coocan.jp/xvkbd/index-j.html
 
 
 ③-1．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席
@@ -837,7 +876,7 @@ version(branch):20161128M153500	modify:20161213T025331
    鳥偏旁の漢字（とりへんぼうのかんじ）Mitsu Kono
    http://people.physics.anu.edu.au/~mxk121/research/data/tori.html
 
-   Wiktionary:漢字索引 部首 肉 - ウィクショナリー日本語版
+   Wiktionary:漢字索引 部首 肉 - ウィクショナリー日本語版(部首：⾁（⺼）)
    https://ja.wiktionary.org/wiki/Wiktionary:%E6%BC%A2%E5%AD%97%E7%B4%A2%E5%BC%95_%E9%83%A8%E9%A6%96_%E8%82%89
 
    しめすへん 【示偏】は、「ネ」と「示」と両方ありますが、単純に新字と旧字の違いではないようですね。 なぜ、このような違いが生じてしまったのでしょうか？ - Yahoo!知恵袋
@@ -846,8 +885,11 @@ version(branch):20161128M153500	modify:20161213T025331
    てへんに覚と、絆の左がわをなくし、てへんで ２文字なんて読むんでしょうか？ - 日本語 | Yahoo!知恵袋
    http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1311776823
 
-   ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「トウ」、鯉に似た魚。)
-   http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818
+   鶯 鴬 の違い ？ - 「鶯」が正しい字です。「鴬」などという略字は使わないようにして下さい。 - Yahoo!知恵袋(「鴬」では、「鶯」の略字なのか、「鷽」の略字なのか分かりません。)
+   http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1422142054
+
+   徳川光圀の｢圀｣という字は、なぜこんな字？(｢囯｣も候補に挙がりましたが、日本に王はいないということで、｢丶｣を加えて、今の｢国｣という字が一般的になりました。)
+   http://増殖難読漢字辞典.com/kanyawa/kanyawa-002.html
 
    楽 ←この漢字の白の左右の点々が「糸」になった漢字ってなんて読むんでしょうか？ - Yahoo!知恵袋
    http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1169119381
@@ -858,7 +900,7 @@ version(branch):20161128M153500	modify:20161213T025331
    「膨脹」と「膨張」って何が違うんですか?? - 日本語 | Yahoo!知恵袋
    http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1133514731
 
-   店舗と店鋪の違い - 国語 解決済 | 教えて！goo(舗」には別に『品物を売るところ』『店』の意味がありますが、「鋪」にはその意味がありません。)
+   店舗と店鋪の違い - 国語 解決済 | 教えて！goo(「舗」には別に『品物を売るところ』『店』の意味がありますが、「鋪」にはその意味がありません。)
    http://oshiete.goo.ne.jp/qa/1185390.html
 
    木へんに解で何と読みますか？ - Yahoo!知恵袋
@@ -872,6 +914,12 @@ version(branch):20161128M153500	modify:20161213T025331
 
    幽霊文字 ‐ 通信用語の基礎知識
    http://www.wdic.org/w/WDIC/%E5%B9%BD%E9%9C%8A%E6%96%87%E5%AD%97
+
+   sayunu_gundam - GlyphWiki
+   http://glyphwiki.org/wiki/sayunu_gundam
+
+   なんだかとっても！いいかんじとは (ナンダカトッテモイイカンジとは) [単語記事] - ニコニコ大百科
+   http://dic.nicovideo.jp/a/%E3%81%AA%E3%82%93%E3%81%A0%E3%81%8B%E3%81%A8%E3%81%A3%E3%81%A6%E3%82%82!%E3%81%84%E3%81%84%E3%81%8B%E3%82%93%E3%81%98
 
    稀少地名漢字リスト
    http://pyrite.s54.xrea.com/timei/index.html
@@ -899,9 +947,6 @@ version(branch):20161128M153500	modify:20161213T025331
 
    無量大数の彼方へとは (ムリョウタイスウノカナタヘとは) [単語記事] - ニコニコ大百科
    http://dic.nicovideo.jp/a/%E7%84%A1%E9%87%8F%E5%A4%A7%E6%95%B0%E3%81%AE%E5%BD%BC%E6%96%B9%E3%81%B8
-
-   なんだかとっても！いいかんじとは (ナンダカトッテモイイカンジとは) [単語記事] - ニコニコ大百科
-   http://dic.nicovideo.jp/a/%E3%81%AA%E3%82%93%E3%81%A0%E3%81%8B%E3%81%A8%E3%81%A3%E3%81%A6%E3%82%82!%E3%81%84%E3%81%84%E3%81%8B%E3%82%93%E3%81%98
 
    訓読みが長い漢字 - Enpedia
    http://enpedia.rxy.jp/wiki/%E8%A8%93%E8%AA%AD%E3%81%BF%E3%81%8C%E9%95%B7%E3%81%84%E6%BC%A2%E5%AD%97
