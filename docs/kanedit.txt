@@ -1,5 +1,5 @@
 「kanedit」は「LTsv10kanedit(tsvtool10)」を用いた漢直テキストエディタの予定です。
-version(branch):20161128M153500	modify:20161214W030143
+version(branch):20161128M153500	modify:20161215R021313
 
 目次
 
@@ -61,6 +61,7 @@ version(branch):20161128M153500	modify:20161214W030143
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
  「LTsv/LTsv_doc.py」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。
+ 「LTsv/LTsv_doc.tsv」に古いドキュメントが残存だけど「README.md」に置き換える予定。
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。
 
 
@@ -978,10 +979,10 @@ version(branch):20161128M153500	modify:20161214W030143
    大阪人しか読めない「謎の漢字」があるらしい - ニュース - Jタウンネット　東京都(阪急の梅田の龱)
    http://j-town.net/tokyo/news/localnews/208767.html
 
-   ユニコード6.0以降で使用できる絵文字(自然編) - 世界の特殊文字ウィキ（約物記号BA-90🌝）
+   ユニコード6.0以降で使用できる絵文字(自然編) - 世界の特殊文字ウィキ（約物記号BA-90&#127773;）
    http://seesaawiki.jp/w/qvarie/d/%A5%E6%A5%CB%A5%B3%A1%BC%A5%C96.0%B0%CA%B9%DF%A4%C7%BB%C8%CD%D1%A4%C7%A4%AD%A4%EB%B3%A8%CA%B8%BB%FA(%BC%AB%C1%B3%CA%D4)
 
-   🍅 Tomato Emoji
+   &#127813; Tomato Emoji
    http://emojipedia.org/tomato/
 
    点字 - Wikipedia

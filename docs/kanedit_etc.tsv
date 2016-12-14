@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161128M153500
-modify	20161214W030159
+modify	20161215R021332
 |L:Tsv]
 
 [LTsv_doc|
@@ -333,6 +333,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
  GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
  「<？https/LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<？BR>
  「docs/」フォルダ内のドキュメントを「<？https/kanedit_etc.tsv>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
+ 「<？https/LTsv_doc.tsv>」に古いドキュメントが残存だけど「README.md」に置き換える予定。<？BR>
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<？BR>
 |<＃contents/License-2>]
 
@@ -1391,7 +1392,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <？DLDT>  繁:[8(ゆ)]<？/DTDD>  中国や台湾の繁体字を字引。<？BR>
               「繁气⇔氣」「繁笵⇔範」。<？BR><？/DD/DL>
 <？DLDT>  越:[9(よ)]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。<？BR>
-              「越頗⇔𬖾」<？BR><？/DD/DL>
+              「越頗⇔<？contents/pho>」<？BR><？/DD/DL>
 <？DLDT>  地:[0(わ)]<？/DTDD>  国名や地名や名字などを字引。<？BR>
               「国日⇔日本」「国米⇔亜米利加」「国英⇔英吉利西」「国中⇔中華人民共和国」「国台⇔台湾」「国香⇔香港」「国澳⇔澳門」「国蒙⇔蒙古」「国蔵⇔西蔵」「国越⇔越南」。<？BR><？/DD/DL>
 <？DLDT>  逆:[-(ほ)]<？/DTDD>  反対の意味の漢字を字引。全角ではないという意味で半角ｶﾀｶﾅ等の入力にも流用。<？BR>
@@ -1400,12 +1401,21 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
               「非描⇔書」("絵を描く"と"文章を書く"の違い)「非喩⇔例」("比喩表現"と"実例"の違い)「非熔⇔溶」("液状に熔解"と"液体へ溶融"の違い)。<？BR><？/DD/DL>
 <？DLDT>  英:[Q(た)]<？/DTDD>  英単語を字引(和英)。<？BR>
               「英金⇔gold」「英円⇔circle/round/yen」「英鯖⇔mackerel」。<？BR><？/DD/DL>
-<？DLDT>  顔:[W(て)]<？/DTDD>  顔文字や１行AAや絵文字を字引。<？BR>
-              「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。<？BR><？/DD/DL>
-<？DLDT>  代:[;(れ)]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌など。<？BR>
-              「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「東代⇔🀀」。<？BR><？/DD/DL>
+<？DLDT>  顔:[W(て)]<？/DTDD>  顔文字や１行AAや絵文字を字引。都道府県アイコンも。<？BR>
+              「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。「顔東⇔<？contents/tokyoicon>」。<？BR><？/DD/DL>
+<？DLDT>  代:[;(れ)]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌も。<？BR>
+              「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「代東⇔<？contents/tonhaiicon>」。<？BR><？/DD/DL>
 <？DLDT>  鍵:[:(け)]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-5>]
+[<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>|
+:<＄icon-0>	&#61580;
+:<＄icon-1>	&#126976;
+:<＄icon-2>	&#181694;
+.+\.html?	<span class="kan5x5comic"><＄icon-@c></span>
+.*	<＄icon-@c>
+|<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>]
+
+
 
 [<？section/LTsv10_faq-0>|
 .+\.html?	<section>@E <h3 id="LTsv10_faq-@c"><？title/LTsv10_faq-@c></h3>@E<＃contents/LTsv10_faq-@c>@E</section>@E
@@ -2569,9 +2579,9 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 :<＄url/ref-38>	http://blog.livedoor.jp/nwknews/archives/5110539.html
 :<＄web/ref-39>	大阪人しか読めない「謎の漢字」があるらしい - ニュース - Jタウンネット　東京都(阪急の梅田の龱)
 :<＄url/ref-39>	http://j-town.net/tokyo/news/localnews/208767.html
-:<＄web/ref-40>	ユニコード6.0以降で使用できる絵文字(自然編) - 世界の特殊文字ウィキ（約物記号BA-90🌝）
+:<＄web/ref-40>	ユニコード6.0以降で使用できる絵文字(自然編) - 世界の特殊文字ウィキ（約物記号BA-90<？contents/BA-90>）
 :<＄url/ref-40>	http://seesaawiki.jp/w/qvarie/d/%A5%E6%A5%CB%A5%B3%A1%BC%A5%C96.0%B0%CA%B9%DF%A4%C7%BB%C8%CD%D1%A4%C7%A4%AD%A4%EB%B3%A8%CA%B8%BB%FA(%BC%AB%C1%B3%CA%D4)
-:<＄web/ref-41>	🍅 Tomato Emoji
+:<＄web/ref-41>	<？contents/Tomato> Tomato Emoji
 :<＄url/ref-41>	http://emojipedia.org/tomato/
 :<＄web/ref-42>	点字 - Wikipedia
 :<＄url/ref-42>	https://ja.wikipedia.org/wiki/%E7%82%B9%E5%AD%97
@@ -2590,6 +2600,17 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>"><＄path/kanedit-@c></a>
 .*	<＄path/kanedit-@c>
 |<？https/kanedit.py>*<？https/kanedit.tsv>]
+[<？contents/BA-90>*<？contents/Tomato>|
+:<＄icon-0>	&#127773;
+:<＄icon-1>	&#127813;
+.+\.html?	<span class="kan5x5comic"><＄icon-@c></span>
+.*	<＄icon-@c>
+|<？contents/BA-90>*<？contents/Tomato>]
+[BA-90<span class="kan5x5comic">&#127773;</span>）"*title="<span class="kan5x5comic">&#127813;</span>|
+:<＄html-0>	BA-90&#127773;）"
+:<＄html-1>	title="&#127813;
+.+\.html?	<＄html-@c>
+|BA-90<span class="kan5x5comic">&#127773;</span>）"*title="<span class="kan5x5comic">&#127813;</span>]
 
 [<？section/kanfont_usage-0>|
 .+\.html?	<section>@E <h3 id="kanfont_usage-@c"><？title/kanfont_usage-@c></h3>@E<＃contents/kanfont_usage-@c>@E</section>@E
@@ -2921,7 +2942,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>|
 ^index\.html?	<a href="#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？title/aboutLTsv-@c></a>
 .+\.html?	<a href="index.html#aboutLTsv-@c" title="<？title/aboutLTsv-@c>"><？titleimg/software-0><？title/aboutLTsv-@c></a>
-^LTsv10\.txt	<？title/aboutLTsv-@c>
+LTsv10\.txt	<？title/aboutLTsv-@c>
 .*	「LTsv10.txt」の<？title/aboutLTsv-@c>
 |<？index/aboutLTsv-0>*<？index/aboutLTsv-1>*<？index/aboutLTsv-2>]
 [<？title/aboutLTsv-0>|
@@ -2938,7 +2959,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_printf-0>*<？index/LTsv_printf-1>|
 ^index\.html?	<a href="#LTsv_printf-@c" title="<？title/LTsv_printf-@c>"><？title/LTsv_printf-@c></a>
 .+\.html?	<a href="index.html#LTsv_printf-@c" title="<？title/LTsv_printf-@c>"><？titleimg/software-0><？title/LTsv_printf-@c></a>
-^LTsv10\.txt	<？title/LTsv_printf-@c>
+LTsv10\.txt	<？title/LTsv_printf-@c>
 .*	「LTsv10.txt」の<？title/LTsv_printf-@c>
 |<？index/LTsv_printf-0>*<？index/LTsv_printf-1>]
 [<？title/LTsv_printf-0>|
@@ -2960,7 +2981,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_file-0>|
 ^index\.html?	<a href="#LTsv_file-@c" title="<？title/LTsv_file-@c>"><？title/LTsv_file-@c></a>
 .+\.html?	<a href="index.html#LTsv_file-@c" title="<？title/LTsv_file-@c>"><？titleimg/software-0><？title/LTsv_file-@c></a>
-^LTsv10\.txt	<？title/LTsv_file-@c>
+LTsv10\.txt	<？title/LTsv_file-@c>
 .*	「LTsv10.txt」の<？title/LTsv_file-@c>
 |<？index/LTsv_file-0>]
 [<？title/LTsv_file-0>|
@@ -2979,7 +3000,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_time-0>*<？index/LTsv_time-1>|
 ^index\.html?	<a href="#LTsv_time-@c" title="<？title/LTsv_time-@c>"><？title/LTsv_time-@c></a>
 .+\.html?	<a href="index.html#LTsv_time-@c" title="<？title/LTsv_time-@c>"><？titleimg/software-0><？title/LTsv_time-@c></a>
-^LTsv10\.txt	<？title/LTsv_time-@c>
+LTsv10\.txt	<？title/LTsv_time-@c>
 .*	「LTsv10.txt」の<？title/LTsv_time-@c>
 |<？index/LTsv_time-0>*<？index/LTsv_time-1>]
 [<？title/LTsv_time-0>|
@@ -3001,7 +3022,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_calc-0>*<？index/LTsv_calc-1>|
 ^index\.html?	<a href="#LTsv_calc-@c" title="<？title/LTsv_calc-@c>"><？title/LTsv_calc-@c></a>
 .+\.html?	<a href="index.html#LTsv_calc-@c" title="<？title/LTsv_calc-@c>"><？titleimg/software-0><？title/LTsv_calc-@c></a>
-^LTsv10\.txt	<？title/LTsv_calc-@c>
+LTsv10\.txt	<？title/LTsv_calc-@c>
 .*	「LTsv10.txt」の<？title/LTsv_calc-@c>
 |<？index/LTsv_calc-0>*<？index/LTsv_calc-1>]
 [<？title/LTsv_calc-0>|
@@ -3023,7 +3044,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_joy-0>*<？index/LTsv_joy-1>*<？index/LTsv_joy-2>|
 ^index\.html?	<a href="#LTsv_joy-@c" title="<？title/LTsv_joy-@c>"><？title/LTsv_joy-@c></a>
 .+\.html?	<a href="index.html#LTsv_joy-@c" title="<？title/LTsv_joy-@c>"><？titleimg/software-0><？title/LTsv_joy-@c></a>
-^LTsv10\.txt	<？title/LTsv_joy-@c>
+LTsv10\.txt	<？title/LTsv_joy-@c>
 .*	「LTsv10.txt」の<？title/LTsv_joy-@c>
 |<？index/LTsv_joy-0>*<？index/LTsv_joy-1>*<？index/LTsv_joy-2>]
 [<？title/LTsv_joy-0>|
@@ -3052,7 +3073,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_kbd-0>*<？index/LTsv_kbd-1>|
 ^index\.html?	<a href="#LTsv_kbd-@c" title="<？title/LTsv_kbd-@c>"><？title/LTsv_kbd-@c></a>
 .+\.html?	<a href="index.html#LTsv_kbd-@c" title="<？title/LTsv_kbd-@c>"><？titleimg/software-0><？title/LTsv_kbd-@c></a>
-^LTsv10\.txt	<？title/LTsv_kbd-@c>
+LTsv10\.txt	<？title/LTsv_kbd-@c>
 .*	「LTsv10.txt」の<？title/LTsv_kbd-@c>
 |<？index/LTsv_kbd-0>*<？index/LTsv_kbd-1>]
 [<？title/LTsv_kbd-0>|
@@ -3097,7 +3118,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>*<？index/LTsv_glyph-5>|
 ^index\.html?	<a href="#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？title/LTsv_glyph-@c></a>
 .+\.html?	<a href="index.html#LTsv_glyph-@c" title="<？title/LTsv_glyph-@c>"><？titleimg/software-0><？title/LTsv_glyph-@c></a>
-^LTsv10\.txt	<？title/LTsv_glyph-@c>
+LTsv10\.txt	<？title/LTsv_glyph-@c>
 .*	「LTsv10.txt」の<？title/LTsv_glyph-@c>
 |<？index/LTsv_glyph-0>*<？index/LTsv_glyph-1>*<？index/LTsv_glyph-2>*<？index/LTsv_glyph-3>*<？index/LTsv_glyph-4>*<？index/LTsv_glyph-5>]
 [<？title/LTsv_glyph-0>|
@@ -3133,7 +3154,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 [<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>|
 ^index\.html?	<a href="#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？title/LTsv10_faq-@c></a>
 .+\.html?	<a href="index.html#LTsv10_faq-@c" title="<？title/LTsv10_faq-@c>"><？titleimg/software-0><？title/LTsv10_faq-@c></a>
-^LTsv10\.txt	<？title/LTsv10_faq-@c>
+LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	「LTsv10.txt」の<？title/LTsv10_faq-@c>
 |<？index/LTsv10_faq-0>*<？index/LTsv10_faq-1>]
 [<？title/LTsv10_faq-0>|
@@ -3502,7 +3523,7 @@ LTsv_doc	④-0．<？title/address>
 |<？url/software-5>]
 
 [<？title>|
-(index|404)	<？title:LTsv10>
+(LTsv10|index|404)	<？title:LTsv10>
 kanedit	<？title:kanedit>
 kanfon	<？title:kanfont>
 kanmap	<？title:kanmap>

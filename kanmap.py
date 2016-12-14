@@ -270,7 +270,8 @@ if len(LTsv_GUI) > 0:
     LTsv_glyph_tapcallback_shell(kanmap_canvas,LTsv_kanmap_kbdinput)
     LTsv_draw_selcanvas(kanmap_canvas); LTsv_draw_delete(); LTsv_draw_queue();
     LTsv_glyph_kbddelete(kanmap_canvas); LTsv_glyph_kbddraw(kanmap_canvas,kanmap_kbdX,kanmap_kbdY); LTsv_draw_queue();
-    kanmap_KBDstart(5 if os.path.isfile(LTsv_global_picklepath()) else 50)
+#    kanmap_KBDstart(5 if os.path.isfile(LTsv_global_picklepath()) else 50)
+    kanmap_KBDstart(50)
     LTsv_window_main(kanmap_window)
 else:
     LTsv_libc_printf("GUIの設定に失敗しました。")

@@ -1,49 +1,48 @@
-# 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装です。
+# 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装の予定です。
 
-前作「[LTsv9kantray](https://github.com/ooblog/LTsv9kantray "LTsv9kantray")」のキーフック方式の代わりに漢直キーボードを各アプリに搭載する作戦が「LTsv10kanedit」のコンセプトです。  
+html版ドキュメント整備中。「[https://ooblog.github.io/LTsv10kanedit/](https://ooblog.github.io/LTsv10kanedit/ "「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。")」
 
 
-## 「kanedit」は漢直エディタです&#40;開発中&#41;。NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字を直接入力します。
+## 「kanedit」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた漢直テキストエディタの予定です。
 
 ![kanedit_512x384](docs/kanedit_512x384.png "kanedit")  
-※エディタ「kanedit」は現在１行テキストの「電卓」だけ動いてます。テキストファイルの編集などはまだ実装してません。  
+NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字を直接入力します。  
+※エディタ「kanedit」は現在１行テキストの「電卓」だけ動いてます&#40;開発中&#41;。テキストファイルの編集などはまだ実装してません。  
 
-「kanedit」の詳細は「[kanedit.txt](kanedit.txt "kanedit.txt")」を参考。  
+「kanedit」の詳細は「[docs/kanedit.txt](docs/kanedit.txt "docs/kanedit.txt")」を参考。  
 
 
-## 「kanfont」は単漢字辞書「kanchar.tsv」を編集するソフトです。辞書の項目にはフォント「kan5x5cmic」のグリフデザインも含まれます。
+## 「kanfont」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたフォントエディタ(グリフエディタ)です。
 
 ![kanfont_512x384](docs/kanfont_512x384.png "kanfont")  
-「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して、「[FontForge](http://fontforge.github.io/ja/ "FontForge")」で変換してもらう事でフォント「kan5x5comic.ttf」が作成できます。
-FontForgeの導入が困難なWindowsの場合、「kan5x5comic.woff&#40;準備中&#41;」を「[WOFFコンバータ](http://opentype.jp/woffconv.htm "WOFFコンバータ")」でTTFに変換してください。  
+「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、  
+「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。  
 
-「kanedit」の詳細は「[kanfont.txt](kanfont.txt "kanfont.txt")」を参考。  
+「kanedit」の詳細は「[docs/kanfont.txt](docs/kanfont.txt "docs/kanfont.txt")」を参考。  
 
 
-## 「kanzip」は郵便番号辞書「kanzip.tsv」を作成するソフトです。
+## 「kanzip」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた郵便番号ダウンローダーです。
 
 ![kanzip_512x384](docs/kanzip_512x384.png "kanzip")  
 「[〒郵便番号](http://www.post.japanpost.jp/zipcode/dl/readme.html "郵便番号データの説明 - 日本郵便")」からzipをダウンロードして郵便番号辞書「kanzip.tsv」を作成します。  
-郵便番号辞書あ「kanedit」の「電卓」で使用できます。  
 
-「kanzip」の詳細は「[kanzip.txt](kanzip.txt "kanzip.txt")」を参考。  
+「kanzip」の詳細は「[docs/kanzip.txt](docs/kanzip.txt "docs/kanzip.txt")」を参考。  
 
 
-## 「kanmap」は漢字配列「kanmap.tsv」を編集する…事はまだできませんがパイクル「kanpickle.bin」に「kan5x5comic」を積み込む事ができます。
+## 「kanmap」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたグリフ進捗ビュアーです。
 
 ![kanmap_512x384](docs/kanmap_512x384.png "kanmap")  
-「[LTsv/kanmap.tsv](LTsv/kanmap.tsv "LTsv/kanmap.tsv")」から「kanpickle.bin」と「kanmap.png」を生成します&#40;PNGの生成はGTKのみ&#41;。  
-不足しているグリフを「kanfont」で「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」に追加していく流れです。  
-「kan5x5comic」グリフ作成の進捗状況が確認できます。  
+「kan5x5comic」グリフ作成の進捗状況が確認できます。編集機能は準備中です。  
 
-「kanmap」の詳細は「[kanmap.txt](kanmap.txt "kanmap.txt")」を参考。  
+「kanmap」の詳細は「[docs/kanmap.txt](docs/kanmap.txt "docs/kanmap.txt")」を参考。  
 
 
-## 「L&#58;Tsv」は上記のようなソフトも作れるモジュール群です。
+## 「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
 
 ![LTsv_doc_512x384](docs/LTsv_doc_512x384.png "LTsv_doc")  
-「L&#58;Tsv」の詳細は「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」を参考。  
-モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[LTsv/LTsv_doc.tsv](LTsv/LTsv_doc.tsv "LTsv_doc.tsv")」から錬成されてます。  
+モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」等は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[docs/kanedit_etc.tsv](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」から生成されてます。  
+
+「L&#58;Tsv」の詳細は「[docs/LTsv_doc.txt](docs/LTsv_doc.txt "docs/LTsv_doc.txt")」を参考。  
 
 
 ## 動作環境。
