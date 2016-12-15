@@ -32,7 +32,7 @@
   <h1>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。</h1>
   <p>
 
-   version(branch):20161128M153500	modify:20161215R021313<br />
+   version(branch):20161215R220253	modify:20161216F035201<br />
   
 </p>
   <h2>目次</h2>
@@ -74,12 +74,21 @@
 <p>
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="index.html#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
  ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
- インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<br />
+</p><p>
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh">wine_sh</a>」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
- フォント「kan5x5comic.ttf」を用意する場合は「<a href="#kanfont_faq-0" title="③-0．「kanfont」のＦＡＱ">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
+ 最初に「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。<br />
+ 「LTsv/kanpickle.bin」を初期化しない場合グリフ座標データが蓄積するまで起動や動作が重くなるか、バージョン(ブランチ)によってはエラーになる場合があります。<br />
+ 詳細は「<a href="kanmap.html#kanmap_usage-0" title="①-0．「kanmap」の使い方(初回起動・表示編)"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap">①-0．「kanmap」の使い方(初回起動・表示編)</a>」を参考。<br />
+</p><p>
+ フォント「kan5x5comic.ttf」も用意する場合は「<a href="#kanfont_faq-0" title="③-0．「kanfont」のＦＡＱ">③-0．「kanfont」のＦＡＱ</a>」を参考。<br />
 
 </p>
 <dl><dt>ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。</dt><dd><a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a></dd></dl>
+
+<p>
+ アンインストールはインストール時に作成した「LTsv10kanedit-master」フォルダを削除するだけです。<br />
+</p>
 
 </section>
 <section>
@@ -87,15 +96,13 @@
 <p>
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
- 逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。<br />
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」で解決できます。詳細は「<a href="kanmap.html#kanmap_usage-0" title="①-0．「kanmap」の使い方(初回起動・表示編)"><img src="kanmap_logo.png" width="48" height="48" alt="kanmap" title="kanmap">①-0．「kanmap」の使い方(初回起動・表示編)</a>」を参考。<br />
- グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」から直接生成したいけど優先順位が低い。<br />
+ 私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。<br />
  人名に使える漢字の異体字を漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」から単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」に移管作業中。なので漢直鍵盤の漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」が大幅に変更するかも。<br />
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<br />
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
+ GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<br />
  「docs/」フォルダ内のドキュメントを「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv">docs/kanedit_etc.tsv</a>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<br />
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」に古いドキュメントが残存だけど「README.md」に置き換える予定。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」に古いドキュメントが残存。「README.md」作成のサンプルに置き換える予定。<br />
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<br />
 
 </section>

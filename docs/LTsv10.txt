@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161128M153500	modify:20161215R021313
+version(branch):20161215R220253	modify:20161216F035201
 
 目次
 
@@ -53,27 +53,32 @@ version(branch):20161128M153500	modify:20161215R021313
 
  ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「⑩-0．「L:Tsv」のＦＡＱ」も参考)。
  ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
- インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。
+
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
- フォント「kan5x5comic.ttf」を用意する場合は「「kanfont.txt」の③-0．「kanfont」のＦＡＱ」を参考。
+ 最初に「kanmap.py」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。
+ 「LTsv/kanpickle.bin」を初期化しない場合グリフ座標データが蓄積するまで起動や動作が重くなるか、バージョン(ブランチ)によってはエラーになる場合があります。
+ 詳細は「「kanmap.txt」の②-0．「kanmap.py」の関数一覧」を参考。
+
+ フォント「kan5x5comic.ttf」も用意する場合は「「kanfont.txt」の③-0．「kanfont」のＦＡＱ」を参考。
 
    ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
    https://github.com/ooblog/LTsv10kanedit
+
+ アンインストールはインストール時に作成した「LTsv10kanedit-master」フォルダを削除するだけです。
 
 
 ⓪-2．その他現在わかっている不具合や今後の課題
 
  Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
- 逆に私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「kanmap.py」で解決できます。詳細は「「kanmap.txt」の②-0．「kanmap.py」の関数一覧」を参考。
- グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は単漢字辞書「LTsv/kanchar.tsv」から直接生成したいけど優先順位が低い。
+ 私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
+ GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
  「LTsv/LTsv_doc.py」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。
- 「LTsv/LTsv_doc.tsv」に古いドキュメントが残存だけど「README.md」に置き換える予定。
+ 「LTsv/LTsv_doc.tsv」に古いドキュメントが残存。「README.md」作成のサンプルに置き換える予定。
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。
 
 
@@ -366,7 +371,7 @@ version(branch):20161128M153500	modify:20161215R021313
   Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
 
  【LTsv_file_ver()】
-  「LTsv_file.py」のバージョン表示(20161128M153500)。
+  「LTsv_file.py」のバージョン表示(20161215R220253)。
 
  【LTsv_issue()】
   「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
@@ -430,7 +435,7 @@ version(branch):20161128M153500	modify:20161215R021313
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの20161128M153500形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20161215R220253形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】

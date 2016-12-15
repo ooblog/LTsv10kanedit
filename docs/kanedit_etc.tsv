@@ -4,8 +4,8 @@ enter	LF
 tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
-LTsvver	20161128M153500
-modify	20161215R021332
+LTsvver	20161215R220253
+modify	20161216F035219
 |L:Tsv]
 
 [LTsv_doc|
@@ -315,25 +315,30 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 [<＃contents/License-1>|
 <？P> ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<？index/LTsv10_faq-0>」も参考)。<？BR>
  ダウンロードは「<？https/ooblog:LTsv10repository>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<？BR>
- インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです。<？BR>
+<？/PP>
+ インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。<？BR>
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<？https/License:wine_sh>」フォルダ内の「*.sh」のWineパスを適宜修正。<？BR>
- フォント「kan5x5comic.ttf」を用意する場合は「<？index/kanfont_faq-0>」を参考。<？BR>
+ 最初に「<？https/kanmap.py>」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。<？BR>
+ 「LTsv/kanpickle.bin」を初期化しない場合グリフ座標データが蓄積するまで起動や動作が重くなるか、バージョン(ブランチ)によってはエラーになる場合があります。<？BR>
+ 詳細は「<？index/kanmap_usage-0>」を参考。<？BR>
+<？/PP>
+ フォント「kan5x5comic.ttf」も用意する場合は「<？index/kanfont_faq-0>」を参考。<？BR>
 <？/P>
 <？https/License:LTsv10kanedit>
+
+<？P> アンインストールはインストール時に作成した「LTsv10kanedit-master」フォルダを削除するだけです。<？BR><？/P>
 |<＃contents/License-1>]
 
 [<＃contents/License-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
- 逆に私用領域と呼ばれる環境に左右される文字コードを<？VRkeyboard>の制御に用いてます。<？BR>
- 「LTsv/kanpickle.bin」にグリフデータが蓄積されるまでは動作が重いです。「<？https/kanmap.py>」で解決できます。詳細は「<？index/kanmap_usage-0>」を参考。<？BR>
- グリフデータ「kan5x5.svg」をフォント「kan5x5comic.ttf」に変換する手段として「FontForge」が必要。本当は<？DICchar>から直接生成したいけど優先順位が低い。<？BR>
+ 私用領域と呼ばれる環境に左右される文字コードを<？VRkeyboard>の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
- GTKのコールバックからデータを受けとる方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
+ GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由の<？PCkeyboard>取得やファイルダイアログからのキャンセル取得などが不明。<？BR>
  「<？https/LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<？BR>
  「docs/」フォルダ内のドキュメントを「<？https/kanedit_etc.tsv>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
- 「<？https/LTsv_doc.tsv>」に古いドキュメントが残存だけど「README.md」に置き換える予定。<？BR>
+ 「<？https/LTsv_doc.tsv>」に古いドキュメントが残存。「README.md」作成のサンプルに置き換える予定。<？BR>
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<？BR>
 |<＃contents/License-2>]
 

@@ -91,15 +91,15 @@ ENV/
 
 # git status
 # git push github:ooblog/LTsv10kanedit.git master
-# git push github:ooblog/LTsv10kanedit.git 20161128M153500
+# git push github:ooblog/LTsv10kanedit.git 20161215R220253
 # git log
 # git ls-files
 # git commit -a -m ""
 # git branch
 # git checkout master
-# git merge 20161128M153500
-# git branch -d 20161128M153500
-# git push github:ooblog/LTsv10kanedit.git :20161128M153500
+# git merge 20161215R220253
+# git branch -d 20161215R220253
+# git push github:ooblog/LTsv10kanedit.git :20161215R220253
 kan5x5.svg
 kanmap.png
 kanmap/

@@ -326,38 +326,6 @@ def LTsv_draw_glyphskbd(draw_t,draw_x=0,draw_y=0,draw_f=5,draw_g="活"):
         LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
     LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
 
-#def LTsv_draw_glyphsentry(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_h=1,draw_cL=0,draw_cR=0,draw_g="漫",draw_LF=False,draw_HT=False):
-#    draw_xf,draw_yf=draw_x,draw_y
-#    draw_tf=draw_t if draw_LF == False else draw_tf.replace('\n',"\uf0d3") #
-#    draw_tf=draw_tf if draw_HT == False else draw_tf.replace('\t',"")
-#    canvascolor,canvasbgcolor=LTsv_global_canvascolor(),LTsv_global_canvasbgcolor()
-#    LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
-#    LTsv_glyph_XG=[0]*(len(draw_t)+2)
-#    for draw_t_pos,glyphcode in enumerate(draw_t):
-#        if glyphcode in "\n\t":
-#            if glyphcode == '\n':
-#                draw_xf,draw_yf=draw_x,draw_yf+draw_f+draw_h
-#            if glyphcode == '\t':
-#                draw_xf=int(math.ceil((draw_xf+draw_f)/(draw_f*4))*(draw_f*4))+draw_w
-#            continue
-#        LTsv_glyphnote,LTsv_clocknote=LTsv_glyphfont(glyphcode)
-#        if draw_cL <= draw_t_pos <= draw_cR:
-#            LTsv_draw_color(canvascolor)
-#            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-#                LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-#                LTsv_draw_polygon(*tuple(LTsv_glyphpointresize))
-#        else:
-#            for LTsv_glyphpointlist_count,LTsv_glyphpointlist in enumerate(LTsv_glyphnote):
-#                LTsv_glyphpointresize=[xy*draw_f//LTsv_PSchar_ZW+draw_yf if odd%2 else xy*draw_f//LTsv_PSchar_ZW+draw_xf for odd,xy in enumerate(LTsv_glyphpointlist)]
-#                LTsv_draw_color(canvascolor if LTsv_clocknote[LTsv_glyphpointlist_count] > 0 else canvasbgcolor)
-#                LTsv_draw_polygonfill(*tuple(LTsv_glyphpointresize))
-#        LTsv_glyph_XG[draw_t_pos]=draw_xf
-#        draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
-#    LTsv_glyph_XG[len(draw_t)]=draw_xf if len(draw_t) > 0 else 0
-#    LTsv_glyph_XG[len(draw_t)+1]=LTsv_glyph_XG[len(draw_t)]
-#    LTsv_draw_bgcolor(canvasbgcolor); LTsv_draw_color(canvascolor); 
-#    return LTsv_glyph_XG
-
 def LTsv_draw_glyphclock(draw_t="",draw_x=0,draw_y=0,draw_f=LTsv_PSchar_ZW//2,draw_g="活",color_R="#6E81D9",color_L="#6ED997",color_X="#D96ED3"):
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
@@ -903,6 +871,7 @@ def LTsv_glyph_widecache(draw_t,draw_x=0,draw_y=0,draw_f=10,draw_w=1,draw_g="漫
     LTsv_glyph_widecachetempX=[0]*(len(draw_t)+2)
     for cachetext_pos,glyphcode in enumerate(LTsv_glyph_widecachetext):
         LTsv_glyph_widecachetempX[cachetext_pos]=draw_xf
+        if not glyphcode in LTsv_glyph5x5_wide: LTsv_glyphpath(glyphcode)
         draw_xf=draw_xf+LTsv_glyph5x5_wide[glyphcode]*draw_f//LTsv_PSchar_ZW+draw_w
     LTsv_glyph_widecachetempX[len(LTsv_glyph_widecachetext)]=draw_xf
     LTsv_glyph_widecachetempX[len(LTsv_glyph_widecachetext)+1]=LTsv_glyph_widecachetempX[len(LTsv_glyph_widecachetext)]
