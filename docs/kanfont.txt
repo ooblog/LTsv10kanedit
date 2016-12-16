@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20161215R220253	modify:20161216F035201
+version(branch):20161215R220253	modify:20161216F205132
 
 目次
 
@@ -100,7 +100,67 @@ version(branch):20161215R220253	modify:20161216F035201
 
 ②-1．「kanfont.tsv」のタグ解説
 
- 「kanfont.tsv」の解説も準備中です。
+ 「kanfont.tsv」は「？https/kanfont.py>」の設定ファイルです。
+
+ 【[kanfont|】
+  「kanfont.py」の設定。
+
+ 【seek】
+  縦スケール(編集中のグリフ)の値を保存。初期値は「ぱ」。
+
+ 【grid】
+  「grid」スピンボックスの値を保存。初期値は「50」。
+
+ 【inner】
+  「inner」チェックボックスの値を保存。初期値は「0」。
+
+ 【lineseg】
+  「seg」チェックボックスの値を保存。初期値は「1」。
+
+ 【piece】
+  「Pce」チェックボックスの値を保存。初期値は「1」。
+
+ 【gothic】
+  グリフラジオボタン(活,漫,筆)の値を保存。初期値は「0」。
+
+ 【gridimage】
+  編集中キャンバスに表示するグリッド画像ファイル名。初期値は「kanfont_grid25_5x5.png」。
+
+ 【refer】
+  「ref」編集中キャンバスに表示できるフォント名。初期値は「Noto Sans Japanese Regular」。
+
+ 【refergrid】
+  「ref」チェックボックスの値を保存。初期値は「1」。
+
+ 【referGTK】
+  キャンバスに「refer」を表示する場合の位置調整と色。「GTK」で大きいフォントを表示するとズレが発生する。初期値は「X:-30	Y:-30	S:420	C:#E5E5E5」。
+
+ 【referTkinter】
+  キャンバスに「refer」を表示する場合の位置調整と色。「Tkinter」で大きいフォントを表示するとズレが発生する。初期値は「X:-30	Y:-135	S:420	C:#E5E5E5」。
+
+ 【glyphcolor】
+  キャンバス編集中のグリフやカーソルの色指定。R:右回転ポリゴン L:左回転ポリゴン X:#D96ED3 G:#9F6C00。初期値は「R:#6E81D9	L:#6ED997	X:#D96ED3	G:#9F6C00」。
+
+ 【dic_name】
+  単漢字辞書保存先指定。初期値は「LTsv/kanchar.tsv」。
+
+ 【svg_name】
+  SVGの保存先指定。初期値は「kan5x5.svg」。
+
+ 【font_name】
+  グリフの名称。フォント名称にも使用。初期値は「活:kan5x5	漫:kan5x5comic	筆:kan5x5brush」。
+
+ 【font_glyphtype】
+  「save」ボタンで保存するグリフは初期値の「漫」に固定されてるが、「活」に変える事でドット絵限定にしたり、「」に空指定する事でグリフラジオボタンによる選択ができる。
+
+ 【font_widths】
+  フォント幅(全角,麻雀牌,半角)グループを生成。「kan5x5.svg」で「<font id="kan5x5comic_w624" horiz-adv-x="624">」のようなタグ生成に使う。初期値は「1024,824,624」。
+
+ 【autosave】
+  初期値は「off」。「on」にするとウィンドウを閉じた時に「LTsv/kanchar.tsv(dic_name)」に自動保存可能。設定に関係なく「LTsv/kanpickle.bin」は上書保存。
+
+ 【savetime】
+  「save」ボタンに保存時間を表示する演出用途。初期値は「@0h:@0n:@0s」。
 
 
 ②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説

@@ -32,7 +32,7 @@
   <h1>「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161216F035201<br />
+   version(branch):20161215R220253	modify:20161216F205132<br />
   
 </p>
   <h2>目次</h2>
@@ -227,8 +227,49 @@
 <section>
  <h3 id="kanfont-1">②-1．「kanfont.tsv」のタグ解説</h3>
 <p>
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.tsv">kanfont.tsv</a>」の解説も準備中です。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanfont.tsv">kanfont.tsv</a>」は「？https/kanfont.py>」の設定ファイルです。<br />
+
 </p>
+<dl><dt>[kanfont|</dt><dd>
+「kanfont.py」の設定。</dd></dl>
+<dl><dt>seek</dt><dd>
+縦スケール(編集中のグリフ)の値を保存。初期値は「ぱ」。</dd></dl>
+<dl><dt>grid</dt><dd>
+「grid」スピンボックスの値を保存。初期値は「50」。</dd></dl>
+<dl><dt>inner</dt><dd>
+「inner」チェックボックスの値を保存。初期値は「0」。</dd></dl>
+<dl><dt>lineseg</dt><dd>
+「seg」チェックボックスの値を保存。初期値は「1」。</dd></dl>
+<dl><dt>piece</dt><dd>
+「Pce」チェックボックスの値を保存。初期値は「1」。</dd></dl>
+<dl><dt>gothic</dt><dd>
+グリフラジオボタン(活,漫,筆)の値を保存。初期値は「0」。</dd></dl>
+<dl><dt>gridimage</dt><dd>
+編集中キャンバスに表示するグリッド画像ファイル名。初期値は「kanfont_grid25_5x5.png」。</dd></dl>
+<dl><dt>refer</dt><dd>
+「ref」編集中キャンバスに表示できるフォント名。初期値は「Noto Sans Japanese Regular」。</dd></dl>
+<dl><dt>refergrid</dt><dd>
+「ref」チェックボックスの値を保存。初期値は「1」。</dd></dl>
+<dl><dt>referGTK</dt><dd>
+キャンバスに「refer」を表示する場合の位置調整と色。「GTK」で大きいフォントを表示するとズレが発生する。初期値は「X:-30	Y:-30	S:420	C:#E5E5E5」。</dd></dl>
+<dl><dt>referTkinter</dt><dd>
+キャンバスに「refer」を表示する場合の位置調整と色。「Tkinter」で大きいフォントを表示するとズレが発生する。初期値は「X:-30	Y:-135	S:420	C:#E5E5E5」。</dd></dl>
+<dl><dt>glyphcolor</dt><dd>
+キャンバス編集中のグリフやカーソルの色指定。R:右回転ポリゴン L:左回転ポリゴン X:#D96ED3 G:#9F6C00。初期値は「R:#6E81D9	L:#6ED997	X:#D96ED3	G:#9F6C00」。</dd></dl>
+<dl><dt>dic_name</dt><dd>
+単漢字辞書保存先指定。初期値は「LTsv/kanchar.tsv」。</dd></dl>
+<dl><dt>svg_name</dt><dd>
+SVGの保存先指定。初期値は「kan5x5.svg」。</dd></dl>
+<dl><dt>font_name</dt><dd>
+グリフの名称。フォント名称にも使用。初期値は「活:kan5x5	漫:kan5x5comic	筆:kan5x5brush」。</dd></dl>
+<dl><dt>font_glyphtype</dt><dd>
+「save」ボタンで保存するグリフは初期値の「漫」に固定されてるが、「活」に変える事でドット絵限定にしたり、「」に空指定する事でグリフラジオボタンによる選択ができる。</dd></dl>
+<dl><dt>font_widths</dt><dd>
+フォント幅(全角,麻雀牌,半角)グループを生成。「kan5x5.svg」で「&lt;font id="kan5x5comic_w624" horiz-adv-x="624"&gt;」のようなタグ生成に使う。初期値は「1024,824,624」。</dd></dl>
+<dl><dt>autosave</dt><dd>
+初期値は「off」。「on」にするとウィンドウを閉じた時に「LTsv/kanchar.tsv(dic_name)」に自動保存可能。設定に関係なく「LTsv/kanpickle.bin」は上書保存。</dd></dl>
+<dl><dt>savetime</dt><dd>
+「save」ボタンに保存時間を表示する演出用途。初期値は「@0h:@0n:@0s」。</dd></dl>
 
 </section>
 <section>
