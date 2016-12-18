@@ -45,7 +45,7 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 
 <？P><？LTsv_MD_IMG:kanfont><？BR>
 「<？https/kanchar>」から「kan5x5.svg」を生成して「<？https/fontforge>」などで変換してフォント「kan5x5comic.ttf」も作成できますが、<？BR>
-「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932&#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。<？BR>
+「kanedit」は「<？https/kanchar>」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932&#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。<？BR>
 <？/PP>
 「kanfont」の詳細は「<？https/kanfont>」を参考。<？BR>
 <？/P>
@@ -172,7 +172,7 @@ License: MIT<？BR>
 [<？https/kanchar>*<？https/LTsv10>*<？https/LTsv_doc_py>*<？https/kanedit_etc>|
 :<＄href/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄title/htmldoc-0>	<＄txt/htmldoc-0>
-:<＄txt/htmldoc-0>	LTsv/kanchar.txt
+:<＄txt/htmldoc-0>	LTsv/kanchar.tsv
 :<＄href/htmldoc-1>	<＄txt/htmldoc-1>
 :<＄title/htmldoc-1>	<＄txt/htmldoc-1>
 :<＄txt/htmldoc-1>	docs/LTsv10.txt

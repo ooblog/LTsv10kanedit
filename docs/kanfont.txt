@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20161215R220253	modify:20161219M004539
+version(branch):20161215R220253	modify:20161219M012349
 
 目次
 
@@ -208,6 +208,7 @@ version(branch):20161215R220253	modify:20161219M004539
 
    WOFFコンバータ
    http://opentype.jp/woffconv.htm
+
  Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。
  Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。
      漢直鍵盤の入力操作は「「LTsv10.txt」の⑨-2．漢直鍵盤の操作方法」を参考。

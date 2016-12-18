@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161219M004602
+modify	20161219M012412
 |L:Tsv]
 
 [LTsv_doc|
@@ -2738,6 +2738,7 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 <？https/kanfont_faq:ooblog.github.io>
 
 <？https/kanfont_faq:woffconv>
+
 <？DLDTfaq> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
  Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
      <？VRkeyboard/howto><？BR>
