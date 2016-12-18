@@ -15,8 +15,8 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 ## 「kanfont」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたフォントエディタ(グリフエディタ)です。
 
 ![kanfont_512x384](docs/kanfont_512x384.png "kanfont")  
-「[LTsv/kanchar.txt](LTsv/kanchar.txt "LTsv/kanchar.txt")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、  
-「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。  
+「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、  
+「kanedit」は「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932&#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。  
 
 「kanfont」の詳細は「[docs/kanfont.txt](docs/kanfont.txt "docs/kanfont.txt")」を参考。  
 
