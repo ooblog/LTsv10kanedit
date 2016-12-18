@@ -1,6 +1,6 @@
 # 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装の予定です。
 
-html版ドキュメント整備中。「[https://ooblog.github.io/LTsv10kanedit/](https://ooblog.github.io/LTsv10kanedit/ "「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。")」
+html版ドキュメント整備中。「[https://github.com/ooblog/LTsv10kanedit/](https://github.com/ooblog/LTsv10kanedit/ "「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。")」
 
 
 ## 「kanedit」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた漢直テキストエディタの予定です。
@@ -15,10 +15,10 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 ## 「kanfont」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたフォントエディタ(グリフエディタ)です。
 
 ![kanfont_512x384](docs/kanfont_512x384.png "kanfont")  
-「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、  
+「[LTsv/kanchar.txt](LTsv/kanchar.txt "LTsv/kanchar.txt")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、  
 「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。  
 
-「kanedit」の詳細は「[docs/kanfont.txt](docs/kanfont.txt "docs/kanfont.txt")」を参考。  
+「kanfont」の詳細は「[docs/kanfont.txt](docs/kanfont.txt "docs/kanfont.txt")」を参考。  
 
 
 ## 「kanzip」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた郵便番号ダウンローダーです。
@@ -40,9 +40,9 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 ## 「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
 
 ![LTsv_doc_512x384](docs/LTsv_doc_512x384.png "LTsv_doc")  
-モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」等は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[docs/kanedit_etc.tsv](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」から生成されてます。  
+モジュール解説文書「[docs/LTsv10.txt](docs/LTsv10.txt "docs/LTsv10.txt")」等は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv/LTsv_doc.py")」を使って「[docs/kanedit_etc.tsv](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」から生成されてます。  
 
-「L&#58;Tsv」の詳細は「[docs/LTsv_doc.txt](docs/LTsv_doc.txt "docs/LTsv_doc.txt")」を参考。  
+「LTsv_doc」の詳細は「[docs/LTsv_doc.txt](docs/LTsv_doc.txt "docs/LTsv_doc.txt")」を参考。  
 
 
 ## 動作環境。
@@ -54,4 +54,5 @@ Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動
 
 Copyright (c) 2016 ooblog  
 License: MIT  
-[https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE](https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE "https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")  
+[https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE](LICENSE "https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")  
+

@@ -38,24 +38,24 @@ LTsvver	<＠L:TsvLTsvver>
 NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字を直接入力します。<？BR>
 ※エディタ「kanedit」は現在１行テキストの「電卓」だけ動いてます&#40;開発中&#41;。テキストファイルの編集などはまだ実装してません。<？BR>
 <？/PP>
-「kanedit」の詳細は「[docs/kanedit.txt](docs/kanedit.txt "docs/kanedit.txt")」を参考。<？BR>
+「kanedit」の詳細は「<？https/kanedit>」を参考。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:kanfont>
 
 <？P><？LTsv_MD_IMG:kanfont><？BR>
-「[LTsv/kanchar.tsv](LTsv/kanchar.tsv "LTsv/kanchar.tsv")」から「kan5x5.svg」を生成して「[FontForge](http://fontforge.github.io/ja/ "FontForge")」などで変換してフォント「kan5x5comic.ttf」も作成できますが、<？BR>
-「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。<？BR>
+「<？https/kanchar>」から「kan5x5.svg」を生成して「<？https/fontforge>」などで変換してフォント「kan5x5comic.ttf」も作成できますが、<？BR>
+「kanedit」は「LTsv/kanchar.tsv」を直に読み込む事でグリフを描画します。これにより「Tkinter」で表示できないCP932&#40;いわゆるシフトJIS、BMP基本多言語面0xffff範囲&#41;外の文字を扱えます。<？BR>
 <？/PP>
-「kanedit」の詳細は「[docs/kanfont.txt](docs/kanfont.txt "docs/kanfont.txt")」を参考。<？BR>
+「kanfont」の詳細は「<？https/kanfont>」を参考。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:kanzip>
 
 <？P><？LTsv_MD_IMG:kanzip><？BR>
-「[〒郵便番号](http://www.post.japanpost.jp/zipcode/dl/readme.html "郵便番号データの説明 - 日本郵便")」からzipをダウンロードして郵便番号辞書「kanzip.tsv」を作成します。<？BR>
+「<？https/japanpost>」からzipをダウンロードして郵便番号辞書「kanzip.tsv」を作成します。<？BR>
 <？/PP>
-「kanzip」の詳細は「[docs/kanzip.txt](docs/kanzip.txt "docs/kanzip.txt")」を参考。<？BR>
+「kanzip」の詳細は「<？https/kanzip>」を参考。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:kanmap>
@@ -63,27 +63,28 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 <？P><？LTsv_MD_IMG:kanmap><？BR>
 「kan5x5comic」グリフ作成の進捗状況が確認できます。編集機能は準備中です。<？BR>
 <？/PP>
-「kanmap」の詳細は「[docs/kanmap.txt](docs/kanmap.txt "docs/kanmap.txt")」を参考。<？BR>
+「kanmap」の詳細は「<？https/kanmap>」を参考。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:LTsv_doc>
 
 <？P><？LTsv_MD_IMG:LTsv_doc><？BR>
-モジュール解説文書「[LTsv/LTsv_doc.txt](LTsv/LTsv_doc.txt "LTsv_doc.txt")」等は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv_doc.py")」を使って「[docs/kanedit_etc.tsv](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」から生成されてます。<？BR>
+モジュール解説文書「<？https/LTsv10>」等は「<？https/LTsv_doc_py>」を使って「<？https/kanedit_etc>」から生成されてます。<？BR>
 <？/PP>
-「L&#58;Tsv」の詳細は「[docs/LTsv_doc.txt](docs/LTsv_doc.txt "docs/LTsv_doc.txt")」を参考。<？BR>
+「LTsv_doc」の詳細は「<？https/LTsv_doc>」を参考。<？BR>
 <？/P>
 
-## 動作環境。
+<？LTsv_MD_H2:environment>
 
-Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。  
+<？P>Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。<？BR>
+<？/P>
 
+<？LTsv_MD_H2:LICENSE>
 
-## ライセンス・著作権など。
-
-Copyright (c) 2016 ooblog  
-License: MIT  
-[https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE](https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE "https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")  
+<？P>Copyright (c) 2016 ooblog<？BR>
+License: MIT<？BR>
+<？https/LTsv10LICENSE><？BR>
+<？/P><？LTsv_MD_footer>
 |<LTsv_doc_test_main>]
 
 [<？LTsv_MD_header>|
@@ -94,9 +95,18 @@ License: MIT
 [<＃LTsv_HTML_header>|
 <html lang="ja"><head>
  <meta charset="UTF-8" />
- <title><？LTsv10kanedit(tsvtool10)></title>
+ <title>README.md</title>
 </head><body>
 |<＃LTsv_HTML_header>]
+
+[<？LTsv_MD_footer>|
+.+\.html?	@E<＃LTsv_HTML_footer>
+.+\.md	
+|<？LTsv_MD_footer>]
+
+[<＃LTsv_HTML_footer>|
+</body></html>
+|<＃LTsv_HTML_footer>]
 
 [<？LTsv_MD_H1:LTsv10kanedit>|
 :<＄LTsv_MD_H1:0>	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装の予定です。
@@ -104,123 +114,105 @@ License: MIT
 .+\.md	# <＄LTsv_MD_H1:0>
 |<？LTsv_MD_H1:LTsv10kanedit>]
 
-[<？https/htmldoc>|
-:<＄web/htmldoc-0>	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-:<＄url/htmldoc-0>	https://ooblog.github.io/LTsv10kanedit/
-.+\.html?	<a href="<＄url/htmldoc-0>" title="<＄web/htmldoc-0>"><＄url/htmldoc-0></a>
-.+\.md	[<＄url/htmldoc-0>](<＄url/htmldoc-0> "<＄web/htmldoc-0>")
-|<？https/htmldoc>]
-
-[<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>|
+[<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>|
 :<＄LTsv_MD_H2:0>	「kanedit」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた漢直テキストエディタの予定です。
 :<＄LTsv_MD_H2:1>	「kanfont」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたフォントエディタ(グリフエディタ)です。
 :<＄LTsv_MD_H2:2>	「kanzip」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた郵便番号ダウンローダーです。
 :<＄LTsv_MD_H2:3>	「kanmap」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたグリフ進捗ビュアーです。
 :<＄LTsv_MD_H2:4>	「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
+:<＄LTsv_MD_H2:5>	動作環境。
+:<＄LTsv_MD_H2:6>	ライセンス・著作権など。
 .+\.html?	<h2><＄LTsv_MD_H2:@c></h2>
 .+\.md	## <＄LTsv_MD_H2:@c>
-|<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>]
+|<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>]
 
 [<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>|
 :<＄alt/htmldoc-0>	kanedit_512x384
-:<＄img/htmldoc-0>	docs/kanedit_512x384.png
 :<＄title/htmldoc-0>	kanedit
+:<＄img/htmldoc-0>	docs/kanedit_512x384.png
 :<＄alt/htmldoc-1>	kanfont_512x384
-:<＄img/htmldoc-1>	docs/kanfont_512x384.png
 :<＄title/htmldoc-1>	kanfont
+:<＄img/htmldoc-1>	docs/kanfont_512x384.png
 :<＄alt/htmldoc-2>	kanzip_512x384
-:<＄img/htmldoc-2>	docs/kanzip_512x384.png
 :<＄title/htmldoc-2>	kanzip
+:<＄img/htmldoc-2>	docs/kanzip_512x384.png
 :<＄alt/htmldoc-3>	kanmap_512x384
-:<＄img/htmldoc-3>	docs/kanmap_512x384.png
 :<＄title/htmldoc-3>	kanmap
+:<＄img/htmldoc-3>	docs/kanmap_512x384.png
 :<＄alt/htmldoc-4>	LTsv_doc_512x384
-:<＄img/htmldoc-4>	docs/LTsv_doc_512x384.png
 :<＄title/htmldoc-4>	LTsv_doc
-.+\.html?	<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/<＄img/htmldoc-@c>"><img src="https://github.com/ooblog/LTsv10kanedit/raw/master/<＄img/htmldoc-@c>" width="512" height="384" alt="<＄alt/htmldoc-@c>" title="<＄title/htmldoc-@c>"></a>
+:<＄img/htmldoc-4>	docs/LTsv_doc_512x384.png
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄img/htmldoc-@c>"><img src="<？ooblog:LTsv10repository_raw><＄img/htmldoc-@c>" width="512" height="384" alt="<＄alt/htmldoc-@c>" title="<＄title/htmldoc-@c>"></a>
 .+\.md	![<＄alt/htmldoc-@c>](<＄img/htmldoc-@c> "<＄title/htmldoc-@c>")
 |<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>]
 
-[<？ooblog>|
-.+\.html?	# <？Copyright><br />@E# <？LicenseMIT><br />@E# <？https/ooblog:LTsv10LICENSE><br />@E
-.*	# <？Copyright>@E# <？LicenseMIT>@E# <？https/ooblog:LTsv10LICENSE>@E
-|<？ooblog>]
-[<？https/ooblog:LTsv10LICENSE>|
-.+\.html?	<a href="<？url/ooblog:LTsv10LICENSE>" title="<？title/ooblog:LTsv10LICENSE>"><？url/ooblog:LTsv10LICENSE></a>
-.*	<？url/ooblog:LTsv10LICENSE>
-|<？https/ooblog:LTsv10LICENSE>]
-[<？url/ooblog:LTsv10LICENSE>|
-.*	<？url/ooblog:LTsv10repository>/blob/master/LICENSE
-|<？url/ooblog:LTsv10LICENSE>]
-[<？title/ooblog:LTsv10LICENSE>|
-.*	LTsv10kanedit/LICENSE at master · ooblog/LTsv10kanedit
-|<？title/ooblog:LTsv10LICENSE>]
-[<？https/ooblog:LTsv10repository>|
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>" title="<？title/ooblog:LTsv10repository>"><？url/ooblog:LTsv10repository></a>
-.*	<？url/ooblog:LTsv10repository>
-|<？https/ooblog:LTsv10repository>]
-[<？url/ooblog:LTsv10repository>|
-.*	https://github.com/ooblog/LTsv10kanedit
-|<？url/ooblog:LTsv10repository>]
-[<？title/ooblog:LTsv10repository>|
-.*	ooblog/LTsv10kanedit: 「L:Tsv」ファイルの読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
-|<？title/ooblog:LTsv10repository>]
-[<？https/ooblog:LTsv_doc.py>|
-.+\.html?	<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/<？url/ooblog:LTsv_doc.py>" title="<？title/ooblog:LTsv_doc.py>"><？url/ooblog:LTsv_doc.py></a>
-.*	<？url/ooblog:LTsv_doc.py>
-|<？https/ooblog:LTsv_doc.py>]
-[<？url/ooblog:LTsv_doc.py>|
-.*	LTsv_doc.py
-|<？url/ooblog:LTsv_doc.py>]
-[<？title/ooblog:LTsv_doc.py>|
-.*	LTsv10kanedit/LTsv_doc.py at master · ooblog/LTsv10kanedit
-|<？title/ooblog:LTsv_doc.py>]
+[<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10LICENSE>|
+:<＄href/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄title/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄txt/htmldoc-0>	docs/kanedit.txt
+:<＄href/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄txt/htmldoc-1>	docs/kanfont.txt
+:<＄href/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄title/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄txt/htmldoc-2>	docs/kanzip.txt
+:<＄href/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄title/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄txt/htmldoc-3>	docs/kanmap.txt
+:<＄href/htmldoc-4>	<＄txt/htmldoc-4>
+:<＄title/htmldoc-4>	<＄txt/htmldoc-4>
+:<＄txt/htmldoc-4>	docs/LTsv_doc.txt
+:<＄href/htmldoc-5>	LICENSE
+:<＄title/htmldoc-5>	<＄txt/htmldoc-5>
+:<＄txt/htmldoc-5>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10LICENSE>]
 
-[<？yakuyon>|
-.*	「約四文字」(http://ooblog.github.io/)
-|<？yakuyon>]
-[<？Copyright>|
-.*	Copyright (c) 2016 ooblog
-|<？Copyright>]
-[<？LicenseMIT>|
-.*	License: MIT
-|<？LicenseMIT>]
-[<？LTsv>|
-.*	LTsv10kanedit(tsvtool10)
-|<？LTsv>]
-[<？modify_style>|
-.*	<＠L:TsvLTsvver>形式(@@000y@@0m@@0dm@@wdec@@0h@@0n@@0s)
-|<？modify_style>]
-[<？modify>|
-.*	@000y@0m@0dm@wdec@0h@0n@0s
-|<？modify>]
-[<？CP932>|
-.*	CP932(いわゆるシフトJIS、BMP基本多言語面0xffff範囲内)
-|<？CP932>]
-[<？gamepad>|
-.*	ジョイスティック(ゲームPAD)
-|<？gamepad>]
-[<？PCkeyboard>|
-.*	PCキーボード
-|<？PCkeyboard>]
-[<？keycode00FF>|
-.*	キーコード($00〜$FF)
-|<？keycode00FF>]
-[<？tasktrayNotify>|
-.*	通知タスクトレイ(Notify)
-|<？tasktrayNotify>]
-[<？GUIwidget>|
-.*	GUIオブジェクト(widget)
-|<？GUIwidget>]
-[<？reversi>|
-.*	リバーシー
-|<？reversi>]
-[<？VRkeyboard>|
-.*	漢直鍵盤
-|<？VRkeyboard>]
-[<？VRcalc>|
-.*	テキスト入力欄(電卓)
-|<？VRcalc>]
+[<？https/kanchar>*<？https/LTsv10>*<？https/LTsv_doc_py>*<？https/kanedit_etc>|
+:<＄href/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄title/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄txt/htmldoc-0>	LTsv/kanchar.txt
+:<＄href/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄txt/htmldoc-1>	docs/LTsv10.txt
+:<＄href/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄title/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄txt/htmldoc-2>	LTsv/LTsv_doc.py
+:<＄href/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄title/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄txt/htmldoc-3>	docs/kanedit_etc.tsv
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/kanchar>*<？https/LTsv10>*<？https/LTsv_doc_py>*<？https/kanedit_etc>]
+
+[<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
+:<＄repository-0>	raw/master/
+:<＄repository-1>	blob/master/
+.*	<？ooblog:LTsv10repository_url><＄repository-@c>
+|<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>]
+
+[<？https/htmldoc>|
+.+\.html?	<a href="<？ooblog:LTsv10repository_url>" title="<？ooblog:LTsv10repository_txt>"><？ooblog:LTsv10repository_url></a>
+.+\.md	[<？ooblog:LTsv10repository_url>](<？ooblog:LTsv10repository_url> "<？ooblog:LTsv10repository_txt>")
+|<？https/htmldoc>]
+[<？ooblog:LTsv10repository_txt>|
+.*	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+|<？ooblog:LTsv10repository_txt>]
+[<？ooblog:LTsv10repository_url>|
+.*	https://github.com/ooblog/LTsv10kanedit/
+|<？ooblog:LTsv10repository_url>]
+
+[<？https/japanpost>*<？https/fontforge>|
+:<＄href/htmldoc-0>	http://www.post.japanpost.jp/zipcode/dl/readme.html
+:<＄title/htmldoc-0>	郵便番号データの説明 - 日本郵便
+:<＄txt/htmldoc-0>	〒郵便番号
+:<＄href/htmldoc-1>	http://fontforge.github.io/ja/
+:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄txt/htmldoc-1>	FontForge
+.+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/japanpost>*<？https/fontforge>]
 
 [<？P>|
 .+\.html?	<p>@E
@@ -234,18 +226,6 @@ License: MIT
 .+\.html?	@E</p>
 .*	
 |<？/P>]
-[<？DLDT>|
-.+\.html?	<dl><dt>@E
-.*	
-|<？DLDT>]
-[<？/DTDD>|
-.+\.html?	</dt>@E<dd>@E
-.*	
-|<？/DTDD>]
-[<？/DD/DL>|
-.+\.html?	@E</dd></dl>
-.*	
-|<？/DD/DL>]
 [<？BR>|
 .+\.html?	<br />
 .+\.md	  
