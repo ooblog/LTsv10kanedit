@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161215R220253	modify:20161219M012349
+version(branch):20161215R220253	modify:20161220T030018
 
 目次
 
@@ -127,6 +127,10 @@ version(branch):20161215R220253	modify:20161219M012349
  ・変換できない文字は数値文字参照に変換されます。
  ・その他数値文字参照(文字参照含む)の変換、全角半角大文字小文字ひらがなカタカナの変換などが扱えます。
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。
+
+ 【LTsv_getpreferredencoding()】
+  「sys.stdout.encoding」(ターミナルのエンコード)を返す。
+  「sys.stdout.encoding」が取得できない(Noneを返す)場合は「locale.getpreferredencoding()」からターミナルのエンコード取得を試みる。
 
  【LTsv_libc_printf(LTsv_text,LTsv_log=None)】
   LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。

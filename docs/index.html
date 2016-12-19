@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161219M012349<br />
+   version(branch):20161215R220253	modify:20161220T030018<br />
   
 </p>
   <h2>目次</h2>
@@ -214,6 +214,9 @@
  ・単体風テストでは仮名変換「LTsv_kanare()」など関数群の挙動確認などができます。<br />
 </p>
 
+<dl><dt>LTsv_getpreferredencoding()</dt><dd>
+「sys.stdout.encoding」(ターミナルのエンコード)を返す。<br />
+「sys.stdout.encoding」が取得できない(Noneを返す)場合は「locale.getpreferredencoding()」からターミナルのエンコード取得を試みる。</dd></dl>
 <dl><dt>LTsv_libc_printf(LTsv_text,LTsv_log=None)</dt><dd>
 LTsv_textの文字列をターミナル(stdout)に表示する。LTsv_logと返り値を指定する事で変数にも出力追記できる。<br />
 LTsv_textに渡す文字列は「"{0}".format(data)」みたいに事前に「str.format()」などで加工する。<br />

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division,print_function,absolute_import,unicode_literals
 import sys
+import locale
 import subprocess
 import codecs
 import ctypes
@@ -23,9 +24,17 @@ if sys.platform.startswith("linux"):
 #if sys.platform.startswith("darwin"):
 #    LTsv_libc=ctypes.CDLL("libSystem.B.dylib")
 
+def LTsv_getpreferredencoding():
+    LTsv_stdout=sys.stdout.encoding
+    if LTsv_stdout is None:
+        LTsv_stdout=locale.getpreferredencoding();
+#        print("LTsv_getpreferredencoding",LTsv_stdout)
+    return LTsv_stdout
+
 def LTsv_libc_printf(LTsv_text,LTsv_log=None):
     if not LTsv_libc is None:
-        LTsv_Btext=LTsv_text.encode(sys.stdout.encoding,"xmlcharrefreplace")
+#        LTsv_Btext=LTsv_text.encode(sys.stdout.encoding,"xmlcharrefreplace")
+        LTsv_Btext=LTsv_text.encode(LTsv_getpreferredencoding(),"xmlcharrefreplace")
         LTsv_libc.printf(b"%s\n",LTsv_Btext)
     else:
         print(LTsv_text)
@@ -43,8 +52,9 @@ def LTsv_libc_printcat(LTsv_text):
         LTsv_libc.printf(b"%s",LTsv_Btext)
 
 def LTsv_libc_printf_type(LTsv_text,LTsv_log=None):
-    Btext=LTsv_text.encode(sys.stdout.encoding,"xmlcharrefreplace")
-    LTsv_page=LTsv_libc_printf("{0} {1}".format(type(Btext),[Btext]),LTsv_log)
+#    Btext=LTsv_text.encode(sys.stdout.encoding,"xmlcharrefreplace")
+    LTsv_Btext=LTsv_text.encode(LTsv_getpreferredencoding(),"xmlcharrefreplace")
+    LTsv_page=LTsv_libc_printf("{0} {1}".format(type(LTsv_Btext),[LTsv_Btext]),LTsv_log)
     return LTsv_page
 
 def LTsv_utf2xml(LTsv_text):
