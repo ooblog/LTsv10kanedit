@@ -228,6 +228,18 @@ def LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False):
         LTsv_subprocess_output=err.output if err.output != None else ""
     return LTsv_subprocess_output
 
+def LTsv_otherprocess(LTsv_otherprocess_input=""):
+    LTsv_subprocess_output=""
+    try:
+        if sys.version_info.major == 2:
+            LTsv_otherprocess_proc=subprocess.Popen(LTsv_otherprocess_input.decode("utf-8"),shell=True)
+        if sys.version_info.major == 3:
+            LTsv_otherprocess_proc=subprocess.Popen(LTsv_otherprocess_input,shell=True)
+    except subprocess.CalledProcessError as err:
+#        print("subprocess.CalledProcessError({0}):{1}".format(err.returncode,err.output))
+        pass
+    return LTsv_otherprocess_proc
+
 
 if __name__=="__main__":
     from LTsv_file   import *

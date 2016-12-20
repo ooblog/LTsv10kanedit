@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161220T030018<br />
+   version(branch):20161215R220253	modify:20161221W052608<br />
   
 </p>
   <h2>目次</h2>
@@ -153,6 +153,8 @@ outlistページタグの時、エイリアスが有ればエイリアスに、�
 LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。</dd></dl>
 <dl><dt>LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)</dt><dd>
 ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。</dd></dl>
+<dl><dt>LTsvDOCopen_shell(LTsvDOClaunch_tsvcount)</dt><dd>
+ランチャーのボタンを押したら「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」の「editer」で指定したテキストエディタを呼び出す。</dd></dl>
 
 </section>
 <section>
@@ -164,7 +166,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 
 </p>
 <dl><dt>
-  [L:Tsv|</dt>
+  [L:Tsv&#x7C;</dt>
 <dd>
                      「L:Tsv」ファイルの宣言です。
 </dd></dl>
@@ -174,7 +176,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
                         「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。
 </dd></dl>
 <dl><dt>
-  [LTsv_doc|</dt>
+  [LTsv_doc&#x7C;</dt>
 <dd>
                   「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」の設定です。ドキュメントの設定ではなくアプリの設定です。
 </dd></dl>
@@ -194,14 +196,19 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
                      ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
 </dd></dl>
 <dl><dt>
-  [LTsv_doc_this|</dt>
+   editer</dt>
+<dd>
+                      「edit」ボタンで表示する
+</dd></dl>
+<dl><dt>
+  [LTsv_doc_this&#x7C;</dt>
 <dd>
              「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
 </dd></dl>
 <dl><dt>
    main</dt>
 <dd>
-                       置換される前の元文書。今回は「&lt;＠LTsv_doc_main&gt;」。置換タグが無ければページの内容がファイルに保存される。
+                       置換される前の元文書。今回は「&lt;＠LTsv_doc_test_main&gt;」。置換タグが無ければページの内容がファイルに保存される。
 </dd></dl>
 <dl><dt>
    tagseparate</dt>
@@ -247,6 +254,34 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
                     バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「&lt;＠L:TsvLTsvver&gt;」。<br />
                               詳細は「<a href="index.html#LTsv_file-0" title="③-0．「LTsv_file.py」の関数一覧"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">③-0．「LTsv_file.py」の関数一覧</a>」参考。<br />
 </dd></dl>
+<dl><dt>
+  [&lt;LTsv_doc_test_main&gt;&#x7C;
+</dt>
+<dd>
+    置換される前の元文書(main)。以降の置換タグで文章が置換される。
+</dd></dl>
+<dl><dt>
+  [<？LTsv_MD_header>&#x7C;</dt>
+<dd>
+                    
+</dd></dl>
+<dl><dt>
+  [<＃LTsv_HTML_header>&#x7C;</dt>
+<dd>
+                   
+</dd></dl>
+<dl><dt>
+  [<？LTsv_MD_footer>&#x7C;</dt>
+<dd>
+                    
+</dd></dl>
+<dl><dt>
+  [<＃LTsv_HTML_footer>&#x7C;</dt>
+<dd>
+                    
+</dd></dl>
+
+
 
 </section>
 <section>

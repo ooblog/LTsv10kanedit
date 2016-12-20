@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161220T030018<br />
+   version(branch):20161215R220253	modify:20161221W052608<br />
   
 </p>
   <h2>目次</h2>
@@ -154,7 +154,7 @@
 
 </p>
 <dl><dt>
-  [L:Tsv|</dt>
+  [L:Tsv&#x7C;</dt>
 <dd>
                     「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。
 </dd></dl>
@@ -194,7 +194,7 @@
                     「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。
 </dd></dl>
 <dl><dt>
-  |L:Tsv]</dt>
+  &#x7C;L:Tsv]</dt>
 <dd>
                     メタタグ「L:Tsv」を閉じます。タグで区切る事で１つのファイルに複数のCSVやLTSVやTXTといったページを格納できます。
 </dd></dl>
@@ -243,6 +243,8 @@ UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。<br 
 <dl><dt>LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)</dt><dd>
 ターミナルにコマンドを送る。実行結果も取得できる。<br />
 「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。</dd></dl>
+<dl><dt>LTsv_otherprocess(LTsv_otherprocess_input="")</dt><dd>
+別プロセスでコマンドを実行する。</dd></dl>
 
 </section>
 <section>

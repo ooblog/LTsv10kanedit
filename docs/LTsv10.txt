@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161215R220253	modify:20161220T030018
+version(branch):20161215R220253	modify:20161221W052608
 
 目次
 
@@ -166,6 +166,9 @@ version(branch):20161215R220253	modify:20161220T030018
  【LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)】
   ターミナルにコマンドを送る。実行結果も取得できる。
   「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
+
+ 【LTsv_otherprocess(LTsv_otherprocess_input="")】
+  別プロセスでコマンドを実行する。
 
 
 ②-1．ひらカナの変換「LTsv_kanare()」のLTsv_recaseの変換辞書一覧

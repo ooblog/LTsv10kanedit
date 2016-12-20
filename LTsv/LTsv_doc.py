@@ -181,7 +181,7 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=LTsvDOC_T)
     elif 0 <= LTsvDOClaunch_outcount < len(LTsvDOClaunch_outlist):
         LTsvDOC_outname=LTsvDOClaunch_outlist[LTsvDOClaunch_outcount]
-        LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
+        LTsv_widget_settext(LTsvDOC_launchbutton[LTsvDOClaunch_kernel_clickID],"{0}→{1}".format(LTsvDOClaunch_tsvname,LTsvDOC_outname))
         for LTsvDOC_tagnames in LTsvDOClaunch_reglist:
             if os.path.isfile(LTsvDOClaunch_defdir+"/"+LTsvDOC_tagnames):
                 LTsvDOClaunch_main=LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagnames)
@@ -199,12 +199,12 @@ def LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None):
     else:
         if len(LTsvDOClaunch_deflist) > 0:
             LTsv_savefile(os.path.normpath(LTsvDOClaunch_tsvname),LTsvDOClaunch_ltsv)
-        LTsv_widget_settext(LTsvDOC_button[LTsvDOClaunch_kernel_clickID],"{0}({1})".format(LTsvDOClaunch_tsvname,LTsv_getdaytimestr(LTsvDOClaunch_modify)))
-        for button in LTsvDOC_button: LTsv_widget_disableenable(button,True);
+        LTsv_widget_settext(LTsvDOC_launchbutton[LTsvDOClaunch_kernel_clickID],"{0}({1})".format(LTsvDOClaunch_tsvname,LTsv_getdaytimestr(LTsvDOClaunch_modify)))
+        for button in LTsvDOC_launchbutton: LTsv_widget_disableenable(button,True);
 
 def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
     def LTsvDOClaunch_kernel(window_objvoid=None,window_objptr=None):
-        for button in LTsvDOC_button: LTsv_widget_disableenable(button,False);
+        for button in LTsvDOC_launchbutton: LTsv_widget_disableenable(button,False);
         global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag
         global LTsvDOClaunch_kernel_clickID,LTsvDOClaunch_outcount,LTsvDOClaunch_outdir,LTsvDOClaunch_defdir
         global LTsvDOClaunch_outlist,LTsvDOClaunch_outlistT,LTsvDOClaunch_outlistP
@@ -217,6 +217,13 @@ def LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount):
         LTsv_window_after(LTsvDOC_window,event_b=LTsvDOClaunch_kernel_count,event_i="LTsvDOClaunch_kernel_main",event_w=10)
     return LTsvDOClaunch_kernel
 
+def LTsvDOCopen_shell(LTsvDOClaunch_tsvcount):
+    def LTsvDOCopen_kernel(window_objvoid=None,window_objptr=None):
+        LTsvDOClaunch_kernel_clickID=LTsvDOClaunch_tsvcount
+        LTsvDOClaunch_tsvname=LTsvDOClaunch_tsvlist[LTsvDOClaunch_kernel_clickID]
+        LTsv_otherprocess("{0} {1}".format(LTsvDOClaunch_editer,LTsvDOClaunch_tsvname))
+    return LTsvDOCopen_kernel
+
 if __name__=="__main__":
     print("__main__ Python{0.major}.{0.minor}.{0.micro},{1},{2}".format(sys.version_info,sys.platform,sys.stdout.encoding))
     print("")
@@ -225,19 +232,23 @@ if __name__=="__main__":
         LTsvDOC_ltsv=LTsv_loadfile("LTsv_doc.tsv")
         LTsvDOC_head=LTsv_getpage(LTsvDOC_ltsv,"L:Tsv")
         LTsvDOC_config=LTsv_getpage(LTsvDOC_ltsv,"LTsv_doc")
+        LTsvDOC_openW=100
         LTsvDOC_resizeW,LTsvDOC_resizeH,LTsvDOC_resizeT,LTsvDOC_resizeF=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsvDOC_config,"window_size"),"width","height","wait","fontsize"))
         LTsvDOC_W,LTsvDOC_H=min(max(LTsv_intstr0x(LTsvDOC_resizeW),LTsv_global_glyphkbdW()),LTsv_screen_w() if LTsv_screen_w() > 0 else 1024),min(max(LTsv_intstr0x(LTsvDOC_resizeH),LTsv_global_glyphkbdH()),LTsv_screen_h() if LTsv_screen_w() > 0 else 768)
         LTsvDOC_T=min(max(LTsv_intstr0x(LTsvDOC_resizeT),10),1000)
         LTsvDOC_F=min(max(LTsv_intstr0x(LTsvDOC_resizeF),5),100)
         LTsvDOClaunch_tsvlistT=LTsv_readlinerest(LTsvDOC_config,"tsvlist","LTsv_doc.tsv"); LTsvDOClaunch_tsvlist=LTsvDOClaunch_tsvlistT.split('\t') if len(LTsvDOClaunch_tsvlistT) else []
         LTsvDOClaunch_modify=LTsv_readlinerest(LTsvDOC_config,"modify","@000y@0m@0dm@wdec@0h@0n@0s")
+        LTsvDOClaunch_editer=LTsv_readlinerest(LTsvDOC_config,"editer","geany")
         LTsvDOC_font="{0},{1}".format("kan5x5comic",LTsvDOC_F//2); 
         LTsvDOC_window=LTsv_window_new(widget_t="LTsv_doc",event_b=LTsv_window_exit,widget_w=LTsvDOC_W,widget_h=LTsvDOC_H)
-        LTsvDOC_button=[0]*len(LTsvDOClaunch_tsvlist)
+        LTsvDOC_launchbutton=[0]*len(LTsvDOClaunch_tsvlist)
+        LTsvDOC_openbutton=[0]*len(LTsvDOClaunch_tsvlist)
         for LTsvDOClaunch_tsvcount,LTsvDOClaunch_tsvname in enumerate(LTsvDOClaunch_tsvlist):
-            LTsvDOC_button[LTsvDOClaunch_tsvcount]=LTsv_button_new(LTsvDOC_window,widget_t=LTsvDOClaunch_tsvname,widget_x=0,widget_y=LTsvDOClaunch_tsvcount*LTsvDOC_F,widget_w=LTsvDOC_W,widget_h=LTsvDOC_F,widget_f=LTsvDOC_font,event_b=LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount))
+            LTsvDOC_launchbutton[LTsvDOClaunch_tsvcount]=LTsv_button_new(LTsvDOC_window,widget_t=LTsvDOClaunch_tsvname,widget_x=0,widget_y=LTsvDOClaunch_tsvcount*LTsvDOC_F,widget_w=LTsvDOC_W-LTsvDOC_openW,widget_h=LTsvDOC_F,widget_f=LTsvDOC_font,event_b=LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount))
+            LTsvDOC_openbutton[LTsvDOClaunch_tsvcount]=LTsv_button_new(LTsvDOC_window,widget_t="edit",widget_x=LTsvDOC_W-LTsvDOC_openW,widget_y=LTsvDOClaunch_tsvcount*LTsvDOC_F,widget_w=LTsvDOC_openW,widget_h=LTsvDOC_F,widget_f=LTsvDOC_font,event_b=LTsvDOCopen_shell(LTsvDOClaunch_tsvcount))
             if not os.path.isfile(os.path.normpath(LTsvDOClaunch_tsvname)):
-                LTsv_widget_disableenable(LTsvDOC_button[LTsvDOClaunch_tsvcount],False)
+                LTsv_widget_disableenable(LTsvDOC_launchbutton[LTsvDOClaunch_tsvcount],False)
         LTsv_widget_showhide(LTsvDOC_window,True)
         LTsv_window_main(LTsvDOC_window)
     else:

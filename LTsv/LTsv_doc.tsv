@@ -10,12 +10,13 @@ modify	20161130W154333
 
 [LTsv_doc|
 tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv
-window_size	width:600	height:480	wait:100	fontsize:24
+window_size	width:800	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
+editer	medit
 |LTsv_doc]
 
 [LTsv_doc_test|
-main	<LTsv_doc_test_main>
+main	<＠LTsv_doc_test_main>
 tagseparate	*
 skplist	LTsv_doc
 outdir	./
@@ -26,7 +27,7 @@ defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC
 LTsvver	<＠L:TsvLTsvver>
 |LTsv_doc_test]
 
-[<LTsv_doc_test_main>|
+[<＠LTsv_doc_test_main>|
 <？LTsv_MD_header><？LTsv_MD_H1:LTsv10kanedit>
 
 <？P>html版ドキュメント整備中。「<？https/htmldoc>」<？/P>
@@ -85,7 +86,7 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 License: MIT<？BR>
 <？https/LTsv10LICENSE><？BR>
 <？/P><？LTsv_MD_footer>
-|<LTsv_doc_test_main>]
+|<＠LTsv_doc_test_main>]
 
 [<？LTsv_MD_header>|
 .+\.html?	<＃LTsv_HTML_header>

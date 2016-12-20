@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161220T030034
+modify	20161221W052624
 |L:Tsv]
 
 [LTsv_doc|
@@ -390,7 +390,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
-<？DLDT>  [L:Tsv|<？/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<？/DD/DL>
+<？DLDT>  [L:Tsv<？&#x7C;><？/DTDD>                    「L:Tsv」ファイルの宣言です。マジックナンバー代わりなのでなるだけファイルの先頭に。<？/DD/DL>
 <？DLDT>   code<？/DTDD>                       文字コードの宣言で「UTF-8」。Windowsだろうが半角は3バイトで保存するので注意。<？/DD/DL>
 <？DLDT>   enter<？/DTDD>                      改行の宣言で「LF」。Windowsだろうが改行は1バイトで保存するので注意。<？/DD/DL>
 <？DLDT>   tab<？/DTDD>                        タブインデントの宣言で半角スペース「4」。フォント「kan5x5comic」の半角と全角の幅の比率は約5:3(1024:624)なので注意。<？/DD/DL>
@@ -398,7 +398,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 <？DLDT>   1st<？/DTDD>                        「L:Tsv」自体を何かのスクリプトとして実行する場合に最初に実行するページ指定を想定。例えば「LTsv_doc」では「LTsv_doc_tsv」など。<？/DD/DL>
 <？DLDT>   LTsvver<？/DTDD>                    構文解析パーサのバージョン。「LTsv_file.py」の「LTsv_file_ver()」。<？/DD/DL>
 <？DLDT>   modify <？/DTDD>                    「L:Tsv」ファイルの更新日時。「LTsv_time.py」の「LTsv_getdaytimestr(overhour=24,diffminute=0)」を想定。「LTsv_file.py」で「LTsv_savefile()」上書き時に更新。<？/DD/DL>
-<？DLDT>  |L:Tsv]<？/DTDD>                    メタタグ「L:Tsv」を閉じます。<？contents01-1:tagsplit><？/DD/DL>
+<？DLDT>  <？&#x7C;>L:Tsv]<？/DTDD>                    メタタグ「L:Tsv」を閉じます。<？contents01-1:tagsplit><？/DD/DL>
 <？P>
 「L:Tsv」のメタタグは「LTsv_newfile()」関数でも作成可能。「<？index/LTsv_file-0>」も参考。<？BR><？/P>
 |<＃contents/aboutLTsv-1>]
@@ -432,6 +432,7 @@ LTsv_kanare(LTsv_before,LTsv_recase)	全角半角大文字小文字ひらがな�
 LTsv_utf2ink(LTsv_text)	UTF-8をkantrayの「UTF-8点字」に変換(バイナリの点字表記)。	点字フォントが表示できる環境にないと動作確認は困難なので注意。
 LTsv_ink2utf(LTsv_text)	上記「UTF-8点字」をUTF-8に戻す。	 データ破損を補完する機能はないので注意。
 LTsv_subprocess(LTsv_subprocess_input="",LTsv_subprocess_shell=False)	ターミナルにコマンドを送る。実行結果も取得できる。	「LTsv_subprocess_shell=True」でgrepなどパイプライン処理のような事もできるようになるが、インジェクション脆弱性の恐れが発生するので注意。
+LTsv_otherprocess(LTsv_otherprocess_input="")	別プロセスでコマンドを実行する。
 |LTsv_printf.py]
 
 [<＃contents/LTsv_printf-1>|
@@ -1506,6 +1507,7 @@ LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	未実装。フォ
 LTsvDOClaunch_kernel_listout(LTsvDOC_outname,LTsvDOC_tagname)	outlistページタグの時、エイリアスが有ればエイリアスに、無ければファイル名に置換。
 LTsvDOClaunch_kernel_count(window_objvoid=None,window_objptr=None)	LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメントの設定読込処理も。
 LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押したら「LTsvDOClaunch_kernel_count()」を呼び出す。
+LTsvDOCopen_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押したら「<？https/LTsv_doc.tsv>」の「editer」で指定したテキストエディタを呼び出す。
 |LTsv_doc.py]
 
 [<＃contents/LTsv_doc-1>|
@@ -1513,14 +1515,15 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？/PP>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<？BR>
 <？/P>
-<？DLDT>  [L:Tsv|<？/DTDD>                     「L:Tsv」ファイルの宣言です。<？/DD/DL>
+<？DLDT>  [L:Tsv<？&#x7C;><？/DTDD>                     「L:Tsv」ファイルの宣言です。<？/DD/DL>
 <？DLDT>   1st<？/DTDD>                        「<？https/LTsv_doc.tsv>」の設定を書き込む。通常「LTsv_doc」で構わないが今回は「LTsv_doc_this」を指定。「LTsv_doc.py」と衝突するので。<？/DD/DL>
-<？DLDT>  [LTsv_doc|<？/DTDD>                  「<？https/LTsv_doc.py>」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
+<？DLDT>  [LTsv_doc<？&#x7C;><？/DTDD>                  「<？https/LTsv_doc.py>」の設定です。ドキュメントの設定ではなくアプリの設定です。<？/DD/DL>
 <？DLDT>   window_size<？/DTDD>                ランチャーのウィンドウサイズなどの初期設定「width:600\theight:480\twait:100\tfontsize:24」。waitの感覚が狭すぎるとフリーズするので注意。<？/DD/DL>
 <？DLDT>   tsvlist<？/DTDD>                    ランチャーに管理させるLTsvファイルのリストを指定。<？/DD/DL>
 <？DLDT>   modify<？/DTDD>                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。<？/DD/DL>
-<？DLDT>  [LTsv_doc_this|<？/DTDD>             「<？https/LTsv_doc.tsv>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
-<？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<？&lt;>＠LTsv_doc_main<？&gt;>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
+<？DLDT>   editer<？/DTDD>                      「edit」ボタンで表示する<？/DD/DL>
+<？DLDT>  [LTsv_doc_this<？&#x7C;><？/DTDD>             「<？https/LTsv_doc.tsv>」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。<？/DD/DL>
+<？DLDT>   main<？/DTDD>                       置換される前の元文書。今回は「<？&lt;>＠LTsv_doc_test_main<？&gt;>」。置換タグが無ければページの内容がファイルに保存される。<？/DD/DL>
 <？DLDT>   tagseparate<？/DTDD>                ループタグ作成用のタグ区切りを指定。「<？https/LTsv_doc.tsv>」では「*」を使用。<？/DD/DL>
 <？DLDT>   skplist<？/DTDD>                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「<？https/LTsv_doc.py>」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。<？/DD/DL>
 <？DLDT>   outdir<？/DTDD>                     置換されたテキストの出力先フォルダ。<？/DD/DL>
@@ -1533,6 +1536,14 @@ LTsvDOClaunch_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し
 <？DLDT>   defindent<？/DTDD>                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。<？/DD/DL>
 <？DLDT>   LTsvver<？/DTDD>                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「<？&lt;>＠L:TsvLTsvver<？&gt;>」。<？BR>
                               詳細は「<？index/LTsv_file-0>」参考。<？BR><？/DD/DL>
+<？DLDT>  [<？&lt;>LTsv_doc_test_main<？&gt;><？&#x7C;>
+<？/DTDD>    置換される前の元文書(main)。以降の置換タグで文章が置換される。<？/DD/DL>
+<？DLDT>  [<？LTsv_MD_header><？&#x7C;><？/DTDD>                    <？/DD/DL>
+<？DLDT>  [<＃LTsv_HTML_header><？&#x7C;><？/DTDD>                   <？/DD/DL>
+<？DLDT>  [<？LTsv_MD_footer><？&#x7C;><？/DTDD>                    <？/DD/DL>
+<？DLDT>  [<＃LTsv_HTML_footer><？&#x7C;><？/DTDD>                    <？/DD/DL>
+
+
 |<＃contents/LTsv_doc-1>]
 
 [<＃contents/LTsv_doc-2>|
