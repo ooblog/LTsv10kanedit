@@ -20,7 +20,7 @@ main	<＠LTsv_doc_test_main>
 tagseparate	*
 skplist	LTsv_doc
 outdir	./
-outlist	<LTsv_doc_test_outlist>
+outlist	<＠LTsv_doc_test_outlist>
 defdir	./
 deftag	L:<！	R:>
 defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
@@ -147,45 +147,47 @@ License: MIT<？BR>
 .+\.md	![<＄alt/htmldoc-@c>](<＄img/htmldoc-@c> "<＄title/htmldoc-@c>")
 |<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>]
 
-[<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10LICENSE>|
-:<＄href/htmldoc-0>	<＄txt/htmldoc-0>
-:<＄title/htmldoc-0>	<＄txt/htmldoc-0>
+[<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>|
+:<＄title/htmldoc-0>	「kanedit」は「<＄title/LTsv10>」を用いた漢直テキストエディタの予定です。
 :<＄txt/htmldoc-0>	docs/kanedit.txt
-:<＄href/htmldoc-1>	<＄txt/htmldoc-1>
-:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄html/htmldoc-0>	kanedit.html
+:<＄title/htmldoc-1>	「kanfont」は「<＄title/LTsv10>」を用いたフォントエディタ(グリフエディタ)です。
 :<＄txt/htmldoc-1>	docs/kanfont.txt
-:<＄href/htmldoc-2>	<＄txt/htmldoc-2>
-:<＄title/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄html/htmldoc-1>	kanfont.html
+:<＄title/htmldoc-2>	「kanzip」は「<＄title/LTsv10>」を用いた郵便番号ダウンローダーです。
 :<＄txt/htmldoc-2>	docs/kanzip.txt
-:<＄href/htmldoc-3>	<＄txt/htmldoc-3>
-:<＄title/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄html/htmldoc-2>	kanzip.html
+:<＄title/htmldoc-3>	「kanmap」は「<＄title/LTsv10>」を用いたグリフ進捗ビュアーです。
 :<＄txt/htmldoc-3>	docs/kanmap.txt
-:<＄href/htmldoc-4>	<＄txt/htmldoc-4>
-:<＄title/htmldoc-4>	<＄txt/htmldoc-4>
+:<＄html/htmldoc-3>	kanmap.html
+:<＄title/htmldoc-4>	「LTsv_doc」は「<＄title/LTsv10>」を用いたドキュメントジェネレーターです。
 :<＄txt/htmldoc-4>	docs/LTsv_doc.txt
-:<＄href/htmldoc-5>	LICENSE
-:<＄title/htmldoc-5>	<＄txt/htmldoc-5>
-:<＄txt/htmldoc-5>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
-.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
-.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10LICENSE>]
+:<＄html/htmldoc-4>	LTsv_doc.html
+:<＄title/htmldoc-5>	「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。
+:<＄txt/htmldoc-5>	docs/LTsv10.txt
+:<＄html/htmldoc-5>	index.html
+:<＄title/LTsv10>	LTsv10kanedit(tsvtool10)
+:<＄href/LTsv10>	https://ooblog.github.io/LTsv10kanedit/
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>&#40;<a href="<＄href/LTsv10><＄html/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄html/htmldoc-@c></a>&#41;
+.+\.md	[<＄txt/htmldoc-@c>](<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c> "<＄title/htmldoc-@c>")&#40;[<＄txt/htmldoc-@c>](<＄href/LTsv10><＄html/htmldoc-@c> "<＄title/htmldoc-@c>")&#41;
+|<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>]
 
-[<？https/kanchar>*<？https/LTsv10>*<？https/LTsv_doc_py>*<？https/kanedit_etc>|
+[<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
 :<＄href/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄title/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄txt/htmldoc-0>	LTsv/kanchar.tsv
-:<＄href/htmldoc-1>	<＄txt/htmldoc-1>
-:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
-:<＄txt/htmldoc-1>	docs/LTsv10.txt
-:<＄href/htmldoc-2>	<＄txt/htmldoc-2>
-:<＄title/htmldoc-2>	<＄txt/htmldoc-2>
-:<＄txt/htmldoc-2>	LTsv/LTsv_doc.py
-:<＄href/htmldoc-3>	<＄txt/htmldoc-3>
-:<＄title/htmldoc-3>	<＄txt/htmldoc-3>
-:<＄txt/htmldoc-3>	docs/kanedit_etc.tsv
+:<＄href/htmldoc-1>	<＄txt/htmldoc-2>
+:<＄title/htmldoc-1>	<＄txt/htmldoc-2>
+:<＄txt/htmldoc-1>	LTsv/LTsv_doc.py
+:<＄href/htmldoc-2>	<＄txt/htmldoc-3>
+:<＄title/htmldoc-2>	<＄txt/htmldoc-3>
+:<＄txt/htmldoc-2>	docs/kanedit_etc.tsv
+:<＄href/htmldoc-3>	LICENSE
+:<＄title/htmldoc-3>	<＄txt/htmldoc-4>
+:<＄txt/htmldoc-3>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/kanchar>*<？https/LTsv10>*<？https/LTsv_doc_py>*<？https/kanedit_etc>]
+|<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
 
 [<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
 :<＄repository-0>	raw/master/
@@ -233,10 +235,10 @@ License: MIT<？BR>
 .*	
 |<？BR>]
 
-[<LTsv_doc_test_outlist>|
+[<＠LTsv_doc_test_outlist>|
 testfile/README.md
 testfile/README.html
-|<LTsv_doc_test_outlist>]
+|<＠LTsv_doc_test_outlist>]
 
 
 # Copyright (c) 2016 ooblog

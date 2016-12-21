@@ -32,7 +32,7 @@
   <h1>「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161221W052608<br />
+   version(branch):20161215R220253	modify:20161222R061659<br />
   
 </p>
   <h2>目次</h2>
@@ -102,17 +102,21 @@
  GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。<br />
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<br />
  「docs/」フォルダ内のドキュメントを「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/docs/kanedit_etc.tsv">docs/kanedit_etc.tsv</a>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<br />
- 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」に古いドキュメントが残存。「README.md」作成のサンプルに置き換える予定。<br />
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<br />
 
 </section>
 <section>
  <h3 id="LTsv_doc_usage-0">①-0．「LTsv_doc」の使い方</h3>
 <p class="capcenter">
-<img src="LTsv_doc_512x384.png" width="512" height="384" alt="LTsv_doc"><br /><br /> LTsv_docドキュメントを編集して保存してからボタンを押す。<br />
+<img src="LTsv_doc_512x384.png" width="512" height="384" alt="LTsv_doc"><br /><br /> LTsv_docドキュメントを編集して保存してからボタンを押すと置換開始。<br />
  LTsv_docドキュメントの詳細は「<a href="#LTsv_doc-2" title="②-2．LTsv_docドキュメントの書き方">②-2．LTsv_docドキュメントの書き方</a>」を参考。<br />
 
 </p>
+<dl><dt>
+ 「LTsv_doc.tsv」ボタン</dt>
+<dd>
+                        「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md" title="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md">README.md</a>」のドキュメント作成。出力先は「LTsv/testfile/README.md」
+</dd></dl>
 <dl><dt>
  「../docs/kanedit_etc.tsv」ボタン</dt>
 <dd>
@@ -122,6 +126,11 @@
  「../../ooblog.github.io/yakuyon.tsv」ボタン</dt>
 <dd>
   「約四文字」のドキュメント作成。
+</dd></dl>
+<dl><dt>
+ 「edit」ボタン</dt>
+<dd>
+                                各ボタンのLTsv_docドキュメントを編集。
 </dd></dl>
 <p>
  ボタン編集(LTsv_docドキュメントの登録)は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」を編集。詳細は「<a href="#LTsv_doc-1" title="②-1．「LTsv_doc.tsv」のタグ解説">②-1．「LTsv_doc.tsv」のタグ解説</a>」を参考。<br />
@@ -161,6 +170,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
  <h3 id="LTsv_doc-1">②-1．「LTsv_doc.tsv」のタグ解説</h3>
 <p>
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」の設定ファイルです。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md" title="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md">README.md</a>」作成のサンプルも兼用です。HTML版を同時作成で、GitHubのmarkdownをブラウザで確認できる風のデモになります。<br />
 </p><p>
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。<br />
 
@@ -208,7 +218,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 <dl><dt>
    main</dt>
 <dd>
-                       置換される前の元文書。今回は「&lt;＠LTsv_doc_test_main&gt;」。置換タグが無ければページの内容がファイルに保存される。
+                       置換される前の元文書。今回は「&lt;＠LTsv_doc_test_main&gt;」。
 </dd></dl>
 <dl><dt>
    tagseparate</dt>
@@ -229,7 +239,7 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
    outlist</dt>
 <dd>
                     置換されたテキストの出力ファイル名一覧(tsv)。<br />
-                              tsvのファイル名一覧の代わりに「&lt;＠LTsv_doc_outlist&gt;」の様にファイル一覧ページのタグ指定もできる。<br />
+                              tsvのファイル名一覧の代わりに「&lt;＠LTsv_doc_test_outlist&gt;」の様にファイル一覧ページのタグ指定もできる。<br />
                               ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。<br />
                               ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。<br />
 </dd></dl>
@@ -255,33 +265,129 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
                               詳細は「<a href="index.html#LTsv_file-0" title="③-0．「LTsv_file.py」の関数一覧"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">③-0．「LTsv_file.py」の関数一覧</a>」参考。<br />
 </dd></dl>
 <dl><dt>
-  [&lt;LTsv_doc_test_main&gt;&#x7C;
+  [&lt;＠LTsv_doc_test_main&gt;&#x7C;
 </dt>
 <dd>
-    置換される前の元文書(main)。以降の置換タグで文章が置換される。
+    置換される前の元文書(main)。以降の置換タグで文章が置換される。以降「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md" title="https://github.com/ooblog/LTsv10kanedit/blob/master/README.md">README.md</a>」作成のLTsv_docドキュメントのサンプル。
 </dd></dl>
 <dl><dt>
-  [<？LTsv_MD_header>&#x7C;</dt>
+  [&lt;？LTsv_MD_header&gt;&#x7C;
+</dt>
 <dd>
-                    
+    ファイル拡張子がhtml(正規表現で「.+\.html?」)の時だけHTML5ヘッダを追加。ここで分岐タグ出現。
 </dd></dl>
 <dl><dt>
-  [<＃LTsv_HTML_header>&#x7C;</dt>
+  [&lt;＃LTsv_HTML_header&gt;&#x7C;</dt>
 <dd>
-                   
-</dd></dl>
-<dl><dt>
-  [<？LTsv_MD_footer>&#x7C;</dt>
-<dd>
-                    
-</dd></dl>
-<dl><dt>
-  [<＃LTsv_HTML_footer>&#x7C;</dt>
-<dd>
-                    
-</dd></dl>
 
-
+</dt>
+<dd>
+    簡略したHTML5ヘッダ本文。「&lt;body&gt;」タグまで。
+</dd></dl>
+<dl><dt>
+  [&lt;？LTsv_MD_footer&gt;&#x7C;
+</dt>
+<dd>
+    ファイル拡張子がhtml(正規表現で「.+\.html?」)の時だけフッターを追加。
+</dd></dl>
+<dl><dt>
+  [&lt;＃LTsv_HTML_footer&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;/body&gt;&lt;/html&gt;」閉じるタグ。フッターがあれば追記。
+</dd></dl>
+<dl><dt>
+  [&lt;？LTsv_MD_H1:LTsv10kanedit&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;h1&gt;」タグの記述。markdownだと先頭の「#」。ここから内包タグ出現。
+</dd></dl>
+<dl><dt>
+  [&lt;？LTsv_MD_H2:kanedit&gt;*&lt;？LTsv_MD_H2:kanfont&gt;*&lt;？LTsv_MD_H2:kanzip&gt;*&lt;？LTsv_MD_H2:kanmap&gt;*&lt;？LTsv_MD_H2:LTsv_doc&gt;*&lt;？LTsv_MD_H2:environment&gt;*&lt;？LTsv_MD_H2:LICENSE&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;h1&gt;」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。<br />
+    「tagseparate」の詳細は「<a href="#LTsv_doc-2" title="②-2．LTsv_docドキュメントの書き方">②-2．LTsv_docドキュメントの書き方</a>」を参考。<br />
+    カウンター「@c」の詳細は「<a href="index.html#LTsv_time-1" title="④-1．日時フォーマットの概要"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">④-1．日時フォーマットの概要</a>」を参考。<br />
+</dd></dl>
+<dl><dt>
+  [&lt;？LTsv_MD_IMG:kanedit&gt;*&lt;？LTsv_MD_IMG:kanfont&gt;*&lt;？LTsv_MD_IMG:kanzip&gt;*&lt;？LTsv_MD_IMG:kanmap&gt;*&lt;？LTsv_MD_IMG:LTsv_doc&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;img&gt;」タグの記述。markdownだと「![alt](src "title")」。画像を表示するので「raw」系リンク。
+</dd></dl>
+<dl><dt>
+  [&lt;？https/kanedit&gt;*&lt;？https/kanfont&gt;*&lt;？https/kanzip&gt;*&lt;？https/kanmap&gt;*&lt;？https/LTsv_doc&gt;*&lt;？https/LTsv10&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;a&gt;」タグの記述。markdownだと「[text](href "title")」。「github.com」リンクと「github.io」リンクの両方を用意。
+</dd></dl>
+<dl><dt>
+  [&lt;？https/kanchar&gt;*&lt;？https/LTsv_doc_py&gt;*&lt;？https/kanedit_etc&gt;*&lt;？https/LTsv10LICENSE&gt;&#x7C;
+</dt>
+<dd>
+    こちらも「&lt;a&gt;」タグの記述。ドキュメント以外の「github.com(「blob」系)」リンク。
+</dd></dl>
+<dl><dt>
+  [&lt;？ooblog:LTsv10repository_raw&gt;*&lt;？ooblog:LTsv10repository_blob&gt;&#x7C;
+</dt>
+<dd>
+    「github.com」のリンクで「raw」系と「blob」系のURL差分。
+</dd></dl>
+<dl><dt>
+  [&lt;？https/htmldoc&gt;&#x7C;
+</dt>
+<dd>
+    普通に「<a href="https://github.com/ooblog/LTsv10kanedit/" title="「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。">https://github.com/ooblog/LTsv10kanedit/</a>」へのリンク。内包タグは外部参照できないのでリンク等を外に置くパターン。
+</dd></dl>
+<dl><dt>
+  [&lt;？ooblog:LTsv10repository_txt&gt;&#x7C;
+</dt>
+<dd>
+    リンクテキスト「「LTsv10kanedit(tsvtool10)」は「L&#58;Tsv」の読み書きを中心としたモジュール群です。」。
+</dd></dl>
+<dl><dt>
+  [&lt;？ooblog:LTsv10repository_url&gt;&#x7C;
+</dt>
+<dd>
+    リンクURL「<a href="https://github.com/ooblog/LTsv10kanedit/" title="「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。">https://github.com/ooblog/LTsv10kanedit/</a>」。
+</dd></dl>
+<dl><dt>
+  [&lt;？https/japanpost>*<？https/fontforge&gt;&#x7C;
+</dt>
+<dd>
+    「L&#58;Tsv」以外のサイトへのリンク枠。
+</dd></dl>
+<dl><dt>
+  [&lt;？P&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;p&gt;」タグの記述。
+</dd></dl>
+<dl><dt>
+  [&lt;？/PP&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;/p&gt;&lt;p&gt;」タグの記述。
+</dd></dl>
+<dl><dt>
+  [&lt;？/P&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;/p&gt;」タグの記述。
+</dd></dl>
+<dl><dt>
+  [&lt;？BR&gt;&#x7C;
+</dt>
+<dd>
+    「&lt;br /&gt;」タグの記述。markdownだと行末に「  」(空白2つ)。
+</dd></dl>
+<dl><dt>
+  [&lt;＠LTsv_doc_test_outlist&gt;&#x7C;
+</dt>
+<dd>
+    ファイルの出力先。「testfile/README.md」「testfile/README.html」。
+</dd></dl>
 
 </section>
 <section>
@@ -306,12 +412,13 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 <dl><dt>
   &lt;＠LTsv_doc_main&gt;(main)</dt>
 <dd>
-       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+      「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
 </dd></dl>
 <dl><dt>
   &lt;LTsv_doc&gt;(skplist)</dt>
 <dd>
-           「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」では「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.py">LTsv/LTsv_doc.py</a>」設定ページをskplistに登録してるので置換されません。
+          その他置換対象から外したいページをskplistに登録できます。<br />
+                               例えば 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_doc.tsv">LTsv/LTsv_doc.tsv</a>」ではskplistに「LTsv_doc」を登録してるので設定ページは置換されません。<br />
 </dd></dl>
 
 <h4>分類すると5種類の置換タグがあるものとします。</h4>
@@ -351,8 +458,9 @@ LTsv_docドキュメント1枚作成毎にwaitを入れる。ドキュメント�
 
 <dl class="faqlink"><dt> 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント</dt><dd><a href=" http://docs.python.jp/3/library/re.html" title=" 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント"> http://docs.python.jp/3/library/re.html</a></dd></dl>
 <h4>tagseparateによる繰り返し記述でタグの過剰生産を抑制します。</h4>
+
 <p>
-同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。<br />
+  同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。<br />
 [&lt;？tagA&gt;&#x7C;<br />
 .+\.html?	&lt;a href="#text0" title="data-a"&gt;data-a&lt;/a&gt;<br />
 .*	data-a<br />

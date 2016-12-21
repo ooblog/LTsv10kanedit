@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161215R220253	modify:20161221W052608
+version(branch):20161215R220253	modify:20161222R061659
 
 目次
 
@@ -60,17 +60,18 @@ version(branch):20161215R220253	modify:20161221W052608
  GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
  「LTsv/LTsv_doc.py」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。
- 「LTsv/LTsv_doc.tsv」に古いドキュメントが残存。「README.md」作成のサンプルに置き換える予定。
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。
 
 
 ①-0．「LTsv_doc」の使い方
 
- LTsv_docドキュメントを編集して保存してからボタンを押す。
+ LTsv_docドキュメントを編集して保存してからボタンを押すと置換開始。
  LTsv_docドキュメントの詳細は「②-2．LTsv_docドキュメントの書き方」を参考。
 
+ 「LTsv_doc.tsv」ボタン                        「README.md」のドキュメント作成。出力先は「LTsv/testfile/README.md」
  「../docs/kanedit_etc.tsv」ボタン             「LTsv10kanedit(tsvtool10)」のドキュメント作成。
  「../../ooblog.github.io/yakuyon.tsv」ボタン  「約四文字」のドキュメント作成。
+ 「edit」ボタン                                各ボタンのLTsv_docドキュメントを編集。
  ボタン編集(LTsv_docドキュメントの登録)は「LTsv/LTsv_doc.tsv」を編集。詳細は「②-1．「LTsv_doc.tsv」のタグ解説」を参考。
 
 
@@ -112,6 +113,7 @@ version(branch):20161215R220253	modify:20161221W052608
 ②-1．「LTsv_doc.tsv」のタグ解説
 
  「LTsv/LTsv_doc.tsv」は「LTsv/LTsv_glyph.py」の設定ファイルです。
+ 「README.md」作成のサンプルも兼用です。HTML版を同時作成で、GitHubのmarkdownをブラウザで確認できる風のデモになります。
 
  メタタグ「L:Tsv」のfirst縦軸ラベルの解説。
 
@@ -123,12 +125,12 @@ version(branch):20161215R220253	modify:20161221W052608
    modify                     ランチャーのボタンを押した時刻を表示することで変換処理を一応行った事を通知。ボタンの時刻が変化してから正しく置換されたか確認。
    editer                      「edit」ボタンで表示する
   [LTsv_doc_this|             「LTsv/LTsv_doc.tsv」の設定です。アプリの設定とドキュメント混在は後述の「skplist」機能のテストや解説役を兼ねてるのでご理解。
-   main                       置換される前の元文書。今回は「<＠LTsv_doc_test_main>」。置換タグが無ければページの内容がファイルに保存される。
+   main                       置換される前の元文書。今回は「<＠LTsv_doc_test_main>」。
    tagseparate                ループタグ作成用のタグ区切りを指定。「LTsv/LTsv_doc.tsv」では「*」を使用。
    skplist                    使用しないタグの追加(tsv)。初期状態で「L:Tsv」とmainで指定したメインタグ例えば「<＠LTsv_doc_main>」は置換対象にならない。今回「LTsv/LTsv_doc.py」の設定ページ「LTsv_doc」を混ぜてるのでリストに追加してる。
    outdir                     置換されたテキストの出力先フォルダ。
    outlist                    置換されたテキストの出力ファイル名一覧(tsv)。
-                              tsvのファイル名一覧の代わりに「<＠LTsv_doc_outlist>」の様にファイル一覧ページのタグ指定もできる。
+                              tsvのファイル名一覧の代わりに「<＠LTsv_doc_test_outlist>」の様にファイル一覧ページのタグ指定もできる。
                               ファイル一覧ページでは、firstのファイルパスに加えrestでエイリアスが設定可能。
                               ドキュメント内でoutlistタグを呼び出すとエイリアス(エイリアス指定が無い場合はファイルパス)に置換される。
    defdir                     Pythonのモジュール等が置いてあるフォルダ。
@@ -136,14 +138,48 @@ version(branch):20161215R220253	modify:20161221W052608
    defindent                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
    LTsvver                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「20161215R220253」。
                               詳細は「「LTsv10.txt」の③-0．「LTsv_file.py」の関数一覧」参考。
-  [<LTsv_doc_test_main>|
-    置換される前の元文書(main)。以降の置換タグで文章が置換される。
-  [<？LTsv_MD_header>|                    
-  [<＃LTsv_HTML_header>|                   
-  [<？LTsv_MD_footer>|                    
-  [<＃LTsv_HTML_footer>|                    
-
-
+  [<＠LTsv_doc_test_main>|
+    置換される前の元文書(main)。以降の置換タグで文章が置換される。以降「README.md」作成のLTsv_docドキュメントのサンプル。
+  [<？LTsv_MD_header>|
+    ファイル拡張子がhtml(正規表現で「.+\.html?」)の時だけHTML5ヘッダを追加。ここで分岐タグ出現。
+  [<＃LTsv_HTML_header>|
+    簡略したHTML5ヘッダ本文。「<body>」タグまで。
+  [<？LTsv_MD_footer>|
+    ファイル拡張子がhtml(正規表現で「.+\.html?」)の時だけフッターを追加。
+  [<＃LTsv_HTML_footer>|
+    「</body></html>」閉じるタグ。フッターがあれば追記。
+  [<？LTsv_MD_H1:LTsv10kanedit>|
+    「<h1>」タグの記述。markdownだと先頭の「#」。ここから内包タグ出現。
+  [<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>|
+    「<h1>」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。
+    「tagseparate」の詳細は「②-2．LTsv_docドキュメントの書き方」を参考。
+    カウンター「@c」の詳細は「「LTsv10.txt」の④-1．日時フォーマットの概要」を参考。
+  [<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>|
+    「<img>」タグの記述。markdownだと「![alt](src "title")」。画像を表示するので「raw」系リンク。
+  [<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>|
+    「<a>」タグの記述。markdownだと「[text](href "title")」。「github.com」リンクと「github.io」リンクの両方を用意。
+  [<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
+    こちらも「<a>」タグの記述。ドキュメント以外の「github.com(「blob」系)」リンク。
+  [<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
+    「github.com」のリンクで「raw」系と「blob」系のURL差分。
+  [<？https/htmldoc>|
+    普通に「」へのリンク。内包タグは外部参照できないのでリンク等を外に置くパターン。
+  [<？ooblog:LTsv10repository_txt>|
+    リンクテキスト「「LTsv10kanedit(tsvtool10)」は「L&#58;Tsv」の読み書きを中心としたモジュール群です。」。
+  [<？ooblog:LTsv10repository_url>|
+    リンクURL「」。
+  [<？https/japanpost>*<？https/fontforge>|
+    「L&#58;Tsv」以外のサイトへのリンク枠。
+  [<？P>|
+    「<p>」タグの記述。
+  [<？/PP>|
+    「</p><p>」タグの記述。
+  [<？/P>|
+    「</p>」タグの記述。
+  [<？BR>|
+    「<br />」タグの記述。markdownだと行末に「  」(空白2つ)。
+  [<＠LTsv_doc_test_outlist>|
+    ファイルの出力先。「testfile/README.md」「testfile/README.html」。
 
 
 ②-2．LTsv_docドキュメントの書き方
@@ -155,8 +191,9 @@ version(branch):20161215R220253	modify:20161221W052608
  置換タグ説明の前にskplistに登録され置換対象にならないタグがあります。
   <L:Tsv>                       「L:Tsv」は「L:Tsv」ファイルのメタタグなのでskplist対象なので置換されません。
   <LTsv_doc_this>(L:Tsv 1st)    「1st」で指定するLTsv_docドキュメント設定ページのタグもskplist対象なので置換されません。
-  <＠LTsv_doc_main>(main)       「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
-  <LTsv_doc>(skplist)           「LTsv/LTsv_doc.tsv」では「LTsv/LTsv_doc.py」設定ページをskplistに登録してるので置換されません。
+  <＠LTsv_doc_main>(main)      「main」指定のページタグ自身もskplist対象なので置換されません。「LTsv_doc」に再帰は存在せず、上から順に置換するのみです。
+  <LTsv_doc>(skplist)          その他置換対象から外したいページをskplistに登録できます。
+                               例えば 「LTsv/LTsv_doc.tsv」ではskplistに「LTsv_doc」を登録してるので設定ページは置換されません。
 
  分類すると5種類の置換タグがあるものとします。
   <「＠」tag>                   コンフィグタグと便宜上命名。「main<＠LTsv_doc_main>」「outlist<＠LTsv_doc_outlist>」「LTsvver20161215R220253」といったドキュメント本文ではなくメタ的な内容のページタグ。
@@ -177,7 +214,8 @@ version(branch):20161215R220253	modify:20161221W052608
     http://docs.python.jp/3/library/re.html
 
  tagseparateによる繰り返し記述でタグの過剰生産を抑制します。
-同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。
+
+  同じ構文をコピペすると一見楽なのですが、1箇所修正するつもりがコピペの回数分再度コピペ(加えてコピペ漏れ)のリスクがつきまといます。
 [<？tagA>|
 .+\.html?	<a href="#text0" title="data-a">data-a</a>
 .*	data-a
