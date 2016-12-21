@@ -169,7 +169,7 @@ License: MIT<？BR>
 :<＄title/LTsv10>	LTsv10kanedit(tsvtool10)
 :<＄href/LTsv10>	https://ooblog.github.io/LTsv10kanedit/
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>&#40;<a href="<＄href/LTsv10><＄html/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄html/htmldoc-@c></a>&#41;
-.+\.md	[<＄txt/htmldoc-@c>](<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c> "<＄title/htmldoc-@c>")&#40;[<＄txt/htmldoc-@c>](<＄href/LTsv10><＄html/htmldoc-@c> "<＄title/htmldoc-@c>")&#41;
+.+\.md	[<＄txt/htmldoc-@c>](<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c> "<＄title/htmldoc-@c>")&#40;[<＄html/htmldoc-@c>](<＄href/LTsv10><＄html/htmldoc-@c> "<＄title/htmldoc-@c>")&#41;
 |<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>]
 
 [<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
