@@ -97,6 +97,7 @@ ENV/
 # git commit -a -m ""
 # git branch
 # git checkout master
+# git checkout 20161215R220253
 # git merge 20161215R220253
 # git branch -d 20161215R220253
 # git push github:ooblog/LTsv10kanedit.git :20161215R220253

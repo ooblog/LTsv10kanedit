@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161222R061715
+modify	20161225U053751
 |L:Tsv]
 
 [LTsv_doc|
@@ -1135,7 +1135,7 @@ LTsv_glyph_calcrelease(calc_canvas)	「canvas」のマウス押上動作に対�
 LTsv_glyph_calcenter(calc_canvas)	「canvas」にマウスカーソルが入った時の<？VRcalc>を描画。	「canvas」の「event_e=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
 LTsv_glyph_calcleave(calc_canvas)	「canvas」からマウスカーソルが出た時の<？VRcalc>を描画。	「canvas」の「event_l=*_mouserelease」系コールバック関数内に設置。	返り値は入力欄のテキスト。
 LTsv_glyph_calcinput(calc_canvas,glyph_calcinput="")	glyph_calcinputが文字なら<？VRcalc>に文字入力、カーソル移動など編集指示ならテキスト処理。	glyph_calcinputを省略すると再描画のみ。
-LTsv_glyph_typeNXK(glyphtype_getkbdnames)	「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
+LTsv_glyph_typeNXK(glyphtype_getkbdnames,LTsv_glyph_NXKbf)	「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。	NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。	NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)、もしくはLTsv_glyph_KANA(51)。SandSはSpaceキーを使ってた時期の名残り。	NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。
 LTsv_glyph_calctype(calc_canvas)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。
 LTsv_glyph_calctypelimited(calc_canvas,kbd_x,kbd_y)	「canvas」にマウスカーソルがある状態で<？PCkeyboard>押下に対応する<？VRkeyboard>を描画。	「window」の「event_k=*_keypress」系「event_y=*_keyrelease」系両方のコールバック関数内に設置。	「LTsv_glyph_calctypelimited()」は<？VRcalc>を用いず<？VRkeyboard>のみを直接操作する用途。
 debug_calculatormousepress(window_objvoid=None,window_objptr=None)	単体風テスト専用。<？VRcalc>用「canvas」マウス押下のコールバック。
@@ -1216,12 +1216,12 @@ entry	<？reversi>の棋譜。
 <？DLDT>  [NFER]+[ぬ〜ろ￥]<？/DTDD>                   NFER鍵盤切替。ひらがなや小文字など。[NFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
 <？DLDT>  [XFER]+[ヌ〜ロ｜]<？/DTDD>                   XFER鍵盤切替。カタカナや大文字など。[XFER]キーを押すだけでも鍵盤は切り替わる。<？BR><？/DD/DL>
 <？DLDT>  [NFER]+[XFER]or[XFER]+[NFER]<？/DTDD>       α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。<？BR>
-                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<？BR>
-                                     単漢字辞書の変更は「<？index/LTsv_glyph-5>」を参考。
+                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。その状態で再度[NFER][XFER]両押しで単漢字辞書による字引入力。<？BR>
+                                     単漢字辞書の種類は「<？index/LTsv_glyph-5>」を参考。
                                      <？/DD/DL>
+<？DLDT>  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]<？/DTDD>           単漢字辞書による字引入力。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[NFER]or[NFER]+[KANA]<？/DTDD>       「σ」鍵盤表示。HJKLカーソル移動などに使います。<？BR><？/DD/DL>
 <？DLDT>  [KANA]+[XFER]or[XFER]+[KANA]<？/DTDD>       「Σ」鍵盤表示。電卓用途。<？BR><？/DD/DL>
-<？DLDT>  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]<？/DTDD>           単漢字辞書による字引入力。<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-2>]
 
 [<＃contents/LTsv_glyph-3>|

@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20161215R220253	modify:20161222R061659
+version(branch):20161215R220253	modify:20161225U053734
 
 目次
 

@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161222R061659<br />
+   version(branch):20161215R220253	modify:20161225U053734<br />
   
 </p>
   <h2>目次</h2>
@@ -1877,10 +1877,10 @@ calc_canvasfgcolorで描画色、calc_canvasbgcolorで背景色の変更。</dd>
 <dl><dt>LTsv_glyph_calcinput(calc_canvas,glyph_calcinput="")</dt><dd>
 glyph_calcinputが文字ならテキスト入力欄(電卓)に文字入力、カーソル移動など編集指示ならテキスト処理。<br />
 glyph_calcinputを省略すると再描画のみ。</dd></dl>
-<dl><dt>LTsv_glyph_typeNXK(glyphtype_getkbdnames)</dt><dd>
+<dl><dt>LTsv_glyph_typeNXK(glyphtype_getkbdnames,LTsv_glyph_NXKbf)</dt><dd>
 「LTsv_glyph_calctype()」「LTsv_glyph_calctypelimited()」から呼び出される関数。glyphtype_getkbdnamesにはキーボードの押下情報。<br />
 NFERキーが押されてる場合はLTsv_glyph_NFER(49)、XFERキーが押されてる場合はLTsv_glyph_XFER(50)、KANAキーが押されてる場合はLTsv_glyph_KANA(51)。<br />
-NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)。SandSはSpaceキーを使ってた時期の名残り。<br />
+NFERキーとXFERキー両方を押してる場合にはLTsv_glyph_SandS(48)、もしくはLTsv_glyph_KANA(51)。SandSはSpaceキーを使ってた時期の名残り。<br />
 NFERキーとKANAキーの時は「σ」に鍵盤変更、XFERキーとKANAキーの時は「Σ」に鍵盤変更。</dd></dl>
 <dl><dt>LTsv_glyph_calctype(calc_canvas)</dt><dd>
 「canvas」にマウスカーソルがある状態でPCキーボード押下に対応する漢直鍵盤を描画。<br />
@@ -2089,9 +2089,14 @@ LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CY
   [NFER]+[XFER]or[XFER]+[NFER]</dt>
 <dd>
        α鍵盤の「αβγδεζηθικλμνξοπρστυφχψω」＆単漢字辞書の「名音訓送異俗熙簡繁越地顔鍵代逆非」の変更。<br />
-                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。<br />
-                                     単漢字辞書の変更は「<a href="#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目">⑨-5．単漢字辞書の辞書項目</a>」を参考。
+                                     α鍵盤＆辞書項目の表示中は[NFER]と[XFER]どちらか片方だけ押したままでも表示継続。その状態で再度[NFER][XFER]両押しで単漢字辞書による字引入力。<br />
+                                     単漢字辞書の種類は「<a href="#LTsv_glyph-5" title="⑨-5．単漢字辞書の辞書項目">⑨-5．単漢字辞書の辞書項目</a>」を参考。
                                      
+</dd></dl>
+<dl><dt>
+  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]</dt>
+<dd>
+           単漢字辞書による字引入力。<br />
 </dd></dl>
 <dl><dt>
   [KANA]+[NFER]or[NFER]+[KANA]</dt>
@@ -2102,11 +2107,6 @@ LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CY
   [KANA]+[XFER]or[XFER]+[KANA]</dt>
 <dd>
        「Σ」鍵盤表示。電卓用途。<br />
-</dd></dl>
-<dl><dt>
-  [KANA]+[ぬ〜ろ￥ヌ〜ロ｜]</dt>
-<dd>
-           単漢字辞書による字引入力。<br />
 </dd></dl>
 
 </section>

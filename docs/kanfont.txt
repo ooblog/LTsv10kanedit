@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20161215R220253	modify:20161222R061659
+version(branch):20161215R220253	modify:20161225U053734
 
 目次
 
@@ -99,7 +99,7 @@ version(branch):20161215R220253	modify:20161222R061659
 
 ②-1．「kanfont.tsv」のタグ解説
 
- 「kanfont.tsv」は「？https/kanfont.py>」の設定ファイルです。
+ 「kanfont.tsv」は「kanfont.py」の設定ファイルです。
 
  【[kanfont|】
   「kanfont.py」の設定。
