@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161215R220253	modify:20161225U053734
+version(branch):20161215R220253	modify:20161225U075430
 
 目次
 
@@ -1936,8 +1936,12 @@ version(branch):20161215R220253	modify:20161225U053734
   漢直鍵盤の拡大倍率。
   初期値は「1」。変更非推奨。
 
+ 【kbdNX】
+  [NFER]キー[XFER]キーが使えない場合「NFER:ShiftL\tXFER:ShiftR\tKANA:KANA」に置き換えると[Shift]キーで代用できる。
+  初期値は「NFER:NFER\tXFER:XFER\tKANA:KANA」。
+
  【[reversi|】
-  「LTsv_glyph.py」単体風テストのリバーシー設定。
+  「LTsv/LTsv_glyph.py」単体風テストのリバーシー設定。
 
  【entry】
   リバーシーの棋譜。
@@ -2152,6 +2156,9 @@ version(branch):20161215R220253	modify:20161225U053734
 
  Ｑ．テキスト入力欄(電卓)はなんで中途半端にVimっぽいHJKL移動なんですか？
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。
+
+ Ｑ．[NFER(無変換)]キーとか[XFER(変換)]キーとか存在しないキーボードですけど？
+ Ａ．「LTsv/LTsv_glyph.tsv」の「kbdNX」の設定を「NFER:ShiftL」「XFER:ShiftR」に変更することで[Shift]キーで代用できます。
 
  Ｑ．起動できたたソフトがいつの間にか起動しなくなった。
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。

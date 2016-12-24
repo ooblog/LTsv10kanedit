@@ -82,6 +82,7 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
     global LTsv_draw_selcanvas,LTsv_draw_delete,LTsv_draw_queue
     global LTsv_draw_color,LTsv_draw_bgcolor
     global LTsv_glyph_kbdsize
+    global LTsv_glyph_NXKSbf,LTsv_glyph_NXKSaf,LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA,LTsv_glyph_kbdCTRL
     global LTsv_draw_polygon,LTsv_draw_polygonfill
     global LTsv_draw_squares,LTsv_draw_squaresfill
     global LTsv_draw_circles,LTsv_draw_circlesfill
@@ -151,6 +152,9 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
         kbdC=LTsv_glyph_kbdC if kbd_xy < LTsv_glyph_SandS else LTsv_glyph_kbdC*2
         kbdG=LTsv_glyph_kbdG if kbd_xy < LTsv_glyph_SandS else LTsv_glyph_kbdG*2
         LTsv_glyph_mouseX[kbd_xy],LTsv_glyph_mouseY[kbd_xy],LTsv_glyph_mouseC[kbd_xy],LTsv_glyph_fontG[kbd_xy]=LTsv_glyph_fontX[kbd_xy]+kbdC,LTsv_glyph_fontY[kbd_xy]+kbdC,kbdC,kbdG
+
+    LTsv_glyph_kbdNFER,LTsv_glyph_kbdXFER,LTsv_glyph_kbdKANA=LTsv_tsv2tuple(LTsv_unziptuplelabelsdata(LTsv_readlinerest(LTsv_glyph_config,"kbdNX"),"NFER","XFER","KANA"))
+
     LTsv_glyph_kbdchars[LTsv_glyph_KANA]=LTsv_readlinerest(LTsv_glyph_config,"last_alpha",LTsv_glyph_kbdchars[LTsv_glyph_KANA])[:1]
     LTsv_glyph_kbdchars[LTsv_glyph_SandS]=LTsv_readlinerest(LTsv_glyph_config,"last_dic",LTsv_glyph_kbdchars[LTsv_glyph_SandS])[:1]
     LTsv_glyph_kbdselect(LTsv_glyph_kbdchars[LTsv_glyph_KANA])

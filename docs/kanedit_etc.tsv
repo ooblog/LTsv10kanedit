@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161225U053751
+modify	20161225U075450
 |L:Tsv]
 
 [LTsv_doc|
@@ -1060,7 +1060,7 @@ debug_filedialog_response(window_objvoid=None,window_objptr=None)	単体風テ�
 |<＃contents/LTsv_glyph-0>]
 
 [LTsv_glyph.py|
-LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	設定ファイル「LTsv/LTsv_glyph.tsv」の読込、<？DICchar>の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。	「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。	「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに<？VRkeyboard>の倍率が指定できるが後述の<？VRcalc>と連携が不十分。
+LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)	設定ファイル「<？https/LTsv_glyph.tsv>」の読込、<？DICchar>の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。	「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。	「<？https/LTsv_glyph.tsv>」の設定を無視してLTsv_glyph_kbddefsizeに<？VRkeyboard>の倍率が指定できるが後述の<？VRcalc>と連携が不十分。
 LTsv_global_kandic(new_kandic=None)	<？DICchar>を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
 LTsv_global_kanmap()	<？DICmap>を取得できます。	「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。
 LTsv_global_kanmapN()	<？DICmap>のNFER鍵盤の配列を取得。
@@ -1198,7 +1198,8 @@ fontcolor	<？VRkeyboard>のグリフ描画色。	初期値は「black」。
 bgcolor	<？VRkeyboard>の鍵盤背景色。	初期値は「#E1FFFA」。
 leavecolor	<？VRcalc>がフォーカス外の時の入力欄背景色。	初期値は「white」。
 kbddefsize	<？VRkeyboard>の拡大倍率。	初期値は「1」。変更非推奨。
-[reversi|	「LTsv_glyph.py」単体風テストの<？reversi>設定。
+kbdNX	[NFER]キー[XFER]キーが使えない場合「NFER:ShiftL\tXFER:ShiftR\tKANA:KANA」に置き換えると[Shift]キーで代用できる。	初期値は「NFER:NFER\tXFER:XFER\tKANA:KANA」。
+[reversi|	「<？https/LTsv_glyph.py>」単体風テストの<？reversi>設定。
 entry	<？reversi>の棋譜。
 |LTsv_glyph.tsv]
 
@@ -1458,6 +1459,9 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 
 <？DLDTfaq> Ｑ．<？VRcalc>はなんで中途半端にVimっぽいHJKL移動なんですか？<？/DTDD>
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<？BR><？/DD/DL>
+
+<？DLDTfaq> Ｑ．[NFER(無変換)]キーとか[XFER(変換)]キーとか存在しないキーボードですけど？<？/DTDD>
+ Ａ．「<？https/LTsv_glyph.tsv>」の「kbdNX」の設定を「NFER:ShiftL」「XFER:ShiftR」に変更することで[Shift]キーで代用できます。<？BR><？/DD/DL>
 
 <？DLDTfaq> Ｑ．起動できたたソフトがいつの間にか起動しなくなった。<？/DTDD>
  Ａ．ソフトの強制終了の時などに「LTsv/kanpickle.bin」が破損する場合があります。<？BR>

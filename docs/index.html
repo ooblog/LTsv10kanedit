@@ -32,7 +32,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161225U053734<br />
+   version(branch):20161215R220253	modify:20161225U075430<br />
   
 </p>
   <h2>目次</h2>
@@ -1676,9 +1676,9 @@ dialog_tでダイアログの種類。偶数ならOpen、奇数ならSave、2未
 </p>
 
 <dl><dt>LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv_glyph_kbddefsize=None)</dt><dd>
-設定ファイル「LTsv/LTsv_glyph.tsv」の読込、単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。<br />
+設定ファイル「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv">LTsv/LTsv_glyph.tsv</a>」の読込、単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」の読込、グリフ座標パイクル「LTsv/kanpickle.bin」の読込など初期化関連。<br />
 「LTsv_glyph_GUIにはLTsv_guiinit()」で取得する「Tkinter」か「GTK2」。<br />
-「LTsv/LTsv_glyph.tsv」の設定を無視してLTsv_glyph_kbddefsizeに漢直鍵盤の倍率が指定できるが後述のテキスト入力欄(電卓)と連携が不十分。</dd></dl>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv">LTsv/LTsv_glyph.tsv</a>」の設定を無視してLTsv_glyph_kbddefsizeに漢直鍵盤の倍率が指定できるが後述のテキスト入力欄(電卓)と連携が不十分。</dd></dl>
 <dl><dt>LTsv_global_kandic(new_kandic=None)</dt><dd>
 単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」を取得できます。<br />
 「LTsv_glyph_kbdinit()」実行時に読み込んだメモリ上の辞書を読み込むのでファイルアクセスするわけではない点に留意。</dd></dl>
@@ -2026,8 +2026,11 @@ XFER鍵盤における辞書変更鍵盤。<br />
 <dl><dt>kbddefsize</dt><dd>
 漢直鍵盤の拡大倍率。<br />
 初期値は「1」。変更非推奨。</dd></dl>
+<dl><dt>kbdNX</dt><dd>
+[NFER]キー[XFER]キーが使えない場合「NFER:ShiftL\tXFER:ShiftR\tKANA:KANA」に置き換えると[Shift]キーで代用できる。<br />
+初期値は「NFER:NFER\tXFER:XFER\tKANA:KANA」。</dd></dl>
 <dl><dt>[reversi|</dt><dd>
-「LTsv_glyph.py」単体風テストのリバーシー設定。</dd></dl>
+「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」単体風テストのリバーシー設定。</dd></dl>
 <dl><dt>entry</dt><dd>
 リバーシーの棋譜。</dd></dl>
 
@@ -2574,6 +2577,13 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <dd>
 
  Ａ．[Up][Down][Left][Right]キーや[Tab]キーはフォーカス移動、[Space]キーは「button」押下など他のGUI操作を巻き込むからです。<br />
+</dd></dl>
+
+<dl class="faq"><dt>
+ Ｑ．[NFER(無変換)]キーとか[XFER(変換)]キーとか存在しないキーボードですけど？</dt>
+<dd>
+
+ Ａ．「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.tsv">LTsv/LTsv_glyph.tsv</a>」の「kbdNX」の設定を「NFER:ShiftL」「XFER:ShiftR」に変更することで[Shift]キーで代用できます。<br />
 </dd></dl>
 
 <dl class="faq"><dt>
