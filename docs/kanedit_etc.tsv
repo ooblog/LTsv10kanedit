@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161225U075450
+modify	20161225U224549
 |L:Tsv]
 
 [LTsv_doc|
@@ -873,7 +873,7 @@ LTsv_widget_getobj(LTsv_widgetPAGE,LTsv_widgetoption)	「LTsv_widget_newobj()」
 LTsv_widgetPAGEXYWH(LTsv_widgetPAGE,widget_o=None,widget_k=None,widget_t=None,widget_u=None,widget_s=None,widget_e=None,widget_a=None,widget_v=None,widget_b=None, widget_p=None,widget_m=None,widget_g=None,widget_f=None,widget_x=None,widget_y=None,widget_w=None,widget_h=None,widget_c=None, event_z=None,event_k=None,event_y=None,event_b=None,event_p=None,event_r=None,event_e=None,event_m=None,event_l=None,event_a=None,event_u=None, menu_o=None,menu_b=None,menu_c=None,dialog_t=None,dialog_c=None)	詳細は「<？index/LTsv_gui-1>」参考。
 LTsv_fonttuple(LTsv_line)	「Tkinter」のフォント指定はタプルなので、例えばCSV「"kan5x5comic,10"」なら「(kan5x5comic,10)」のようにタプルに変換。
 LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,widget_f=None,widget_d=False)	「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。	widget_dは「gtk_bin_get_child」が要求される場合の分岐。
-LTsv_hideondelete_shell(LTsv_windowPAGENAME)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
+LTsv_hideondelete_shell(LTsv_windowPAGENAME=None)	ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
 LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)	「window」オブジェクトを作成。widget_tにウィンドウのタイトル。	widget_w,widget_hにウィンドウサイズ(最小値)。event_zにコールバック関数登録で同時にリサイズの許可。	event_bはウィンドウを閉じた時にコールバック関数を呼ぶ場合指定。コールバック先で必ず「LTsv_window_exit()」を使う。	event_k,event_yはキーボード入力時(event_kが押した時event_yが離した時)のコールバック関数。
 LTsv_widget_settext(LTsv_widgetPAGENAME,widget_t="")	<？GUIwidget>の文字列を設定。
 LTsv_widget_gettext(LTsv_widgetPAGENAME)	<？GUIwidget>の文字列を取得。	ウィンドウのタイトル取得には「LTsv_window_title(LTsv_window_id)」という別解もある。

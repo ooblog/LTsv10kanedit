@@ -20,18 +20,7 @@ try:
 #    import messagebox as Tk_mb
 except:
     LTsv_Tkinter=False
-#if LTsv_Tkinter == False:
-#    #http://shinobar.server-on.net/puppy/opt/tcl_tk-8.5.7-1-p4.sfs
-#    if os.path.exists("/usr/lib/python3.4"):
-#        sys.path.append("/usr/lib/python3.4")
-#        try:
-#            import tkinter as Tk
-#            import tkinter.scrolledtext as Tk_sc
-#            import tkinter.filedialog as Tk_fd
-##            import messagebox as Tk_mb
-#            LTsv_Tkinter=True
-#        except:
-#            LTsv_Tkinter=False
+
 LTsv_libgtk,LTsv_libgdk,LTsv_libobj=None,None,None
 LTsv_user32,LTsv_shell32,LTsv_kernel32,LTsv_gdi32=None,None,None,None
 LTsv_GUI_ERROR,LTsv_GUI_GTK2,LTsv_GUI_Tkinter,LTsv_GUI_WinAPI="","GTK2","Tkinter","WinAPI"
@@ -224,7 +213,7 @@ def LTsv_GTKwidget_fixed(window_c,widget_o,widget_x,widget_y,widget_w,widget_h,w
             LTsv_libgtk.gtk_widget_modify_font(widget_o,LTsv_fontDesc)
         LTsv_libgtk.pango_font_description_free(LTsv_fontDesc)
 
-def LTsv_hideondelete_shell(LTsv_windowPAGENAME):
+def LTsv_hideondelete_shell(LTsv_windowPAGENAME=None):
     def gtk_hideondelete_kernel(window_objvoid=None,window_objptr=None):
         LTsv_libgtk.gtk_widget_hide_on_delete
         return 0
@@ -234,7 +223,7 @@ def LTsv_hideondelete_shell(LTsv_windowPAGENAME):
         widget_o=LTsv_widgetOBJ[LTsv_readlinerest(LTsv_windowPAGE,"widgetobj")]
         widget_o.withdraw()
         return 0
-    if LTsv_GUI == LTsv_GUI_GTK2: return gtk_hideondelete_kernel
+    if LTsv_GUI == LTsv_GUI_GTK2: return LTsv_libgtk.gtk_widget_hide_on_delete
     if LTsv_GUI == LTsv_GUI_Tkinter: return tkinter_hideondelete_kernel
     return None
 

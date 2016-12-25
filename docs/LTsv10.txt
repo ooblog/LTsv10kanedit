@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161215R220253	modify:20161225U075430
+version(branch):20161215R220253	modify:20161225U224528
 
 目次
 
@@ -954,7 +954,7 @@ version(branch):20161215R220253	modify:20161225U075430
   「GTK2」のコンテナを「gtk_fixed_put」にしてフォントも「gtk_widget_modify_font」で指定する。
   widget_dは「gtk_bin_get_child」が要求される場合の分岐。
 
- 【LTsv_hideondelete_shell(LTsv_windowPAGENAME)】
+ 【LTsv_hideondelete_shell(LTsv_windowPAGENAME=None)】
   ウィンドウの閉じるボタンを押してもプログラム続行するようにする関数の取得。
 
  【LTsv_window_new(widget_n=None,event_b=None,widget_t="LTsv_window",widget_w=200,widget_h=120,event_z=None,event_k=None,event_y=None)】
