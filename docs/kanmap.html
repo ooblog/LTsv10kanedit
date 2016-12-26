@@ -32,7 +32,7 @@
   <h1>「kanmap」は「LTsv10kanedit(tsvtool10)」を用いたグリフ進捗ビュアーです。</h1>
   <p>
 
-   version(branch):20161215R220253	modify:20161225U224528<br />
+   version(branch):20161215R220253	modify:20161227T072309<br />
   
 </p>
   <h2>目次</h2>
@@ -109,7 +109,7 @@
 <p>
  事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<br />
  「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動すると上部に漢字配列「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanmap.tsv">LTsv/kanmap.tsv</a>」、下部に単漢字辞書「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/kanchar.tsv">LTsv/kanchar.tsv</a>」を表示します。<br />
- 「kanmap」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<br />
+ 「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<br />
 </p>
 
 </section>
@@ -128,29 +128,29 @@
           カーソル点灯。クリップボードに１文字転送。<br />
 </dd></dl>
 <dl><dt>
-  「find」をタップ</dt>
+  「clipfind」をタップ</dt>
 <dd>
-          クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<br />
+            クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<br />
 </dd></dl>
 <dl><dt>
-  「update☐」にチェック</dt>
+  「update☐」にチェック☑</dt>
 <dd>
-    ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。<br />
+        ONの状態で[Ctrl]+[S]もしくは「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を終了すると「LTsv/kanmap.tsv」を上書保存。<br />
 </dd></dl>
 <dl><dt>
-  「kbdfind☐」にチェック</dt>
+  「kbdfind☐」にチェック☑</dt>
 <dd>
-    ONにすると「find」をタップしなくても漢直鍵盤の操作だけで検索してカーソル点灯。<br />
+       ONの状態なら漢直鍵盤の入力操作で検索してカーソル点灯。<br />
 </dd></dl>
 <dl><dt>
-  「rewrite☐」にチェック</dt>
+  「rewrite☐」にチェック☑</dt>
 <dd>
-   ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップで漢字配列の文字を上書き(予定)。<br />
+       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<br />
 </dd></dl>
 <dl><dt>
-  「swap☐」にチェック</dt>
+  「swap☐」にチェック☑</dt>
 <dd>
-      ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。<br />
+          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<br />
 </dd></dl>
 
 </section>

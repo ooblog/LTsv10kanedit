@@ -29,7 +29,7 @@ kanmap_linefix=False
 def kanmap_KBDstart(drawwait):
     global kanmap_drawwait
     kanmap_drawwait=min(max(drawwait,5),1000)
-    LTsv_widget_settext(kanmap_window,"kanmap:pickling kanmap.tsv")
+    LTsv_widget_settext(kanmap_window,"kanmap:pickling {0}".format(LTsv_global_kanmappath()))
     for map_xy in range(len(LTsv_global_irohaalpha())):
         map_x,map_y=kanmap_irohaalphaNX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaNY[map_xy]//LTsv_glyph_kbdF-2
         for kbd_xy in range(len(LTsv_global_irohatype())):
@@ -73,7 +73,7 @@ def kanmap_KBDfinishDICstart():
         LTsv_draw_glyphskbd(draw_t=LTsv_global_irohaalphaX()[map_xy],draw_x=kanmap_irohaalphaXX[map_xy]-LTsv_glyph_kbdF*2,draw_y=kanmap_irohaalphaXY[map_xy],draw_f=10,draw_g="漫")
     LTsv_draw_polygonfill(LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2,kanmap_canvasW-LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2,kanmap_canvasW-LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2-1,LTsv_glyph_kbdF//2,kanmap_dicY-LTsv_glyph_kbdF//2-1)
     LTsv_draw_queue()
-    LTsv_widget_settext(kanmap_window,"kanmap:pickling LTsv/kanchar.tsv")
+    LTsv_widget_settext(kanmap_window,"kanmap:pickling {0}".format(LTsv_global_kandicpath()))
     for dic_xy in range(kandic_charsH):
         for map_xy in range(kanmap_charsW):
             dicpos=dic_xy*kanmap_charsW+map_xy
@@ -240,7 +240,7 @@ def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_window_exit()
 
 def kanmap_mapsave():
-    kanmap_kanmapname=LTsv_global_kanmappath(); kanmap_kanmapname="testkanmap.tsv"
+    kanmap_kanmapname=LTsv_global_kanmappath(); #kanmap_kanmapname="testkanmap.tsv"
     kanmap_kanmap=""
     for map_iroha in LTsv_global_irohaalpha():
         kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha]),"\t".join(LTsv_glyph_kanmapX[map_iroha]))

@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161225U224549
+modify	20161227T072326
 |L:Tsv]
 
 [LTsv_doc|
@@ -2848,17 +2848,17 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 [<＃contents/kanmap_usage-0>|
 <？P> 事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<？BR>
  「<？https/kanmap.py>」を起動すると上部に漢字配列「<？https/kanmap.tsv>」、下部に<？DICchar>を表示します。<？BR>
- 「kanmap」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<？BR><？/P>
+ 「<？https/kanmap.py>」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<？BR><？/P>
 |<＃contents/kanmap_usage-0>]
 
 [<＃contents/kanmap_usage-1>|
 <？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard/howto><？BR><？/DD/DL>
 <？DLDT>  小さい文字の上でタップ<？/DTDD>          カーソル点灯。クリップボードに１文字転送。<？BR><？/DD/DL>
-<？DLDT>  「find」をタップ<？/DTDD>          クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
-<？DLDT>  「update☐」にチェック<？/DTDD>    ONにして「kanmap」を終了すると「LTsv/kanmap.tsv」を上書き(予定)。<？BR><？/DD/DL>
-<？DLDT>  「kbdfind☐」にチェック<？/DTDD>    ONにすると「find」をタップしなくても漢直鍵盤の操作だけで検索してカーソル点灯。<？BR><？/DD/DL>
-<？DLDT>  「rewrite☐」にチェック<？/DTDD>   ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップで漢字配列の文字を上書き(予定)。<？BR><？/DD/DL>
-<？DLDT>  「swap☐」にチェック<？/DTDD>      ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップで漢字配列の文字を上書き(予定)。<？BR><？/DD/DL>
+<？DLDT>  「clipfind」をタップ<？/DTDD>            クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
+<？DLDT>  「update☐」にチェック☑<？/DTDD>        ONの状態で[Ctrl]+[S]もしくは「<？https/kanmap.py>」を終了すると「LTsv/kanmap.tsv」を上書保存。<？BR><？/DD/DL>
+<？DLDT>  「kbdfind☐」にチェック☑<？/DTDD>       ONの状態なら漢直鍵盤の入力操作で検索してカーソル点灯。<？BR><？/DD/DL>
+<？DLDT>  「rewrite☐」にチェック☑<？/DTDD>       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<？BR><？/DD/DL>
+<？DLDT>  「swap☐」にチェック☑<？/DTDD>          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<？BR><？/DD/DL>
 |<＃contents/kanmap_usage-1>]
 [<？VRkeyboard/howto>|
 .*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
