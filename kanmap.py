@@ -163,6 +163,7 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                             LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
                             kanmap_cursorMX,kanmap_cursorMY=0,0
                             LTsv_kanmap_mousecursordraw(kanmap_cursorMX,kanmap_cursorMY,cursorMX,cursorMY)
+                            LTsv_kanmap_kbdchange(cursorMX,cursorMY); LTsv_kanmap_kbdchange(kanmap_cursorMY,kanmap_cursorDY)
                 if kanmap_cursorAY >= kanmap_charsH:
                     cursorDX,cursorDY=kanmap_cursorDX,kanmap_cursorDY
                     kanmap_cursorDX,kanmap_cursorDY=kanmap_cursorAX,kanmap_cursorAY
@@ -171,6 +172,7 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                         if len(kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]) > 0 and len(kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]) > 0:
                             kanmap_chars[kanmap_cursorMY][kanmap_cursorMX]=kanmap_chars[kanmap_cursorDY][kanmap_cursorDX]
                             LTsv_kanmap_mousecursordraw(kanmap_cursorDX,kanmap_cursorDY,kanmap_cursorMX,kanmap_cursorMY)
+                            LTsv_kanmap_kbdchange(kanmap_cursorMX,kanmap_cursorMY)
             else:
                 if ( check_x in kanmap_checkboxL ) and check_y == 6:
                     for map_xy in kanmap_checkboxL:
@@ -181,6 +183,18 @@ def LTsv_kanmap_mouserelease(window_objvoid=None,window_objptr=None):
                     kanmap_checkboxdraw()
                 if check_x ==6 and check_y == 6:
                     LTsv_kanmap_find()
+
+def LTsv_kanmap_kbdchange(changeX,changeY):
+    global LTsv_glyph_kanmapN,LTsv_glyph_kanmapX
+    for map_xy in range(len(LTsv_global_irohaalpha())):
+        map_x,map_y=kanmap_irohaalphaNX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaNY[map_xy]//LTsv_glyph_kbdF-2
+        if map_x <= changeX < map_x+12 and map_y <= changeY < map_y+4:
+            kbd_x,kbd_y=changeX-map_x,changeY-map_y; kbd_xy=kbd_x+kbd_y*12
+            LTsv_glyph_kanmapN[LTsv_global_irohaalpha()[map_xy]][kbd_xy]=kanmap_chars[changeY][changeX]
+        map_x,map_y=kanmap_irohaalphaXX[map_xy]//LTsv_glyph_kbdF,kanmap_irohaalphaXY[map_xy]//LTsv_glyph_kbdF-2
+        if map_x <= changeX < map_x+12 and map_y <= changeY < map_y+4:
+            kbd_x,kbd_y=changeX-map_x,changeY-map_y; kbd_xy=kbd_x+kbd_y*12
+            LTsv_glyph_kanmapX[LTsv_global_irohaalpha()[map_xy]][kbd_xy]=kanmap_chars[changeY][changeX]
 
 def LTsv_kanmap_keypress(window_objvoid=None,window_objptr=None):
     LTsv_kanmap_kbdinput(LTsv_glyph_calctypelimited(kanmap_canvas,kanmap_kbdX,kanmap_kbdY))
