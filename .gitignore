@@ -103,13 +103,11 @@ ENV/
 # git push github:ooblog/LTsv10kanedit.git :20161215R220253
 kan5x5.svg
 kanmap.png
+testkanmap.tsv
 kanmap/
 kanzip.tsv
 kanzip/
 LTsv/testfile/
 LTsv/kanpickle.bin
-LTsv/LTsv_debug.tsv
-LTsv/LTsv_debug.txt
-LTsv/LTsv_debug.html
 LTsv_soundtest.py
 soundtest/

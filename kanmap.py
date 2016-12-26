@@ -62,7 +62,7 @@ def kanmap_checkboxdraw():
         LTsv_draw_polygon(*tuple([draw_x,draw_y,draw_x+LTsv_glyph_kbdW-1,draw_y,draw_x+LTsv_glyph_kbdW-1,draw_y+LTsv_glyph_kbdH-1,draw_x,draw_y+LTsv_glyph_kbdH-1]))
     draw_x,draw_y=LTsv_glyph_kbdW*6,LTsv_glyph_kbdH*6
     LTsv_draw_color("black"); LTsv_draw_bgcolor("white")
-    LTsv_draw_glyphsfill(draw_t="find",draw_x=draw_x+LTsv_glyph_kbdF*3,draw_y=draw_y+LTsv_glyph_kbdF,draw_f=10,draw_g="漫")
+    LTsv_draw_glyphsfill(draw_t="clipfind",draw_x=draw_x+LTsv_glyph_kbdF*3,draw_y=draw_y+LTsv_glyph_kbdF,draw_f=10,draw_g="漫")
     LTsv_draw_color("gray"); LTsv_draw_bgcolor("gray")
     LTsv_draw_polygon(*tuple([draw_x+LTsv_glyph_kbdF*2,draw_y,draw_x+LTsv_glyph_kbdW-1,draw_y,draw_x+LTsv_glyph_kbdW-1,draw_y+LTsv_glyph_kbdH-1,draw_x+LTsv_glyph_kbdF*2,draw_y+LTsv_glyph_kbdH-1]))
     LTsv_draw_queue()
@@ -193,6 +193,8 @@ def LTsv_kanmap_kbdinput(kbdinput):
     LTsv_widget_settext(kanmap_clipboard,kanmap_clipfind)
     if kanmap_checkboxC[kanmap_checkboxN["kbdfind"]] != 0:
         LTsv_kanmap_find()
+    if kanmap_checkboxC[kanmap_checkboxN["update"]] != 0:
+        if kanmap_clipfind == '': kanmap_mapsave()
 
 def LTsv_kanmap_find():
     global kanmap_cursorMX,kanmap_cursorMY,kanmap_cursorDX,kanmap_cursorDY
@@ -220,10 +222,17 @@ def kanmap_configsave_exit(window_objvoid=None,window_objptr=None):
     LTsv_glyph_picklesave()
     LTsv_draw_canvas_save(kanmap_canvas,"kanmap.png")
     if kanmap_checkboxC[kanmap_checkboxN["update"]] != 0:
-        pass
+        kanmap_mapsave()
     LTsv_window_exit()
-#LTsv_global_kanmappath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanmapname)
-#LTsv_global_kandicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kandicname)
+
+def kanmap_mapsave():
+    kanmap_kanmapname=LTsv_global_kanmappath(); kanmap_kanmapname="testkanmap.tsv"
+    kanmap_kanmap=""
+    for map_iroha in LTsv_global_irohaalpha():
+        kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha]),"\t".join(LTsv_glyph_kanmapX[map_iroha]))
+        kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,map_iroha,kanmap_irohaline)
+    kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,"©","# Copyright (c) 2016 ooblog # License: MIT # https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")
+    LTsv_saveplain(kanmap_kanmapname,kanmap_kanmap)
 
 LTsv_GUI=LTsv_guiinit()
 if len(LTsv_GUI) > 0:
