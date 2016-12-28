@@ -103,7 +103,6 @@ ENV/
 # git push github:ooblog/LTsv10kanedit.git :20161215R220253
 kan5x5.svg
 kanmap.png
-testkanmap.tsv
 kanmap/
 kanzip.tsv
 kanzip/
