@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161227T072326
+modify	20161229R093007
 |L:Tsv]
 
 [LTsv_doc|
@@ -1844,7 +1844,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[H(ク)]」<？/DTDD>   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」<？/DTDD>   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[L(リ)]」<？/DTDD>   [F(は)]に入り切らなかった「は」読みの漢字を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[;(れ)]」<？/DTDD>   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶」を固める感覚で「亨惇淳諄享」も相席。<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」<？/DTDD>   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶鈴」を固める感覚で「亨惇淳諄享」も相席。<？/DD/DL>
 <？DLDTinputstroke>  「[;(レ)]」<？/DTDD>   [G(き)]に入り切らなかった「き」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[}(む)]」<？/DTDD>   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[}(ム)]」<？/DTDD>   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。<？/DD/DL>
@@ -2025,8 +2025,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[-(ほ)]」[3(あ)][4(う)]<？/DTDD>                「報酬(ほうしゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[7(や)][8(ゆ)]<？/DTDD>                「菠薐(じょうれんそう菠薐草の"ほうれん")」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[0(わ)][0(ワ)]<？/DTDD>                「菩薩(ぼさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[^(ヘ)][^(へ)]<？/DTDD>                「蓬莱(ほうらい)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[E(い)][E(イ)]<？/DTDD>                「匍匐(ほふくぜんしん匍匐前進の"ほふく")」<？/DD/DL>
-<？DLDTinputstroke>  「[-(ほ)]」[I(に)][O(ら)]<？/DTDD>                「蓬莱(ほうらい)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[I(に)][O(ら)]<？/DTDD>                「彷彿(ほうふつ)」※髣髴は「[-(ホ)]」｛異:[^(ヘ)]｝｛異:[|(￥)]｝<？/DD/DL>
+<？DLDTinputstroke>  「[-(ホ)]」[I(に)][I(ニ)]<？/DTDD>                「彷徨(ほうこう/彷徨うの"さまよ")」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[@(゛)][{(゜)]<？/DTDD>                「放牧(ほうぼく)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[D(し)][F(は)]<？/DTDD>                「彗星(すいせい)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[J(ま)][J(マ)]<？/DTDD>                「孑孒(ぼうふら)」<？/DD/DL>
@@ -2040,8 +2042,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[-(ホ)]」[1(ヌ)][2(フ)]<？/DTDD>                「炮烙(ほうらく)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ホ)]」[6(お)][7(や)]<？/DTDD>                「朴訥(ぼくとつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ホ)]」[8(ゆ)][9(よ)]<？/DTDD>                「紡績(ぼうせき)」<？/DD/DL>
-<？DLDTinputstroke>  「[-(ホ)]」[^(ヘ)][|(￥)]<？/DTDD>                「彷彿(ほうふつ)」※髣髴は「[-(ホ)]」｛異:[^(ヘ)]｝｛異:[|(￥)]｝<？/DD/DL>
-<？DLDTinputstroke>  「[-(ホ)]」[^(ヘ)][^(へ)]<？/DTDD>                「彷徨(ほうこう/彷徨うの"さまよ")」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ホ)]」[Y(ン)][U(ナ)]<？/DTDD>                「翻弄(ほんろう)」<？/DD/DL>
 <？DLDTinputstroke>  「[^(へ)]」[;(れ)][:(け)]<？/DTDD>                「兵站(へいたん)」<？/DD/DL>
 <？DLDTinputstroke>  「[^(へ)]」[.(る)][/(め)]<？/DTDD>                「弁慶(べんけい)」<？/DD/DL>
@@ -2358,66 +2358,64 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[/(メ)]」[}(ム)][}(む)]<？/DTDD>                「毛氈(もうせん/フェルト)」<？/DD/DL>
 <？DLDTinputstroke>  「[_(ろ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「耄碌(もうろく)」<？/DD/DL>
 <？DLDTinputstroke>  「[_(ロ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「狼狽(ろうばい)」<？/DD/DL>
-
-<？P>以下「[B(β)]」から始まる「[A(α)]」から開始に移動予定。<？/P>
-
-<？DLDTinputstroke>  「[B(β)]」[1(ぬ)][2(ふ)]<？/DTDD>                「禺彊(ぐうきょう)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[3(あ)][4(う)]<？/DTDD>                「鞦韆(しゅうせん/ブランコ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[5(え)][6(お)]<？/DTDD>                「羌瘣(きょうかい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[7(や)][8(ゆ)]<？/DTDD>                「宥恕(ゆうじょ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[9(よ)][0(わ)]<？/DTDD>                「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[-(ほ)][^(へ)]<？/DTDD>                「吶喊(とっかん)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[Q(た)][W(て)]<？/DTDD>                「耆碩(きせき)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[E(い)][R(す)]<？/DTDD>                「囐噠(エフタル)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[T(か)][Y(ん)]<？/DTDD>                「挹怛(エフタル)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[U(な)][I(に)]<？/DTDD>                「鑣轡(ひょうぐつわ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[O(ら)][P(せ)]<？/DTDD>                「呿呻(あくび)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[@(゛)][{(゜)]<？/DTDD>                「顑頷(かんがん)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[A(ち)][S(と)]<？/DTDD>                「磊磈(らいかい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[D(し)][F(は)]<？/DTDD>                「潑溂(はつらつ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[G(き)][H(く)]<？/DTDD>                「緂縅(だんおどし)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[J(ま)][K(の)]<？/DTDD>                「惝怳(しょうきょう/しょうこう)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[L(り)][;(れ)]<？/DTDD>                「憔悴(しょうすい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[:(け)][}(む)]<？/DTDD>                「狴犴(へいかん)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[Z(つ)][X(さ)]<？/DTDD>                「薜荔(オオイタビ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[C(そ)][V(ひ)]<？/DTDD>                「瑙魯(ナウル)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[B(こ)][N(み)]<？/DTDD>                「艨艟(もうどう)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[M(も)][,(ね)]<？/DTDD>                「枸櫞(クエンサン枸櫞酸の"クエン")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[.(る)][/(め)]<？/DTDD>                「邂逅(かいこう)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」[_(ろ)][_(ロ)]<？/DTDD>                「曱甴(ゴキブリ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[1(ヌ)][2(フ)]<？/DTDD>                「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[3(ア)][4(ウ)]<？/DTDD>                「鷸蚌(鷸蚌の争いの"いつぼう")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[5(エ)][6(オ)]<？/DTDD>                「彌猴(キウイ彌猴桃の"彌猴")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[7(ヤ)][8(ユ)]<？/DTDD>                「胤裔(いんえい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[9(ヨ)][0(ワ)]<？/DTDD>                「孩嬰(がいえい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[-(ホ)][^(ヘ)]<？/DTDD>                「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[Q(タ)][W(テ)]<？/DTDD>                「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[E(イ)][R(ス)]<？/DTDD>                「蟋蟀(コオロギ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[T(カ)][Y(ン)]<？/DTDD>                「螽蟖(キリギリス)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[U(ナ)][I(ニ)]<？/DTDD>                「旱魃(かんばつ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[O(ラ)][P(セ)]<？/DTDD>                「蜥蜴(トカゲ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「閨閤(けいこう)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[A(チ)][S(ト)]<？/DTDD>                「茱萸(グミ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[D(シ)][F(ハ)]<？/DTDD>                「鮟鱇(アンコウ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[G(キ)][H(ク)]<？/DTDD>                「鎔笵(ようはん)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[J(マ)][K(ノ)]<？/DTDD>                「喇叭(ラッパ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[L(リ)][;(レ)]<？/DTDD>                「榠樝(カリン)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[:(ケ)][}(ム)]<？/DTDD>                「顰蹙(ひんしゅく)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[Z(ツ)][X(サ)]<？/DTDD>                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[C(ソ)][V(ヒ)]<？/DTDD>                「轆轤(ろくろ)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[B(コ)][N(ミ)]<？/DTDD>                「纐纈(こうけつ/こうけち)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[M(モ)][,(ネ)]<？/DTDD>                「螳螂(かまきり)」※蟷螂は辞書使用<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」[.(ル)][/(メ)]<？/DTDD>                「霹靂(へきれき)」<？/DD/DL>
-<？DLDTinputstroke>  「[G(γ)]」[1(ぬ)][2(ふ)]<？/DTDD>                「抛擲(ほうてき)」<？/DD/DL>
-<？DLDTinputstroke>  「[G(γ)]」[3(あ)][4(う)]<？/DTDD>                「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」<？/DD/DL>
-<？DLDTinputstroke>  「[G(γ)]」[5(あ)][6(う)]<？/DTDD>                「慟哭(どうこく)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(Α)]」[7(や)][8(ゆ)]<？/DTDD>                「渺茫(びょうぼう)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(Α)]」[9(よ)][0(わ)]<？/DTDD>                「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」<？/DD/DL>
-<？DLDTinputstroke>  「[G(γ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蟑螂(ゴキブリ)」<？/DD/DL>
-<？DLDTinputstroke>  「[D(δ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蜚蠊(ゴキブリ)」<？/DD/DL>
-<？DLDTinputstroke>  「[E(ε)]」[_(ろ)][_(ロ)]<？/DTDD>                「癤癰(せつよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[1(ぬ)][2(ふ)]<？/DTDD>                「禺彊(ぐうきょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[3(あ)][4(う)]<？/DTDD>                「鞦韆(しゅうせん/ブランコ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[5(え)][6(お)]<？/DTDD>                「羌瘣(きょうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[7(や)][8(ゆ)]<？/DTDD>                「宥恕(ゆうじょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[9(よ)][0(わ)]<？/DTDD>                「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[-(ほ)][^(へ)]<？/DTDD>                「吶喊(とっかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[Q(た)][W(て)]<？/DTDD>                「耆碩(きせき)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[E(い)][R(す)]<？/DTDD>                「囐噠(エフタル)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[T(か)][Y(ん)]<？/DTDD>                「挹怛(エフタル)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[U(な)][I(に)]<？/DTDD>                「鑣轡(ひょうぐつわ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[O(ら)][P(せ)]<？/DTDD>                「呿呻(あくび)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[@(゛)][{(゜)]<？/DTDD>                「顑頷(かんがん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[A(ち)][S(と)]<？/DTDD>                「磊磈(らいかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[D(し)][F(は)]<？/DTDD>                「潑溂(はつらつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[G(き)][H(く)]<？/DTDD>                「緂縅(だんおどし)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[J(ま)][K(の)]<？/DTDD>                「惝怳(しょうきょう/しょうこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[L(り)][;(れ)]<？/DTDD>                「憔悴(しょうすい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[:(け)][}(む)]<？/DTDD>                「狴犴(へいかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[Z(つ)][X(さ)]<？/DTDD>                「薜荔(オオイタビ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[C(そ)][V(ひ)]<？/DTDD>                「瑙魯(ナウル)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[B(こ)][N(み)]<？/DTDD>                「艨艟(もうどう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[M(も)][,(ね)]<？/DTDD>                「枸櫞(クエンサン枸櫞酸の"クエン")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[.(る)][/(め)]<？/DTDD>                「邂逅(かいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[_(ろ)][_(ロ)]<？/DTDD>                「曱甴(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[1(ヌ)][2(フ)]<？/DTDD>                「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[3(ア)][4(ウ)]<？/DTDD>                「鷸蚌(鷸蚌の争いの"いつぼう")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[5(エ)][6(オ)]<？/DTDD>                「彌猴(キウイ彌猴桃の"彌猴")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[7(ヤ)][8(ユ)]<？/DTDD>                「胤裔(いんえい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[9(ヨ)][0(ワ)]<？/DTDD>                「孩嬰(がいえい)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[-(ホ)][^(ヘ)]<？/DTDD>                「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[Q(タ)][W(テ)]<？/DTDD>                「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[E(イ)][R(ス)]<？/DTDD>                「蟋蟀(コオロギ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[T(カ)][Y(ン)]<？/DTDD>                「螽蟖(キリギリス)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[U(ナ)][I(ニ)]<？/DTDD>                「旱魃(かんばつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[O(ラ)][P(セ)]<？/DTDD>                「蜥蜴(トカゲ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「閨閤(けいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[A(チ)][S(ト)]<？/DTDD>                「茱萸(グミ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[D(シ)][F(ハ)]<？/DTDD>                「鮟鱇(アンコウ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[G(キ)][H(ク)]<？/DTDD>                「鎔笵(ようはん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[J(マ)][K(ノ)]<？/DTDD>                「喇叭(ラッパ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[L(リ)][;(レ)]<？/DTDD>                「榠樝(カリン)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[:(ケ)][}(ム)]<？/DTDD>                「顰蹙(ひんしゅく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[Z(ツ)][X(サ)]<？/DTDD>                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[C(ソ)][V(ヒ)]<？/DTDD>                「轆轤(ろくろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[B(コ)][N(ミ)]<？/DTDD>                「纐纈(こうけつ/こうけち)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[M(モ)][,(ネ)]<？/DTDD>                「螳螂(かまきり)」※蟷螂は辞書使用<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[.(ル)][/(メ)]<？/DTDD>                「霹靂(へきれき)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[1(ぬ)][2(ふ)]<？/DTDD>                「抛擲(ほうてき)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[3(あ)][4(う)]<？/DTDD>                「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[5(あ)][6(う)]<？/DTDD>                「慟哭(どうこく)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[7(や)][8(ゆ)]<？/DTDD>                「渺茫(びょうぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[9(よ)][0(わ)]<？/DTDD>                「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[-(ほ)][^(へ)]<？/DTDD>                「匝瑳(そうさし匝瑳市の"そうさ")」<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」[_(ろ)][_(ロ)]<？/DTDD>                「蟑螂(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(γ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蜚蠊(ゴキブリ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(δ)]」[_(ろ)][_(ロ)]<？/DTDD>                「癤癰(せつよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(ε)]」[_(ろ)][_(ロ)]<？/DTDD>                「疔瘡(ちょうそう)」<？/DD/DL>
 <？DLDTinputstroke>  「[Z(ζ)]」<？BR>[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「珸瑶瑁(ごようまい)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[Z(ζ)]」[_(ろ)][_(ロ)]<？/DTDD>                「疔瘡(ちょうそう)」<？/DD/DL>
 |<＃contents/kanedit_faq-2>]
 
 [<＃contents/kanedit_faq-3>|

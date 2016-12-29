@@ -1,5 +1,5 @@
 「kanmap」は「LTsv10kanedit(tsvtool10)」を用いたグリフ進捗ビュアーです。
-version(branch):20161215R220253	modify:20161227T072309
+version(branch):20161215R220253	modify:20161229R092951
 
 目次
 
