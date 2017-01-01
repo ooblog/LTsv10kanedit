@@ -2,7 +2,7 @@ set encoding=utf-8
 scriptencoding utf-8
 let s:kankbd_scriptdir = expand('<sfile>:p:h')
 
-"「kanedit」の初期化。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
+"「kanedit」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
 function! s:KanEditSetup()
     let s:kankbd_kanmapfilepath = s:kankbd_scriptdir . "/kanmap.tsv"
     let s:kankbd_kanmapNX = {}
@@ -45,8 +45,8 @@ function! s:KanEditSetup()
         let s:kankbd_choiceBF = s:kankbd_choiceAF
         let s:kankbd_inputimap = s:kankbd_inputkanaN + s:kankbd_inputkanaX
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
-            execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 漢直." . s:kankbd_inputchoice[s:inputkey] . " <C-o><Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")"
-            execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 漢直." . s:kankbd_inputchoice[s:inputkey] . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
+            execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_inputchoice[s:inputkey] . " <C-o><Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")"
+            execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_inputchoice[s:inputkey] . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         :endfor
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
@@ -55,9 +55,8 @@ function! s:KanEditSetup()
     imap <silent> <Space><Space> <Esc>
     imap <silent> <S-Space><S-Space> <C-V><Space>
     imap <silent> <S-Space><Space> <C-V>　
-"    noremap <Plug>(kanedit_ぬ) :call KanEdit("ぬ")<Enter>
-"    map <silent> <Space>1 <Plug>(kanedit_ぬ)i
-"    imap <silent> <Space>1 <C-o><Plug>(kanedit_ぬ)
+    map <silent> <Space><Enter> <Plug>(kanedit_ト)i
+    imap <silent> <Space><Enter> <C-o><Plug>(kanedit_ト)
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
         execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
@@ -66,10 +65,15 @@ function! s:KanEditSetup()
         execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
+    let s:kankbd_inputsigma = {"":"<Left>","":"<Down>","":"<Up>","":"<Right>","":"<BS>","":"<Home>","":"<End>","":"<PageUp>","":"<PageDown>","":"<Enter>"}
+    :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
+        execute "imap <silent> " . s:sigmakey . " " . s:sigmavalue
+    :endfor
     call KanEdit("ぬ")
 endfunction
 
-"偽SandS。[Space][ぬ〜ろTab]で鍵盤変更(imap書換)。
+"「[Space][ぬ〜ろTab]」のコマンド入力でこの関数が呼ばれ鍵盤変更。
+"kankbd_inputkeys→kankbd_inputkanas(kankbd_kanamap)→kankbd_inputchoice(kankbd_choicemap)とカナ名挟むことで入力キーと鍵盤変更コマンドとを抽象化(疎結合化)。
 function! KanEdit(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
@@ -107,13 +111,15 @@ function! KanEdit(kankbd_kbdchar)
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
 
-"「call KanExit()」でimapクリア。「call KanEdit()」で再開。
+"「:call KanExit()」でメニューとimapをクリア。
 function! KanExit()
     :if exists("s:kankbd_menuname")
         unmap <silent> <Space><Space>
         iunmap <silent> <Space><Space>
         iunmap <silent> <S-Space><S-Space>
         iunmap <silent> <S-Space><Space>
+        unmap <silent> <Space><Enter>
+        iunmap <silent> <Space><Enter>
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
             execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
@@ -122,9 +128,12 @@ function! KanExit()
             execute "unmap <silent> <Space>" . s:kankbd_inputhyphen
             execute "unmap <silent> <S-Space>" . s:kankbd_inputhyphen
         :endfor
+        :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
+            execute "iunmap <silent> " . s:sigmakey
+        :endfor
         execute "iunmenu <silent> " s:kankbd_menuname
-        execute "iunmenu <silent> 漢直"
-        execute "nunmenu <silent> 漢直"
+        execute "iunmenu <silent> 鍵盤"
+        execute "nunmenu <silent> 鍵盤"
     :endif
     unlet! s:kankbd_menuname
 endfunction
