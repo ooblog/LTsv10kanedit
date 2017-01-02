@@ -4,7 +4,6 @@ let s:kankbd_scriptdir = expand('<sfile>:p:h')
 
 "「kanedit」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
 function! s:KanEditSetup()
-    let s:kankbd_kancharfilepath = s:kankbd_scriptdir . "/kanchar.tsv"
     let s:kankbd_menuid = 10000
     let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
@@ -16,7 +15,6 @@ function! s:KanEditSetup()
     let s:kankbd_inputkeys = ['1','2','3','4','5','6','7','8','9','0','-','^', 'q','w','e','r','t','y','u','i','o','p','@','[', 'a','s','d','f','g','h','j','k','l',';',':',']', 'z','x','c','v','b','n','m',',','.','/','\']
     let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',"\t",' ']
     let s:kankbd_inputESCs = {"\t":"<Tab>",' ':"<Space>",'<':"<lt>",'\':"<Bslash>",'|':"<Bar>"}
-    let s:kankbd_inputCVesc = ['u','U','o','O']
     let s:kankbd_inputkanaN = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ", "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_inputkanaX = ["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ", "タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ", "チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム", "ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ"]
     let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["￥","　"]
@@ -34,6 +32,13 @@ function! s:KanEditSetup()
     :for s:kanlinekey in s:kankbd_irohatype
         :if s:kanlinekey == "゛"
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-2]
+        :elseif s:kanlinekey == "￥"
+            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-2]
+            echo  len(s:kankbd_kanmapNX[s:kanlinekey])
+            :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
+                let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
+            :endfor
+            echo len(s:kankbd_kanmapNX[s:kanlinekey]) . s:inputkey
         :else
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkanas
         :endif
@@ -45,6 +50,7 @@ function! s:KanEditSetup()
             let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:47] + s:kanlinelist[-48:-2]
         :endfor
     :endif
+    let s:kankbd_kancharfilepath = s:kankbd_scriptdir . "/kanchar.tsv"
     :if !exists("s:kankbd_menuname")
         let s:kankbd_kbdkana = "ぬ" 
         let s:kankbd_kbdkanaNX = 1
@@ -112,14 +118,8 @@ function! KanEdit(kankbd_kbdchar)
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
     :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
-"        let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
         let s:kankbd_menuhyphen = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-"        :if count(s:kankbd_inputCVesc,s:kankbd_inputimap[s:inputkey])
-"            execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_menuhyphen
-"        :else
-"            execute "imap <silent> " . s:kankbd_inputhyphen . " <C-V>" . s:kankbd_menuhyphen
-"        :endif
         execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_menuhyphen
         execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_menuhyphen
     :endfor
