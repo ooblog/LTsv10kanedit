@@ -10,9 +10,9 @@ function! s:KanEditSetup()
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
     let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","d(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\ろ","￥"]
-    let s:kankbd_irohatypeN += ["A(α)","B(β)","G(γ)","D(δ)","E(ε)","Z(ζ)","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
-    let s:kankbd_irohatypeX = ["1(ヌ)","2(フ)","3(ア)","4(ウ)","5(エ)","6(オ)","ヤ","ユ","ヨ","ワ","ホ","ヘ","タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ","チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム","ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ","｜"]
-    let s:kankbd_irohatypeX += ["A(Α)","B(Β)","G(Γ)","D(Δ)","E(Ε)","Z(Ζ)","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω","●","▲","■"]
+    let s:kankbd_irohatypeN += ["A(α)","B(β)","G(γ)","D(δ)","E(ε)","Z(ζ)","H(η)","U(θ)","I(ι)","K(κ)","L(λ)","M(μ)","N(ν)","J(ξ)","O(ο)","P(π)","R(ρ)","S(σ)","T(τ)","Y(υ)","F(φ)","X(χ)","C(ψ)","V(ω)",">(○)","?(△)","_(□)"]
+    let s:kankbd_irohatypeX = ["1(ヌ)","2(フ)","3(ア)","4(ウ)","5(エ)","6(オ)","7(ヤ)","ユ","ヨ","ワ","ホ","ヘ","タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ","チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム","ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ","｜"]
+    let s:kankbd_irohatypeX += ["A(Α)","B(Β)","G(Γ)","D(Δ)","E(Ε)","Z(Ζ)","H(Η)","U(Θ)","I(Ι)","K(Κ)","L(Λ)","M(Μ)","N(Ν)","J(Ξ)","O(Ο)","P(Π)","R(Ρ)","S(Σ)","T(Τ)","Y(Υ)","F(Φ)","X(Χ)","C(Ψ)","V(Ω)",">(●)","?(▲)","_(■)"]
     let s:kankbd_inputkeys = ['1','2','3','4','5','6','7','8','9','0','-','^', 'q','w','e','r','t','y','u','i','o','p','@','[', 'a','s','d','f','g','h','j','k','l',';',':',']', 'z','x','c','v','b','n','m',',','.','/','\']
     let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',"\t",' ']
     let s:kankbd_inputESCs = {"\t":"<Tab>",' ':"<Space>",'<':"<lt>",'\':"<Bslash>",'|':"<Bar>"}
@@ -83,7 +83,7 @@ function! s:KanEditSetup()
 endfunction
 
 "「[Space][ぬ〜ろTab]」のコマンド入力でこの関数が呼ばれ鍵盤変更。
-"kankbd_inputkeys→kankbd_inputkanas(kankbd_kanamap)→kankbd_inputchoice(kankbd_choicemap)とカナ名挟むことで入力キーと鍵盤変更コマンドとを抽象化(疎結合化)。
+"kankbd_inputkeys→kankbd_inputkanas(kankbd_kanamap)→kankbd_inputchoice(kankbd_choicemap)とカナ名挟むことで入力キーと鍵盤変更コマンドとを抽象化。
 function! KanEdit(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
@@ -112,13 +112,15 @@ function! KanEdit(kankbd_kbdchar)
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
     :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
-        let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+"        let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+        let s:kankbd_menuhyphen = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-        :if count(s:kankbd_inputCVesc,s:kankbd_inputimap[s:inputkey])
-            execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_menuhyphen
-        :else
-            execute "imap <silent> " . s:kankbd_inputhyphen . " <C-V>" . s:kankbd_menuhyphen
-        :endif
+"        :if count(s:kankbd_inputCVesc,s:kankbd_inputimap[s:inputkey])
+"            execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_menuhyphen
+"        :else
+"            execute "imap <silent> " . s:kankbd_inputhyphen . " <C-V>" . s:kankbd_menuhyphen
+"        :endif
+        execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_menuhyphen
         execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_menuhyphen
     :endfor
     let s:kankbd_choiceBF = s:kankbd_choiceAF
