@@ -5,6 +5,7 @@ let s:kankbd_scriptdir = expand('<sfile>:p:h')
 "「kanedit」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
 function! s:KanEditSetup()
     let s:kankbd_menuid = 10000
+    let s:kankbd_HJKL = 'σ'
     let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
@@ -69,8 +70,6 @@ function! s:KanEditSetup()
     imap <silent> <S-Space><S-Space> <C-V><Space>
     imap <silent> <S-Space><Space> <C-V>　
     imap <silent> <Space><S-Space> <C-V>　
-    map <silent> <Space><Enter> <Plug>(kanedit_ト)i
-    imap <silent> <Space><Enter> <C-o><Plug>(kanedit_ト)
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
         execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
@@ -79,9 +78,12 @@ function! s:KanEditSetup()
         execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
+    execute "noremap <Plug>(kanedit_HJKL) :call KanEdit('HJKL')<Enter>"
+    map <silent> <Space><Enter> <Plug>(kanedit_HJKL)i
+    imap <silent> <Space><Enter> <C-o><Plug>(kanedit_HJKL)
     let s:kankbd_inputsigma = {"":"<Left>","":"<Down>","":"<Up>","":"<Right>","":"<BS>","":"<Home>","":"<End>","":"<PageUp>","":"<PageDown>","":"<Enter>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
-        execute "imap <silent> " . s:sigmakey . " " . s:sigmavalue
+        execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
     call KanEdit("ぬ")
 endfunction
@@ -92,14 +94,24 @@ function! KanEdit(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
     :endif
-    let s:kankbd_choiceAF = s:kankbd_choicemap[a:kankbd_kbdchar]
-    :if s:kankbd_choiceBF == s:kankbd_choiceAF
-        let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
-    :endif
-    :if count(s:kankbd_dictype,s:kankbd_choiceAF)
-        let s:kankbd_kbddic = s:kankbd_choiceAF
-    :else
+    :if a:kankbd_kbdchar == 'HJKL'
+        let s:kankbd_choiceAF = s:kankbd_HJKL
+        :if s:kankbd_choiceBF == s:kankbd_choiceAF
+            let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
+        :else
+            let s:kankbd_kbdkanaNX = 1
+        :endif
         let s:kankbd_kbdkana = s:kankbd_choiceAF
+    :else
+        let s:kankbd_choiceAF = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
+        :if s:kankbd_choiceBF == s:kankbd_choiceAF
+            let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
+        :endif
+        :if count(s:kankbd_dictype,s:kankbd_choiceAF)
+            let s:kankbd_kbddic = s:kankbd_choiceAF
+        :else
+            let s:kankbd_kbdkana = s:kankbd_choiceAF
+        :endif
     :endif
     let s:kankbd_inputimap = s:kankbd_kanmapNX[s:kankbd_kbdkana]
     :if s:kankbd_kbdkanaNX
@@ -116,11 +128,19 @@ function! KanEdit(kankbd_kbdchar)
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
     :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
-        let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
-        let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
-        let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-        execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
-        execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
+        :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
+            let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
+            let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
+            execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
+        :else
+            let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
+            let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
+            execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
+        :endif
     :endfor
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
@@ -133,8 +153,6 @@ function! KanExit()
         iunmap <silent> <S-Space><S-Space>
         iunmap <silent> <S-Space><Space>
         iunmap <silent> <Space><S-Space>
-        unmap <silent> <Space><Enter>
-        iunmap <silent> <Space><Enter>
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
             execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
@@ -146,6 +164,9 @@ function! KanExit()
                 execute "iunmap <silent> " . s:kankbd_inputhyphen
             :endif
         :endfor
+        unmap <silent> <Space><Enter>
+        iunmap <silent> <Space><Enter>
+        let s:kankbd_kbdkanaNX = 1
         :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
             execute "iunmap <silent> " . s:sigmakey
         :endfor
