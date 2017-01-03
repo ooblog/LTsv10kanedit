@@ -65,7 +65,7 @@ function! s:KanEditSetup()
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
     :endif
-    map <silent> <Space><Space> i
+    map <silent> <Space><Space> a
     imap <silent> <Space><Space> <Esc>
     imap <silent> <S-Space><S-Space> <C-V><Space>
     imap <silent> <S-Space><Space> <C-V>　
@@ -78,10 +78,11 @@ function! s:KanEditSetup()
         execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
+    execute "noremap <Plug>(kanfile) :call KanFile()<Enter>"
     execute "noremap <Plug>(kanedit_HJKL) :call KanEdit('HJKL')<Enter>"
     map <silent> <Space><Enter> <Plug>(kanedit_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(kanedit_HJKL)
-    let s:kankbd_inputsigma = {"":"<Left>","":"<Down>","":"<Up>","":"<Right>","":"<BS>","":"<Home>","":"<End>","":"<PageUp>","":"<PageDown>","":"<Enter>"}
+    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<Enter>",'':"<C-o><Plug>(kanfile)",'':"<C-o>:w"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
@@ -145,6 +146,38 @@ function! KanEdit(kankbd_kbdchar)
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
 
+"ファイル履歴などからファイルを開く。
+function! KanFile()
+    cd $HOME
+    let s:dirline = expand('%:p:h')
+    execute "cd " . s:dirline
+    let s:filelines = ["",s:dirline] + v:oldfiles
+    let s:filelabels = ["ファイル履歴(01でフォルダ選択)※履歴はウィンドウの高さに合わせます。"]
+    :for s:labelno in range(1,len(s:filelines)-2)
+         let s:filelabels = s:filelabels + [ printf("%02d",s:labelno) . ":" . s:filelines[s:labelno] ]
+    :endfor
+    let s:filechoice = inputlist(s:filelabels[:max([1,min([&lines-2,len(s:filelabels)])])])
+    :while 0 < s:filechoice && s:filechoice < len(s:filelines)
+        echo "\n"
+        :if isdirectory(s:filelines[s:filechoice])
+            execute "cd " . s:filelines[s:filechoice]
+            let s:dirline = getcwd()
+        :elseif filereadable(s:filelines[s:filechoice])
+            execute "enew"
+            execute "e " . s:filelines[s:filechoice]
+            :break
+        :else
+            echo "リーダブルではないファイルです「" . s:filelines[s:filechoice] . "」"
+        :endif
+        let s:filelines = ["",".."] + split(expand("./*"),"\n")
+        let s:filelabels = ["「" . s:dirline . "」(01で親フォルダ選択)※ファイルクリックはズレるので注意。"]
+        :for s:labelno in range(1,len(s:filelines)-1)
+             let s:filelabels = s:filelabels + [ printf("%02d",s:labelno) . ":" . s:filelines[s:labelno] ]
+        :endfor
+        let s:filechoice = inputlist(s:filelabels)
+    :endwhile
+endfunction
+
 "「:call KanExit()」でメニューとimapをクリア。
 function! KanExit()
     :if exists("s:kankbd_menuname")
@@ -183,5 +216,3 @@ finish
 "# Copyright (c) 2016 ooblog
 "# License: MIT
 "# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
-
-
