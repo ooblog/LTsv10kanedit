@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20161229R093007
+modify	20170104W033023
 |L:Tsv]
 
 [LTsv_doc|
@@ -1554,15 +1554,15 @@ LTsvDOCopen_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し�
 <？/DTDD>    「<？&lt;>/body<？&gt;><？&lt;>/html<？&gt;>」閉じるタグ。フッターがあれば追記。<？/DD/DL>
 <？DLDT>  [<？&lt;>？LTsv_MD_H1:LTsv10kanedit<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>h1<？&gt;>」タグの記述。markdownだと先頭の「#」。ここから内包タグ出現。<？/DD/DL>
-<？DLDT>  [<？&lt;>？LTsv_MD_H2:kanedit<？&gt;>*<？&lt;>？LTsv_MD_H2:kanfont<？&gt;>*<？&lt;>？LTsv_MD_H2:kanzip<？&gt;>*<？&lt;>？LTsv_MD_H2:kanmap<？&gt;>*<？&lt;>？LTsv_MD_H2:LTsv_doc<？&gt;>*<？&lt;>？LTsv_MD_H2:environment<？&gt;>*<？&lt;>？LTsv_MD_H2:LICENSE<？&gt;><？&#x7C;>
-<？/DTDD>    「<？&lt;>h1<？&gt;>」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。<？BR>
+<？DLDT>  [<？&lt;>？LTsv_MD_H2:kanedit<？&gt;>*<？&lt;>？LTsv_MD_H2:kanfont<？&gt;>*<？&lt;>？LTsv_MD_H2:kanzip<？&gt;>*<？&lt;>？LTsv_MD_H2:kanmap<？&gt;>*<？&lt;>？LTsv_MD_H2:LTsv_doc<？&gt;>*<？&lt;>？LTsv_MD_H2:KEV<？&gt;>*<？&lt;>？LTsv_MD_H2:environment<？&gt;>*<？&lt;>？LTsv_MD_H2:LICENSE<？&gt;><？&#x7C;>
+<？/DTDD>    「<？&lt;>h2<？&gt;>」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。<？BR>
     「tagseparate」の詳細は「<？index/LTsv_doc-2>」を参考。<？BR>
     カウンター「@c」の詳細は「<？index/LTsv_time-1>」を参考。<？BR><？/DD/DL>
 <？DLDT>  [<？&lt;>？LTsv_MD_IMG:kanedit<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanfont<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanzip<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanmap<？&gt;>*<？&lt;>？LTsv_MD_IMG:LTsv_doc<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>img<？&gt;>」タグの記述。markdownだと「![alt](src "title")」。画像を表示するので「raw」系リンク。<？/DD/DL>
 <？DLDT>  [<？&lt;>？https/kanedit<？&gt;>*<？&lt;>？https/kanfont<？&gt;>*<？&lt;>？https/kanzip<？&gt;>*<？&lt;>？https/kanmap<？&gt;>*<？&lt;>？https/LTsv_doc<？&gt;>*<？&lt;>？https/LTsv10<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>a<？&gt;>」タグの記述。markdownだと「[text](href "title")」。「github.com」リンクと「github.io」リンクの両方を用意。<？/DD/DL>
-<？DLDT>  [<？&lt;>？https/kanchar<？&gt;>*<？&lt;>？https/LTsv_doc_py<？&gt;>*<？&lt;>？https/kanedit_etc<？&gt;>*<？&lt;>？https/LTsv10LICENSE<？&gt;><？&#x7C;>
+<？DLDT>  [<？&lt;>？https/kanchar<？&gt;>*<？&lt;>？https/KEV<？&gt;>*<？&lt;>？https/LTsv_doc_py<？&gt;>*<？&lt;>？https/kanedit_etc<？&gt;>*<？&lt;>？https/LTsv10LICENSE<？&gt;><？&#x7C;>
 <？/DTDD>    こちらも「<？&lt;>a<？&gt;>」タグの記述。ドキュメント以外の「github.com(「blob」系)」リンク。<？/DD/DL>
 <？DLDT>  [<？&lt;>？ooblog:LTsv10repository_raw<？&gt;>*<？&lt;>？ooblog:LTsv10repository_blob<？&gt;><？&#x7C;>
 <？/DTDD>    「github.com」のリンクで「raw」系と「blob」系のURL差分。<？/DD/DL>
@@ -3773,6 +3773,14 @@ LTsv_doc	<？title:LTsv_doc>
 .+\.md	  
 .*	
 |<？BR>]
+[<？CODE>|
+.+\.html?	@E<pre><code>
+.*	
+|<？CODE>]
+[<？/CODE>|
+.+\.html?	</code></pre>@E
+.*	
+|<？/CODE>]
 
 [<？firstL>|
 .+\.html?	<dl><dt>

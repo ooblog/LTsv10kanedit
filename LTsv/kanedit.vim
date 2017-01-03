@@ -2,7 +2,7 @@ set encoding=utf-8
 scriptencoding utf-8
 let s:kev_scriptdir = expand('<sfile>:p:h')
 
-"「KanEditVim」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
+"「KanEditVim」の初期設定(imap等含む)。漢字配列「kanmap.tsv」と単漢字辞書「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
 function! s:KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
@@ -82,7 +82,7 @@ function! s:KEVsetup()
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
     map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
-    let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<<C-o><Plug>(KEVfiler)>",'':"<Nop>",
+    let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
 \                              '':"<Nop>",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Nop>",
 \                              '':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
@@ -91,8 +91,7 @@ function! s:KEVsetup()
     call KEVimap("ぬ")
 endfunction
 
-"「[Space][ぬ〜ろTab]」のコマンド入力でこの関数が呼ばれ鍵盤変更。
-"kankbd_inputkeys→kankbd_inputkanas(kankbd_kanamap)→kankbd_inputchoice(kankbd_choicemap)とカナ名挟むことで入力キーと鍵盤変更コマンドとを抽象化。
+"「[Space][ぬ〜ろ]」等のコマンド入力で鍵盤(imap等)変更。
 function! KEVimap(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
@@ -148,7 +147,7 @@ function! KEVimap(kankbd_kbdchar)
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
 
-"ファイル履歴などからファイルを開く。
+"「σ」鍵盤のOで履歴などからファイルを開く。
 function! KEVfiler()
     cd $HOME
     let s:dirline = expand('%:p:h')
@@ -180,7 +179,7 @@ function! KEVfiler()
     :endwhile
 endfunction
 
-"「:call KEVexit()」でメニューとimapをクリア。
+"メニューとimapを消去。
 function! KEVexit()
     :if exists("s:kankbd_menuname")
         unmap <silent> <Space><Space>

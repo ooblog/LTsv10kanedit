@@ -75,9 +75,43 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 「LTsv_doc」の詳細は「<？https/LTsv_doc>」を参考。<？BR>
 <？/P>
 
+<？LTsv_MD_H2:KEV>
+
+<？P>「<？https/KEV>」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。<？BR>
+Vimの入力受付では47鍵なので48鍵目「￥」鍵盤の一部漢字を移動してPython版の操作性もVim版の方向性に揃える「LTsv11KanEditVim」リポジトリ立ち上げ予定。<？BR>
+「￥」鍵盤には半角カナと全角アルファベットもあるけど字引入力で補完可能。<？BR>
+Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。<？BR>
+スクリプトが生成するmapはだいたい以下のイメージ。<？BR>
+<？/P><？CODE>
+       <？&lt;>Space<？&gt;><？&lt;>Space<？&gt;>   a
+    i  <？&lt;>Space<？&gt;><？&lt;>Space<？&gt;>   <？&lt;>Esc<？&gt;>
+    i  <？&lt;>S-Space<？&gt;><？&lt;>S-Space<？&gt;> <？&lt;>C-V<？&gt;><？&lt;>Space<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_ぬ&#41; * :call KEVimap&#40;'ぬ'&#41;<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_ふ&#41; * :call KEVimap&#40;'ふ'&#41;<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_あ&#41; * :call KEVimap&#40;'あ'&#41;<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_ヌ&#41; * :call KEVimap&#40;'ヌ'&#41;<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_フ&#41; * :call KEVimap&#40;'フ'&#41;<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>&#40;KEVimap_ア&#41; * :call KEVimap&#40;'ア'&#41;<？&lt;>CR<？&gt;>
+    i  <？&lt;>Space<？&gt;>1      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ぬ&#41;
+    i  <？&lt;>Space<？&gt;>2      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ふ&#41;
+    i  <？&lt;>Space<？&gt;>3      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_あ&#41;
+    i  <？&lt;>S-Space<？&gt;>!    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ヌ&#41;
+    i  <？&lt;>S-Space<？&gt;>"    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_フ&#41;
+    i  <？&lt;>S-Space<？&gt;>#    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ア&#41;
+    i  1           * <？&lt;>C-V<？&gt;>U0000306c
+    i  2           * <？&lt;>C-V<？&gt;>U00003075
+    i  3           * <？&lt;>C-V<？&gt;>U00003042
+    i  !           * <？&lt;>C-V<？&gt;>U000030cc
+    i  "           * <？&lt;>C-V<？&gt;>U000030d5
+    i  #           * <？&lt;>C-V<？&gt;>U000030a2
+<？/CODE><？P>
+連続で同じ文字を「call KEVimap&#40;&#41;」されると「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」交換。<？BR>
+挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」「Ctrl+&#91;」より操作が簡単。<？BR>
+<？/P>
+
 <？LTsv_MD_H2:environment>
 
-<？P>Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。<？BR>
+<？P>「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52」および「Wine1.7.18,Python3.4.4,gvim8.0.134」で開発しています。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:LICENSE>
@@ -115,17 +149,18 @@ License: MIT<？BR>
 .+\.md	# <＄LTsv_MD_H1:0>
 |<？LTsv_MD_H1:LTsv10kanedit>]
 
-[<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>|
+[<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:KEV>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>|
 :<＄LTsv_MD_H2:0>	「kanedit」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた漢直テキストエディタの予定です。
 :<＄LTsv_MD_H2:1>	「kanfont」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたフォントエディタ(グリフエディタ)です。
 :<＄LTsv_MD_H2:2>	「kanzip」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた郵便番号ダウンローダーです。
 :<＄LTsv_MD_H2:3>	「kanmap」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたグリフ進捗ビュアーです。
 :<＄LTsv_MD_H2:4>	「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
-:<＄LTsv_MD_H2:5>	動作環境。
-:<＄LTsv_MD_H2:6>	ライセンス・著作権など。
+:<＄LTsv_MD_H2:5>	次期バージョン「LTsv11KanEditVim」の叩き台として「kanedit.vim」試作中。
+:<＄LTsv_MD_H2:6>	動作環境。
+:<＄LTsv_MD_H2:7>	ライセンス・著作権など。
 .+\.html?	<h2><＄LTsv_MD_H2:@c></h2>
 .+\.md	## <＄LTsv_MD_H2:@c>
-|<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>]
+|<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:KEV>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>]
 
 [<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>|
 :<＄alt/htmldoc-0>	kanedit_512x384
@@ -172,22 +207,25 @@ License: MIT<？BR>
 .+\.md	[<＄txt/htmldoc-@c>](<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c> "<＄title/htmldoc-@c>")&#40;[<＄html/htmldoc-@c>](<＄href/LTsv10><＄html/htmldoc-@c> "<＄title/htmldoc-@c>")&#41;
 |<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>]
 
-[<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
+[<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
 :<＄href/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄title/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄txt/htmldoc-0>	LTsv/kanchar.tsv
-:<＄href/htmldoc-1>	<＄txt/htmldoc-2>
-:<＄title/htmldoc-1>	<＄txt/htmldoc-2>
-:<＄txt/htmldoc-1>	LTsv/LTsv_doc.py
-:<＄href/htmldoc-2>	<＄txt/htmldoc-3>
-:<＄title/htmldoc-2>	<＄txt/htmldoc-3>
-:<＄txt/htmldoc-2>	docs/kanedit_etc.tsv
-:<＄href/htmldoc-3>	LICENSE
-:<＄title/htmldoc-3>	<＄txt/htmldoc-4>
-:<＄txt/htmldoc-3>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
+:<＄href/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄title/htmldoc-1>	<＄txt/htmldoc-1>
+:<＄txt/htmldoc-1>	LTsv/kanedit.vim
+:<＄href/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄title/htmldoc-2>	<＄txt/htmldoc-2>
+:<＄txt/htmldoc-2>	LTsv/LTsv_doc.py
+:<＄href/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄title/htmldoc-3>	<＄txt/htmldoc-3>
+:<＄txt/htmldoc-3>	docs/kanedit_etc.tsv
+:<＄href/htmldoc-4>	LICENSE
+:<＄title/htmldoc-4>	<＄txt/htmldoc-4>
+:<＄txt/htmldoc-4>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/kanchar>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
+|<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
 
 [<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
 :<＄repository-0>	raw/master/
@@ -234,6 +272,23 @@ License: MIT<？BR>
 .+\.md	  
 .*	
 |<？BR>]
+[<？CODE>|
+.+\.html?	@E<pre><code>
+.*	
+|<？CODE>]
+[<？/CODE>|
+.+\.html?	</code></pre>@E
+.*	
+|<？/CODE>]
+
+[<？&lt;>|
+.+\.html?	&lt;
+.*	<
+|<？&lt;>]
+[<？&gt;>|
+.+\.html?	&gt;
+.*	>
+|<？&gt;>]
 
 [<＠LTsv_doc_test_outlist>|
 testfile/README.md

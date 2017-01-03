@@ -40,19 +40,53 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 ## 「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
 
 ![LTsv_doc_512x384](docs/LTsv_doc_512x384.png "LTsv_doc")  
-モジュール解説文書「[docs/LTsv10.txt](https://github.com/ooblog/LTsv10kanedit/blob/master/docs/LTsv10.txt "「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。")&#40;[index.html](https://ooblog.github.io/LTsv10kanedit/index.html "「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。")&#41;」等は「[LTsv/LTsv_doc.py](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」を使って「[docs/kanedit_etc.tsv](https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE "https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")」から生成されてます。  
+モジュール解説文書「[docs/LTsv10.txt](https://github.com/ooblog/LTsv10kanedit/blob/master/docs/LTsv10.txt "「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。")&#40;[index.html](https://ooblog.github.io/LTsv10kanedit/index.html "「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。")&#41;」等は「[LTsv/LTsv_doc.py](LTsv/LTsv_doc.py "LTsv/LTsv_doc.py")」を使って「[docs/kanedit_etc.tsv](docs/kanedit_etc.tsv "docs/kanedit_etc.tsv")」から生成されてます。  
 
 「LTsv_doc」の詳細は「[docs/LTsv_doc.txt](https://github.com/ooblog/LTsv10kanedit/blob/master/docs/LTsv_doc.txt "「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。")&#40;[LTsv_doc.html](https://ooblog.github.io/LTsv10kanedit/LTsv_doc.html "「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。")&#41;」を参考。  
 
 
+## 次期バージョン「LTsv11KanEditVim」の叩き台として「kanedit.vim」試作中。
+
+「[LTsv/kanedit.vim](LTsv/kanedit.vim "LTsv/kanedit.vim")」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。  
+Vimの入力受付では47鍵なので48鍵目「￥」鍵盤の一部漢字を移動してPython版の操作性もVim版の方向性に揃える「LTsv11KanEditVim」リポジトリ立ち上げ予定。  
+「￥」鍵盤には半角カナと全角アルファベットもあるけど字引入力で補完可能。  
+Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。  
+スクリプトが生成するmapはだいたい以下のイメージ。  
+
+       <Space><Space>   a
+    i  <Space><Space>   <Esc>
+    i  <S-Space><S-Space> <C-V><Space>
+       <Plug>&#40;KEVimap_ぬ&#41; * :call KEVimap&#40;'ぬ'&#41;<CR>
+       <Plug>&#40;KEVimap_ふ&#41; * :call KEVimap&#40;'ふ'&#41;<CR>
+       <Plug>&#40;KEVimap_あ&#41; * :call KEVimap&#40;'あ'&#41;<CR>
+       <Plug>&#40;KEVimap_ヌ&#41; * :call KEVimap&#40;'ヌ'&#41;<CR>
+       <Plug>&#40;KEVimap_フ&#41; * :call KEVimap&#40;'フ'&#41;<CR>
+       <Plug>&#40;KEVimap_ア&#41; * :call KEVimap&#40;'ア'&#41;<CR>
+    i  <Space>1      <C-O><Plug>&#40;KEVimap_ぬ&#41;
+    i  <Space>2      <C-O><Plug>&#40;KEVimap_ふ&#41;
+    i  <Space>3      <C-O><Plug>&#40;KEVimap_あ&#41;
+    i  <S-Space>!    <C-O><Plug>&#40;KEVimap_ヌ&#41;
+    i  <S-Space>"    <C-O><Plug>&#40;KEVimap_フ&#41;
+    i  <S-Space>#    <C-O><Plug>&#40;KEVimap_ア&#41;
+    i  1           * <C-V>U0000306c
+    i  2           * <C-V>U00003075
+    i  3           * <C-V>U00003042
+    i  !           * <C-V>U000030cc
+    i  "           * <C-V>U000030d5
+    i  #           * <C-V>U000030a2
+
+連続で同じ文字を「call KEVimap&#40;&#41;」されると「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」交換。  
+挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」「Ctrl+&#91;」より操作が簡単。  
+
+
 ## 動作環境。
 
-Python 2.7.6&#40;Tahrpup6.0.5&#41;およびPython3.4.4&#40;Wine1.7.18&#41;で動作を確認しています。  
+「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52」および「Wine1.7.18,Python3.4.4,gvim8.0.134」で開発しています。  
 
 
 ## ライセンス・著作権など。
 
 Copyright (c) 2016 ooblog  
 License: MIT  
-[https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE](LICENSE "<＄txt/htmldoc-4>")  
+[https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE](LICENSE "https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")  
 
