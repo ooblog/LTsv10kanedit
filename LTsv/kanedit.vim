@@ -82,7 +82,9 @@ function! s:KEVsetup()
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
     map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
-    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<C-o><Plug>(KEVfiler)",'':"<C-o>:w<Enter>"}
+    let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<<C-o><Plug>(KEVfiler)>",'':"<Nop>",
+\                              '':"<Nop>",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Nop>",
+\                              '':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
