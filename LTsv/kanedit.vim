@@ -1,13 +1,13 @@
 set encoding=utf-8
 scriptencoding utf-8
-let s:kankbd_scriptdir = expand('<sfile>:p:h')
+let s:kev_scriptdir = expand('<sfile>:p:h')
 
-"「kanedit」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
-function! s:KanEditSetup()
+"「KanEditVim」の初期化(imap等含む)。「kanmap.tsv」と「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
+function! s:KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
     let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
-    let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
+    let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
     let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","e(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\(ろ)"]
     let s:kankbd_irohatypeN += ["A(α)","B(β)","G(γ)","D(δ)","E(ε)","Z(ζ)","H(η)","U(θ)","I(ι)","K(κ)","L(λ)","M(μ)","N(ν)","J(ξ)","O(ο)","P(π)","R(ρ)","S(σ)","T(τ)","Y(υ)","F(φ)","X(χ)","C(ψ)","V(ω)",">(○)","?(△)","_(□)"]
@@ -42,14 +42,14 @@ function! s:KanEditSetup()
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkanas
         :endif
     :endfor
-    :let s:kankbd_kanmapfilepath = s:kankbd_scriptdir . "/kanmap.tsv"
+    :let s:kankbd_kanmapfilepath = s:kev_scriptdir . "/kanmap.tsv"
     :if filereadable(s:kankbd_kanmapfilepath)
         :for s:kanlinetsv in readfile(s:kankbd_kanmapfilepath)
             let s:kanlinelist = split(s:kanlinetsv,"\t")
             let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:47] + s:kanlinelist[-48:-2]
         :endfor
     :endif
-    let s:kankbd_kancharfilepath = s:kankbd_scriptdir . "/kanchar.tsv"
+    let s:kankbd_kancharfilepath = s:kev_scriptdir . "/kanchar.tsv"
     :if !exists("s:kankbd_menuname")
         let s:kankbd_kbdkana = "ぬ" 
         let s:kankbd_kbdkanaNX = 1
@@ -59,8 +59,8 @@ function! s:KanEditSetup()
         let s:kankbd_inputimap = s:kankbd_inputkanaN + s:kankbd_inputkanaX
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
             let s:kankbd_menuhyphen = "[\\" . get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey]) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
-            execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <C-o><Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")"
-            execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
+            execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
+            execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         :endfor
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
@@ -72,26 +72,26 @@ function! s:KanEditSetup()
     imap <silent> <Space><S-Space> <C-V>　
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
-        execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
-        execute "imap <silent> <Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")"
-        execute "imap <silent> <S-Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")"
-        execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
-        execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ")i"
+        execute "noremap <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ") :call KEVimap('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
+        execute "imap <silent> <Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
+        execute "imap <silent> <S-Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
+        execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
+        execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
-    execute "noremap <Plug>(kanfile) :call KanFile()<Enter>"
-    execute "noremap <Plug>(kanedit_HJKL) :call KanEdit('HJKL')<Enter>"
-    map <silent> <Space><Enter> <Plug>(kanedit_HJKL)i
-    imap <silent> <Space><Enter> <C-o><Plug>(kanedit_HJKL)
-    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<Enter>",'':"<C-o><Plug>(kanfile)",'':"<C-o>:w<Enter>"}
+    execute "noremap <Plug>(KEVfiler) :call KEVfiler()<Enter>"
+    execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
+    map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
+    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
+    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<C-o><Plug>(KEVfiler)",'':"<C-o>:w<Enter>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
-    call KanEdit("ぬ")
+    call KEVimap("ぬ")
 endfunction
 
 "「[Space][ぬ〜ろTab]」のコマンド入力でこの関数が呼ばれ鍵盤変更。
 "kankbd_inputkeys→kankbd_inputkanas(kankbd_kanamap)→kankbd_inputchoice(kankbd_choicemap)とカナ名挟むことで入力キーと鍵盤変更コマンドとを抽象化。
-function! KanEdit(kankbd_kbdchar)
+function! KEVimap(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
     :endif
@@ -147,7 +147,7 @@ function! KanEdit(kankbd_kbdchar)
 endfunction
 
 "ファイル履歴などからファイルを開く。
-function! KanFile()
+function! KEVfiler()
     cd $HOME
     let s:dirline = expand('%:p:h')
     execute "cd " . s:dirline
@@ -178,8 +178,8 @@ function! KanFile()
     :endwhile
 endfunction
 
-"「:call KanExit()」でメニューとimapをクリア。
-function! KanExit()
+"「:call KEVexit()」でメニューとimapをクリア。
+function! KEVexit()
     :if exists("s:kankbd_menuname")
         unmap <silent> <Space><Space>
         iunmap <silent> <Space><Space>
@@ -188,7 +188,7 @@ function! KanExit()
         iunmap <silent> <Space><S-Space>
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
-            execute "noremap <Plug>(kanedit_" . s:kankbd_inputkanas[s:inputkey] . ") :call KanEdit('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
+            execute "noremap <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ") :call KEVimap('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
             execute "iunmap <silent> <Space>" . s:kankbd_inputhyphen
             execute "iunmap <silent> <S-Space>" . s:kankbd_inputhyphen
             execute "unmap <silent> <Space>" . s:kankbd_inputhyphen
@@ -207,7 +207,7 @@ function! KanExit()
     unlet! s:kankbd_menuname
 endfunction
 
-call s:KanEditSetup()
+call s:KEVsetup()
 finish
 
 "# Copyright (c) 2016 ooblog
