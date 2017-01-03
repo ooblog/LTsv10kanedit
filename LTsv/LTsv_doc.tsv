@@ -86,18 +86,18 @@ Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を�
        <？&lt;>Space<？&gt;><？&lt;>Space<？&gt;>   a
     i  <？&lt;>Space<？&gt;><？&lt;>Space<？&gt;>   <？&lt;>Esc<？&gt;>
     i  <？&lt;>S-Space<？&gt;><？&lt;>S-Space<？&gt;> <？&lt;>C-V<？&gt;><？&lt;>Space<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_ぬ&#41; * :call KEVimap&#40;'ぬ'&#41;<？&lt;>CR<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_ふ&#41; * :call KEVimap&#40;'ふ'&#41;<？&lt;>CR<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_あ&#41; * :call KEVimap&#40;'あ'&#41;<？&lt;>CR<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_ヌ&#41; * :call KEVimap&#40;'ヌ'&#41;<？&lt;>CR<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_フ&#41; * :call KEVimap&#40;'フ'&#41;<？&lt;>CR<？&gt;>
-       <？&lt;>Plug<？&gt;>&#40;KEVimap_ア&#41; * :call KEVimap&#40;'ア'&#41;<？&lt;>CR<？&gt;>
-    i  <？&lt;>Space<？&gt;>1      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ぬ&#41;
-    i  <？&lt;>Space<？&gt;>2      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ふ&#41;
-    i  <？&lt;>Space<？&gt;>3      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_あ&#41;
-    i  <？&lt;>S-Space<？&gt;>!    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ヌ&#41;
-    i  <？&lt;>S-Space<？&gt;>"    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_フ&#41;
-    i  <？&lt;>S-Space<？&gt;>#    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>&#40;KEVimap_ア&#41;
+       <？&lt;>Plug<？&gt;>(KEVimap_ぬ) * :call KEVimap('ぬ')<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>(KEVimap_ふ) * :call KEVimap('ふ')<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>(KEVimap_あ) * :call KEVimap('あ')<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>(KEVimap_ヌ) * :call KEVimap('ヌ')<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>(KEVimap_フ) * :call KEVimap('フ')<？&lt;>CR<？&gt;>
+       <？&lt;>Plug<？&gt;>(KEVimap_ア) * :call KEVimap('ア')<？&lt;>CR<？&gt;>
+    i  <？&lt;>Space<？&gt;>1      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_ぬ)
+    i  <？&lt;>Space<？&gt;>2      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_ふ)
+    i  <？&lt;>Space<？&gt;>3      <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_あ)
+    i  <？&lt;>S-Space<？&gt;>!    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_ヌ)
+    i  <？&lt;>S-Space<？&gt;>"    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_フ)
+    i  <？&lt;>S-Space<？&gt;>#    <？&lt;>C-O<？&gt;><？&lt;>Plug<？&gt;>(KEVimap_ア)
     i  1           * <？&lt;>C-V<？&gt;>U0000306c
     i  2           * <？&lt;>C-V<？&gt;>U00003075
     i  3           * <？&lt;>C-V<？&gt;>U00003042

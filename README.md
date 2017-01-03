@@ -56,18 +56,18 @@ Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を�
        <Space><Space>   a
     i  <Space><Space>   <Esc>
     i  <S-Space><S-Space> <C-V><Space>
-       <Plug>&#40;KEVimap_ぬ&#41; * :call KEVimap&#40;'ぬ'&#41;<CR>
-       <Plug>&#40;KEVimap_ふ&#41; * :call KEVimap&#40;'ふ'&#41;<CR>
-       <Plug>&#40;KEVimap_あ&#41; * :call KEVimap&#40;'あ'&#41;<CR>
-       <Plug>&#40;KEVimap_ヌ&#41; * :call KEVimap&#40;'ヌ'&#41;<CR>
-       <Plug>&#40;KEVimap_フ&#41; * :call KEVimap&#40;'フ'&#41;<CR>
-       <Plug>&#40;KEVimap_ア&#41; * :call KEVimap&#40;'ア'&#41;<CR>
-    i  <Space>1      <C-O><Plug>&#40;KEVimap_ぬ&#41;
-    i  <Space>2      <C-O><Plug>&#40;KEVimap_ふ&#41;
-    i  <Space>3      <C-O><Plug>&#40;KEVimap_あ&#41;
-    i  <S-Space>!    <C-O><Plug>&#40;KEVimap_ヌ&#41;
-    i  <S-Space>"    <C-O><Plug>&#40;KEVimap_フ&#41;
-    i  <S-Space>#    <C-O><Plug>&#40;KEVimap_ア&#41;
+       <Plug>(KEVimap_ぬ) * :call KEVimap('ぬ')<CR>
+       <Plug>(KEVimap_ふ) * :call KEVimap('ふ')<CR>
+       <Plug>(KEVimap_あ) * :call KEVimap('あ')<CR>
+       <Plug>(KEVimap_ヌ) * :call KEVimap('ヌ')<CR>
+       <Plug>(KEVimap_フ) * :call KEVimap('フ')<CR>
+       <Plug>(KEVimap_ア) * :call KEVimap('ア')<CR>
+    i  <Space>1      <C-O><Plug>(KEVimap_ぬ)
+    i  <Space>2      <C-O><Plug>(KEVimap_ふ)
+    i  <Space>3      <C-O><Plug>(KEVimap_あ)
+    i  <S-Space>!    <C-O><Plug>(KEVimap_ヌ)
+    i  <S-Space>"    <C-O><Plug>(KEVimap_フ)
+    i  <S-Space>#    <C-O><Plug>(KEVimap_ア)
     i  1           * <C-V>U0000306c
     i  2           * <C-V>U00003075
     i  3           * <C-V>U00003042
