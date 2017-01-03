@@ -9,18 +9,18 @@ function! s:KanEditSetup()
     let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
-    let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","e(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\(ろ)","\\\\t(￥)"]
+    let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","e(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\(ろ)"]
     let s:kankbd_irohatypeN += ["A(α)","B(β)","G(γ)","D(δ)","E(ε)","Z(ζ)","H(η)","U(θ)","I(ι)","K(κ)","L(λ)","M(μ)","N(ν)","J(ξ)","O(ο)","P(π)","R(ρ)","S(σ)","T(τ)","Y(υ)","F(φ)","X(χ)","C(ψ)","V(ω)",">(○)","?(△)","_(□)"]
-    let s:kankbd_irohatypeX = ["1(ヌ)","2(フ)","3(ア)","4(ウ)","5(エ)","6(オ)","7(ヤ)","8(ユ)","9(ヨ)","0(ワ)","-(ホ)","^(ヘ)","q(タ)","w(テ)","e(イ)","r(ス)","t(カ)","y(ン)","u(ナ)","i(ニ)","o(ラ)","p(セ)","@(｀)","[(プ)","a(チ)","s(ト)","d(シ)","f(ハ)","g(キ)","h(ク)","j(マ)","k(ノ)","l(リ)",";(レ)",":(ケ)","](ム)","z(ツ)","x(サ)","c(ソ)","v(ヒ)","b(コ)","n(ミ)","m(モ)",".(ネ)","\\.(ル)","/(メ)","\\\\(ロ)","\\\\t(｜)"]
+    let s:kankbd_irohatypeX = ["1(ヌ)","2(フ)","3(ア)","4(ウ)","5(エ)","6(オ)","7(ヤ)","8(ユ)","9(ヨ)","0(ワ)","-(ホ)","^(ヘ)","q(タ)","w(テ)","e(イ)","r(ス)","t(カ)","y(ン)","u(ナ)","i(ニ)","o(ラ)","p(セ)","@(｀)","[(プ)","a(チ)","s(ト)","d(シ)","f(ハ)","g(キ)","h(ク)","j(マ)","k(ノ)","l(リ)",";(レ)",":(ケ)","](ム)","z(ツ)","x(サ)","c(ソ)","v(ヒ)","b(コ)","n(ミ)","m(モ)",".(ネ)","\\.(ル)","/(メ)","\\\\(ロ)"]
     let s:kankbd_irohatypeX += ["A(Α)","B(Β)","G(Γ)","D(Δ)","E(Ε)","Z(Ζ)","H(Η)","U(Θ)","I(Ι)","K(Κ)","L(Λ)","M(Μ)","N(Ν)","J(Ξ)","O(Ο)","P(Π)","R(Ρ)","S(Σ)","T(Τ)","Y(Υ)","F(Φ)","X(Χ)","C(Ψ)","V(Ω)",">(●)","?(▲)","_(■)"]
     let s:kankbd_inputkeys = ['1','2','3','4','5','6','7','8','9','0','-','^', 'q','w','e','r','t','y','u','i','o','p','@','[', 'a','s','d','f','g','h','j','k','l',';',':',']', 'z','x','c','v','b','n','m',',','.','/','\']
-    let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',"\t",' ']
+    let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',' ']
     let s:kankbd_inputESCs = {"\t":"<Tab>",' ':"<Space>",'<':"<lt>",'\':"<Bslash>",'|':"<Bar>"}
     let s:kankbd_inputkanaN = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ", "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_inputkanaX = ["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ", "タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ", "チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム", "ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ"]
     let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["￥","　"]
     let s:kankbd_inputchoice =  ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ",'゛','゜', "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
-    let s:kankbd_inputchoice +=  ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","￥","　"]
+    let s:kankbd_inputchoice +=  ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","　"]
     let s:kankbd_kanamap = {}
     let s:kankbd_choicemap = {}
     let s:kankbd_ESCmap = {}
@@ -32,10 +32,10 @@ function! s:KanEditSetup()
     let s:kankbd_kanmapNX = {}
     :for s:kanlinekey in s:kankbd_irohatype
         :if s:kanlinekey == "゛"
-            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-2]
+            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
         :elseif s:kanlinekey == "￥"
-            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-2]
-            :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
+            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
+            :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
                 let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
             :endfor
         :else
@@ -82,7 +82,7 @@ function! s:KanEditSetup()
     execute "noremap <Plug>(kanedit_HJKL) :call KanEdit('HJKL')<Enter>"
     map <silent> <Space><Enter> <Plug>(kanedit_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(kanedit_HJKL)
-    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<Enter>",'':"<C-o><Plug>(kanfile)",'':"<C-o>:w"}
+    let s:kankbd_inputsigma = {'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>",'':"<Enter>",'':"<C-o><Plug>(kanfile)",'':"<C-o>:w<Enter>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
@@ -128,7 +128,7 @@ function! KanEdit(kankbd_kbdchar)
         :endfor
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
-    :for s:inputkey in range(len(s:kankbd_inputkeys)-2)
+    :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
             let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
@@ -193,9 +193,6 @@ function! KanExit()
             execute "iunmap <silent> <S-Space>" . s:kankbd_inputhyphen
             execute "unmap <silent> <Space>" . s:kankbd_inputhyphen
             execute "unmap <silent> <S-Space>" . s:kankbd_inputhyphen
-            :if s:kankbd_inputkeys[s:inputkey] != "\t"
-                execute "iunmap <silent> " . s:kankbd_inputhyphen
-            :endif
         :endfor
         unmap <silent> <Space><Enter>
         iunmap <silent> <Space><Enter>
