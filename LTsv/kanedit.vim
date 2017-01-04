@@ -3,7 +3,7 @@ scriptencoding utf-8
 let s:kev_scriptdir = expand('<sfile>:p:h')
 
 "「KanEditVim」の初期設定(imap等含む)。漢字配列「kanmap.tsv」と単漢字辞書「kanchar.tsv」は「kanedit.vim」と同じフォルダに。
-function! s:KEVsetup()
+function! KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
     let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
@@ -16,6 +16,7 @@ function! s:KEVsetup()
     let s:kankbd_inputkeys = ['1','2','3','4','5','6','7','8','9','0','-','^', 'q','w','e','r','t','y','u','i','o','p','@','[', 'a','s','d','f','g','h','j','k','l',';',':',']', 'z','x','c','v','b','n','m',',','.','/','\']
     let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',' ']
     let s:kankbd_inputESCs = {"\t":"<Tab>",' ':"<Space>",'<':"<lt>",'\':"<Bslash>",'|':"<Bar>"}
+    let s:kankbd_menuESCs = "\t\\:|< >.　-"
     let s:kankbd_inputkanaN = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ", "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_inputkanaX = ["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ", "タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ", "チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム", "ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ"]
     let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["￥","　"]
@@ -69,7 +70,7 @@ function! s:KEVsetup()
         let s:kankbd_choiceBF = s:kankbd_choiceAF
         let s:kankbd_inputimap = s:kankbd_inputkanaN + s:kankbd_inputkanaX
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
-            let s:kankbd_menuhyphen = "[\\" . get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey]) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
+            let s:kankbd_menuhyphen = "[" . escape(s:kankbd_inputkeys[s:inputkey],s:kankbd_menuESCs) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
             execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
             execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " 鍵盤." . s:kankbd_menuhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         :endfor
@@ -82,7 +83,7 @@ function! s:KEVsetup()
     imap <silent> <S-Space><Space> <C-V>　
     imap <silent> <Space><S-Space> <C-V>　
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
-        let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkanas[s:inputkey])
+        let s:kankbd_inputhyphen = s:kankbd_ESCmap[s:kankbd_inputkeys[s:inputkey]]
         execute "noremap <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ") :call KEVimap('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
         execute "imap <silent> <Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
         execute "imap <silent> <S-Space>" . s:kankbd_inputhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
@@ -151,13 +152,13 @@ function! KEVimap(kankbd_kbdchar)
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
-            let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
             execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
             execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
         :else
             let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
-            let s:kankbd_menuhyphen = get(s:kankbd_ESCmap,s:kankbd_inputimap[s:inputkey],s:kankbd_inputimap[s:inputkey])
+            let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
             execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
             execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
@@ -227,7 +228,7 @@ function! KEVexit()
     unlet! s:kankbd_menuname
 endfunction
 
-call s:KEVsetup()
+call KEVsetup()
 finish
 
 "# Copyright (c) 2016 ooblog
