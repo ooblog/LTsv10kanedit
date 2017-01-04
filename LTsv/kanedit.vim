@@ -46,10 +46,21 @@ function! s:KEVsetup()
     :if filereadable(s:kankbd_kanmapfilepath)
         :for s:kanlinetsv in readfile(s:kankbd_kanmapfilepath)
             let s:kanlinelist = split(s:kanlinetsv,"\t")
-            let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:47] + s:kanlinelist[-48:-2]
+            :if len(s:kanlinelist) > 0 && s:kanlinelist[0] != ''
+                let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:47] + s:kanlinelist[-48:-2]
+            :endif
         :endfor
     :endif
+    let s:kankbd_kancharDIC = {}
     let s:kankbd_kancharfilepath = s:kev_scriptdir . "/kanchar.tsv"
+    :if filereadable(s:kankbd_kancharfilepath)
+        :for s:kanlinetsv in readfile(s:kankbd_kancharfilepath)
+            let s:kanlinelist = split(s:kanlinetsv,"\t")
+            :if len(s:kanlinelist) > 0 && s:kanlinelist[0] != ''
+                let s:kankbd_kancharDIC[s:kanlinelist[0]] = s:kanlinetsv
+            :endif
+        :endfor
+    :endif
     :if !exists("s:kankbd_menuname")
         let s:kankbd_kbdkana = "ぬ" 
         let s:kankbd_kbdkanaNX = 1
@@ -125,7 +136,15 @@ function! KEVimap(kankbd_kbdchar)
     :if count(s:kankbd_dictype,s:kankbd_choiceAF)
         let s:kankbd_menuname = s:kankbd_menuname . ":" . s:kankbd_kbddic
         :for s:mapkey in range(len(s:kankbd_inputimap))
-            let s:kankbd_inputimap[s:mapkey] = s:kankbd_inputimap[s:mapkey]
+            let s:kanlinetsv = get(s:kankbd_kancharDIC,s:kankbd_inputimap[s:mapkey],'') . "\t"
+            let s:kanposL = stridx(s:kanlinetsv,"\t" . s:kankbd_kbddic . ":")
+            :if 0 < s:kanposL
+                let s:kanposL = stridx(s:kanlinetsv,":",s:kanposL)+1
+                let s:kanposR = stridx(s:kanlinetsv,"\t",s:kanposL)
+                let s:kankbd_inputimap[s:mapkey] = strpart(s:kanlinetsv,s:kanposL,s:kanposR-s:kanposL+1)
+            :else
+                let s:kankbd_inputimap[s:mapkey] = ' '
+            :endif
         :endfor
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
