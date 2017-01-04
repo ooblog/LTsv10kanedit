@@ -139,11 +139,13 @@ function! KEVimap(kankbd_kbdchar)
         :for s:mapkey in range(len(s:kankbd_inputimap))
             let s:kanlinetsv = get(s:kankbd_kancharDIC,s:kankbd_inputimap[s:mapkey],'') . "\t"
             let s:kanposL = stridx(s:kanlinetsv,"\t" . s:kankbd_kbddic . ":")
+            let s:kankbd_inputimap[s:mapkey] = ''
             :if 0 < s:kanposL
                 let s:kanposL = stridx(s:kanlinetsv,":",s:kanposL)+1
                 let s:kanposR = stridx(s:kanlinetsv,"\t",s:kanposL)
                 let s:kankbd_inputimap[s:mapkey] = strpart(s:kanlinetsv,s:kanposL,s:kanposR-s:kanposL)
-            :else
+            :endif
+            :if len(s:kankbd_inputimap[s:mapkey]) == 0
                 let s:kankbd_inputimap[s:mapkey] = ' '
             :endif
         :endfor
@@ -152,22 +154,18 @@ function! KEVimap(kankbd_kbdchar)
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
-            let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
-            let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-            execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
-            execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
         :else
 "            let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
             let s:kankbd_unicodeL = [] | let s:kankbd_unicodeL = split(s:kankbd_inputimap[s:inputkey],'\zs')
             :for s:mapkey in range(len(s:kankbd_unicodeL))
                 let s:kankbd_unicodeL[s:mapkey] = "<C-V>U" . printf("%08x",char2nr(s:kankbd_unicodeL[s:mapkey]))
             :endfor
-            let s:kankbd_unicode = join(s:kankbd_unicodeL,'') 
-            let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
-            let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-            execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
-            execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
+            let s:kankbd_unicode = " " . join(s:kankbd_unicodeL,'') 
         :endif
+        let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
+        let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
+        execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
+        execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " " . s:kankbd_unicode
     :endfor
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
