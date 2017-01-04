@@ -16,7 +16,7 @@ function! KEVsetup()
     let s:kankbd_inputkeys = ['1','2','3','4','5','6','7','8','9','0','-','^', 'q','w','e','r','t','y','u','i','o','p','@','[', 'a','s','d','f','g','h','j','k','l',';',':',']', 'z','x','c','v','b','n','m',',','.','/','\']
     let s:kankbd_inputkeys += ['!','"','#','$','%','&',"'",'(',')','~','=','|', 'Q','W','E','R','T','Y','U','I','O','P','`','{', 'A','S','D','F','G','H','J','K','L','+','*','}', 'Z','X','C','V','B','N','M','<','>','?','_',' ']
     let s:kankbd_inputESCs = {"\t":"<Tab>",' ':"<Space>",'<':"<lt>",'\':"<Bslash>",'|':"<Bar>"}
-    let s:kankbd_menuESCs = "\t\\:|< >.　-"
+    let s:kankbd_menuESCs = "\t\\:|< >.-"
     let s:kankbd_inputkanaN = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ", "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_inputkanaX = ["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ", "タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ", "チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム", "ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ"]
     let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["￥","　"]
@@ -95,7 +95,7 @@ function! KEVsetup()
     map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
     let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
-\                              '':"<Nop>",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Nop>",
+\                              '':"<Nop>",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",
 \                              '':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
@@ -142,7 +142,7 @@ function! KEVimap(kankbd_kbdchar)
             :if 0 < s:kanposL
                 let s:kanposL = stridx(s:kanlinetsv,":",s:kanposL)+1
                 let s:kanposR = stridx(s:kanlinetsv,"\t",s:kanposL)
-                let s:kankbd_inputimap[s:mapkey] = strpart(s:kanlinetsv,s:kanposL,s:kanposR-s:kanposL+1)
+                let s:kankbd_inputimap[s:mapkey] = strpart(s:kanlinetsv,s:kanposL,s:kanposR-s:kanposL)
             :else
                 let s:kankbd_inputimap[s:mapkey] = ' '
             :endif
@@ -157,7 +157,12 @@ function! KEVimap(kankbd_kbdchar)
             execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
             execute "imenu " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. ".\\" . (s:kankbd_menuhyphen == '-' ? "[-]" : s:kankbd_menuhyphen) . " " . s:kankbd_unicode
         :else
-            let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
+"            let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
+            let s:kankbd_unicodeL = [] | let s:kankbd_unicodeL = split(s:kankbd_inputimap[s:inputkey],'\zs')
+            :for s:mapkey in range(len(s:kankbd_unicodeL))
+                let s:kankbd_unicodeL[s:mapkey] = "<C-V>U" . printf("%08x",char2nr(s:kankbd_unicodeL[s:mapkey]))
+            :endfor
+            let s:kankbd_unicode = join(s:kankbd_unicodeL,'') 
             let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
             let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
             execute "inoremap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
