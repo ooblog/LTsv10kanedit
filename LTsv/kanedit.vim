@@ -34,11 +34,11 @@ function! KEVsetup()
     :for s:kanlinekey in s:kankbd_irohatype
         :if s:kanlinekey == "゛"
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
-        :elseif s:kanlinekey == "￥"
-            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
-            :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
-                let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
-            :endfor
+"        :elseif s:kanlinekey == "￥"
+"            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
+"            :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
+"                let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
+"            :endfor
         :else
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkanas
         :endif
@@ -155,12 +155,11 @@ function! KEVimap(kankbd_kbdchar)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
         :else
-"            let s:kankbd_unicode = " <C-V>U" . printf("%08x",char2nr(s:kankbd_inputimap[s:inputkey]))
             let s:kankbd_unicodeL = [] | let s:kankbd_unicodeL = split(s:kankbd_inputimap[s:inputkey],'\zs')
             :for s:mapkey in range(len(s:kankbd_unicodeL))
                 let s:kankbd_unicodeL[s:mapkey] = "<C-V>U" . printf("%08x",char2nr(s:kankbd_unicodeL[s:mapkey]))
             :endfor
-            let s:kankbd_unicode = " " . join(s:kankbd_unicodeL,'') 
+            let s:kankbd_unicode = join(s:kankbd_unicodeL,'') 
         :endif
         let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
