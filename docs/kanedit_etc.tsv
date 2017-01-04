@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20170104W033023
+modify	20170105R055521
 |L:Tsv]
 
 [LTsv_doc|
@@ -1826,7 +1826,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[9(ヨ)]」<？/DTDD>   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[0(ワ)]」<？/DTDD>   [D(し)]に入り切らなかった「しょ」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[^(へ)]」<？/DTDD>   [-(ほ)]に入り切らなかった「ほ」読みの漢字を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[^(ヘ)]」<？/DTDD>   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[^(ヘ)]」<？/DTDD>   [Q(た)]に入り切らなかった「た」読みの漢字を相席。丸数字(⓪①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳)と二重丸(◎)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[W(テ)]」<？/DTDD>   [Q(た)]に入り切らなかった「た」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[Y(ん)]」<？/DTDD>   [T(か)]に入り切らなかった「か」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[Y(ン)]」<？/DTDD>   [T(か)]に入り切らなかった「か」読みの漢字を相席。<？/DD/DL>
@@ -1836,9 +1836,8 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[O(ら)]」<？/DTDD>   括弧(【】≪≫〔〕〈〉《》)と音楽記号(♮♯♭♪)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[O(ラ)]」<？/DTDD>   [D(し)]に入り切らなかった'し'読みの漢字を相席。締め記号(〆)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[P(せ)]」<？/DTDD>   摂氏セルシウス度(°℃)を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[@(｀)]」<？/DTDD>   U+ff02の方のダブルクォート(＂)を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[{(ぷ)]」<？/DTDD>   三点リーダー(…)と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。「かぎ括弧」を相席。「ヶ」を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[{(プ)]」<？/DTDD>   中黒(・)と二点リーダー(‥)を相席。『二重かぎ括弧』を相席。「ヵ」を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[{(ぷ)]」<？/DTDD>   濁音ひらがな。濁音(゛)半濁音(゜)を相席。三点リーダー(…)と「かぎ括弧」と波ダッシュ(〜)を相席。う濁音(ゔ)が使用可能。<？/DD/DL>
+<？DLDTinputstroke>  「[{(プ)]」<？/DTDD>   濁音カタカナ。濁音(゛)半濁音(゜)を相席。中黒(・)と『二重かぎ括弧』と長音符(〜)を相席。を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」<？/DTDD>   短剣符(†)と段落記号(¶)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[D(シ)]」<？/DTDD>   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[H(ク)]」<？/DTDD>   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。<？/DD/DL>
@@ -1858,28 +1857,28 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[?(メ)]」<？/DTDD>   漢数字(〇一二三四五六七八九十百千万億兆京垓𥝱零分厘毛)やメートル(米)グラム(瓦)リットル(立)などの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[_(ろ)]」<？/DTDD>   全角ギリシャ小文字(αβγδεζηθικλμνξοπρστυφχψω)文字とローマ数字(ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[_(ロ)]」<？/DTDD>   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[A(α)]」<？/DTDD>   未整理：異体字関連の相席だったが字引入力で代替できるので「髙」「𠮷」とかを配列から単漢字辞書のにする予定。<？/DD/DL>
-<？DLDTinputstroke>  「[A(Α)]」<？/DTDD>   未整理：単位の相席。涅槃寂静〜不可説不可説転に使う漢字などの相席。異体字を字引入力に移行予定。<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[B(Β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
+<？DLDTinputstroke>  「[B(Β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
 <？DLDTinputstroke>  「[G(γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
 <？DLDTinputstroke>  「[G(Γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
 <？DLDTinputstroke>  「[D(δ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
 <？DLDTinputstroke>  「[D(Δ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
 <？DLDTinputstroke>  「[E(ε)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[E(Ε)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[Z(ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[Z(Ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[E(Ε)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[Z(ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
+<？DLDTinputstroke>  「[Z(Ζ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[H(η)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[H(Η)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[U(θ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[U(Θ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[I(ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[I(Ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
-<？DLDTinputstroke>  「[K(κ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[K(Κ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[L(λ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
-<？DLDTinputstroke>  「[L(Λ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
+<？DLDTinputstroke>  「[K(κ)]」<？/DTDD>   半角カナ。<？/DD/DL>
+<？DLDTinputstroke>  「[K(Κ)]」<？/DTDD>   半角カナ。「ヵ」「ヶ」を相席。二点リーダー(‥)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[L(λ)]」<？/DTDD>   全角アルファベットなど。半角アルファベットの「[@(｀)]」とほぼ同じ。<？/DD/DL>
+<？DLDTinputstroke>  「[L(Λ)]」<？/DTDD>   全角アルファベットなど。U+ff02の方のダブルクォート(＂)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[M(μ)]」<？/DTDD>   康熙部首専用コード(⼀〜⼮)。<？/DD/DL>
 <？DLDTinputstroke>  「[M(Μ)]」<？/DTDD>   康熙部首専用コード(⼯〜⽝)。<？/DD/DL>
 <？DLDTinputstroke>  「[J(ξ)]」<？/DTDD>   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。<？/DD/DL>
@@ -2414,8 +2413,8 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[B(β)]」[_(ろ)][_(ロ)]<？/DTDD>                「蟑螂(ゴキブリ)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(γ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蜚蠊(ゴキブリ)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(δ)]」[_(ろ)][_(ロ)]<？/DTDD>                「癤癰(せつよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[E(ε)]」<？BR>[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「珸瑶瑁(ごようまい)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[E(ε)]」[_(ろ)][_(ロ)]<？/DTDD>                「疔瘡(ちょうそう)」<？/DD/DL>
-<？DLDTinputstroke>  「[Z(ζ)]」<？BR>[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「珸瑶瑁(ごようまい)」<？/DD/DLclearboth>
 |<＃contents/kanedit_faq-2>]
 
 [<＃contents/kanedit_faq-3>|

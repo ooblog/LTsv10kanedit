@@ -932,9 +932,9 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 ン	英:N(nn,n',m,ng) Japanese hiragana nasal	名:ン	音:	訓:		送:		異:ん	俗:撥音/子音	非:	代:ヮ	逆:ﾝ	活:[0286][89fe][ghnm][lmsr][orxu]	漫:[AODOFQGQGSESCQAQ][AWFWITIQKQKUGYAY]
 ﾝ	英:N(nn,n',m,ng) Japanese half-katakana	名:ﾝ	異:ン	俗:清音	逆:ン	漫:[0286][ETGTGWEYAYAWDWEV]	幅:624	活:[0286][oqwu][klrq]
 〜	英:wave dash		名:波ダッシュ		音:		訓:		送:	異:ー/―	逆:ｰ	俗:長音/キャイ〜ン			非:～	代:ろ	逆:	活:M 0,600 200,800 400,800 600,600 600,500 700,400 800,500 800,600 1000,600 1000,400 800,200 600,200 400,400 400,500 300,600 200,500 200,400 0,400 z
-ー	英:long vowel mark/macron/prolonged mark	名:長音符	異:〜	俗:長音/セーラームーン/オーバーロード	代:ロ	逆:ｰ	非:－	活:[67dhni]	漫:[BQDSKSKUBUATAR]
+ー	英:long vowel mark/macron/prolonged mark	名:長音符(全角)	異:〜	俗:長音/セーラームーン/オーバーロード	代:ロ	逆:ｰ	非:－	活:[67dhni]	漫:[BQDSKSKUBUATAR]
 ―	英:dash			名:ダッシュ		音:		訓:		送:	異:〜	逆:ｰ	俗:					非:－/－	代:〜	逆:
-ｰ	英:long vowel mark/macron/prolonged mark	名:長音符	異:ー	俗:長音/ｰﾗｰﾑｰﾝ/ｵｰﾊﾞｰﾛｰﾄﾞ	逆:ー	非:-	活:[67dfli]	漫:[BQCRCSGSGUAUAR]	幅:624
+ｰ	英:long vowel mark/macron/prolonged mark	名:長音符(半角)	異:ー	俗:長音/ｾｰﾗｰﾑｰﾝ/ｵｰﾊﾞｰﾛｰﾄﾞ	逆:ー	非:-	活:[67dfli]	漫:[BQCRCSGSGUAUAR]	幅:624
 乁	英:float	名:ながれる	音:イ	訓:ながれる	活:[03lk86][lmsr][stzy]
 乀	英:make right	名:ふつ	音:フツ	訓:まがる	俗:右はらい	活:[67dc][13lk87][lmsr][stzy]
 ⼀	英:radical 1	名:イチブ	異:一	俗:一部	熙:一部	活:[cgabnjpo]	漫:M 0,600 800,600 800,800 1000,800 1000,400 200,400 200,200 0,200 z M 50,550 50,250 150,250 150,450 950,450 950,750 850,750 850,550 z

@@ -34,11 +34,11 @@ function! KEVsetup()
     :for s:kanlinekey in s:kankbd_irohatype
         :if s:kanlinekey == "゛"
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
-"        :elseif s:kanlinekey == "￥"
-"            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
-"            :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
-"                let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
-"            :endfor
+        :elseif s:kanlinekey == "λ"
+            let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
+            :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
+                let s:kankbd_kanmapNX[s:kanlinekey][s:inputkey] = nr2char(char2nr(s:kankbd_kanmapNX[s:kanlinekey][s:inputkey])+0xfee0)
+            :endfor
         :else
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkanas
         :endif
@@ -78,6 +78,7 @@ function! KEVsetup()
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
     :endif
     map <silent> <Space><Space> a
+    vmap <silent> <Space><Space> <Esc>
     imap <silent> <Space><Space> <Esc>
     imap <silent> <S-Space><S-Space> <C-V><Space>
     imap <silent> <S-Space><Space> <C-V>　
@@ -94,9 +95,9 @@ function! KEVsetup()
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
     map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
-    let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
-\                              '':"<Nop>",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",
-\                              '':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
+    let s:kankbd_inputsigma = {'':"<esc><C-Q>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
+\                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",
+\                              '':"<C-o>u",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
