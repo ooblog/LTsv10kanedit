@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20170105R055521
+modify	20170105R082836
 |L:Tsv]
 
 [LTsv_doc|
@@ -1394,9 +1394,9 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
               「異壷⇔壺」「異青⇔靑」「異鼠⇔鼡」「異觜⇔嘴」「異七⇔漆」「異百⇔陌」「異晦⇔卅」。<？BR><？/DD/DL>
 <？DLDT>  俗:[6(お)]<？/DTDD>  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。<？BR>
               「俗金⇔Au」「俗円⇔丸/￥/JPY」「俗鯖⇔server」「俗𡚴⇔妛→𡚴/木通/通草」。<？BR><？/DD/DL>
-<？DLDT>  簡:[7(や)]<？/DTDD>  中国の簡体字を字引。<？BR>
+<？DLDT>  簡:[7(や)]<？/DTDD>  中国およびシンガポ—ルやマレ—シアなどの簡体字を字引。<？BR>
               「簡氣⇔气」「簡範⇔笵」。<？BR><？/DD/DL>
-<？DLDT>  繁:[8(ゆ)]<？/DTDD>  中国や台湾の繁体字を字引。<？BR>
+<？DLDT>  繁:[8(ゆ)]<？/DTDD>  中国および台湾や香港などの繁体字(正体字)を字引。<？BR>
               「繁气⇔氣」「繁笵⇔範」。<？BR><？/DD/DL>
 <？DLDT>  越:[9(よ)]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。<？BR>
               「越頗⇔<？contents/pho>」<？BR><？/DD/DL>
@@ -1876,9 +1876,9 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[I(ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[I(Ι)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。人名漢字の異体字を字引入力に移行中。<？/DD/DL>
 <？DLDTinputstroke>  「[K(κ)]」<？/DTDD>   半角カナ。<？/DD/DL>
-<？DLDTinputstroke>  「[K(Κ)]」<？/DTDD>   半角カナ。「ヵ」「ヶ」を相席。二点リーダー(‥)と同の字点(々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[K(Κ)]」<？/DTDD>   半角カナ。「ヵ」「ヶ」を相席。円記号「¥(U+00A5)」「￥(U+FFE5)」を相席。二点リーダー(‥)と同の字点(仝々)ノノ字点(〃)と一の字点(ゝヽゞヾ)とダッシュ(―)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[L(λ)]」<？/DTDD>   全角アルファベットなど。半角アルファベットの「[@(｀)]」とほぼ同じ。<？/DD/DL>
-<？DLDTinputstroke>  「[L(Λ)]」<？/DTDD>   全角アルファベットなど。U+ff02の方のダブルクォート(＂)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[L(Λ)]」<？/DTDD>   全角アルファベットなど。ダブルクォート「＂(U+ff02)」を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[M(μ)]」<？/DTDD>   康熙部首専用コード(⼀〜⼮)。<？/DD/DL>
 <？DLDTinputstroke>  「[M(Μ)]」<？/DTDD>   康熙部首専用コード(⼯〜⽝)。<？/DD/DL>
 <？DLDTinputstroke>  「[J(ξ)]」<？/DTDD>   康熙部首専用コード(⾼〜⿕)。康熙部首コード以外の偏旁冠脚構垂繞。(乀〜冖)。「熙」と「偏旁冠脚構垂繞」を相席。<？/DD/DL>
@@ -2033,7 +2033,8 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[-(ほ)]」[J(ま)][J(マ)]<？/DTDD>                「孑孒(ぼうふら)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[;(れ)][;(レ)]<？/DTDD>                「鳳凰(ほうおう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[:(け)][:(ケ)]<？/DTDD>                「冒涜(ぼうとく)」<？/DD/DL>
-<？DLDTinputstroke>  「[-(ほ)]」[Z(つ)][X(さ)]<？/DTDD>                「捕捉(ほそく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[Z(つ)][X(さ)]<？/DTDD>                「拿捕(だほ)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[X(さ)][X(サ)]<？/DTDD>                「捕捉(ほそく)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[C(そ)][V(ひ)]<？/DTDD>                「細胞(さいぼう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[N(み)][N(ミ)]<？/DTDD>                「膀胱(ぼうこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[M(も)][M(モ)]<？/DTDD>                「砲熕(ほうこう)」<？/DD/DL>
@@ -2136,6 +2137,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[A(ち)]」[7(や)][8(ゆ)]<？/DTDD>                「宇宙(うちゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(ち)]」[S(と)][D(し)]<？/DTDD>                「撞着(どうちゃく)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(ち)]」[G(き)][H(く)]<？/DTDD>                「貯蓄(ちょちく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[Q(た)][W(て)]<？/DTDD>                「轟沈(ごうちん)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(チ)]」[X(さ)][X(サ)]<？/DTDD>                「著莪(シャガ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(ち)]」[/(め)][_(ろ)]<？/DTDD>                「丁寧(ていねい)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(チ)]」[D(シ)][D(し)]<？/DTDD>                「纔着(さいじゃく)」<？/DD/DL>

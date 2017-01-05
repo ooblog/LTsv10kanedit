@@ -1103,7 +1103,8 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 ⽈	英:radical 73		名:エツブ		音:		訓:		送:		異:曰	俗:曰部		熙:曰部
 曰	英:say			名:いわく	音:エツ	訓:いわく/のたまう	送:曰若稽古/曰く/曰う	異:	俗:
 ⽉	英:radical 74		名:ゲツブ		音:		訓:		送:		異:月	俗:月部		熙:月部
-月	英:moon	名:つき	音:ゲツ	訓:つき	送:月曜/月見	俗:晦	漫:[15zxrsmkqp][opvu][8ega]	活:[15zxrsmkqp][opvu][8ega]
+月	英:moon	名:つき	音:ゲツ/ゲッ/ガツ/ガッ	訓:つき	送:月曜/日進月歩/四月馬鹿/生年月日/月見	俗:晦	異:⺝	漫:[15zxrsmkqp][opvu][8ega]	活:[15zxrsmkqp][opvu][8ega]
+⺝	英:moon radical	名:つきへん	異:月	非:⺼
 ⽊	英:radical 75		名:モクブ		音:		訓:		送:		異:木	俗:木部		熙:木部
 木	英:tree			名:もく		音:ボク/モク	訓:き	送:土木工事/木曜/木目細かい	異:	俗:	活:[68239bhgmntsmlxwkjpoijdc]
 ⽋	英:radical 76		名:ケンブ		音:		訓:		送:		異:欠	俗:欠部		熙:欠部
@@ -1249,9 +1250,8 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 𦘒	英:brush		名:ショウ		音:		訓:		送:		異:⾀	俗:
 肀	英:brush		名:ニィエ		音:		訓:		送:		異:⾀	俗:
 ⾁	英:radical 130		名:ニクブ		音:		訓:		送:		異:肉	俗:肉部		熙:肉部
-肉	英:meat		名:にく			音:ニク		訓:		送:筋肉		異:⺼	俗:
-⺼	英:meat/moon radical	名:にくづき	異:肉	俗:肌/にくづき	活:[14ywqpj][opvu][8ef9][kqrl]
-月	英:moon		名:つき	音:ゲツ/ゲッ/ガツ/ガッ	訓:つき	送:月曜/日進月歩/四月馬鹿/生年月日/月見	異:肉	俗:肌/にくづき
+肉	英:meat		名:にく			音:ニク		訓:		送:筋肉		異:⺼
+⺼	英:meat radical	名:にくづき	異:肉	俗:肌/にくづき	異:肉	非:⺝	活:[14ywqpj][opvu][8ef9][kqrl]
 ⾂	英:radical 131		名:シンブ		音:		訓:		送:		異:臣	俗:臣部		熙:臣部
 臣	英:minister		名:しん			音:シン/ジン	訓:		送:下臣/大臣	異:	俗:
 ⾃	英:radical 132		名:ジブ			音:		訓:		送:		異:自	俗:自部		熙:自部
@@ -2063,6 +2063,8 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 喱	英:	俗:咖喱(カレー)	活:[6825nmstzwqo]
 刈	英:shears/reap/prune/cut/trim	名:かり	異:苅	活:[239a45zxrqkjde][67dc][ijvu][eklf][lrsm]
 苅	英:shears/reap/prune/cut/trim	名:かり	異:刈	活:[128934abzwqpji67][opvu][djke][kqsm]
+衆	英:	簡:众
+众	英:	繁:衆	活:[6714abhgsrxwqpdc][opvu][stzy][7deqrfga]
 市	英:	活:[68239bhflnzysrxwqpvuikec]
 町	英:	活:[25baywqr98][68qo]
 村	英:	活:[67128934abzxrsgflkwvpoijdc]
