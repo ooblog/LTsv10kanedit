@@ -4,12 +4,12 @@ enter	LF
 tab	4
 program	kanfont
 LTsvver	20161215R220253
-modify	20170105R140552
+modify	20170106F065756
 |L:Tsv]
 
 [kanfont|
 seek	ぱ
-grid	25
+grid	50
 inner	0
 lineseg	1
 piece	0
