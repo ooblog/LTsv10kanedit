@@ -289,6 +289,13 @@ License: MIT<？BR>
 .+\.html?	&gt;
 .*	>
 |<？&gt;>]
+[<？&#x7C;>|
+.+\.html?	&#x7C;
+.*	|
+|<？&#x7C;>]
+[<？@T>|
+.*	@T
+|<？@T>]
 
 [<＠LTsv_doc_test_outlist>|
 testfile/README.md

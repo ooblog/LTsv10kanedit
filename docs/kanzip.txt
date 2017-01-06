@@ -1,5 +1,5 @@
 「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。
-version(branch):20161215R220253	modify:20170105R140804
+version(branch):20161215R220253	modify:20170107S045218
 
 目次
 

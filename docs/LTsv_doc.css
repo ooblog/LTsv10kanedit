@@ -3,6 +3,16 @@
   font-family: "kan5x5comic";
   src: url("https://ooblog.github.io/kan5x5comic.woff") format('woff');
 }
+.kan5x5comic{
+  font-family: "kan5x5comic";
+}
+@font-face{
+  font-family: "kan5x5";
+  src: url("https://ooblog.github.io/kan5x5.woff") format('woff');
+}
+.kan5x5{
+  font-family: "kan5x5";
+}
 body{
   background-color: white;
 }

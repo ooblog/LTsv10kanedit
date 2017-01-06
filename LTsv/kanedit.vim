@@ -63,11 +63,11 @@ function! KEVsetup()
         :endfor
     :endif
     :if !exists("s:kankbd_menuname")
-        let s:kankbd_kbdkana = "ぬ" 
         let s:kankbd_kbdkanaNX = 1
+        let s:kankbd_kbdkana = "ぬ"
         let s:kankbd_kbddic = "英" 
-        let s:kankbd_choiceAF = ""
-        let s:kankbd_choiceBF = s:kankbd_choiceAF
+        let s:kankbd_choiceAF = "" | let s:kankbd_choiceBF = s:kankbd_choiceAF
+        let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
         let s:kankbd_inputimap = s:kankbd_inputkanaN + s:kankbd_inputkanaX
         :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
             let s:kankbd_menuhyphen = "[" . escape(s:kankbd_inputkeys[s:inputkey],s:kankbd_menuESCs) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
@@ -96,19 +96,30 @@ function! KEVsetup()
     map <silent> <Space><Enter> <Plug>(KEVimap_HJKL)i
     imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_HJKL)
     let s:kankbd_inputsigma = {'':"<esc><C-Q>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
-\                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",
+\                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<C-o>/あ<Enter>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Right><BS>",'':"<Enter>",
 \                              '':"<C-o>u",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
+    execute "noremap <Plug>(KEVimap_find) :call KEVimap('find')<Enter>"
+    execute "noremap <Plug>(KEVimap_Find) :call KEVimap('Find')<Enter>"
+    map <silent> <Space><Tab> <Plug>(KEVimap_find)i
+    map <silent> <Space><S-Tab> <Plug>(KEVimap_Find)i
+    map <silent> <S-Space><Tab> <Plug>(KEVimap_find)i
+    map <silent> <S-Space><S-Tab> <Plug>(KEVimap_Find)i
+    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_find)
+    imap <silent> <Space><S-Tab> <C-o><Plug>(KEVimap_Find)
+    imap <silent> <S-Space><Tab> <C-o><Plug>(KEVimap_find)
+    imap <silent> <S-Space><S-Tab> <C-o><Plug>(KEVimap_Find)
     call KEVimap("ぬ")
 endfunction
 
-"「[Space][ぬ〜ろ]」等のコマンド入力で鍵盤(imap等)変更。
+"「[Space][ぬ〜ろ]」等のコマンド入力で鍵盤(imap等)変更。「[Space][Tab]」で一文字検索モード。
 function! KEVimap(kankbd_kbdchar)
     :if exists("s:kankbd_menuname")
         execute "iunmenu " s:kankbd_menuname
     :endif
+    echo 
     :if a:kankbd_kbdchar == 'HJKL'
         let s:kankbd_choiceAF = s:kankbd_HJKL
         :if s:kankbd_choiceBF == s:kankbd_choiceAF
@@ -117,6 +128,15 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_kbdkanaNX = 1
         :endif
         let s:kankbd_kbdkana = s:kankbd_choiceAF
+        let s:kankbd_findAF = 0
+    :elseif a:kankbd_kbdchar == 'find'
+        let s:kankbd_findAF = 1
+        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
+        let s:kankbd_findBF = s:kankbd_findAF
+    :elseif a:kankbd_kbdchar == 'Find'
+        let s:kankbd_findAF = -1
+        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
+        let s:kankbd_findBF = s:kankbd_findAF
     :else
         let s:kankbd_choiceAF = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
         :if s:kankbd_choiceBF == s:kankbd_choiceAF
@@ -152,6 +172,9 @@ function! KEVimap(kankbd_kbdchar)
         :endfor
     :endif
     let s:kankbd_menuname = s:kankbd_menuname . "]"
+    :if s:kankbd_findAF != 0
+        let s:kankbd_menuname = s:kankbd_menuname . (s:kankbd_findAF > 0 ? '+' : '-')
+    :endif
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
@@ -164,11 +187,17 @@ function! KEVimap(kankbd_kbdchar)
         :endif
         let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
-        execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
-        execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " " . s:kankbd_unicode
+        :if s:kankbd_findAF == 0
+            execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
+            execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " " . s:kankbd_unicode
+        :else
+            execute "imap <silent> " . s:kankbd_inputhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
+            execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
+        :endif
     :endfor
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
+"<C-o>/あ<Enter>
 
 "「σ」鍵盤のOで履歴などからファイルを開く。
 function! KEVfiler()
