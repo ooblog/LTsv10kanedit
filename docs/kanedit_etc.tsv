@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20170107S045237
+modify	20170107S080842
 |L:Tsv]
 
 [LTsv_doc|
@@ -342,6 +342,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
 [<＃contents/License-2>|
 <？P> Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<？BR>
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<？BR>
+ 「kan5x5comic.ttf」と「kan5x5.ttf」を同時に入れると麻雀牌が表示されない(「kan5x5.ttf」の絵文字代替4x5文字が優先される)場合があります。<？BR>
  私用領域と呼ばれる環境に左右される文字コードを<？VRkeyboard>の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。<？BR>
  人名に使える漢字の異体字を<？DICmap>から<？DICchar>に移管作業中。なので<？VRkeyboard>の<？DICmap>が大幅に変更するかも。<？BR>
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。<？BR>
@@ -349,6 +350,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
  「<？https/LTsv_doc.py>」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。<？BR>
  「docs/」フォルダ内のドキュメントを「<？https/kanedit_etc.tsv>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
  そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。<？BR>
+ Vim版の「kanedit」、「<？https/kanedit.vim>」を試作中です。<？VRkeyboard>の操作方法や「<？https/kanmap.tsv>」のフォーマットを次期バージョンで変更(Vim版に揃える)する算段が高いです。<？BR>
 |<＃contents/License-2>]
 
 [<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>|
@@ -1800,7 +1802,13 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTfaq> Ｑ．α鍵盤の説明にあるxvkbdって何。<？/DTDD>
  Ａ．X Window System 用仮想キーボードというものがあります。 QWERTZやAZERTYなどキーボードのレイアウトはxvkbdを参考にしました。<？BR>
      JISキーボード(109キーボード)を想定してるので配置は多少アレンジしてます。<？BR>
+<？/DD/DL>
 <？https/kanedit_faq:xvkbd>
+
+<？DLDTfaq>  Ｑ．Vim版の解説はどこですか？<？/DTDD>
+ Ａ．Vim版の詳しい説明は次期バージョンに回そうと思ってます。<？BR>
+      「LTsv10kanedit」と「LTsv11KanEditVim(仮)」で操作方法が異なる(Vim版に仕様を近づける、例えば「￥」鍵盤の廃止など)予定です。<？BR>
+      なので「LTsv10kanedit」のページでVim版の話をすればするほど混乱と編集コスト増になるだけです。<？BR><？/DD/DL>
 |<＃contents/kanedit_faq-0>]
 [<？https/kanedit_faq:IVS>*<？https/kanedit_faq:MaxOSX>*<？https/kanedit_faq:糸+柬>*<？https/kanedit_faq:魚+柬>*<？https/kanedit_faq:柬>*<？https/kanedit_faq:xvkbd>|
 :<＄web/kanedit_faq-0>	異体字セレクタ - Wikipedia
@@ -2674,12 +2682,13 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .+\.html?	<dl><dt><＄web/ref-@0c></dt><dd><a href="<＄url/ref-@0c>" title="<＄web/ref-@0c>"><＄url/ref-@0c></a></dd></dl>
 .*	@E   <＄web/ref-@0c><？BR>@E   <＄url/ref-@0c><？BR>
 |<？https/ref:radical>*<？https/ref:木>*<？https/ref:魚>*<？https/ref:草>*<？https/ref:Fish!>*<？https/ref:Bird!>*<？https/ref:flesh>*<？https/ref:ネ示>*<？https/ref:攪拌>*<？https/ref:鶯鴬>*<？https/ref:囯国>*<？https/ref:団欒>*<？https/ref:噛嚙>*<？https/ref:脹張>*<？https/ref:舗鋪>*<？https/ref:檞>*<？https/ref:㓛>*<？https/ref:ghost>*<？https/ref:gundam>*<？https/ref:閄>*<？https/ref:‎samesound>*<？https/ref:country>*<？https/ref:rareplace>*<？https/ref:72pentads>*<？https/ref:28lunarmansions>*<？https/ref:24seasons>*<？https/ref:Japanesecolors>*<？https/ref:element>*<？https/ref:chemical>*<？https/ref:10^68>*<？https/ref:longreadingchar>*<？https/ref:surname1char>*<？https/ref:Kanjinames>*<？https/ref:zinmei1>*<？https/ref:zinmei2>*<？https/ref:animal>*<？https/ref:baseball>*<？https/ref:prefectures>*<？https/ref:sports>*<？https/ref:梅龱>*<？https/ref:BA-90>*<？https/ref:Tomato>*<？https/ref:braille>*<？https/ref:Mahjong>*<？https/ref:tkinter>*<？https/ref:BMP>]
-[<？https/kanedit.py>*<？https/kanedit.tsv>|
+[<？https/kanedit.py>*<？https/kanedit.tsv>*<？https/kanedit.vim>|
 :<＄path/kanedit-0>	kanedit.py
 :<＄path/kanedit-1>	kanedit.tsv
+:<＄path/kanedit-2>	LTsv/kanedit.vim
 .+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanedit-@c>"><＄path/kanedit-@c></a>
 .*	<＄path/kanedit-@c>
-|<？https/kanedit.py>*<？https/kanedit.tsv>]
+|<？https/kanedit.py>*<？https/kanedit.tsv>*<？https/kanedit.vim>]
 [<？contents/BA-90>*<？contents/Tomato>|
 :<＄icon-0>	&#127773;
 :<＄icon-1>	&#127813;

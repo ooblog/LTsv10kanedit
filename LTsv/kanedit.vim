@@ -6,7 +6,7 @@ let s:kev_scriptdir = expand('<sfile>:p:h')
 function! KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
-    let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","熙","簡","繁","越","地","顔","鍵","代","逆","非","難","活","漫","筆","幅"]
+    let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","簡","繁","越","地","顔","鍵","代","逆","非","熙","難","活","漫","筆","幅"]
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
     let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","e(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\(ろ)"]
@@ -191,8 +191,13 @@ function! KEVimap(kankbd_kbdchar)
             execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
             execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " " . s:kankbd_unicode
         :else
-            execute "imap <silent> " . s:kankbd_inputhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
-            execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
+            if s:kankbd_findAF > 0
+                execute "imap <silent> " . s:kankbd_inputhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
+                execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " <C-o>/" . s:kankbd_unicode . "<Enter>"
+            :else
+                execute "imap <silent> " . s:kankbd_inputhyphen . " <C-o>?" . s:kankbd_unicode . "<Enter>"
+                execute "imenu <silent> " . s:kankbd_menuid . "." . (s:inputkey+1) . " " . s:kankbd_menuname. "." . s:kankbd_menuhyphen . " <C-o>?" . s:kankbd_unicode . "<Enter>"
+            :endif
         :endif
     :endfor
     let s:kankbd_choiceBF = s:kankbd_choiceAF
