@@ -78,9 +78,10 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 <？LTsv_MD_H2:KEV>
 
 <？P>「<？https/KEV>」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。<？BR>
-Vimの入力受付では47鍵なので48鍵目「￥」鍵盤の一部漢字を移動してPython版の操作性もVim版の方向性に揃える「LTsv11KanEditVim」リポジトリ立ち上げ予定。<？BR>
-「￥」鍵盤には半角カナと全角アルファベットもあるけど字引入力で補完可能。<？BR>
-Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。<？BR>
+Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。<？BR>
+ひらがなカタカナの操作は同じ鍵盤を連続選択する事でシフト入力だったカタカナを直接入力に交換。再度選択でひらがな帰ってきます。<？BR>
+挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」や「Ctrl+&#91;」より操作が簡単。<？BR>
+「NEFR」「XFER」以外にも48鍵目「￥」鍵盤が入力できない&#40;「ろ」と「￥」が両方とも「&#92;」と入力される&#41;ので仕様変更。<？BR>
 スクリプトが生成するmapはだいたい以下のイメージ。<？BR>
 <？/P><？CODE>
        <？&lt;>Space<？&gt;><？&lt;>Space<？&gt;>   a
@@ -105,8 +106,8 @@ Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を�
     i  "           * <？&lt;>C-V<？&gt;>U000030d5
     i  #           * <？&lt;>C-V<？&gt;>U000030a2
 <？/CODE><？P>
-連続で同じ文字を「call KEVimap&#40;&#41;」されると「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」交換。<？BR>
-挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」「Ctrl+&#91;」より操作が簡単。<？BR>
+Vimの件とは別に「<？https/TSF1KEV>」という新データフォーマットというか新言語開発の予定があります。<？BR>
+既存の「L&#58;Tsv」と互換性がないので注意。移行ツールは準備する予定。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:environment>
@@ -155,7 +156,7 @@ License: MIT<？BR>
 :<＄LTsv_MD_H2:2>	「kanzip」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた郵便番号ダウンローダーです。
 :<＄LTsv_MD_H2:3>	「kanmap」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたグリフ進捗ビュアーです。
 :<＄LTsv_MD_H2:4>	「LTsv_doc」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いたドキュメントジェネレーターです。
-:<＄LTsv_MD_H2:5>	次期バージョン「LTsv11KanEditVim」の叩き台として「kanedit.vim」試作中。
+:<＄LTsv_MD_H2:5>	次期バージョン「TSF1KEV」の叩き台として「kanedit.vim」試作中。
 :<＄LTsv_MD_H2:6>	動作環境。
 :<＄LTsv_MD_H2:7>	ライセンス・著作権など。
 .+\.html?	<h2><＄LTsv_MD_H2:@c></h2>
@@ -223,7 +224,7 @@ License: MIT<？BR>
 :<＄href/htmldoc-4>	LICENSE
 :<＄title/htmldoc-4>	<＄txt/htmldoc-4>
 :<＄txt/htmldoc-4>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
-.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
++\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
 |<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
 
@@ -244,16 +245,19 @@ License: MIT<？BR>
 .*	https://github.com/ooblog/LTsv10kanedit/
 |<？ooblog:LTsv10repository_url>]
 
-[<？https/japanpost>*<？https/fontforge>|
+[<？https/japanpost>*<？https/fontforge>*<？https/TSF1KEV>|
 :<＄href/htmldoc-0>	http://www.post.japanpost.jp/zipcode/dl/readme.html
 :<＄title/htmldoc-0>	郵便番号データの説明 - 日本郵便
 :<＄txt/htmldoc-0>	〒郵便番号
 :<＄href/htmldoc-1>	http://fontforge.github.io/ja/
 :<＄title/htmldoc-1>	<＄txt/htmldoc-1>
 :<＄txt/htmldoc-1>	FontForge
+:<＄href/htmldoc-2>	https://github.com/ooblog/TSF1KEV
+:<＄title/htmldoc-2>	プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+:<＄txt/htmldoc-2>	TSF1KEV
 .+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/japanpost>*<？https/fontforge>]
+|<？https/japanpost>*<？https/fontforge>*<？https/TSF1KEV>]
 
 [<？P>|
 .+\.html?	<p>@E

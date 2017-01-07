@@ -45,12 +45,13 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 「LTsv_doc」の詳細は「[docs/LTsv_doc.txt](https://github.com/ooblog/LTsv10kanedit/blob/master/docs/LTsv_doc.txt "「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。")&#40;[LTsv_doc.html](https://ooblog.github.io/LTsv10kanedit/LTsv_doc.html "「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。")&#41;」を参考。  
 
 
-## 次期バージョン「LTsv11KanEditVim」の叩き台として「kanedit.vim」試作中。
+## 次期バージョン「TSF1KEV」の叩き台として「kanedit.vim」試作中。
 
 「[LTsv/kanedit.vim](LTsv/kanedit.vim "LTsv/kanedit.vim")」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。  
-Vimの入力受付では47鍵なので48鍵目「￥」鍵盤の一部漢字を移動してPython版の操作性もVim版の方向性に揃える「LTsv11KanEditVim」リポジトリ立ち上げ予定。  
-「￥」鍵盤には半角カナと全角アルファベットもあるけど字引入力で補完可能。  
-Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。  
+Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。  
+ひらがなカタカナの操作は同じ鍵盤を連続選択する事でシフト入力だったカタカナを直接入力に交換。再度選択でひらがな帰ってきます。  
+挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」や「Ctrl+&#91;」より操作が簡単。  
+「NEFR」「XFER」以外にも48鍵目「￥」鍵盤が入力できない&#40;「ろ」と「￥」が両方とも「&#92;」と入力される&#41;ので仕様変更。  
 スクリプトが生成するmapはだいたい以下のイメージ。  
 
        <Space><Space>   a
@@ -75,8 +76,8 @@ Vim版では「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」を�
     i  "           * <C-V>U000030d5
     i  #           * <C-V>U000030a2
 
-連続で同じ文字を「call KEVimap&#40;&#41;」されると「NEFR&#40;ひらがな&#41;」「XFER&#40;カタカナ&#41;」交換。  
-挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」「Ctrl+&#91;」より操作が簡単。  
+Vimの件とは別に「[TSF1KEV](https://github.com/ooblog/TSF1KEV "プログラミング言語「TSF_Tab-Separated-Forth」開発予定。")」という新データフォーマットというか新言語開発の予定があります。  
+既存の「L&#58;Tsv」と互換性がないので注意。移行ツールは準備する予定。  
 
 
 ## 動作環境。
