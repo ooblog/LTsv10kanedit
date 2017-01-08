@@ -9,7 +9,7 @@ modify	20161130W154333
 |L:Tsv]
 
 [LTsv_doc|
-tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv
+tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv	TSF1KEV_md.tsv
 window_size	width:800	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 editer	medit
@@ -224,7 +224,7 @@ License: MIT<？BR>
 :<＄href/htmldoc-4>	LICENSE
 :<＄title/htmldoc-4>	<＄txt/htmldoc-4>
 :<＄txt/htmldoc-4>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
-+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
 |<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
 
@@ -253,7 +253,7 @@ License: MIT<？BR>
 :<＄title/htmldoc-1>	<＄txt/htmldoc-1>
 :<＄txt/htmldoc-1>	FontForge
 :<＄href/htmldoc-2>	https://github.com/ooblog/TSF1KEV
-:<＄title/htmldoc-2>	プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+:<＄title/htmldoc-2>	ooblog/TSF1KEV: プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
 :<＄txt/htmldoc-2>	TSF1KEV
 .+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")

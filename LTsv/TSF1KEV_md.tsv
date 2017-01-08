@@ -1,0 +1,209 @@
+[L:Tsv|
+code	UTF-8
+enter	LF
+tab	4
+program	LTsv_doc.py
+1st		LTsv_doc
+LTsvver	20161128M153500
+modify	20161130W154333
+|L:Tsv]
+
+[LTsv_doc|
+main	<＠TSF1KEV/README.md>
+tagseparate	*
+skplist	LTsv_doc
+outdir	./
+outlist	<＠TSF1KEV/README_outlist>
+defdir	./
+deftag	L:<！	R:>
+defindent	firstL:<？firstL>	firstR:<？firstR>	restL:<？restL>	restC:<？restC>	restR:<？restR>	restRLast:<？restRLast>
+LTsvver	<＠L:TsvLTsvver>
+|LTsv_doc]
+
+[<＠TSF1KEV/README.md>|
+<？LTsv_MD_header><？LTsv_MD_H1:TSF1KEV>
+<？P>
+目標は「<？https/LTsv10>」の「<？https/kanedit.vim>」などをVim使わずに「TSF」だけで動かす事。実装はとりあえずPythonで。<？BR>
+<？/P><？CODE>
+    TSF_Tab-Separated-Forth:
+    	main:	:TSF_call	:TSF_fin.
+    
+    main:
+   		about:	:TSF_push	about:	:TSF_diclen	:TSF_reverseS	about:	:TSF_diclen	:TSF_echoeS
+    
+    about:
+    	「TSF」の文法暫定案。
+    	「TSF_Tab-Separated-Forth:」を先頭に置くのが慣習。先頭辞書が初期スタックになるので「:TSF_fin.」も極力付ける。
+    	文字列と辞書名とワード(関数)との文法上区別が無いので、便宜上辞書名に後方コロン、命令文に先頭コロンを用いてる。
+    	特に命令文は文字データと被らないよう別の言葉に置換エスケープできるようにする予定。
+    	辞書名は行頭にタブを含まない。辞書データ＝スタックは行頭にタブを設置。辞書名と辞書データのワンライナー(一行)化は可。
+        0文字列が有効なのでタブ文字の連続や末尾のタブでスタック数は増加するので注意。
+    	末尾再帰はループ。深い階層で祖先を「:TSF_call」すると関数スタックがまとめてpopされる。関数スタックは辞書とは別に存在。
+    	関数の返り値は存在しない。スタックに「:TSF_push」して「:TSF_pop」するだけ。スタックの単位はタブで区切られた文字列。
+
+    corefunction:
+    	構想中…
+    	ワード(関数)は単数形複数形を用意して、複数形の直前にスタックを読み込む個数を指定する。単数形の個数は関数毎に異なる。
+    	上記「main:」文の関数は暫定というか、これらを文字データと被らないように置換する関数がまず必要。
+    	スタック操作の関数構想中…。ファイル読書日時電卓などは「LTsv10kanedit」モジュールがベースになると思う。
+
+    oneliner:	ワンライナーは許可。「kanmap.tsv」や「kanchar.tsv」を直接読み書きできる程度の互換性を確保する。
+<？/CODE><？P>
+
+<？LTsv_MD_H2:environment>
+
+<？P>「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52」および「Wine1.7.18,Python3.4.4,gvim8.0.134」で開発になると思います。<？BR>
+<？/P>
+
+<？LTsv_MD_H2:LICENSE>
+
+<？P>Copyright (c) 2017 ooblog<？BR>
+License: MIT<？BR>
+<？https/TSF1KEV:LICENSE><？BR>
+<？/P><？LTsv_MD_footer>
+|<＠TSF1KEV/README.md>]
+
+[<？LTsv_MD_header>|
+.+\.html?	<＃LTsv_HTML_header>
+.+\.md	
+|<？LTsv_MD_header>]
+
+[<＃LTsv_HTML_header>|
+<html lang="ja"><head>
+ <meta charset="UTF-8" />
+ <title>README.md</title>
+</head><body>
+|<＃LTsv_HTML_header>]
+
+[<？LTsv_MD_footer>|
+.+\.html?	@E<＃LTsv_HTML_footer>
+.+\.md	
+|<？LTsv_MD_footer>]
+
+[<＃LTsv_HTML_footer>|
+</body></html>
+|<＃LTsv_HTML_footer>]
+
+[<？LTsv_MD_H1:TSF1KEV>|
+:<＄LTsv_MD_H1:0>	プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+.+\.html?	<h1><＄LTsv_MD_H1:@c></h1>
+.+\.md	# <＄LTsv_MD_H1:@c>
+|<？LTsv_MD_H1:TSF1KEV>]
+
+[<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>|
+:<＄LTsv_MD_H2:0>	動作環境&#40;予定&#41;。
+:<＄LTsv_MD_H2:1>	ライセンス・著作権など&#40;予定&#41;。
+.+\.html?	<h2><＄LTsv_MD_H2:@c></h2>
+.+\.md	## <＄LTsv_MD_H2:@c>
+|<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>]
+
+[<？https/kanedit.vim>|
+:<＄href/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄title/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄txt/htmldoc-0>	LTsv/kanedit.vim
+.+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/kanedit.vim>]
+
+[<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
+:<＄repository-0>	raw/master/
+:<＄repository-1>	blob/master/
+.*	<？ooblog:LTsv10repository_url><＄repository-@c>
+|<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>]
+
+[<？ooblog:LTsv10repository_txt>|
+.*	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+|<？ooblog:LTsv10repository_txt>]
+[<？ooblog:LTsv10repository_url>|
+.*	https://github.com/ooblog/LTsv10kanedit/
+|<？ooblog:LTsv10repository_url>]
+
+[<？https/TSF1KEV:LICENSE>|
+:<＄href/htmldoc-0>	LICENSE
+:<＄title/htmldoc-0>	<＄txt/htmldoc-0>
+:<＄txt/htmldoc-0>	<？ooblog:TSF1KEVrepository_url>blob/master/LICENSE
+.+\.html?	<a href="<？ooblog:TSF1KEVrepository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/TSF1KEV:LICENSE>]
+
+[<？ooblog:TSF1KEVrepository_raw>*<？ooblog:TSF1KEVrepository_blob>|
+:<＄repository-0>	raw/master/
+:<＄repository-1>	blob/master/
+.*	<？ooblog:TSF1KEVrepository_url><＄repository-@c>
+.*	<？ooblog:TSF1KEVrepository_url><＄repository-@c>
+|<？ooblog:TSF1KEVrepository_raw>*<？ooblog:TSF1KEVrepository_blob>]
+
+[<？ooblog:TSF1KEVrepository_txt>|
+.*	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+|<？ooblog:TSF1KEVrepository_txt>]
+[<？ooblog:TSF1KEVrepository_url>|
+.*	https://github.com/ooblog/TSF1KEV/
+|<？ooblog:TSF1KEVrepository_url>]
+
+[<？https/LTsv10>|
+:<＄href/htmldoc-0>	https://github.com/ooblog/LTsv10kanedit
+:<＄title/htmldoc-0>	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
+:<＄txt/htmldoc-0>	LTsv10kanedit
+.+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/LTsv10>]
+
+[<？https/LTsv10kanedit>|
+:<＄href/htmldoc-0>	https://github.com/ooblog/LTsv10kanedit
+:<＄title/htmldoc-0>	ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。
+:<＄txt/htmldoc-0>	<＄href/htmldoc-0>
+.+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
+.+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
+|<？https/LTsv10kanedit>]
+
+[<？P>|
+.+\.html?	<p>@E
+.*	
+|<？P>]
+[<？/PP>|
+.+\.html?	</p><p>
+.*	
+|<？/PP>]
+[<？/P>|
+.+\.html?	@E</p>
+.*	
+|<？/P>]
+[<？BR>|
+.+\.html?	<br />
+.+\.md	  
+.*	
+|<？BR>]
+[<？CODE>|
+.+\.html?	@E<pre><code>
+.*	
+|<？CODE>]
+[<？/CODE>|
+.+\.html?	</code></pre>@E
+.*	
+|<？/CODE>]
+
+[<？&lt;>|
+.+\.html?	&lt;
+.*	<
+|<？&lt;>]
+[<？&gt;>|
+.+\.html?	&gt;
+.*	>
+|<？&gt;>]
+[<？&#x7C;>|
+.+\.html?	&#x7C;
+.*	|
+|<？&#x7C;>]
+[<？@T>|
+.*	@T
+|<？@T>]
+
+[<＠TSF1KEV/README_outlist>|
+testfile/README.md
+testfile/README.html
+|<＠TSF1KEV/README_outlist>]
+
+
+# Copyright (c) 2017 ooblog
+# License: MIT
+# https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE
