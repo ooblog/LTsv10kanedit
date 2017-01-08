@@ -243,7 +243,9 @@ def kanmap_mapsave():
     kanmap_kanmapname=LTsv_global_kanmappath(); #kanmap_kanmapname="testkanmap.tsv"
     kanmap_kanmap=""
     for map_iroha in LTsv_global_irohaalpha():
-        kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha]),"\t".join(LTsv_glyph_kanmapX[map_iroha]))
+#        kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha]),"\t".join(LTsv_glyph_kanmapX[map_iroha]))
+        if map_iroha == "￥": continue;
+        kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha][0:(48-1)]),"\t".join(LTsv_glyph_kanmapX[map_iroha][0:(48-1)]))
         kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,map_iroha,kanmap_irohaline)
     kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,"©","# Copyright (c) 2016 ooblog # License: MIT # https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")
     LTsv_saveplain(kanmap_kanmapname,kanmap_kanmap)

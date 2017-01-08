@@ -20,7 +20,7 @@ LTsv_PSfont_ZW,LTsv_PSfont_CW,LTsv_PSchar_ZW,LTsv_PSchar_CW=1024,624,1000,600
 LTsv_glyph5x5_coord,LTsv_glyph5x5_clock,LTsv_glyph5x5_wide={},{},{}
 LTsv_glyphcomic_coord,LTsv_glyphcomic_clock,LTsv_glyphcomic_wide={},{},{}
 LTsv_glyphbrush_coord,LTsv_glyphbrush_clock,LTsv_glyphbrush_wide={},{},{}
-LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename="LTsv/","","kanchar.tsv","kanmap.tsv","kanpickle.bin"
+LTsv_glyph_ltsvdir,LTsv_glyph_ltsvpath,LTsv_glyph_kandicname,LTsv_glyph_kanmapname,LTsv_glyph_kanpicklename="LTsv/","","kanchar.tsv","kanmap11.tsv","kanpickle.bin"
 LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanmap,LTsv_glyph_kanpickle="","","",{}
 LTsv_glyph_irohatype= ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","゛","゜","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
 LTsv_glyph_irohatypeN=["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ","ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","￥"]
@@ -129,11 +129,21 @@ def LTsv_glyph_kbdinit(LTsv_tsvpath="LTsv/LTsv_glyph.tsv",LTsv_glyph_GUI="",LTsv
     LTsv_glyph_irohaalpha=LTsv_glyph_irohatype+LTsv_glyph_alphatype
     LTsv_glyph_irohaalphaN=LTsv_glyph_irohatypeN+LTsv_glyph_alphatypeN
     LTsv_glyph_irohaalphaX=LTsv_glyph_irohatypeX+LTsv_glyph_alphatypeX
-    for irohaalpha in LTsv_glyph_irohaalpha:
-        kbd_lineT=LTsv_readlinerest(LTsv_glyph_kanmap,irohaalpha)
-        kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*(LTsv_glyph_SandS*2-len(kbd_lineL))
+    if "\n￥\t" in LTsv_glyph_kanmap:
+        for irohaalpha in LTsv_glyph_irohaalpha:
+            kbd_lineT=LTsv_readlinerest(LTsv_glyph_kanmap,irohaalpha)
+            kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*max(0,(LTsv_glyph_SandS*2-len(kbd_lineL)))
+            LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:LTsv_glyph_SandS],kbd_lineL[LTsv_glyph_SandS:LTsv_glyph_SandS*2]
+    else:
+        for irohaalpha in LTsv_glyph_irohaalpha:
+            kbd_lineT=LTsv_readlinerest(LTsv_glyph_kanmap,irohaalpha)
+            kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*max(0,(LTsv_glyph_SandS*2-len(kbd_lineL)))
+            LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:(LTsv_glyph_SandS-1)]+[" "],kbd_lineL[(LTsv_glyph_SandS-1):(LTsv_glyph_SandS-1)*2]+[" "]
+#    for irohaalpha in LTsv_glyph_irohaalpha:
+#        kbd_lineT=LTsv_readlinerest(LTsv_glyph_kanmap,irohaalpha)
+#        kbd_lineL=kbd_lineT.split('\t'); kbd_lineL=kbd_lineL+[" "]*(LTsv_glyph_SandS*2-len(kbd_lineL))
 #        LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:LTsv_glyph_SandS+1],kbd_lineL[LTsv_glyph_SandS+1:LTsv_glyph_SandS+1+LTsv_glyph_SandS+1]
-        LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:LTsv_glyph_SandS],kbd_lineL[LTsv_glyph_SandS:LTsv_glyph_SandS*2]
+#        LTsv_glyph_kanmapN[irohaalpha],LTsv_glyph_kanmapX[irohaalpha]=kbd_lineL[0:LTsv_glyph_SandS],kbd_lineL[LTsv_glyph_SandS:LTsv_glyph_SandS*2]
     LTsv_glyph_kbdTAG=LTsv_readlinerest(LTsv_glyph_config,"kbdTAG",LTsv_glyph_kbdTAG)
     LTsv_glyph_kbdfontcolor=LTsv_readlinerest(LTsv_glyph_config,"fontcolor",LTsv_glyph_kbdfontcolor)
     LTsv_glyph_kbdbgcolor=LTsv_readlinerest(LTsv_glyph_config,"bgcolor",LTsv_glyph_kbdbgcolor)

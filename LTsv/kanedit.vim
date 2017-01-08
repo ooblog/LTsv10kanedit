@@ -47,8 +47,11 @@ function! KEVsetup()
     :if filereadable(s:kankbd_kanmapfilepath)
         :for s:kanlinetsv in readfile(s:kankbd_kanmapfilepath)
             let s:kanlinelist = split(s:kanlinetsv,"\t")
-            :if len(s:kanlinelist) > 0 && s:kanlinelist[0] != ''
-                let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:47] + s:kanlinelist[-48:-2]
+            :if len(s:kanlinelist) >= 2
+                let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kanlinelist[1:]
+                :for s:inputkey in range(max([0,len(s:kankbd_inputkeys)-len(s:kanlinelist)]))
+                    let s:kankbd_kanmapNX[s:kanlinelist[0]] = s:kankbd_kanmapNX[s:kanlinelist[0]] + [" "]
+                :endfor
             :endif
         :endfor
     :endif
