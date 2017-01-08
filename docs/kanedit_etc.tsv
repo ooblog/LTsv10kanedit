@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20161215R220253
-modify	20170108U074359
+modify	20170108U231903
 |L:Tsv]
 
 [LTsv_doc|
@@ -1884,7 +1884,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[_(ロ)]」<？/DTDD>   全角ギリシャ大文字(ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ)文字と大字(壱弐参肆伍陸漆捌玖拾佰仟萬)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
-<？DLDTinputstroke>  「[B(β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
+<？DLDTinputstroke>  「[B(β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。「￥」鍵盤廃止の関係で「埠痰蛎韓璽蹟嫡鴇蛤恷籤俎藩倦叢捧其」を一時退避。<？/DD/DL>
 <？DLDTinputstroke>  「[B(Β)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席。出現順番が未定義。<？/DD/DL>
 <？DLDTinputstroke>  「[G(γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
 <？DLDTinputstroke>  「[G(Γ)]」<？/DTDD>   未整理：難読漢字(難読名字とか難読地名など)の相席予定。<？/DD/DL>
@@ -2141,9 +2141,11 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[O(ら)]」[;(れ)][;(レ)]<？/DTDD>                「攪拌(かくはん)」<？/DD/DL>
 <？DLDTinputstroke>  「[O(ら)]」[X(さ)][C(そ)]<？/DTDD>                「氾濫(はんらん)」<？/DD/DL>
 <？DLDTinputstroke>  「[O(ら)]」[C(そ)][V(ひ)]<？/DTDD>                「濫觴(らんしょう)」<？/DD/DL>
-<？DLDTinputstroke>  「[O(ラ)]」[K(ノ)][L(リ)]<？/DTDD>                「脂肪(しぼう)」<？/DD/DL>
-<？DLDTinputstroke>  「[O(ラ)]」[X(サ)][C(ソ)]<？/DTDD>                「疢疾(ちんしつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[O(ラ)]」[W(テ)][E(イ)]<？/DTDD>                「身体(しんたい)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[A(チ)][S(ト)]<？/DTDD>                「字喃(チュノム)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[K(ノ)][L(リ)]<？/DTDD>                「脂肪(しぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[V(ヒ)][B(コ)]<？/DTDD>                「疢疾(ちんしつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[O(ラ)]」[N(ミ)][M(モ)]<？/DTDD>                「死屍累々(ししるいるい死屍累々の"しし")」<？/DD/DL>
 <？DLDTinputstroke>  「[P(せ)]」[2(ふ)][3(あ)]<？/DTDD>                「節榑(ふしくれ)」<？/DD/DL>
 <？DLDTinputstroke>  「[P(せ)]」[2(ふ)][3(あ)]<？/DTDD>                「頽勢(たいせい)」<？/DD/DL>
 <？DLDTinputstroke>  「[P(せ)]」[H(く)][J(ま)]<？/DTDD>                「逼迫(ひっぱく)」<？/DD/DL>
