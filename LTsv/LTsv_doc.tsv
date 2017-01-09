@@ -9,7 +9,7 @@ modify	20161130W154333
 |L:Tsv]
 
 [LTsv_doc|
-tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv	TSF1KEV_md.tsv
+tsvlist	LTsv_doc.tsv	../docs/kanedit_etc.tsv	../../ooblog.github.io/yakuyon.tsv	../../TSF1KEV/TSFpy/debug/TSF1KEV_md.tsv
 window_size	width:800	height:480	wait:100	fontsize:24
 modify	@000y@0m@0dm@wdec@0h@0n@0s
 editer	medit
