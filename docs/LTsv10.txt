@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20161215R220253	modify:20170108U231841
+version(branch):20170114S031328	modify:20170114S135034
 
 目次
 
@@ -77,12 +77,11 @@ version(branch):20161215R220253	modify:20170108U231841
  人名に使える漢字の異体字を漢字配列「LTsv/kanmap.tsv」から単漢字辞書「LTsv/kanchar.tsv」に移管作業中。なので漢直鍵盤の漢字配列「LTsv/kanmap.tsv」が大幅に変更するかも。
  マウスボタンの取得は保留。ホイールの取得は放置。tkk方面は手を出さない予定(コンボボックスなどはGTKのみサポート)。
  GTKのコールバックから受けとる構造体を扱う方法が不明のため、GUIイベント経由のPCキーボード取得やファイルダイアログからのキャンセル取得などが不明。
- 「LTsv/LTsv_doc.py」で安全に再帰する方法思いつくまで置換タグの順序に厳しい手間が。
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。
- そもそも「kanedit」はまだテキストファイルを編集できる状態にないです(開発中)。
- Vim版の「kanedit」、「LTsv/kanedit.vim」を試作中です。漢直鍵盤の操作方法や「LTsv/kanmap.tsv」のフォーマットを次期バージョンで変更(Vim版に揃える)する算段が高いです。
+ 「LTsv/LTsv_doc.py」でタグの順序が厳格という問題があるのでいっその事スクリプト言語ごと新規に作ろうと思います(TSFの開発)。
 
-「L:Tsv」フォーマットそのものを見直す予定があります。次期バージョンどころか新規格で作り直すかもです。
+ LTsv版の「kanedit」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「LTsv/kanedit.vim」「KEV」も開発です。
+ 「KEV」とLTsv版の「kanedit」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。
 
    プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
    https://github.com/ooblog/TSF1KEV
@@ -384,7 +383,7 @@ version(branch):20161215R220253	modify:20170108U231841
   Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
 
  【LTsv_file_ver()】
-  「LTsv_file.py」のバージョン表示(20161215R220253)。
+  「LTsv_file.py」のバージョン表示(20170114S031328)。
 
  【LTsv_issue()】
   「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
@@ -448,7 +447,7 @@ version(branch):20161215R220253	modify:20170108U231841
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの20161215R220253形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20170114S031328形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
