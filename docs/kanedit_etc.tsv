@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170114S132227
+modify	20170115U053945
 |L:Tsv]
 
 [LTsv_doc|
@@ -264,7 +264,7 @@ kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanf
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
 kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip-0><？list/kanzip_faq-0><？list/address-0>
 LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
-KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1><？list/KEV-0><？list/KEV_faq-0><？list/address-0>
+KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2><？list/KEV-0><？list/KEV_faq-0><？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
 
@@ -276,7 +276,7 @@ kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
 kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip-0><？section/kanzip_faq-0><？section/address-0>
 LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
-KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1><？section/KEV-0><？section/KEV_faq-0><？section/address-0>
+KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2><？section/KEV-0><？section/KEV_faq-0><？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
 
@@ -355,8 +355,8 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
  「docs/」フォルダ内のドキュメントを「<？https/kanedit_etc.tsv>」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。<？BR>
  「<？https/LTsv_doc.py>」でタグの順序が厳格という問題があるのでいっその事スクリプト言語ごと新規に作ろうと思います(TSFの開発)。<？BR>
 <？/PP>
- LTsv版の「kanedit」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「<？https/kanedit.vim>」「KEV」も開発です。<？BR>
- 「KEV」とLTsv版の「kanedit」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。<？BR>
+ LTsv版の「<？https/kanedit.py>」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「<？https/kanedit.vim>」も開発です。<？BR>
+ 「<？https/kanedit.vim>」と「<？https/kanedit.py>」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。<？BR>
 <？/P>
 <？https/kanedit_faq:TSF1KEV>
 |<＃contents/License-2>]
@@ -2714,7 +2714,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？section/kanfont_usage-0>]
 
 [<＃contents/kanfont_usage-0>|
-<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard/howto><？BR><？BR><？/DD/DL>
+<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard/howto><？BR>電卓機能は不使用。<？BR><？/DD/DL>
 <？DLDT>   縦のスケール<？/DTDD>                     グリフを編集する文字を選択。<？VRkeyboard>に無い漢字も選択可能。<？BR><？/DD/DL>
 <？DLDT>   縦スケールのスピンボックス<？/DTDD>       グリフを編集する文字を選択。縦のスケールと連動。<？BR><？/DD/DL>
 <？DLDT>   U+ffff表記下の「CP」ボタン<？/DTDD>       クリップボードに縦スケールで選択されてる文字をコピー。<？BR><？/DD/DL>
@@ -2992,19 +2992,19 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 .*	   <＄web/kanzip_faq-@c><？BR>@E   <＄url/kanzip_faq-@c><？BR>
 |<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>]
 
-[<？section/KEV_usage-0>*<？section/KEV_usage-1>|
+[<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>|
 .+\.html?	<section>@E <h3 id="KEV_usage-@c"><？title/KEV_usage-@c></h3>@E<＃contents/KEV_usage-@c>@E</section>@E
 .*	@E<？title/KEV_usage-@c>@E@E<＃contents/KEV_usage-@c>@E
-|<？section/KEV_usage-0>*<？section/KEV_usage-1>]
+|<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>]
 
 [<＃contents/KEV_usage-0>|
-<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンドを設置する方法で解説します。<？BR>
+<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEVtsf」を設置する方法で解説します。<？BR>
 <？/PP>
 「<？https/kanmap.tsv>」と「<？https/kanchar.tsv>」を「<？https/kanedit.vim>」と同じフォルダに入れて置きます。<？BR>
 Vimのメニューから「編集」→「起動時の設定」で「.vimrc」ファイルが開きます&#40;作成できます&#41;。<？BR>
 「command KEVtsf  :source &#40;KEVインストール先フォルダ&#41;/kanedit.vim」のような一行を加え保存&#40;Vimのメニューから「ファイル」→「保存」&#41;します。<？BR>
 Vim再起動すると「:KEVtsf」コマンドが入力できるようになるはずです([Esc]を何回か連打してから、[:]を押すとコマンドモードに移行)。<？BR>
-「:KEVtsf」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたびコマンド実行&#41;。<？BR>
+「:KEVtsf」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたび「:KEVtsf」コマンド実行&#41;。<？BR>
 [Space]キー2回でモード切替、[Shift]キー押しながら[Space]キー2回で半角スペース入力になります。<？BR>
 <？/PP>
 Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。<？BR><？/P>
@@ -3025,15 +3025,25 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 [<＃contents/KEV_usage-1>|
 <？P> Vimのマップ機能を用いて漢直を実装しています。マップ等の設定変更は[Space]キーから始まるコマンド入力を使います。<？BR>
 <？/P>
-<？DLDT>  [ぬ〜ろ]<？/DTDD>                   通常ひらがな鍵盤の文字入力、もしくは1文字検索。後述の鍵盤切替コマンドでひらがなカタカナの入れ替えも可能です。<？BR><？/DD/DL>
-<？DLDT>  [Shift]+[ヌ〜ロ]<？/DTDD>                   通常カタカナ鍵盤の文字入力、もしくは1文字検索。後述の鍵盤切替コマンドでひらがなカタカナの入れ替えも可能です。<？BR><？/DD/DL>
+<？DLDT>  [1(ぬ)〜&#92;(ろ)]<？/DTDD>                   通常ひらがな鍵盤の文字入力、もしくは1文字検索。後述の鍵盤切替コマンドでカタカナ入力も可能。<？BR><？/DD/DL>
 <？DLDT>  [Space],[Space]<？/DTDD>                   ノーマルモードと挿入モードを切り替えます。通常は[i]で挿入、&#91;Esc&#93;か「Ctrl+&#93;」でノーマルモード。<？BR><？/DD/DL>
-<？DLDT>  [Space]<？/DTDD>                   [Space]キー入力後の打鍵が遅れると普通に半角スペースが入力されます。<？BR><？/DD/DL>
+<？DLDT>  [Space]…<？/DTDD>                   [Space]キー入力後のコマンド入力が遅れると普通に半角スペースが入力されます。<？BR><？/DD/DL>
 <？DLDT>  [Shift]+[Space],[Shift]+[Space]<？/DTDD>                   [Shift]キー押しながら[Space]キー2回で半角スペースを入力します。
                             [Shift]キーを押さない[Space]を混ぜると全角スペースも入力できます。<？BR><？/DD/DL>
-<？DLDT>  [Space],[ぬ〜ろ]or[Shift]+[ヌ〜ロ]<？/DTDD>                   入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。同じ鍵盤を2回選択するとひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Enter]<？/DTDD>                   入力鍵盤ではなく。「鍵盤」と「辞書」の入れ替えです。辞書の変更が[Shift]キー使わずにできます。<？BR><？/DD/DL>
+<？DLDT>  [Space],[1(ぬ)〜&#92;(ろ)]<？/DTDD>                   入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。同じ鍵盤を2回選択するとひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
+<？DLDT>  [Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>    入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。[Shift]キーを使いたくない場合はひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Enter]<？/DTDD>                   入力鍵盤ではなく、「鍵盤」と「辞書」の入れ替えです。[Shift]キー使わずに辞書変更ができます。<？BR><？/DD/DL>
+<？DLDT>  「辞書」状態で,[1(ヌ)〜&#92;(ロ)]<？/DTDD>    「鍵盤」と「辞書」を入れ替え[Shift]キーを使いたくない場合はひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Tab]<？/DTDD>                   1文字検索モードです。打鍵するだけで検索できます。解除は再度[Space],[Tab]。<？BR><？/DD/DL>
+<？DLDT>  [Space],[BS]<？/DTDD>                   1文字検索モード、「辞書」メニュー、字引入力をまとめて解除します。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Del]<？/DTDD>                  「σ」鍵盤に切り替えます。1文字検索モード、辞書メニュー、字引入力、カタカナ鍵盤も解除されます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [H][J][K][L]<？/DTDD>                   カーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [O]<？/DTDD>                   ファイル履歴などからファイルを開きます。マウスが使えるかのようなメッセージがでますが、番号がズレる場合があり危険なので数値入力してください。<？BR><？/DD/DL>
 |<＃contents/KEV_usage-1>]
+
+[<＃contents/KEV_usage-2>|
+<？DLDT>  [Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>                   [Shift]キーを組み合わせる事で先述の鍵盤切替コマンドをショートカットしてカタカナ入力することも可能です。<？BR><？/DD/DL>
+|<＃contents/KEV_usage-2>]
 
 [<？section/KEV-0>|
 .+\.html?	<section>@E <h3 id="KEV-@c"><？title/KEV-@c></h3>@E<＃contents/KEV-@c>@E</section>@E
@@ -3055,6 +3065,27 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
  Ａ．Vin版では<？DICzip>は未サポートです。郵便番号は漢直の対象外だからです。<？BR>
 <？/DD/DL>
 |<＃contents/KEV_faq-0>]
+
+[<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>|
+.+\.html?	<section>@E <h3 id="KEV_interpret-@c"><？title/KEV_interpret-@c></h3>@E<＃contents/KEV_interpret-@c>@E</section>@E
+.*	@E<？title/KEV_interpret-@c>@E@E<＃contents/KEV_interpret-@c>@E
+|<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>]
+
+[<＃contents/KEV_interpret-0>|
+<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+|<＃contents/KEV_interpret-0>]
+[<＃contents/KEV_interpret-1>|
+<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+|<＃contents/KEV_interpret-1>]
+[<＃contents/KEV_interpret-2>|
+<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+|<＃contents/KEV_interpret-2>]
+[<＃contents/KEV_interpret-3>|
+<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+|<＃contents/KEV_interpret-3>]
+[<＃contents/KEV_interpret-4>|
+<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+|<＃contents/KEV_interpret-4>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -3617,22 +3648,25 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	③-0．「kanzip」のＦＡＱ
 |<？title/kanzip_faq-0>]
 
-[<？list/KEV_usage-0>*<？list/KEV_usage-1>|
+[<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>|
 .+\.html?	 <li><？index/KEV_usage-@c></li>@E
 .*	 <？index/KEV_usage-@c>@E
-|<？list/KEV_usage-0>*<？list/KEV_usage-1>]
-[<？index/KEV_usage-0>*<？index/KEV_usage-1>|
+|<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>]
+[<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>|
 ^KEV\.html?	<a href="#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？title/KEV_usage-@c></a>
 .+\.html?	<a href="KEV.html#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？titleimg/software-4><？title/KEV_usage-@c></a>
 ^KEV\.txt	<？title/KEV_usage-@c>
 .*	「KEV.txt」の<？title/KEV-@c>
-|<？index/KEV_usage-0>*<？index/KEV_usage-1>]
+|<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>]
 [<？title/KEV_usage-0>|
-.*	①-0．「KEV」のセットアップ(Vim)
+.*	①-0．「KEV(kanedit.vim)」をVimへセットアップ
 |<？title/KEV_usage-0>]
 [<？title/KEV_usage-1>|
-.*	①-1．「KEV」の使い方
+.*	①-1．「KEV」の[Shift]省略した使い方
 |<？title/KEV_usage-1>]
+[<？title/KEV_usage-2>|
+.*	①-2．「KEV」の[Shift]併用する使い方
+|<？title/KEV_usage-2>]
 
 [<？list/KEV-0>|
 .+\.html?	 <li><？index/KEV-@c></li>@E
@@ -3661,12 +3695,37 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 [<？title/KEV_faq-0>|
 .*	③-0．「KEV」のＦＡＱ
 |<？title/KEV_faq-0>]
-
 [<？https/kanedit.vim>|
 :<＄path/KEV-0>	LTsv/kanedit.vim
 .+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/KEV-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/KEV-@c>"><＄path/KEV-@c></a>
 .*	<＄path/LTsv_glyph-@c>
 |<？https/kanedit.vim>]
+
+[<？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4>|
+.+\.html?	 <li><？index/KEV_interpret-@c></li>@E
+.*	 <？index/KEV_interpret-@c>@E
+|<？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4>]
+[<？index/KEV_interpret-0>|
+^KEV\.html?	<a href="#KEV_interpret-@c" title="<？title/KEV_interpret-@c>"><？title/KEV_interpret-@c></a>
+.+\.html?	<a href="KEV.html#KEV_interpret-@c" title="<？title/KEV_interpret-@c>"><？titleimg/software-6><？title/KEV_interpret-@c></a>
+^KEV\.txt	<？title/KEV_interpret-@c>
+.*	「kanzip.txt」の<？title/KEV_interpret-@c>
+|<？index/KEV_interpret-0>]
+[<？title/KEV_interpret-0>|
+.*	④-0．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席
+|<？title/KEV_interpret-0>]
+[<？title/KEV_interpret-1>|
+.*	④-1．漢直(漢字直接入力)の解説・熟語隣接系相席
+|<？title/KEV_interpret-1>]
+[<？title/KEV_interpret-2>|
+.*	④-2．漢直(漢字直接入力)の解説・字引入力系の相席
+|<？title/KEV_interpret-2>]
+[<？title/KEV_interpret-3>|
+.*	④-3．漢直(漢字直接入力)の解説・都道府県国名などの字引
+|<？title/KEV_interpret-3>]
+[<？title/KEV_interpret-4>|
+.*	④-4．難読漢字など参考資料リンク集
+|<？title/KEV_interpret-4>]
 
 [<？list/address-0>|
 .+\.html?	 <li><？index/address-@c></li>@E
@@ -3683,7 +3742,7 @@ kanfont	④-0．<？title/address>
 kanmap	④-0．<？title/address>
 kanzip	④-0．<？title/address>
 LTsv_doc	④-0．<？title/address>
-KEV	④-0．<？title/address>
+KEV	⑤-0．<？title/address>
 |<？title/address-0>]
 [<？title/address>|
 .*	作者について、例えば連絡先。

@@ -1,5 +1,5 @@
 「kanzip」は「LTsv10kanedit(tsvtool10)」を用いた郵便番号ダウンローダーです。
-version(branch):20170114S031328	modify:20170114S135034
+version(branch):20170114S031328	modify:20170115U053921
 
 目次
 
@@ -60,8 +60,8 @@ version(branch):20170114S031328	modify:20170114S135034
  「docs/」フォルダ内のドキュメントを「docs/kanedit_etc.tsv」ベースで描き直し中。執筆途中状態の関数一覧タグ解説項目あり。
  「LTsv/LTsv_doc.py」でタグの順序が厳格という問題があるのでいっその事スクリプト言語ごと新規に作ろうと思います(TSFの開発)。
 
- LTsv版の「kanedit」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「LTsv/kanedit.vim」「KEV」も開発です。
- 「KEV」とLTsv版の「kanedit」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。
+ LTsv版の「kanedit.py」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「LTsv/kanedit.vim」も開発です。
+ 「LTsv/kanedit.vim」と「kanedit.py」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。
 
    プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
    https://github.com/ooblog/TSF1KEV
