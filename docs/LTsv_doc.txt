@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20170114S031328	modify:20170115U100940
+version(branch):20170114S031328	modify:20170115U110751
 
 目次
 
@@ -160,11 +160,11 @@ version(branch):20170114S031328	modify:20170115U100940
     「<h2>」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。
     「tagseparate」の詳細は「②-2．LTsv_docドキュメントの書き方」を参考。
     カウンター「@c」の詳細は「「LTsv10.txt」の④-1．日時フォーマットの概要」を参考。
-  [<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>|
+  [<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>*<？LTsv_MD_IMG:KEV>|
     「<img>」タグの記述。markdownだと「![alt](src "title")」。画像を表示するので「raw」系リンク。
-  [<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>|
+  [<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>*<？https/KEV>|
     「<a>」タグの記述。markdownだと「[text](href "title")」。「github.com」リンクと「github.io」リンクの両方を用意。
-  [<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
+  [<？https/kanchar>*<？https/kanedit.vim>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
     こちらも「<a>」タグの記述。ドキュメント以外の「github.com(「blob」系)」リンク。
   [<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
     「github.com」のリンクで「raw」系と「blob」系のURL差分。
@@ -174,7 +174,7 @@ version(branch):20170114S031328	modify:20170115U100940
     リンクテキスト「「LTsv10kanedit(tsvtool10)」は「L&#58;Tsv」の読み書きを中心としたモジュール群です。」。
   [<？ooblog:LTsv10repository_url>|
     リンクURL「」。
-  [<？https/japanpost>*<？https/fontforge>|
+  [<？https/japanpost>*<？https/fontforge>*<？https/LTsv10kanedit>*<？https/TSF1KEV>|
     「L&#58;Tsv」以外のサイトへのリンク枠。
   [<？P>|
     「<p>」タグの記述。

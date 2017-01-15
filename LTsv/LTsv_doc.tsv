@@ -30,7 +30,7 @@ LTsvver	<＠L:TsvLTsvver>
 [<＠LTsv_doc_test_main>|
 <？LTsv_MD_header><？LTsv_MD_H1:LTsv10kanedit>
 
-<？P>html版ドキュメント整備中。「<？https/htmldoc>」<？/P>
+<？P>html版ドキュメント整備中。「<？https/LTsv10kanedit>」<？/P>
 
 
 <？LTsv_MD_H2:kanedit>
@@ -77,7 +77,7 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 
 <？LTsv_MD_H2:KEV>
 
-<？P>「<？https/KEV>」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。<？BR>
+<？P><？LTsv_MD_IMG:KEV><？BR>
 Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。<？BR>
 ひらがなカタカナの操作は同じ鍵盤を連続選択する事でシフト入力だったカタカナを直接入力に交換。再度選択でひらがな帰ってきます。<？BR>
 挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」や「Ctrl+&#91;」より操作が簡単。<？BR>
@@ -108,6 +108,8 @@ Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使え�
 <？/CODE><？P>
 Vimの件とは別に「<？https/TSF1KEV>」という新データフォーマットというか新言語開発の予定があります。<？BR>
 既存の「L&#58;Tsv」と互換性がないので注意。移行ツールは準備する予定。<？BR>
+<？/PP>
+「KEV」の詳細は「<？https/KEV>」を参考。<？BR>
 <？/P>
 
 <？LTsv_MD_H2:environment>
@@ -163,7 +165,7 @@ License: MIT<？BR>
 .+\.md	## <＄LTsv_MD_H2:@c>
 |<？LTsv_MD_H2:kanedit>*<？LTsv_MD_H2:kanfont>*<？LTsv_MD_H2:kanzip>*<？LTsv_MD_H2:kanmap>*<？LTsv_MD_H2:LTsv_doc>*<？LTsv_MD_H2:KEV>*<？LTsv_MD_H2:environment>*<？LTsv_MD_H2:LICENSE>]
 
-[<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>|
+[<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>*<？LTsv_MD_IMG:KEV>|
 :<＄alt/htmldoc-0>	kanedit_512x384
 :<＄title/htmldoc-0>	kanedit
 :<＄img/htmldoc-0>	docs/kanedit_512x384.png
@@ -179,11 +181,14 @@ License: MIT<？BR>
 :<＄alt/htmldoc-4>	LTsv_doc_512x384
 :<＄title/htmldoc-4>	LTsv_doc
 :<＄img/htmldoc-4>	docs/LTsv_doc_512x384.png
+:<＄alt/htmldoc-5>	KEV_512x384
+:<＄title/htmldoc-5>	KEV
+:<＄img/htmldoc-5>	docs/KEV_512x384.png
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄img/htmldoc-@c>"><img src="<？ooblog:LTsv10repository_raw><＄img/htmldoc-@c>" width="512" height="384" alt="<＄alt/htmldoc-@c>" title="<＄title/htmldoc-@c>"></a>
 .+\.md	![<＄alt/htmldoc-@c>](<＄img/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>]
+|<？LTsv_MD_IMG:kanedit>*<？LTsv_MD_IMG:kanfont>*<？LTsv_MD_IMG:kanzip>*<？LTsv_MD_IMG:kanmap>*<？LTsv_MD_IMG:LTsv_doc>*<？LTsv_MD_IMG:KEV>]
 
-[<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>|
+[<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>*<？https/KEV>|
 :<＄title/htmldoc-0>	「kanedit」は「<＄title/LTsv10>」を用いた漢直テキストエディタの予定です。
 :<＄txt/htmldoc-0>	docs/kanedit.txt
 :<＄html/htmldoc-0>	kanedit.html
@@ -202,13 +207,16 @@ License: MIT<？BR>
 :<＄title/htmldoc-5>	「<？LTsv>」は「L:Tsv」の読み書きを中心としたモジュール群です。
 :<＄txt/htmldoc-5>	docs/LTsv10.txt
 :<＄html/htmldoc-5>	index.html
+:<＄title/htmldoc-6>	「KEV」はVimスクリプトでできてる漢字直接入力です。
+:<＄txt/htmldoc-6>	docs/KEV.txt
+:<＄html/htmldoc-6>	KEV.html
 :<＄title/LTsv10>	LTsv10kanedit(tsvtool10)
 :<＄href/LTsv10>	https://ooblog.github.io/LTsv10kanedit/
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>&#40;<a href="<＄href/LTsv10><＄html/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄html/htmldoc-@c></a>&#41;
 .+\.md	[<＄txt/htmldoc-@c>](<？ooblog:LTsv10repository_blob><＄txt/htmldoc-@c> "<＄title/htmldoc-@c>")&#40;[<＄html/htmldoc-@c>](<＄href/LTsv10><＄html/htmldoc-@c> "<＄title/htmldoc-@c>")&#41;
-|<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>]
+|<？https/kanedit>*<？https/kanfont>*<？https/kanzip>*<？https/kanmap>*<？https/LTsv_doc>*<？https/LTsv10>*<？https/KEV>]
 
-[<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
+[<？https/kanchar>*<？https/kanedit.vim>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>|
 :<＄href/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄title/htmldoc-0>	<＄txt/htmldoc-0>
 :<＄txt/htmldoc-0>	LTsv/kanchar.tsv
@@ -226,7 +234,7 @@ License: MIT<？BR>
 :<＄txt/htmldoc-4>	<？ooblog:LTsv10repository_url>blob/master/LICENSE
 .+\.html?	<a href="<？ooblog:LTsv10repository_blob><＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/kanchar>*<？https/KEV>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
+|<？https/kanchar>*<？https/kanedit.vim>*<？https/LTsv_doc_py>*<？https/kanedit_etc>*<？https/LTsv10LICENSE>]
 
 [<？ooblog:LTsv10repository_raw>*<？ooblog:LTsv10repository_blob>|
 :<＄repository-0>	raw/master/
@@ -245,19 +253,22 @@ License: MIT<？BR>
 .*	https://github.com/ooblog/LTsv10kanedit/
 |<？ooblog:LTsv10repository_url>]
 
-[<？https/japanpost>*<？https/fontforge>*<？https/TSF1KEV>|
+[<？https/japanpost>*<？https/fontforge>*<？https/LTsv10kanedit>*<？https/TSF1KEV>|
 :<＄href/htmldoc-0>	http://www.post.japanpost.jp/zipcode/dl/readme.html
 :<＄title/htmldoc-0>	郵便番号データの説明 - 日本郵便
 :<＄txt/htmldoc-0>	〒郵便番号
 :<＄href/htmldoc-1>	http://fontforge.github.io/ja/
 :<＄title/htmldoc-1>	<＄txt/htmldoc-1>
 :<＄txt/htmldoc-1>	FontForge
-:<＄href/htmldoc-2>	https://github.com/ooblog/TSF1KEV
-:<＄title/htmldoc-2>	ooblog/TSF1KEV: プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
-:<＄txt/htmldoc-2>	TSF1KEV
+:<＄href/htmldoc-2>	https://ooblog.github.io/LTsv10kanedit/
+:<＄title/htmldoc-2>	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
+:<＄txt/htmldoc-2>	https://ooblog.github.io/LTsv10kanedit/
+:<＄href/htmldoc-3>	https://github.com/ooblog/TSF1KEV
+:<＄title/htmldoc-3>	ooblog/TSF1KEV: プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+:<＄txt/htmldoc-3>	TSF1KEV
 .+\.html?	<a href="<＄href/htmldoc-@c>" title="<＄title/htmldoc-@c>"><＄txt/htmldoc-@c></a>
 .+\.md	[<＄txt/htmldoc-@c>](<＄href/htmldoc-@c> "<＄title/htmldoc-@c>")
-|<？https/japanpost>*<？https/fontforge>*<？https/TSF1KEV>]
+|<？https/japanpost>*<？https/fontforge>*<？https/LTsv10kanedit>*<？https/TSF1KEV>]
 
 [<？P>|
 .+\.html?	<p>@E

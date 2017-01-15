@@ -1,6 +1,6 @@
 # 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装の予定です。
 
-html版ドキュメント整備中。「[https://github.com/ooblog/LTsv10kanedit/](https://github.com/ooblog/LTsv10kanedit/ "「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。")」
+html版ドキュメント整備中。「[https://ooblog.github.io/LTsv10kanedit/](https://ooblog.github.io/LTsv10kanedit/ "「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。")」
 
 
 ## 「kanedit」は「LTsv10kanedit&#40;tsvtool10&#41;」を用いた漢直テキストエディタの予定です。
@@ -47,7 +47,7 @@ NFER,XFERキーによる鍵盤切替＆KANAキーによる字引入力で漢字�
 
 ## 次期バージョン「TSF1KEV」の叩き台として「kanedit.vim」試作中。
 
-「[LTsv/kanedit.vim](LTsv/kanedit.vim "LTsv/kanedit.vim")」のドキュメントはスクリプト開発中(Vimでどこまで再現可能か調査中)につき未整備。  
+![KEV_512x384](docs/KEV_512x384.png "KEV")  
 Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使えないので「Space」を用いて鍵盤変更&#40;imap&#41;します。  
 ひらがなカタカナの操作は同じ鍵盤を連続選択する事でシフト入力だったカタカナを直接入力に交換。再度選択でひらがな帰ってきます。  
 挿入モードとノーマルモードの往復も「Space」二回連続で可能なので「Esc」や「Ctrl+&#91;」より操作が簡単。  
@@ -76,8 +76,10 @@ Vimでは「NEFR&#40;無変換&#41;」「XFER&#40;変換&#41;」キーを使え�
     i  "           * <C-V>U000030d5
     i  #           * <C-V>U000030a2
 
-Vimの件とは別に「[TSF1KEV](https://github.com/ooblog/TSF1KEV "プログラミング言語「TSF_Tab-Separated-Forth」開発予定。")」という新データフォーマットというか新言語開発の予定があります。  
+Vimの件とは別に「[TSF1KEV](https://github.com/ooblog/TSF1KEV "ooblog/TSF1KEV: プログラミング言語「TSF_Tab-Separated-Forth」開発予定。")」という新データフォーマットというか新言語開発の予定があります。  
 既存の「L&#58;Tsv」と互換性がないので注意。移行ツールは準備する予定。  
+
+「KEV」の詳細は「[docs/KEV.txt](https://github.com/ooblog/LTsv10kanedit/blob/master/docs/KEV.txt "「KEV」はVimスクリプトでできてる漢字直接入力です。")&#40;[KEV.html](https://ooblog.github.io/LTsv10kanedit/KEV.html "「KEV」はVimスクリプトでできてる漢字直接入力です。")&#41;」を参考。  
 
 
 ## 動作環境。

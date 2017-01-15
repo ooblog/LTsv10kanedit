@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170115U101018
+modify	20170115U110820
 |L:Tsv]
 
 [LTsv_doc|
@@ -1578,11 +1578,11 @@ LTsvDOCopen_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し�
 <？/DTDD>    「<？&lt;>h2<？&gt;>」タグの記述。markdownだと行先頭に「#」。「*」は「tagseparate」による繰り返し記述。<？BR>
     「tagseparate」の詳細は「<？index/LTsv_doc-2>」を参考。<？BR>
     カウンター「@c」の詳細は「<？index/LTsv_time-1>」を参考。<？BR><？/DD/DL>
-<？DLDT>  [<？&lt;>？LTsv_MD_IMG:kanedit<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanfont<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanzip<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanmap<？&gt;>*<？&lt;>？LTsv_MD_IMG:LTsv_doc<？&gt;><？&#x7C;>
+<？DLDT>  [<？&lt;>？LTsv_MD_IMG:kanedit<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanfont<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanzip<？&gt;>*<？&lt;>？LTsv_MD_IMG:kanmap<？&gt;>*<？&lt;>？LTsv_MD_IMG:LTsv_doc<？&gt;>*<？&lt;>？LTsv_MD_IMG:KEV<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>img<？&gt;>」タグの記述。markdownだと「![alt](src "title")」。画像を表示するので「raw」系リンク。<？/DD/DL>
-<？DLDT>  [<？&lt;>？https/kanedit<？&gt;>*<？&lt;>？https/kanfont<？&gt;>*<？&lt;>？https/kanzip<？&gt;>*<？&lt;>？https/kanmap<？&gt;>*<？&lt;>？https/LTsv_doc<？&gt;>*<？&lt;>？https/LTsv10<？&gt;><？&#x7C;>
+<？DLDT>  [<？&lt;>？https/kanedit<？&gt;>*<？&lt;>？https/kanfont<？&gt;>*<？&lt;>？https/kanzip<？&gt;>*<？&lt;>？https/kanmap<？&gt;>*<？&lt;>？https/LTsv_doc<？&gt;>*<？&lt;>？https/LTsv10<？&gt;>*<？&lt;>？https/KEV<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>a<？&gt;>」タグの記述。markdownだと「[text](href "title")」。「github.com」リンクと「github.io」リンクの両方を用意。<？/DD/DL>
-<？DLDT>  [<？&lt;>？https/kanchar<？&gt;>*<？&lt;>？https/KEV<？&gt;>*<？&lt;>？https/LTsv_doc_py<？&gt;>*<？&lt;>？https/kanedit_etc<？&gt;>*<？&lt;>？https/LTsv10LICENSE<？&gt;><？&#x7C;>
+<？DLDT>  [<？&lt;>？https/kanchar<？&gt;>*<？&lt;>？https/kanedit.vim<？&gt;>*<？&lt;>？https/LTsv_doc_py<？&gt;>*<？&lt;>？https/kanedit_etc<？&gt;>*<？&lt;>？https/LTsv10LICENSE<？&gt;><？&#x7C;>
 <？/DTDD>    こちらも「<？&lt;>a<？&gt;>」タグの記述。ドキュメント以外の「github.com(「blob」系)」リンク。<？/DD/DL>
 <？DLDT>  [<？&lt;>？ooblog:LTsv10repository_raw<？&gt;>*<？&lt;>？ooblog:LTsv10repository_blob<？&gt;><？&#x7C;>
 <？/DTDD>    「github.com」のリンクで「raw」系と「blob」系のURL差分。<？/DD/DL>
@@ -1592,7 +1592,7 @@ LTsvDOCopen_shell(LTsvDOClaunch_tsvcount)	ランチャーのボタンを押し�
 <？/DTDD>    リンクテキスト「「LTsv10kanedit(tsvtool10)」は「L&#58;Tsv」の読み書きを中心としたモジュール群です。」。<？/DD/DL>
 <？DLDT>  [<？&lt;>？ooblog:LTsv10repository_url<？&gt;><？&#x7C;>
 <？/DTDD>    リンクURL「<？https/htmldoc>」。<？/DD/DL>
-<？DLDT>  [<？&lt;>？https/japanpost>*<？https/fontforge<？&gt;><？&#x7C;>
+<？DLDT>  [<？&lt;>？https/japanpost<？&gt;>*<？&lt;>？https/fontforge<？&gt;>*<？&lt;>？https/LTsv10kanedit<？&gt;>*<？&lt;>？https/TSF1KEV<？&gt;><？&#x7C;>
 <？/DTDD>    「L&#58;Tsv」以外のサイトへのリンク枠。<？/DD/DL>
 <？DLDT>  [<？&lt;>？P<？&gt;><？&#x7C;>
 <？/DTDD>    「<？&lt;>p<？&gt;>」タグの記述。<？/DD/DL>
@@ -3720,12 +3720,12 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .+\.html?	 <li><？index/KEV_interpret-@c></li>@E
 .*	 <？index/KEV_interpret-@c>@E
 |<？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4>]
-[<？index/KEV_interpret-0>|
+[<？index/KEV_interpret-0>*<？index/KEV_interpret-1>*<？index/KEV_interpret-2>*<？index/KEV_interpret-3>*<？index/KEV_interpret-4>|
 ^KEV\.html?	<a href="#KEV_interpret-@c" title="<？title/KEV_interpret-@c>"><？title/KEV_interpret-@c></a>
 .+\.html?	<a href="KEV.html#KEV_interpret-@c" title="<？title/KEV_interpret-@c>"><？titleimg/software-6><？title/KEV_interpret-@c></a>
 ^KEV\.txt	<？title/KEV_interpret-@c>
 .*	「kanzip.txt」の<？title/KEV_interpret-@c>
-|<？index/KEV_interpret-0>]
+|<？index/KEV_interpret-0>*<？index/KEV_interpret-1>*<？index/KEV_interpret-2>*<？index/KEV_interpret-3>*<？index/KEV_interpret-4>]
 [<？title/KEV_interpret-0>|
 .*	④-0．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席
 |<？title/KEV_interpret-0>]
