@@ -6,7 +6,7 @@ let s:kev_scriptdir = expand('<sfile>:p:h')
 function! KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
-    let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","簡","繁","越","地","顔","鍵","代","逆","非","熙","照","難","活","漫","筆","幅"]
+    let s:kankbd_dictype = ["英","名","音","訓","送","異","俗","簡","繁","越","地","顔","鍵","代","逆","非","照","熙","難","活","漫","筆","幅"]
     let s:kankbd_irohatype = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ","た","て","い","す","か","ん","な","に","ら","せ",'゛','゜',"ち","と","し","は","き","く","ま","の","り","れ","け","む","つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_irohatype += ["α","β","γ","δ","ε","ζ","η","θ","ι","κ","λ","μ","ν","ξ","ο","π","ρ","σ","τ","υ","φ","χ","ψ","ω","○","△","□"]
     let s:kankbd_irohatypeN = ["1(ぬ)","2(ふ)","3(あ)","4(う)","5(え)","6(お)","7(や)","8(ゆ)","9(よ)","0(わ)","-(ほ)","^(へ)","q(た)","s(て)","e(い)","r(す)","t(か)","y(ん)","u(な)","i(に)","o(ら)","p(せ)","@(＠)","[(ぷ)","a(ち)","s(と)","d(し)","f(は)","g(き)","h(く)","j(ま)","k(の)","l(り)",";(れ)",":(け)","](む)","z(つ)","x(さ)","c(そ)","v(ひ)","b(こ)","n(み)","m(も)",",(ね)","\\.(る)","/(め)","\\\\(ろ)"]
@@ -71,7 +71,6 @@ function! KEVsetup()
         let s:kankbd_kbddic = "" 
         let s:kankbd_choiceAF = "" | let s:kankbd_choiceBF = s:kankbd_choiceAF
         let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
-        let s:kankbd_inputimap = s:kankbd_inputkanaN + s:kankbd_inputkanaX
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
     :endif
@@ -92,32 +91,25 @@ function! KEVsetup()
         execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
-    execute "noremap <Plug>(KEVfiler) :call KEVfiler()<Enter>"
     execute "noremap <Plug>(KEVimap_alpha) :call KEVimap('alpha')<Enter>"
-    map <silent> <Space><Enter> <Plug>(KEVimap_alpha)i
-    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_alpha)
-    execute "noremap <Plug>(KEVimap_reset) :call KEVimap('reset')<Enter>"
-    map <silent> <Space><Del> <Plug>(KEVimap_reset)i
-    imap <silent> <Space><Del> <C-o><Plug>(KEVimap_reset)
+    map <silent> <Space><BS> <Plug>(KEVimap_alpha)i
+    imap <silent> <Space><BS> <C-o><Plug>(KEVimap_alpha)
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
-    let s:kankbd_inputsigma = {'':"<esc><C-Q>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
-\                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<C-o>/あ<Enter>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Del>",'':"<Enter>",
+    execute "noremap <Plug>(KEVfiler) :call KEVfiler()<Enter>"
+    let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
+\                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Del>",'':"<Enter>",
 \                              '':"<C-o>u",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
-    map <silent> <Space><BS> <Plug>(KEVimap_HJKL)i
-    imap <silent> <Space><BS> <C-o><Plug>(KEVimap_HJKL)
+    map <silent> <Space><Del> <Plug>(KEVimap_HJKL)i
+    imap <silent> <Space><Del> <C-o><Plug>(KEVimap_HJKL)
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
     execute "noremap <Plug>(KEVimap_find) :call KEVimap('find')<Enter>"
+    map <silent> <Space><Enter> <Plug>(KEVimap_find)i
+    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_find)
     execute "noremap <Plug>(KEVimap_Find) :call KEVimap('Find')<Enter>"
-    map <silent> <Space><Tab> <Plug>(KEVimap_find)i
-    map <silent> <Space><S-Tab> <Plug>(KEVimap_Find)i
-    map <silent> <S-Space><Tab> <Plug>(KEVimap_find)i
-    map <silent> <S-Space><S-Tab> <Plug>(KEVimap_Find)i
-    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_find)
-    imap <silent> <Space><S-Tab> <C-o><Plug>(KEVimap_Find)
-    imap <silent> <S-Space><Tab> <C-o><Plug>(KEVimap_find)
-    imap <silent> <S-Space><S-Tab> <C-o><Plug>(KEVimap_Find)
+    map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
+    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
     call KEVimap("ぬ")
 endfunction
 
@@ -135,15 +127,8 @@ endfunction
 
 "「[Space][ぬ〜ろ]」等のコマンド入力で鍵盤(imap等)変更。「[Space][Tab]」で一文字検索モード。
 function! KEVimap(kankbd_kbdchar)
-    :if exists("s:kankbd_irohamenuname")
-        execute "iunmenu <silent> " s:kankbd_irohamenuname
-    :endif
-    echo 
-    :if a:kankbd_kbdchar == 'reset'
+    :if a:kankbd_kbdchar == 'HJKL'
         call s:KEVdicmenu("鍵盤")
-        let s:kankbd_findAF = 0
-        let s:kankbd_kbddic = ""
-    :elseif a:kankbd_kbdchar == 'HJKL'
         let s:kankbd_findAF = 0
         let s:kankbd_kbddic = ""
         let s:kankbd_choiceAF = s:kankbd_HJKL
@@ -153,7 +138,6 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_kbdkanaNX = 1
         :endif
         let s:kankbd_kbdkana = s:kankbd_choiceAF
-        let s:kankbd_findAF = 0
     :elseif a:kankbd_kbdchar == 'alpha'
         call s:KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
         let s:kankbd_choiceAF = s:kankbd_kbddic
@@ -180,11 +164,13 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_kbdkana = s:kankbd_choiceAF
         :endif
     :endif
+    :if exists("s:kankbd_irohamenuname")
+        execute "iunmenu <silent> " s:kankbd_irohamenuname
+    :endif
+    let s:kankbd_irohamenuname = (s:kankbd_findAF == 0 ? '' : (s:kankbd_findAF > 0 ? '/' : '?'))
+    let s:kankbd_irohamenuname = s:kankbd_irohamenuname . "[" . (s:kankbd_kbdkanaNX ? s:kankbd_irohatypeN[index(s:kankbd_irohatype,s:kankbd_kbdkana)] : s:kankbd_irohatypeX[index(s:kankbd_irohatype,s:kankbd_kbdkana)])
     let s:kankbd_inputimap = s:kankbd_kanmapNX[s:kankbd_kbdkana]
-    :if s:kankbd_kbdkanaNX
-        let s:kankbd_irohamenuname = "[" . s:kankbd_irohatypeN[index(s:kankbd_irohatype,s:kankbd_kbdkana)]
-    :else
-        let s:kankbd_irohamenuname = "[" . s:kankbd_irohatypeX[index(s:kankbd_irohatype,s:kankbd_kbdkana)]
+    :if !s:kankbd_kbdkanaNX
         let s:kankbd_inputimap = s:kankbd_inputimap[47:-1] + s:kankbd_inputimap[0:48] 
     :endif
     :if count(s:kankbd_dictype,s:kankbd_kbddic)
@@ -206,9 +192,6 @@ function! KEVimap(kankbd_kbdchar)
         :endfor
     :endif
     let s:kankbd_irohamenuname = s:kankbd_irohamenuname . "]"
-    :if s:kankbd_findAF != 0
-        let s:kankbd_irohamenuname = s:kankbd_irohamenuname . (s:kankbd_findAF > 0 ? '+' : '-')
-    :endif
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         :if has_key(s:kankbd_inputsigma,s:kankbd_inputimap[s:inputkey])
             let s:kankbd_unicode = s:kankbd_inputimap[s:inputkey]
@@ -308,20 +291,14 @@ function! KEVexit()
             execute "unmap <silent> <Space>" . s:kankbd_inputhyphen
             execute "unmap <silent> <S-Space>" . s:kankbd_inputhyphen
         :endfor
-        unmap <silent> <Space><Enter>
-        iunmap <silent> <Space><Enter>
         unmap <silent> <Space><BS>
         iunmap <silent> <Space><BS>
         unmap <silent> <Space><Del>
         iunmap <silent> <Space><Del>
+        unmap <silent> <Space><Enter>
+        iunmap <silent> <Space><Enter>
         unmap <silent> <Space><Tab>
-        unmap <silent> <Space><S-Tab>
-        unmap <silent> <S-Space><Tab>
-        unmap <silent> <S-Space><S-Tab>
         iunmap <silent> <Space><Tab>
-        iunmap <silent> <Space><S-Tab>
-        iunmap <silent> <S-Space><Tab>
-        iunmap <silent> <S-Space><S-Tab>
         let s:kankbd_kbdkanaNX = 1
         :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
             execute "iunmap <silent> " . s:sigmakey
