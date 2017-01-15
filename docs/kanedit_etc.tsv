@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170115U110820
+modify	20170115U113733
 |L:Tsv]
 
 [LTsv_doc|
@@ -1526,6 +1526,7 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 [LTsv_doc.py|
 LTsvDOClaunch_kernel_regularexpression(LTsvDOC_outname,LTsvDOC_tagnames)	置換処理のコア部分。ファイル名分岐やタグセパレート繰り返しのカウンター処理など。
 LTsvDOCdef_python(LTsvDOClaunch_deffile)	Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。
+LTsvDOCdef_vim(LTsvDOClaunch_deffile)	Vimスクリプトのソースから「function」で始まる行を抜き出して関数一覧を取得。
 LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)	「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
 LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname)	Pythonの関数一覧などに装飾処理。
 LTsvDOClaunch_kernel_listdir(LTsvDOC_outname,LTsvDOC_tagname)	未実装。フォルダ指定の場合でファイル一覧を作成する予定。
@@ -2998,14 +2999,15 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 |<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>]
 
 [<＃contents/KEV_usage-0>|
-<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEVtsf」を設置する方法で解説します。<？BR>
+<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEV」を設置する方法で解説します。<？BR>
 <？/PP>
 「<？https/kanmap.tsv>」と「<？https/kanchar.tsv>」を「<？https/kanedit.vim>」と同じフォルダに入れて置きます。<？BR>
 Vimのメニューから「編集」→「起動時の設定」で「.vimrc」ファイルが開きます&#40;作成できます&#41;。<？BR>
 「command KEVtsf  :source &#40;KEVインストール先フォルダ&#41;/kanedit.vim」のような一行を加え保存&#40;Vimのメニューから「ファイル」→「保存」&#41;します。<？BR>
-Vim再起動すると「:KEVtsf」コマンドが入力できるようになるはずです([Esc]を何回か連打してから、[:]を押すとコマンドモードに移行)。<？BR>
-「:KEVtsf」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたび「:KEVtsf」コマンド実行&#41;。<？BR>
+Vim再起動すると「:KEV」コマンドが入力できるようになるはずです([Esc]を何回か連打してから、[:]を押すとコマンドモードに移行)。<？BR>
+「:KEV」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたび「:KEV」コマンド実行&#41;。<？BR>
 [Space]キー2回でモード切替、[Shift]キー押しながら[Space]キー2回で半角スペース入力になります。<？BR>
+漢直を停止するには「:call KEVexit()」、再度有効にするには「:call KEVexit()」。<？BR>
 <？/PP>
 Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。<？BR><？/P>
 
@@ -3063,9 +3065,16 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 |<？section/KEV-0>]
 
 [<＃contents/KEV-0>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
+<！kanedit.vim>
 |<＃contents/KEV-0>]
-<！KEV.py>
+[kanedit.vim|
+KEVsetup()	「KanEditVim」の初期化初期設定(imap等含む)。
+s:KEVfilereadable(TSFfilepath,TSVfilepath)	辞書等の存在チェック。漢字配列「<？https/kanmap.tsv>」と単漢字辞書「<？https/kanchar.tsv>」は「<？https/kanedit.vim>」と同じフォルダに。	LTsv版と互換性持たせるため「,tsf」と「,tsv」の両ファイルを調べる。
+KEVimap(kankbd_kbdchar)	「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
+s:KEVdicmenu(menuname)	鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
+KEVfiler()	「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラ。
+KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニューの撤去処理。
+|kanedit.vim]
 
 [<？section/KEV_faq-0>|
 .+\.html?	<section>@E <h3 id="KEV_faq-@c"><？title/KEV_faq-@c></h3>@E<＃contents/KEV_faq-@c>@E</section>@E

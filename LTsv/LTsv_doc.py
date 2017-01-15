@@ -70,6 +70,14 @@ def LTsvDOCdef_python(LTsvDOClaunch_deffile):
     LTsvDOClaunch_deffile=re.sub(re.compile("[:].*$",re.MULTILINE),"",LTsvDOClaunch_deffile)
     return LTsvDOClaunch_deffile
 
+def LTsvDOCdef_vim(LTsvDOClaunch_deffile):
+    LTsvDOClaunch_deffile=re.sub(re.compile(", +\\\\\n +",re.MULTILINE),", ",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("^(?!function).+$",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("^\n",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("^function.+ ",re.MULTILINE),"",LTsvDOClaunch_deffile)
+    LTsvDOClaunch_deffile=re.sub(re.compile("[)].*$",re.MULTILINE),")",LTsvDOClaunch_deffile)
+    return LTsvDOClaunch_deffile
+
 def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
     LTsvDOClaunch_defnewfile=""
     LTsvDOClaunch_tsvpages=LTsv_readlinepages(LTsvDOClaunch_deffile)
@@ -85,7 +93,7 @@ def LTsvDOCdef_LTSV(LTsvDOClaunch_deffile):
         LTsvDOClaunch_defnewfile+="\n".join(LTsvDOClaunch_pagefirstslist)+"\n"
     return LTsvDOClaunch_defnewfile
 
-LTsvDOCdefextlist={".py":LTsvDOCdef_python,".tsv":LTsvDOCdef_LTSV,".ltsv":LTsvDOCdef_LTSV}
+LTsvDOCdefextlist={".py":LTsvDOCdef_python,".vim":LTsvDOCdef_vim,".tsv":LTsvDOCdef_LTSV,".ltsv":LTsvDOCdef_LTSV}
 LTsvDOCbase64extlist=[".png",".gif",".jpg",".jpeg"]
 def LTsvDOClaunch_kernel_listfile(LTsvDOC_outname,LTsvDOC_tagname):
     global LTsvDOClaunch_ltsv,LTsvDOClaunch_tsvname,LTsvDOClaunch_main,LTsvDOClaunch_maintag

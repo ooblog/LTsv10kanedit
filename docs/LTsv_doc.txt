@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20170114S031328	modify:20170115U110751
+version(branch):20170114S031328	modify:20170115U115330
 
 目次
 
@@ -93,6 +93,9 @@ version(branch):20170114S031328	modify:20170115U110751
 
  【LTsvDOCdef_python(LTsvDOClaunch_deffile)】
   Pythonのソースから「def 」で始まる行を抜き出して関数一覧を取得。
+
+ 【LTsvDOCdef_vim(LTsvDOClaunch_deffile)】
+  Vimスクリプトのソースから「function」で始まる行を抜き出して関数一覧を取得。
 
  【LTsvDOCdef_LTSV(LTsvDOClaunch_deffile)】
   「L:Tsv」のソースからページ名一覧とfirst一覧を抜き出す。firstにラベル「:」が含まれてるページはLTSVとみなしてページ名のみ取得。
