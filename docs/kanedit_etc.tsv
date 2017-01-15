@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170115U113733
+modify	20170116M072702
 |L:Tsv]
 
 [LTsv_doc|
@@ -259,24 +259,24 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 [<＃kanedit_menus>|
 404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
 index|LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>*<？list/LTsv_glyph-5><？list/LTsv10_faq-0><？list/address-0>
-kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0>*<？list/kanedit_faq-1>*<？list/kanedit_faq-2>*<？list/kanedit_faq-3>*<？list/kanedit_faq-4>*<？list/kanedit_faq-5><？list/address-0>
+kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0><？list/address-0>
 kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2><？list/kanfont_faq-0><？list/address-0>
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
 kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip-0><？list/kanzip_faq-0><？list/address-0>
 LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
-KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2><？list/KEV-0><？list/KEV_faq-0><？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4><？list/address-0>
+KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3><？list/KEV-0><？list/KEV_faq-0><？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
 
 [<＃kanedit_pages>|
 404	
 index|LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>*<？section/LTsv_glyph-5><？section/LTsv10_faq-0><？section/address-0>
-kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5><？section/address-0>
+kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0><？section/address-0>
 kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2><？section/kanfont_faq-0><？section/address-0>
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
 kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip-0><？section/kanzip_faq-0><？section/address-0>
 LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
-KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2><？section/KEV-0><？section/KEV_faq-0><？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4><？section/address-0>
+KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3><？section/KEV-0><？section/KEV_faq-0><？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
 
@@ -1404,45 +1404,39 @@ aVTwGUh0vzjR/aLpfuXWlMW9NJ79qfvj8Qdebx+1xSfmjQAAAABJRU5ErkJggg==
 <？P> 漢直で使う<？DICchar>の項目について説明。「[Q(た)]」などはキーボード操作で[NFER]+[XFER]or[XFER]+[NFER]の後に押す鍵盤。<？BR>
  <？VRkeyboard/howto><？BR>
 <？/P>
-<？DLDT>  音:[2(ふ)]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
+<？DLDT>  [1(ぬ):名]<？/DTDD>  文字の名称(日本語)を字引。<？BR>
+              「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。<？BR><？/DD/DL>
+<？DLDT>  [2(ふ):音]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
               「音醤⇔ショウ/ジャン」「音銅⇔コッパー」。<？BR><？/DD/DL>
-<？DLDT>  訓:[3(あ)]<？/DTDD>  漢字の訓読みを字引。原子記号だと音訓両方を字引。<？BR>
+<？DLDT>  [3(あ):訓]<？/DTDD>  漢字の訓読みを字引。原子記号だと音訓両方を字引。<？BR>
               「訓醤⇔ひしお」「訓銅⇔ドウ/あかがね」。<？BR><？/DD/DL>
-<？DLDT>  送:[4(う)]<？/DTDD>  漢字の送り仮名を字引。<？BR>
+<？DLDT>  [4(う):送]<？/DTDD>  漢字の送り仮名を字引。<？BR>
               「送醤⇔醤油/豆板醤/醤酢」「送止⇔制止/差し止める/急に止まる/行き止まり/滑り止め/思い止まる/鳴り止む」。<？BR><？/DD/DL>
-<？DLDT>  異:[5(え)]<？/DTDD>  異体字や俗字や略字や通用や大字などを表示。<？BR>
+<？DLDT>  [5(え):異]<？/DTDD>  異体字や俗字や略字や通用や大字などを表示。<？BR>
               「異壷⇔壺」「異青⇔靑」「異鼠⇔鼡」「異觜⇔嘴」「異七⇔漆」「異百⇔陌」「異晦⇔卅」。<？BR><？/DD/DL>
-<？DLDT>  俗:[6(お)]<？/DTDD>  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。<？BR>
+<？DLDT>  [6(お):俗]<？/DTDD>  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。<？BR>
               「俗金⇔Au」「俗円⇔丸/￥/JPY」「俗鯖⇔server」「俗𡚴⇔妛→𡚴/木通/通草」。<？BR><？/DD/DL>
-<？DLDT>  簡:[7(や)]<？/DTDD>  中国およびシンガポ—ルやマレ—シアなどの簡体字を字引。<？BR>
+<？DLDT>  [7(や):簡]<？/DTDD>  中国およびシンガポ—ルやマレ—シアなどの簡体字を字引。<？BR>
               「簡氣⇔气」「簡範⇔笵」。<？BR><？/DD/DL>
-<？DLDT>  繁:[8(ゆ)]<？/DTDD>  中国および台湾や香港などの繁体字(正体字)を字引。<？BR>
+<？DLDT>  [8(ゆ):繁]<？/DTDD>  中国および台湾や香港などの繁体字(正体字)を字引。<？BR>
               「繁气⇔氣」「繁笵⇔範」。<？BR><？/DD/DL>
-<？DLDT>  越:[9(よ)]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。<？BR>
+<？DLDT>  [9(よ):越]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。<？BR>
               「越頗⇔<？contents/pho>」<？BR><？/DD/DL>
-<？DLDT>  地:[0(わ)]<？/DTDD>  国名や地名や名字などを字引。<？BR>
+<？DLDT>  [0(わ):地]<？/DTDD>  国名や地名や名字などを字引。<？BR>
               「国日⇔日本」「国米⇔亜米利加」「国英⇔英吉利西」「国中⇔中華人民共和国」「国台⇔台湾」「国香⇔香港」「国澳⇔澳門」「国蒙⇔蒙古」「国蔵⇔西蔵」「国越⇔越南」。<？BR><？/DD/DL>
-<？DLDT>  逆:[-(ほ)]<？/DTDD>  反対の意味の漢字を字引。全角ではないという意味で半角ｶﾀｶﾅ等の入力にも流用。<？BR>
+<？DLDT>  [-(ほ):逆]<？/DTDD>  反対の意味の漢字を字引。全角ではないという意味で半角ｶﾀｶﾅ等の入力にも流用。<？BR>
               「逆暖⇔涼」「逆温⇔冷」「逆カ⇔ｶ」。<？BR><？/DD/DL>
-<？DLDT>  非:[^(へ)]<？/DTDD>  似て非なる意味の漢字を字引。<？BR>
+<？DLDT>  [^(へ):非]<？/DTDD>  似て非なる意味の漢字を字引。<？BR>
               「非描⇔書」("絵を描く"と"文章を書く"の違い)「非喩⇔例」("比喩表現"と"実例"の違い)「非熔⇔溶」("液状に熔解"と"液体へ溶融"の違い)。<？BR><？/DD/DL>
-<？DLDT>  英:[Q(た)]<？/DTDD>  英単語を字引(和英)。<？BR>
+<？DLDT>  [Q(た):英]<？/DTDD>  文字の名称(英語)を字引。もしくは漢字の英訳などを字引(和英)。<？BR>
               「英金⇔gold」「英円⇔circle/round/yen」「英鯖⇔mackerel」。<？BR><？/DD/DL>
-<？DLDT>  顔:[W(て)]<？/DTDD>  顔文字や１行AAや絵文字を字引。都道府県アイコンも。<？BR>
+<？DLDT>  [W(て):顔]<？/DTDD>  顔文字や１行AAや絵文字を字引。都道府県アイコンも。<？BR>
               「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。「顔東⇔<？contents/tokyoicon>」。<？BR><？/DD/DL>
-<？DLDT>  代:[;(れ)]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌も。<？BR>
+<？DLDT>  [;(れ):代]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌も。<？BR>
               「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「代東⇔<？contents/tonhaiicon>」。<？BR><？/DD/DL>
-<？DLDT>  鍵:[:(け)]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
+<？DLDT>  [:(け):鍵]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
+<？DLDT>  [,(ね):照]<？/DTDD>  HTMLの文字参照。漢直では文字実体参照、電卓では数値文字参照が入力される予定。<？BR><？/DD/DL>
 |<＃contents/LTsv_glyph-5>]
-[<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>|
-:<＄icon-0>	&#61580;
-:<＄icon-1>	&#126976;
-:<＄icon-2>	&#181694;
-.+\.html?	<span class="kan5x5comic"><＄icon-@c></span>
-.*	<＄icon-@c>
-|<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>]
-
-
 
 [<？section/LTsv10_faq-0>|
 .+\.html?	<section>@E <h3 id="LTsv10_faq-@c"><？title/LTsv10_faq-@c></h3>@E<＃contents/LTsv10_faq-@c>@E</section>@E
@@ -1764,10 +1758,10 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<＃contents/kanedit-1>]
 <！kanedit.tsv>
 
-[<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5>|
+[<？section/kanedit_faq-0>|
 .+\.html?	<section>@E <h3 id="kanedit_faq-@c"><？title/kanedit_faq-@c></h3>@E<＃contents/kanedit_faq-@c>@E</section>@E
 .*	@E<？title/kanedit_faq-@c>@E@E<＃contents/kanedit_faq-@c>@E
-|<？section/kanedit_faq-0>*<？section/kanedit_faq-1>*<？section/kanedit_faq-2>*<？section/kanedit_faq-3>*<？section/kanedit_faq-4>*<？section/kanedit_faq-5>]
+|<？section/kanedit_faq-0>]
 
 [<＃contents/kanedit_faq-0>|
 <？DLDTfaq> Ｑ．表示されない文字が多々あるのですが。<？/DTDD>
@@ -1775,72 +1769,463 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？/DD/DL>
 <？DLDTfaq> Ｑ．普通にフォント使えばよかったんじゃないですか？<？/DTDD>
  Ａ．「Tkinter」は<？CP932>を越える文字を扱えない問題があったので、独自にフォントモジュールを作る必要に迫られました。<？BR>
+     Vim版でとりあえずの解決は図りましたがグリフ確認用としての簡易的テキストエディタは必要なので「kanedit」の開発はTSF版で続くと思います。<？BR>
 <？/DD/DL>
 <？DLDTfaq> Ｑ．<？DICzip>が見つからない。<？/DTDD>
  Ａ．郵便番号辞書(大口事業所個別番号含む)は「kanzip」でzipファイルをダウンロードして「kanzip.tsv」を作成します。<？BR>
      詳細は「<？index/kanzip_usage-0>」を参考。<？BR>
 <？/DD/DL>
-<？DLDTfaq>  Ｑ．葛城と葛飾で「葛」が同じ字だ。<？/DTDD>
- Ａ．異体字セレクタで切り替えなのですが、サロゲートペアとか結合文字列とか１文字を１コードポイントで表現できない系は「<？https/LTsv_glyph.py>」で扱わない予定です。<？BR>
+<？DLDTfaq> Ｑ．漢直の説明が足りない。<？/DTDD>
+ Ａ．以前このページにあった漢直の解説(ソフトの操作方法ではない)は、「KEV」の方に移管しました。<？BR>
+     漢直の詳細は「<？index/KEV_interpret-0>」などを参考。<？BR>
 <？/DD/DL>
-<？https/kanedit_faq:IVS>
-<？https/kanedit_faq:MaxOSX>
-<？DLDTinputstroke>  「[Y(ン)]」[Z(ツ)][X(サ)]<？/DTDD>                「葛飾(かつしか)」<？/DD/DL>
-<？DLDTinputstroke>  「[D(シ)]」[/(メ)][_(ロ)]<？/DTDD>                「葛城(かつらぎ)」<？/DD/DL>
-
-<？DLDTfaq>  Ｑ．「咖」も２つあったよー。<？/DTDD>
- Ａ．コーヒー(珈琲/咖啡)が２通りあったので相席の都合でカレー(咖喱)と重複。<？BR>
-<？/DD/DL>
-<？DLDTinputstroke>     「[V(ひ)]」[1(ぬ)][2(ふ)]<？/DTDD>                「咖啡(コーヒー)」<？/DD/DL>
-<？DLDTinputstroke>     「[V(ヒ)]」[1(ヌ)][2(フ)]<？/DTDD>                「珈琲(コーヒー)」<？/DD/DL>
-<？DLDTinputstroke>     「[T(か)]」[_(ろ)][_(ロ)]<？/DTDD>                「咖喱(カレー)」<？/DD/DL>
-
-<？DLDTfaq>  「煉」はあるけど「練」と「錬」が見つからない。<？/DTDD>
- 「煉」は「火柬」なので「練」も「糸柬」だし「鍊」も「金柬」。古いフォントだと「煉」が「火東」になってる。<？BR>
- 「練(糸東)」「錬(金東)」の入力は「異」で字引入力。
-<？/DD/DL>
-<？https/kanedit_faq:糸+柬>
-<？https/kanedit_faq:魚+柬>
-<？https/kanedit_faq:柬>
-<？DLDTinputstroke>     「[,(ね)]」｛異:[P(せ)]｝<？/DTDD>                 「異練⇔練」<？/DD/DL>
-<？DLDTinputstroke>     「[,(ね)]」｛異:[L(り)]｝<？/DTDD>                 「異鍊⇔錬」<？/DD/DL>
-<？DLDTinputstroke>     「[,(ね)]」[;(れ)]<？/DTDD>                        「煉」<？/DD/DL>
-<？DLDTinputstroke>     「E(イ)」[/(メ)]<？/DTDD>                        「諫」<？/DD/DL>
-<？DLDTinputstroke>     「[I(ニ)]」[D(シ)]<？/DTDD>                        「鰊」<？/DD/DL>
-
-<？DLDTfaq> Ｑ．α鍵盤の説明にあるxvkbdって何。<？/DTDD>
- Ａ．X Window System 用仮想キーボードというものがあります。 QWERTZやAZERTYなどキーボードのレイアウトはxvkbdを参考にしました。<？BR>
-     JISキーボード(109キーボード)を想定してるので配置は多少アレンジしてます。<？BR>
-<？/DD/DL>
-<？https/kanedit_faq:xvkbd>
 |<＃contents/kanedit_faq-0>]
-[<？https/kanedit_faq:IVS>*<？https/kanedit_faq:MaxOSX>*<？https/kanedit_faq:糸+柬>*<？https/kanedit_faq:魚+柬>*<？https/kanedit_faq:柬>*<？https/kanedit_faq:xvkbd>*<？https/kanedit_faq:TSF1KEV>|
-:<＄web/kanedit_faq-0>	異体字セレクタ - Wikipedia
-:<＄url/kanedit_faq-0>	https://ja.wikipedia.org/wiki/%E7%95%B0%E4%BD%93%E5%AD%97%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF
-:<＄web/kanedit_faq-1>	文字って何かね？ - Qiita
-:<＄url/kanedit_faq-1>	http://qiita.com/matarillo/items/91b9656428bed7a1a797
-:<＄web/kanedit_faq-2>	中国語「練」と「東」の違い 「练」と「东」 - 文字化けしてませんか？「练」と「东」は明朝体で書くと、「東」の字が違います。 - Yahoo!知恵袋(2004年のJIS改正で[火東]は[火柬]に戻されました。)
-:<＄url/kanedit_faq-2>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1135243926
-:<＄web/kanedit_faq-3>	「鰊」（魚+柬）と「鯟」（魚+東）ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「鯟」（魚+東） は別字です。音「トウ」、鯉に似た魚)
-:<＄url/kanedit_faq-3>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818
-:<＄web/kanedit_faq-4>	漢字の成り立ち 柬: 風船あられの漢字ブログ
-:<＄url/kanedit_faq-4>	http://huusennarare.cocolog-nifty.com/blog/2015/07/post-0eb0.html
-:<＄web/kanedit_faq-5>	xvkbd - Virtual Keyboard for X Window System
-:<＄url/kanedit_faq-5>	http://t-sato.in.coocan.jp/xvkbd/index-j.html
-:<＄web/kanedit_faq-6>	プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
-:<＄url/kanedit_faq-6>	https://github.com/ooblog/TSF1KEV
-.+\.html?	<dl class="faqlink"><dt><＄web/kanedit_faq-@c></dt><dd><a href="<＄url/kanedit_faq-@c>" title="<＄web/kanedit_faq-@c>"><＄url/kanedit_faq-@c></a></dd></dl>
-.*	   <＄web/kanedit_faq-@c><？BR>@E   <＄url/kanedit_faq-@c><？BR>
-|<？https/kanedit_faq:IVS>*<？https/kanedit_faq:MaxOSX>*<？https/kanedit_faq:糸+柬>*<？https/kanedit_faq:魚+柬>*<？https/kanedit_faq:柬>*<？https/kanedit_faq:xvkbd>*<？https/kanedit_faq:TSF1KEV>]
 
-[<＃contents/kanedit_faq-1>|
-<？P> 漢字を音読み訓読みなど理由を付けて<？VRkeyboard>の[ぬ〜ろ][ヌ〜ロ]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<？BR>
+[<？section/kanfont_usage-0>|
+.+\.html?	<section>@E <h3 id="kanfont_usage-@c"><？title/kanfont_usage-@c></h3>@E<＃contents/kanfont_usage-@c>@E</section>@E
+.*	@E<？title/kanfont_usage-@c>@E@E<＃contents/kanfont_usage-@c>@E
+|<？section/kanfont_usage-0>]
+
+[<＃contents/kanfont_usage-0>|
+<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard/howto><？BR>電卓機能は不使用。<？BR><？/DD/DL>
+<？DLDT>   縦のスケール<？/DTDD>                     グリフを編集する文字を選択。<？VRkeyboard>に無い漢字も選択可能。<？BR><？/DD/DL>
+<？DLDT>   縦スケールのスピンボックス<？/DTDD>       グリフを編集する文字を選択。縦のスケールと連動。<？BR><？/DD/DL>
+<？DLDT>   U+ffff表記下の「CP」ボタン<？/DTDD>       クリップボードに縦スケールで選択されてる文字をコピー。<？BR><？/DD/DL>
+<？DLDT>   U+ffff表記下の「PT」ボタン<？/DTDD>       クリップボードの先頭１文字を使って文字を選択。左上の<？VRkeyboard>にも反映。<？BR><？/DD/DL>
+<？DLDT>   真ん中のキャンバス<？/DTDD>               グリフを編集。右回転の青色ポリゴンが描画用途、左回転の緑色ポリゴンがフォントだと反転消去グリフだと背景色消去。<？BR>
+                                    クリックで頂点追加、ドラッグで頂点移動。ドラッグだけど頂点を動かさずクリックを離すと頂点は消える。<？BR>
+                                    線分(長方形じゃなくて円の部分)をクリックで頂点を増やせる。<？BR>
+                                    頂点を全て消すとポリゴンが１枚消える。<？BR><？/DD/DL>
+<？DLDT>   横のスケール<？/DTDD>                     編集するポリゴンの変更。または新規ポリゴンレイヤーを選択。<？BR><？/DD/DL>
+<？DLDT>   横スケール下の「COPY」ボタン<？/DTDD>     ポリゴンレイヤーを複製。「PASTE」で貼り直す事が可能。クリップボード不使用。<？BR><？/DD/DL>
+<？DLDT>   横スケール下の「CUT」ボタン<？/DTDD>      ポリゴンレイヤーを削除。「PASTE」で貼り直す事が可能。クリップボード不使用。<？BR><？/DD/DL>
+<？DLDT>   横スケール下の「PASTE」ボタン<？/DTDD>      「COPY」「CUT」したポリゴンレイヤーを貼り直す。クリップボード不使用。<？BR><？/DD/DL>
+<？DLDT>   横スケール下の「UP」ボタン<？/DTDD>       ポリゴンレイヤーを重ねる順番を変更。左回転のポリゴンを浮上。<？BR><？/DD/DL>
+<？DLDT>   横スケール下の「DOWN」ボタン<？/DTDD>     ポリゴンレイヤーを重ねる順番を変更。右回転のポリゴンを沈める。<？BR><？/DD/DL>
+<？DLDT>   「grid」スピンボックス<？/DTDD>           ポリゴンの頂点位置を揃える。「活(5x)」では100「漫(10x)」では50を想定。<？BR><？/DD/DL>
+<？DLDT>   「grid」チェックボックス<？/DTDD>         通常OFF。スピンボックスの値より1少ない数値にグリッド指定する事も可能。グリフデザインでは杞憂だった機能。<？BR><？/DD/DL>
+<？DLDT>   「seg」チェックボックス<？/DTDD>          通常ON。ポリゴンの線分を表示＆操作許可。<？BR><？/DD/DL>
+<？DLDT>   「Pce(piece)」チェックボックス<？/DTDD>   番号付き頂点を移動するとポリゴン1枚まるごと移動。頂点はキャンバスの外に移動できないので図形が潰れる場合に注意。必要に応じてOFF。Pce=piece。<？BR><？/DD/DL>
+<？DLDT>   「ref」チェックボックス<？/DTDD>          グリフ編集中に参考までに別のフォントを表示。<？BR><？/DD/DL>
+<？DLDT>   「活」「漫」「筆」ラジオボタン<？/DTDD>   キャンバスで編集するグリフを「活:kan5x5」「漫:kan5x5comic」「筆:kan5x5brush」から選択。<？BR><？/DD/DL>
+<？DLDT>   右側の入力欄<？/DTDD>                     辞書項目「英名音訓送異俗熙簡繁越地顔鍵代逆非難活漫筆幅」を<？VRkeyboard>で入力します。クリップボード使用可能。<？BR>
+                                    活漫筆幅がグリフ項目になります。グリフキャンバスで編集。頂点はSVGパスから独自形式に圧縮される場合があります。<？BR>
+                                    <？VRcalc/howto><？BR><？/DD/DL>
+<？DLDT>   右下の「save」ボタン<？/DTDD>             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。<？BR><？/DD/DL>
+|<＃contents/kanfont_usage-0>]
+[<？index/kanfont_usage:capture>|
+.+\.html?	<img src="kanfont_512x384.png" width="512" height="384" alt="kanfont"><br />
+.*	
+|<？index/kanfont_usage:capture>]
+
+[<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>|
+.+\.html?	<section>@E <h3 id="kanfont-@c"><？title/kanfont-@c></h3>@E<＃contents/kanfont-@c>@E</section>@E
+.*	@E<？title/kanfont-@c>@E@E<＃contents/kanfont-@c>@E
+|<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>]
+
+[<＃contents/kanfont-0>|
+<？P> 「<？https/kanfont.py>」の解説は準備中です。<？BR><？/P>
+|<＃contents/kanfont-0>]
+<！kanfont.py>
+
+[<＃contents/kanfont-1>|
+<？P> 「<？https/kanfont.tsv>」は「<？https/kanfont.py>」の設定ファイルです。<？BR>
+<？/P>
+<！../kanfont.tsv>
+|<＃contents/kanfont-1>]
+
+[../kanfont.tsv|
+[kanfont|	「kanfont.py」の設定。
+seek	縦スケール(編集中のグリフ)の値を保存。初期値は「ぱ」。
+grid	「grid」スピンボックスの値を保存。初期値は「50」。
+inner	「inner」チェックボックスの値を保存。初期値は「0」。
+lineseg	「seg」チェックボックスの値を保存。初期値は「1」。
+piece	「Pce」チェックボックスの値を保存。初期値は「1」。
+gothic	グリフラジオボタン(活,漫,筆)の値を保存。初期値は「0」。
+gridimage	編集中キャンバスに表示するグリッド画像ファイル名。初期値は「kanfont_grid25_5x5.png」。
+refer	「ref」編集中キャンバスに表示できるフォント名。初期値は「Noto Sans Japanese Regular」。
+refergrid	「ref」チェックボックスの値を保存。初期値は「1」。
+referGTK	キャンバスに「refer」を表示する場合の位置調整と色。「GTK」で大きいフォントを表示するとズレが発生する。初期値は「X:-30<？@T>Y:-30<？@T>S:420<？@T>C:#E5E5E5」。
+referTkinter	キャンバスに「refer」を表示する場合の位置調整と色。「Tkinter」で大きいフォントを表示するとズレが発生する。初期値は「X:-30<？@T>Y:-135<？@T>S:420<？@T>C:#E5E5E5」。
+glyphcolor	キャンバス編集中のグリフやカーソルの色指定。R:右回転ポリゴン L:左回転ポリゴン X:#D96ED3 G:#9F6C00。初期値は「R:#6E81D9<？@T>L:#6ED997<？@T>X:#D96ED3<？@T>G:#9F6C00」。
+dic_name	単漢字辞書保存先指定。初期値は「LTsv/kanchar.tsv」。
+svg_name	SVGの保存先指定。初期値は「kan5x5.svg」。
+font_name	グリフの名称。フォント名称にも使用。初期値は「活:kan5x5<？@T>漫:kan5x5comic<？@T>筆:kan5x5brush」。
+font_glyphtype	「save」ボタンで保存するグリフは初期値の「漫」に固定されてるが、「活」に変える事でドット絵限定にしたり、「」に空指定する事でグリフラジオボタンによる選択ができる。
+font_widths	フォント幅(全角,麻雀牌,半角)グループを生成。「kan5x5.svg」で「<？&lt;>font id="kan5x5comic_w624" horiz-adv-x="624"<？&gt;>」のようなタグ生成に使う。初期値は「1024,824,624」。
+autosave	初期値は「off」。「on」にするとウィンドウを閉じた時に「LTsv/kanchar.tsv(dic_name)」に自動保存可能。設定に関係なく「LTsv/kanpickle.bin」は上書保存。
+savetime	「save」ボタンに保存時間を表示する演出用途。初期値は「@0h:@0n:@0s」。
+|../kanfont.tsv]
+
+[<＃contents/kanfont-2>|
+<？P> ・「kanfont」のグリフキャンバスサイズは512ですがSVGパスの想定サイズは1024です。<？BR>
+ ・グリフキャンバスは左上が&#40;0,0&#41;ですがSVGパスは左下が&#40;0,0&#41;です。<？BR>
+ ・そしてSVGパスを<？DICchar>に保存する際に独自形式5x10xで圧縮する場合があります(SVGパスの「M」「z」の代わりに半角角括弧「[」「]」)。<？BR>
+ 座標圧縮の話と直接関係ないが、「kanfont」はポリゴン限定(直線しか編集できない)ので、SVGパスの読込も「M」と「z」しか対応してないことに注意。<？BR>
+<？/P>
+<？DLDT>「活」用途の5x系(グリフキャンバス上「grid」100px)<？/DTDD>
+  25分割するので36個のxy座標(0123456789abcdefghijklmnopqrstuvwxyz)で表現する事で圧縮。<？BR>
+<？/DD/DL>
+<？DLDT>「漫」用途の10x系(グリフキャンバス上「grid」50px)<？/DTDD>
+  縦横それぞれ10分割するのでX軸Y軸それぞれ11個のx座標(ABCDEFGHIJK)y座標(OPQRSTUVWXY)で表現する事で圧縮。<？BR>
+  実際の「漫」グリフでは25px単位の「grid」も使ってるので圧縮されない場合もあります。<？BR>
+<？/DD/DL>
+<？DLDT>「漫」用途の想定20x系(グリフキャンバス上「grid」25px想定)<？/DTDD>
+  実際には都道府県アイコンが10pxで描画とか「grid」をもっと細かく区切ってるので圧縮予定はありません。<？BR><？/DD/DL>
+|<＃contents/kanfont-2>]
+
+[<？section/kanfont_faq-0>|
+.+\.html?	<section>@E <h3 id="kanfont_faq-@c"><？title/kanfont_faq-@c></h3>@E<＃contents/kanfont_faq-@c>@E</section>@E
+.*	@E<？title/kanfont_faq-@c>@E@E<＃contents/kanfont_faq-@c>@E
+|<？section/kanfont_faq-0>]
+
+[<＃contents/kanfont_faq-0>|
+<？DLDTfaq> Ｑ．「kanfont」で他のフォントを編集できますか？<？/DTDD>
+ Ａ．「kanfont」はフォントファイルを読み込めないので「kan5x5comic」のグリフ編集しかできません。<？BR>
+     既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．「漫」フォント座標が圧縮できない場合がある。<？/DTDD>
+ Ａ．グリフの「grid」が100または50以外の数値を扱うと圧縮効かなくなります。<？BR>
+ 圧縮形式5x10xの詳細は「<？index/kanfont-2>」を参考。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．圧縮されてない素のSVGを確認したい。<？/DTDD>
+ Ａ．「save」ボタンで「kan5x5.svg」が保存できるのでそっちで確認できるはず。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．「kan5x5.svg」は何に使うんですか？<？/DTDD>
+ Ａ．「kan5x5comic.svg」をFontForgeで「kan5x5comic.ttf」に変換できます。<？BR>
+ <？/DD/DL>
+<？https/kanfont_faq:fontforge>
+
+<？DLDTfaq> Ｑ．「FontForge」が使えない環境というかLinux以外のOSだと謎の環境構築が複雑なので簡単な方法お願い。<？/DTDD>
+ Ａ．<？yakuyon>から「kan5x5comic.woff」をダウンロードしてWOFFコンバータで「kan5x5comic.ttf」にする別ルートもあります。<？BR>
+ <？/DD/DL>
+<？https/kanfont_faq:ooblog.github.io>
+
+<？https/kanfont_faq:woffconv>
+
+<？DLDTfaq> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
+ Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
+     <？VRkeyboard/howto><？BR>
+     <？VRcalc/howto><？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
+ Ａ．「LTsv/kanmap.tsv」に含まれてない漢字を探索するには「kanedit」の「探」コマンドを用いてください。<？BR>
+     例えば都道府県アイコン「<？contents/tokyoicon>」は「kanedit」の「電卓」で「探<？contents/tokyoicon>」すると「探<？contents/tokyoicon>⇔東」が求められます。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．左回転のポリゴンがフォントに変換したときに描画されてましたよ？<？/DTDD>
+ Ａ．フォントの描画ルールでは、逆回転のポリゴンが重なった場所が透過になるアルゴリズムだからです。<？BR>
+     「L:Tsv」のグリフは単純に順番に描画するアルゴリズムなので「UP」「DOWN」ボタンでポリゴン描画順の入れ替えてください。<？BR><？/DD/DL>
+|<＃contents/kanfont_faq-0>]
+[<？contents/tokyoicon>|
+.+\.html?	<span class="kan5x5comic">&#61580;</span>
+.*	&#61580;
+|<？contents/tokyoicon>]
+
+[<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>|
+:<＄web/kanfont_faq-0>	ふぉんと - 「約四文字」(http://ooblog.github.io/)
+:<＄url/kanfont_faq-0>	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
+:<＄web/kanfont_faq-1>	FontForge
+:<＄url/kanfont_faq-1>	http://fontforge.github.io/ja/
+:<＄web/kanfont_faq-2>	WOFFコンバータ
+:<＄url/kanfont_faq-2>	http://opentype.jp/woffconv.htm
+.+\.html?	<dl class="faqlink"><dt><＄web/kanfont_faq-@c></dt><dd><a href="<＄url/kanfont_faq-@c>" title="<＄web/kanfont_faq-@c>"><＄url/kanfont_faq-@c></a></dd></dl>
+.*	   <＄web/kanfont_faq-@c><？BR>@E   <＄url/kanfont_faq-@c><？BR>
+|<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>]
+
+[<？https/kanfont.py>*<？https/kanfont.tsv>|
+:<＄path/kanfont-0>	kanfont.py
+:<＄path/kanfont-1>	kanfont.tsv
+.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>"><＄path/kanfont-@c></a>
+.*	<＄path/kanfont-@c>
+|<？https/kanfont.py>*<？https/kanfont.tsv>]
+
+[<？section/kanmap_usage-0>*<？section/kanmap_usage-1>|
+.+\.html?	<section>@E <h3 id="kanmap_usage-@c"><？title/kanmap_usage-@c></h3>@E<＃contents/kanmap_usage-@c>@E</section>@E
+.*	@E<？title/kanmap_usage-@c>@E@E<＃contents/kanmap_usage-@c>@E
+|<？section/kanmap_usage-0>*<？section/kanmap_usage-1>]
+
+[<＃contents/kanmap_usage-0>|
+<？P> 事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<？BR>
+ 「<？https/kanmap.py>」を起動すると上部に漢字配列「<？https/kanmap.tsv>」、下部に<？DICchar>を表示します。<？BR>
+ 「<？https/kanmap.py>」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<？BR><？/P>
+|<＃contents/kanmap_usage-0>]
+
+[<＃contents/kanmap_usage-1>|
+<？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard/howto><？BR><？/DD/DL>
+<？DLDT>  小さい文字の上でタップ<？/DTDD>          カーソル点灯。クリップボードに１文字転送。<？BR><？/DD/DL>
+<？DLDT>  「clipfind」をタップ<？/DTDD>            クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
+<？DLDT>  「update☐」にチェック☑<？/DTDD>        ONの状態で[Ctrl]+[S]もしくは「<？https/kanmap.py>」を終了すると「LTsv/kanmap.tsv」を上書保存。<？BR><？/DD/DL>
+<？DLDT>  「kbdfind☐」にチェック☑<？/DTDD>       ONの状態なら漢直鍵盤の入力操作で検索してカーソル点灯。<？BR><？/DD/DL>
+<？DLDT>  「rewrite☐」にチェック☑<？/DTDD>       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<？BR><？/DD/DL>
+<？DLDT>  「swap☐」にチェック☑<？/DTDD>          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<？BR><？/DD/DL>
+|<＃contents/kanmap_usage-1>]
+[<？VRkeyboard/howto>|
+.*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
+|<？VRkeyboard/howto>]
+[<？VRcalc/howto>|
+.*	<？VRcalc>の入力操作は「<？index/LTsv_glyph-3>」を参考。
+|<？VRcalc/howto>]
+[<？VReval/howto>|
+.*	<？VRcalc>の演算結果は「<？index/LTsv_glyph-4>」を参考。
+|<？VReval/howto>]
+
+[<？index/kanmap_usage:capture>|
+.+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
+.*	
+|<？index/kanmap_usage:capture>]
+
+[<？section/kanmap-0>|
+.+\.html?	<section>@E <h3 id="kanmap-@c"><？title/kanmap-@c></h3>@E<＃contents/kanmap-@c>@E</section>@E
+.*	@E<？title/kanmap-@c>@E@E<＃contents/kanmap-@c>@E
+|<？section/kanmap-0>]
+
+[<＃contents/kanmap-0>|
+<？P> 「<？https/kanmap.py>」の解説は準備中です。<？BR><？/P>
+|<＃contents/kanmap-0>]
+<！kanmap.py>
+
+[<？section/kanmap_faq-0>|
+.+\.html?	<section>@E <h3 id="kanmap_faq-@c"><？title/kanmap_faq-@c></h3>@E<＃contents/kanmap_faq-@c>@E</section>@E
+.*	@E<？title/kanmap_faq-@c>@E@E<＃contents/kanmap_faq-@c>@E
+|<？section/kanmap_faq-0>]
+
+[<＃contents/kanmap_faq-0>|
+<？DLDTfaq> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
+ Ａ．「Tkinter」では「canvas」を画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」のフォントが保存されるのですか？<？/DTDD>
+ Ａ．グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。<？BR>
+     <？DICchar>のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。<？BR>
+<？/DD/DL>
+<？https/Python_pickle>
+<？DLDTfaq> Ｑ．「kanmap.png」の空白が多い気がします。<？/DTDD>
+ Ａ．<？DICchar>で扱ってる文字がまだまだ不十分なので同時にグリフデータも不足するためです。いわゆる開発中の画面状態です。<？BR>
+ 一見表示されてない漢字も「<？https/kanmap.tsv>」で扱ってる漢字はクリップボードに取得できます。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．編集追加したはずのグリフが「kanedit」に反映されない。<？/DTDD>
+ Ａ．「LTsv/kanpickle.bin」を一旦手動で削除して「<？https/kanmap.py>」をもう一度起動。「LTsv/kanpickle.bin」が初期化されるはずです。<？BR><？/DD/DL>
+|<＃contents/kanmap_faq-0>]
+
+[<？https/Python_pickle>*<？https/Python_re>|
+:<＄web/Python-0>	 12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
+:<＄url/Python-0>	 http://docs.python.jp/3/library/pickle.html
+:<＄web/Python-1>	 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
+:<＄url/Python-1>	 http://docs.python.jp/3/library/re.html
+.+\.html?	<dl class="faqlink"><dt><＄web/Python-@c></dt><dd><a href="<＄url/Python-@c>" title="<＄web/Python-@c>"><＄url/Python-@c></a></dd></dl>
+.*	   <＄web/Python-@c><？BR>@E   <＄url/Python-@c><？BR>@E
+|<？https/Python_pickle>*<？https/Python_re>]
+
+[<？section/kanzip_usage-0>|
+.+\.html?	<section>@E <h3 id="kanzip_usage-@c"><？title/kanzip_usage-@c></h3>@E<＃contents/kanzip_usage-@c>@E</section>@E
+.*	@E<？title/kanzip_usage-@c>@E@E<＃contents/kanzip_usage-@c>@E
+|<？section/kanzip_usage-0>]
+
+[<＃contents/kanzip_usage-0>|
+<？Pcenter><？index/kanzip_usage:capture><？BR><？/PP> まず「<？https/kanzip.py>」配下に作業用の「kanzip」フォルダが作成されます。<？BR>
+ 初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。<？BR>
+ 「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。<？BR>
+ 全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、<？BR>
+ 最終的に<？DICzip>にマージして完成。<？BR><？/P>
+|<＃contents/kanzip_usage-0>]
+[<？index/kanzip_usage:capture>|
+.+\.html?	<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br />
+.*	
+|<？index/kanzip_usage:capture>]
+
+[<？section/kanzip-0>|
+.+\.html?	<section>@E <h3 id="kanzip-@c"><？title/kanzip-@c></h3>@E<＃contents/kanzip-@c>@E</section>@E
+.*	@E<？title/kanzip-@c>@E@E<＃contents/kanzip-@c>@E
+|<？section/kanzip-0>]
+
+[<＃contents/kanzip-0>|
+<？P> 「<？https/kanzip.py>」の解説は準備中です。<？BR><？/P>
+|<＃contents/kanzip-0>]
+<！kanzip.py>
+
+[<？section/kanzip_faq-0>|
+.+\.html?	<section>@E <h3 id="kanzip_faq-@c"><？title/kanzip_faq-@c></h3>@E<＃contents/kanzip_faq-@c>@E</section>@E
+.*	@E<？title/kanzip_faq-@c>@E@E<＃contents/kanzip_faq-@c>@E
+|<？section/kanzip_faq-0>]
+
+[<＃contents/kanzip_faq-0>|
+<？DLDTfaq> Ｑ．ボタンを手動で１個ずつ押していくのが面倒です。<？/DTDD>
+ Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。<？/DD/DL>
+<？DLDTfaq> Ｑ．ダウンロードできなくなりました。<？/DTDD>
+ Ａ．日本郵便にあるはずのzipファイルのURL変更などが考えられますが、ブラウザでzipをダウンロードして「kanzip」フォルダにコピーすれば作業続行可能なはずです。<？/DD/DL>
+<？https/kanzip_faq:jigyosyo>
+<？https/kanzip_faq:kogaki-zip>
+|<＃contents/kanzip_faq-0>]
+
+[<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>|
+:<＄web/kanzip_faq-0>	事業所の個別郵便番号のダウンロード zip形式 - 日本郵便
+:<＄url/kanzip_faq-0>	http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html
+:<＄web/kanzip_faq-1>	読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便
+:<＄url/kanzip_faq-1>	http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html
+.+\.html?	<dl class="faqlink"><dt><＄web/kanzip_faq-@c></dt><dd><a href="<＄url/kanzip_faq-@c>" title="<＄web/kanzip_faq-@c>"><＄url/kanzip_faq-@c></a></dd></dl>
+.*	   <＄web/kanzip_faq-@c><？BR>@E   <＄url/kanzip_faq-@c><？BR>
+|<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>]
+
+[<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>|
+.+\.html?	<section>@E <h3 id="KEV_usage-@c"><？title/KEV_usage-@c></h3>@E<＃contents/KEV_usage-@c>@E</section>@E
+.*	@E<？title/KEV_usage-@c>@E@E<＃contents/KEV_usage-@c>@E
+|<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>]
+
+[<＃contents/KEV_usage-0>|
+<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEV」を設置する方法で解説します。<？BR>
+<？/PP>
+「<？https/kanmap.tsv>」と「<？https/kanchar.tsv>」を「<？https/kanedit.vim>」と同じフォルダに入れて置きます。<？BR>
+Vimのメニューから「編集」→「起動時の設定」で「.vimrc」ファイルが開きます&#40;作成できます&#41;。<？BR>
+「command KEVtsf  :source &#40;KEVインストール先フォルダ&#41;/kanedit.vim」のような一行を加え保存&#40;Vimのメニューから「ファイル」→「保存」&#41;します。<？BR>
+Vim再起動すると「:KEV」コマンドが入力できるようになるはずです([Esc]を何回か連打してから、[:]を押すとコマンドモードに移行)。<？BR>
+「:KEV」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたび「:KEV」コマンド実行&#41;。<？BR>
+[Space]キー2回でモード切替、[Shift]キー押しながら[Space]キー2回で半角スペース入力になります。<？BR>
+漢直を停止するには「:call KEVexit()」、再度有効にするには「:call KEVexit()」。<？BR>
+<？/PP>
+Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。<？BR><？/P>
+
+<？https/KEV_usage:vimdoc-ja>
+|<＃contents/KEV_usage-0>]
+[<？index/KEV_usage:capture>|
+.+\.html?	<img src="KEV_512x384.png" width="512" height="384" alt="KEV"><br />
+.*	
+|<？index/KEV_usage:capture>]
+[<？https/KEV_usage:vimdoc-ja>|
+:<＄web/License-0>	help - Vim日本語ドキュメント
+:<＄url/License-0>	http://vim-jp.org/vimdoc-ja/
+.+\.html?	<dl><dt><＄web/License-@c></dt><dd><a href="<＄url/License-@c>" title="<＄web/License-@c>"><＄url/License-@c></a></dd></dl>
+.*	   <＄web/License-@c><？BR>@E   <＄url/License-@c><？BR>
+|<？https/KEV_usage:vimdoc-ja>]
+
+[<＃contents/KEV_usage-1>|
+<？P> Vimのマップ機能を用いて漢直を実装しています。マップ等の設定変更は[Space]キーから始まるコマンド入力を使います。<？BR>
+<？/P>
+<？DLDT>  [1(ぬ)〜&#92;(ろ)]<？/DTDD>                          通常ひらがな鍵盤の文字入力、もしくは1文字検索。後述の鍵盤切替コマンドでカタカナ入力も可能。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Space]<？/DTDD>                             ノーマルモードと挿入モードを切り替えます。通常は[i(に)]で挿入モード移行、[Esc]か[Ctrl]+[[(゜)]でノーマルモード移行。<？BR><？/DD/DL>
+<？DLDT>  [Space]…<？/DTDD>                                   [Space]キー入力後のコマンド入力が遅れると普通に半角スペースが入力されます。<？BR><？/DD/DL>
+<？DLDT>  [Space],[1(ぬ)〜&#92;(ろ)]<？/DTDD>                  入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。同じ鍵盤を2回選択するとひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Enter]<？/DTDD>                             「/前方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Enter]。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Tab]<？/DTDD>                               「?後方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Tab]。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Del]<？/DTDD>                              「σ」鍵盤に切り替えます。1文字検索モード、辞書メニュー、字引入力、カタカナ鍵盤も解除されます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]<？/DTDD>     hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [;(れ)]<？/DTDD>                          [BS]入力というかカーソルの左が1文字消去されます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [:(け)]<？/DTDD>                          [Del]入力というかカーソルの右が1文字消去されます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [](む)]<？/DTDD>                          [Enter]入力というか改行が入力されます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [,(ね)]<？/DTDD>                          [Home]入力というか行頭にカーソル移動です。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [.(る)]<？/DTDD>                          [End]入力というか行末にカーソル移動です。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [/(め)]<？/DTDD>                          [PageUp]入力というか1画面文頭にスクロールです。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [&#92;(ろ)]<？/DTDD>                      [PageDown]入力というか1画面文末にスクロールです。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [a(ち)]<？/DTDD>                          テキスト全選択です。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [z(つ)]<？/DTDD>                          一手前に戻します。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [o(ら)]<？/DTDD>                          ファイル履歴などからファイルを開きます。マウスが使えるかのようなメッセージがでますが、番号がズレる場合があり危険なので数値入力してください。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [s(て)]<？/DTDD>                          ファイルを保存します。<？BR><？/DD/DL>
+<？DLDT>  [Space],[BS]<？/DTDD>                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[q(英)〜,(照)]などとの交換です。辞書の解除は再度同じ辞書の選択。<？BR><？/DD/DL>
+|<＃contents/KEV_usage-1>]
+
+[<＃contents/KEV_usage-2>|
+<？P> [Shift]キーを併用する事で入れ替え動作などをショートカットすることができます。<？BR>
+<？/P>
+<？DLDT>  [Shift]+[Space],[Shift]+[Space]<？/DTDD>             [Shift]キー押しながら[Space]キー2回で半角スペースを入力します。<？BR><？/DD/DL>
+<？DLDT>  [Shift]+[Space],[Space]<？/DTDD>                     [Shift]キー押しながら[Space]キー2回の時、2回目の[Shift]キーを離すと全角スペースも入力できます。<？BR><？/DD/DL>
+<？DLDT>  [Space],[Shift]+[Space]<？/DTDD>                     [Shift]キーを押さずに[Space]キー押してから[Shift]キーを押しながら[Space]でタブ文字も入力できます。<？BR>
+                                              インデント処理が半角スペース状態でも別途タブ文字欲しい時便利。<？BR><？/DD/DL>
+<？DLDT>  [Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>                  [Shift]キーを組み合わせる事で先述の鍵盤切替コマンドをショートカットしてカタカナ入力することも可能です。<？BR><？/DD/DL>
+<？DLDT>  [Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>  [Shift]キーを組み合わせる事で先述の「鍵盤」と「辞書」の入れ替えコマンドをショートカットして辞書の選択解除も可能です。<？BR><？/DD/DL>
+|<＃contents/KEV_usage-2>]
+
+[<＃contents/KEV_usage-3>|
+<？DLDT>  [1(ヌ):名]<？/DTDD>  文字の名称(日本語)を字引。<？BR>
+              「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。<？BR><？/DD/DL>
+<？DLDT>  [2(フ):音]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
+              「音醤⇔ショウ/ジャン」「音銅⇔コッパー」。<？BR><？/DD/DL>
+<？DLDT>  [3(ア):訓]<？/DTDD>  漢字の訓読みを字引。原子記号だと音訓両方を字引。<？BR>
+              「訓醤⇔ひしお」「訓銅⇔ドウ/あかがね」。<？BR><？/DD/DL>
+<？DLDT>  [4(ウ):送]<？/DTDD>  漢字の送り仮名を字引。<？BR>
+              「送醤⇔醤油/豆板醤/醤酢」「送止⇔制止/差し止める/急に止まる/行き止まり/滑り止め/思い止まる/鳴り止む」。<？BR><？/DD/DL>
+<？DLDT>  [5(エ):異]<？/DTDD>  異体字や俗字や略字や通用や大字などを表示。<？BR>
+              「異壷⇔壺」「異青⇔靑」「異鼠⇔鼡」「異觜⇔嘴」「異七⇔漆」「異百⇔陌」「異晦⇔卅」。<？BR><？/DD/DL>
+<？DLDT>  [6(オ):俗]<？/DTDD>  英語等の当て字や送り仮名だけでは説明不足になりそうな使用例・例文などを字引。<？BR>
+              「俗金⇔Au」「俗円⇔丸/￥/JPY」「俗鯖⇔server」「俗𡚴⇔妛→𡚴/木通/通草」。<？BR><？/DD/DL>
+<？DLDT>  [7(ヤ):簡]<？/DTDD>  中国およびシンガポ—ルやマレ—シアなどの簡体字を字引。<？BR>
+              「簡氣⇔气」「簡範⇔笵」。<？BR><？/DD/DL>
+<？DLDT>  [8(ユ):繁]<？/DTDD>  中国および台湾や香港などの繁体字(正体字)を字引。<？BR>
+              「繁气⇔氣」「繁笵⇔範」。<？BR><？/DD/DL>
+<？DLDT>  [9(ヨ):越]<？/DTDD>  ベトナム(越南)のチュノム(字喃)を字引。<？BR>
+              「越頗⇔<？contents/pho>」<？BR><？/DD/DL>
+<？DLDT>  [0(ワ):地]<？/DTDD>  国名や地名や名字などを字引。<？BR>
+              「国日⇔日本」「国米⇔亜米利加」「国英⇔英吉利西」「国中⇔中華人民共和国」「国台⇔台湾」「国香⇔香港」「国澳⇔澳門」「国蒙⇔蒙古」「国蔵⇔西蔵」「国越⇔越南」。<？BR><？/DD/DL>
+<？DLDT>  [-(ホ):逆]<？/DTDD>  反対の意味の漢字を字引。全角ではないという意味で半角ｶﾀｶﾅ等の入力にも流用。<？BR>
+              「逆暖⇔涼」「逆温⇔冷」「逆カ⇔ｶ」。<？BR><？/DD/DL>
+<？DLDT>  [^(ヘ):非]<？/DTDD>  似て非なる意味の漢字を字引。<？BR>
+              「非描⇔書」("絵を描く"と"文章を書く"の違い)「非喩⇔例」("比喩表現"と"実例"の違い)「非熔⇔溶」("液状に熔解"と"液体へ溶融"の違い)。<？BR><？/DD/DL>
+<？DLDT>  [Q(タ):英]<？/DTDD>  文字の名称(英語)を字引。もしくは漢字の英訳などを字引(和英)。<？BR>
+              「英金⇔gold」「英円⇔circle/round/yen」「英鯖⇔mackerel」。<？BR><？/DD/DL>
+<？DLDT>  [W(テ):顔]<？/DTDD>  顔文字や１行AAや絵文字を字引。都道府県アイコンも。<？BR>
+              「顔二⇔2get ｽﾞｻｰc⌒っﾟДﾟ)っ」「д⇔(ﾟдﾟ)」。「顔東⇔<？contents/tokyoicon>」。<？BR><？/DD/DL>
+<？DLDT>  [;(レ):代]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌も。<？BR>
+              「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「代東⇔<？contents/tonhaiicon>」。<？BR><？/DD/DL>
+<？DLDT>  [:(ケ):鍵]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
+<？DLDT>  [,(ネ):照]<？/DTDD>  HTMLの文字参照。辞書に無い文字は数値文字参照で補う予定(未実装)。<？BR><？/DD/DL>
+|<＃contents/KEV_usage-3>]
+[<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>|
+:<＄icon-0>	&#61580;
+:<＄icon-1>	&#126976;
+:<＄icon-2>	&#181694;
+.+\.html?	<span class="kan5x5comic"><＄icon-@c></span>
+.*	<＄icon-@c>
+|<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>]
+
+[<？section/KEV-0>|
+.+\.html?	<section>@E <h3 id="KEV-@c"><？title/KEV-@c></h3>@E<＃contents/KEV-@c>@E</section>@E
+.*	@E<？title/KEV-@c>@E@E<＃contents/KEV-@c>@E
+|<？section/KEV-0>]
+
+[<＃contents/KEV-0>|
+<！kanedit.vim>
+|<＃contents/KEV-0>]
+[kanedit.vim|
+KEVsetup()	「KanEditVim」の初期化初期設定(imap等含む)。
+s:KEVfilereadable(TSFfilepath,TSVfilepath)	辞書等の存在チェック。漢字配列「<？https/kanmap.tsv>」と単漢字辞書「<？https/kanchar.tsv>」は「<？https/kanedit.vim>」と同じフォルダに。	LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイルの有無を調べる。
+KEVimap(kankbd_kbdchar)	「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
+s:KEVdicmenu(menuname)	鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
+KEVfiler()	「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
+KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニューの撤去処理。
+|kanedit.vim]
+
+[<？section/KEV_faq-0>|
+.+\.html?	<section>@E <h3 id="KEV_faq-@c"><？title/KEV_faq-@c></h3>@E<＃contents/KEV_faq-@c>@E</section>@E
+.*	@E<？title/KEV_faq-@c>@E@E<＃contents/KEV_faq-@c>@E
+|<？section/KEV_faq-0>]
+
+[<＃contents/KEV_faq-0>|
+<？DLDTfaq> Ｑ．汎用辞書「kanword.tsv」が認識されない。<？/DTDD>
+ Ａ．Vim版では<？DICword>は未サポートです。汎用辞書は漢直の対象外だからです。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．<？DICzip>が認識されない。<？/DTDD>
+ Ａ．Vim版では<？DICzip>は未サポートです。郵便番号は漢直の対象外だからです。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．「[@(＠)][@(｀)][[(ぷ)][[(プ)]」表記に違和感。全角アットマーク記号は「Λ」鍵盤だし「ぷ」じゃなく「゜」を使うべき。<？/DTDD>
+ Ａ．半濁音そのものにひらがなかたかなの区別が無いので「Ｐまみむめも⇔ぱぴぷぺぽ」理論で「む」の半濁音扱いの「ぷ」表記をする場合もあります。<？BR>
+     「Ｐ」コマンドの詳細は「kanedit」の「<？index/LTsv_glyph-4>」を参考。<？BR>
+     全角アットマークの「＠」は他のひらがなカタカナも全角なので文字の幅を揃える目的。<？BR>
+<？/DD/DL>
+<？DLDTfaq> Ｑ．都道府県国名の解説の「地北⇔北海道」みたいなのはどういう入力ですか？<？/DTDD>
+ Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？VReval/howto><？BR>
+     [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<？BR>
+     Vim版では「電卓」機能は未サポートです。<？BR>
+<？/DD/DL>
+|<＃contents/KEV_faq-0>]
+
+[<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>|
+.+\.html?	<section>@E <h3 id="KEV_interpret-@c"><？title/KEV_interpret-@c></h3>@E<＃contents/KEV_interpret-@c>@E</section>@E
+.*	@E<？title/KEV_interpret-@c>@E@E<＃contents/KEV_interpret-@c>@E
+|<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>]
+
+[<＃contents/KEV_interpret-0>|
+<？P> 漢字を音読み訓読みなど理由を付けて<？VRkeyboard>の[1(ぬ)〜\(ろ)][1(ヌ)〜&#92;(ロ)]などに配置するのですが、普通に考えると例えば[か]に入りきらない場合などあります。<？BR>
  そこで入りきらない文字を「相席」というレトリックで分散しています。<？BR>
 <？/P>
-<？DLDTfaq> Ｑ．一ヶ所系相席の「[5(え)]」みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．「[5(え)]」は[NFER]+[5]、「[5(エ)]」は[XFER]+[5]です。ひらがながNFER、カタカナがXFERです。<？BR>
-     <？VRkeyboard/howto><？BR>
-<？/DD/DL>
+<？DLDTinputstroke>  「[1(ぬ)]」<？/DTDD>   ひらがな鍵盤だけど「沼」「濡」を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[1(ヌ)]」<？/DTDD>   カタカナ鍵盤だけど「糠」「鵺」を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[5(え)]」<？/DTDD>   記号XOR(⊕)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[5(エ)]」<？/DTDD>   [3(あ)]に入り切らなかった「あ」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[7(や)]」<？/DTDD>   矢印(⇔⇒←→↑↓)を相席。や行え(𛀁)を相席。<？/DD/DL>
@@ -1934,17 +2319,64 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[/(▲)]」<？/DTDD>   UTF-8点字(⡰〜⢞)。<？/DD/DL>
 <？DLDTinputstroke>  「[_(□)]」<？/DTDD>   UTF-8点字(⢠〜⣎)。<？/DD/DL>
 <？DLDTinputstroke>  「[_(■)]」<？/DTDD>   UTF-8点字(⣐〜⣾)。<？/DD/DL>
-|<＃contents/kanedit_faq-1>]
 
-[<＃contents/kanedit_faq-2>|
-<？P> 熟語は隣接してると便利で覚えやすいという理屈で音読み訓読みの枠を飛び飛び地します。<？BR>
-<？/P>
-<？DLDTfaq> Ｑ．熟語隣接系相席の「茯苓(ぶくりょう)」の[^(へ)][^(ヘ)]みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．[NFER]+[[2(ふ)]]、[^(へ)]、[NFER]、[^(ヘ)]の順番です。ひらがながNFER、カタカナがXFERです。<？BR>
-     <？VRkeyboard/howto><？BR>
-    フォントによってはひらがなの「へ」とカタカナの「ヘ」の区別が見辛いかと思います。「kan5x5comic.ttf」なら区別が付くはずです。<？BR>
-    フォント「kan5x5comic.ttf」を用意する場合は「<？index/kanfont_faq-0>」を参考。<？BR>
+<？DLDTfaq> Ｑ．α鍵盤の説明にあるxvkbdって何。<？/DTDD>
+ Ａ．X Window System 用仮想キーボードというものがあります。 QWERTZやAZERTYなどキーボードのレイアウトはxvkbdを参考にしました。<？BR>
+     JISキーボード(109キーボード)を想定してるので配置は多少アレンジしてます。<？BR>
 <？/DD/DL>
+<？https/kanedit_faq:xvkbd>
+
+<？DLDTfaq>  Ｑ．葛城と葛飾で「葛」が同じ字だ。<？/DTDD>
+ Ａ．異体字セレクタで切り替えなのですが、サロゲートペアとか結合文字列とか１文字を１コードポイントで表現できない系は「<？https/LTsv_glyph.py>」で扱わない予定です。<？BR>
+<？/DD/DL>
+<？https/kanedit_faq:IVS>
+<？https/kanedit_faq:MaxOSX>
+<？DLDTinputstroke>  「[Y(ン)]」[Z(ツ)][X(サ)]<？/DTDD>                「葛飾(かつしか)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[/(メ)][_(ロ)]<？/DTDD>                「葛城(かつらぎ)」<？/DD/DL>
+
+<？DLDTfaq>  Ｑ．「咖」も２つあったよー。<？/DTDD>
+ Ａ．コーヒー(珈琲/咖啡)が２通りあったので相席の都合でカレー(咖喱)と重複。<？BR>
+<？/DD/DL>
+<？DLDTinputstroke>     「[V(ひ)]」[1(ぬ)][2(ふ)]<？/DTDD>                「咖啡(コーヒー)」<？/DD/DL>
+<？DLDTinputstroke>     「[V(ヒ)]」[1(ヌ)][2(フ)]<？/DTDD>                「珈琲(コーヒー)」<？/DD/DL>
+<？DLDTinputstroke>     「[T(か)]」[_(ろ)][_(ロ)]<？/DTDD>                「咖喱(カレー)」<？/DD/DL>
+
+<？DLDTfaq>  「煉」はあるけど「練」と「錬」が見つからない。<？/DTDD>
+ 「煉」は「火柬」なので「練」も「糸柬」だし「鍊」も「金柬」。古いフォントだと「煉」が「火東」になってる。<？BR>
+ 「練(糸東)」「錬(金東)」の入力は「異」で字引入力。
+<？/DD/DL>
+<？https/kanedit_faq:糸+柬>
+<？https/kanedit_faq:魚+柬>
+<？https/kanedit_faq:柬>
+<？DLDTinputstroke>     「[,(ね)]」｛異:[P(せ)]｝<？/DTDD>                 「異練⇔練」<？/DD/DL>
+<？DLDTinputstroke>     「[,(ね)]」｛異:[L(り)]｝<？/DTDD>                 「異鍊⇔錬」<？/DD/DL>
+<？DLDTinputstroke>     「[,(ね)]」[;(れ)]<？/DTDD>                        「煉」<？/DD/DL>
+<？DLDTinputstroke>     「E(イ)」[/(メ)]<？/DTDD>                        「諫」<？/DD/DL>
+<？DLDTinputstroke>     「[I(ニ)]」[D(シ)]<？/DTDD>                        「鰊」<？/DD/DL>
+|<＃contents/KEV_interpret-0>]
+
+[<？https/kanedit_faq:IVS>*<？https/kanedit_faq:MaxOSX>*<？https/kanedit_faq:糸+柬>*<？https/kanedit_faq:魚+柬>*<？https/kanedit_faq:柬>*<？https/kanedit_faq:xvkbd>*<？https/kanedit_faq:TSF1KEV>|
+:<＄web/kanedit_faq-0>	異体字セレクタ - Wikipedia
+:<＄url/kanedit_faq-0>	https://ja.wikipedia.org/wiki/%E7%95%B0%E4%BD%93%E5%AD%97%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF
+:<＄web/kanedit_faq-1>	文字って何かね？ - Qiita
+:<＄url/kanedit_faq-1>	http://qiita.com/matarillo/items/91b9656428bed7a1a797
+:<＄web/kanedit_faq-2>	中国語「練」と「東」の違い 「练」と「东」 - 文字化けしてませんか？「练」と「东」は明朝体で書くと、「東」の字が違います。 - Yahoo!知恵袋(2004年のJIS改正で[火東]は[火柬]に戻されました。)
+:<＄url/kanedit_faq-2>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1135243926
+:<＄web/kanedit_faq-3>	「鰊」（魚+柬）と「鯟」（魚+東）ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「鯟」（魚+東） は別字です。音「トウ」、鯉に似た魚)
+:<＄url/kanedit_faq-3>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818
+:<＄web/kanedit_faq-4>	漢字の成り立ち 柬: 風船あられの漢字ブログ
+:<＄url/kanedit_faq-4>	http://huusennarare.cocolog-nifty.com/blog/2015/07/post-0eb0.html
+:<＄web/kanedit_faq-5>	xvkbd - Virtual Keyboard for X Window System
+:<＄url/kanedit_faq-5>	http://t-sato.in.coocan.jp/xvkbd/index-j.html
+:<＄web/kanedit_faq-6>	プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+:<＄url/kanedit_faq-6>	https://github.com/ooblog/TSF1KEV
+.+\.html?	<dl class="faqlink"><dt><＄web/kanedit_faq-@c></dt><dd><a href="<＄url/kanedit_faq-@c>" title="<＄web/kanedit_faq-@c>"><＄url/kanedit_faq-@c></a></dd></dl>
+.*	   <＄web/kanedit_faq-@c><？BR>@E   <＄url/kanedit_faq-@c><？BR>
+|<？https/kanedit_faq:IVS>*<？https/kanedit_faq:MaxOSX>*<？https/kanedit_faq:糸+柬>*<？https/kanedit_faq:魚+柬>*<？https/kanedit_faq:柬>*<？https/kanedit_faq:xvkbd>*<？https/kanedit_faq:TSF1KEV>]
+
+[<＃contents/KEV_interpret-1>|
+<？P> 熟語は隣接してると便利で覚えやすいという理屈で音読み訓読みの枠を飛び地します。<？BR>
+<？/P>
 <？DLDTinputstroke>  「[2(ふ)]」[^(へ)][^(ヘ)]<？/DTDD>                「茯苓(ぶくりょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[J(ま)][K(の)]<？/DTDD>                「福祉(ふくし)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[G(き)][G(キ)]<？/DTDD>                「蕗薹(ふきのとう)」<？/DD/DL>
@@ -2444,16 +2876,11 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[D(δ)]」[_(ろ)][_(ロ)]<？/DTDD>                「癤癰(せつよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[E(ε)]」<？BR>[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「珸瑶瑁(ごようまい)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[E(ε)]」[_(ろ)][_(ロ)]<？/DTDD>                「疔瘡(ちょうそう)」<？/DD/DL>
-|<＃contents/kanedit_faq-2>]
+|<＃contents/KEV_interpret-1>]
 
-[<＃contents/kanedit_faq-3>|
+[<＃contents/KEV_interpret-2>|
 <？P> 厳密には相席ではないのですが字引入力を使ったショートカット事例。<？BR>
 <？/P>
-<？DLDTfaq> Ｑ．字引入力系の｛逆:[3(あ)]｝みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．[KANA]+[3(あ)]です。事前に字引入力の項目を「地」に変更する必要があります([NFER]押したまま[XFER]→[0(わ)])。<？BR>
-     <？VRkeyboard/howto><？BR>
-     単漢字辞書の項目については「<？index/LTsv_glyph-5>」を確認してください。<？BR>
-<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[3(あ)]<？BR>｛逆:[3(あ)]｝<？/DTDD>         「上下(じょうげ)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[V(ヒ)]」[Q(タ)]<？BR>｛逆:[Q(タ)]｝<？/DTDD>         「左右(さゆう)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[J(ま)]」[5(え)]<？BR>｛逆:[5(え)]｝<？/DTDD>         「前後(ぜんご)」<？/DD/DLclearboth>
@@ -2466,15 +2893,11 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[3(あ)]」[G(き)]<？BR>｛非:[G(き)]｝<？/DTDD>         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[6(お)]」[Y(ん)]<？BR>｛非:[Y(ん)]｝<？/DTDD>         「温暖(おんだん)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[N(ミ)]」[}(ム)]<？BR>｛非:[}(ム)]｝<？/DTDD>         「寒冷(かんれい)」<？/DD/DLclearboth>
-|<＃contents/kanedit_faq-3>]
+|<＃contents/KEV_interpret-2>]
 
-[<＃contents/kanedit_faq-4>|
+[<＃contents/KEV_interpret-3>|
 <？P> 地名など漢字一字で圧縮表現できる場合、逆に字引入力で解凍(伸張)できるはず。<？BR>
 <？/P>
-<？DLDTfaq> Ｑ．都道府県国名の解説の「地北⇔北海道」みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？VReval/howto><？BR>
-     [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<？BR>
-<？/DD/DL>
 <？index/kanedit_faq:prefectures>
 
 <？DLDTinputstroke>  「[G(き)]」｛地:[Q(た)]｝<？/DTDD>                「地北⇔北海道」<？/DD/DL>
@@ -2536,7 +2959,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？DLDTinputstroke>  「[M(も)]」｛地:[B(こ)]｝<？/DTDD>                「地蒙⇔蒙古」(もんごる)<？/DD/DL>
 <？DLDTinputstroke>  「[5(え)]」｛地:[E(い)]｝<？/DTDD>                「地英⇔英吉利西」(イギリス)<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」｛地:[T(カ)]｝<？/DTDD>                「地米⇔亜米利加」(アメリカ)<？/DD/DL>
-|<＃contents/kanedit_faq-4>]
+|<＃contents/KEV_interpret-3>]
 [<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>|
 :<＄title/kanedit_faq-0>	都道府県の字引入力
 :<＄title/kanedit_faq-1>	国名の字引入力
@@ -2544,7 +2967,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	 <＄title/kanedit_faq-@c>
 |<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>]
 
-[<＃contents/kanedit_faq-5>|
+[<＃contents/KEV_interpret-4>|
 <？DLDTfaq> Ｑ．辞書作成の際に参考になったサイトとか教えていただけますか？<？/DTDD>
  Ａ．全部は無理ですが覚えがある範囲の一部なら。Yahoo!知恵袋やWeblioやgoo辞書やWikipediaやニコニコ大百科など様々なサイトを参考にしてます。<？BR><？/DD/DL>
 <？https/ref:radical>
@@ -2593,7 +3016,7 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 <？https/ref:Mahjong>
 <？https/ref:tkinter>
 <？https/ref:BMP>
-|<＃contents/kanedit_faq-5>]
+|<＃contents/KEV_interpret-4>]
 [<？https/ref:radical>*<？https/ref:木>*<？https/ref:魚>*<？https/ref:草>*<？https/ref:Fish!>*<？https/ref:Bird!>*<？https/ref:flesh>*<？https/ref:ネ示>*<？https/ref:攪拌>*<？https/ref:鶯鴬>*<？https/ref:囯国>*<？https/ref:団欒>*<？https/ref:噛嚙>*<？https/ref:脹張>*<？https/ref:舗鋪>*<？https/ref:檞>*<？https/ref:㓛>*<？https/ref:ghost>*<？https/ref:gundam>*<？https/ref:閄>*<？https/ref:‎samesound>*<？https/ref:country>*<？https/ref:rareplace>*<？https/ref:72pentads>*<？https/ref:28lunarmansions>*<？https/ref:24seasons>*<？https/ref:Japanesecolors>*<？https/ref:element>*<？https/ref:chemical>*<？https/ref:10^68>*<？https/ref:longreadingchar>*<？https/ref:surname1char>*<？https/ref:Kanjinames>*<？https/ref:zinmei1>*<？https/ref:zinmei2>*<？https/ref:animal>*<？https/ref:baseball>*<？https/ref:prefectures>*<？https/ref:sports>*<？https/ref:梅龱>*<？https/ref:BA-90>*<？https/ref:Tomato>*<？https/ref:braille>*<？https/ref:Mahjong>*<？https/ref:tkinter>*<？https/ref:BMP>|
 :<＄web/ref-00>	部首 - Wikipedia
 :<＄url/ref-00>	https://ja.wikipedia.org/wiki/%E9%83%A8%E9%A6%96
@@ -2708,408 +3131,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 :<＄html-1>	title="&#127813;
 .+\.html?	<＄html-@c>
 |BA-90<span class="kan5x5comic">&#127773;</span>）"*title="<span class="kan5x5comic">&#127813;</span>]
-
-[<？section/kanfont_usage-0>|
-.+\.html?	<section>@E <h3 id="kanfont_usage-@c"><？title/kanfont_usage-@c></h3>@E<＃contents/kanfont_usage-@c>@E</section>@E
-.*	@E<？title/kanfont_usage-@c>@E@E<＃contents/kanfont_usage-@c>@E
-|<？section/kanfont_usage-0>]
-
-[<＃contents/kanfont_usage-0>|
-<？Pcenter><？index/kanfont_usage:capture><？BR><？/P><？DLDT>   左上の<？VRkeyboard><？/DTDD>                   グリフ編集する漢字などを選択。<？VRkeyboard/howto><？BR>電卓機能は不使用。<？BR><？/DD/DL>
-<？DLDT>   縦のスケール<？/DTDD>                     グリフを編集する文字を選択。<？VRkeyboard>に無い漢字も選択可能。<？BR><？/DD/DL>
-<？DLDT>   縦スケールのスピンボックス<？/DTDD>       グリフを編集する文字を選択。縦のスケールと連動。<？BR><？/DD/DL>
-<？DLDT>   U+ffff表記下の「CP」ボタン<？/DTDD>       クリップボードに縦スケールで選択されてる文字をコピー。<？BR><？/DD/DL>
-<？DLDT>   U+ffff表記下の「PT」ボタン<？/DTDD>       クリップボードの先頭１文字を使って文字を選択。左上の<？VRkeyboard>にも反映。<？BR><？/DD/DL>
-<？DLDT>   真ん中のキャンバス<？/DTDD>               グリフを編集。右回転の青色ポリゴンが描画用途、左回転の緑色ポリゴンがフォントだと反転消去グリフだと背景色消去。<？BR>
-                                    クリックで頂点追加、ドラッグで頂点移動。ドラッグだけど頂点を動かさずクリックを離すと頂点は消える。<？BR>
-                                    線分(長方形じゃなくて円の部分)をクリックで頂点を増やせる。<？BR>
-                                    頂点を全て消すとポリゴンが１枚消える。<？BR><？/DD/DL>
-<？DLDT>   横のスケール<？/DTDD>                     編集するポリゴンの変更。または新規ポリゴンレイヤーを選択。<？BR><？/DD/DL>
-<？DLDT>   横スケール下の「COPY」ボタン<？/DTDD>     ポリゴンレイヤーを複製。「PASTE」で貼り直す事が可能。クリップボード不使用。<？BR><？/DD/DL>
-<？DLDT>   横スケール下の「CUT」ボタン<？/DTDD>      ポリゴンレイヤーを削除。「PASTE」で貼り直す事が可能。クリップボード不使用。<？BR><？/DD/DL>
-<？DLDT>   横スケール下の「PASTE」ボタン<？/DTDD>      「COPY」「CUT」したポリゴンレイヤーを貼り直す。クリップボード不使用。<？BR><？/DD/DL>
-<？DLDT>   横スケール下の「UP」ボタン<？/DTDD>       ポリゴンレイヤーを重ねる順番を変更。左回転のポリゴンを浮上。<？BR><？/DD/DL>
-<？DLDT>   横スケール下の「DOWN」ボタン<？/DTDD>     ポリゴンレイヤーを重ねる順番を変更。右回転のポリゴンを沈める。<？BR><？/DD/DL>
-<？DLDT>   「grid」スピンボックス<？/DTDD>           ポリゴンの頂点位置を揃える。「活(5x)」では100「漫(10x)」では50を想定。<？BR><？/DD/DL>
-<？DLDT>   「grid」チェックボックス<？/DTDD>         通常OFF。スピンボックスの値より1少ない数値にグリッド指定する事も可能。グリフデザインでは杞憂だった機能。<？BR><？/DD/DL>
-<？DLDT>   「seg」チェックボックス<？/DTDD>          通常ON。ポリゴンの線分を表示＆操作許可。<？BR><？/DD/DL>
-<？DLDT>   「Pce(piece)」チェックボックス<？/DTDD>   番号付き頂点を移動するとポリゴン1枚まるごと移動。頂点はキャンバスの外に移動できないので図形が潰れる場合に注意。必要に応じてOFF。Pce=piece。<？BR><？/DD/DL>
-<？DLDT>   「ref」チェックボックス<？/DTDD>          グリフ編集中に参考までに別のフォントを表示。<？BR><？/DD/DL>
-<？DLDT>   「活」「漫」「筆」ラジオボタン<？/DTDD>   キャンバスで編集するグリフを「活:kan5x5」「漫:kan5x5comic」「筆:kan5x5brush」から選択。<？BR><？/DD/DL>
-<？DLDT>   右側の入力欄<？/DTDD>                     辞書項目「英名音訓送異俗熙簡繁越地顔鍵代逆非難活漫筆幅」を<？VRkeyboard>で入力します。クリップボード使用可能。<？BR>
-                                    活漫筆幅がグリフ項目になります。グリフキャンバスで編集。頂点はSVGパスから独自形式に圧縮される場合があります。<？BR>
-                                    <？VRcalc/howto><？BR><？/DD/DL>
-<？DLDT>   右下の「save」ボタン<？/DTDD>             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。<？BR><？/DD/DL>
-|<＃contents/kanfont_usage-0>]
-[<？index/kanfont_usage:capture>|
-.+\.html?	<img src="kanfont_512x384.png" width="512" height="384" alt="kanfont"><br />
-.*	
-|<？index/kanfont_usage:capture>]
-
-[<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>|
-.+\.html?	<section>@E <h3 id="kanfont-@c"><？title/kanfont-@c></h3>@E<＃contents/kanfont-@c>@E</section>@E
-.*	@E<？title/kanfont-@c>@E@E<＃contents/kanfont-@c>@E
-|<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>]
-
-[<＃contents/kanfont-0>|
-<？P> 「<？https/kanfont.py>」の解説は準備中です。<？BR><？/P>
-|<＃contents/kanfont-0>]
-<！kanfont.py>
-
-[<＃contents/kanfont-1>|
-<？P> 「<？https/kanfont.tsv>」は「<？https/kanfont.py>」の設定ファイルです。<？BR>
-<？/P>
-<！../kanfont.tsv>
-|<＃contents/kanfont-1>]
-
-[../kanfont.tsv|
-[kanfont|	「kanfont.py」の設定。
-seek	縦スケール(編集中のグリフ)の値を保存。初期値は「ぱ」。
-grid	「grid」スピンボックスの値を保存。初期値は「50」。
-inner	「inner」チェックボックスの値を保存。初期値は「0」。
-lineseg	「seg」チェックボックスの値を保存。初期値は「1」。
-piece	「Pce」チェックボックスの値を保存。初期値は「1」。
-gothic	グリフラジオボタン(活,漫,筆)の値を保存。初期値は「0」。
-gridimage	編集中キャンバスに表示するグリッド画像ファイル名。初期値は「kanfont_grid25_5x5.png」。
-refer	「ref」編集中キャンバスに表示できるフォント名。初期値は「Noto Sans Japanese Regular」。
-refergrid	「ref」チェックボックスの値を保存。初期値は「1」。
-referGTK	キャンバスに「refer」を表示する場合の位置調整と色。「GTK」で大きいフォントを表示するとズレが発生する。初期値は「X:-30<？@T>Y:-30<？@T>S:420<？@T>C:#E5E5E5」。
-referTkinter	キャンバスに「refer」を表示する場合の位置調整と色。「Tkinter」で大きいフォントを表示するとズレが発生する。初期値は「X:-30<？@T>Y:-135<？@T>S:420<？@T>C:#E5E5E5」。
-glyphcolor	キャンバス編集中のグリフやカーソルの色指定。R:右回転ポリゴン L:左回転ポリゴン X:#D96ED3 G:#9F6C00。初期値は「R:#6E81D9<？@T>L:#6ED997<？@T>X:#D96ED3<？@T>G:#9F6C00」。
-dic_name	単漢字辞書保存先指定。初期値は「LTsv/kanchar.tsv」。
-svg_name	SVGの保存先指定。初期値は「kan5x5.svg」。
-font_name	グリフの名称。フォント名称にも使用。初期値は「活:kan5x5<？@T>漫:kan5x5comic<？@T>筆:kan5x5brush」。
-font_glyphtype	「save」ボタンで保存するグリフは初期値の「漫」に固定されてるが、「活」に変える事でドット絵限定にしたり、「」に空指定する事でグリフラジオボタンによる選択ができる。
-font_widths	フォント幅(全角,麻雀牌,半角)グループを生成。「kan5x5.svg」で「<？&lt;>font id="kan5x5comic_w624" horiz-adv-x="624"<？&gt;>」のようなタグ生成に使う。初期値は「1024,824,624」。
-autosave	初期値は「off」。「on」にするとウィンドウを閉じた時に「LTsv/kanchar.tsv(dic_name)」に自動保存可能。設定に関係なく「LTsv/kanpickle.bin」は上書保存。
-savetime	「save」ボタンに保存時間を表示する演出用途。初期値は「@0h:@0n:@0s」。
-|../kanfont.tsv]
-
-[<＃contents/kanfont-2>|
-<？P> ・「kanfont」のグリフキャンバスサイズは512ですがSVGパスの想定サイズは1024です。<？BR>
- ・グリフキャンバスは左上が&#40;0,0&#41;ですがSVGパスは左下が&#40;0,0&#41;です。<？BR>
- ・そしてSVGパスを<？DICchar>に保存する際に独自形式5x10xで圧縮する場合があります(SVGパスの「M」「z」の代わりに半角角括弧「[」「]」)。<？BR>
- 座標圧縮の話と直接関係ないが、「kanfont」はポリゴン限定(直線しか編集できない)ので、SVGパスの読込も「M」と「z」しか対応してないことに注意。<？BR>
-<？/P>
-<？DLDT>「活」用途の5x系(グリフキャンバス上「grid」100px)<？/DTDD>
-  25分割するので36個のxy座標(0123456789abcdefghijklmnopqrstuvwxyz)で表現する事で圧縮。<？BR>
-<？/DD/DL>
-<？DLDT>「漫」用途の10x系(グリフキャンバス上「grid」50px)<？/DTDD>
-  縦横それぞれ10分割するのでX軸Y軸それぞれ11個のx座標(ABCDEFGHIJK)y座標(OPQRSTUVWXY)で表現する事で圧縮。<？BR>
-  実際の「漫」グリフでは25px単位の「grid」も使ってるので圧縮されない場合もあります。<？BR>
-<？/DD/DL>
-<？DLDT>「漫」用途の想定20x系(グリフキャンバス上「grid」25px想定)<？/DTDD>
-  実際には都道府県アイコンが10pxで描画とか「grid」をもっと細かく区切ってるので圧縮予定はありません。<？BR><？/DD/DL>
-|<＃contents/kanfont-2>]
-
-[<？section/kanfont_faq-0>|
-.+\.html?	<section>@E <h3 id="kanfont_faq-@c"><？title/kanfont_faq-@c></h3>@E<＃contents/kanfont_faq-@c>@E</section>@E
-.*	@E<？title/kanfont_faq-@c>@E@E<＃contents/kanfont_faq-@c>@E
-|<？section/kanfont_faq-0>]
-
-[<＃contents/kanfont_faq-0>|
-<？DLDTfaq> Ｑ．「kanfont」で他のフォントを編集できますか？<？/DTDD>
- Ａ．「kanfont」はフォントファイルを読み込めないので「kan5x5comic」のグリフ編集しかできません。<？BR>
-     既存のフォントのパスをSVGに変換してtsvを上書きする荒技も考えられますが、現状「kanfont」は曲線を扱えないので普通に読み込めるフォントは皆無かと。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．「漫」フォント座標が圧縮できない場合がある。<？/DTDD>
- Ａ．グリフの「grid」が100または50以外の数値を扱うと圧縮効かなくなります。<？BR>
- 圧縮形式5x10xの詳細は「<？index/kanfont-2>」を参考。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．圧縮されてない素のSVGを確認したい。<？/DTDD>
- Ａ．「save」ボタンで「kan5x5.svg」が保存できるのでそっちで確認できるはず。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．「kan5x5.svg」は何に使うんですか？<？/DTDD>
- Ａ．「kan5x5comic.svg」をFontForgeで「kan5x5comic.ttf」に変換できます。<？BR>
- <？/DD/DL>
-<？https/kanfont_faq:fontforge>
-
-<？DLDTfaq> Ｑ．「FontForge」が使えない環境というかLinux以外のOSだと謎の環境構築が複雑なので簡単な方法お願い。<？/DTDD>
- Ａ．<？yakuyon>から「kan5x5comic.woff」をダウンロードしてWOFFコンバータで「kan5x5comic.ttf」にする別ルートもあります。<？BR>
- <？/DD/DL>
-<？https/kanfont_faq:ooblog.github.io>
-
-<？https/kanfont_faq:woffconv>
-
-<？DLDTfaq> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
- Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
-     <？VRkeyboard/howto><？BR>
-     <？VRcalc/howto><？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
- Ａ．「LTsv/kanmap.tsv」に含まれてない漢字を探索するには「kanedit」の「探」コマンドを用いてください。<？BR>
-     例えば都道府県アイコン「<？contents/tokyoicon>」は「kanedit」の「電卓」で「探<？contents/tokyoicon>」すると「探<？contents/tokyoicon>⇔東」が求められます。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．左回転のポリゴンがフォントに変換したときに描画されてましたよ？<？/DTDD>
- Ａ．フォントの描画ルールでは、逆回転のポリゴンが重なった場所が透過になるアルゴリズムだからです。<？BR>
-     「L:Tsv」のグリフは単純に順番に描画するアルゴリズムなので「UP」「DOWN」ボタンでポリゴン描画順の入れ替えてください。<？BR><？/DD/DL>
-|<＃contents/kanfont_faq-0>]
-[<？contents/tokyoicon>|
-.+\.html?	<span class="kan5x5comic">&#61580;</span>
-.*	&#61580;
-|<？contents/tokyoicon>]
-
-[<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>|
-:<＄web/kanfont_faq-0>	ふぉんと - 「約四文字」(http://ooblog.github.io/)
-:<＄url/kanfont_faq-0>	https://ooblog.github.io/%E3%81%B5%E3%81%89%E3%82%93%E3%81%A8.html
-:<＄web/kanfont_faq-1>	FontForge
-:<＄url/kanfont_faq-1>	http://fontforge.github.io/ja/
-:<＄web/kanfont_faq-2>	WOFFコンバータ
-:<＄url/kanfont_faq-2>	http://opentype.jp/woffconv.htm
-.+\.html?	<dl class="faqlink"><dt><＄web/kanfont_faq-@c></dt><dd><a href="<＄url/kanfont_faq-@c>" title="<＄web/kanfont_faq-@c>"><＄url/kanfont_faq-@c></a></dd></dl>
-.*	   <＄web/kanfont_faq-@c><？BR>@E   <＄url/kanfont_faq-@c><？BR>
-|<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>]
-
-[<？https/kanfont.py>*<？https/kanfont.tsv>|
-:<＄path/kanfont-0>	kanfont.py
-:<＄path/kanfont-1>	kanfont.tsv
-.+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>"><＄path/kanfont-@c></a>
-.*	<＄path/kanfont-@c>
-|<？https/kanfont.py>*<？https/kanfont.tsv>]
-
-[<？section/kanmap_usage-0>*<？section/kanmap_usage-1>|
-.+\.html?	<section>@E <h3 id="kanmap_usage-@c"><？title/kanmap_usage-@c></h3>@E<＃contents/kanmap_usage-@c>@E</section>@E
-.*	@E<？title/kanmap_usage-@c>@E@E<＃contents/kanmap_usage-@c>@E
-|<？section/kanmap_usage-0>*<？section/kanmap_usage-1>]
-
-[<＃contents/kanmap_usage-0>|
-<？P> 事前にグリフを「LTsv/kanpickle.bin」へ積み込む事で「kanedit」「kanfont」などの動作がスムーズになります。<？BR>
- 「<？https/kanmap.py>」を起動すると上部に漢字配列「<？https/kanmap.tsv>」、下部に<？DICchar>を表示します。<？BR>
- 「<？https/kanmap.py>」を終了する時に「LTsv/kanpickle.bin」と「kanmap.png」を保存します(PNGの生成はGTKのみ)。<？BR><？/P>
-|<＃contents/kanmap_usage-0>]
-
-[<＃contents/kanmap_usage-1>|
-<？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard/howto><？BR><？/DD/DL>
-<？DLDT>  小さい文字の上でタップ<？/DTDD>          カーソル点灯。クリップボードに１文字転送。<？BR><？/DD/DL>
-<？DLDT>  「clipfind」をタップ<？/DTDD>            クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
-<？DLDT>  「update☐」にチェック☑<？/DTDD>        ONの状態で[Ctrl]+[S]もしくは「<？https/kanmap.py>」を終了すると「LTsv/kanmap.tsv」を上書保存。<？BR><？/DD/DL>
-<？DLDT>  「kbdfind☐」にチェック☑<？/DTDD>       ONの状態なら漢直鍵盤の入力操作で検索してカーソル点灯。<？BR><？/DD/DL>
-<？DLDT>  「rewrite☐」にチェック☑<？/DTDD>       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<？BR><？/DD/DL>
-<？DLDT>  「swap☐」にチェック☑<？/DTDD>          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<？BR><？/DD/DL>
-|<＃contents/kanmap_usage-1>]
-[<？VRkeyboard/howto>|
-.*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
-|<？VRkeyboard/howto>]
-[<？VRcalc/howto>|
-.*	<？VRcalc>の入力操作は「<？index/LTsv_glyph-3>」を参考。
-|<？VRcalc/howto>]
-[<？VReval/howto>|
-.*	<？VRcalc>の演算結果は「<？index/LTsv_glyph-4>」を参考。
-|<？VReval/howto>]
-
-[<？index/kanmap_usage:capture>|
-.+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
-.*	
-|<？index/kanmap_usage:capture>]
-
-[<？section/kanmap-0>|
-.+\.html?	<section>@E <h3 id="kanmap-@c"><？title/kanmap-@c></h3>@E<＃contents/kanmap-@c>@E</section>@E
-.*	@E<？title/kanmap-@c>@E@E<＃contents/kanmap-@c>@E
-|<？section/kanmap-0>]
-
-[<＃contents/kanmap-0>|
-<？P> 「<？https/kanmap.py>」の解説は準備中です。<？BR><？/P>
-|<＃contents/kanmap-0>]
-<！kanmap.py>
-
-[<？section/kanmap_faq-0>|
-.+\.html?	<section>@E <h3 id="kanmap_faq-@c"><？title/kanmap_faq-@c></h3>@E<＃contents/kanmap_faq-@c>@E</section>@E
-.*	@E<？title/kanmap_faq-@c>@E@E<＃contents/kanmap_faq-@c>@E
-|<？section/kanmap_faq-0>]
-
-[<＃contents/kanmap_faq-0>|
-<？DLDTfaq> Ｑ．「Tkinter」で「kanmap.png」が保存されないのですが？<？/DTDD>
- Ａ．「Tkinter」では「canvas」を画像として保存する方法が不明なので、[PrtSc]キーとかでキャプチャソフトを起動してください。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．「kanmap.png」に「LTsv/kanmap.tsv」のフォントが保存されるのですか？<？/DTDD>
- Ａ．グリフの座標データが保存されるのは「LTsv/kanpickle.bin」です。「kanmap.png」は進捗確認用の画像です。<？BR>
-     <？DICchar>のSVGを「LTsv/kanpickle.bin」にPythonのパイクルとして積み込みます。<？BR>
-<？/DD/DL>
-<？https/Python_pickle>
-<？DLDTfaq> Ｑ．「kanmap.png」の空白が多い気がします。<？/DTDD>
- Ａ．<？DICchar>で扱ってる文字がまだまだ不十分なので同時にグリフデータも不足するためです。いわゆる開発中の画面状態です。<？BR>
- 一見表示されてない漢字も「<？https/kanmap.tsv>」で扱ってる漢字はクリップボードに取得できます。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．編集追加したはずのグリフが「kanedit」に反映されない。<？/DTDD>
- Ａ．「LTsv/kanpickle.bin」を一旦手動で削除して「<？https/kanmap.py>」をもう一度起動。「LTsv/kanpickle.bin」が初期化されるはずです。<？BR><？/DD/DL>
-|<＃contents/kanmap_faq-0>]
-
-[<？https/Python_pickle>*<？https/Python_re>|
-:<＄web/Python-0>	 12.1. pickle — Python オブジェクトの直列化 — Python 3.5.2 ドキュメント
-:<＄url/Python-0>	 http://docs.python.jp/3/library/pickle.html
-:<＄web/Python-1>	 6.2. re — 正規表現操作 — Python 3.5.2 ドキュメント
-:<＄url/Python-1>	 http://docs.python.jp/3/library/re.html
-.+\.html?	<dl class="faqlink"><dt><＄web/Python-@c></dt><dd><a href="<＄url/Python-@c>" title="<＄web/Python-@c>"><＄url/Python-@c></a></dd></dl>
-.*	   <＄web/Python-@c><？BR>@E   <＄url/Python-@c><？BR>@E
-|<？https/Python_pickle>*<？https/Python_re>]
-
-[<？section/kanzip_usage-0>|
-.+\.html?	<section>@E <h3 id="kanzip_usage-@c"><？title/kanzip_usage-@c></h3>@E<＃contents/kanzip_usage-@c>@E</section>@E
-.*	@E<？title/kanzip_usage-@c>@E@E<＃contents/kanzip_usage-@c>@E
-|<？section/kanzip_usage-0>]
-
-[<＃contents/kanzip_usage-0>|
-<？Pcenter><？index/kanzip_usage:capture><？BR><？/PP> まず「<？https/kanzip.py>」配下に作業用の「kanzip」フォルダが作成されます。<？BR>
- 初期状態なら「jigyosyo.zip」「01hokkai.zip」など各都道府県(大口事業所個別番号含む)のボタンがあり、押すと「*.zip」をダウンロード。<？BR>
- 「*.zip」ダウンロード同様に「*.csv」から必要事項を取りだして「*.tsv」に変換の手順を、47都道府県で行います。手順は手動でボタンを押します。<？BR>
- 全ての「*.tsv」を作成(かつ「kanzip.tsv」が無い状態)すると「都道府県と事業所をダウンロード＆コンバートし終えてから[kanzip.tsv]にマージ。」ボタンの封印が解除されるので、<？BR>
- 最終的に<？DICzip>にマージして完成。<？BR><？/P>
-|<＃contents/kanzip_usage-0>]
-[<？index/kanzip_usage:capture>|
-.+\.html?	<img src="kanzip_512x384.png" width="512" height="384" alt="kanzip"><br />
-.*	
-|<？index/kanzip_usage:capture>]
-
-[<？section/kanzip-0>|
-.+\.html?	<section>@E <h3 id="kanzip-@c"><？title/kanzip-@c></h3>@E<＃contents/kanzip-@c>@E</section>@E
-.*	@E<？title/kanzip-@c>@E@E<＃contents/kanzip-@c>@E
-|<？section/kanzip-0>]
-
-[<＃contents/kanzip-0>|
-<？P> 「<？https/kanzip.py>」の解説は準備中です。<？BR><？/P>
-|<＃contents/kanzip-0>]
-<！kanzip.py>
-
-[<？section/kanzip_faq-0>|
-.+\.html?	<section>@E <h3 id="kanzip_faq-@c"><？title/kanzip_faq-@c></h3>@E<＃contents/kanzip_faq-@c>@E</section>@E
-.*	@E<？title/kanzip_faq-@c>@E@E<＃contents/kanzip_faq-@c>@E
-|<？section/kanzip_faq-0>]
-
-[<＃contents/kanzip_faq-0>|
-<？DLDTfaq> Ｑ．ボタンを手動で１個ずつ押していくのが面倒です。<？/DTDD>
- Ａ．ダウンロードがうまくいかない場合(回線が襲いとかzipの破損など)自動化しづらい箇所があるので手動確認は大事です。<？/DD/DL>
-<？DLDTfaq> Ｑ．ダウンロードできなくなりました。<？/DTDD>
- Ａ．日本郵便にあるはずのzipファイルのURL変更などが考えられますが、ブラウザでzipをダウンロードして「kanzip」フォルダにコピーすれば作業続行可能なはずです。<？/DD/DL>
-<？https/kanzip_faq:jigyosyo>
-<？https/kanzip_faq:kogaki-zip>
-|<＃contents/kanzip_faq-0>]
-
-[<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>|
-:<＄web/kanzip_faq-0>	事業所の個別郵便番号のダウンロード zip形式 - 日本郵便
-:<＄url/kanzip_faq-0>	http://www.post.japanpost.jp/zipcode/dl/jigyosyo/index-zip.html
-:<＄web/kanzip_faq-1>	読み仮名データの促音・拗音を小書きで表記するもの - zip圧縮形式 日本郵便
-:<＄url/kanzip_faq-1>	http://www.post.japanpost.jp/zipcode/dl/kogaki-zip.html
-.+\.html?	<dl class="faqlink"><dt><＄web/kanzip_faq-@c></dt><dd><a href="<＄url/kanzip_faq-@c>" title="<＄web/kanzip_faq-@c>"><＄url/kanzip_faq-@c></a></dd></dl>
-.*	   <＄web/kanzip_faq-@c><？BR>@E   <＄url/kanzip_faq-@c><？BR>
-|<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>]
-
-[<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>|
-.+\.html?	<section>@E <h3 id="KEV_usage-@c"><？title/KEV_usage-@c></h3>@E<＃contents/KEV_usage-@c>@E</section>@E
-.*	@E<？title/KEV_usage-@c>@E@E<＃contents/KEV_usage-@c>@E
-|<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>]
-
-[<＃contents/KEV_usage-0>|
-<？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEV」を設置する方法で解説します。<？BR>
-<？/PP>
-「<？https/kanmap.tsv>」と「<？https/kanchar.tsv>」を「<？https/kanedit.vim>」と同じフォルダに入れて置きます。<？BR>
-Vimのメニューから「編集」→「起動時の設定」で「.vimrc」ファイルが開きます&#40;作成できます&#41;。<？BR>
-「command KEVtsf  :source &#40;KEVインストール先フォルダ&#41;/kanedit.vim」のような一行を加え保存&#40;Vimのメニューから「ファイル」→「保存」&#41;します。<？BR>
-Vim再起動すると「:KEV」コマンドが入力できるようになるはずです([Esc]を何回か連打してから、[:]を押すとコマンドモードに移行)。<？BR>
-「:KEV」コマンドで「1(ぬ)」「鍵盤」のメニューが追加されてたらセットアップ完了です&#40;Vimを起動するたび「:KEV」コマンド実行&#41;。<？BR>
-[Space]キー2回でモード切替、[Shift]キー押しながら[Space]キー2回で半角スペース入力になります。<？BR>
-漢直を停止するには「:call KEVexit()」、再度有効にするには「:call KEVexit()」。<？BR>
-<？/PP>
-Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。<？BR><？/P>
-
-<？https/KEV_usage:vimdoc-ja>
-|<＃contents/KEV_usage-0>]
-[<？index/KEV_usage:capture>|
-.+\.html?	<img src="KEV_512x384.png" width="512" height="384" alt="KEV"><br />
-.*	
-|<？index/KEV_usage:capture>]
-[<？https/KEV_usage:vimdoc-ja>|
-:<＄web/License-0>	help - Vim日本語ドキュメント
-:<＄url/License-0>	http://vim-jp.org/vimdoc-ja/
-.+\.html?	<dl><dt><＄web/License-@c></dt><dd><a href="<＄url/License-@c>" title="<＄web/License-@c>"><＄url/License-@c></a></dd></dl>
-.*	   <＄web/License-@c><？BR>@E   <＄url/License-@c><？BR>
-|<？https/KEV_usage:vimdoc-ja>]
-
-[<＃contents/KEV_usage-1>|
-<？P> Vimのマップ機能を用いて漢直を実装しています。マップ等の設定変更は[Space]キーから始まるコマンド入力を使います。<？BR>
-<？/P>
-<？DLDT>  [1(ぬ)〜&#92;(ろ)]<？/DTDD>                          通常ひらがな鍵盤の文字入力、もしくは1文字検索。後述の鍵盤切替コマンドでカタカナ入力も可能。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Space]<？/DTDD>                             ノーマルモードと挿入モードを切り替えます。通常は[i(に)]で挿入モード移行、[Esc]か[Ctrl]+[[(゜)]でノーマルモード移行。<？BR><？/DD/DL>
-<？DLDT>  [Space]…<？/DTDD>                                   [Space]キー入力後のコマンド入力が遅れると普通に半角スペースが入力されます。<？BR><？/DD/DL>
-<？DLDT>  [Space],[1(ぬ)〜&#92;(ろ)]<？/DTDD>                  入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。同じ鍵盤を2回選択するとひらがなカタカナの入れ替えです。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Enter]<？/DTDD>                             「/前方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Enter]。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Tab]<？/DTDD>                               「?後方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Tab]。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Del]<？/DTDD>                              「σ」鍵盤に切り替えます。1文字検索モード、辞書メニュー、字引入力、カタカナ鍵盤も解除されます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]<？/DTDD>     hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [;(れ)]<？/DTDD>                          [BS]入力というかカーソルの左が1文字消去されます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [:(け)]<？/DTDD>                          [Del]入力というかカーソルの右が1文字消去されます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [](む)]<？/DTDD>                          [Enter]入力というか改行が入力されます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [,(ね)]<？/DTDD>                          [Home]入力というか行頭にカーソル移動です。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [.(る)]<？/DTDD>                          [End]入力というか行末にカーソル移動です。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [/(め)]<？/DTDD>                          [PageUp]入力というか1画面文頭にスクロールです。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [&#92;(ろ)]<？/DTDD>                      [PageDown]入力というか1画面文末にスクロールです。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [a(ち)]<？/DTDD>                          テキスト全選択です。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [z(つ)]<？/DTDD>                          一手前に戻します。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [o(ら)]<？/DTDD>                          ファイル履歴などからファイルを開きます。マウスが使えるかのようなメッセージがでますが、番号がズレる場合があり危険なので数値入力してください。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [s(て)]<？/DTDD>                          ファイルを保存します。<？BR><？/DD/DL>
-<？DLDT>  [Space],[BS]<？/DTDD>                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[q(英)〜,(照)]などとの交換です。辞書の解除は再度同じ辞書の選択。<？BR><？/DD/DL>
-|<＃contents/KEV_usage-1>]
-
-[<＃contents/KEV_usage-2>|
-<？P> [Shift]キーを併用する事で入れ替え動作をショートカットすることができます。<？BR>
-<？/P>
-<？DLDT>  [Shift]+[Space],[Shift]+[Space]<？/DTDD>             [Shift]キー押しながら[Space]キー2回で半角スペースを入力します。<？BR><？/DD/DL>
-<？DLDT>  [Shift]+[Space],[Space]<？/DTDD>                     [Shift]キー押しながら[Space]キー2回の時[Shift]キーを押さない[Space]を混ぜると全角スペースも入力できます。<？BR><？/DD/DL>
-<？DLDT>  [Space],[Shift]+[Space]<？/DTDD>                     [Shift]キー押しながら[Space]キー2回の時[Shift]キーを押さない[Space]を混ぜると全角スペースも入力できます。<？BR><？/DD/DL>
-<？DLDT>  [Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>                  [Shift]キーを組み合わせる事で先述の鍵盤切替コマンドをショートカットしてカタカナ入力することも可能です。<？BR><？/DD/DL>
-<？DLDT>  [Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]<？/DTDD>  [Shift]キーを組み合わせる事で先述の「鍵盤」と「辞書」の入れ替えコマンドをショートカットして辞書の選択解除も可能です。<？BR><？/DD/DL>
-|<＃contents/KEV_usage-2>]
-
-[<？section/KEV-0>|
-.+\.html?	<section>@E <h3 id="KEV-@c"><？title/KEV-@c></h3>@E<＃contents/KEV-@c>@E</section>@E
-.*	@E<？title/KEV-@c>@E@E<＃contents/KEV-@c>@E
-|<？section/KEV-0>]
-
-[<＃contents/KEV-0>|
-<！kanedit.vim>
-|<＃contents/KEV-0>]
-[kanedit.vim|
-KEVsetup()	「KanEditVim」の初期化初期設定(imap等含む)。
-s:KEVfilereadable(TSFfilepath,TSVfilepath)	辞書等の存在チェック。漢字配列「<？https/kanmap.tsv>」と単漢字辞書「<？https/kanchar.tsv>」は「<？https/kanedit.vim>」と同じフォルダに。	LTsv版と互換性持たせるため「,tsf」と「,tsv」の両ファイルを調べる。
-KEVimap(kankbd_kbdchar)	「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
-s:KEVdicmenu(menuname)	鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
-KEVfiler()	「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラ。
-KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニューの撤去処理。
-|kanedit.vim]
-
-[<？section/KEV_faq-0>|
-.+\.html?	<section>@E <h3 id="KEV_faq-@c"><？title/KEV_faq-@c></h3>@E<＃contents/KEV_faq-@c>@E</section>@E
-.*	@E<？title/KEV_faq-@c>@E@E<＃contents/KEV_faq-@c>@E
-|<？section/KEV_faq-0>]
-
-[<＃contents/KEV_faq-0>|
-<？DLDTfaq> Ｑ．汎用辞書「kanword.tsv」が認識されない。<？/DTDD>
- Ａ．Vin版では<？DICword>は未サポートです。汎用辞書は漢直の対象外だからです。<？BR>
-<？/DD/DL>
-<？DLDTfaq> Ｑ．<？DICzip>が認識されない。<？/DTDD>
- Ａ．Vin版では<？DICzip>は未サポートです。郵便番号は漢直の対象外だからです。<？BR>
-<？/DD/DL>
-|<＃contents/KEV_faq-0>]
-
-[<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>|
-.+\.html?	<section>@E <h3 id="KEV_interpret-@c"><？title/KEV_interpret-@c></h3>@E<＃contents/KEV_interpret-@c>@E</section>@E
-.*	@E<？title/KEV_interpret-@c>@E@E<＃contents/KEV_interpret-@c>@E
-|<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>]
-
-[<＃contents/KEV_interpret-0>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
-|<＃contents/KEV_interpret-0>]
-[<＃contents/KEV_interpret-1>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
-|<＃contents/KEV_interpret-1>]
-[<＃contents/KEV_interpret-2>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
-|<＃contents/KEV_interpret-2>]
-[<＃contents/KEV_interpret-3>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
-|<＃contents/KEV_interpret-3>]
-[<＃contents/KEV_interpret-4>|
-<？P> 「<？https/kanedit.vim>」の解説は準備中です。<？BR><？/P>
-|<＃contents/KEV_interpret-4>]
 
 [<？section/address-0>|
 .+\.html?	<section>@E <h3 id="address-@c"><？title/address-@c></h3>@E<＃contents/address-@c>@E</section>@E
@@ -3672,25 +3693,28 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	③-0．「kanzip」のＦＡＱ
 |<？title/kanzip_faq-0>]
 
-[<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>|
+[<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>|
 .+\.html?	 <li><？index/KEV_usage-@c></li>@E
 .*	 <？index/KEV_usage-@c>@E
-|<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>]
-[<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>|
+|<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>]
+[<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>|
 ^KEV\.html?	<a href="#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？title/KEV_usage-@c></a>
 .+\.html?	<a href="KEV.html#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？titleimg/software-4><？title/KEV_usage-@c></a>
 ^KEV\.txt	<？title/KEV_usage-@c>
 .*	「KEV.txt」の<？title/KEV-@c>
-|<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>]
+|<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>]
 [<？title/KEV_usage-0>|
 .*	①-0．「KEV(kanedit.vim)」をVimへセットアップ
 |<？title/KEV_usage-0>]
 [<？title/KEV_usage-1>|
-.*	①-1．「KEV」の[Shift]省略した使い方
+.*	①-1．「KEV」の使い方([Shift]省略)
 |<？title/KEV_usage-1>]
 [<？title/KEV_usage-2>|
-.*	①-2．「KEV」の[Shift]併用する使い方
+.*	①-2．「KEV」の[Shift]使用によるショートカット
 |<？title/KEV_usage-2>]
+[<？title/KEV_usage-3>|
+.*	①-3．単漢字辞書の辞書項目
+|<？title/KEV_usage-3>]
 
 [<？list/KEV-0>|
 .+\.html?	 <li><？index/KEV-@c></li>@E

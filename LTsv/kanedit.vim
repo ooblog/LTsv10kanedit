@@ -2,7 +2,7 @@ set encoding=utf-8
 scriptencoding utf-8
 let s:kev_scriptdir = expand('<sfile>:p:h')
 
-"「KanEditVim」の初期設定(imap等含む)。漢字配列「kanmap,tsf」と単漢字辞書「kanchar,tsf」は「kanedit.vim」と同じフォルダに。
+"「KanEditVim」の初期化初期設定(imap等含む)。
 function! KEVsetup()
     let s:kankbd_menuid = 10000
     let s:kankbd_HJKL = 'σ'
@@ -82,7 +82,7 @@ function! KEVsetup()
     imap <silent> <Space><Space> <Esc>
     imap <silent> <S-Space><S-Space> <C-V><Space>
     imap <silent> <S-Space><Space> <C-V>　
-    imap <silent> <Space><S-Space> <C-V>　
+    imap <silent> <Space><S-Space> <C-V><Tab>
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_inputhyphen = s:kankbd_ESCmap[s:kankbd_inputkeys[s:inputkey]]
         execute "noremap <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ") :call KEVimap('" . s:kankbd_inputkanas[s:inputkey] . "')<Enter>"
@@ -113,7 +113,7 @@ function! KEVsetup()
     call KEVimap("ぬ")
 endfunction
 
-"TSV版と互換性持たせるため2種類のファイルを調べる・
+"辞書等の存在チェック。漢字配列「<？https/kanmap.tsv>」と単漢字辞書「<？https/kanchar.tsv>」は「<？https/kanedit.vim>」と同じフォルダに。	LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイルの有無を調べる。
 function! s:KEVfilereadable(TSFfilepath,TSVfilepath)
     let s:kankbd_filepath = ""
     :if filereadable(a:TSFfilepath)
@@ -125,7 +125,7 @@ function! s:KEVfilereadable(TSFfilepath,TSVfilepath)
     return s:kankbd_filepath
 endfunction
 
-"「[Space][ぬ〜ろ]」等のコマンド入力で鍵盤(imap等)変更。「[Space][Tab]」で一文字検索モード。
+"「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
 function! KEVimap(kankbd_kbdchar)
     :if a:kankbd_kbdchar == 'HJKL'
         call s:KEVdicmenu("鍵盤")
@@ -220,7 +220,7 @@ function! KEVimap(kankbd_kbdchar)
     let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
 
-"鍵盤と辞書を並び替える。
+"鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
 function! s:KEVdicmenu(menuname)
     :if exists("s:kankbd_alphamenuname")
         execute "iunmenu <silent> " s:kankbd_alphamenuname
@@ -243,7 +243,7 @@ function! s:KEVdicmenu(menuname)
     :endfor
 endfunction
 
-"「σ」鍵盤のOで履歴などからファイルを開く。
+"「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
 function! KEVfiler()
     cd $HOME
     let s:dirline = expand('%:p:h')
@@ -275,7 +275,7 @@ function! KEVfiler()
     :endwhile
 endfunction
 
-"メニューとimapを消去。
+"「KanEditVim」の終了。imap等マップ関連の撤去やメニューの撤去処理。
 function! KEVexit()
     :if exists("s:kankbd_irohamenuname")
         unmap <silent> <Space><Space>
