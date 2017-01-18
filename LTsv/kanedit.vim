@@ -308,6 +308,7 @@ function! KEVexit()
         execute "nunmenu <silent> " . s:kankbd_alphamenuname
     :endif
     unlet! s:kankbd_irohamenuname
+    unlet! s:kankbd_alphamenuname
 endfunction
 
 call KEVsetup()
