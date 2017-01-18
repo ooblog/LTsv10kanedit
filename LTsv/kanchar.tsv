@@ -1171,7 +1171,7 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 ⽣	英:radical 100		名:セイブ		音:		訓:		送:		異:生	俗:生部		熙:生部
 生	英:life		名:いきる	音:セイ/ショウ/ジョウ	訓:いきる/うまれる/はえる/なま	送:生産/生涯/誕生/生きる/生まれる/生える/生卵	異:	俗:
 ⽤	英:radical 101		名:ヨウブ		音:		訓:		送:		異:用	俗:用部		熙:用部
-用	英:use	名:もちいる	音:ヨウ	訓:もちいる	送:用法/用いる	俗:甬	漫:[05zxrqkjpo][7de8][9fga][lrsm]
+用	英:use	名:もちいる	音:ヨウ	訓:もちいる	送:用法/用いる	俗:甬	活:[05zxrqkjpo][7de8][9fga][lrsm]
 甩	英:use			名:シュツ		音:		訓:		送:		異:	俗:振
 ⽥	英:radical 102		名:デンブ		音:		訓:		送:		異:田	俗:田部		熙:田部
 田	英:field		名:た			音:デン		訓:た		送:田園/田植え	異:龱	俗:梅田/梅龱	活:[05zu][7de8][jpqk][9fga][lrsm]
@@ -2064,6 +2064,8 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 喱	英:	俗:咖喱(カレー)	活:[6825nmstzwqo]
 刈	英:shears/reap/prune/cut/trim	名:かり	異:苅	活:[239a45zxrqkjde][67dc][ijvu][eklf][lrsm]
 苅	英:shears/reap/prune/cut/trim	名:かり	異:刈	活:[128934abzwqpji67][opvu][djke][kqsm]
+凡	活:[04stzxlkef97vu]
+波	活:[0176][cdji][opvu][8934abnmsrxw][stzy][flmg]
 衆	英:	簡:众
 众	英:	繁:衆	活:[6714abhgsrxwqpdc][opvu][stzy][7deqrfga]
 市	英:	活:[68239bhflnzysrxwqpvuikec]
@@ -2521,4 +2523,3 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
 	英:			名:			音:		訓:		送:		異:	俗:
-凡	漫:[05baghzu][7pqrlk8][flmg]	活:[05baghzu][7pqrlk8][flmg]

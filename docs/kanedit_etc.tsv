@@ -1,11 +1,11 @@
-[L:Tsv|
+ [L:Tsv|
 code	UTF-8
 enter	LF
 tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170116M072702
+modify	20170118W091645
 |L:Tsv]
 
 [LTsv_doc|
@@ -1959,15 +1959,6 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 <？DLDT>  「rewrite☐」にチェック☑<？/DTDD>       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<？BR><？/DD/DL>
 <？DLDT>  「swap☐」にチェック☑<？/DTDD>          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<？BR><？/DD/DL>
 |<＃contents/kanmap_usage-1>]
-[<？VRkeyboard/howto>|
-.*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
-|<？VRkeyboard/howto>]
-[<？VRcalc/howto>|
-.*	<？VRcalc>の入力操作は「<？index/LTsv_glyph-3>」を参考。
-|<？VRcalc/howto>]
-[<？VReval/howto>|
-.*	<？VRcalc>の演算結果は「<？index/LTsv_glyph-4>」を参考。
-|<？VReval/howto>]
 
 [<？index/kanmap_usage:capture>|
 .+\.html?	<img src="kanmap_512x384.png" width="512" height="384" alt="kanmap"><br />
@@ -2084,6 +2075,48 @@ Vim再起動すると「:KEV」コマンドが入力できるようになるは�
 Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。<？BR><？/P>
 
 <？https/KEV_usage:vimdoc-ja>
+
+<？P>あと漢直と直接関係けどVimの設定についで追加として、<？BR>
+「matchpairs」オプションに全角括弧を設定、全角空白のハイライト指定など。<？BR>
+「eol:$」も本当は「eol:&#x21B2;」(&amp;#x21B2;)だけどWindowsだとエラーになるので注意。<？BR><？/P>
+<？CODE>
+"# 表示設定
+set encoding=utf-8                                                      "日本語というか漢字対応
+set number                                                              "行番号表示
+set title                                                               "編集中ファイル名表示
+set showmatch                                                           "対応する括弧を強調
+:if has('win32')
+  imap <？&lt;>silent<？&gt;> <？&lt;>C-CR<？&gt;> <？&lt;>Esc<？&gt;>|                                           "winで「^[」動作しない
+"set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:” "winで全角括弧動作しない
+:else
+  set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:” "「%」で全角括弧も移動
+:endif
+syntax on                                                               "コード色分け
+set tabstop=4                                                           "インデント4スペース
+set smartindent                                                         "オートインデント
+set list                                                                "スペースやタブの表示
+:if has('win32')
+  set listchars=tab:>-,trail:_,eol:$,nbsp:%                             "改行を改行記号代行に
+:else
+  set listchars=tab:>-,trail:_,eol:$,nbsp:%                             "改行を(U+21b2)に
+augroup highlightZenkakuSpace
+:endif
+highlight ZenkakuSpace guibg=#f0f0f0  "全角空白の設定前にハイライトを事前に作らないとエラーなる
+  autocmd!
+  autocmd Colorscheme * highlight ZenkakuSpace guibg=#f0f0f0            "全角空白の色を指定
+  autocmd VimEnter,WinEnter * match ZenkakuSpace /　/                   "全角空白とは何かを設定
+augroup END
+set columns=100                                                         "ウィンドウ横幅100
+set lines=30                                                            "ウィンドウ縦高30
+
+"# スクリプト実行
+autocmd BufNewFile,BufRead *.vim nnoremap <F5> :source % <CR>
+autocmd BufNewFile,BufRead *.py nnoremap <F5> :!python % 
+autocmd BufNewFile,BufRead *.lua nnoremap <F5> :!lua5.2 % 
+
+"# 漢直設定
+command KEVltsv :source /mnt/sda2/github/LTsv10kanedit/LTsv/kanedit.vim "漢直(入力&検索)
+command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(入力&検索)<？/CODE>
 |<＃contents/KEV_usage-0>]
 [<？index/KEV_usage:capture>|
 .+\.html?	<img src="KEV_512x384.png" width="512" height="384" alt="KEV"><br />
@@ -2106,7 +2139,9 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 <？DLDT>  [Space],[Enter]<？/DTDD>                             「/前方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Enter]。<？BR><？/DD/DL>
 <？DLDT>  [Space],[Tab]<？/DTDD>                               「?後方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Tab]。<？BR><？/DD/DL>
 <？DLDT>  [Space],[Del]<？/DTDD>                              「σ」鍵盤に切り替えます。1文字検索モード、辞書メニュー、字引入力、カタカナ鍵盤も解除されます。<？BR><？/DD/DL>
-<？DLDT> 「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]<？/DTDD>     hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<？BR><？/DD/DL>
+<？DLDT> 「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]<？/DTDD>     hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<？BR>
+                                              (元々Vim以外のエディタでhjkl移動可能にする機能が操作の互換性でVim版にも搭載というか、<？BR>
+                                              KEV的には「[Space],[Del]」するより普通に「[Space],[Space]」でVimのノーマルモード使う方が速くて機能も豊富かと)<？BR><？/DD/DL>
 <？DLDT> 「σ」鍵盤で [;(れ)]<？/DTDD>                          [BS]入力というかカーソルの左が1文字消去されます。<？BR><？/DD/DL>
 <？DLDT> 「σ」鍵盤で [:(け)]<？/DTDD>                          [Del]入力というかカーソルの右が1文字消去されます。<？BR><？/DD/DL>
 <？DLDT> 「σ」鍵盤で [](む)]<？/DTDD>                          [Enter]入力というか改行が入力されます。<？BR><？/DD/DL>
@@ -2118,7 +2153,7 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 <？DLDT> 「σ」鍵盤で [z(つ)]<？/DTDD>                          一手前に戻します。<？BR><？/DD/DL>
 <？DLDT> 「σ」鍵盤で [o(ら)]<？/DTDD>                          ファイル履歴などからファイルを開きます。マウスが使えるかのようなメッセージがでますが、番号がズレる場合があり危険なので数値入力してください。<？BR><？/DD/DL>
 <？DLDT> 「σ」鍵盤で [s(て)]<？/DTDD>                          ファイルを保存します。<？BR><？/DD/DL>
-<？DLDT>  [Space],[BS]<？/DTDD>                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[q(英)〜,(照)]などとの交換です。辞書の解除は再度同じ辞書の選択。<？BR><？/DD/DL>
+<？DLDT>  [Space],[BS]<？/DTDD>                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[1(ヌ):名〜,(ネ):照]およびα鍵盤等との交換です。辞書の解除は再度同じ辞書の選択。<？BR><？/DD/DL>
 |<＃contents/KEV_usage-1>]
 
 [<＃contents/KEV_usage-2>|
@@ -2133,6 +2168,8 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 |<＃contents/KEV_usage-2>]
 
 [<＃contents/KEV_usage-3>|
+<？P> [Space],[Shift]+[1(ヌ):名〜,(ネ):照](「鍵盤」状態)でも辞書項目変更は可能です。<？BR>
+<？/P>
 <？DLDT>  [1(ヌ):名]<？/DTDD>  文字の名称(日本語)を字引。<？BR>
               「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。<？BR><？/DD/DL>
 <？DLDT>  [2(フ):音]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
@@ -2197,6 +2234,9 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 |<？section/KEV_faq-0>]
 
 [<＃contents/KEV_faq-0>|
+<？DLDTfaq> Ｑ．「鍵盤」なのに辞書変更やα鍵盤変更など逆の動きをする。<？/DTDD>
+ Ａ．[CapsLock]がON状態になってると[Shift]が押されっぱなしのような動きになると思います。<？BR>
+<？/DD/DL>
 <？DLDTfaq> Ｑ．汎用辞書「kanword.tsv」が認識されない。<？/DTDD>
  Ａ．Vim版では<？DICword>は未サポートです。汎用辞書は漢直の対象外だからです。<？BR>
 <？/DD/DL>
@@ -2209,11 +2249,21 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
      全角アットマークの「＠」は他のひらがなカタカナも全角なので文字の幅を揃える目的。<？BR>
 <？/DD/DL>
 <？DLDTfaq> Ｑ．都道府県国名の解説の「地北⇔北海道」みたいなのはどういう入力ですか？<？/DTDD>
- Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？VReval/howto><？BR>
+ Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？BR>
      [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<？BR>
      Vim版では「電卓」機能は未サポートです。<？BR>
+     <？VReval/howto><？BR>
 <？/DD/DL>
 |<＃contents/KEV_faq-0>]
+[<？VRkeyboard/howto>|
+.*	<？VRkeyboard>の入力操作は「<？index/LTsv_glyph-2>」を参考。
+|<？VRkeyboard/howto>]
+[<？VRcalc/howto>|
+.*	<？VRcalc>の入力操作は「<？index/LTsv_glyph-3>」を参考。
+|<？VRcalc/howto>]
+[<？VReval/howto>|
+.*	<？VRcalc>の演算結果は「<？index/LTsv_glyph-4>」を参考。
+|<？VReval/howto>]
 
 [<？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4>|
 .+\.html?	<section>@E <h3 id="KEV_interpret-@c"><？title/KEV_interpret-@c></h3>@E<＃contents/KEV_interpret-@c>@E</section>@E
@@ -2254,8 +2304,8 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[L(リ)]」<？/DTDD>   [F(は)]に入り切らなかった「は」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[;(れ)]」<？/DTDD>   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶鈴」を固める感覚で「亨惇淳諄享」も相席。<？/DD/DL>
 <？DLDTinputstroke>  「[;(レ)]」<？/DTDD>   [G(き)]に入り切らなかった「き」読みの漢字を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[}(む)]」<？/DTDD>   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。<？/DD/DL>
-<？DLDTinputstroke>  「[}(ム)]」<？/DTDD>   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[](む)]」<？/DTDD>   全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。<？/DD/DL>
+<？DLDTinputstroke>  「[](ム)]」<？/DTDD>   全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[N(ミ)]」<？/DTDD>   [X(さ)]に入り切らなかった「さ」読みの漢字を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[M(モ)]」<？/DTDD>   [C(そ)]に入り切らなかった「そ」読みの漢字を相席。記号(′″‘’“”‐〓∃∂∇Å)と通貨単位(￠￡)を相席。<？/DD/DL>
 <？DLDTinputstroke>  「[,(ね)]」<？/DTDD>   演算記号(±×÷≡≒≠≦≧√‰‱)を相席。nauticalmile海里(浬)を相席、ついでにマイル(哩)も相席。ついでにインチ・フィート・ヤード(吋呎碼)も相席。質量のポンド(听)も相席。<？/DD/DL>
@@ -2380,7 +2430,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[2(ふ)]」[^(へ)][^(ヘ)]<？/DTDD>                「茯苓(ぶくりょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[J(ま)][K(の)]<？/DTDD>                「福祉(ふくし)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[G(き)][G(キ)]<？/DTDD>                「蕗薹(ふきのとう)」<？/DD/DL>
-<？DLDTinputstroke>  「[2(ふ)]」[}(む)][}(ム)]<？/DTDD>                「踏鞴(たたら)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(ふ)]」[](む)][](ム)]<？/DTDD>                「踏鞴(たたら)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[Z(つ)][X(さ)]<？/DTDD>                「仏陀(ブッダ)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(ふ)]」[V(ひ)][B(こ)]<？/DTDD>                「俯瞰(ふかん)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[3(ア)][3(あ)]<？/DTDD>                「瘋癲(ふうてん/フーテン)」<？/DD/DL>
@@ -2388,7 +2438,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[2(フ)]」[A(チ)][S(ト)]<？/DTDD>                「坦懐(たんかい)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[Y(ン)][U(ナ)]<？/DTDD>                「憤慨(ふんがい)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[I(ニ)][O(ラ)]<？/DTDD>                「芙蓉(ふよう)」<？/DD/DL>
-<？DLDTinputstroke>  「[2(フ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「夫婦(ふうふ)」<？/DD/DL>
+<？DLDTinputstroke>  「[2(フ)]」[@(｀)][[(プ)]<？/DTDD>                「夫婦(ふうふ)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[J(マ)][K(ノ)]<？/DTDD>                「復讐(ふくしゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[;(レ)][:(ケ)]<？/DTDD>                「含羞(がんしゅう/はにかむ含羞むの"はにか")」<？/DD/DL>
 <？DLDTinputstroke>  「[2(フ)]」[/(メ)][_(ロ)]<？/DTDD>                「不憫(ふびん)」<？/DD/DL>
@@ -2399,16 +2449,16 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[3(あ)]」[Y(ん)][Y(ン)]<？/DTDD>                「憧憬(しょうけい/どうけい)」<？/DD/DL>
 <？DLDTinputstroke>  「[3(あ)]」[_(ろ)][_(ロ)]<？/DTDD>                「蘆薈(ろかい/アロエ)」<？/DD/DL>
 <？DLDTinputstroke>  「[3(ア)]」[5(エ)][6(オ)]<？/DTDD>                「伽藍(伽藍とバザールの"がらん")」<？/DD/DL>
-<？DLDTinputstroke>  「[3(ア)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「挨拶(あいさつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[@(｀)][[(プ)]<？/DTDD>                「挨拶(あいさつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[3(ア)]」[I(ニ)][O(ラ)]<？/DTDD>                「改竄(かいざん)」<？/DD/DL>
 <？DLDTinputstroke>  「[3(ア)]」[K(ノ)][K(の)]<？/DTDD>                「蒐集(しゅうしゅう)」<？/DD/DL>
-<？DLDTinputstroke>  「[3(ア)]」[:(ケ)][}(ム)]<？/DTDD>                「昂揚(こうよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[3(ア)]」[:(ケ)][](ム)]<？/DTDD>                「昂揚(こうよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[3(ア)]」[C(ソ)][V(ヒ)]<？/DTDD>                「沐浴(もくよく)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[5(え)][6(お)]<？/DTDD>                「隈魚(クマノミ)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[-(ほ)][^(へ)]<？/DTDD>                「禰宜(ねぎ)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[H(く)][J(ま)]<？/DTDD>                「驢馬(ロバ)」<？/DD/DL>
-<？DLDTinputstroke>  「[4(う)]」[P(せ)][@(゛)]<？/DTDD>                「蝸牛(カタツムリ/でんでんむし)」<？/DD/DL>
-<？DLDTinputstroke>  「[4(う)]」[@(゛)][{(゜)]<？/DTDD>                「牛蒡(ごぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[P(せ)][@(＠)]<？/DTDD>                「蝸牛(カタツムリ/でんでんむし)」<？/DD/DL>
+<？DLDTinputstroke>  「[4(う)]」[@(＠)][[(ぷ)]<？/DTDD>                「牛蒡(ごぼう)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[S(と)][D(し)]<？/DTDD>                「饂飩(うどん)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(う)]」[N(み)][M(も)]<？/DTDD>                「海蘊(もずく)」<？/DD/DL>
 <？DLDTinputstroke>  「[4(ウ)]」[8(ユ)][9(ヨ)]<？/DTDD>                「齲蝕(うしょく)」<？/DD/DL>
@@ -2416,7 +2466,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[4(ウ)]」[K(ノ)][L(リ)]<？/DTDD>                「杞憂(きゆう)」<？/DD/DL>
 <？DLDTinputstroke>  「[5(え)]」[8(ゆ)][9(よ)]<？/DTDD>                「盈虧(えいき)」<？/DD/DL>
 <？DLDTinputstroke>  「[5(え)]」[0(わ)][-(ほ)]<？/DTDD>                「冤枉(えんおう)」<？/DD/DL>
-<？DLDTinputstroke>  「[5(え)]」[@(゛)][{(゜)]<？/DTDD>                「饗宴(きょうえん)」<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[@(＠)][[(ぷ)]<？/DTDD>                「饗宴(きょうえん)」<？/DD/DL>
 <？DLDTinputstroke>  「[5(え)]」[L(り)][;(れ)]<？/DTDD>                「襟裳(えりも)」<？/DD/DL>
 <？DLDTinputstroke>  「[5(エ)]」[2(フ)][3(ア)]<？/DTDD>                「聾唖(ろうあ)」<？/DD/DL>
 <？DLDTinputstroke>  「[5(エ)]」[X(サ)][C(ソ)]<？/DTDD>                「麻疹(はしか)」<？/DD/DL>
@@ -2431,19 +2481,19 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[6(オ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「鴛鴦(おしどり)」<？/DD/DL>
 <？DLDTinputstroke>  「[6(オ)]」[Q(タ)][W(テ)]<？/DTDD>                「乙女(おとめ)」<？/DD/DL>
 <？DLDTinputstroke>  「[6(オ)]」[R(ス)][R(す)]<？/DTDD>                「雌雄(しゆう)」<？/DD/DL>
-<？DLDTinputstroke>  「[6(オ)]」[@(゛)][{(゜)]<？/DTDD>                「老獪(ろうかい)」<？/DD/DL>
+<？DLDTinputstroke>  「[6(オ)]」[@(｀)][[(プ)]<？/DTDD>                「老獪(ろうかい)」<？/DD/DL>
 <？DLDTinputstroke>  「[6(オ)]」[Z(ツ)][Z(つ)]<？/DTDD>                「凹凸(おうとつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[6(オ)]」[N(み)][M(も)]<？/DTDD>                「錘重(すいじゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[6(オ)]」[M(モ)][,(ネ)]<？/DTDD>                「重鎮(じゅうちん)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(や)]」[S(と)][S(ト)]<？/DTDD>                「宿泊(しゅくはく)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(や)]」[J(ま)][J(マ)]<？/DTDD>                「山車(だし)」<？/DD/DL>
-<？DLDTinputstroke>  「[7(や)]」[@(゛)][{(゜)]<？/DTDD>                「安易(あんい)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(や)]」[@(＠)][[(ぷ)]<？/DTDD>                「安易(あんい)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[1(ヌ)][2(フ)]<？/DTDD>                「茉莉(まつり/茉莉花で"ジャスミン")」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[8(ユ)][9(ヨ)]<？/DTDD>                「揶揄(やゆ)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[0(ワ)][-(ホ)]<？/DTDD>                「矩尺(かねじゃく)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[W(テ)][E(イ)]<？/DTDD>                「厩舎(きゅうしゃ)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[T(カ)][Y(ン)]<？/DTDD>                「釈迦(しゃか)」<？/DD/DL>
-<？DLDTinputstroke>  「[7(ヤ)]」[{(ﾟ )][{(゜)]<？/DTDD>                「辟易(へきえき)」<？/DD/DL>
+<？DLDTinputstroke>  「[7(ヤ)]」[[(プ)][[(ぷ)]<？/DTDD>                「辟易(へきえき)」<？/DD/DL>
 <？DLDTinputstroke>  「[7(ヤ)]」[F(ハ)][G(キ)]<？/DTDD>                「伯爵(はくしゃく)」<？/DD/DL>
 <？DLDTinputstroke>  「[8(ゆ)]」[6(お)][7(や)]<？/DTDD>                「綬褒(しじゅほうしょう紫綬褒章などの"じゅほう")」<？/DD/DL>
 <？DLDTinputstroke>  「[8(ゆ)]」[Y(ん)][U(な)]<？/DTDD>                「優雅(ゆうが)」<？/DD/DL>
@@ -2456,8 +2506,8 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[9(よ)]」[2(ふ)][2(フ)]<？/DTDD>                「余瀝(よれき)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(よ)]」[4(う)][5(え)]<？/DTDD>                「涵養(かんよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(よ)]」[6(お)][7(や)]<？/DTDD>                「衒耀(げんよう)」<？/DD/DL>
-<？DLDTinputstroke>  「[9(よ)]」[@(゛)][@(゛)]<？/DTDD>                「羊羹(ようかん)」<？/DD/DL>
-<？DLDTinputstroke>  「[9(よ)]」[}(む)][}(ム)]<？/DTDD>                「読書(どくしょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[@(＠)][@(｀)]<？/DTDD>                「羊羹(ようかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(よ)]」[](む)][](ム)]<？/DTDD>                「読書(どくしょ)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(よ)]」[Z(つ)][X(さ)]<？/DTDD>                「窈窕(ようちょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(よ)]」[C(そ)][C(ソ)]<？/DTDD>                「醞醸(うんじょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(ヨ)]」[Y(ン)][Y(ん)]<？/DTDD>                「嗚呼(ああ)」<？/DD/DL>
@@ -2465,7 +2515,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[9(ヨ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「情緒(じょうちょ)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(ヨ)]」[F(ハ)][G(キ)]<？/DTDD>                「秩序(ちつじょ)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(ヨ)]」[J(マ)][K(ノ)]<？/DTDD>                「状況(じょうきょう)」<？/DD/DL>
-<？DLDTinputstroke>  「[9(ヨ)]」[:(ケ)][}(ム)]<？/DTDD>                「辞書(じしょ)」<？/DD/DL>
+<？DLDTinputstroke>  「[9(ヨ)]」[:(ケ)][](ム)]<？/DTDD>                「辞書(じしょ)」<？/DD/DL>
 <？DLDTinputstroke>  「[9(ヨ)]」[M(モ)][,(ネ)]<？/DTDD>                「食戟(食戟のソーマの"しょくげき")」<？/DD/DL>
 <？DLDTinputstroke>  「[9(ヨ)]」[.(ル)][.(る)]<？/DTDD>                「赫夜(かぐやひめ赫夜姫の"かぐや")」<？/DD/DL>
 <？DLDTinputstroke>  「[0(わ)]」[J(ま)][K(の)]<？/DTDD>                「我儘(わがまま)」<？/DD/DL>
@@ -2476,7 +2526,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[0(ワ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「就職(しゅうしょく)」<？/DD/DL>
 <？DLDTinputstroke>  「[0(ワ)]」[^(ヘ)][^(へ)]<？/DTDD>                「昭和(しょうわ)」<？/DD/DL>
 <？DLDTinputstroke>  「[0(ワ)]」[Y(ン)][U(ナ)]<？/DTDD>                「芭蕉(ばしょう)」<？/DD/DL>
-<？DLDTinputstroke>  「[0(ワ)]」[:(ケ)][}(ム)]<？/DTDD>                「化粧(けしょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[0(ワ)]」[:(ケ)][](ム)]<？/DTDD>                「化粧(けしょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[3(あ)][4(う)]<？/DTDD>                「報酬(ほうしゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[7(や)][8(ゆ)]<？/DTDD>                「菠薐(じょうれんそう菠薐草の"ほうれん")」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[0(わ)][0(ワ)]<？/DTDD>                「菩薩(ぼさつ)」<？/DD/DL>
@@ -2484,7 +2534,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[-(ほ)]」[E(い)][E(イ)]<？/DTDD>                「匍匐(ほふくぜんしん匍匐前進の"ほふく")」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ホ)]」[I(に)][O(ら)]<？/DTDD>                「彷彿(ほうふつ)」※髣髴は「[-(ホ)]」｛異:[^(ヘ)]｝｛異:[|(￥)]｝<？/DD/DL>
 <？DLDTinputstroke>  「[-(ホ)]」[I(に)][I(ニ)]<？/DTDD>                「彷徨(ほうこう/彷徨うの"さまよ")」<？/DD/DL>
-<？DLDTinputstroke>  「[-(ほ)]」[@(゛)][{(゜)]<？/DTDD>                「放牧(ほうぼく)」<？/DD/DL>
+<？DLDTinputstroke>  「[-(ほ)]」[@(＠)][[(ぷ)]<？/DTDD>                「放牧(ほうぼく)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[D(し)][F(は)]<？/DTDD>                「彗星(すいせい)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[J(ま)][J(マ)]<？/DTDD>                「孑孒(ぼうふら)」<？/DD/DL>
 <？DLDTinputstroke>  「[-(ほ)]」[;(れ)][;(レ)]<？/DTDD>                「鳳凰(ほうおう)」<？/DD/DL>
@@ -2530,7 +2580,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[T(か)]」[9(よ)][0(わ)]<？/DTDD>                「河川(かせん)」<？/DD/DL>
 <？DLDTinputstroke>  「[T(か)]」[_(ろ)][_(ロ)]<？/DTDD>                「咖喱(カレー)」<？/DD/DL>
 <？DLDTinputstroke>  「[T(カ)]」[A(オ)][S(ヤ)]<？/DTDD>                「薫蕕(くんゆう)」<？/DD/DL>
-<？DLDTinputstroke>  「[T(カ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「風貌(ふうぼう)」<？/DD/DL>
+<？DLDTinputstroke>  「[T(カ)]」[P(セ)][@(｀)]<？/DTDD>                「風貌(ふうぼう)」<？/DD/DL>
 <？DLDTinputstroke>  「[T(カ)]」[A(チ)][S(ト)]<？/DTDD>                「価格(かかく)」<？/DD/DL>
 <？DLDTinputstroke>  「[Y(ん)]」[1(ぬ)][2(ふ)]<？/DTDD>                「萱葺(かやぶき)」<？/DD/DL>
 <？DLDTinputstroke>  「[Y(ん)]」[-(ほ)][^(へ)]<？/DTDD>                「解剖(かいぼう)」<？/DD/DL>
@@ -2589,7 +2639,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[P(セ)]」[6(オ)][7(ヤ)]<？/DTDD>                「世代(せだい)」<？/DD/DL>
 <？DLDTinputstroke>  「[P(セ)]」[0(ワ)][-(ホ)]<？/DTDD>                「忽然(こつぜん)」<？/DD/DL>
 <？DLDTinputstroke>  「[P(セ)]」[J(マ)][K(ノ)]<？/DTDD>                「狭窄(きょうさく)」<？/DD/DL>
-<？DLDTinputstroke>  「[P(セ)]」[}(ム)][}(む)]<？/DTDD>                「呵責(かしゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[P(セ)]」[](ム)][](む)]<？/DTDD>                「呵責(かしゃく)」<？/DD/DL>
 <？DLDTinputstroke>  「[P(セ)]」[,(ネ)][.(ル)]<？/DTDD>                「脊椎(せきつい)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(ち)]」[4(う)][5(え)]<？/DTDD>                「中庸(ちゅうよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(ち)]」[7(や)][8(ゆ)]<？/DTDD>                「宇宙(うちゅう)」<？/DD/DL>
@@ -2608,25 +2658,25 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[S(ト)]」[7(ヤ)][8(ユ)]<？/DTDD>                「蜻蛉(とんぼ)」<？/DD/DL>
 <？DLDTinputstroke>  「[S(ト)]」[X(サ)][C(ソ)]<？/DTDD>                「咄嗟(とっさ)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」[Q(た)][W(て)]<？/DTDD>                「下支(したざさえ下支えの"したざさ")」<？/DD/DL>
-<？DLDTinputstroke>  「[D(し)]」[@(゛)][{(゜)]<？/DTDD>                「資質(ししつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[@(＠)][[(ぷ)]]<？/DTDD>                「資質(ししつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」[A(ち)][A(チ)]<？/DTDD>                「刺繍(ししゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」[;(れ)][;(レ)]<？/DTDD>                「痔瘻(じろう)」<？/DD/DL>
-<？DLDTinputstroke>  「[D(し)]」[}(む)][}(ム)]<？/DTDD>                「嫉妬(しっと)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[](む)][](ム)]<？/DTDD>                「嫉妬(しっと)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」[B(こ)][N(み)]<？/DTDD>                「仕事(しごと)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(し)]」[N(み)][M(も)]<？/DTDD>                「事件(じけん)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(シ)]」[3(ア)][4(ウ)]<？/DTDD>                「諮詢(しじゅん)」<？/DD/DL>
-<？DLDTinputstroke>  「[D(シ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「果実(かじつ)」<？/DD/DL>
-<？DLDTinputstroke>  「[D(シ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「実践(じっせん)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[P(セ)][@(｀)]<？/DTDD>                「果実(かじつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[@(｀)][[(プ)]<？/DTDD>                「実践(じっせん)」<？/DD/DL>
 <？DLDTinputstroke>  「[D(シ)]」[/(メ)][_(ロ)]<？/DTDD>                「葛城(かつらぎ)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(は)]」[1(ぬ)][2(ふ)]<？/DTDD>                「花魁(おいらん)」<？/DD/DL>
-<？DLDTinputstroke>  「[F(は)]」[@(゛)][{(゜)]<？/DTDD>                「計測(けいそく)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[@(＠)][[(ぷ)]<？/DTDD>                「計測(けいそく)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(は)]」[R(す)][R(ス)]<？/DTDD>                「蓮托(いちれんたくしょう一蓮托生の"たくしょう")」<？/DD/DL>
 <？DLDTinputstroke>  「[F(は)]」[B(こ)][N(み)]<？/DTDD>                「函渠(かんきょ/ボックスカルバート)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(は)]」[/(め)][_(ろ)]<？/DTDD>                「初詣(はつもうで)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(は)]」[M(も)][,(ね)]<？/DTDD>                「下支(はばたき羽搏き、はばたく羽搏くの"はばた")」<？/DD/DL>
 <？DLDTinputstroke>  「[F(ハ)]」[9(ヨ)][0(ワ)]<？/DTDD>                「抜擢(ばってき)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(ハ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「棕櫚(パーム)」<？/DD/DL>
-<？DLDTinputstroke>  「[F(ハ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「売買(ばいばい)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[@(｀)][[(プ)]<？/DTDD>                「売買(ばいばい)」<？/DD/DL>
 <？DLDTinputstroke>  「[F(ハ)]」[N(ミ)][M(モ)]<？/DTDD>                「醗酵(はっこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(き)]」[2(ふ)][2(フ)]<？/DTDD>                「伎癢(ぎよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(き)]」[3(あ)][4(う)]<？/DTDD>                「佳境(かきょう)」<？/DD/DL>
@@ -2639,14 +2689,14 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[G(キ)]」[4(ウ)][5(エ)]<？/DTDD>                「梗塞(こうそく)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(キ)]」[W(テ)][E(イ)]<？/DTDD>                「基礎(きそ)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(キ)]」[U(ナ)][I(ニ)]<？/DTDD>                「逆算(ぎやくさん)」<？/DD/DL>
-<？DLDTinputstroke>  「[G(キ)]」[U(セ)][@(゛)]<？/DTDD>                「犠牲(ぎせい)」<？/DD/DL>
+<？DLDTinputstroke>  「[G(キ)]」[U(セ)][@(｀)]<？/DTDD>                「犠牲(ぎせい)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(キ)]」[J(マ)][K(ノ)]<？/DTDD>                「麒麟(きりん)」<？/DD/DL>
 <？DLDTinputstroke>  「[G(キ)]」[,(ネ)][.(ル)]<？/DTDD>                「切磋(せっさたくま切磋琢磨の"せっさ")」<？/DD/DL>
 <？DLDTinputstroke>  「[H(く)]」[J(ま)][J(マ)]<？/DTDD>                「熊羆(ゆうひ)」<？/DD/DL>
 <？DLDTinputstroke>  「[H(く)]」[R(す)][T(か)]<？/DTDD>                「薬罐(やかん)」<？/DD/DL>
-<？DLDTinputstroke>  「[H(く)]」[:(け)][}(む)]<？/DTDD>                「狂狷(きょうけん)」<？/DD/DL>
-<？DLDTinputstroke>  「[H(ク)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「懺悔(ざんげ)」<？/DD/DL>
-<？DLDTinputstroke>  「[H(ク)]」[:(ケ)][}(ム)]<？/DTDD>                「蜘蛛(クモ)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[:(け)][](む)]<？/DTDD>                「狂狷(きょうけん)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[@(｀)][[(プ)]<？/DTDD>                「懺悔(ざんげ)」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[:(ケ)][](ム)]<？/DTDD>                「蜘蛛(クモ)」<？/DD/DL>
 <？DLDTinputstroke>  「[J(ま)]」[2(ふ)][3(あ)]<？/DTDD>                「眩暈(めまい)」<？/DD/DL>
 <？DLDTinputstroke>  「[J(ま)]」[O(ら)][P(せ)]<？/DTDD>                「混沌(こんとん)」<？/DD/DL>
 <？DLDTinputstroke>  「[J(ま)]」[D(し)][F(は)]<？/DTDD>                「交渉(こうしょう)」<？/DD/DL>
@@ -2666,7 +2716,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[K(ノ)]」[6(オ)][7(ヤ)]<？/DTDD>                「嘔吐(おうと)」<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「薔薇(ばら)」<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」[R(ス)][T(カ)]<？/DTDD>                「触媒(しょくばい)」<？/DD/DL>
-<？DLDTinputstroke>  「[K(ノ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「齧歯(げっしるい齧歯類の"げっし")」<？/DD/DL>
+<？DLDTinputstroke>  「[K(ノ)]」[P(セ)][@(｀)]<？/DTDD>                「齧歯(げっしるい齧歯類の"げっし")」<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」[A(チ)][S(ト)]<？/DTDD>                「馳走(ごちそう御馳走の"ちそう")」<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」[F(ハ)][G(キ)]<？/DTDD>                「母趾(がいはんぼし外反母趾の"ぼし")」<？/DD/DL>
 <？DLDTinputstroke>  「[K(ノ)]」[K(リ)][;(レ)]<？/DTDD>                「配慮(はいりょ)」<？/DD/DL>
@@ -2676,7 +2726,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[L(り)]」[I(に)][I(ニ)]<？/DTDD>                「鴻離(ぎょもうこうり魚網鴻離の"こうり")」<？/DD/DL>
 <？DLDTinputstroke>  「[L(り)]」[C(そ)][V(ひ)]<？/DTDD>                「淋巴(リンパ)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(り)]」[B(こ)][N(み)]<？/DTDD>                「翰林(かんりん)」<？/DD/DL>
-<？DLDTinputstroke>  「[L(り)]」[:(け)][}(む)]<？/DTDD>                「吝嗇(りんしょく/けち/吝さかで"やぶさか")」<？/DD/DL>
+<？DLDTinputstroke>  「[L(り)]」[:(け)][](む)]<？/DTDD>                「吝嗇(りんしょく/けち/吝さかで"やぶさか")」<？/DD/DL>
 <？DLDTinputstroke>  「[L(り)]」[N(み)][M(も)]<？/DTDD>                「林檎(りんご)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(り)]」[.(る)][/(め)]<？/DTDD>                「流暢(りゅうちょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(リ)]」[4(ウ)][5(エ)]<？/DTDD>                「伴侶(はんりょ)」<？/DD/DL>
@@ -2685,9 +2735,9 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[L(リ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「徘徊(はいかい)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(リ)]」[W(テ)][E(イ)]<？/DTDD>                「派閥(はばつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(リ)]」[U(ナ)][I(ニ)]<？/DTDD>                「乖離(かいり)」<？/DD/DL>
-<？DLDTinputstroke>  「[L(リ)]」[P(セ)][@(ﾞ )]<？/DTDD>                「逍遥(しょうよう)」<？/DD/DL>
+<？DLDTinputstroke>  「[L(リ)]」[P(セ)][@(｀)]<？/DTDD>                「逍遥(しょうよう)」<？/DD/DL>
 <？DLDTinputstroke>  「[L(リ)]」[V(ヒ)][B(コ)]<？/DTDD>                「梯梧(でいこ/でいご)」<？/DD/DL>
-<？DLDTinputstroke>  「[;(れ)]」[P(せ)][@(゛)]<？/DTDD>                「熾烈(しれつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[;(れ)]」[P(せ)][@(＠)]<？/DTDD>                「熾烈(しれつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[;(れ)]」[D(し)][F(は)]<？/DTDD>                「玲瓏(れいろう)」<？/DD/DL>
 <？DLDTinputstroke>  「[;(れ)]」[M(も)][,(ね)]<？/DTDD>                「檸檬(レモン)」<？/DD/DL>
 <？DLDTinputstroke>  「[;(レ)]」[3(ア)][4(ウ)]<？/DTDD>                「岐阜(ぎふ)」<？/DD/DL>
@@ -2696,7 +2746,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[;(レ)]」[I(ニ)][O(ラ)]<？/DTDD>                「僥倖(ぎょうこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(レ)]」[S(ト)][D(シ)]<？/DTDD>                「謹慎(きんしん)」<？/DD/DL>
 <？DLDTinputstroke>  「[;(レ)]」[G(キ)][H(ク)]<？/DTDD>                「近畿(きんき)」<？/DD/DL>
-<？DLDTinputstroke>  「[:(レ)]」[:(ケ)][}(ム)]<？/DTDD>                「虚業(きょぎょう)」<？/DD/DL>
+<？DLDTinputstroke>  「[:(レ)]」[:(ケ)][](ム)]<？/DTDD>                「虚業(きょぎょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(レ)]」[C(ソ)][V(ヒ)]<？/DTDD>                「蜷局(とぐろ)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(レ)]」[N(ミ)][M(モ)]<？/DTDD>                「軋轢(あつれき)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(け)]」[1(ぬ)][2(ふ)]<？/DTDD>                「健康(けんこう)」<？/DD/DL>
@@ -2716,8 +2766,8 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[:(ケ)]」[^(ヘ)][^(へ)]<？/DTDD>                「畦畔(けいはん)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(ケ)]」[I(ニ)][O(ラ)]<？/DTDD>                「経緯(けいい)」<？/DD/DL>
 <？DLDTinputstroke>  「[:(ケ)]」[N(ミ)][M(モ)]<？/DTDD>                「啓蟄(けいちつ)」<？/DD/DL>
-<？DLDTinputstroke>  「[}(む)]」[3(あ)][4(う)]<？/DTDD>                「爬虫(爬虫類はちゅうるいの"はちゅう")」<？/DD/DL>
-<？DLDTinputstroke>  「[}(む)]」[5(え)][6(お)]<？/DTDD>                「娘婿(むすめむこ)」<？/DD/DL>
+<？DLDTinputstroke>  「[](む)]」[3(あ)][4(う)]<？/DTDD>                「爬虫(爬虫類はちゅうるいの"はちゅう")」<？/DD/DL>
+<？DLDTinputstroke>  「[](む)]」[5(え)][6(お)]<？/DTDD>                「娘婿(むすめむこ)」<？/DD/DL>
 <？DLDTinputstroke>  「[Z(つ)]」[V(ひ)][B(こ)]<？/DTDD>                「韜晦(とうかい)」<？/DD/DL>
 <？DLDTinputstroke>  「[Z(つ)]」[M(も)][,(ね)]<？/DTDD>                「常套(じょうとう)」<？/DD/DL>
 <？DLDTinputstroke>  「[Z(つ)]」[D(し)][D(シ)]<？/DTDD>                「辻褄(つじつま)」<？/DD/DL>
@@ -2728,7 +2778,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[X(サ)]」[I(ニ)][O(ラ)]<？/DTDD>                「錯綜(さくそう)」<？/DD/DL>
 <？DLDTinputstroke>  「[C(そ)]」[2(ふ)][3(あ)]<？/DTDD>                「想像(そうぞう)」<？/DD/DL>
 <？DLDTinputstroke>  「[C(そ)]」[8(ゆ)][9(よ)]<？/DTDD>                「祇園(ぎおん)」<？/DD/DL>
-<？DLDTinputstroke>  「[C(そ)]」[@(゛)][{(゜)]<？/DTDD>                「齟齬(そご)」<？/DD/DL>
+<？DLDTinputstroke>  「[C(そ)]」[@(＠)][[(ぷ)]<？/DTDD>                「齟齬(そご)」<？/DD/DL>
 <？DLDTinputstroke>  「[C(そ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「疎外(そがい)」<？/DD/DL>
 <？DLDTinputstroke>  「[C(そ)]」[G(き)][G(キ)]<？/DTDD>                「毀損(きそん)」<？/DD/DL>
 <？DLDTinputstroke>  「[C(そ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「疏通(そつう)」<？/DD/DL>
@@ -2742,7 +2792,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[V(ひ)]」[1(ぬ)][2(ふ)][3(あ)]<？/DTDD>         「咖啡涅(カフェイン)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[V(ひ)]」[3(あ)][3(ア)]<？/DTDD>                「涅槃(ねはんじゃくじょう涅槃寂静の"ねはん")」<？/DD/DL>
 <？DLDTinputstroke>  「[V(ひ)]」[0(わ)][0(ワ)]<？/DTDD>                「枇杷(果物のビワ)」<？/DD/DL>
-<？DLDTinputstroke>  「[V(ひ)]」[P(せ)][@(゛)]<？/DTDD>                「燧火(すいか)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[P(せ)][@(＠)]<？/DTDD>                「燧火(すいか)」<？/DD/DL>
 <？DLDTinputstroke>  「[V(ひ)]」[S(と)][S(ト)]<？/DTDD>                「人蔘(にんじん)」<？/DD/DL>
 <？DLDTinputstroke>  「[V(ヒ)]」[1(ヌ)][2(フ)]<？/DTDD>                「珈琲(コーヒー)」<？/DD/DL>
 <？DLDTinputstroke>  「[V(ヒ)]」[7(ヤ)][8(ユ)]<？/DTDD>                「比較(ひかく)」<？/DD/DL>
@@ -2751,21 +2801,21 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[V(ヒ)]」[B(コ)][B(こ)]<？/DTDD>                「琵琶(楽器のビワ)」<？/DD/DL>
 <？DLDTinputstroke>  「[V(ヒ)]」<？BR>[N(ミ)][N(ミ)][M(モ)][,(ネ)]<？/DTDD>  「蹇蹇匪躬(けんけんひきゅう)」<？/DD/DLclearboth>
 <？DLDTinputstroke>  「[B(こ)]」[3(あ)][3(ア)]<？/DTDD>                「頃合(ころあい)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(こ)]」[}(む)][}(ム)]<？/DTDD>                「蒟蒻(こんにゃく)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(こ)]」[](む)][](ム)]<？/DTDD>                「蒟蒻(こんにゃく)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(こ)]」[K(の)][L(り)]<？/DTDD>                「碓氷(碓氷峠の"うすい")」<？/DD/DL>
 <？DLDTinputstroke>  「[B(こ)]」[Z(つ)][Z(ツ)]<？/DTDD>                「胡椒(こしょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(こ)]」[N(み)][N(ミ)]<？/DTDD>                「蝙蝠(こうもり)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(こ)]」[,(ね)][.(る)]<？/DTDD>                「狡猾(こうかつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(コ)]」[6(オ)][7(ヤ)]<？/DTDD>                「甲斐(生き甲斐の"かい")」<？/DD/DL>
 <？DLDTinputstroke>  「[B(コ)]」[I(ニ)][O(ラ)]<？/DTDD>                「殊更(ことさら)」<？/DD/DL>
-<？DLDTinputstroke>  「[B(コ)]」[@(゛)][{(゜)]<？/DTDD>                「鱣子(キャビア)」<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[@(｀)][[(プ)]<？/DTDD>                「鱣子(キャビア)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(コ)]」[G(キ)][G(き)]<？/DTDD>                「拮抗(きっこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[B(コ)]」[,(ネ)][.(ル)]<？/DTDD>                「誤謬(ごびゅう)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[8(ゆ)][9(よ)]<？/DTDD>                「御輿(みこし)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[W(て)][E(い)]<？/DTDD>                「蚯蚓(みみず)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[R(す)][R(ス)]<？/DTDD>                「水黽(あめんぼ)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[R(す)][T(か)]<？/DTDD>                「水脈(すいみゃく)」<？/DD/DL>
-<？DLDTinputstroke>  「[N(み)]」[@(゛)][{(゜)]<？/DTDD>                「味噌(みそ)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[@(＠)][[(ぷ)]<？/DTDD>                「味噌(みそ)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[L(り)][L(リ)]<？/DTDD>                「緑礬(リョクバン/ろくばん)」<？/DD/DL>
 <？DLDTinputstroke>  「[N(み)]」[/(め)][_(ろ)]<？/DTDD>                「琢磨(せっさたくま切磋琢磨の"たくま")」<？/DD/DL>
 <？DLDTinputstroke>  「[N(ミ)]」[1(ヌ)][1(ぬ)]<？/DTDD>                「嵯峨(さが)」<？/DD/DL>
@@ -2787,7 +2837,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[,(ね)]」[N(み)][M(も)]<？/DTDD>                「根拠(こんきょ)」<？/DD/DL>
 <？DLDTinputstroke>  「[,(ね)]」[/(め)][_(ろ)]<？/DTDD>                「音叉(おんさ)」<？/DD/DL>
 <？DLDTinputstroke>  「[,(ネ)]」[-(ホ)][^(ヘ)]<？/DTDD>                「誹謗(ひぼう)」<？/DD/DL>
-<？DLDTinputstroke>  「[,(ネ)]」[:(ケ)][}(ム)]<？/DTDD>                「秘訣(ひけつ)」<？/DD/DL>
+<？DLDTinputstroke>  「[,(ネ)]」[:(ケ)][](ム)]<？/DTDD>                「秘訣(ひけつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[,(ネ)]」[:(ケ)][:(け)]<？/DTDD>                「秘鑰(ひやく)」<？/DD/DL>
 <？DLDTinputstroke>  「[,(ネ)]」[U(な)][I(ニ)]<？/DTDD>                「俊敏(しゅんびん)」<？/DD/DL>
 <？DLDTinputstroke>  「[,(ネ)]」[K(ノ)][K(の)]<？/DTDD>                「嗶哩(ビリビリどうが嗶哩嗶哩動画の"ビリ")」<？/DD/DL>
@@ -2797,7 +2847,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[.(ル)]」[I(ニ)][O(ラ)]<？/DTDD>                「宏闊(こうかつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[.(ル)]」[K(ノ)][L(リ)]<？/DTDD>                「孝行(こうこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[.(ル)]」[;(レ)][:(ケ)]<？/DTDD>                「豪語(ごうご)」<？/DD/DL>
-<？DLDTinputstroke>  「[.(ル)]」[:(ケ)][}(ム)]<？/DTDD>                「語彙(ごい)」<？/DD/DL>
+<？DLDTinputstroke>  「[.(ル)]」[:(ケ)][](ム)]<？/DTDD>                「語彙(ごい)」<？/DD/DL>
 <？DLDTinputstroke>  「[.(ル)]」[B(コ)][N(ミ)]<？/DTDD>                「醍醐(だいご)」<？/DD/DL>
 <？DLDTinputstroke>  「[.(ル)]」[/(メ)][_(ロ)]<？/DTDD>                「竣工(しゅんこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[/(め)]」[1(ぬ)][2(ふ)]<？/DTDD>                「拉麺(ラーメン)」<？/DD/DL>
@@ -2815,9 +2865,9 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[/(メ)]」[^(ヘ)][^(へ)]<？/DTDD>                「千穐(せんしゅうばんざいだいだいかのう千穐万歳大々叶の"せんしゅう")」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[F(ハ)][F(は)]<？/DTDD>                「瓦礫(がれき)」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[L(リ)][L(り)]<？/DTDD>                「割烹(かっぽうぎ割烹着の"かっぽう")」<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」[}(ム)][}(む)]<？/DTDD>                「毛氈(もうせん/フェルト)」<？/DD/DL>
-<？DLDTinputstroke>  「[_(ろ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「耄碌(もうろく)」<？/DD/DL>
-<？DLDTinputstroke>  「[_(ロ)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「狼狽(ろうばい)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[](ム)][](む)]<？/DTDD>                「毛氈(もうせん/フェルト)」<？/DD/DL>
+<？DLDTinputstroke>  「[_(ろ)]」[@(＠)][[(ぷ)]<？/DTDD>                「耄碌(もうろく)」<？/DD/DL>
+<？DLDTinputstroke>  「[_(ロ)]」[@(｀)][[(プ)]<？/DTDD>                「狼狽(ろうばい)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[1(ぬ)][2(ふ)]<？/DTDD>                「禺彊(ぐうきょう)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[3(あ)][4(う)]<？/DTDD>                「鞦韆(しゅうせん/ブランコ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[5(え)][6(お)]<？/DTDD>                「羌瘣(きょうかい)」<？/DD/DL>
@@ -2829,13 +2879,13 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[A(α)]」[T(か)][Y(ん)]<？/DTDD>                「挹怛(エフタル)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[U(な)][I(に)]<？/DTDD>                「鑣轡(ひょうぐつわ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[O(ら)][P(せ)]<？/DTDD>                「呿呻(あくび)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(α)]」[@(゛)][{(゜)]<？/DTDD>                「顑頷(かんがん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[@(＠)][[(ぷ)]<？/DTDD>                「顑頷(かんがん)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[A(ち)][S(と)]<？/DTDD>                「磊磈(らいかい)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[D(し)][F(は)]<？/DTDD>                「潑溂(はつらつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[G(き)][H(く)]<？/DTDD>                「緂縅(だんおどし)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[J(ま)][K(の)]<？/DTDD>                「惝怳(しょうきょう/しょうこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[L(り)][;(れ)]<？/DTDD>                「憔悴(しょうすい)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(α)]」[:(け)][}(む)]<？/DTDD>                「狴犴(へいかん)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(α)]」[:(け)][](む)]<？/DTDD>                「狴犴(へいかん)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[Z(つ)][X(さ)]<？/DTDD>                「薜荔(オオイタビ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[C(そ)][V(ひ)]<？/DTDD>                「瑙魯(ナウル)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(α)]」[B(こ)][N(み)]<？/DTDD>                「艨艟(もうどう)」<？/DD/DL>
@@ -2853,13 +2903,13 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[A(Α)]」[T(カ)][Y(ン)]<？/DTDD>                「螽蟖(キリギリス)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[U(ナ)][I(ニ)]<？/DTDD>                「旱魃(かんばつ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[O(ラ)][P(セ)]<？/DTDD>                「蜥蜴(トカゲ)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(Α)]」[@(ﾞ )][{(ﾟ )]<？/DTDD>                「閨閤(けいこう)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[@(｀)][[(プ)]<？/DTDD>                「閨閤(けいこう)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[A(チ)][S(ト)]<？/DTDD>                「茱萸(グミ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[D(シ)][F(ハ)]<？/DTDD>                「鮟鱇(アンコウ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[G(キ)][H(ク)]<？/DTDD>                「鎔笵(ようはん)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[J(マ)][K(ノ)]<？/DTDD>                「喇叭(ラッパ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[L(リ)][;(レ)]<？/DTDD>                「榠樝(カリン)」<？/DD/DL>
-<？DLDTinputstroke>  「[A(Α)]」[:(ケ)][}(ム)]<？/DTDD>                「顰蹙(ひんしゅく)」<？/DD/DL>
+<？DLDTinputstroke>  「[A(Α)]」[:(ケ)][](ム)]<？/DTDD>                「顰蹙(ひんしゅく)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[Z(ツ)][X(サ)]<？/DTDD>                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[C(ソ)][V(ヒ)]<？/DTDD>                「轆轤(ろくろ)」<？/DD/DL>
 <？DLDTinputstroke>  「[A(Α)]」[B(コ)][N(ミ)]<？/DTDD>                「纐纈(こうけつ/こうけち)」<？/DD/DL>
@@ -2881,18 +2931,18 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 [<＃contents/KEV_interpret-2>|
 <？P> 厳密には相席ではないのですが字引入力を使ったショートカット事例。<？BR>
 <？/P>
-<？DLDTinputstroke>  「[4(う)]」[3(あ)]<？BR>｛逆:[3(あ)]｝<？/DTDD>         「上下(じょうげ)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[V(ヒ)]」[Q(タ)]<？BR>｛逆:[Q(タ)]｝<？/DTDD>         「左右(さゆう)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[J(ま)]」[5(え)]<？BR>｛逆:[5(え)]｝<？/DTDD>         「前後(ぜんご)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[V(ヒ)]」[T(カ)]<？BR>｛逆:[T(カ)]｝<？/DTDD>         「東西(とうざい)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[N(み)]」[4(う)]<？BR>｛逆:[4(う)]｝<？/DTDD>         「南北(なんぼく)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[D(し)]」[_(ろ)]<？BR>｛逆:[_(ろ)]｝<？/DTDD>         「白黒(しろくろ)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[8(ゆ)]」[F(は)]<？BR>｛逆:[F(は)]｝<？/DTDD>         「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[T(カ)]」[A(チ)]<？BR>｛非:[A(チ)]｝<？/DTDD>         「価値(かち)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[F(は)]」[.(る)]<？BR>｛非:[.(る)]｝<？/DTDD>         「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[3(あ)]」[G(き)]<？BR>｛非:[G(き)]｝<？/DTDD>         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[6(お)]」[Y(ん)]<？BR>｛非:[Y(ん)]｝<？/DTDD>         「温暖(おんだん)」<？/DD/DLclearboth>
-<？DLDTinputstroke>  「[N(ミ)]」[}(ム)]<？BR>｛非:[}(ム)]｝<？/DTDD>         「寒冷(かんれい)」<？/DD/DLclearboth>
+<？DLDTinputstroke>  「[4(う)]」[3(あ)][3(あ):逆]<？/DTDD>         「上下(じょうげ)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[Q(タ)][Q(タ):逆]<？/DTDD>         「左右(さゆう)」<？/DD/DL>
+<？DLDTinputstroke>  「[J(ま)]」[5(え)][5(え):逆]<？/DTDD>         「前後(ぜんご)」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[T(カ)][T(カ):逆]<？/DTDD>         「東西(とうざい)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[4(う)][4(う):逆]<？/DTDD>         「南北(なんぼく)」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[_(ろ)][_(ろ):逆]<？/DTDD>         「白黒(しろくろ)」<？/DD/DL>
+<？DLDTinputstroke>  「[8(ゆ)]」[F(は)][F(は):逆]<？/DTDD>         「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い<？/DD/DL>
+<？DLDTinputstroke>  「[T(カ)]」[A(チ)][A(チ):非]<？/DTDD>         「価値(かち)」<？/DD/DL>
+<？DLDTinputstroke>  「[F(は)]」[.(る)][.(る):非]<？/DTDD>         「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[G(き)][G(き):非]<？/DTDD>         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[Y(ん)][Y(ん):非]<？/DTDD>         「温暖(おんだん)」<？/DD/DL>
+<？DLDTinputstroke>  「[N(ミ)]」[](ム)][](ム):非]<？/DTDD>         「寒冷(かんれい)」<？/DD/DL>
 |<＃contents/KEV_interpret-2>]
 
 [<＃contents/KEV_interpret-3>|
@@ -2900,66 +2950,67 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？/P>
 <？index/kanedit_faq:prefectures>
 
-<？DLDTinputstroke>  「[G(き)]」｛地:[Q(た)]｝<？/DTDD>                「地北⇔北海道」<？/DD/DL>
-<？DLDTinputstroke>  「[3(あ)]」｛地:[6(お)]｝<？/DTDD>                「地青⇔青森」<？/DD/DL>
-<？DLDTinputstroke>  「[E(い)]」｛地:[0(わ)]｝<？/DTDD>                「地岩⇔岩手」<？/DD/DL>
-<？DLDTinputstroke>  「[D(シ)]」｛地:[_(ロ)]｝<？/DTDD>                「地城⇔宮城」<？/DD/DL>
-<？DLDTinputstroke>  「[3(あ)]」｛地:[G(き)]｝<？/DTDD>                「地秋⇔秋田」<？/DD/DL>
-<？DLDTinputstroke>  「[Y(ン)]」｛地:[Q(タ)]｝<？/DTDD>                「地形⇔山形」<？/DD/DL>
-<？DLDTinputstroke>  「[D(し)]」｛地:[J(ま)]｝<？/DTDD>                「地島⇔福島」<？/DD/DL>
-<？DLDTinputstroke>  「[E(イ)]」｛地:[F(ハ)]｝<？/DTDD>                「地茨⇔茨城」<？/DD/DL>
-<？DLDTinputstroke>  「[S(と)]」｛地:[A(ち)]｝<？/DTDD>                「地栃⇔栃木」<？/DD/DL>
-<？DLDTinputstroke>  「[H(ク)]」｛地:[F(ハ)]｝<？/DTDD>                「地群⇔群馬」<？/DD/DL>
-<？DLDTinputstroke>  「[X(さ)]」｛地:[Q(た)]｝<？/DTDD>                「地埼⇔埼玉」<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」｛地:[^(ヘ)]｝<？/DTDD>                「地千⇔千葉」<？/DD/DL>
-<？DLDTinputstroke>  「[V(ヒ)]」｛地:[T(カ)]｝<？/DTDD>                「地東⇔東京」<？/DD/DL>
-<？DLDTinputstroke>  「[Y(ん)]」｛地:[N(み)]｝<？/DTDD>                「地神⇔神奈川」<？/DD/DL>
-<？DLDTinputstroke>  「[Y(ん)]」｛地:[Q(た)]｝<？/DTDD>                「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)<？/DD/DL>
-<？DLDTinputstroke>  「[S(と)]」｛地:[N(み)]｝<？/DTDD>                「地富⇔富山」<？/DD/DL>
-<？DLDTinputstroke>  「[E(い)]」｛地:[D(し)]｝<？/DTDD>                「地石⇔石川」<？/DD/DL>
-<？DLDTinputstroke>  「[E(イ)]」｛地:[S(ト)]｝<？/DTDD>                「地井⇔福井」<？/DD/DL>
-<？DLDTinputstroke>  「[U(な)]」｛地:[D(し)]｝<？/DTDD>                「地梨⇔山梨」<？/DD/DL>
-<？DLDTinputstroke>  「[K(の)]」｛地:[7(や)]｝<？/DTDD>                「地野⇔長野」<？/DD/DL>
-<？DLDTinputstroke>  「[;(レ)]」｛地:[1(ヌ)]｝<？/DTDD>                「地岐⇔岐阜」<？/DD/DL>
-<？DLDTinputstroke>  「[D(し)]」｛地:[R(す)]｝<？/DTDD>                「地静⇔静岡」<？/DD/DL>
-<？DLDTinputstroke>  「[A(ち)]」｛地:[@(゛)]｝<？/DTDD>                「地知⇔愛知」(「地愛⇔愛知/愛蘭」)<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」｛地:[3(ア)]｝<？/DTDD>                「地三⇔三重」<？/DD/DL>
-<？DLDTinputstroke>  「[D(シ)]」｛地:[9(ヨ)]｝<？/DTDD>                「地滋⇔滋賀」<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」｛地:[}(ﾟ )]｝<？/DTDD>                「地京⇔京都」<？/DD/DL>
-<？DLDTinputstroke>  「[F(ハ)]」｛地:[Y(ン)]｝<？/DTDD>                「地阪⇔大阪」(「地大⇔大阪/大分」)<？/DD/DL>
-<？DLDTinputstroke>  「[^(へ)]」｛地:[M(も)]｝<？/DTDD>                「地兵⇔兵庫」<？/DD/DL>
-<？DLDTinputstroke>  「[U(な)]」｛地:[O(ら)]｝<？/DTDD>                「地奈⇔奈良」<？/DD/DL>
-<？DLDTinputstroke>  「[0(わ)]」｛地:[^(へ)]｝<？/DTDD>                「地和⇔和歌山」(「地歌⇔和歌山」)<？/DD/DL>
-<？DLDTinputstroke>  「[S(と)]」｛地:[L(り)]｝<？/DTDD>                「地鳥⇔鳥取」(「地取⇔鳥取」)<？/DD/DL>
-<？DLDTinputstroke>  「[.(ね)]」｛地:[M(も)]｝<？/DTDD>                「地根⇔島根」<？/DD/DL>
-<？DLDTinputstroke>  「[6(お)]」｛地:[T(か)]｝<？/DTDD>                「地岡⇔岡山」<？/DD/DL>
-<？DLDTinputstroke>  「[V(ひ)]」｛地:[_(ろ)]｝<？/DTDD>                「地広⇔広島」<？/DD/DL>
-<？DLDTinputstroke>  「[H(く)]」｛地:[A(ち)]｝<？/DTDD>                「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)<？/DD/DL>
-<？DLDTinputstroke>  「[I(ニ)]」｛地:[H(ク)]｝<？/DTDD>                「地徳⇔徳島」<？/DD/DL>
-<？DLDTinputstroke>  「[T(か)]」｛地:[0(わ)]｝<？/DTDD>                「地川⇔香川」(「地香⇔香港/香川」)<？/DD/DL>
-<？DLDTinputstroke>  「[V(ひ)]」｛地:[/(め)]｝<？/DTDD>                「地媛⇔愛媛」<？/DD/DL>
-<？DLDTinputstroke>  「[Q(た)]」｛地:[T(か)]｝<？/DTDD>                「地高⇔高知」<？/DD/DL>
-<？DLDTinputstroke>  「[Q(ふ)]」｛地:[J(ま)]｝<？/DTDD>                「地福⇔福岡」<？/DD/DL>
-<？DLDTinputstroke>  「[X(サ)]」｛地:[T(カ)]｝<？/DTDD>                「地佐⇔佐賀」<？/DD/DL>
-<？DLDTinputstroke>  「[U(な)]」｛地:[E(い)]｝<？/DTDD>                「地長⇔長崎」<？/DD/DL>
-<？DLDTinputstroke>  「[H(く)]」｛地:[J(ま)]｝<？/DTDD>                「地熊⇔熊本」<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」｛地:[L(レ)]｝<？/DTDD>                「地分⇔大分」<？/DD/DL>
-<？DLDTinputstroke>  「[N(み)]」｛地:[7(や)]｝<？/DTDD>                「地宮⇔宮崎」<？/DD/DL>
-<？DLDTinputstroke>  「[D(し)]」｛地:[T(か)]｝<？/DTDD>                「地鹿⇔鹿児島」<？/DD/DL>
-<？DLDTinputstroke>  「[6(お)]」｛地:[G(き)]｝<？/DTDD>                「地沖⇔沖縄」<？/DD/DL>
+<？DLDTinputstroke>  「[G(き)]」[Q(た):地]<？/DTDD>                「地北⇔北海道」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[6(お):地]<？/DTDD>                「地青⇔青森」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」[0(わ):地]<？/DTDD>                「地岩⇔岩手」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[_(ロ):地]<？/DTDD>                「地城⇔宮城」<？/DD/DL>
+<？DLDTinputstroke>  「[3(あ)]」[G(き):地]<？/DTDD>                「地秋⇔秋田」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ン)]」[Q(タ):地]<？/DTDD>                「地形⇔山形」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[J(ま):地]<？/DTDD>                「地島⇔福島」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」[F(ハ):地]<？/DTDD>                「地茨⇔茨城」<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[A(ち):地]<？/DTDD>                「地栃⇔栃木」<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[F(ハ):地]<？/DTDD>                「地群⇔群馬」<？/DD/DL>
+<？DLDTinputstroke>  「[X(さ)]」[Q(た):地]<？/DTDD>                「地埼⇔埼玉」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[^(ヘ):地]<？/DTDD>                「地千⇔千葉」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ヒ)]」[T(カ):地]<？/DTDD>                「地東⇔東京」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[N(み):地]<？/DTDD>                「地神⇔神奈川」<？/DD/DL>
+<？DLDTinputstroke>  「[Y(ん)]」[Q(た):地]<？/DTDD>                「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[N(み):地]<？/DTDD>                「地富⇔富山」<？/DD/DL>
+<？DLDTinputstroke>  「[E(い)]」[D(し):地]<？/DTDD>                「地石⇔石川」<？/DD/DL>
+<？DLDTinputstroke>  「[E(イ)]」[S(ト):地]<？/DTDD>                「地井⇔福井」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」[D(し):地]<？/DTDD>                「地梨⇔山梨」<？/DD/DL>
+<？DLDTinputstroke>  「[K(の)]」[7(や):地]<？/DTDD>                「地野⇔長野」<？/DD/DL>
+<？DLDTinputstroke>  「[;(レ)]」[1(ヌ):地]<？/DTDD>                「地岐⇔岐阜」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[R(す):地]<？/DTDD>                「地静⇔静岡」<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[@(゛):地]<？/DTDD>                「地知⇔愛知」(「地愛⇔愛知/愛蘭」)<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[3(ア):地]<？/DTDD>                「地三⇔三重」<？/DD/DL>
+<？DLDTinputstroke>  「[D(シ)]」[9(ヨ):地]<？/DTDD>                「地滋⇔滋賀」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[}(ﾟ ):地]<？/DTDD>                「地京⇔京都」<？/DD/DL>
+<？DLDTinputstroke>  「[F(ハ)]」[Y(ン):地]<？/DTDD>                「地阪⇔大阪」(「地大⇔大阪/大分」)<？/DD/DL>
+<？DLDTinputstroke>  「[^(へ)]」[M(も):地]<？/DTDD>                「地兵⇔兵庫」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」[O(ら):地]<？/DTDD>                「地奈⇔奈良」<？/DD/DL>
+<？DLDTinputstroke>  「[0(わ)]」[^(へ):地]<？/DTDD>                「地和⇔和歌山」(「地歌⇔和歌山」)<？/DD/DL>
+<？DLDTinputstroke>  「[S(と)]」[L(り):地]<？/DTDD>                「地鳥⇔鳥取」(「地取⇔鳥取」)<？/DD/DL>
+<？DLDTinputstroke>  「[.(ね)]」[M(も):地]<？/DTDD>                「地根⇔島根」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[T(か):地]<？/DTDD>                「地岡⇔岡山」<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[_(ろ):地]<？/DTDD>                「地広⇔広島」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[A(ち):地]<？/DTDD>                「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)<？/DD/DL>
+<？DLDTinputstroke>  「[I(ニ)]」[H(ク):地]<？/DTDD>                「地徳⇔徳島」<？/DD/DL>
+<？DLDTinputstroke>  「[T(か)]」[0(わ):地]<？/DTDD>                「地川⇔香川」(「地香⇔香港/香川」)<？/DD/DL>
+<？DLDTinputstroke>  「[V(ひ)]」[/(め):地]<？/DTDD>                「地媛⇔愛媛」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(た)]」[T(か):地]<？/DTDD>                「地高⇔高知」<？/DD/DL>
+<？DLDTinputstroke>  「[Q(ふ)]」[J(ま):地]<？/DTDD>                「地福⇔福岡」<？/DD/DL>
+<？DLDTinputstroke>  「[X(サ)]」[T(カ):地]<？/DTDD>                「地佐⇔佐賀」<？/DD/DL>
+<？DLDTinputstroke>  「[U(な)]」[E(い):地]<？/DTDD>                「地長⇔長崎」<？/DD/DL>
+<？DLDTinputstroke>  「[H(く)]」[J(ま):地]<？/DTDD>                「地熊⇔熊本」<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[L(レ):地]<？/DTDD>                「地分⇔大分」<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[7(や):地]<？/DTDD>                「地宮⇔宮崎」<？/DD/DL>
+<？DLDTinputstroke>  「[D(し)]」[T(か):地]<？/DTDD>                「地鹿⇔鹿児島」<？/DD/DL>
+<？DLDTinputstroke>  「[6(お)]」[G(き):地]<？/DTDD>                「地沖⇔沖縄」<？/DD/DL>
 
 <？index/kanedit_faq:country>
 
-<？DLDTinputstroke>  「[I(に)]」｛地:[S(と)]｝<？/DTDD>                「地日⇔日本」(にっぽん)<？/DD/DL>
-<？DLDTinputstroke>  「[A(ち)]」｛地:[E(い)]｝<？/DTDD>                「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)<？/DD/DL>
-<？DLDTinputstroke>  「[Q(タ)]」｛地:[4(ウ)]｝<？/DTDD>                「地台⇔台湾」(たいわん)<？/DD/DL>
-<？DLDTinputstroke>  「[N(み)]」｛地:[S(と)]｝<？/DTDD>                「地港⇔香港」(ほんこん)<？/DD/DL>
-<？DLDTinputstroke>  「[B(コ)]」｛地:[^(ヘ)]｝<？/DTDD>                「地越⇔越南」(べとなむ)<？/DD/DL>
-<？DLDTinputstroke>  「[H(ク)]」｛地:[O(ラ)]｝<？/DTDD>                「地蔵⇔西蔵」(ちべっと)<？/DD/DL>
-<？DLDTinputstroke>  「[M(も)]」｛地:[B(こ)]｝<？/DTDD>                「地蒙⇔蒙古」(もんごる)<？/DD/DL>
-<？DLDTinputstroke>  「[5(え)]」｛地:[E(い)]｝<？/DTDD>                「地英⇔英吉利西」(イギリス)<？/DD/DL>
-<？DLDTinputstroke>  「[/(メ)]」｛地:[T(カ)]｝<？/DTDD>                「地米⇔亜米利加」(アメリカ)<？/DD/DL>
+<？DLDTinputstroke>  「[I(に)]」[S(と):地]<？/DTDD>                「地日⇔日本」(にっぽん)<？/DD/DL>
+<？DLDTinputstroke>  「[A(ち)]」[E(い):地]<？/DTDD>                「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)<？/DD/DL>
+<？DLDTinputstroke>  「[Q(タ)]」[4(ウ):地]<？/DTDD>                「地台⇔台湾」(たいわん)<？/DD/DL>
+<？DLDTinputstroke>  「[N(み)]」[S(と):地]<？/DTDD>                「地港⇔香港」(ほんこん)<？/DD/DL>
+<？DLDTinputstroke>  「[B(コ)]」[^(ヘ):地]<？/DTDD>                「地越⇔越南」(べとなむ)<？/DD/DL>
+<？DLDTinputstroke>  「[H(ク)]」[O(ラ):地]<？/DTDD>                「地蔵⇔西蔵」(ちべっと)<？/DD/DL>
+<？DLDTinputstroke>  「[M(も)]」[B(こ):地]<？/DTDD>                「地蒙⇔蒙古」(もんごる)<？/DD/DL>
+<？DLDTinputstroke>  「[5(え)]」[E(い):地]<？/DTDD>                「地英⇔英吉利西」(イギリス)<？/DD/DL>
+<？DLDTinputstroke>  「[/(メ)]」[T(カ):地]<？/DTDD>                「地米⇔亜米利加」(アメリカ)<？/DD/DL>
 |<＃contents/KEV_interpret-3>]
+
 [<？index/kanedit_faq:prefectures>*<？index/kanedit_faq:country>|
 :<＄title/kanedit_faq-0>	都道府県の字引入力
 :<＄title/kanedit_faq-1>	国名の字引入力

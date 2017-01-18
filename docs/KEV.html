@@ -33,7 +33,7 @@
   <h1>「KEV」はVimスクリプトでできてる漢字直接入力です。</h1>
   <p>
 
-   version(branch):20170114S031328	modify:20170116M072633<br />
+   version(branch):20170114S031328	modify:20170118W091614<br />
   
 </p>
   <h2>目次</h2>
@@ -136,6 +136,52 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 
 <dl><dt>help - Vim日本語ドキュメント</dt><dd><a href="http://vim-jp.org/vimdoc-ja/" title="help - Vim日本語ドキュメント">http://vim-jp.org/vimdoc-ja/</a></dd></dl>
 
+<p>
+あと漢直と直接関係けどVimの設定についで追加として、<br />
+「matchpairs」オプションに全角括弧を設定、全角空白のハイライト指定など。<br />
+「eol:$」も本当は「eol:&#x21B2;」(&amp;#x21B2;)だけどWindowsだとエラーになるので注意。<br />
+</p>
+
+<pre><code>
+"# 表示設定
+set encoding=utf-8                                                      "日本語というか漢字対応
+set number                                                              "行番号表示
+set title                                                               "編集中ファイル名表示
+set showmatch                                                           "対応する括弧を強調
+:if has('win32')
+  imap &lt;silent&gt; &lt;C-CR&gt; &lt;Esc&gt;|                                           "winで「^[」動作しない
+"set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:” "winで全角括弧動作しない
+:else
+  set matchpairs+=「:」,『:』,（:）,【:】,《:》,〈:〉,［:］,‘:’,“:” "「%」で全角括弧も移動
+:endif
+syntax on                                                               "コード色分け
+set tabstop=4                                                           "インデント4スペース
+set smartindent                                                         "オートインデント
+set list                                                                "スペースやタブの表示
+:if has('win32')
+  set listchars=tab:>-,trail:_,eol:$,nbsp:%                             "改行を改行記号代行に
+:else
+  set listchars=tab:>-,trail:_,eol:$,nbsp:%                             "改行を(U+21b2)に
+augroup highlightZenkakuSpace
+:endif
+highlight ZenkakuSpace guibg=#f0f0f0  "全角空白の設定前にハイライトを事前に作らないとエラーなる
+  autocmd!
+  autocmd Colorscheme * highlight ZenkakuSpace guibg=#f0f0f0            "全角空白の色を指定
+  autocmd VimEnter,WinEnter * match ZenkakuSpace /　/                   "全角空白とは何かを設定
+augroup END
+set columns=100                                                         "ウィンドウ横幅100
+set lines=30                                                            "ウィンドウ縦高30
+
+"# スクリプト実行
+autocmd BufNewFile,BufRead *.vim nnoremap <F5> :source % <CR>
+autocmd BufNewFile,BufRead *.py nnoremap <F5> :!python % 
+autocmd BufNewFile,BufRead *.lua nnoremap <F5> :!lua5.2 % 
+
+"# 漢直設定
+command KEVltsv :source /mnt/sda2/github/LTsv10kanedit/LTsv/kanedit.vim "漢直(入力&検索)
+command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(入力&検索)</code></pre>
+
+
 </section>
 <section>
  <h3 id="KEV_usage-1">①-1．「KEV」の使い方([Shift]省略)</h3>
@@ -182,6 +228,8 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
  「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]</dt>
 <dd>
      hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。<br />
+                                              (元々Vim以外のエディタでhjkl移動可能にする機能が操作の互換性でVim版にも搭載というか、<br />
+                                              KEV的には「[Space],[Del]」するより普通に「[Space],[Space]」でVimのノーマルモード使う方が速くて機能も豊富かと)<br />
 </dd></dl>
 <dl><dt>
  「σ」鍵盤で [;(れ)]</dt>
@@ -241,7 +289,7 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 <dl><dt>
   [Space],[BS]</dt>
 <dd>
-                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[q(英)〜,(照)]などとの交換です。辞書の解除は再度同じ辞書の選択。<br />
+                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[1(ヌ):名〜,(ネ):照]およびα鍵盤等との交換です。辞書の解除は再度同じ辞書の選択。<br />
 </dd></dl>
 
 </section>
@@ -281,6 +329,10 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 </section>
 <section>
  <h3 id="KEV_usage-3">①-3．単漢字辞書の辞書項目</h3>
+<p>
+ [Space],[Shift]+[1(ヌ):名〜,(ネ):照](「鍵盤」状態)でも辞書項目変更は可能です。<br />
+
+</p>
 <dl><dt>
   [1(ヌ):名]</dt>
 <dd>
@@ -403,6 +455,13 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <section>
  <h3 id="KEV_faq-0">③-0．「KEV」のＦＡＱ</h3>
 <dl class="faq"><dt>
+ Ｑ．「鍵盤」なのに辞書変更やα鍵盤変更など逆の動きをする。</dt>
+<dd>
+
+ Ａ．[CapsLock]がON状態になってると[Shift]が押されっぱなしのような動きになると思います。<br />
+
+</dd></dl>
+<dl class="faq"><dt>
  Ｑ．汎用辞書「kanword.tsv」が認識されない。</dt>
 <dd>
 
@@ -429,9 +488,10 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
  Ｑ．都道府県国名の解説の「地北⇔北海道」みたいなのはどういう入力ですか？</dt>
 <dd>
 
- Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<？VReval/howto><br />
+ Ａ．「⇔」記号の方は漢直ではなく漢字逆引きなど「電卓」の機能です。<br />
      [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<br />
      Vim版では「電卓」機能は未サポートです。<br />
+     テキスト入力欄(電卓)の演算結果は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
 
 </dd></dl>
 
@@ -594,12 +654,12 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
    [G(き)]に入り切らなかった「き」読みの漢字を相席。
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[}(む)]」</dt>
+  「[](む)]」</dt>
 <dd>
    全角キリル小文字(абвгдеёжзийклмнопрстуфхцчшщъыьэюя)を相席。
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[}(ム)]」</dt>
+  「[](ム)]」</dt>
 <dd>
    全角キリル大文字(АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ)を相席。
 </dd></dl>
@@ -1028,7 +1088,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「蕗薹(ふきのとう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[2(ふ)]」[}(む)][}(ム)]</dt>
+  「[2(ふ)]」[](む)][](ム)]</dt>
 <dd>
                 「踏鞴(たたら)」
 </dd></dl>
@@ -1068,7 +1128,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「芙蓉(ふよう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[2(フ)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[2(フ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「夫婦(ふうふ)」
 </dd></dl>
@@ -1123,7 +1183,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「伽藍(伽藍とバザールの"がらん")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[3(ア)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[3(ア)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「挨拶(あいさつ)」
 </dd></dl>
@@ -1138,7 +1198,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「蒐集(しゅうしゅう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[3(ア)]」[:(ケ)][}(ム)]</dt>
+  「[3(ア)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「昂揚(こうよう)」
 </dd></dl>
@@ -1163,12 +1223,12 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「驢馬(ロバ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[4(う)]」[P(せ)][@(゛)]</dt>
+  「[4(う)]」[P(せ)][@(＠)]</dt>
 <dd>
                 「蝸牛(カタツムリ/でんでんむし)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[4(う)]」[@(゛)][{(゜)]</dt>
+  「[4(う)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「牛蒡(ごぼう)」
 </dd></dl>
@@ -1208,7 +1268,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「冤枉(えんおう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[5(え)]」[@(゛)][{(゜)]</dt>
+  「[5(え)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「饗宴(きょうえん)」
 </dd></dl>
@@ -1283,7 +1343,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「雌雄(しゆう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[6(オ)]」[@(゛)][{(゜)]</dt>
+  「[6(オ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「老獪(ろうかい)」
 </dd></dl>
@@ -1313,7 +1373,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「山車(だし)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[7(や)]」[@(゛)][{(゜)]</dt>
+  「[7(や)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「安易(あんい)」
 </dd></dl>
@@ -1343,7 +1403,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「釈迦(しゃか)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[7(ヤ)]」[{(ﾟ )][{(゜)]</dt>
+  「[7(ヤ)]」[[(プ)][[(ぷ)]</dt>
 <dd>
                 「辟易(へきえき)」
 </dd></dl>
@@ -1408,12 +1468,12 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「衒耀(げんよう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[9(よ)]」[@(゛)][@(゛)]</dt>
+  「[9(よ)]」[@(＠)][@(｀)]</dt>
 <dd>
                 「羊羹(ようかん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[9(よ)]」[}(む)][}(ム)]</dt>
+  「[9(よ)]」[](む)][](ム)]</dt>
 <dd>
                 「読書(どくしょ)」
 </dd></dl>
@@ -1453,7 +1513,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「状況(じょうきょう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[9(ヨ)]」[:(ケ)][}(ム)]</dt>
+  「[9(ヨ)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「辞書(じしょ)」
 </dd></dl>
@@ -1508,7 +1568,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「芭蕉(ばしょう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[0(ワ)]」[:(ケ)][}(ム)]</dt>
+  「[0(ワ)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「化粧(けしょう)」
 </dd></dl>
@@ -1548,7 +1608,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「彷徨(ほうこう/彷徨うの"さまよ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[-(ほ)]」[@(゛)][{(゜)]</dt>
+  「[-(ほ)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「放牧(ほうぼく)」
 </dd></dl>
@@ -1778,7 +1838,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「薫蕕(くんゆう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[T(カ)]」[P(セ)][@(ﾞ )]</dt>
+  「[T(カ)]」[P(セ)][@(｀)]</dt>
 <dd>
                 「風貌(ふうぼう)」
 </dd></dl>
@@ -2073,7 +2133,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「狭窄(きょうさく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[P(セ)]」[}(ム)][}(む)]</dt>
+  「[P(セ)]」[](ム)][](む)]</dt>
 <dd>
                 「呵責(かしゃく)」
 </dd></dl>
@@ -2168,7 +2228,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「下支(したざさえ下支えの"したざさ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」[@(゛)][{(゜)]</dt>
+  「[D(し)]」[@(＠)][[(ぷ)]]</dt>
 <dd>
                 「資質(ししつ)」
 </dd></dl>
@@ -2183,7 +2243,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「痔瘻(じろう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」[}(む)][}(ム)]</dt>
+  「[D(し)]」[](む)][](ム)]</dt>
 <dd>
                 「嫉妬(しっと)」
 </dd></dl>
@@ -2203,12 +2263,12 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「諮詢(しじゅん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(シ)]」[P(セ)][@(ﾞ )]</dt>
+  「[D(シ)]」[P(セ)][@(｀)]</dt>
 <dd>
                 「果実(かじつ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(シ)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[D(シ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「実践(じっせん)」
 </dd></dl>
@@ -2223,7 +2283,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「花魁(おいらん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[F(は)]」[@(゛)][{(゜)]</dt>
+  「[F(は)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「計測(けいそく)」
 </dd></dl>
@@ -2258,7 +2318,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「棕櫚(パーム)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[F(ハ)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[F(ハ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「売買(ばいばい)」
 </dd></dl>
@@ -2323,7 +2383,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「逆算(ぎやくさん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[G(キ)]」[U(セ)][@(゛)]</dt>
+  「[G(キ)]」[U(セ)][@(｀)]</dt>
 <dd>
                 「犠牲(ぎせい)」
 </dd></dl>
@@ -2348,17 +2408,17 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「薬罐(やかん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(く)]」[:(け)][}(む)]</dt>
+  「[H(く)]」[:(け)][](む)]</dt>
 <dd>
                 「狂狷(きょうけん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(ク)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[H(ク)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「懺悔(ざんげ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(ク)]」[:(ケ)][}(ム)]</dt>
+  「[H(ク)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「蜘蛛(クモ)」
 </dd></dl>
@@ -2458,7 +2518,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「触媒(しょくばい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[K(ノ)]」[P(セ)][@(ﾞ )]</dt>
+  「[K(ノ)]」[P(セ)][@(｀)]</dt>
 <dd>
                 「齧歯(げっしるい齧歯類の"げっし")」
 </dd></dl>
@@ -2508,7 +2568,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「翰林(かんりん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[L(り)]」[:(け)][}(む)]</dt>
+  「[L(り)]」[:(け)][](む)]</dt>
 <dd>
                 「吝嗇(りんしょく/けち/吝さかで"やぶさか")」
 </dd></dl>
@@ -2553,7 +2613,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「乖離(かいり)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[L(リ)]」[P(セ)][@(ﾞ )]</dt>
+  「[L(リ)]」[P(セ)][@(｀)]</dt>
 <dd>
                 「逍遥(しょうよう)」
 </dd></dl>
@@ -2563,7 +2623,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「梯梧(でいこ/でいご)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[;(れ)]」[P(せ)][@(゛)]</dt>
+  「[;(れ)]」[P(せ)][@(＠)]</dt>
 <dd>
                 「熾烈(しれつ)」
 </dd></dl>
@@ -2608,7 +2668,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「近畿(きんき)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[:(レ)]」[:(ケ)][}(ム)]</dt>
+  「[:(レ)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「虚業(きょぎょう)」
 </dd></dl>
@@ -2708,12 +2768,12 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「啓蟄(けいちつ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[}(む)]」[3(あ)][4(う)]</dt>
+  「[](む)]」[3(あ)][4(う)]</dt>
 <dd>
                 「爬虫(爬虫類はちゅうるいの"はちゅう")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[}(む)]」[5(え)][6(お)]</dt>
+  「[](む)]」[5(え)][6(お)]</dt>
 <dd>
                 「娘婿(むすめむこ)」
 </dd></dl>
@@ -2768,7 +2828,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「祇園(ぎおん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[C(そ)]」[@(゛)][{(゜)]</dt>
+  「[C(そ)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「齟齬(そご)」
 </dd></dl>
@@ -2838,7 +2898,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「枇杷(果物のビワ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ひ)]」[P(せ)][@(゛)]</dt>
+  「[V(ひ)]」[P(せ)][@(＠)]</dt>
 <dd>
                 「燧火(すいか)」
 </dd></dl>
@@ -2883,7 +2943,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「頃合(ころあい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[B(こ)]」[}(む)][}(ム)]</dt>
+  「[B(こ)]」[](む)][](ム)]</dt>
 <dd>
                 「蒟蒻(こんにゃく)」
 </dd></dl>
@@ -2918,7 +2978,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「殊更(ことさら)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[B(コ)]」[@(゛)][{(゜)]</dt>
+  「[B(コ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「鱣子(キャビア)」
 </dd></dl>
@@ -2953,7 +3013,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「水脈(すいみゃく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[N(み)]」[@(゛)][{(゜)]</dt>
+  「[N(み)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「味噌(みそ)」
 </dd></dl>
@@ -3063,7 +3123,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「誹謗(ひぼう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[,(ネ)]」[:(ケ)][}(ム)]</dt>
+  「[,(ネ)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「秘訣(ひけつ)」
 </dd></dl>
@@ -3113,7 +3173,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「豪語(ごうご)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[.(ル)]」[:(ケ)][}(ム)]</dt>
+  「[.(ル)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「語彙(ごい)」
 </dd></dl>
@@ -3203,17 +3263,17 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「割烹(かっぽうぎ割烹着の"かっぽう")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」[}(ム)][}(む)]</dt>
+  「[/(メ)]」[](ム)][](む)]</dt>
 <dd>
                 「毛氈(もうせん/フェルト)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[_(ろ)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[_(ろ)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「耄碌(もうろく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[_(ロ)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[_(ロ)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「狼狽(ろうばい)」
 </dd></dl>
@@ -3273,7 +3333,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「呿呻(あくび)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(α)]」[@(゛)][{(゜)]</dt>
+  「[A(α)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「顑頷(かんがん)」
 </dd></dl>
@@ -3303,7 +3363,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「憔悴(しょうすい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(α)]」[:(け)][}(む)]</dt>
+  「[A(α)]」[:(け)][](む)]</dt>
 <dd>
                 「狴犴(へいかん)」
 </dd></dl>
@@ -3393,7 +3453,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「蜥蜴(トカゲ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(Α)]」[@(ﾞ )][{(ﾟ )]</dt>
+  「[A(Α)]」[@(｀)][[(プ)]</dt>
 <dd>
                 「閨閤(けいこう)」
 </dd></dl>
@@ -3423,7 +3483,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「榠樝(カリン)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(Α)]」[:(ケ)][}(ム)]</dt>
+  「[A(Α)]」[:(ケ)][](ム)]</dt>
 <dd>
                 「顰蹙(ひんしゅく)」
 </dd></dl>
@@ -3516,65 +3576,65 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 
 </p>
 <dl class="inputstroke"><dt>
-  「[4(う)]」[3(あ)]<br />｛逆:[3(あ)]｝</dt>
+  「[4(う)]」[3(あ)][3(あ):逆]</dt>
 <dd>
          「上下(じょうげ)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ヒ)]」[Q(タ)]<br />｛逆:[Q(タ)]｝</dt>
+  「[V(ヒ)]」[Q(タ)][Q(タ):逆]</dt>
 <dd>
          「左右(さゆう)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[J(ま)]」[5(え)]<br />｛逆:[5(え)]｝</dt>
+  「[J(ま)]」[5(え)][5(え):逆]</dt>
 <dd>
          「前後(ぜんご)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ヒ)]」[T(カ)]<br />｛逆:[T(カ)]｝</dt>
+  「[V(ヒ)]」[T(カ)][T(カ):逆]</dt>
 <dd>
          「東西(とうざい)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[N(み)]」[4(う)]<br />｛逆:[4(う)]｝</dt>
+  「[N(み)]」[4(う)][4(う):逆]</dt>
 <dd>
          「南北(なんぼく)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」[_(ろ)]<br />｛逆:[_(ろ)]｝</dt>
+  「[D(し)]」[_(ろ)][_(ろ):逆]</dt>
 <dd>
          「白黒(しろくろ)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[8(ゆ)]」[F(は)]<br />｛逆:[F(は)]｝</dt>
+  「[8(ゆ)]」[F(は)][F(は):逆]</dt>
 <dd>
          「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[T(カ)]」[A(チ)]<br />｛非:[A(チ)]｝</dt>
+  「[T(カ)]」[A(チ)][A(チ):非]</dt>
 <dd>
          「価値(かち)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[F(は)]」[.(る)]<br />｛非:[.(る)]｝</dt>
+  「[F(は)]」[.(る)][.(る):非]</dt>
 <dd>
          「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[3(あ)]」[G(き)]<br />｛非:[G(き)]｝</dt>
+  「[3(あ)]」[G(き)][G(き):非]</dt>
 <dd>
          「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[6(お)]」[Y(ん)]<br />｛非:[Y(ん)]｝</dt>
+  「[6(お)]」[Y(ん)][Y(ん):非]</dt>
 <dd>
          「温暖(おんだん)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 <dl class="inputstroke"><dt>
-  「[N(ミ)]」[}(ム)]<br />｛非:[}(ム)]｝</dt>
+  「[N(ミ)]」[](ム)][](ム):非]</dt>
 <dd>
          「寒冷(かんれい)」
-</dd><br class="yonmoji_both" /></dl>
+</dd></dl>
 
 </section>
 <section>
@@ -3586,237 +3646,237 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <h4>都道府県の字引入力</h4>
 
 <dl class="inputstroke"><dt>
-  「[G(き)]」｛地:[Q(た)]｝</dt>
+  「[G(き)]」[Q(た):地]</dt>
 <dd>
                 「地北⇔北海道」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[3(あ)]」｛地:[6(お)]｝</dt>
+  「[3(あ)]」[6(お):地]</dt>
 <dd>
                 「地青⇔青森」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[E(い)]」｛地:[0(わ)]｝</dt>
+  「[E(い)]」[0(わ):地]</dt>
 <dd>
                 「地岩⇔岩手」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(シ)]」｛地:[_(ロ)]｝</dt>
+  「[D(シ)]」[_(ロ):地]</dt>
 <dd>
                 「地城⇔宮城」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[3(あ)]」｛地:[G(き)]｝</dt>
+  「[3(あ)]」[G(き):地]</dt>
 <dd>
                 「地秋⇔秋田」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Y(ン)]」｛地:[Q(タ)]｝</dt>
+  「[Y(ン)]」[Q(タ):地]</dt>
 <dd>
                 「地形⇔山形」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」｛地:[J(ま)]｝</dt>
+  「[D(し)]」[J(ま):地]</dt>
 <dd>
                 「地島⇔福島」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[E(イ)]」｛地:[F(ハ)]｝</dt>
+  「[E(イ)]」[F(ハ):地]</dt>
 <dd>
                 「地茨⇔茨城」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[S(と)]」｛地:[A(ち)]｝</dt>
+  「[S(と)]」[A(ち):地]</dt>
 <dd>
                 「地栃⇔栃木」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(ク)]」｛地:[F(ハ)]｝</dt>
+  「[H(ク)]」[F(ハ):地]</dt>
 <dd>
                 「地群⇔群馬」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[X(さ)]」｛地:[Q(た)]｝</dt>
+  「[X(さ)]」[Q(た):地]</dt>
 <dd>
                 「地埼⇔埼玉」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」｛地:[^(ヘ)]｝</dt>
+  「[/(メ)]」[^(ヘ):地]</dt>
 <dd>
                 「地千⇔千葉」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ヒ)]」｛地:[T(カ)]｝</dt>
+  「[V(ヒ)]」[T(カ):地]</dt>
 <dd>
                 「地東⇔東京」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Y(ん)]」｛地:[N(み)]｝</dt>
+  「[Y(ん)]」[N(み):地]</dt>
 <dd>
                 「地神⇔神奈川」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Y(ん)]」｛地:[Q(た)]｝</dt>
+  「[Y(ん)]」[Q(た):地]</dt>
 <dd>
                 「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[S(と)]」｛地:[N(み)]｝</dt>
+  「[S(と)]」[N(み):地]</dt>
 <dd>
                 「地富⇔富山」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[E(い)]」｛地:[D(し)]｝</dt>
+  「[E(い)]」[D(し):地]</dt>
 <dd>
                 「地石⇔石川」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[E(イ)]」｛地:[S(ト)]｝</dt>
+  「[E(イ)]」[S(ト):地]</dt>
 <dd>
                 「地井⇔福井」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[U(な)]」｛地:[D(し)]｝</dt>
+  「[U(な)]」[D(し):地]</dt>
 <dd>
                 「地梨⇔山梨」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[K(の)]」｛地:[7(や)]｝</dt>
+  「[K(の)]」[7(や):地]</dt>
 <dd>
                 「地野⇔長野」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[;(レ)]」｛地:[1(ヌ)]｝</dt>
+  「[;(レ)]」[1(ヌ):地]</dt>
 <dd>
                 「地岐⇔岐阜」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」｛地:[R(す)]｝</dt>
+  「[D(し)]」[R(す):地]</dt>
 <dd>
                 「地静⇔静岡」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(ち)]」｛地:[@(゛)]｝</dt>
+  「[A(ち)]」[@(゛):地]</dt>
 <dd>
                 「地知⇔愛知」(「地愛⇔愛知/愛蘭」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」｛地:[3(ア)]｝</dt>
+  「[/(メ)]」[3(ア):地]</dt>
 <dd>
                 「地三⇔三重」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(シ)]」｛地:[9(ヨ)]｝</dt>
+  「[D(シ)]」[9(ヨ):地]</dt>
 <dd>
                 「地滋⇔滋賀」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」｛地:[}(ﾟ )]｝</dt>
+  「[/(メ)]」[}(ﾟ ):地]</dt>
 <dd>
                 「地京⇔京都」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[F(ハ)]」｛地:[Y(ン)]｝</dt>
+  「[F(ハ)]」[Y(ン):地]</dt>
 <dd>
                 「地阪⇔大阪」(「地大⇔大阪/大分」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[^(へ)]」｛地:[M(も)]｝</dt>
+  「[^(へ)]」[M(も):地]</dt>
 <dd>
                 「地兵⇔兵庫」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[U(な)]」｛地:[O(ら)]｝</dt>
+  「[U(な)]」[O(ら):地]</dt>
 <dd>
                 「地奈⇔奈良」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[0(わ)]」｛地:[^(へ)]｝</dt>
+  「[0(わ)]」[^(へ):地]</dt>
 <dd>
                 「地和⇔和歌山」(「地歌⇔和歌山」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[S(と)]」｛地:[L(り)]｝</dt>
+  「[S(と)]」[L(り):地]</dt>
 <dd>
                 「地鳥⇔鳥取」(「地取⇔鳥取」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[.(ね)]」｛地:[M(も)]｝</dt>
+  「[.(ね)]」[M(も):地]</dt>
 <dd>
                 「地根⇔島根」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[6(お)]」｛地:[T(か)]｝</dt>
+  「[6(お)]」[T(か):地]</dt>
 <dd>
                 「地岡⇔岡山」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ひ)]」｛地:[_(ろ)]｝</dt>
+  「[V(ひ)]」[_(ろ):地]</dt>
 <dd>
                 「地広⇔広島」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(く)]」｛地:[A(ち)]｝</dt>
+  「[H(く)]」[A(ち):地]</dt>
 <dd>
                 「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[I(ニ)]」｛地:[H(ク)]｝</dt>
+  「[I(ニ)]」[H(ク):地]</dt>
 <dd>
                 「地徳⇔徳島」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[T(か)]」｛地:[0(わ)]｝</dt>
+  「[T(か)]」[0(わ):地]</dt>
 <dd>
                 「地川⇔香川」(「地香⇔香港/香川」)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[V(ひ)]」｛地:[/(め)]｝</dt>
+  「[V(ひ)]」[/(め):地]</dt>
 <dd>
                 「地媛⇔愛媛」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Q(た)]」｛地:[T(か)]｝</dt>
+  「[Q(た)]」[T(か):地]</dt>
 <dd>
                 「地高⇔高知」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Q(ふ)]」｛地:[J(ま)]｝</dt>
+  「[Q(ふ)]」[J(ま):地]</dt>
 <dd>
                 「地福⇔福岡」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[X(サ)]」｛地:[T(カ)]｝</dt>
+  「[X(サ)]」[T(カ):地]</dt>
 <dd>
                 「地佐⇔佐賀」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[U(な)]」｛地:[E(い)]｝</dt>
+  「[U(な)]」[E(い):地]</dt>
 <dd>
                 「地長⇔長崎」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(く)]」｛地:[J(ま)]｝</dt>
+  「[H(く)]」[J(ま):地]</dt>
 <dd>
                 「地熊⇔熊本」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」｛地:[L(レ)]｝</dt>
+  「[/(メ)]」[L(レ):地]</dt>
 <dd>
                 「地分⇔大分」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[N(み)]」｛地:[7(や)]｝</dt>
+  「[N(み)]」[7(や):地]</dt>
 <dd>
                 「地宮⇔宮崎」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」｛地:[T(か)]｝</dt>
+  「[D(し)]」[T(か):地]</dt>
 <dd>
                 「地鹿⇔鹿児島」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[6(お)]」｛地:[G(き)]｝</dt>
+  「[6(お)]」[G(き):地]</dt>
 <dd>
                 「地沖⇔沖縄」
 </dd></dl>
@@ -3824,47 +3884,47 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <h4>国名の字引入力</h4>
 
 <dl class="inputstroke"><dt>
-  「[I(に)]」｛地:[S(と)]｝</dt>
+  「[I(に)]」[S(と):地]</dt>
 <dd>
                 「地日⇔日本」(にっぽん)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[A(ち)]」｛地:[E(い)]｝</dt>
+  「[A(ち)]」[E(い):地]</dt>
 <dd>
                 「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[Q(タ)]」｛地:[4(ウ)]｝</dt>
+  「[Q(タ)]」[4(ウ):地]</dt>
 <dd>
                 「地台⇔台湾」(たいわん)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[N(み)]」｛地:[S(と)]｝</dt>
+  「[N(み)]」[S(と):地]</dt>
 <dd>
                 「地港⇔香港」(ほんこん)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[B(コ)]」｛地:[^(ヘ)]｝</dt>
+  「[B(コ)]」[^(ヘ):地]</dt>
 <dd>
                 「地越⇔越南」(べとなむ)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[H(ク)]」｛地:[O(ラ)]｝</dt>
+  「[H(ク)]」[O(ラ):地]</dt>
 <dd>
                 「地蔵⇔西蔵」(ちべっと)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[M(も)]」｛地:[B(こ)]｝</dt>
+  「[M(も)]」[B(こ):地]</dt>
 <dd>
                 「地蒙⇔蒙古」(もんごる)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[5(え)]」｛地:[E(い)]｝</dt>
+  「[5(え)]」[E(い):地]</dt>
 <dd>
                 「地英⇔英吉利西」(イギリス)
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[/(メ)]」｛地:[T(カ)]｝</dt>
+  「[/(メ)]」[T(カ):地]</dt>
 <dd>
                 「地米⇔亜米利加」(アメリカ)
 </dd></dl>
