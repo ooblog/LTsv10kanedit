@@ -213,6 +213,10 @@ LTsv_glyphSVG10xdic={"M ":"[","z ":"]",
  "0,":"A","100,":"B","200,":"C","300,":"D","400,":"E","500,":"F","600,":"G","700,":"H","800,":"I","900,":"J","1000,":"K",
  "0 ":"Y","100 ":"X","200 ":"W","300 ":"V","400 ":"U","500 ":"T","600 ":"S","700 ":"R","800 ":"Q","900 ":"P","1000 ":"O"
 }
+# 5x10x20x
+# AaBbCcDdEeFfGgHhIiJjK
+# OoPpQqRrSsTtUuVvWwXxY
+# 0123456789?!+-*/%^#$&;@=_LMN`Zklmnyz
 LTsv_glyphSVG5xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG5xdic.items()])
 LTsv_glyphSVG10xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG10xdic.items()])
 def LTsv_glyphSVG5x10x(LTsv_glyph_path):

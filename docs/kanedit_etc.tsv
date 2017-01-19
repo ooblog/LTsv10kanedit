@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170114S031328
-modify	20170118W091645
+modify	20170119R065737
 |L:Tsv]
 
 [LTsv_doc|
@@ -260,7 +260,7 @@ version(branch):<＠L:TsvLTsvver><？@T>modify:<？modify>
 404	<？list/software-0>*<？list/software-1>*<？list/software-2>*<？list/software-3>*<？list/software-4>*<？list/software-5>
 index|LTsv10	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/aboutLTsv-0>*<？list/aboutLTsv-1><？list/LTsv_printf-0>*<？list/LTsv_printf-1><？list/LTsv_file-0><？list/LTsv_time-0>*<？list/LTsv_time-1><？list/LTsv_calc-0>*<？list/LTsv_calc-1><？list/LTsv_joy-0>*<？list/LTsv_joy-1>*<？list/LTsv_joy-2><？list/LTsv_kbd-0>*<？list/LTsv_kbd-1><？list/LTsv_gui-0>*<？list/LTsv_gui-1><？list/LTsv_glyph-0>*<？list/LTsv_glyph-1>*<？list/LTsv_glyph-2>*<？list/LTsv_glyph-3>*<？list/LTsv_glyph-4>*<？list/LTsv_glyph-5><？list/LTsv10_faq-0><？list/address-0>
 kanedit	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanedit_usage-0><？list/kanedit-0>*<？list/kanedit-1><？list/kanedit_faq-0><？list/address-0>
-kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2><？list/kanfont_faq-0><？list/address-0>
+kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanfont_usage-0><？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>*<？list/kanfont-3><？list/kanfont_faq-0><？list/address-0>
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
 kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip-0><？list/kanzip_faq-0><？list/address-0>
 LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
@@ -272,7 +272,7 @@ KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usag
 404	
 index|LTsv10	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/aboutLTsv-0>*<？section/aboutLTsv-1><？section/LTsv_printf-0>*<？section/LTsv_printf-1><？section/LTsv_file-0><？section/LTsv_time-0>*<？section/LTsv_time-1><？section/LTsv_calc-0>*<？section/LTsv_calc-1><？section/LTsv_joy-0>*<？section/LTsv_joy-1>*<？section/LTsv_joy-2><？section/LTsv_kbd-0>*<？section/LTsv_kbd-1><？section/LTsv_gui-0>*<？section/LTsv_gui-1><？section/LTsv_glyph-0>*<？section/LTsv_glyph-1>*<？section/LTsv_glyph-2>*<？section/LTsv_glyph-3>*<？section/LTsv_glyph-4>*<？section/LTsv_glyph-5><？section/LTsv10_faq-0><？section/address-0>
 kanedit	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanedit_usage-0><？section/kanedit-0>*<？section/kanedit-1><？section/kanedit_faq-0><？section/address-0>
-kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2><？section/kanfont_faq-0><？section/address-0>
+kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanfont_usage-0><？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>*<？section/kanfont-3><？section/kanfont_faq-0><？section/address-0>
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
 kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip-0><？section/kanzip_faq-0><？section/address-0>
 LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
@@ -359,6 +359,7 @@ kanedit	 @E<？P>※「<＠kanedit_etc_outlist>」固有の問題への言及。
  「<？https/kanedit.vim>」と「<？https/kanedit.py>」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。<？BR>
 <？/P>
 <？https/kanedit_faq:TSF1KEV>
+<？P> TSF版作る前に<？DICmap>のグリフ圧縮アルゴリズムを「5x10x」から「5x10x20x」に変更したいので、移行ツール作成→一時的に無圧縮→新アルゴリズムのグリフと交換などの間多少の混乱が発生するかと思います。<？BR><？/P>
 |<＃contents/License-2>]
 
 [<？https/License:mit>*<？https/License:osdn>*<？https/License:postd>*<？https/License:LTsv10kanedit>|
@@ -1818,13 +1819,14 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 .*	
 |<？index/kanfont_usage:capture>]
 
-[<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>|
+[<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>*<？section/kanfont-3>|
 .+\.html?	<section>@E <h3 id="kanfont-@c"><？title/kanfont-@c></h3>@E<＃contents/kanfont-@c>@E</section>@E
 .*	@E<？title/kanfont-@c>@E@E<＃contents/kanfont-@c>@E
-|<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>]
+|<？section/kanfont-0>*<？section/kanfont-1>*<？section/kanfont-2>*<？section/kanfont-3>]
 
 [<＃contents/kanfont-0>|
 <？P> 「<？https/kanfont.py>」の解説は準備中です。<？BR><？/P>
+<？P> 「<？https/5x10xTO5x10x20x.py>」はそれ自体が準備中です。<？BR><？/P>
 |<＃contents/kanfont-0>]
 <！kanfont.py>
 
@@ -1873,6 +1875,10 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 <？DLDT>「漫」用途の想定20x系(グリフキャンバス上「grid」25px想定)<？/DTDD>
   実際には都道府県アイコンが10pxで描画とか「grid」をもっと細かく区切ってるので圧縮予定はありません。<？BR><？/DD/DL>
 |<＃contents/kanfont-2>]
+
+[<＃contents/kanfont-3>|
+<？P> 「5x10x20x」圧縮の解説は準備中です。<？BR><？/P>
+|<＃contents/kanfont-3>]
 
 [<？section/kanfont_faq-0>|
 .+\.html?	<section>@E <h3 id="kanfont_faq-@c"><？title/kanfont_faq-@c></h3>@E<＃contents/kanfont_faq-@c>@E</section>@E
@@ -1932,12 +1938,13 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 .*	   <＄web/kanfont_faq-@c><？BR>@E   <＄url/kanfont_faq-@c><？BR>
 |<？https/kanfont_faq:ooblog.github.io>*<？https/kanfont_faq:fontforge>*<？https/kanfont_faq:woffconv>]
 
-[<？https/kanfont.py>*<？https/kanfont.tsv>|
+[<？https/kanfont.py>*<？https/kanfont.tsv>*<？https/5x10xTO5x10x20x.py>|
 :<＄path/kanfont-0>	kanfont.py
 :<＄path/kanfont-1>	kanfont.tsv
+:<＄path/kanfont-2>	5x10xTO5x10x20x.py
 .+\.html?	<a href="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>" title="<？url/ooblog:LTsv10repository>/blob/master/<＄path/kanfont-@c>"><＄path/kanfont-@c></a>
 .*	<＄path/kanfont-@c>
-|<？https/kanfont.py>*<？https/kanfont.tsv>]
+|<？https/kanfont.py>*<？https/kanfont.tsv>*<？https/5x10xTO5x10x20x.py>]
 
 [<？section/kanmap_usage-0>*<？section/kanmap_usage-1>|
 .+\.html?	<section>@E <h3 id="kanmap_usage-@c"><？title/kanmap_usage-@c></h3>@E<＃contents/kanmap_usage-@c>@E</section>@E
@@ -3623,18 +3630,18 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	①-0．「kanfont」の使い方
 |<？title/kanfont_usage-0>]
 
-[<？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>|
+[<？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>*<？list/kanfont-3>|
 .+\.html?	 <li><？index/kanfont-@c></li>@E
 .*	 <？index/kanfont-@c>@E
-|<？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>]
-[<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>|
+|<？list/kanfont-0>*<？list/kanfont-1>*<？list/kanfont-2>*<？list/kanfont-3>]
+[<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>*<？index/kanfont-3>|
 ^kanfont\.html?	<a href="#kanfont-@c" title="<？title/kanfont-@c>"><？title/kanfont-@c></a>
 .+\.html?	<a href="kanfont.html#kanfont-@c" title="<？title/kanfont-@c>"><？titleimg/software-2><？title/kanfont-@c></a>
 ^kanfont\.txt	<？title/kanfont-@c>
 .*	「kanfont.txt」の<？title/kanfont-@c>
-|<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>]
+|<？index/kanfont-0>*<？index/kanfont-1>*<？index/kanfont-2>*<？index/kanfont-3>]
 [<？title/kanfont-0>|
-.*	②-0．「kanfont.py」の関数一覧
+.*	②-0．「kanfont.py」と「5x10xTO5x10x20x.py」の関数一覧
 |<？title/kanfont-0>]
 [<？title/kanfont-1>|
 .*	②-1．「kanfont.tsv」のタグ解説
@@ -3642,6 +3649,9 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 [<？title/kanfont-2>|
 .*	②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説
 |<？title/kanfont-2>]
+[<？title/kanfont-3>|
+.*	②-3．圧縮形式5x10x20xの解説(準備中)
+|<？title/kanfont-3>]
 
 [<？list/kanfont_faq-0>|
 .+\.html?	 <li><？index/kanfont_faq-@c></li>@E

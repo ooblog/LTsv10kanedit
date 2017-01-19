@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20170114S031328	modify:20170118W091614
+version(branch):20170114S031328	modify:20170119R065709
 
 目次
 
@@ -7,9 +7,10 @@ version(branch):20170114S031328	modify:20170118W091614
  ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
  ⓪-2．その他現在わかっている不具合や今後の課題
  ①-0．「kanfont」の使い方
- ②-0．「kanfont.py」の関数一覧
+ ②-0．「kanfont.py」と「5x10xTO5x10x20x.py」の関数一覧
  ②-1．「kanfont.tsv」のタグ解説
  ②-2．グリフキャンバスの座標とSVGパスの座標の違い＆圧縮形式5x10xの解説
+ ②-3．圧縮形式5x10x20xの解説(準備中)
  ③-0．「kanfont」のＦＡＱ
  ④-0．作者について、例えば連絡先。
 
@@ -67,6 +68,7 @@ version(branch):20170114S031328	modify:20170118W091614
 
    プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
    https://github.com/ooblog/TSF1KEV
+ TSF版作る前に漢字配列「LTsv/kanmap.tsv」のグリフ圧縮アルゴリズムを「5x10x」から「5x10x20x」に変更したいので、移行ツール作成→一時的に無圧縮→新アルゴリズムのグリフと交換などの間多少の混乱が発生するかと思います。
 
 
 ①-0．「kanfont」の使い方
@@ -98,9 +100,10 @@ version(branch):20170114S031328	modify:20170118W091614
    右下の「save」ボタン             「kan5x5.svg」「LTsv/kanchar.tsv」「LTsv/kanpickle.bin」に保存します。
 
 
-②-0．「kanfont.py」の関数一覧
+②-0．「kanfont.py」と「5x10xTO5x10x20x.py」の関数一覧
 
  「kanfont.py」の解説は準備中です。
+ 「5x10xTO5x10x20x.py」はそれ自体が準備中です。
 
 
 ②-1．「kanfont.tsv」のタグ解説
@@ -184,6 +187,11 @@ version(branch):20170114S031328	modify:20170118W091614
 
 「漫」用途の想定20x系(グリフキャンバス上「grid」25px想定)
   実際には都道府県アイコンが10pxで描画とか「grid」をもっと細かく区切ってるので圧縮予定はありません。
+
+
+②-3．圧縮形式5x10x20xの解説(準備中)
+
+ 「5x10x20x」圧縮の解説は準備中です。
 
 
 ③-0．「kanfont」のＦＡＱ

@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20170114S031328	modify:20170118W091614
+version(branch):20170114S031328	modify:20170119R065709
 
 目次
 
@@ -85,6 +85,7 @@ version(branch):20170114S031328	modify:20170118W091614
 
    プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
    https://github.com/ooblog/TSF1KEV
+ TSF版作る前に漢字配列「LTsv/kanmap.tsv」のグリフ圧縮アルゴリズムを「5x10x」から「5x10x20x」に変更したいので、移行ツール作成→一時的に無圧縮→新アルゴリズムのグリフと交換などの間多少の混乱が発生するかと思います。
 
 
 ①-0．「L:Tsv」とは(「L:Tsv」と「LTSV」の違い)
