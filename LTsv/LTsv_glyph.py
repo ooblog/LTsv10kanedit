@@ -202,31 +202,31 @@ def LTsv_global_worddicpath():                        return os.path.normpath(LT
 def LTsv_global_zipdicpath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_zipdicname)
 def LTsv_global_picklepath():                         return os.path.normpath(LTsv_glyph_ltsvdir+LTsv_glyph_kanpicklename)
 
-LTsv_glyphSVG5xdic={"M ":"[","z ":"]",
- "0,1000 ":"0","200,1000 ":"1","400,1000 ":"2","600,1000 ":"3","800,1000 ":"4","1000,1000 ":"5",
- "0,800 ":"6","200,800 ":"7","400,800 ":"8","600,800 ":"9","800,800 ":"a","1000,800 ":"b",
- "0,600 ":"c","200,600 ":"d","400,600 ":"e","600,600 ":"f","800,600 ":"g","1000,600 ":"h",
- "0,400 ":"i","200,400 ":"j","400,400 ":"k","600,400 ":"l","800,400 ":"m","1000,400 ":"n",
- "0,200 ":"o","200,200 ":"p","400,200 ":"q","600,200 ":"r","800,200 ":"s","1000,200 ":"t",
- "0,0 ":"u","200,0 ":"v","400,0 ":"w","600,0 ":"x","800,0 ":"y","1000,0 ":"z"
-}
-LTsv_glyphSVG10xdic={"M ":"[","z ":"]",
- "0,":"A","100,":"B","200,":"C","300,":"D","400,":"E","500,":"F","600,":"G","700,":"H","800,":"I","900,":"J","1000,":"K",
- "0 ":"Y","100 ":"X","200 ":"W","300 ":"V","400 ":"U","500 ":"T","600 ":"S","700 ":"R","800 ":"Q","900 ":"P","1000 ":"O"
-}
-LTsv_glyphSVG5xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG5xdic.items()])
-LTsv_glyphSVG10xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG10xdic.items()])
-def LTsv_glyphSVG5x10x(LTsv_glyph_path):
-    if not "[" in LTsv_glyph_path: return LTsv_glyph_path;
-    LTsv_glyph_path5x=""
-    for path5x in LTsv_glyph_path:
-        if path5x in LTsv_glyphSVG5xdicMz:
-            LTsv_glyph_path5x+=path5x.replace(path5x,LTsv_glyphSVG5xdicMz[path5x])
-        elif path5x in LTsv_glyphSVG10xdicMz:
-            LTsv_glyph_path5x+=path5x.replace(path5x,LTsv_glyphSVG10xdicMz[path5x])
-        else:
-            LTsv_glyph_path5x=""; break;
-    return LTsv_glyph_path5x.rstrip(' ')
+#LTsv_glyphSVG5xdic={"M ":"[","z ":"]",
+# "0,1000 ":"0","200,1000 ":"1","400,1000 ":"2","600,1000 ":"3","800,1000 ":"4","1000,1000 ":"5",
+# "0,800 ":"6","200,800 ":"7","400,800 ":"8","600,800 ":"9","800,800 ":"a","1000,800 ":"b",
+# "0,600 ":"c","200,600 ":"d","400,600 ":"e","600,600 ":"f","800,600 ":"g","1000,600 ":"h",
+# "0,400 ":"i","200,400 ":"j","400,400 ":"k","600,400 ":"l","800,400 ":"m","1000,400 ":"n",
+# "0,200 ":"o","200,200 ":"p","400,200 ":"q","600,200 ":"r","800,200 ":"s","1000,200 ":"t",
+# "0,0 ":"u","200,0 ":"v","400,0 ":"w","600,0 ":"x","800,0 ":"y","1000,0 ":"z"
+#}
+#LTsv_glyphSVG10xdic={"M ":"[","z ":"]",
+# "0,":"A","100,":"B","200,":"C","300,":"D","400,":"E","500,":"F","600,":"G","700,":"H","800,":"I","900,":"J","1000,":"K",
+# "0 ":"Y","100 ":"X","200 ":"W","300 ":"V","400 ":"U","500 ":"T","600 ":"S","700 ":"R","800 ":"Q","900 ":"P","1000 ":"O"
+#}
+#LTsv_glyphSVG5xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG5xdic.items()])
+#LTsv_glyphSVG10xdicMz=dict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG10xdic.items()])
+#def LTsv_glyphSVG5x10x(LTsv_glyph_path):
+#    if not "[" in LTsv_glyph_path: return LTsv_glyph_path;
+#    LTsv_glyph_path5x=""
+#    for path5x in LTsv_glyph_path:
+#        if path5x in LTsv_glyphSVG5xdicMz:
+#            LTsv_glyph_path5x+=path5x.replace(path5x,LTsv_glyphSVG5xdicMz[path5x])
+#        elif path5x in LTsv_glyphSVG10xdicMz:
+#            LTsv_glyph_path5x+=path5x.replace(path5x,LTsv_glyphSVG10xdicMz[path5x])
+#        else:
+#            LTsv_glyph_path5x=""; break;
+#    return LTsv_glyph_path5x.rstrip(' ')
 
 #LTsv_glyphSVG20xOdic={'M':'[','z ':']',
 #'0,1000 ':'0','200,1000 ':'1','400,1000 ':'2','600,1000 ':'3','800,1000 ':'4','1000,1000 ':'5',
@@ -257,7 +257,6 @@ def LTsv_glyphSVG5x10x20x(LTsv_kanpath5x10x20x):
             LTsv_kanpathSVG=""; break;
     return LTsv_kanpathSVG
 
-#□	英:white square	名:白四角	活:M 0,1000 800,1000 800,800 1000,800 1000,0 0,0 z M 200,800 200,200 800,200 800,800 z	漫:M 0,1000 800,1000 1000,800 1000,0 0,0 z M 200,800 200,200 800,200 800,700 700,800 z	筆:
 def LTsv_glyph5x10x20x(LTsv_kanpathSVG):
     LTsv_kanpath5x10x20x=""
     LTsv_kanpathSVGsplit=LTsv_kanpathSVG.strip(' ')+' '
