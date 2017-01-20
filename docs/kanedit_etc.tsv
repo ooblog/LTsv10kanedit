@@ -1842,8 +1842,8 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 
 [../kanfont.py|
 kanfont_pathadjustment(pathpos=None)	表示グリフのパスの個数(レイヤー数)に合わせて横スケールのメモリ数を変化。
-kanfont_code(pathpos=None)	
-kanfont_codespin_shell(window_objvoid=None,window_objptr=None)	
+kanfont_code(pathpos=None)	縦スケール操作などで編集中のグリフを変更した時にスピンボックスと連動したり辞書項目表示更新など。
+kanfont_codespin_shell(window_objvoid=None,window_objptr=None)	縦スケールのスピンボックス編集時
 kanfont_codescale_shell(window_objvoid=None,window_objptr=None)	
 kanfont_codekbd(kbdentry)	
 kanfont_codekbd_paste(window_objvoid=None,window_objptr=None)	
@@ -3222,7 +3222,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 :<＄url/ref-35>	http://ranking.goo.ne.jp/ranking/category/999/nhMmHOggHfeF/
 :<＄web/ref-36>	なんJでよく見る鷲鴎檻鷹鯉猫公兎虎竜燕星についてどれがどの球団ですか？ - Yahoo!知恵袋
 :<＄url/ref-36>	http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11110526351
-:<＄web/ref-37>	[都道府県を漢字１文字で表すと？] by 何カト見聞録
+:<＄web/ref-37>	[都道府県を漢字１文字で 表すと？] by 何カト見聞録
 :<＄url/ref-37>	http://vicroad.blog31.fc2.com/blog-entry-405.html
 :<＄web/ref-38>	「十柱戯」これ読める？漢字で書くと読めなくなる球技ランキング:哲学ニュースnwk
 :<＄url/ref-38>	http://blog.livedoor.jp/nwknews/archives/5110539.html
