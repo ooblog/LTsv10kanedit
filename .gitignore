@@ -108,8 +108,6 @@ kanzip.tsv
 kanzip/
 LTsv/testfile/
 LTsv/kanpickle.bin
-LTsv/kanmap11.tsv
-LTsv/LTsv_glyph10.py
 LTsv_soundtest.py
 soundtest/
 

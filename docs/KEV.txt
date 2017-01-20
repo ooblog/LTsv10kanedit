@@ -1,5 +1,5 @@
 「KEV」はVimスクリプトでできてる漢字直接入力です。
-version(branch):20170114S031328	modify:20170119R065709
+version(branch):20170119R141608	modify:20170120F170856
 
 目次
 

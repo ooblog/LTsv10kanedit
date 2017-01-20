@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20170114S031328	modify:20170119R065709
+version(branch):20170119R141608	modify:20170120F170856
 
 目次
 
@@ -384,7 +384,7 @@ version(branch):20170114S031328	modify:20170119R065709
   Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。
 
  【LTsv_file_ver()】
-  「LTsv_file.py」のバージョン表示(20170114S031328)。
+  「LTsv_file.py」のバージョン表示(20170119R141608)。
 
  【LTsv_issue()】
   「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。
@@ -448,7 +448,7 @@ version(branch):20170114S031328	modify:20170119R065709
   OSやファイルシステム毎に秒や分の精度に違いがあると思う。
 
  【LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)】
-  「LTsv_time_ver()」などの20170114S031328形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
+  「LTsv_time_ver()」などの20170119R141608形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。
   追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。
 
  【LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)】
@@ -1573,10 +1573,11 @@ version(branch):20170114S031328	modify:20170119R065709
  【LTsv_global_picklepath()】
   グリフ座標データ「kanpickle.bin」のファイルパス。
 
- 【LTsv_glyphSVG5x10x(LTsv_glyph_path)】
-  グリフの圧縮された座標データをSVGパスに(伸張)。
-  「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」
-  「[AOBOBQAQ]」→「M 0,1000 100,1000 100,900 0,900 z」
+ 【LTsv_glyphSVG5x10x20x(LTsv_kanpath5x10x20x)】
+  
+
+ 【LTsv_glyph5x10x20x(LTsv_kanpathSVG)】
+  
 
  【LTsv_glyphSVG(LTsv_glyph_path)】
   グリフの座標データをSVGからリストに変換。

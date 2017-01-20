@@ -1,5 +1,5 @@
 「LTsv_doc」は「LTsv10kanedit(tsvtool10)」を用いたドキュメントジェネレーターです。
-version(branch):20170114S031328	modify:20170119R065709
+version(branch):20170119R141608	modify:20170120F170856
 
 目次
 
@@ -146,7 +146,7 @@ version(branch):20170114S031328	modify:20170119R065709
    defdir                     Pythonのモジュール等が置いてあるフォルダ。
    deftag                     モジュールファイル名をタグ化するため左右に付けるソルト。例えば「foo.py」を「L:<！\tR:>」で囲って「<！foo.py>」のようにする。
    defindent                  モジュール関数一覧と説明文に装飾するテキスト。「firstL」「firstR」は項目名の左右に。「restL:」「restR」は説明文の左右。「restC」は説明文の「/t」を改行などに置換用。「restRLast」は説明文末尾の「restR」。改行調整用。
-   LTsvver                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「20170114S031328」。
+   LTsvver                    バージョン名「LTsv_file_ver()」に置換するタグの設定。初期設定は「20170119R141608」。
                               詳細は「「LTsv10.txt」の③-0．「LTsv_file.py」の関数一覧」参考。
   [<＠LTsv_doc_test_main>|
     置換される前の元文書(main)。以降の置換タグで文章が置換される。以降「README.md」作成のLTsv_docドキュメントのサンプル。
@@ -206,7 +206,7 @@ version(branch):20170114S031328	modify:20170119R065709
                                例えば 「LTsv/LTsv_doc.tsv」ではskplistに「LTsv_doc」を登録してるので設定ページは置換されません。
 
  分類すると5種類の置換タグがあるものとします。
-  <「＠」tag>                   コンフィグタグと便宜上命名。「main<＠LTsv_doc_main>」「outlist<＠LTsv_doc_outlist>」「LTsvver20170114S031328」といったドキュメント本文ではなくメタ的な内容のページタグ。
+  <「＠」tag>                   コンフィグタグと便宜上命名。「main<＠LTsv_doc_main>」「outlist<＠LTsv_doc_outlist>」「LTsvver20170119R141608」といったドキュメント本文ではなくメタ的な内容のページタグ。
   <「＃」tag>                   コメントタグと便宜上命名。タブ文字「\t」を含まないページはタグをページ内容に置換。複数行を想定なので末尾に改行が入る。
   <「！」tag>                   ファイルタグと便宜上命名。ファイル名を「deftag」ソルトで囲んだタグはモジュール関数一覧管理用途。
                                 置換用タグは「<！tag>」形式でもドキュメントのページタグは「[tag|」「|tag]」形式な事に注意。

@@ -33,7 +33,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20170114S031328	modify:20170119R065709<br />
+   version(branch):20170119R141608	modify:20170120F170856<br />
   
 </p>
   <h2>目次</h2>
@@ -490,7 +490,7 @@ LTSV「label:data/tlabel:data/t…」をPythonの辞書に。dataは文字列化
 <dl><dt>LTsv_dict2label(LTsv_dict)</dt><dd>
 Pythonの辞書「{"label":data,"label":data,…}」をLTSV「label:data/tlabel:data/t…」に。dataは文字列化。</dd></dl>
 <dl><dt>LTsv_file_ver()</dt><dd>
-「LTsv_file.py」のバージョン表示(20170114S031328)。</dd></dl>
+「LTsv_file.py」のバージョン表示(20170119R141608)。</dd></dl>
 <dl><dt>LTsv_issue()</dt><dd>
 「/etc/issue」を開いてLinuxのディストリビューションの種類を探る。バージョンの確認方法はディストリ毎に異なる予感。</dd></dl>
 
@@ -542,7 +542,7 @@ LTsv_putdaytimespecify(),LTsv_putdaytimenow(),LTsv_putdaytimeearlier(),LTsv_putd
 追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。<br />
 OSやファイルシステム毎に秒や分の精度に違いがあると思う。</dd></dl>
 <dl><dt>LTsv_putdaytimever(LTsv_verstr,overhour=None,diffminute=None)</dt><dd>
-「LTsv_time_ver()」などの20170114S031328形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。<br />
+「LTsv_time_ver()」などの20170119R141608形式(@000y@0m@0dm@wdec@0h@0n@0s)をLTsv_meridian_nowに格納。各種日時変数も計算。<br />
 追加オプションでLTsv_overhour(徹夜日時)とLTsv_diffminute(時差)の設定をまとめて上書きできる。</dd></dl>
 <dl><dt>LTsv_getdaytimestr(timeformat=None,overhour=None,diffminute=None)</dt><dd>
 日付フォーマットtimeformatを各種日時変数で置換する。<br />
@@ -1762,10 +1762,10 @@ LTsv_glyph_kbddefsizeが1の時、グリフサイズが5になるので時余白
 郵便番号辞書「kanzip.tsv」のファイルパス。</dd></dl>
 <dl><dt>LTsv_global_picklepath()</dt><dd>
 グリフ座標データ「kanpickle.bin」のファイルパス。</dd></dl>
-<dl><dt>LTsv_glyphSVG5x10x(LTsv_glyph_path)</dt><dd>
-グリフの圧縮された座標データをSVGパスに(伸張)。<br />
-「[0176]」→「M 0,1000 200,1000 200,800 0,800 z」<br />
-「[AOBOBQAQ]」→「M 0,1000 100,1000 100,900 0,900 z」</dd></dl>
+<dl><dt>LTsv_glyphSVG5x10x20x(LTsv_kanpath5x10x20x)</dt><dd>
+</dd></dl>
+<dl><dt>LTsv_glyph5x10x20x(LTsv_kanpathSVG)</dt><dd>
+</dd></dl>
 <dl><dt>LTsv_glyphSVG(LTsv_glyph_path)</dt><dd>
 グリフの座標データをSVGからリストに変換。</dd></dl>
 <dl><dt>LTsv_glyphpath(glyphcode)</dt><dd>

@@ -109,7 +109,7 @@ def kanfont_lineseg_shell(window_objvoid=None,window_objptr=None):
     kanfont_lineseg=LTsv_widget_getnumber(kanfont_seg_check)
     kanfont_glyph_draw()
 
-def debug_gothic_shell(radioNumber):
+def kanfont_gothic_shell(radioNumber):
     def debug_gothic_kernel(window_objvoid=None,window_objptr=None):
         global kanfont_seek,kanfont_fontgrid,kanfont_gridinner,kanfont_piece,kanfont_lineseg,kanfont_gothic,kanfont_gridimage
         if kanfont_gothic != radioNumber:
@@ -553,7 +553,7 @@ if len(LTsv_GUI) > 0:
     kanfont_refer_check=LTsv_check_new(kanfont_window,widget_t="ref",widget_x=kanfont_canvas_X+kanfont_canvas_WH*6//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*2,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_refer_shell)
     kanfont_gothic_radio=[None]*len(LTsv_global_glyphtype())
     for glyphtype_cnt,glyphtype_split in enumerate(LTsv_global_glyphtype()):
-        kanfont_gothic_radio[glyphtype_cnt]=LTsv_radio_new(kanfont_window,widget_t=glyphtype_split,widget_x=kanfont_canvas_X+kanfont_canvas_WH*7//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*glyphtype_cnt,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=debug_gothic_shell(glyphtype_cnt))
+        kanfont_gothic_radio[glyphtype_cnt]=LTsv_radio_new(kanfont_window,widget_t=glyphtype_split,widget_x=kanfont_canvas_X+kanfont_canvas_WH*7//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*glyphtype_cnt,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_gothic_shell(glyphtype_cnt))
     kanfont_dictype_canvas=[None]*len(LTsv_global_dictype())
     kanfont_dictype_canvasW=[None]*len(LTsv_global_dictype())
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):

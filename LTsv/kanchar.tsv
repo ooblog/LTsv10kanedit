@@ -150,7 +150,7 @@ $	英:dollarsymbol	名:ドル(半角)	逆:＄	活:[1289/*&;nk_L$#67]	漫:[1289/*
 ‐	英:hyphen	名:ハイフン	活:[$@`L]	漫:	筆:
 ＿	英:wide underscore	名:アンダースコア(全角)	俗:アンダーバー	顔:🌝	代:🌝	逆:_	活:[_Zzk]	漫:	筆:
 _	英:underscore		名:アンダースコア(半角)	音:		訓:		送:	異:	逆:＿	俗:アンダーバー					活:[_Nnk]	幅:624	漫:	筆:
-🌝	英:fullmoon with face	名:顔付き満月	俗:写植記号BA-90/ぽげムたマーク/アンダーバー	代:＿	活:[BQCP23IPJQ^=JWIXnmCXBW#+][cpbqaSaUbvcwExGxhwivjUjSiqhpGoEo][cqDQ8eq][-Dr*][/Hr%][FR9HQhqgqfRGtfUeUdtft][DUdUDVDWcvcV][gUHUhVhvHWHV][dVFVgVNFwM][EveWfWGvfv]	漫:	筆:
+🌝	英:fullmoon with face	名:顔付き満月	俗:写植記号BA-90/ぽげムたマーク/アンダーバー	代:＿	活:	漫:[BQCP23IPJQ^=JWIXnmCXBW#+][cpbqaSaUbvcwExGxhwivjUjSiqhpGoEo][cqDQ8eq][-Dr*][/Hr%][FR9HQhqgqfRGtfUeUdtft][DUdUDVDWcvcV][gUHUhVhvHWHV][dVFVgVNFwM][EveWfWGvfv]	筆:
 ⊇	英:subset	名:部分集合	活:[14?7][?!^%][+%@#][_Zzk]	漫:	筆:
 ⊆	英:subset	名:部分集合	活:[14?7][67-+][-^=$][_Zzk]	漫:	筆:
 ⊂	英:proper subset	名:真部分集合	活:[14?7][67L_][LZzl]	漫:	筆:
@@ -1058,8 +1058,8 @@ w	英:Arpabet W	名:有声両唇軟口蓋接近音	難:IPA国際音声記号	活
 广	英:grotto	名:まだれ	俗:窰洞/岩屋/洞窟	活:[68239!^-lk]	漫:	筆:
 ⼵	英:radical 54	名:インブ	異:廴	俗:廴部	熙:廴部	活:[02*-76][+-$#][$&MZzk_L]	漫:[02*-76][+-$#][$&MZzk_L][aoapcpcrdrdo][asatbtbs][cucwawaxjxjwdwdu]	筆:
 廴	英:elongation	名:えんにょう	俗:延	活:[02*-76][+-$#][$&MZzk_L]	漫:	筆:
-⼶	英:radical 55		名:キョウブ		音:		訓:		送:		異:廾	俗:廾部		熙:廾部	活:	漫:	筆:
-廾	英:both hands		名:こまぬき		音:		訓:		送:		異:	俗:拱	活:	漫:	筆:
+⼶	英:radical 55	名:キョウブ	異:廾	俗:廾部	熙:廾部	活:[12*/34%^=@yn;&ML$#+-][_Llk]	漫:[12*/34%^=@yn;&ML$#+-][_Llk][awaxbxbw][cocsasatctcvdvdtgtgxhxhtjtjshshogogsdsdo]
+廾	英:both hands	名:こまぬき	俗:拱	活:[12*/34%^=@yn;&ML$#+-][_Llk]
 ⼷	英:radical 56		名:ヨクブ		音:		訓:		送:		異:弋	俗:弋部		熙:弋部	活:	漫:	筆:
 弋	英:shoot style		名:しきがまえ		音:		訓:		送:		異:	俗:式/杙/弩	活:	漫:	筆:
 ⼸	英:radical 57		名:キュウブ		音:		訓:		送:		異:弓	俗:弓部		熙:弓部	活:	漫:	筆:

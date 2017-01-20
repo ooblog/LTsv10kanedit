@@ -4,7 +4,7 @@ enter	LF
 tab	4
 program	LTsv_kbd.py
 LTsvver	20170119R141608
-modify	20170120F134855
+modify	20170120F172238
 |L:Tsv]
 
 [kanglyph|
@@ -31,7 +31,7 @@ eval_branch	@000y@0m@0dm@wdec@0h@0n@0s
 eval_overhour	30
 eval_worddicname	../kanword.tsv
 eval_zipdicname		../kanzip.tsv
-last_alpha	ぷ
+last_alpha	Μ
 last_dic	英
 kbdTAG	kanglyphkbd
 fontcolor	black
