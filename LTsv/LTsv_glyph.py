@@ -246,9 +246,9 @@ LTsv_glyphSVG20xOdic=OrderedDict([('M ','['),('z ',']'),
 ('0,','A'),('50,','a'),('100,','B'),('150,','b'),('200,','C'),('250,','c'),('300,','D'),('350,','d'),('400,','E'),('450,','e'),('500,','F'),('550,','f'),('600,','G'),('650,','g'),('700,','H'),('750,','h'),('800,','I'),('850,','i'),('900,','J'),('950,','j'),('1000,','K'),
 ('1000 ','O'),('950 ','o'),('900 ','P'),('850 ','p'),('800 ','Q'),('750 ','q'),('700 ','R'),('650 ','r'),('600 ','S'),('550 ','s'),('500 ','T'),('450 ','t'),('400 ','U'),('350 ','u'),('300 ','V'),('250 ','v'),('200 ','W'),('150 ','w'),('100 ','X'),('50 ','x'),('0 ','Y')
 ])
-LTsv_glyphSVG10xdicMz=OrderedDict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG20xOdic.items()])
+LTsv_glyphSVG20xOdicMz=OrderedDict([(dic_value,dic_key) for dic_key,dic_value in LTsv_glyphSVG20xOdic.items()])
 def LTsv_glyphSVG5x10x20x(LTsv_kanpath5x10x20x):
-    if not "|" in LTsv_kanpath5x10x20x: return LTsv_kanpath5x10x20x;
+    if not "[" in LTsv_kanpath5x10x20x: return LTsv_kanpath5x10x20x;
     LTsv_kanpathSVG=""
     for path20x in LTsv_kanpath5x10x20x:
         if path20x in LTsv_glyphSVG20xOdicMz:
@@ -276,7 +276,8 @@ def LTsv_glyph5x10x20x(LTsv_kanpathSVG):
     return LTsv_kanpath5x10x20x
 
 def LTsv_glyphSVG(LTsv_glyph_path):
-    LTsv_glyph_pathZ=LTsv_glyphSVG5x10x(LTsv_glyph_path)
+#    LTsv_glyph_pathZ=LTsv_glyphSVG5x10x(LTsv_glyph_path)
+    LTsv_glyph_pathZ=LTsv_glyphSVG5x10x20x(LTsv_glyph_path)
     LTsv_glyph_pathZ=LTsv_glyph_pathZ.strip(' ').replace('Z','z').rstrip('z').split('z') if len(LTsv_glyph_pathZ) else []
     LTsv_glyphnote,LTsv_glyphclock=[],[]
     for LTsv_glyphline in LTsv_glyph_pathZ:
@@ -474,43 +475,51 @@ def LTsv_glyph_points2path(draw_t="",glyphnote=[],draw_g="活"):
     global LTsv_glyph_ltsv,LTsv_glyph_kandic,LTsv_glyph_kanpickle
     LTsv_glyphfont=LTsv_glyphfont_shell(draw_g)
     glyphcode=draw_t[:1]
+#    LTsv_glyph_kanpath=""
+#    for glyphpoints in glyphnote:
+#        glyphpointlist=""
+#        for draw_xy_count in range(len(glyphpoints)//2):
+#            glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+#            if glyphpointxy in LTsv_glyphSVG5xdic:
+#                glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
+#            else:
+#                glyphpointlist=""; break;
+#        else:
+#            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+#        if len(glyphpointlist) > 0: continue;
+#        for draw_xy_count in range(len(glyphpoints)//2):
+#            glyphpointxy="{0},".format(glyphpoints[draw_xy_count*2])
+#            if glyphpointxy in LTsv_glyphSVG10xdic:
+#                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
+#            else:
+#                glyphpointlist=""; break;
+#            glyphpointxy="{0} ".format(LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+#            if glyphpointxy in LTsv_glyphSVG10xdic:
+#                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
+#            else:
+#                glyphpointlist=""; break;
+#        else:
+#            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
+#        if len(glyphpointlist) > 0: continue;
+#        LTsv_glyph_kanpath=""; break;
+#    if len(LTsv_glyph_kanpath) == 0:
+#        for glyphpoints in glyphnote:
+#            glyphpointlist=""
+#            for draw_xy_count in range(len(glyphpoints)//2):
+#                glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+#            if len(glyphpointlist) > 0: LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
     LTsv_glyph_kanpath=""
     for glyphpoints in glyphnote:
         glyphpointlist=""
         for draw_xy_count in range(len(glyphpoints)//2):
-            glyphpointxy="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-            if glyphpointxy in LTsv_glyphSVG5xdic:
-                glyphpointlist+=LTsv_glyphSVG5xdic[glyphpointxy]
-            else:
-                glyphpointlist=""; break;
-        else:
-            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
-        if len(glyphpointlist) > 0: continue;
-        for draw_xy_count in range(len(glyphpoints)//2):
-            glyphpointxy="{0},".format(glyphpoints[draw_xy_count*2])
-            if glyphpointxy in LTsv_glyphSVG10xdic:
-                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
-            else:
-                glyphpointlist=""; break;
-            glyphpointxy="{0} ".format(LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-            if glyphpointxy in LTsv_glyphSVG10xdic:
-                glyphpointlist+=LTsv_glyphSVG10xdic[glyphpointxy]
-            else:
-                glyphpointlist=""; break;
-        else:
-            LTsv_glyph_kanpath+="[{0}]".format(glyphpointlist)
-        if len(glyphpointlist) > 0: continue;
-        LTsv_glyph_kanpath=""; break;
-    if len(LTsv_glyph_kanpath) == 0:
-        for glyphpoints in glyphnote:
-            glyphpointlist=""
-            for draw_xy_count in range(len(glyphpoints)//2):
-                glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
-            if len(glyphpointlist) > 0: LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
+            glyphpointlist+="{0},{1} ".format(glyphpoints[draw_xy_count*2],LTsv_PSchar_ZW-glyphpoints[draw_xy_count*2+1])
+        if len(glyphpointlist) > 0: LTsv_glyph_kanpath+="M {0}z ".format(glyphpointlist)
     LTsv_glyph_kanpath=LTsv_glyph_kanpath.rstrip(' ')
+    LTsv_glyph_kanpath=LTsv_glyph5x10x20x(LTsv_glyph_kanpath)
     LTsv_glyph_kanline=LTsv_readlinerest(LTsv_glyph_kandic,glyphcode)
     if draw_g != "活":
-        if LTsv_glyphSVG5x10x(LTsv_glyph_kanpath) == LTsv_glyphSVG5x10x(LTsv_pickdatalabel(LTsv_glyph_kanline,"活")):
+#        if LTsv_glyphSVG5x10x(LTsv_glyph_kanpath) == LTsv_glyphSVG5x10x(LTsv_pickdatalabel(LTsv_glyph_kanline,"活")):
+        if LTsv_glyphSVG5x10x20x(LTsv_glyph_kanpath) == LTsv_glyphSVG5x10x20x(LTsv_pickdatalabel(LTsv_glyph_kanline,"活")):
             LTsv_glyph_kanpath=""
     LTsv_glyph_kanline=LTsv_setdatalabel(LTsv_glyph_kanline,draw_g,LTsv_glyph_kanpath)
     if len(LTsv_glyph_kanpath) == 0:

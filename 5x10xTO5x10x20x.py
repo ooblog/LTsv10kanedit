@@ -23,6 +23,8 @@ for kanline_count,kanline in enumerate(kanchar_inL):
     for glyphtype in LTsv_global_glyphtype():
         kanpath=LTsv_glyphSVG5x10x(LTsv_pickdatalabel(kanline,glyphtype))
         kanpath=LTsv_glyph5x10x20x(kanpath)
+#        kanpathSVG=LTsv_glyphSVG5x10x20x(kanpath)
+#        print(kanpath,kanpathSVG)
         kanline=LTsv_setdatalabel(kanline,glyphtype,kanpath)
     kanchar_outL[kanline_count]=kanline
 kanchar_outT="\n".join(kanchar_outL)

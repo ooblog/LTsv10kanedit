@@ -441,7 +441,8 @@ def kanfont_svgmake(window_objvoid=None,window_objptr=None):
         )
         for kanline in kanchar:
             for typeswap in kanfont_glyphtypeswap[glyphtype]:
-                kanpath=LTsv_glyphSVG5x10x(LTsv_pickdatalabel(kanline,typeswap))
+#                kanpath=LTsv_glyphSVG5x10x(LTsv_pickdatalabel(kanline,typeswap))
+                kanpath=LTsv_glyphSVG5x10x20x(LTsv_pickdatalabel(kanline,typeswap))
                 if len(kanpath): break;
             if len(kanpath):
                 kanwide=LTsv_pickdatalabel(kanline,"幅"); kanwide=kanwide if len(kanwide) else "1024"
