@@ -1297,7 +1297,7 @@ Iue0EaLhW1mL3B5qUe8MZvkBjOvaW07Q1hAJqItPsAJAORXFafmrkGUolYxeKsoM+0+uTNFCEHt961IZ
 LhnkTfZ0XZjOlGAojhMinJ4CSET+ViTotCgXwu22aLn6Kt/cBXVSzk2ihBcQjb8cfwKc5/EFqnMDX8CYUlsAAAAASUVORK5CYII=
 |<？base64/LTsv_glyph:kbdimage>]
 [<？textAA/LTsv_glyph:kbdimage>|
- ※漢直鍵盤の四隅ＮＸ等は実際には縦横２倍の大きさです。
+ ※<？VRkeyboard>の四隅ＮＸ等は実際には縦横２倍の大きさです。
   Ｎ　ぬふあうえおやゆよわほへ　Ｘ
   　　たていすかんなにらせ沼濡　　
   　　ちとしはきくまのりれけむ　　
@@ -1841,12 +1841,12 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 |<？index/kanfont:kanfont.py>*<？index/kanfont:5x10xTO5x10x20x.py>]
 
 [../kanfont.py|
-kanfont_pathadjustment(pathpos=None)	表示グリフのパスの個数(レイヤー数)に合わせて横スケールのメモリ数を変化。
-kanfont_code(pathpos=None)	縦スケール操作などで編集中のグリフを変更した時にスピンボックスと連動したり辞書項目表示更新など。
-kanfont_codespin_shell(window_objvoid=None,window_objptr=None)	縦スケールのスピンボックス編集時
-kanfont_codescale_shell(window_objvoid=None,window_objptr=None)	
-kanfont_codekbd(kbdentry)	
-kanfont_codekbd_paste(window_objvoid=None,window_objptr=None)	
+kanfont_pathadjustment(pathpos=None)	表示グリフのパスの個数(レイヤー数)に合わせて横スケールの目盛り数を変化。
+kanfont_code(pathpos=None)	縦スケール操作などで編集するグリフを変更した時の辞書項目表示更新など。
+kanfont_codespin_shell(window_objvoid=None,window_objptr=None)	縦スケールのスピンボックス編集時の挙動。縦スケールと連動。
+kanfont_codescale_shell(window_objvoid=None,window_objptr=None)	縦スケール編集時の挙動。スピンボックスと連動。
+kanfont_codekbd(kbdentry)	<？VRkeyboard>の入力を受けとって編集グリフ変更に繋げる。
+kanfont_codekbd_paste(window_objvoid=None,window_objptr=None)	クリッブ
 kanfont_codekbd_copy(window_objvoid=None,window_objptr=None)	
 kanfont_pathsel_shell(window_objvoid=None,window_objptr=None)	
 kanfont_grid_shell(window_objvoid=None,window_objptr=None)	
@@ -1981,12 +1981,12 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 
 <？https/kanfont_faq:woffconv>
 
-<？DLDTfaq> Ｑ．上下左右で漢直鍵盤のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
+<？DLDTfaq> Ｑ．上下左右で<？VRkeyboard>のカーソルを移動しようとすると別のGUIにフォーカスが移動してしまいます。<？/DTDD>
  Ａ．[KANA]+[NFER]などで「σ」鍵盤を表示した状態でHJKLによりカーソルが移動できます。<？BR>
      <？VRkeyboard/howto><？BR>
      <？VRcalc/howto><？BR>
 <？/DD/DL>
-<？DLDTfaq> Ｑ．「PT」ボタンで文字を貼り付けたのに漢直鍵盤に反映されない。<？/DTDD>
+<？DLDTfaq> Ｑ．「PT」ボタンで文字を貼り付けたのに<？VRkeyboard>に反映されない。<？/DTDD>
  Ａ．「LTsv/kanmap.tsv」に含まれてない漢字を探索するには「kanedit」の「探」コマンドを用いてください。<？BR>
      例えば都道府県アイコン「<？contents/tokyoicon>」は「kanedit」の「電卓」で「探<？contents/tokyoicon>」すると「探<？contents/tokyoicon>⇔東」が求められます。<？BR>
 <？/DD/DL>
@@ -2032,9 +2032,9 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 [<＃contents/kanmap_usage-1>|
 <？Pcenter><？index/kanmap_usage:capture><？/P><？DLDT>  <？VRkeyboard><？/DTDD>          <？VRkeyboard/howto><？BR><？/DD/DL>
 <？DLDT>  小さい文字の上でタップ<？/DTDD>          カーソル点灯。クリップボードに１文字転送。<？BR><？/DD/DL>
-<？DLDT>  「clipfind」をタップ<？/DTDD>            クリップボードの文字で検索してカーソル点灯。漢直鍵盤も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
+<？DLDT>  「clipfind」をタップ<？/DTDD>            クリップボードの文字で検索してカーソル点灯。<？VRkeyboard>も同様に移動。複数同じ文字がある場合最初の文字を表示するので注意。<？BR><？/DD/DL>
 <？DLDT>  「update☐」にチェック☑<？/DTDD>        ONの状態で[Ctrl]+[S]もしくは「<？https/kanmap.py>」を終了すると「LTsv/kanmap.tsv」を上書保存。<？BR><？/DD/DL>
-<？DLDT>  「kbdfind☐」にチェック☑<？/DTDD>       ONの状態なら漢直鍵盤の入力操作で検索してカーソル点灯。<？BR><？/DD/DL>
+<？DLDT>  「kbdfind☐」にチェック☑<？/DTDD>       ONの状態なら<？VRkeyboard>の入力操作で検索してカーソル点灯。<？BR><？/DD/DL>
 <？DLDT>  「rewrite☐」にチェック☑<？/DTDD>       ONの時かつ漢字配列カーソル点灯状態で、単漢字辞書文字タップすると漢字配列の文字を差替。<？BR><？/DD/DL>
 <？DLDT>  「swap☐」にチェック☑<？/DTDD>          ONの時かつ漢字配列カーソル点灯状態で、別の漢字配列文字タップすると漢字配列の文字同士を交換。<？BR><？/DD/DL>
 |<＃contents/kanmap_usage-1>]
