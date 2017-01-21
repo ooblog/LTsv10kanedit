@@ -96,7 +96,11 @@ function! KEVsetup()
     imap <silent> <Space><BS> <C-o><Plug>(KEVimap_alpha)
     execute "noremap <Plug>(KEVimap_NUPU) :call KEVimap('NUPU')<Enter>"
     map <silent> <S-Space><S-BS> <Plug>(KEVimap_NUPU)i
+    map <silent> <Space><S-BS> <Plug>(KEVimap_NUPU)i
+    map <silent> <S-Space><BS> <Plug>(KEVimap_NUPU)i
     imap <silent> <S-Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
+    imap <silent> <Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
+    imap <silent> <S-Space><BS> <C-o><Plug>(KEVimap_NUPU)
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
     execute "noremap <Plug>(KEVfiler) :call KEVfiler()<Enter>"
     let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
@@ -153,17 +157,13 @@ function! KEVimap(kankbd_kbdchar)
         let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
         let s:kankbd_findBF = s:kankbd_findAF
     :elseif a:kankbd_kbdchar == 'NUPU'
-        let s:kankbd_kanmapNUPU =  s:kankbd_kanmapNX['ぬ'][47:-1]
-        let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX['ぬ'][0:48] + s:kankbd_kanmapNX['゜'][0:48]
-        let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNUPU + s:kankbd_kanmapNX['゜'][47:-1]
-        :if s:kankbd_kanmapNX['゜'][0] == "ヌ"
-            let s:kankbd_irohatypeX[0] = "1(ゔ)"
-            let s:kankbd_irohatypeN[23] = "[(ヌ)"
-            let s:kankbd_irohatypeX[23] = "[(ヴ)"
+        let s:kankbd_kanmapNUPU =  s:kankbd_kanmapNX['ぬ'][47:94]
+        let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX['ぬ'][0:46] + s:kankbd_kanmapNX['゜'][0:46]
+        let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNUPU + s:kankbd_kanmapNX['゜'][47:94]
+        :if s:kankbd_irohatypeX[0] == "1(ヌ)"
+            let s:kankbd_irohatypeX[0] = "1(ゔ)" | let s:kankbd_irohatypeN[23] = "[(ヌ)" | let s:kankbd_irohatypeX[23] = "[(ヴ)"
         :else
-            let s:kankbd_irohatypeX[0] = "1(ヌ)"
-            let s:kankbd_irohatypeN[23] = "[(ぷ)"
-            let s:kankbd_irohatypeX[23] = "[(プ)"
+            let s:kankbd_irohatypeX[0] = "1(ヌ)" | let s:kankbd_irohatypeN[23] = "[(ぷ)" | let s:kankbd_irohatypeX[23] = "[(プ)"
         :endif 
     :else
         let s:kankbd_choiceAF = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
@@ -187,7 +187,7 @@ function! KEVimap(kankbd_kbdchar)
     let s:kankbd_irohamenuname = s:kankbd_irohamenuname . "[" . (s:kankbd_kbdkanaNX ? s:kankbd_irohatypeN[index(s:kankbd_irohatype,s:kankbd_kbdkana)] : s:kankbd_irohatypeX[index(s:kankbd_irohatype,s:kankbd_kbdkana)])
     let s:kankbd_inputimap = s:kankbd_kanmapNX[s:kankbd_kbdkana]
     :if !s:kankbd_kbdkanaNX
-        let s:kankbd_inputimap = s:kankbd_inputimap[47:-1] + s:kankbd_inputimap[0:48] 
+        let s:kankbd_inputimap = s:kankbd_inputimap[47:94] + s:kankbd_inputimap[0:46] 
     :endif
     :if count(s:kankbd_dictype,s:kankbd_kbddic)
         let s:kankbd_irohamenuname = s:kankbd_irohamenuname . ":" . s:kankbd_kbddic
@@ -309,6 +309,12 @@ function! KEVexit()
         :endfor
         unmap <silent> <Space><BS>
         iunmap <silent> <Space><BS>
+        unmap <silent> <S-Space><S-BS>
+        unmap <silent> <Space><S-BS>
+        unmap <silent> <S-Space><BS>
+        iunmap <silent> <S-Space><S-BS>
+        iunmap <silent> <Space><S-BS>
+        iunmap <silent> <S-Space><BS>
         unmap <silent> <Space><Del>
         iunmap <silent> <Space><Del>
         unmap <silent> <Space><Enter>

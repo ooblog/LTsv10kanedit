@@ -1,5 +1,5 @@
 「KEV」はVimスクリプトでできてる漢字直接入力です。
-version(branch):20170119R141608	modify:20170120F170856
+version(branch):20170119R141608	modify:20170121S202451
 
 目次
 
@@ -174,6 +174,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
                                               インデント処理が半角スペース状態でも別途タブ文字欲しい時便利。
   [Shift]+[1(ヌ)〜&#92;(ロ)]                  [Shift]キーを組み合わせる事で先述の鍵盤切替コマンドをショートカットしてカタカナ入力することも可能です。
   [Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]  [Shift]キーを組み合わせる事で先述の「鍵盤」と「辞書」の入れ替えコマンドをショートカットして辞書の選択解除も可能です。
+  [Shift]+[Space],[Shift]+[BS]                「[1(ヌ)]」鍵盤と「[[(ぷ)]」鍵盤を入れ替え。これにより[Shift]がひらがなカタカナ切替から静音濁音の切り替えに変化。入れ替え中は「[1(ゔ)]」鍵盤と「[[(ヴ)]」鍵盤が出現。
 
 
 ①-3．単漢字辞書の辞書項目
@@ -1108,7 +1109,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
    なんJでよく見る鷲鴎檻鷹鯉猫公兎虎竜燕星についてどれがどの球団ですか？ - Yahoo!知恵袋
    http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11110526351
 
-   [都道府県を漢字１文字で表すと？] by 何カト見聞録
+   [都道府県を漢字１文字で 表すと？] by 何カト見聞録
    http://vicroad.blog31.fc2.com/blog-entry-405.html
 
    「十柱戯」これ読める？漢字で書くと読めなくなる球技ランキング:哲学ニュースnwk
