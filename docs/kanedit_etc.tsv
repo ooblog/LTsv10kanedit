@@ -2161,6 +2161,7 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 <？CODE>
 "# 表示設定
 set encoding=utf-8                                                      "日本語というか漢字対応
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8                   "シフトJISも読める様に
 set number                                                              "行番号表示
 set title                                                               "編集中ファイル名表示
 set showmatch                                                           "対応する括弧を強調
