@@ -66,10 +66,9 @@ function! KEVsetup()
         :endfor
     :endif
     :if !exists("s:kankbd_irohamenuname")
-        let s:kankbd_kbdkanaNX = 1
+        let s:kankbd_kbdkanaNX = 0
         let s:kankbd_kbdkana = "ぬ"
         let s:kankbd_kbddic = "" 
-        let s:kankbd_choiceAF = "" | let s:kankbd_choiceBF = s:kankbd_choiceAF
         let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
@@ -138,16 +137,14 @@ function! KEVimap(kankbd_kbdchar)
         call s:KEVdicmenu("鍵盤")
         let s:kankbd_findAF = 0
         let s:kankbd_kbddic = ""
-        let s:kankbd_choiceAF = s:kankbd_HJKL
-        :if s:kankbd_choiceBF == s:kankbd_choiceAF
+        :if s:kankbd_kbdkana == s:kankbd_HJKL
             let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
         :else
             let s:kankbd_kbdkanaNX = 1
         :endif
-        let s:kankbd_kbdkana = s:kankbd_choiceAF
+        let s:kankbd_kbdkana = s:kankbd_HJKL
     :elseif a:kankbd_kbdchar == 'alpha'
         call s:KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
-        let s:kankbd_choiceAF = s:kankbd_kbddic
     :elseif a:kankbd_kbdchar == 'find'
         let s:kankbd_findAF = 1
         let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
@@ -166,18 +163,18 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_irohatypeX[0] = "1(ヌ)" | let s:kankbd_irohatypeN[23] = "[(ぷ)" | let s:kankbd_irohatypeX[23] = "[(プ)"
         :endif 
     :else
-        let s:kankbd_choiceAF = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
-        :if s:kankbd_choiceBF == s:kankbd_choiceAF
-            let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
-        :endif
-        :if count(s:kankbd_dictype,s:kankbd_choiceAF)
-            if s:kankbd_kbddic != s:kankbd_choiceAF
-                let s:kankbd_kbddic = s:kankbd_choiceAF
+        let s:kankbd_kbdchar = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
+        :if count(s:kankbd_dictype,s:kankbd_kbdchar)
+            if s:kankbd_kbddic != s:kankbd_kbdchar
+                let s:kankbd_kbddic = s:kankbd_kbdchar
             :else
                 let s:kankbd_kbddic = ""
             :endif
         :else
-            let s:kankbd_kbdkana = s:kankbd_choiceAF
+            :if s:kankbd_kbdkana == s:kankbd_kbdchar
+                let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
+            :endif
+            let s:kankbd_kbdkana = s:kankbd_kbdchar
         :endif
     :endif
     :if exists("s:kankbd_irohamenuname")
@@ -189,18 +186,20 @@ function! KEVimap(kankbd_kbdchar)
     :if !s:kankbd_kbdkanaNX
         let s:kankbd_inputimap = s:kankbd_inputimap[47:94] + s:kankbd_inputimap[0:46] 
     :endif
-    :if count(s:kankbd_dictype,s:kankbd_kbddic)
+    :if count(s:kankbd_dictype,s:kankbd_kbddic) > 0
+        echo count(s:kankbd_dictype,s:kankbd_kbddic) . s:kankbd_kbddic
         let s:kankbd_irohamenuname = s:kankbd_irohamenuname . ":" . s:kankbd_kbddic
-    :endif
-    :if count(s:kankbd_dictype,s:kankbd_choiceAF)
         :for s:mapkey in range(len(s:kankbd_inputimap))
             let s:kanlinetsv = get(s:kankbd_kancharDIC,s:kankbd_inputimap[s:mapkey],'') . "\t"
             let s:kanposL = stridx(s:kanlinetsv,"\t" . s:kankbd_kbddic . ":")
-            let s:kankbd_inputimap[s:mapkey] = ''
             :if 0 < s:kanposL
                 let s:kanposL = stridx(s:kanlinetsv,":",s:kanposL)+1
                 let s:kanposR = stridx(s:kanlinetsv,"\t",s:kanposL)
                 let s:kankbd_inputimap[s:mapkey] = strpart(s:kanlinetsv,s:kanposL,s:kanposR-s:kanposL)
+            :elseif s:kankbd_kbddic == "照"
+                let s:kankbd_inputimap[s:mapkey] = printf("&#%d;",char2nr(s:kankbd_inputimap[s:mapkey]))
+            :else
+                let s:kankbd_inputimap[s:mapkey] = ''
             :endif
             :if len(s:kankbd_inputimap[s:mapkey]) == 0
                 let s:kankbd_inputimap[s:mapkey] = ' '
@@ -233,7 +232,6 @@ function! KEVimap(kankbd_kbdchar)
             :endif
         :endif
     :endfor
-    let s:kankbd_choiceBF = s:kankbd_choiceAF
 endfunction
 
 "鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
