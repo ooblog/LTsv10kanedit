@@ -316,27 +316,27 @@ def kanfont_keypress(window_objvoid=None,window_objptr=None):
 def kanfont_keyrelease(window_objvoid=None,window_objptr=None):
     kanfont_keypress()
 
-def kanfont_dictype_paste():
-    clippaste=LTsv_widget_gettext(kanfont_clipboard)
-    return clippaste.replace('\n',"").replace('\t',"")
+#def kanfont_dictype_paste():
+#    clippaste=LTsv_widget_gettext(kanfont_clipboard)
+#    return clippaste.replace('\n',"").replace('\t',"")
 
-def kanfont_dictype_copy(clippaste):
-    LTsv_widget_settext(kanfont_clipboard,clippaste)
+#def kanfont_dictype_copy(clippaste):
+#    LTsv_widget_settext(kanfont_clipboard,clippaste)
 
-def kanfont_dictype_inputed_shell(dictype_cnt):
-    def kanfont_dictype_kernel(LTsv_kbdentry_input):
-        LTsv_kbdentry_edit=LTsv_kbdentry_input
-        if LTsv_global_dictype()[dictype_cnt] == "幅":
-            LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
-            LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
-        LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
-        if LTsv_global_dictype()[dictype_cnt] in "活漫筆幅":
-            kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
-            LTsv_glyphpath(kanfont_seek)
-            kanfont_glyph_draw()
-            LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
-        return LTsv_kbdentry_edit
-    return kanfont_dictype_kernel
+#def kanfont_dictype_inputed_shell(dictype_cnt):
+#    def kanfont_dictype_kernel(LTsv_kbdentry_input):
+#        LTsv_kbdentry_edit=LTsv_kbdentry_input
+#        if LTsv_global_dictype()[dictype_cnt] == "幅":
+#            LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
+#            LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
+#        LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
+#        if LTsv_global_dictype()[dictype_cnt] in "活漫筆幅":
+#            kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
+#            LTsv_glyphpath(kanfont_seek)
+#            kanfont_glyph_draw()
+#            LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
+#        return LTsv_kbdentry_edit
+#    return kanfont_dictype_kernel
 
 kanfont_calculatorenterBF,kanfont_calculatorenterAF={},{}
 def kanfont_calculatormouseinput_enter(calculator_canvas):

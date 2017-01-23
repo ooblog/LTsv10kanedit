@@ -33,7 +33,7 @@
   <h1>「KEV」はVimスクリプトでできてる漢字直接入力です。</h1>
   <p>
 
-   version(branch):20170119R141608	modify:20170121S202451<br />
+   version(branch):20170119R141608	modify:20170123M230015<br />
   
 </p>
   <h2>目次</h2>
@@ -148,6 +148,7 @@ Vim自体の使い方は日本語ドキュメント等で確認してくださ�
 <pre><code>
 "# 表示設定
 set encoding=utf-8                                                      "日本語というか漢字対応
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8                   "シフトJISも読める様に
 set number                                                              "行番号表示
 set title                                                               "編集中ファイル名表示
 set showmatch                                                           "対応する括弧を強調
@@ -337,10 +338,6 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 </section>
 <section>
  <h3 id="KEV_usage-3">①-3．単漢字辞書の辞書項目</h3>
-<p>
- [Space],[Shift]+[1(ヌ):名〜,(ネ):照](「鍵盤」状態)でも辞書項目変更は可能です。<br />
-
-</p>
 <dl><dt>
   [1(ヌ):名]</dt>
 <dd>
@@ -439,7 +436,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 <dl><dt>
   [,(ネ):照]</dt>
 <dd>
-  HTMLの文字参照。辞書に無い文字は数値文字参照で補う予定(未実装)。<br />
+  HTMLの文字参照。辞書に無い文字は数値文字参照で補う。<br />
 </dd></dl>
 
 </section>
@@ -3243,7 +3240,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
   「[/(め)]」[N(み)][M(も)]</dt>
 <dd>
-                「瑠璃(るり)」
+                「瑠璃(るり/ラピスラズリ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[8(ユ)][8(ゆ)]</dt>

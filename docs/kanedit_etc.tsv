@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170119R141608
-modify	20170121S202514
+modify	20170123M230043
 |L:Tsv]
 
 [LTsv_doc|
@@ -1827,7 +1827,6 @@ tagseparateを用いることで同じ構文の繰り返しとデータの分離
 
 [<＃contents/kanfont-0>|
 <？index/kanfont:kanfont.py>
-<？P>「kanfont.py」の関数解説は準備中です。<？BR><？/P>
 <！../kanfont.py>
 <？index/kanfont:5x10xTO5x10x20x.py>
 <！../5x10xTO5x10x20x.py>
@@ -1845,47 +1844,44 @@ kanfont_pathadjustment(pathpos=None)	表示グリフのパスの個数(レイヤ
 kanfont_code(pathpos=None)	縦スケール操作などで編集するグリフを選択した時の辞書項目表示更新など。
 kanfont_codespin_shell(window_objvoid=None,window_objptr=None)	縦スケールのスピンボックス編集時の挙動。縦スケールと連動。グリフを選択。
 kanfont_codescale_shell(window_objvoid=None,window_objptr=None)	縦スケール編集時の挙動。スピンボックスと連動。グリフを選択。
-kanfont_codekbd(kbdentry)	<？VRkeyboard>の入力を受けとって編集グリフ選択に繋げる。
+kanfont_codekbd(kbdentry)	縦スケールの<？VRkeyboard>の入力を受けとって編集グリフ選択に繋げる。
 kanfont_codekbd_paste(window_objvoid=None,window_objptr=None)	クリッブボードを受けとって編集グリフ選択に繋げる。
 kanfont_codekbd_copy(window_objvoid=None,window_objptr=None)	選択中のグリフをクリッブボードに転送。
 kanfont_pathsel_shell(window_objvoid=None,window_objptr=None)	横スケール操作でグリフのパス(レイヤー)選択。
-kanfont_grid_shell(window_objvoid=None,window_objptr=None)	
-kanfont_inner_shell(window_objvoid=None,window_objptr=None)	
-kanfont_piece_shell(window_objvoid=None,window_objptr=None)	
-kanfont_lineseg_shell(window_objvoid=None,window_objptr=None)	
-kanfont_gothic_shell(radioNumber)	
-kanfont_refer_shell(window_objvoid=None,window_objptr=None)	
-kanfont_layerX_shell(window_objvoid=None,window_objptr=None)	
-kanfont_layerC_shell(window_objvoid=None,window_objptr=None)	
-kanfont_layerV_shell(window_objvoid=None,window_objptr=None)	
-kanfont_layerU_shell(window_objvoid=None,window_objptr=None)	
-kanfont_layerD_shell(window_objvoid=None,window_objptr=None)	
-kanfont_glyph_grid()	
-kanfont_glyph_draw()	
-kanfont_glyph_mousepress(window_objvoid=None,window_objptr=None)	
-kanfont_glyph_mousemotion(window_objvoid=None,window_objptr=None)	
-kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None)	
-kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None)	
-kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None)	
-kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None)	
-kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None)	
-kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None)	
-kanfont_keypress(window_objvoid=None,window_objptr=None)	
-kanfont_keyrelease(window_objvoid=None,window_objptr=None)	
-kanfont_dictype_paste()	
-kanfont_dictype_copy(clippaste)	
-kanfont_dictype_inputed_shell(dictype_cnt)	
-kanfont_calculatormouseinput_enter(calculator_canvas)	
-kanfont_calculatormouseinput_shell(calculator_canvas)	
-kanfont_calculatormousepress_shell(calculator_canvas)	
-kanfont_calculatormousemotion_shell(calculator_canvas)	
-kanfont_calculatormouserelease_shell(calculator_canvas)	
-kanfont_calculatormouseleave_shell(calculator_canvas)	
-kanfont_calculatormouseenter_shell(calculator_canvas)	
-kanfont_svgsave_shell(window_objvoid=None,window_objptr=None)	
-kanfont_svgmake(window_objvoid=None,window_objptr=None)	
-kanfont_configload()	
-kanfont_configsave_exit(window_objvoid=None,window_objptr=None)	
+kanfont_grid_shell(window_objvoid=None,window_objptr=None)	「grid」スピンボックス変更時の挙動。
+kanfont_inner_shell(window_objvoid=None,window_objptr=None)	「grid」チェックボックス変更時の挙動。innerオプションで挙動変更。
+kanfont_piece_shell(window_objvoid=None,window_objptr=None)	「Pce(piece)」チェックボックス変更時の挙動。
+kanfont_lineseg_shell(window_objvoid=None,window_objptr=None)	「seg」チェックボックス変更時の挙動。
+kanfont_gothic_shell(radioNumber)	「活」「漫」「筆」ラジオボタン変更時の挙動。
+kanfont_refer_shell(window_objvoid=None,window_objptr=None)	「ref」チェックボックス変更時の挙動。
+kanfont_layerX_shell(window_objvoid=None,window_objptr=None)	横スケール下の「CUT」ボタンの挙動。
+kanfont_layerC_shell(window_objvoid=None,window_objptr=None)	横スケール下の「COPY」ボタンの挙動。
+kanfont_layerV_shell(window_objvoid=None,window_objptr=None)	横スケール下の「PASTE」ボタンの挙動。
+kanfont_layerU_shell(window_objvoid=None,window_objptr=None)	横スケール下の「UP」ボタンの挙動。
+kanfont_layerD_shell(window_objvoid=None,window_objptr=None)	横スケール下の「DOWN」ボタンの挙動。
+kanfont_glyph_grid()	グリッド座標の計算。innerオプションで挙動変更。
+kanfont_glyph_draw()	グリフ描画。キャンパス内にマウスがある時と外にあるときで描画内容が異なる。
+kanfont_glyph_mousepress(window_objvoid=None,window_objptr=None)	キャンパス内でマウス押下。グリフ頂点の追加もしくは既存の頂点を掴む。
+kanfont_glyph_mousemotion(window_objvoid=None,window_objptr=None)	キャンパス内でマウス移動。グリフ頂点の移動など。
+kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None)	キャンパス内でマウス押上。グリフを「<？https/kanchar.tsv>」に書き込みなど。
+kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None)	キャンパス内にマウス移動の挙動。
+kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None)	キャンパス外にマウス移動の挙動。
+kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None)	縦スケール<？VRkeyboard>のマウス押下の挙動。
+kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None)	縦スケール<？VRkeyboard>のマウス移動の挙動。
+kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None)	縦スケール<？VRkeyboard>のマウス押上の挙動。
+kanfont_keypress(window_objvoid=None,window_objptr=None)	キーボード押下の挙動。マウスがどのキャンパス(<？VRkeyboard>)にあるかで分岐。
+kanfont_keyrelease(window_objvoid=None,window_objptr=None)	キーボード押上の挙動。kanfont_keypressと同じ関数を参照。
+kanfont_calculatormouseinput_enter(calculator_canvas)	辞書項目入力後、グリフ幅をチェックしたり、キャンバスにグリフを反映させる。
+kanfont_calculatormouseinput_shell(calculator_canvas)	辞書項目の<？VRkeyboard>で文字入力があった時の挙動。
+kanfont_calculatormousepress_shell(calculator_canvas)	辞書項目の<？VRkeyboard>でマウス押下の挙動。
+kanfont_calculatormousemotion_shell(calculator_canvas)	辞書項目の<？VRkeyboard>でマウス移動の挙動。
+kanfont_calculatormouserelease_shell(calculator_canvas)	辞書項目の<？VRkeyboard>でマウス押上の挙動。
+kanfont_calculatormouseleave_shell(calculator_canvas)	辞書項目の<？VRkeyboard>でキャンパス外にマウス移動の挙動。
+kanfont_calculatormouseenter_shell(calculator_canvas)	辞書項目の<？VRkeyboard>でキャンパス内にマウス移動の挙動。
+kanfont_svgsave_shell(window_objvoid=None,window_objptr=None)	「save」ボタンの挙動。
+kanfont_svgmake(window_objvoid=None,window_objptr=None)	グリフから「kan5x5.svg」を生成する。
+kanfont_configload()	設定ファイル「<？https/kanfont.tsv>」を読み込む。
+kanfont_configsave_exit(window_objvoid=None,window_objptr=None)	設定ファイル「<？https/kanfont.tsv>」に保存する。kanfont_autosaveがONの場合「kanfont_svgmake()」も実行。
 |../kanfont.py]
 
 [../5x10xTO5x10x20x.py|
@@ -2249,8 +2245,6 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 |<＃contents/KEV_usage-2>]
 
 [<＃contents/KEV_usage-3>|
-<？P> [Space],[Shift]+[1(ヌ):名〜,(ネ):照](「鍵盤」状態)でも辞書項目変更は可能です。<？BR>
-<？/P>
 <？DLDT>  [1(ヌ):名]<？/DTDD>  文字の名称(日本語)を字引。<？BR>
               「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。<？BR><？/DD/DL>
 <？DLDT>  [2(フ):音]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
@@ -2282,7 +2276,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 <？DLDT>  [;(レ):代]<？/DTDD>  濁音半濁音拗音促音入力補佐やロシア語以外のキリル文字など、似た文字での代用による字引入力。麻雀牌も。<？BR>
               「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「代東⇔<？contents/tonhaiicon>」。<？BR><？/DD/DL>
 <？DLDT>  [:(ケ):鍵]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
-<？DLDT>  [,(ネ):照]<？/DTDD>  HTMLの文字参照。辞書に無い文字は数値文字参照で補う予定(未実装)。<？BR><？/DD/DL>
+<？DLDT>  [,(ネ):照]<？/DTDD>  HTMLの文字参照。辞書に無い文字は数値文字参照で補う。<？BR><？/DD/DL>
 |<＃contents/KEV_usage-3>]
 [<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>|
 :<＄icon-0>	&#61580;
@@ -2940,7 +2934,7 @@ KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニ�
 <？DLDTinputstroke>  「[/(め)]」[U(な)][I(に)]<？/DTDD>                「氏名(しめい)」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[P(せ)][P(セ)]<？/DTDD>                「億劫(おっくう)」<？/DD/DL>
 <？DLDTinputstroke>  「[/(め)]」[;(れ)][:(け)]<？/DTDD>                「明晰(めいせきむ明晰夢の"めいせき")」<？/DD/DL>
-<？DLDTinputstroke>  「[/(め)]」[N(み)][M(も)]<？/DTDD>                「瑠璃(るり)」<？/DD/DL>
+<？DLDTinputstroke>  「[/(め)]」[N(み)][M(も)]<？/DTDD>                「瑠璃(るり/ラピスラズリ)」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[8(ユ)][8(ゆ)]<？/DTDD>                「八紘(はっこういちう八紘一宇の"はっこう")」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[-(ホ)][-(ほ)]<？/DTDD>                「百閒(うちだひゃっけん内田百閒の"ひゃっけん")」<？/DD/DL>
 <？DLDTinputstroke>  「[/(メ)]」[^(ヘ)][^(へ)]<？/DTDD>                「千穐(せんしゅうばんざいだいだいかのう千穐万歳大々叶の"せんしゅう")」<？/DD/DL>

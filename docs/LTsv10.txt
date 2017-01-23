@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20170119R141608	modify:20170121S202451
+version(branch):20170119R141608	modify:20170123M230015
 
 目次
 

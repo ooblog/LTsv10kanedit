@@ -1,5 +1,5 @@
 「kanfont」は「LTsv10kanedit(tsvtool10)」を用いたフォントエディタ(グリフエディタ)です。
-version(branch):20170119R141608	modify:20170121S202451
+version(branch):20170119R141608	modify:20170123M230015
 
 目次
 
@@ -102,7 +102,6 @@ version(branch):20170119R141608	modify:20170121S202451
 ②-0．「kanfont.py」と「5x10xTO5x10x20x.py」の関数一覧
 
  「kanfont.py」の関数
-「kanfont.py」の関数解説は準備中です。
  【kanfont_pathadjustment(pathpos=None)】
   表示グリフのパスの個数(レイヤー数)に合わせて横スケールの目盛り数を変化。
 
@@ -116,7 +115,7 @@ version(branch):20170119R141608	modify:20170121S202451
   縦スケール編集時の挙動。スピンボックスと連動。グリフを選択。
 
  【kanfont_codekbd(kbdentry)】
-  漢直鍵盤の入力を受けとって編集グリフ選択に繋げる。
+  縦スケールの漢直鍵盤の入力を受けとって編集グリフ選択に繋げる。
 
  【kanfont_codekbd_paste(window_objvoid=None,window_objptr=None)】
   クリッブボードを受けとって編集グリフ選択に繋げる。
@@ -128,115 +127,106 @@ version(branch):20170119R141608	modify:20170121S202451
   横スケール操作でグリフのパス(レイヤー)選択。
 
  【kanfont_grid_shell(window_objvoid=None,window_objptr=None)】
-  
+  「grid」スピンボックス変更時の挙動。
 
  【kanfont_inner_shell(window_objvoid=None,window_objptr=None)】
-  
+  「grid」チェックボックス変更時の挙動。innerオプションで挙動変更。
 
  【kanfont_piece_shell(window_objvoid=None,window_objptr=None)】
-  
+  「Pce(piece)」チェックボックス変更時の挙動。
 
  【kanfont_lineseg_shell(window_objvoid=None,window_objptr=None)】
-  
+  「seg」チェックボックス変更時の挙動。
 
  【kanfont_gothic_shell(radioNumber)】
-  
+  「活」「漫」「筆」ラジオボタン変更時の挙動。
 
  【kanfont_refer_shell(window_objvoid=None,window_objptr=None)】
-  
+  「ref」チェックボックス変更時の挙動。
 
  【kanfont_layerX_shell(window_objvoid=None,window_objptr=None)】
-  
+  横スケール下の「CUT」ボタンの挙動。
 
  【kanfont_layerC_shell(window_objvoid=None,window_objptr=None)】
-  
+  横スケール下の「COPY」ボタンの挙動。
 
  【kanfont_layerV_shell(window_objvoid=None,window_objptr=None)】
-  
+  横スケール下の「PASTE」ボタンの挙動。
 
  【kanfont_layerU_shell(window_objvoid=None,window_objptr=None)】
-  
+  横スケール下の「UP」ボタンの挙動。
 
  【kanfont_layerD_shell(window_objvoid=None,window_objptr=None)】
-  
+  横スケール下の「DOWN」ボタンの挙動。
 
  【kanfont_glyph_grid()】
-  
+  グリッド座標の計算。innerオプションで挙動変更。
 
  【kanfont_glyph_draw()】
-  
+  グリフ描画。キャンパス内にマウスがある時と外にあるときで描画内容が異なる。
 
  【kanfont_glyph_mousepress(window_objvoid=None,window_objptr=None)】
-  
+  キャンパス内でマウス押下。グリフ頂点の追加もしくは既存の頂点を掴む。
 
  【kanfont_glyph_mousemotion(window_objvoid=None,window_objptr=None)】
-  
+  キャンパス内でマウス移動。グリフ頂点の移動など。
 
  【kanfont_glyph_mouserelease(window_objvoid=None,window_objptr=None)】
-  
+  キャンパス内でマウス押上。グリフを「LTsv/kanchar.tsv」に書き込みなど。
 
  【kanfont_glyph_mouseenter(window_objvoid=None,window_objptr=None)】
-  
+  キャンパス内にマウス移動の挙動。
 
  【kanfont_glyph_mouseleave(window_objvoid=None,window_objptr=None)】
-  
+  キャンパス外にマウス移動の挙動。
 
  【kanfont_kbd_mousepress(window_objvoid=None,window_objptr=None)】
-  
+  縦スケール漢直鍵盤のマウス押下の挙動。
 
  【kanfont_kbd_mousemotion(window_objvoid=None,window_objptr=None)】
-  
+  縦スケール漢直鍵盤のマウス移動の挙動。
 
  【kanfont_kbd_mouserelease(window_objvoid=None,window_objptr=None)】
-  
+  縦スケール漢直鍵盤のマウス押上の挙動。
 
  【kanfont_keypress(window_objvoid=None,window_objptr=None)】
-  
+  キーボード押下の挙動。マウスがどのキャンパス(漢直鍵盤)にあるかで分岐。
 
  【kanfont_keyrelease(window_objvoid=None,window_objptr=None)】
-  
-
- 【kanfont_dictype_paste()】
-  
-
- 【kanfont_dictype_copy(clippaste)】
-  
-
- 【kanfont_dictype_inputed_shell(dictype_cnt)】
-  
+  キーボード押上の挙動。kanfont_keypressと同じ関数を参照。
 
  【kanfont_calculatormouseinput_enter(calculator_canvas)】
-  
+  辞書項目入力後、グリフ幅をチェックしたり、キャンバスにグリフを反映させる。
 
  【kanfont_calculatormouseinput_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤で文字入力があった時の挙動。
 
  【kanfont_calculatormousepress_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤でマウス押下の挙動。
 
  【kanfont_calculatormousemotion_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤でマウス移動の挙動。
 
  【kanfont_calculatormouserelease_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤でマウス押上の挙動。
 
  【kanfont_calculatormouseleave_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤でキャンパス外にマウス移動の挙動。
 
  【kanfont_calculatormouseenter_shell(calculator_canvas)】
-  
+  辞書項目の漢直鍵盤でキャンパス内にマウス移動の挙動。
 
  【kanfont_svgsave_shell(window_objvoid=None,window_objptr=None)】
-  
+  「save」ボタンの挙動。
 
  【kanfont_svgmake(window_objvoid=None,window_objptr=None)】
-  
+  グリフから「kan5x5.svg」を生成する。
 
  【kanfont_configload()】
-  
+  設定ファイル「kanfont.tsv」を読み込む。
 
  【kanfont_configsave_exit(window_objvoid=None,window_objptr=None)】
-  
+  設定ファイル「kanfont.tsv」に保存する。kanfont_autosaveがONの場合「kanfont_svgmake()」も実行。
  「5x10xTO5x10x20x.py」の関数
  【LTsv_glyphSVG5x10x(LTsv_glyph_path)】
   旧式のグリフパス伸張(SVGに戻す)。
