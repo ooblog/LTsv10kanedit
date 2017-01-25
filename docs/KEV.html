@@ -33,7 +33,7 @@
   <h1>「KEV」はVimスクリプトでできてる漢字直接入力です。</h1>
   <p>
 
-   version(branch):20170119R141608	modify:20170123M230015<br />
+   version(branch):20170119R141608	modify:20170125W122600<br />
   
 </p>
   <h2>目次</h2>
@@ -497,7 +497,6 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
      [NFER]+[G(き)],[KANA]+[Q(た)]の字引入力で直接「北海道」が入力できるはずです。<br />
      Vim版では「電卓」機能は未サポートです。<br />
      テキスト入力欄(電卓)の演算結果は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参考。<br />
-
 </dd></dl>
 
 </section>
@@ -957,7 +956,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
   「[.(●)]」</dt>
 <dd>
    base64風6点字(一般的な点字とは異なります)。「A⠛ B⠜ C⠝ D⠞ E⠟ F⠠ G⠡ H⠢ I⠣ J⠤ K⠥ L⠦ M⠧ N⠨ O⠩ P⠪ Q⠫ R⠬ S⠭ T⠮ U⠯ V⠰ W⠱ X⠲ Y⠳ Z⠴」。UTF-8点字変換「⑧⓪」コマンドも相席。<br />
-「⑧⓪」コマンドの詳細は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参照。
+                「⑧⓪」コマンドの詳細は「<a href="index.html#LTsv_glyph-4" title="⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細"><img src="LTsv10_logo.png" width="48" height="48" alt="LTsv10kanedit(tsvtool10)" title="LTsv10kanedit(tsvtool10)">⑨-4．「漢字逆引きと分数電卓＆数値文字参照＆日時取得＆簡易辞書」の詳細</a>」を参照。
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(△)]」</dt>
@@ -991,27 +990,29 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="faqlink"><dt>xvkbd - Virtual Keyboard for X Window System</dt><dd><a href="http://t-sato.in.coocan.jp/xvkbd/index-j.html" title="xvkbd - Virtual Keyboard for X Window System">http://t-sato.in.coocan.jp/xvkbd/index-j.html</a></dd></dl>
 
 <dl class="faq"><dt>
-  Ｑ．葛城と葛飾で「葛」が同じ字だ。</dt>
+ Ｑ．葛城と葛飾で「葛」が同じ字だ。</dt>
 <dd>
 
  Ａ．異体字セレクタで切り替えなのですが、サロゲートペアとか結合文字列とか１文字を１コードポイントで表現できない系は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/LTsv/LTsv_glyph.py">LTsv/LTsv_glyph.py</a>」で扱わない予定です。<br />
 
 </dd></dl>
 <dl class="faqlink"><dt>異体字セレクタ - Wikipedia</dt><dd><a href="https://ja.wikipedia.org/wiki/%E7%95%B0%E4%BD%93%E5%AD%97%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF" title="異体字セレクタ - Wikipedia">https://ja.wikipedia.org/wiki/%E7%95%B0%E4%BD%93%E5%AD%97%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF</a></dd></dl>
+
 <dl class="faqlink"><dt>文字って何かね？ - Qiita</dt><dd><a href="http://qiita.com/matarillo/items/91b9656428bed7a1a797" title="文字って何かね？ - Qiita">http://qiita.com/matarillo/items/91b9656428bed7a1a797</a></dd></dl>
+
 <dl class="inputstroke"><dt>
-  「[Y(ン)]」[Z(ツ)][X(サ)]</dt>
+     「[Y(ン)]」[Z(ツ)][X(サ)]</dt>
 <dd>
-                「葛飾(かつしか)」
+             「葛飾(かつしか)」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(シ)]」[/(メ)][_(ロ)]</dt>
+     「[D(シ)]」[/(メ)][_(ロ)]</dt>
 <dd>
-                「葛城(かつらぎ)」
+             「葛城(かつらぎ)」
 </dd></dl>
 
 <dl class="faq"><dt>
-  Ｑ．「咖」も２つあったよー。</dt>
+ Ｑ．「咖」も２つあったよー。</dt>
 <dd>
 
  Ａ．コーヒー(珈琲/咖啡)が２通りあったので相席の都合でカレー(咖喱)と重複。<br />
@@ -1020,54 +1021,57 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
      「[V(ひ)]」[1(ぬ)][2(ふ)]</dt>
 <dd>
-                「咖啡(コーヒー)」
+             「咖啡(コーヒー)」
 </dd></dl>
 <dl class="inputstroke"><dt>
      「[V(ヒ)]」[1(ヌ)][2(フ)]</dt>
 <dd>
-                「珈琲(コーヒー)」
+             「珈琲(コーヒー)」
 </dd></dl>
 <dl class="inputstroke"><dt>
      「[T(か)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「咖喱(カレー)」
+             「咖喱(カレー)」
 </dd></dl>
 
 <dl class="faq"><dt>
-  「煉」はあるけど「練」と「錬」が見つからない。</dt>
+ Ｑ．「煉」はあるけど「練」と「錬」が見つからない。</dt>
 <dd>
 
- 「煉」は「火柬」なので「練」も「糸柬」だし「鍊」も「金柬」。古いフォントだと「煉」が「火東」になってる。<br />
- 「練(糸東)」「錬(金東)」の入力は「異」で字引入力。
+ Ａ．「煉」は「火柬」なので「練」も「糸柬」だし「鍊」も「金柬」。古いフォントだと「煉」が「火東」になってる。<br />
+     「練(糸東)」「錬(金東)」の入力は「異」で字引入力。
 
 </dd></dl>
 <dl class="faqlink"><dt>中国語「練」と「東」の違い 「练」と「东」 - 文字化けしてませんか？「练」と「东」は明朝体で書くと、「東」の字が違います。 - Yahoo!知恵袋(2004年のJIS改正で[火東]は[火柬]に戻されました。)</dt><dd><a href="http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1135243926" title="中国語「練」と「東」の違い 「练」と「东」 - 文字化けしてませんか？「练」と「东」は明朝体で書くと、「東」の字が違います。 - Yahoo!知恵袋(2004年のJIS改正で[火東]は[火柬]に戻されました。)">http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1135243926</a></dd></dl>
+
 <dl class="faqlink"><dt>「鰊」（魚+柬）と「鯟」（魚+東）ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「鯟」（魚+東） は別字です。音「トウ」、鯉に似た魚)</dt><dd><a href="http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818" title="「鰊」（魚+柬）と「鯟」（魚+東）ニシンという漢字ですが、どちらが正字ですか？ もしくは、別字ですか？ - Yahoo!知恵袋(「鯟」（魚+東） は別字です。音「トウ」、鯉に似た魚)">http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1313900818</a></dd></dl>
+
 <dl class="faqlink"><dt>漢字の成り立ち 柬: 風船あられの漢字ブログ</dt><dd><a href="http://huusennarare.cocolog-nifty.com/blog/2015/07/post-0eb0.html" title="漢字の成り立ち 柬: 風船あられの漢字ブログ">http://huusennarare.cocolog-nifty.com/blog/2015/07/post-0eb0.html</a></dd></dl>
+
 <dl class="inputstroke"><dt>
-     「[,(ね)]」｛異:[P(せ)]｝</dt>
+     「[,(ね)]」[P(せ):異]</dt>
 <dd>
                  「異練⇔練」
 </dd></dl>
 <dl class="inputstroke"><dt>
-     「[,(ね)]」｛異:[L(り)]｝</dt>
+     「[,(ね)]」[L(り):異]</dt>
 <dd>
                  「異鍊⇔錬」
 </dd></dl>
 <dl class="inputstroke"><dt>
      「[,(ね)]」[;(れ)]</dt>
 <dd>
-                        「煉」
+                    「煉」
 </dd></dl>
 <dl class="inputstroke"><dt>
      「E(イ)」[/(メ)]</dt>
 <dd>
-                        「諫」
+                      「諫」
 </dd></dl>
 <dl class="inputstroke"><dt>
      「[I(ニ)]」[D(シ)]</dt>
 <dd>
-                        「鰊」
+                    「鰊」
 </dd></dl>
 
 </section>
@@ -2233,7 +2237,7 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
                 「下支(したざさえ下支えの"したざさ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
-  「[D(し)]」[@(＠)][[(ぷ)]]</dt>
+  「[D(し)]」[@(＠)][[(ぷ)]</dt>
 <dd>
                 「資質(ししつ)」
 </dd></dl>
@@ -3285,292 +3289,292 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
   「[A(α)]」[1(ぬ)][2(ふ)]</dt>
 <dd>
-                「禺彊(ぐうきょう)」
+                 「禺彊(ぐうきょう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[3(あ)][4(う)]</dt>
 <dd>
-                「鞦韆(しゅうせん/ブランコ)」
+                 「鞦韆(しゅうせん/ブランコ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[5(え)][6(お)]</dt>
 <dd>
-                「羌瘣(きょうかい)」
+                 「羌瘣(きょうかい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[7(や)][8(ゆ)]</dt>
 <dd>
-                「宥恕(ゆうじょ)」
+                 「宥恕(ゆうじょ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[9(よ)][0(わ)]</dt>
 <dd>
-                「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」
+                 「𠌃謨(カリウム加𠌃謨、ナトリウム那篤𠌃謨などの"リウム")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[-(ほ)][^(へ)]</dt>
 <dd>
-                「吶喊(とっかん)」
+                 「吶喊(とっかん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[Q(た)][W(て)]</dt>
 <dd>
-                「耆碩(きせき)」
+                 「耆碩(きせき)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[E(い)][R(す)]</dt>
 <dd>
-                「囐噠(エフタル)」
+                 「囐噠(エフタル)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[T(か)][Y(ん)]</dt>
 <dd>
-                「挹怛(エフタル)」
+                 「挹怛(エフタル)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[U(な)][I(に)]</dt>
 <dd>
-                「鑣轡(ひょうぐつわ)」
+                 「鑣轡(ひょうぐつわ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[O(ら)][P(せ)]</dt>
 <dd>
-                「呿呻(あくび)」
+                 「呿呻(あくび)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[@(＠)][[(ぷ)]</dt>
 <dd>
-                「顑頷(かんがん)」
+                 「顑頷(かんがん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[A(ち)][S(と)]</dt>
 <dd>
-                「磊磈(らいかい)」
+                 「磊磈(らいかい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[D(し)][F(は)]</dt>
 <dd>
-                「潑溂(はつらつ)」
+                 「潑溂(はつらつ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[G(き)][H(く)]</dt>
 <dd>
-                「緂縅(だんおどし)」
+                 「緂縅(だんおどし)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[J(ま)][K(の)]</dt>
 <dd>
-                「惝怳(しょうきょう/しょうこう)」
+                 「惝怳(しょうきょう/しょうこう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[L(り)][;(れ)]</dt>
 <dd>
-                「憔悴(しょうすい)」
+                 「憔悴(しょうすい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[:(け)][](む)]</dt>
 <dd>
-                「狴犴(へいかん)」
+                 「狴犴(へいかん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[Z(つ)][X(さ)]</dt>
 <dd>
-                「薜荔(オオイタビ)」
+                 「薜荔(オオイタビ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[C(そ)][V(ひ)]</dt>
 <dd>
-                「瑙魯(ナウル)」
+                 「瑙魯(ナウル)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[B(こ)][N(み)]</dt>
 <dd>
-                「艨艟(もうどう)」
+                 「艨艟(もうどう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[M(も)][,(ね)]</dt>
 <dd>
-                「枸櫞(クエンサン枸櫞酸の"クエン")」
+                 「枸櫞(クエンサン枸櫞酸の"クエン")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[.(る)][/(め)]</dt>
 <dd>
-                「邂逅(かいこう)」
+                 「邂逅(かいこう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(α)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「曱甴(ゴキブリ)」
+                 「曱甴(ゴキブリ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[1(ヌ)][2(フ)]</dt>
 <dd>
-                「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」
+                 「拜疆(アゼルバイジャン阿塞拜疆/亞塞拜疆の"バイジャン")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[3(ア)][4(ウ)]</dt>
 <dd>
-                「鷸蚌(鷸蚌の争いの"いつぼう")」
+                 「鷸蚌(鷸蚌の争いの"いつぼう")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[5(エ)][6(オ)]</dt>
 <dd>
-                「彌猴(キウイ彌猴桃の"彌猴")」
+                 「彌猴(キウイ彌猴桃の"彌猴")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[7(ヤ)][8(ユ)]</dt>
 <dd>
-                「胤裔(いんえい)」
+                 「胤裔(いんえい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[9(ヨ)][0(ワ)]</dt>
 <dd>
-                「孩嬰(がいえい)」
+                 「孩嬰(がいえい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[-(ホ)][^(ヘ)]</dt>
 <dd>
-                「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」
+                 「舜瞥(とくしゅんべつ徳舜瞥の"しゅんべつ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[Q(タ)][W(テ)]</dt>
 <dd>
-                「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」
+                 「螻蟈(ろうこくなく螻蟈鳴の"ろうこく")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[E(イ)][R(ス)]</dt>
 <dd>
-                「蟋蟀(コオロギ)」
+                 「蟋蟀(コオロギ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[T(カ)][Y(ン)]</dt>
 <dd>
-                「螽蟖(キリギリス)」
+                 「螽蟖(キリギリス)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[U(ナ)][I(ニ)]</dt>
 <dd>
-                「旱魃(かんばつ)」
+                 「旱魃(かんばつ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[O(ラ)][P(セ)]</dt>
 <dd>
-                「蜥蜴(トカゲ)」
+                 「蜥蜴(トカゲ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[@(｀)][[(プ)]</dt>
 <dd>
-                「閨閤(けいこう)」
+                 「閨閤(けいこう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[A(チ)][S(ト)]</dt>
 <dd>
-                「茱萸(グミ)」
+                 「茱萸(グミ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[D(シ)][F(ハ)]</dt>
 <dd>
-                「鮟鱇(アンコウ)」
+                 「鮟鱇(アンコウ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[G(キ)][H(ク)]</dt>
 <dd>
-                「鎔笵(ようはん)」
+                 「鎔笵(ようはん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[J(マ)][K(ノ)]</dt>
 <dd>
-                「喇叭(ラッパ)」
+                 「喇叭(ラッパ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[L(リ)][;(レ)]</dt>
 <dd>
-                「榠樝(カリン)」
+                 「榠樝(カリン)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[:(ケ)][](ム)]</dt>
 <dd>
-                「顰蹙(ひんしゅく)」
+                 「顰蹙(ひんしゅく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[Z(ツ)][X(サ)]</dt>
 <dd>
-                「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」
+                 「邯鄲(かんたんのゆめ邯鄲の夢の"かんたん")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[C(ソ)][V(ヒ)]</dt>
 <dd>
-                「轆轤(ろくろ)」
+                 「轆轤(ろくろ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[B(コ)][N(ミ)]</dt>
 <dd>
-                「纐纈(こうけつ/こうけち)」
+                 「纐纈(こうけつ/こうけち)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[M(モ)][,(ネ)]</dt>
 <dd>
-                「螳螂(かまきり)」※蟷螂は辞書使用
+                 「螳螂(かまきり)」※蟷螂は辞書使用
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(Α)]」[.(ル)][/(メ)]</dt>
 <dd>
-                「霹靂(へきれき)」
+                 「霹靂(へきれき)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[1(ぬ)][2(ふ)]</dt>
 <dd>
-                「抛擲(ほうてき)」
+                 「抛擲(ほうてき)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[3(あ)][4(う)]</dt>
 <dd>
-                「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」
+                 「慇懃(いんぎんぶれい慇懃無礼の"いんきん")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[5(あ)][6(う)]</dt>
 <dd>
-                「慟哭(どうこく)」
+                 「慟哭(どうこく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[7(や)][8(ゆ)]</dt>
 <dd>
-                「渺茫(びょうぼう)」
+                 「渺茫(びょうぼう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[9(よ)][0(わ)]</dt>
 <dd>
-                「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」
+                 「跋扈(ちょうりょうばっこ跳梁跋扈の"ばっこ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[-(ほ)][^(へ)]</dt>
 <dd>
-                「匝瑳(そうさし匝瑳市の"そうさ")」
+                 「匝瑳(そうさし匝瑳市の"そうさ")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(β)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「蟑螂(ゴキブリ)」
+                 「蟑螂(ゴキブリ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[G(γ)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「蜚蠊(ゴキブリ)」
+                 「蜚蠊(ゴキブリ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(δ)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「癤癰(せつよう)」
+                 「癤癰(せつよう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[E(ε)]」<br />[1(ぬ)][2(ふ)][3(あ)]</dt>
 <dd>
-         「珸瑶瑁(ごようまい)」
+          「珸瑶瑁(ごようまい)」
 </dd><br class="yonmoji_both" /></dl>
 <dl class="inputstroke"><dt>
   「[E(ε)]」[_(ろ)][_(ロ)]</dt>
 <dd>
-                「疔瘡(ちょうそう)」
+                 「疔瘡(ちょうそう)」
 </dd></dl>
 
 </section>
@@ -3583,62 +3587,62 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
   「[4(う)]」[3(あ)][3(あ):逆]</dt>
 <dd>
-         「上下(じょうげ)」
+            「上下(じょうげ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[V(ヒ)]」[Q(タ)][Q(タ):逆]</dt>
 <dd>
-         「左右(さゆう)」
+            「左右(さゆう)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[J(ま)]」[5(え)][5(え):逆]</dt>
 <dd>
-         「前後(ぜんご)」
+            「前後(ぜんご)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[V(ヒ)]」[T(カ)][T(カ):逆]</dt>
 <dd>
-         「東西(とうざい)」
+            「東西(とうざい)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[N(み)]」[4(う)][4(う):逆]</dt>
 <dd>
-         「南北(なんぼく)」
+            「南北(なんぼく)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(し)]」[_(ろ)][_(ろ):逆]</dt>
 <dd>
-         「白黒(しろくろ)」
+            「白黒(しろくろ)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[8(ゆ)]」[F(は)][F(は):逆]</dt>
 <dd>
-         「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い
+            「融解(ゆうかい)」※接着剤(融着)と剥がし液(解凍)のニュアンスなので逆扱い
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[T(カ)]」[A(チ)][A(チ):非]</dt>
 <dd>
-         「価値(かち)」
+            「価値(かち)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[F(は)]」[.(る)][.(る):非]</dt>
 <dd>
-         「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」
+            「春夏(しゅんかしゅうとう春夏秋冬の"しゅんか")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[3(あ)]」[G(き)][G(き):非]</dt>
 <dd>
-         「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」
+            「秋冬(しゅんかしゅうとう春夏秋冬の"しゅうとう")」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[6(お)]」[Y(ん)][Y(ん):非]</dt>
 <dd>
-         「温暖(おんだん)」
+            「温暖(おんだん)」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[N(ミ)]」[](ム)][](ム):非]</dt>
 <dd>
-         「寒冷(かんれい)」
+            「寒冷(かんれい)」
 </dd></dl>
 
 </section>
@@ -3653,237 +3657,237 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
   「[G(き)]」[Q(た):地]</dt>
 <dd>
-                「地北⇔北海道」
+                   「地北⇔北海道」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[3(あ)]」[6(お):地]</dt>
 <dd>
-                「地青⇔青森」
+                   「地青⇔青森」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[E(い)]」[0(わ):地]</dt>
 <dd>
-                「地岩⇔岩手」
+                   「地岩⇔岩手」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(シ)]」[_(ロ):地]</dt>
 <dd>
-                「地城⇔宮城」
+                   「地城⇔宮城」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[3(あ)]」[G(き):地]</dt>
 <dd>
-                「地秋⇔秋田」
+                   「地秋⇔秋田」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Y(ン)]」[Q(タ):地]</dt>
 <dd>
-                「地形⇔山形」
+                   「地形⇔山形」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(し)]」[J(ま):地]</dt>
 <dd>
-                「地島⇔福島」
+                   「地島⇔福島」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[E(イ)]」[F(ハ):地]</dt>
 <dd>
-                「地茨⇔茨城」
+                   「地茨⇔茨城」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[S(と)]」[A(ち):地]</dt>
 <dd>
-                「地栃⇔栃木」
+                   「地栃⇔栃木」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[H(ク)]」[F(ハ):地]</dt>
 <dd>
-                「地群⇔群馬」
+                   「地群⇔群馬」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[X(さ)]」[Q(た):地]</dt>
 <dd>
-                「地埼⇔埼玉」
+                   「地埼⇔埼玉」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[^(ヘ):地]</dt>
 <dd>
-                「地千⇔千葉」
+                   「地千⇔千葉」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[V(ヒ)]」[T(カ):地]</dt>
 <dd>
-                「地東⇔東京」
+                   「地東⇔東京」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Y(ん)]」[N(み):地]</dt>
 <dd>
-                「地神⇔神奈川」
+                   「地神⇔神奈川」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Y(ん)]」[Q(た):地]</dt>
 <dd>
-                「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)
+                   「地潟⇔新潟」(「地新⇔新加坡/新西蘭/新潟」「地星⇔新加坡」「地乳⇔新西蘭」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[S(と)]」[N(み):地]</dt>
 <dd>
-                「地富⇔富山」
+                   「地富⇔富山」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[E(い)]」[D(し):地]</dt>
 <dd>
-                「地石⇔石川」
+                   「地石⇔石川」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[E(イ)]」[S(ト):地]</dt>
 <dd>
-                「地井⇔福井」
+                   「地井⇔福井」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[U(な)]」[D(し):地]</dt>
 <dd>
-                「地梨⇔山梨」
+                   「地梨⇔山梨」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[K(の)]」[7(や):地]</dt>
 <dd>
-                「地野⇔長野」
+                   「地野⇔長野」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[;(レ)]」[1(ヌ):地]</dt>
 <dd>
-                「地岐⇔岐阜」
+                   「地岐⇔岐阜」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(し)]」[R(す):地]</dt>
 <dd>
-                「地静⇔静岡」
+                   「地静⇔静岡」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(ち)]」[@(゛):地]</dt>
 <dd>
-                「地知⇔愛知」(「地愛⇔愛知/愛蘭」)
+                   「地知⇔愛知」(「地愛⇔愛知/愛蘭」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[3(ア):地]</dt>
 <dd>
-                「地三⇔三重」
+                   「地三⇔三重」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(シ)]」[9(ヨ):地]</dt>
 <dd>
-                「地滋⇔滋賀」
+                   「地滋⇔滋賀」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[}(ﾟ ):地]</dt>
 <dd>
-                「地京⇔京都」
+                   「地京⇔京都」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[F(ハ)]」[Y(ン):地]</dt>
 <dd>
-                「地阪⇔大阪」(「地大⇔大阪/大分」)
+                   「地阪⇔大阪」(「地大⇔大阪/大分」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[^(へ)]」[M(も):地]</dt>
 <dd>
-                「地兵⇔兵庫」
+                   「地兵⇔兵庫」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[U(な)]」[O(ら):地]</dt>
 <dd>
-                「地奈⇔奈良」
+                   「地奈⇔奈良」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[0(わ)]」[^(へ):地]</dt>
 <dd>
-                「地和⇔和歌山」(「地歌⇔和歌山」)
+                   「地和⇔和歌山」(「地歌⇔和歌山」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[S(と)]」[L(り):地]</dt>
 <dd>
-                「地鳥⇔鳥取」(「地取⇔鳥取」)
+                   「地鳥⇔鳥取」(「地取⇔鳥取」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[.(ね)]」[M(も):地]</dt>
 <dd>
-                「地根⇔島根」
+                   「地根⇔島根」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[6(お)]」[T(か):地]</dt>
 <dd>
-                「地岡⇔岡山」
+                   「地岡⇔岡山」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[V(ひ)]」[_(ろ):地]</dt>
 <dd>
-                「地広⇔広島」
+                   「地広⇔広島」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[H(く)]」[A(ち):地]</dt>
 <dd>
-                「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)
+                   「地口⇔山口」(「地山⇔山美亜/山形/富山/山梨/和歌山/岡山/山口」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[I(ニ)]」[H(ク):地]</dt>
 <dd>
-                「地徳⇔徳島」
+                   「地徳⇔徳島」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[T(か)]」[0(わ):地]</dt>
 <dd>
-                「地川⇔香川」(「地香⇔香港/香川」)
+                   「地川⇔香川」(「地香⇔香港/香川」)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[V(ひ)]」[/(め):地]</dt>
 <dd>
-                「地媛⇔愛媛」
+                   「地媛⇔愛媛」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Q(た)]」[T(か):地]</dt>
 <dd>
-                「地高⇔高知」
+                   「地高⇔高知」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Q(ふ)]」[J(ま):地]</dt>
 <dd>
-                「地福⇔福岡」
+                   「地福⇔福岡」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[X(サ)]」[T(カ):地]</dt>
 <dd>
-                「地佐⇔佐賀」
+                   「地佐⇔佐賀」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[U(な)]」[E(い):地]</dt>
 <dd>
-                「地長⇔長崎」
+                   「地長⇔長崎」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[H(く)]」[J(ま):地]</dt>
 <dd>
-                「地熊⇔熊本」
+                   「地熊⇔熊本」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[L(レ):地]</dt>
 <dd>
-                「地分⇔大分」
+                   「地分⇔大分」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[N(み)]」[7(や):地]</dt>
 <dd>
-                「地宮⇔宮崎」
+                   「地宮⇔宮崎」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[D(し)]」[T(か):地]</dt>
 <dd>
-                「地鹿⇔鹿児島」
+                   「地鹿⇔鹿児島」
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[6(お)]」[G(き):地]</dt>
 <dd>
-                「地沖⇔沖縄」
+                   「地沖⇔沖縄」
 </dd></dl>
 
 <h4>国名の字引入力</h4>
@@ -3891,47 +3895,47 @@ LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイル�
 <dl class="inputstroke"><dt>
   「[I(に)]」[S(と):地]</dt>
 <dd>
-                「地日⇔日本」(にっぽん)
+                   「地日⇔日本」(にっぽん)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[A(ち)]」[E(い):地]</dt>
 <dd>
-                「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)
+                   「地中⇔中華人民共和国」(ちゅうかじんみんきょうわこく)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[Q(タ)]」[4(ウ):地]</dt>
 <dd>
-                「地台⇔台湾」(たいわん)
+                   「地台⇔台湾」(たいわん)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[N(み)]」[S(と):地]</dt>
 <dd>
-                「地港⇔香港」(ほんこん)
+                   「地港⇔香港」(ほんこん)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[B(コ)]」[^(ヘ):地]</dt>
 <dd>
-                「地越⇔越南」(べとなむ)
+                   「地越⇔越南」(べとなむ)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[H(ク)]」[O(ラ):地]</dt>
 <dd>
-                「地蔵⇔西蔵」(ちべっと)
+                   「地蔵⇔西蔵」(ちべっと)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[M(も)]」[B(こ):地]</dt>
 <dd>
-                「地蒙⇔蒙古」(もんごる)
+                   「地蒙⇔蒙古」(もんごる)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[5(え)]」[E(い):地]</dt>
 <dd>
-                「地英⇔英吉利西」(イギリス)
+                   「地英⇔英吉利西」(イギリス)
 </dd></dl>
 <dl class="inputstroke"><dt>
   「[/(メ)]」[T(カ):地]</dt>
 <dd>
-                「地米⇔亜米利加」(アメリカ)
+                   「地米⇔亜米利加」(アメリカ)
 </dd></dl>
 
 </section>

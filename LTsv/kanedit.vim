@@ -66,15 +66,24 @@ function! KEVsetup()
         :endfor
     :endif
     :if !exists("s:kankbd_irohamenuname")
-        let s:kankbd_kbdkanaNX = 0
+        let s:kankbd_kbdkanaNX = !1
         let s:kankbd_kbdkana = "ぬ"
         let s:kankbd_kbddic = "" 
         let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
     :endif
+    execute "noremap <Plug>(KEVhelp) :call KEVhelp()<Enter>"
+    execute "noremap <Plug>(KEVexit) :call KEVexit()<Enter>"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".01 漢直.ヘルプ(KEV\\.txt) <Plug>(KEVhelp)"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".02 漢直.-sep_help- :"
+"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直.一文字検索モード☐ <nop>"
+"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".20 漢直.[Shift]で濁音モード☐ <Plug>(KEVimap_NUPU)"
+"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直.辞書前衛モード☐ <nop>"
+"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".98 漢直.-sep_exit- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".99 漢直.漢直中断(「call\\ KEVsetup()」で再開) <Plug>(KEVexit)"
     :if !exists("s:s:kankbd_alphamenuname")
-        call s:KEVdicmenu("鍵盤")
+        call KEVdicmenu("鍵盤")
     :endif
     map <silent> <Space><Space> a
     vmap <silent> <Space><Space> <Esc>
@@ -134,7 +143,7 @@ endfunction
 "「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
 function! KEVimap(kankbd_kbdchar)
     :if a:kankbd_kbdchar == 'HJKL'
-        call s:KEVdicmenu("鍵盤")
+        call KEVdicmenu("鍵盤")
         let s:kankbd_findAF = 0
         let s:kankbd_kbddic = ""
         :if s:kankbd_kbdkana == s:kankbd_HJKL
@@ -144,7 +153,7 @@ function! KEVimap(kankbd_kbdchar)
         :endif
         let s:kankbd_kbdkana = s:kankbd_HJKL
     :elseif a:kankbd_kbdchar == 'alpha'
-        call s:KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
+        call KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
     :elseif a:kankbd_kbdchar == 'find'
         let s:kankbd_findAF = 1
         let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
@@ -234,8 +243,16 @@ function! KEVimap(kankbd_kbdchar)
     :endfor
 endfunction
 
+function! KEVhelp()
+    let s:kankbd_kanhelpfilepath = s:KEVfilereadable(s:kev_scriptdir . "/KEV.txt",s:kev_scriptdir . "/../docs/KEV.txt")
+    :if filereadable(s:kankbd_kanhelpfilepath)
+        execute "enew"
+        execute ":e " . s:kankbd_kanhelpfilepath . " | :se ro"
+    :endif
+endfunction
+
 "鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
-function! s:KEVdicmenu(menuname)
+function! KEVdicmenu(menuname)
     :if exists("s:kankbd_alphamenuname")
         execute "iunmenu <silent> " s:kankbd_alphamenuname
         execute "nunmenu <silent> " . s:kankbd_alphamenuname
@@ -326,6 +343,7 @@ function! KEVexit()
         execute "iunmenu <silent> " s:kankbd_irohamenuname
         execute "iunmenu <silent> " . s:kankbd_alphamenuname
         execute "nunmenu <silent> " . s:kankbd_alphamenuname
+        execute "aunmenu  <silent> " . "漢直"
     :endif
     unlet! s:kankbd_irohamenuname
     unlet! s:kankbd_alphamenuname

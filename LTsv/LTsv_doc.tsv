@@ -147,7 +147,7 @@ License: MIT<？BR>
 |<＃LTsv_HTML_footer>]
 
 [<？LTsv_MD_H1:LTsv10kanedit>|
-:<＄LTsv_MD_H1:0>	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群と漢字エディタ「kanedit」のPythonによる実装の予定です。
+:<＄LTsv_MD_H1:0>	「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
 .+\.html?	<h1><＄LTsv_MD_H1:0></h1>
 .+\.md	# <＄LTsv_MD_H1:0>
 |<？LTsv_MD_H1:LTsv10kanedit>]

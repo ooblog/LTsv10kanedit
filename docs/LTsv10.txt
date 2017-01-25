@@ -1,5 +1,5 @@
 「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。
-version(branch):20170119R141608	modify:20170123M230015
+version(branch):20170119R141608	modify:20170125W122600
 
 目次
 
@@ -83,8 +83,8 @@ version(branch):20170119R141608	modify:20170123M230015
  LTsv版の「kanedit.py」の開発を凍結してTSF版の「kanedit」を作成する予定です。言語の開発には時間が必要なので、平行してVim版「LTsv/kanedit.vim」も開発です。
  「LTsv/kanedit.vim」と「kanedit.py」とで操作方法が乖離してますがTSF版もVim版の方向になるべく揃える予定です。LTsv版は互換性の維持程度に止まると思います。
 
-   プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
-   https://github.com/ooblog/TSF1KEV
+     プログラミング言語「TSF_Tab-Separated-Forth」開発予定。
+     https://github.com/ooblog/TSF1KEV
  TSF版作る前に漢字配列「LTsv/kanmap.tsv」のグリフ圧縮アルゴリズムを「5x10x」から「5x10x20x」に変更したいので、移行ツール作成→一時的に無圧縮→新アルゴリズムのグリフと交換などの間多少の混乱が発生するかと思います。
 
 
