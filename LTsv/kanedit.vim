@@ -19,7 +19,7 @@ function! KEVsetup()
     let s:kankbd_menuESCs = "\t\\:|< >.-"
     let s:kankbd_inputkanaN = ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ","＠","ぷ", "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
     let s:kankbd_inputkanaX = ["ヌ","フ","ア","ウ","エ","オ","ヤ","ユ","ヨ","ワ","ホ","ヘ", "タ","テ","イ","ス","カ","ン","ナ","ニ","ラ","セ","｀","プ", "チ","ト","シ","ハ","キ","ク","マ","ノ","リ","レ","ケ","ム", "ツ","サ","ソ","ヒ","コ","ミ","モ","ネ","ル","メ","ロ"]
-    let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["￥","　"]
+    let s:kankbd_inputkanas = s:kankbd_inputkanaN + s:kankbd_inputkanaX + ["　"]
 "    let s:kankbd_inputchoice =  ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ",'゛','゜', "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
 "    let s:kankbd_inputchoice +=  ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□","　"]
     let s:kankbd_kanamap = {}
@@ -30,7 +30,8 @@ function! KEVsetup()
 "        let s:kankbd_choicemap[s:kankbd_inputkanas[s:inputkey]] = s:kankbd_inputchoice[s:inputkey]
         let s:kankbd_ESCmap[s:kankbd_inputkeys[s:inputkey]] = get(s:kankbd_inputESCs,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputkeys[s:inputkey])
     :endfor
-    let s:kankbd_kanmapNX = {}
+    let s:kankbd_kanmapNX = {"　":["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ",'゛','゜', "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ",
+\                                   "名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","熙","○","△","□"]}
     :for s:kanlinekey in s:kankbd_irohatype
         :if s:kanlinekey == "゛"
             let s:kankbd_kanmapNX[s:kanlinekey] = s:kankbd_inputkeys[:-1]
@@ -69,23 +70,20 @@ function! KEVsetup()
         let s:kankbd_kbdkanaNX = !1
         let s:kankbd_kbdkana = "ぬ"
         let s:kankbd_kbddic = "" 
-        let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
     :else
         let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
     :endif
     execute "noremap <Plug>(KEVhelp) :call KEVhelp()<Enter>"
     execute "noremap <Plug>(KEVexit) :call KEVexit()<Enter>"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".01 漢直.ヘルプ(KEV\\.txt) <Plug>(KEVhelp)"
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".02 漢直.-sep_help- :"
-"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直.一文字検索モード☐ <nop>"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".09 漢直.-sep_help- :"
     call KEVfindmenu(' ')
-"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".20 漢直.[Shift]で濁音モード☐ <Plug>(KEVimap_NUPU)"
-"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直.辞書前衛モード☐ <nop>"
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".98 漢直.-sep_exit- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".19 漢直.-sep_find- :"
+    call KEVdakuonmenu('N')
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".29 漢直.-sep_dakuon- :"
+    call KEVdicmenu("鍵盤")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".39 漢直.-sep_jisho- :"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".99 漢直.漢直中断(「call\\ KEVsetup()」で再開) <Plug>(KEVexit)"
-    :if !exists("s:s:kankbd_alphamenuname")
-        call KEVdicmenu("鍵盤")
-    :endif
     map <silent> <Space><Space> a
     vmap <silent> <Space><Space> <Esc>
     imap <silent> <Space><Space> <Esc>
@@ -100,32 +98,16 @@ function! KEVsetup()
         execute "map <silent> <Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         execute "map <silent> <S-Space>" . s:kankbd_inputhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
     :endfor
-    execute "noremap <Plug>(KEVimap_alpha) :call KEVimap('alpha')<Enter>"
-    map <silent> <Space><BS> <Plug>(KEVimap_alpha)i
-    imap <silent> <Space><BS> <C-o><Plug>(KEVimap_alpha)
-    execute "noremap <Plug>(KEVimap_NUPU) :call KEVimap('NUPU')<Enter>"
-    map <silent> <S-Space><S-BS> <Plug>(KEVimap_NUPU)i
-    map <silent> <Space><S-BS> <Plug>(KEVimap_NUPU)i
-    map <silent> <S-Space><BS> <Plug>(KEVimap_NUPU)i
-    imap <silent> <S-Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
-    imap <silent> <Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
-    imap <silent> <S-Space><BS> <C-o><Plug>(KEVimap_NUPU)
     execute "noremap <Plug>(KEVimap_HJKL) :call KEVimap('HJKL')<Enter>"
+    map <silent> <Space><Del> <Plug>(KEVimap_HJKL)i
+    imap <silent> <Space><Del> <C-o><Plug>(KEVimap_HJKL)
     execute "noremap <Plug>(KEVfiler) :call KEVfiler()<Enter>"
     let s:kankbd_inputsigma = {'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Tab>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<C-o><Plug>(KEVfiler)",'':"<Nop>",
 \                              '':"<esc>ggVG",'':"<C-o>:w<Enter>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Left>",'':"<Down>",'':"<Up>",'':"<Right>",'':"<BS>",'':"<Del>",'':"<Enter>",
 \                              '':"<C-o>u",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Nop>",'':"<Home>",'':"<End>",'':"<PageUp>",'':"<PageDown>"}
-    map <silent> <Space><Del> <Plug>(KEVimap_HJKL)i
-    imap <silent> <Space><Del> <C-o><Plug>(KEVimap_HJKL)
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
-"    execute "noremap <Plug>(KEVimap_find) :call KEVimap('find')<Enter>"
-"    map <silent> <Space><Enter> <Plug>(KEVimap_find)i
-"    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_find)
-"    execute "noremap <Plug>(KEVimap_Find) :call KEVimap('Find')<Enter>"
-"    map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
-"    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
     call KEVimap("ぬ")
 endfunction
 
@@ -144,9 +126,9 @@ endfunction
 "「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
 function! KEVimap(kankbd_kbdchar)
     :if a:kankbd_kbdchar == 'HJKL'
-        call KEVdicmenu("鍵盤")
-"        let s:kankbd_findAF = 0
         call KEVfindmenu(' ')
+        call KEVdakuonmenu(' ')
+        call KEVdicmenu("鍵盤")
         let s:kankbd_kbddic = ""
         :if s:kankbd_kbdkana == s:kankbd_HJKL
             let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
@@ -154,27 +136,14 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_kbdkanaNX = 1
         :endif
         let s:kankbd_kbdkana = s:kankbd_HJKL
-    :elseif a:kankbd_kbdchar == 'alpha'
-        call KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
     :elseif a:kankbd_kbdchar == 'findF'
         call KEVfindmenu('/')
-"        let s:kankbd_findAF = 1
-"        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
-"        let s:kankbd_findBF = s:kankbd_findAF
     :elseif a:kankbd_kbdchar == 'findB'
         call KEVfindmenu('?')
-"        let s:kankbd_findAF = -1
-"        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
-"        let s:kankbd_findBF = s:kankbd_findAF
     :elseif a:kankbd_kbdchar == 'NUPU'
-        let s:kankbd_kanmapNUPU =  s:kankbd_kanmapNX['ぬ'][47:94]
-        let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX['ぬ'][0:46] + s:kankbd_kanmapNX['゜'][0:46]
-        let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNUPU + s:kankbd_kanmapNX['゜'][47:94]
-        :if s:kankbd_irohatypeX[0] == "1(ヌ)"
-            let s:kankbd_irohatypeX[0] = "1(ゔ)" | let s:kankbd_irohatypeN[23] = "[(ヌ)" | let s:kankbd_irohatypeX[23] = "[(ヴ)"
-        :else
-            let s:kankbd_irohatypeX[0] = "1(ヌ)" | let s:kankbd_irohatypeN[23] = "[(ぷ)" | let s:kankbd_irohatypeX[23] = "[(プ)"
-        :endif 
+        call KEVdakuonmenu('')
+    :elseif a:kankbd_kbdchar == 'alpha'
+        call KEVdicmenu('')
     :else
         let s:kankbd_kbdchar = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
         :if count(s:kankbd_dictype,s:kankbd_kbdchar)
@@ -263,10 +232,11 @@ function! KEVfindmenu(kankbd_menuoption)
     :else
         execute "noremap <Plug>(KEVimap_findF) :call KEVimap('findF')<Enter>"
         map <silent> <Space><Enter> <Plug>(KEVimap_findF)i
-        imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_findB)
+        imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_findF)
         execute "noremap <Plug>(KEVimap_findB) :call KEVimap('findB')<Enter>"
-        map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
-        imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
+        map <silent> <Space><Tab> <Plug>(KEVimap_findB)i
+        imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_findB)
+        let s:kankbd_findAF = 0 | let s:kankbd_findBF = s:kankbd_findAF
     :endif
     :if a:kankbd_menuoption == '/'
         let s:kankbd_findAF = 1
@@ -280,31 +250,75 @@ function! KEVfindmenu(kankbd_menuoption)
         let s:kankbd_findAF = !s:kankbd_findAF
     :endif
     let s:kankbd_findBF = s:kankbd_findAF
-    let s:kankbd_menuoption = (s:kankbd_findAF == 0) ? '' : (s:kankbd_findAF > 0) ? '/' : '?'
-    let s:kankbd_findFmenuname = "一文字検索モード(/)"
-    let s:kankbd_findBmenuname = "一文字検索モード(?)"
+    let s:kankbd_findFmenuname = "一文字検索モード(/)" . (s:kankbd_findAF > 0 ? "✓" : "")
+    let s:kankbd_findBmenuname = "一文字検索モード(?)" . (s:kankbd_findAF < 0 ? "✓" : "")
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直." . s:kankbd_findFmenuname . " <Plug>(KEVimap_findF)"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".11 漢直." . s:kankbd_findBmenuname . " <Plug>(KEVimap_findB)"
 endfunction
 
 "「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
-function! KEVdakuonmenu()
+function! KEVdakuonmenu(kankbd_menuoption)
+    :if exists("s:kankbd_dakuonmenuname")
+        execute "aunmenu <silent> 漢直." . s:kankbd_dakuonmenuname
+    :else
+        execute "noremap <Plug>(KEVimap_NUPU) :call KEVimap('NUPU')<Enter>"
+        map <silent> <S-Space><S-BS> <Plug>(KEVimap_NUPU)i
+        map <silent> <Space><S-BS> <Plug>(KEVimap_NUPU)i
+        map <silent> <S-Space><BS> <Plug>(KEVimap_NUPU)i
+        imap <silent> <S-Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
+        imap <silent> <Space><S-BS> <C-o><Plug>(KEVimap_NUPU)
+        imap <silent> <S-Space><BS> <C-o><Plug>(KEVimap_NUPU)
+        let s:kankbd_kanmapNX_NU = s:kankbd_kanmapNX['ぬ']
+        let s:kankbd_kanmapNX_PU = s:kankbd_kanmapNX['゜']
+        let s:kankbd_dakuonAF = 0
+    :endif
+    :if count(["G","D","Z","J","B","P","V","C","X","Q"],a:kankbd_menuoption)
+        let s:kankbd_dakuonAF = 1
+    :elseif count(["A","I","U","E","O","K","S","T","N","H","F","M","Y","R","L","W"],a:kankbd_menuoption)
+        let s:kankbd_dakuonAF = 0
+    :else
+        let s:kankbd_dakuonAF = !s:kankbd_dakuonAF
+    :endif
+    :if s:kankbd_dakuonAF
+        let s:kankbd_irohatypeX[0] = "1(ゔ)" | let s:kankbd_irohatypeN[23] = "[(ヌ)" | let s:kankbd_irohatypeX[23] = "[(ヴ)"
+        let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX_NU[0:46] + s:kankbd_kanmapNX_PU[0:46]
+        let s:kankbd_kanmapNX['゜']  = s:kankbd_kanmapNX_NU[47:94] + s:kankbd_kanmapNX_PU[47:94]
+    :else
+        let s:kankbd_irohatypeX[0] = "1(ヌ)" | let s:kankbd_irohatypeN[23] = "[(ぷ)" | let s:kankbd_irohatypeX[23] = "[(プ)"
+        let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX_NU
+        let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNX_PU
+    :endif
+    let s:kankbd_dakuonmenuname = "[Shift]で濁音モード(ゔ)" . (s:kankbd_dakuonAF > 0 ? "✓" : "")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".20 漢直." . s:kankbd_dakuonmenuname . " <Plug>(KEVimap_NUPU)"
 endfunction
 
 "鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
-function! KEVdicmenu(menuname)
+function! KEVdicmenu(kankbd_menuoption)
+    :if exists("s:kankbd_dicmenuname")
+        execute "aunmenu <silent> 漢直." . s:kankbd_dicmenuname
+    :else
+        execute "noremap <Plug>(KEVimap_alpha) :call KEVimap('alpha')<Enter>"
+        map <silent> <Space><BS> <Plug>(KEVimap_alpha)i
+        imap <silent> <Space><BS> <C-o><Plug>(KEVimap_alpha)
+        let s:kankbd_dicAF = 0
+    :endif
     :if exists("s:kankbd_alphamenuname")
         execute "iunmenu <silent> " s:kankbd_alphamenuname
         execute "nunmenu <silent> " . s:kankbd_alphamenuname
     :endif
-    :if a:menuname == "鍵盤"
+    :if a:kankbd_menuoption == "鍵盤"
+        let s:kankbd_dicAF = 0
+    :elseif a:kankbd_menuoption == "辞書"
+        let s:kankbd_dicAF = 1
+    :else
+        let s:kankbd_dicAF = !s:kankbd_dicAF
+    :endif
+    :if s:kankbd_dicAF == 0
         let s:kankbd_alphamenuname = "鍵盤"
-        let s:kankbd_inputchoice =  ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ",'゛','゜', "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ"]
-        let s:kankbd_inputchoice +=  ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","照","○","△","□","　"]
+        let s:kankbd_inputchoice = s:kankbd_kanmapNX['　']
     :else
         let s:kankbd_alphamenuname = "辞書"
-        let s:kankbd_inputchoice =  ["名","音","訓","送","異","俗","簡","繁","越","地","逆","非", "英","顔","ε","ρ","τ","υ","θ","ι","ο","π","゛","゜", "α","σ","δ","φ","γ","η","ξ","κ","λ","代","鍵","ぬ", "ζ","χ","ψ","ω","β","ν","μ","照","○","△","□"]
-        let s:kankbd_inputchoice +=  ["ぬ","ふ","あ","う","え","お","や","ゆ","よ","わ","ほ","へ", "た","て","い","す","か","ん","な","に","ら","せ",'゛','゜', "ち","と","し","は","き","く","ま","の","り","れ","け","む", "つ","さ","そ","ひ","こ","み","も","ね","る","め","ろ","　"]
+        let s:kankbd_inputchoice = s:kankbd_kanmapNX['　'][47:94] + s:kankbd_kanmapNX['　'][0:46]
     :endif
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_menuhyphen = "[" . escape(s:kankbd_inputkeys[s:inputkey],s:kankbd_menuESCs) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
@@ -312,6 +326,8 @@ function! KEVdicmenu(menuname)
         execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " " . s:kankbd_alphamenuname . "." . s:kankbd_menuhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         let s:kankbd_choicemap[s:kankbd_inputkanas[s:inputkey]] = s:kankbd_inputchoice[s:inputkey]
     :endfor
+    let s:kankbd_dicmenuname = "辞書前衛モード([Shift]で鍵盤)" . (s:kankbd_dicAF > 0 ? "✓" : "")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直." . s:kankbd_dicmenuname . " <Plug>(KEVimap_alpha)"
 endfunction
 
 "「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。

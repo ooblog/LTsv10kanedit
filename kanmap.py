@@ -247,6 +247,8 @@ def kanmap_mapsave():
         if map_iroha == "￥": continue;
         kanmap_irohaline="{0}\t{1}".format("\t".join(LTsv_glyph_kanmapN[map_iroha][0:(48-1)]),"\t".join(LTsv_glyph_kanmapX[map_iroha][0:(48-1)]))
         kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,map_iroha,kanmap_irohaline)
+    kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,"　","ぬ\tふ\tあ\tう\tえ\tお\tや\tゆ\tよ\tわ\tほ\tへ\tた\tて\tい\tす\tか\tん\tな\tに\tら\tせ\t゛\t゜\tち\tと\tし\tは\tき\tく\tま\tの\tり\tれ\tけ\tむ\tつ\tさ\tそ\tひ\tこ\tみ\tも\tね\tる\tめ\tろ"
+        "\t名\t音\t訓\t送\t異\t俗\t簡\t繁\t越\t地\t逆\t非\t英\t顔\tε\tρ\tτ\tυ\tθ\tι\tο\tπ\t゛\t゜\tα\tσ\tδ\tφ\tγ\tη\tξ\tκ\tλ\t代\t鍵\tぬ\tζ\tχ\tψ\tω\tβ\tν\tμ\t熙\t○\t△\t□")
     kanmap_kanmap=LTsv_pushlinerest(kanmap_kanmap,"©","# Copyright (c) 2016 ooblog # License: MIT # https://github.com/ooblog/LTsv10kanedit/blob/master/LICENSE")
     LTsv_saveplain(kanmap_kanmapname,kanmap_kanmap)
 
