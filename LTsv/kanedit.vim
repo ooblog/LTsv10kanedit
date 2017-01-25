@@ -78,9 +78,10 @@ function! KEVsetup()
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".01 漢直.ヘルプ(KEV\\.txt) <Plug>(KEVhelp)"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".02 漢直.-sep_help- :"
 "    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直.一文字検索モード☐ <nop>"
+    call KEVfindmenu(' ')
 "    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".20 漢直.[Shift]で濁音モード☐ <Plug>(KEVimap_NUPU)"
 "    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直.辞書前衛モード☐ <nop>"
-"    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".98 漢直.-sep_exit- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".98 漢直.-sep_exit- :"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".99 漢直.漢直中断(「call\\ KEVsetup()」で再開) <Plug>(KEVexit)"
     :if !exists("s:s:kankbd_alphamenuname")
         call KEVdicmenu("鍵盤")
@@ -119,12 +120,12 @@ function! KEVsetup()
     :for [s:sigmakey,s:sigmavalue] in items(s:kankbd_inputsigma)
         execute "imap  " . s:sigmakey . " " . s:sigmavalue
     :endfor
-    execute "noremap <Plug>(KEVimap_find) :call KEVimap('find')<Enter>"
-    map <silent> <Space><Enter> <Plug>(KEVimap_find)i
-    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_find)
-    execute "noremap <Plug>(KEVimap_Find) :call KEVimap('Find')<Enter>"
-    map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
-    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
+"    execute "noremap <Plug>(KEVimap_find) :call KEVimap('find')<Enter>"
+"    map <silent> <Space><Enter> <Plug>(KEVimap_find)i
+"    imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_find)
+"    execute "noremap <Plug>(KEVimap_Find) :call KEVimap('Find')<Enter>"
+"    map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
+"    imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
     call KEVimap("ぬ")
 endfunction
 
@@ -144,7 +145,8 @@ endfunction
 function! KEVimap(kankbd_kbdchar)
     :if a:kankbd_kbdchar == 'HJKL'
         call KEVdicmenu("鍵盤")
-        let s:kankbd_findAF = 0
+"        let s:kankbd_findAF = 0
+        call KEVfindmenu(' ')
         let s:kankbd_kbddic = ""
         :if s:kankbd_kbdkana == s:kankbd_HJKL
             let s:kankbd_kbdkanaNX = !s:kankbd_kbdkanaNX
@@ -154,14 +156,16 @@ function! KEVimap(kankbd_kbdchar)
         let s:kankbd_kbdkana = s:kankbd_HJKL
     :elseif a:kankbd_kbdchar == 'alpha'
         call KEVdicmenu( (s:kankbd_alphamenuname != "鍵盤") ? "鍵盤" : "辞書" )
-    :elseif a:kankbd_kbdchar == 'find'
-        let s:kankbd_findAF = 1
-        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
-        let s:kankbd_findBF = s:kankbd_findAF
-    :elseif a:kankbd_kbdchar == 'Find'
-        let s:kankbd_findAF = -1
-        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
-        let s:kankbd_findBF = s:kankbd_findAF
+    :elseif a:kankbd_kbdchar == 'findF'
+        call KEVfindmenu('/')
+"        let s:kankbd_findAF = 1
+"        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
+"        let s:kankbd_findBF = s:kankbd_findAF
+    :elseif a:kankbd_kbdchar == 'findB'
+        call KEVfindmenu('?')
+"        let s:kankbd_findAF = -1
+"        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
+"        let s:kankbd_findBF = s:kankbd_findAF
     :elseif a:kankbd_kbdchar == 'NUPU'
         let s:kankbd_kanmapNUPU =  s:kankbd_kanmapNX['ぬ'][47:94]
         let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX['ぬ'][0:46] + s:kankbd_kanmapNX['゜'][0:46]
@@ -249,6 +253,42 @@ function! KEVhelp()
         execute "enew"
         execute ":e " . s:kankbd_kanhelpfilepath . " | :se ro"
     :endif
+endfunction
+
+"マルチバイト一文字検索。
+function! KEVfindmenu(kankbd_menuoption)
+    :if exists("s:kankbd_findFmenuname")
+        execute "aunmenu <silent> 漢直." . s:kankbd_findFmenuname
+        execute "aunmenu <silent> 漢直." . s:kankbd_findBmenuname
+    :else
+        execute "noremap <Plug>(KEVimap_findF) :call KEVimap('findF')<Enter>"
+        map <silent> <Space><Enter> <Plug>(KEVimap_findF)i
+        imap <silent> <Space><Enter> <C-o><Plug>(KEVimap_findB)
+        execute "noremap <Plug>(KEVimap_findB) :call KEVimap('findB')<Enter>"
+        map <silent> <Space><Tab> <Plug>(KEVimap_Find)i
+        imap <silent> <Space><Tab> <C-o><Plug>(KEVimap_Find)
+    :endif
+    :if a:kankbd_menuoption == '/'
+        let s:kankbd_findAF = 1
+        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : 1
+    :elseif a:kankbd_menuoption == '?'
+        let s:kankbd_findAF = -1
+        let s:kankbd_findAF = (s:kankbd_findBF == s:kankbd_findAF) ? 0 : -1
+    :elseif a:kankbd_menuoption == ' '
+        let s:kankbd_findAF = 0
+    :else
+        let s:kankbd_findAF = !s:kankbd_findAF
+    :endif
+    let s:kankbd_findBF = s:kankbd_findAF
+    let s:kankbd_menuoption = (s:kankbd_findAF == 0) ? '' : (s:kankbd_findAF > 0) ? '/' : '?'
+    let s:kankbd_findFmenuname = "一文字検索モード(/)"
+    let s:kankbd_findBmenuname = "一文字検索モード(?)"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直." . s:kankbd_findFmenuname . " <Plug>(KEVimap_findF)"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".11 漢直." . s:kankbd_findBmenuname . " <Plug>(KEVimap_findB)"
+endfunction
+
+"「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
+function! KEVdakuonmenu()
 endfunction
 
 "鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
