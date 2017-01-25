@@ -199,7 +199,7 @@ function! KEVimap(kankbd_kbdchar)
             :endfor
             let s:kankbd_unicode = join(s:kankbd_unicodeL,'') 
         :endif
-        let s:kankbd_menuhyphen = escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs)
+        let s:kankbd_menuhyphen = s:kankbd_inputimap[s:inputkey] != '-' ? escape(s:kankbd_inputimap[s:inputkey],s:kankbd_menuESCs) : "-　"
         let s:kankbd_inputhyphen = get(s:kankbd_ESCmap,s:kankbd_inputkeys[s:inputkey],s:kankbd_inputimap[s:inputkey])
         :if s:kankbd_findAF == 0
             execute "imap <silent> " . s:kankbd_inputhyphen . " " . s:kankbd_unicode
