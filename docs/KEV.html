@@ -33,7 +33,7 @@
   <h1>「KEV」はVimスクリプトでできてる漢字直接入力です。</h1>
   <p>
 
-   version(branch):20170119R141608	modify:20170125W122600<br />
+   version(branch):20170119R141608	modify:20170126R165858<br />
   
 </p>
   <h2>目次</h2>
@@ -44,7 +44,8 @@
  <li><a href="#KEV_usage-0" title="①-0．「KEV(kanedit.vim)」をVimへセットアップ">①-0．「KEV(kanedit.vim)」をVimへセットアップ</a></li>
  <li><a href="#KEV_usage-1" title="①-1．「KEV」の使い方([Shift]省略)">①-1．「KEV」の使い方([Shift]省略)</a></li>
  <li><a href="#KEV_usage-2" title="①-2．「KEV」の[Shift]使用によるショートカット">①-2．「KEV」の[Shift]使用によるショートカット</a></li>
- <li><a href="#KEV_usage-3" title="①-3．単漢字辞書の辞書項目">①-3．単漢字辞書の辞書項目</a></li>
+ <li><a href="#KEV_usage-3" title="①-3．「KEV」がVimに追加するメニュー">①-3．「KEV」がVimに追加するメニュー</a></li>
+ <li><a href="#KEV_usage-4" title="①-4．「KEV」の単漢字辞書の辞書項目">①-4．「KEV」の単漢字辞書の辞書項目</a></li>
  <li><a href="#KEV-0" title="②-0．「kanedit.vim」の関数一覧">②-0．「kanedit.vim」の関数一覧</a></li>
  <li><a href="#KEV_faq-0" title="③-0．「KEV」のＦＡＱ">③-0．「KEV」のＦＡＱ</a></li>
  <li><a href="#KEV_interpret-0" title="④-0．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席">④-0．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席</a></li>
@@ -337,7 +338,61 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 
 </section>
 <section>
- <h3 id="KEV_usage-3">①-3．単漢字辞書の辞書項目</h3>
+ <h3 id="KEV_usage-3">①-3．「KEV」がVimに追加するメニュー</h3>
+<p>
+ GUI対応のVimならメニューからマウス操作でも漢直できます。<br />
+
+</p>
+<h4>「1(ぬ)」メニュー(irohaメニュー)</h4>
+<p>
+ 漢直入力もしくは漢直検索される文字です。[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。<br />
+
+</p>
+<h4>「鍵盤/辞書」メニュー</h4>
+<p>
+ 鍵盤変更もしくは辞書項目変更です。[Space],[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。<br />
+
+</p>
+<h4>「漢直」メニュー</h4>
+<dl><dt>
+  ヘルプ(KEV.txt)</dt>
+<dd>
+             「KEV.txt」をVimの新規バッファに読み込みます。<br />
+</dd></dl>
+<dl><dt>
+  一文字検索モード(/)</dt>
+<dd>
+             <br />
+</dd></dl>
+<dl><dt>
+  一文字検索モード(?)</dt>
+<dd>
+             <br />
+</dd></dl>
+<dl><dt>
+  カナ前衛モード([Shift]使わずにカナ)</dt>
+<dd>
+             <br />
+</dd></dl>
+<dl><dt>
+  辞書前衛モード([Shift]で鍵盤)</dt>
+<dd>
+             <br />
+</dd></dl>
+<dl><dt>
+  [Shift]で濁音モード(ゔ)</dt>
+<dd>
+             <br />
+</dd></dl>
+<dl><dt>
+  中断(「call KEVsetup()」で再開)</dt>
+<dd>
+             追加したメニューを解除して漢直入力も停止します。<br />
+</dd></dl>
+
+</section>
+<section>
+ <h3 id="KEV_usage-4">①-4．「KEV」の単漢字辞書の辞書項目</h3>
 <dl><dt>
   [1(ヌ):名]</dt>
 <dd>
@@ -449,8 +504,18 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイルの有無を調べる。</dd></dl>
 <dl><dt>KEVimap(kankbd_kbdchar)</dt><dd>
 「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。</dd></dl>
-<dl><dt>s:KEVdicmenu(menuname)</dt><dd>
-鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。</dd></dl>
+<dl><dt>KEVhelp()</dt><dd>
+ヘルプファイル「KEV.txt」読込。</dd></dl>
+<dl><dt>KEVfindmenu(kankbd_menuoption)</dt><dd>
+「一文字検索モード」の設定。漢直検索。</dd></dl>
+<dl><dt>KEVkanamenu(kankbd_menuoption)</dt><dd>
+「カナ前衛モード」の設定。「ひらがな」と「カタカナ」を並び替える。</dd></dl>
+<dl><dt>KEVdicmenu(kankbd_menuoption)</dt><dd>
+「辞書前衛モード」の設定。「鍵盤」と「辞書」を並び替える。</dd></dl>
+<dl><dt>KEVdakuonmenu(kankbd_menuoption)</dt><dd>
+「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。</dd></dl>
+<dl><dt>KEVplanemenu(kankbd_menuoption)</dt><dd>
+</dd></dl>
 <dl><dt>KEVfiler()</dt><dd>
 「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。</dd></dl>
 <dl><dt>KEVexit()</dt><dd>

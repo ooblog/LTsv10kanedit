@@ -5,7 +5,7 @@ tab	4
 program	LTsv_doc.py
 1st		LTsv_doc
 LTsvver	20170119R141608
-modify	20170125W122635
+modify	20170126R165927
 |L:Tsv]
 
 [LTsv_doc|
@@ -264,7 +264,7 @@ kanfont	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanf
 kanmap	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanmap_usage-0>*<？list/kanmap_usage-1><？list/kanmap-0><？list/kanmap_faq-0><？list/address-0>
 kanzip	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/kanzip_usage-0><？list/kanzip-0><？list/kanzip_faq-0><？list/address-0>
 LTsv_doc	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/LTsv_doc_usage-0><？list/LTsv_doc-0>*<？list/LTsv_doc-1>*<？list/LTsv_doc-2><？list/LTsv_doc_faq-0><？list/address-0>
-KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3><？list/KEV-0><？list/KEV_faq-0><？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4><？list/address-0>
+KEV	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>*<？list/KEV_usage-4><？list/KEV-0><？list/KEV_faq-0><？list/KEV_interpret-0>*<？list/KEV_interpret-1>*<？list/KEV_interpret-2>*<？list/KEV_interpret-3>*<？list/KEV_interpret-4><？list/address-0>
 .*	<？list/License-0>*<？list/License-1>*<？list/License-2><？list/address-0>
 |<＃kanedit_menus>]
 
@@ -276,7 +276,7 @@ kanfont	<？section/License-0>*<？section/License-1>*<？section/License-2><？
 kanmap	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanmap_usage-0>*<？section/kanmap_usage-1><？section/kanmap-0><？section/kanmap_faq-0><？section/address-0>
 kanzip	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/kanzip_usage-0><？section/kanzip-0><？section/kanzip_faq-0><？section/address-0>
 LTsv_doc	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/LTsv_doc_usage-0><？section/LTsv_doc-0>*<？section/LTsv_doc-1>*<？section/LTsv_doc-2><？section/LTsv_doc_faq-0><？section/address-0>
-KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3><？section/KEV-0><？section/KEV_faq-0><？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4><？section/address-0>
+KEV	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>*<？section/KEV_usage-4><？section/KEV-0><？section/KEV_faq-0><？section/KEV_interpret-0>*<？section/KEV_interpret-1>*<？section/KEV_interpret-2>*<？section/KEV_interpret-3>*<？section/KEV_interpret-4><？section/address-0>
 .*	<？section/License-0>*<？section/License-1>*<？section/License-2><？section/address-0>
 |<＃kanedit_pages>]
 
@@ -2131,10 +2131,10 @@ savetime	「save」ボタンに保存時間を表示する演出用途。初期�
 .*	   <＄web/kanzip_faq-@c><？BR>@E   <＄url/kanzip_faq-@c><？BR>
 |<？https/kanzip_faq:jigyosyo>*<？https/kanzip_faq:kogaki-zip>]
 
-[<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>|
+[<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>*<？section/KEV_usage-4>|
 .+\.html?	<section>@E <h3 id="KEV_usage-@c"><？title/KEV_usage-@c></h3>@E<＃contents/KEV_usage-@c>@E</section>@E
 .*	@E<？title/KEV_usage-@c>@E@E<＃contents/KEV_usage-@c>@E
-|<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>]
+|<？section/KEV_usage-0>*<？section/KEV_usage-1>*<？section/KEV_usage-2>*<？section/KEV_usage-3>*<？section/KEV_usage-4>]
 
 [<＃contents/KEV_usage-0>|
 <？Pcenter><？index/KEV_usage:capture><？BR><？/PP> 「.vimrc」ファイルに起動コマンド「:KEV」を設置する方法で解説します。<？BR>
@@ -2245,6 +2245,32 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 |<＃contents/KEV_usage-2>]
 
 [<＃contents/KEV_usage-3>|
+<？P> GUI対応のVimならメニューからマウス操作でも漢直できます。<？BR>
+<？/P>
+<？index/KEV_usage-3:iroha>
+<？P> 漢直入力もしくは漢直検索される文字です。[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。<？BR>
+<？/P>
+<？index/KEV_usage-3:dic>
+<？P> 鍵盤変更もしくは辞書項目変更です。[Space],[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。<？BR>
+<？/P>
+<？index/KEV_usage-3:help>
+<？DLDT>  ヘルプ(KEV.txt)<？/DTDD>             「KEV.txt」をVimの新規バッファに読み込みます。<？BR><？/DD/DL>
+<？DLDT>  一文字検索モード(/)<？/DTDD>             <？BR><？/DD/DL>
+<？DLDT>  一文字検索モード(?)<？/DTDD>             <？BR><？/DD/DL>
+<？DLDT>  カナ前衛モード([Shift]使わずにカナ)<？/DTDD>             <？BR><？/DD/DL>
+<？DLDT>  辞書前衛モード([Shift]で鍵盤)<？/DTDD>             <？BR><？/DD/DL>
+<？DLDT>  [Shift]で濁音モード(ゔ)<？/DTDD>             <？BR><？/DD/DL>
+<？DLDT>  中断(「call KEVsetup()」で再開)<？/DTDD>             追加したメニューを解除して漢直入力も停止します。<？BR><？/DD/DL>
+|<＃contents/KEV_usage-3>]
+[<？index/KEV_usage-3:iroha>*<？index/KEV_usage-3:dic>*<？index/KEV_usage-3:help>|
+:<＄title/KEV_menu-0>	「1(ぬ)」メニュー(irohaメニュー)
+:<＄title/KEV_menu-1>	「鍵盤/辞書」メニュー
+:<＄title/KEV_menu-2>	「漢直」メニュー
+.+\.html?	<h4><＄title/KEV_menu-@c></h4>
+.*	 <＄title/KEV_menu-@c>
+|<？index/KEV_usage-3:iroha>*<？index/KEV_usage-3:dic>*<？index/KEV_usage-3:help>]
+
+[<＃contents/KEV_usage-4>|
 <？DLDT>  [1(ヌ):名]<？/DTDD>  文字の名称(日本語)を字引。<？BR>
               「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。<？BR><？/DD/DL>
 <？DLDT>  [2(フ):音]<？/DTDD>  漢字の音読みを字引。原子記号だとカタカナを字引。<？BR>
@@ -2277,7 +2303,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
               「代つ⇔づ」「代に⇔っ」「代么⇔幺」「代算⇔Computer」「代算⇔Computer」。「代東⇔<？contents/tonhaiicon>」。<？BR><？/DD/DL>
 <？DLDT>  [:(ケ):鍵]<？/DTDD>  基本ユーザーの自由だけど特殊な入力が必要になった時用の拡張確保項目。<？BR><？/DD/DL>
 <？DLDT>  [,(ネ):照]<？/DTDD>  HTMLの文字参照。辞書に無い文字は数値文字参照で補う。<？BR><？/DD/DL>
-|<＃contents/KEV_usage-3>]
+|<＃contents/KEV_usage-4>]
 [<？contents/tokyoicon>*<？contents/tonhaiicon>*<？contents/pho>|
 :<＄icon-0>	&#61580;
 :<＄icon-1>	&#126976;
@@ -2298,7 +2324,12 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 KEVsetup()	「KanEditVim」の初期化初期設定(imap等含む)。
 s:KEVfilereadable(TSFfilepath,TSVfilepath)	辞書等の存在チェック。漢字配列「<？https/kanmap.tsv>」と単漢字辞書「<？https/kanchar.tsv>」は「<？https/kanedit.vim>」と同じフォルダに。	LTsv版と互換性持たせるため「.tsf」と「.tsv」の両ファイルの有無を調べる。
 KEVimap(kankbd_kbdchar)	「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
-KEVdicmenu(menuname)	鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
+KEVhelp()	ヘルプファイル「KEV.txt」読込。
+KEVfindmenu(kankbd_menuoption)	「一文字検索モード」の設定。漢直検索。
+KEVkanamenu(kankbd_menuoption)	「カナ前衛モード」の設定。「ひらがな」と「カタカナ」を並び替える。
+KEVdicmenu(kankbd_menuoption)	「辞書前衛モード」の設定。「鍵盤」と「辞書」を並び替える。
+KEVdakuonmenu(kankbd_menuoption)	「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
+KEVplanemenu(kankbd_menuoption)	
 KEVfiler()	「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
 KEVexit()	「KanEditVim」の終了。imap等マップ関連の撤去やメニューの撤去処理。
 |kanedit.vim]
@@ -3823,16 +3854,16 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	③-0．「kanzip」のＦＡＱ
 |<？title/kanzip_faq-0>]
 
-[<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>|
+[<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>*<？list/KEV_usage-4>|
 .+\.html?	 <li><？index/KEV_usage-@c></li>@E
 .*	 <？index/KEV_usage-@c>@E
-|<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>]
-[<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>|
+|<？list/KEV_usage-0>*<？list/KEV_usage-1>*<？list/KEV_usage-2>*<？list/KEV_usage-3>*<？list/KEV_usage-4>]
+[<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>*<？index/KEV_usage-4>|
 ^KEV\.html?	<a href="#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？title/KEV_usage-@c></a>
 .+\.html?	<a href="KEV.html#KEV_usage-@c" title="<？title/KEV_usage-@c>"><？titleimg/software-4><？title/KEV_usage-@c></a>
 ^KEV\.txt	<？title/KEV_usage-@c>
 .*	「KEV.txt」の<？title/KEV-@c>
-|<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>]
+|<？index/KEV_usage-0>*<？index/KEV_usage-1>*<？index/KEV_usage-2>*<？index/KEV_usage-3>*<？index/KEV_usage-4>]
 [<？title/KEV_usage-0>|
 .*	①-0．「KEV(kanedit.vim)」をVimへセットアップ
 |<？title/KEV_usage-0>]
@@ -3843,8 +3874,11 @@ LTsv10\.txt	<？title/LTsv10_faq-@c>
 .*	①-2．「KEV」の[Shift]使用によるショートカット
 |<？title/KEV_usage-2>]
 [<？title/KEV_usage-3>|
-.*	①-3．単漢字辞書の辞書項目
+.*	①-3．「KEV」がVimに追加するメニュー
 |<？title/KEV_usage-3>]
+[<？title/KEV_usage-4>|
+.*	①-4．「KEV」の単漢字辞書の辞書項目
+|<？title/KEV_usage-4>]
 
 [<？list/KEV-0>|
 .+\.html?	 <li><？index/KEV-@c></li>@E

@@ -1,5 +1,5 @@
 「KEV」はVimスクリプトでできてる漢字直接入力です。
-version(branch):20170119R141608	modify:20170125W122600
+version(branch):20170119R141608	modify:20170126R165858
 
 目次
 
@@ -9,7 +9,8 @@ version(branch):20170119R141608	modify:20170125W122600
  ①-0．「KEV(kanedit.vim)」をVimへセットアップ
  ①-1．「KEV」の使い方([Shift]省略)
  ①-2．「KEV」の[Shift]使用によるショートカット
- ①-3．単漢字辞書の辞書項目
+ ①-3．「KEV」がVimに追加するメニュー
+ ①-4．「KEV」の単漢字辞書の辞書項目
  ②-0．「kanedit.vim」の関数一覧
  ③-0．「KEV」のＦＡＱ
  ④-0．漢直(漢字直接入力)の解説・相席の基本概念と一ヶ所系相席
@@ -178,7 +179,27 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
   [Shift]+[Space],[Shift]+[BS]                「[1(ヌ)]」鍵盤と「[[(ぷ)]」鍵盤を入れ替え。これにより[Shift]がひらがなカタカナ切替から静音濁音の切り替えに変化。入れ替え中は「[1(ゔ)]」鍵盤と「[[(ヴ)]」鍵盤が出現。
 
 
-①-3．単漢字辞書の辞書項目
+①-3．「KEV」がVimに追加するメニュー
+
+ GUI対応のVimならメニューからマウス操作でも漢直できます。
+
+ 「1(ぬ)」メニュー(irohaメニュー)
+ 漢直入力もしくは漢直検索される文字です。[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。
+
+ 「鍵盤/辞書」メニュー
+ 鍵盤変更もしくは辞書項目変更です。[Space],[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。
+
+ 「漢直」メニュー
+  ヘルプ(KEV.txt)             「KEV.txt」をVimの新規バッファに読み込みます。
+  一文字検索モード(/)             
+  一文字検索モード(?)             
+  カナ前衛モード([Shift]使わずにカナ)             
+  辞書前衛モード([Shift]で鍵盤)             
+  [Shift]で濁音モード(ゔ)             
+  中断(「call KEVsetup()」で再開)             追加したメニューを解除して漢直入力も停止します。
+
+
+①-4．「KEV」の単漢字辞書の辞書項目
 
   [1(ヌ):名]  文字の名称(日本語)を字引。
               「名〜⇔波ダッシュ」「名～⇔チルダ(全角)」「名∼⇔ランダウの記号」「名醤⇔波ダッシュ」「＃⇔ナンバーサイン(全角)」「♯⇔シャープ」。
@@ -226,8 +247,23 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
  【KEVimap(kankbd_kbdchar)】
   「[Space],[1(ぬ)〜&#92;(ろ)]」等のコマンド入力で鍵盤(imap等)変更。「[Space],[Enter]」「[Space],[Tab]」で一文字検索モード。
 
- 【s:KEVdicmenu(menuname)】
-  鍵盤と辞書を並び替える時のメニュー書き替えなどの処理。
+ 【KEVhelp()】
+  ヘルプファイル「KEV.txt」読込。
+
+ 【KEVfindmenu(kankbd_menuoption)】
+  「一文字検索モード」の設定。漢直検索。
+
+ 【KEVkanamenu(kankbd_menuoption)】
+  「カナ前衛モード」の設定。「ひらがな」と「カタカナ」を並び替える。
+
+ 【KEVdicmenu(kankbd_menuoption)】
+  「辞書前衛モード」の設定。「鍵盤」と「辞書」を並び替える。
+
+ 【KEVdakuonmenu(kankbd_menuoption)】
+  「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
+
+ 【KEVplanemenu(kankbd_menuoption)】
+  
 
  【KEVfiler()】
   「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
