@@ -70,11 +70,15 @@ function! KEVsetup()
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".09 漢直.-sep_help- :"
     call KEVfindmenu(' ')
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".19 漢直.-sep_find- :"
-    call KEVdicmenu("鍵盤")
+    call KEValphamenu("鍵盤")
     call KEVkanamenu("ひらがな")
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".29 漢直.-sep_kana- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".29 漢直.-sep_dakuon- :"
+    call KEVdicmenu(' ')
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".39 漢直.-sep_kana- :"
     call KEVdakuonmenu('N')
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".39 漢直.-sep_dakuon- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".49 漢直.-sep_exitdic- :"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".50 漢直.履歴からファイルを開く <Plug>(KEVfiler)"
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".59 漢直.-sep_filer- :"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".99 漢直.漢直中断(「call\\ KEVsetup()」で再開) <Plug>(KEVexit)"
     map <silent> <Space><Space> a
     vmap <silent> <Space><Space> <Esc>
@@ -120,13 +124,13 @@ function! KEVimap(kankbd_kbdchar)
     :if a:kankbd_kbdchar == 'HJKL'
         call KEVfindmenu(' ')
         call KEVdakuonmenu(' ')
-        call KEVdicmenu("鍵盤")
+        call KEValphamenu("鍵盤")
+        call KEVdicmenu(' ')
         :if s:kankbd_kbdkana == s:kankbd_HJKL
             call KEVkanamenu('')
         :else
             call KEVkanamenu("ひらがな")
         :endif
-        let s:kankbd_kbddic = ""
         let s:kankbd_kbdkana = s:kankbd_HJKL
     :elseif a:kankbd_kbdchar == 'findF'
         call KEVfindmenu('/')
@@ -134,17 +138,21 @@ function! KEVimap(kankbd_kbdchar)
         call KEVfindmenu('?')
     :elseif a:kankbd_kbdchar == 'NUPU'
         call KEVdakuonmenu('')
-    :elseif a:kankbd_kbdchar == 'alpha'
-        call KEVdicmenu('')
     :elseif a:kankbd_kbdchar == 'hirakana'
         call KEVkanamenu('')
+    :elseif a:kankbd_kbdchar == 'alpha'
+        call KEValphamenu('')
+    :elseif a:kankbd_kbdchar == 'plane'
+        call KEVdicmenu(' ')
     :else
         let s:kankbd_kbdchar = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
         :if count(s:kankbd_dictype,s:kankbd_kbdchar)
             if s:kankbd_kbddic != s:kankbd_kbdchar
-                let s:kankbd_kbddic = s:kankbd_kbdchar
+"                let s:kankbd_kbddic = s:kankbd_kbdchar
+                call KEVdicmenu(s:kankbd_kbdchar)
             :else
-                let s:kankbd_kbddic = ""
+"                let s:kankbd_kbddic = ""
+                call KEVdicmenu(' ')
             :endif
         :else
             :if s:kankbd_kbdkana == s:kankbd_kbdchar
@@ -167,7 +175,6 @@ function! KEVimap(kankbd_kbdchar)
         let s:kankbd_inputimap = s:kankbd_inputimap[47:94] + s:kankbd_inputimap[0:46] 
     :endif
     :if count(s:kankbd_dictype,s:kankbd_kbddic) > 0
-        echo count(s:kankbd_dictype,s:kankbd_kbddic) . s:kankbd_kbddic
         let s:kankbd_irohamenuname = s:kankbd_irohamenuname . ":" . s:kankbd_kbddic
         :for s:mapkey in range(len(s:kankbd_inputimap))
             let s:kanlinetsv = get(s:kankbd_kancharDIC,s:kankbd_inputimap[s:mapkey],'') . "\t"
@@ -219,7 +226,7 @@ function! KEVhelp()
     let s:kankbd_kanhelpfilepath = s:KEVfilereadable(s:kev_scriptdir . "/KEV.txt",s:kev_scriptdir . "/../docs/KEV.txt")
     :if filereadable(s:kankbd_kanhelpfilepath)
         execute "enew"
-        execute ":e " . s:kankbd_kanhelpfilepath . " | :se ro"
+        execute "e " . s:kankbd_kanhelpfilepath . " | :se ro"
     :endif
 endfunction
 
@@ -275,9 +282,9 @@ function! KEVkanamenu(kankbd_menuoption)
 endfunction
 
 "「辞書前衛モード」の設定。「鍵盤」と「辞書」を並び替える。
-function! KEVdicmenu(kankbd_menuoption)
-    :if exists("s:kankbd_dicmenuname")
-        execute "aunmenu <silent> 漢直." . s:kankbd_dicmenuname
+function! KEValphamenu(kankbd_menuoption)
+    :if exists("s:kankbd_alphamenuname")
+        execute "aunmenu <silent> 漢直." . s:kankbd_alphamenuname
     :else
         execute "noremap <Plug>(KEVimap_alpha) :call KEVimap('alpha')<Enter>"
         map <silent> <Space><BS> <Plug>(KEVimap_alpha)i
@@ -285,9 +292,9 @@ function! KEVdicmenu(kankbd_menuoption)
         let s:kankbd_dicAF = 0
         let s:kankbd_choicemap = {}
     :endif
-    :if exists("s:kankbd_alphamenuname")
-        execute "iunmenu <silent> " s:kankbd_alphamenuname
-        execute "nunmenu <silent> " . s:kankbd_alphamenuname
+    :if exists("s:kankbd_alphadicmenuname")
+        execute "iunmenu <silent> " s:kankbd_alphadicmenuname
+        execute "nunmenu <silent> " . s:kankbd_alphadicmenuname
     :endif
     :if a:kankbd_menuoption == "鍵盤"
         let s:kankbd_dicAF = 0
@@ -297,20 +304,37 @@ function! KEVdicmenu(kankbd_menuoption)
         let s:kankbd_dicAF = !s:kankbd_dicAF
     :endif
     :if s:kankbd_dicAF == 0
-        let s:kankbd_alphamenuname = "鍵盤"
+        let s:kankbd_alphadicmenuname = "鍵盤"
         let s:kankbd_inputchoice = s:kankbd_kanmapNX['　']
     :else
-        let s:kankbd_alphamenuname = "辞書"
+        let s:kankbd_alphadicmenuname = "辞書"
         let s:kankbd_inputchoice = s:kankbd_kanmapNX['　'][47:94] + s:kankbd_kanmapNX['　'][0:46]
     :endif
     :for s:inputkey in range(len(s:kankbd_inputkeys)-1)
         let s:kankbd_menuhyphen = "[" . escape(s:kankbd_inputkeys[s:inputkey],s:kankbd_menuESCs) . "(" . s:kankbd_inputchoice[s:inputkey] . ")]"
-        execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " " . s:kankbd_alphamenuname . "." . s:kankbd_menuhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
-        execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " " . s:kankbd_alphamenuname . "." . s:kankbd_menuhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
+        execute "imenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " " . s:kankbd_alphadicmenuname . "." . s:kankbd_menuhyphen . " <C-o><Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")"
+        execute "nmenu  <silent> " . (s:kankbd_menuid+1) . "." . (s:inputkey+1) . " " . s:kankbd_alphadicmenuname . "." . s:kankbd_menuhyphen . " <Plug>(KEVimap_" . s:kankbd_inputkanas[s:inputkey] . ")i"
         let s:kankbd_choicemap[s:kankbd_inputkanas[s:inputkey]] = s:kankbd_inputchoice[s:inputkey]
     :endfor
-    let s:kankbd_dicmenuname = "辞書前衛モード([Shift]で鍵盤)" . (s:kankbd_dicAF ? "✓" : "")
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".25 漢直." . s:kankbd_dicmenuname . " <Plug>(KEVimap_alpha)"
+    let s:kankbd_alphamenuname = "辞書前衛モード([Shift]で鍵盤)" . (s:kankbd_dicAF ? "✓" : "")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".25 漢直." . s:kankbd_alphamenuname . " <Plug>(KEVimap_alpha)"
+endfunction
+
+"辞書の選択および解除。
+function! KEVdicmenu(kankbd_menuoption)
+    :if exists("s:kankbd_dicmenuname")
+        execute "aunmenu <silent> 漢直." . s:kankbd_dicmenuname
+    :else
+        execute "noremap <Plug>(KEVimap_plane) :call KEVimap('plane')<Enter>"
+    :endif
+"    let s:kankbd_kbddic = get(s:kankbd_dictype,a:kankbd_menuoption,'')   # get関数の値が無い場合の「''」が指定できない。
+    :if count(s:kankbd_dictype,a:kankbd_menuoption)
+        let s:kankbd_kbddic = a:kankbd_menuoption
+    :else
+        let s:kankbd_kbddic = ''
+    :endif
+    let s:kankbd_dicmenuname = "辞書解除" . (len(s:kankbd_kbddic) == 0 ? "✓" : "")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直." . s:kankbd_dicmenuname . " <Plug>(KEVimap_plane)"
 endfunction
 
 "「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
@@ -346,11 +370,7 @@ function! KEVdakuonmenu(kankbd_menuoption)
         let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNX_PU
     :endif
     let s:kankbd_dakuonmenuname = "[Shift]で濁音モード(ゔ)" . (s:kankbd_dakuonAF > 0 ? "✓" : "")
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直." . s:kankbd_dakuonmenuname . " <Plug>(KEVimap_NUPU)"
-endfunction
-
-"辞書の解除。
-function! KEVplanemenu(kankbd_menuoption)
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".40 漢直." . s:kankbd_dakuonmenuname . " <Plug>(KEVimap_NUPU)"
 endfunction
 
 "「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
@@ -426,7 +446,7 @@ function! KEVexit()
     unlet! s:kankbd_irohamenuname
     unlet! s:kankbd_alphamenuname
     unlet! s:kankbd_findFmenuname
-    unlet! s:kankbd_dicmenuname
+    unlet! s:kankbd_alphamenuname
     unlet! s:kankbd_kanamenuname
     unlet! s:kankbd_dakuonmenuname
 endfunction
