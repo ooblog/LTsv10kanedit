@@ -327,7 +327,7 @@ function! KEVdicmenu(kankbd_menuoption)
 "    let s:kankbd_kbddic = get(s:kankbd_dictype,a:kankbd_menuoption,'')   # get関数の値が無い場合の「''」が指定できない。
     :if count(s:kankbd_dictype,a:kankbd_menuoption)
         let s:kankbd_kbddic = a:kankbd_menuoption
-    :elseif s:kankbd_kbddic == ''
+    :elseif a:kankbd_menuoption == ''
         let s:kankbd_kbddic = s:kankbd_kbddic
     :else
         let s:kankbd_kbddic = ''
