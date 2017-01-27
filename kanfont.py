@@ -316,28 +316,6 @@ def kanfont_keypress(window_objvoid=None,window_objptr=None):
 def kanfont_keyrelease(window_objvoid=None,window_objptr=None):
     kanfont_keypress()
 
-#def kanfont_dictype_paste():
-#    clippaste=LTsv_widget_gettext(kanfont_clipboard)
-#    return clippaste.replace('\n',"").replace('\t',"")
-
-#def kanfont_dictype_copy(clippaste):
-#    LTsv_widget_settext(kanfont_clipboard,clippaste)
-
-#def kanfont_dictype_inputed_shell(dictype_cnt):
-#    def kanfont_dictype_kernel(LTsv_kbdentry_input):
-#        LTsv_kbdentry_edit=LTsv_kbdentry_input
-#        if LTsv_global_dictype()[dictype_cnt] == "幅":
-#            LTsv_kbdentry_wide=LTsv_intstr0x(LTsv_kbdentry_edit)
-#            LTsv_kbdentry_edit=str(LTsv_kbdentry_wide) if 0 < LTsv_kbdentry_wide < PSfont_ZW  else ""
-#        LTsv_glyph_text2path(draw_t=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale)),kanpath=LTsv_kbdentry_edit,draw_g=LTsv_global_dictype()[dictype_cnt])
-#        if LTsv_global_dictype()[dictype_cnt] in "活漫筆幅":
-#            kanfont_seek=LTsv_chrcode(LTsv_widget_getnumber(kanfont_code_scale))
-#            LTsv_glyphpath(kanfont_seek)
-#            kanfont_glyph_draw()
-#            LTsv_widget_settext(kanfont_svg_button,"save:{0}({1})".format(kanfont_svgname,kanfont_fontname[kanfont_glyphtype if kanfont_glyphtype in LTsv_global_glyphtype() else LTsv_global_glyphtype()[kanfont_gothic]]))
-#        return LTsv_kbdentry_edit
-#    return kanfont_dictype_kernel
-
 kanfont_calculatorenterBF,kanfont_calculatorenterAF={},{}
 def kanfont_calculatormouseinput_enter(calculator_canvas):
     LTsv_kbdentry_edit=LTsv_glyph_calcresize(calculator_canvas)
@@ -556,11 +534,14 @@ if len(LTsv_GUI) > 0:
         kanfont_gothic_radio[glyphtype_cnt]=LTsv_radio_new(kanfont_window,widget_t=glyphtype_split,widget_x=kanfont_canvas_X+kanfont_canvas_WH*7//8,widget_y=kanfont_canvas_WH+kanfont_label_WH*glyphtype_cnt,widget_w=kanfont_canvas_WH*1//8,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_gothic_shell(glyphtype_cnt))
     kanfont_dictype_canvas=[None]*len(LTsv_global_dictype())
     kanfont_dictype_canvasW=[None]*len(LTsv_global_dictype())
+    kanfont_dictype_canvasX,kanfont_dictype_canvasY=kanfont_entry_X,0
     for dictype_cnt,dictype_split in enumerate(LTsv_global_dictype()):
-        kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_label_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
-        kanfont_dictype_canvasW[dictype_cnt]=kanfont_entry_W if dictype_split != "幅" else kanfont_entry_W*2//5
-        kanfont_dictype_canvas[dictype_cnt]=LTsv_widget_newUUID(); LTsv_canvas_new(kanfont_window,widget_n=False,widget_x=kanfont_entry_X,widget_y=dictype_cnt*kanfont_entry_H,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,
+        kanfont_dictype_canvasX=kanfont_entry_X if not dictype_split in "熙" else kanfont_entry_X+(kanfont_entry_W+kanfont_label_WH)//2
+        kanfont_dictype_label[dictype_cnt]=LTsv_label_new(kanfont_window,widget_t=dictype_split,widget_x=kanfont_dictype_canvasX-kanfont_label_WH,widget_y=kanfont_dictype_canvasY,widget_w=kanfont_label_WH,widget_h=kanfont_entry_H,widget_f=kanfont_font_entry)
+        kanfont_dictype_canvasW[dictype_cnt]=kanfont_entry_W if not dictype_split in "照熙幅" else (kanfont_entry_W-kanfont_label_WH)//2 if dictype_split != "幅" else kanfont_entry_W*2//5
+        kanfont_dictype_canvas[dictype_cnt]=LTsv_widget_newUUID(); LTsv_canvas_new(kanfont_window,widget_n=False,widget_x=kanfont_dictype_canvasX ,widget_y=kanfont_dictype_canvasY,widget_w=kanfont_dictype_canvasW[dictype_cnt],widget_h=kanfont_entry_H,
          event_p=kanfont_calculatormousepress_shell(kanfont_dictype_canvas[dictype_cnt]),event_m=kanfont_calculatormousemotion_shell(kanfont_dictype_canvas[dictype_cnt]),event_r=kanfont_calculatormouserelease_shell(kanfont_dictype_canvas[dictype_cnt]),event_l=kanfont_calculatormouseleave_shell(kanfont_dictype_canvas[dictype_cnt]),event_e=kanfont_calculatormouseenter_shell(kanfont_dictype_canvas[dictype_cnt]),event_w=50)
+        kanfont_dictype_canvasY=kanfont_dictype_canvasY+kanfont_entry_H if not dictype_split in "照" else kanfont_dictype_canvasY
     kanfont_clipboard=LTsv_clipboard_new(kanfont_window)
     kanfont_svg_button=LTsv_button_new(kanfont_window,widget_t="save:{0}({1})".format(kanfont_svgname,kanfont_fontname[LTsv_global_glyphtype()[kanfont_gothic]]),widget_x=kanfont_entry_X+kanfont_entry_W*2//5,widget_y=kanfont_H-kanfont_label_WH,widget_w=kanfont_entry_W*3//5,widget_h=kanfont_label_WH,widget_f=kanfont_font_entry,event_b=kanfont_svgsave_shell)
     LTsv_widget_showhide(kanfont_window,True)
