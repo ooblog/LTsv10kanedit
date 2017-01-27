@@ -125,13 +125,13 @@ function! KEVimap(kankbd_kbdchar)
         call KEVfindmenu(' ')
         call KEVdakuonmenu(' ')
         call KEValphamenu("鍵盤")
-        call KEVdicmenu(' ')
         :if s:kankbd_kbdkana == s:kankbd_HJKL
             call KEVkanamenu('')
         :else
             call KEVkanamenu("ひらがな")
         :endif
         let s:kankbd_kbdkana = s:kankbd_HJKL
+        call KEVdicmenu(' ')
     :elseif a:kankbd_kbdchar == 'findF'
         call KEVfindmenu('/')
     :elseif a:kankbd_kbdchar == 'findB'
@@ -142,8 +142,6 @@ function! KEVimap(kankbd_kbdchar)
         call KEVkanamenu('')
     :elseif a:kankbd_kbdchar == 'alpha'
         call KEValphamenu('')
-    :elseif a:kankbd_kbdchar == 'plane'
-        call KEVdicmenu(' ')
     :else
         let s:kankbd_kbdchar = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
         :if count(s:kankbd_dictype,s:kankbd_kbdchar)
@@ -163,6 +161,7 @@ function! KEVimap(kankbd_kbdchar)
             let s:kankbd_kbdkana = s:kankbd_kbdchar
         :endif
     :endif
+    call KEVdicmenu('')
     :if exists("s:kankbd_irohamenuname")
         execute "iunmenu <silent> " s:kankbd_irohamenuname
     :endif
@@ -323,16 +322,18 @@ function! KEVdicmenu(kankbd_menuoption)
     :if exists("s:kankbd_dicmenuname")
         execute "aunmenu <silent> 漢直." . s:kankbd_dicmenuname
     :else
-        execute "noremap <Plug>(KEVimap_plane) :call KEVimap('plane')<Enter>"
+        let s:kankbd_kbddic = ''
     :endif
 "    let s:kankbd_kbddic = get(s:kankbd_dictype,a:kankbd_menuoption,'')   # get関数の値が無い場合の「''」が指定できない。
     :if count(s:kankbd_dictype,a:kankbd_menuoption)
         let s:kankbd_kbddic = a:kankbd_menuoption
+    :elseif s:kankbd_kbddic == ''
+        let s:kankbd_kbddic = s:kankbd_kbddic
     :else
         let s:kankbd_kbddic = ''
     :endif
-    let s:kankbd_dicmenuname = "辞書解除" . (len(s:kankbd_kbddic) == 0 ? "✓" : "")
-    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直." . s:kankbd_dicmenuname . " <Plug>(KEVimap_plane)"
+    let s:kankbd_dicmenuname = "「" . s:kankbd_HJKL . "」鍵盤選択＆検索モード前衛モード解除" . ((s:kankbd_kbdkana == s:kankbd_HJKL && len(s:kankbd_kbddic) == 0 && s:kankbd_findAF == 0 && s:kankbd_kanaAF == 0 && s:kankbd_dicAF == 0)? "✓" : "")
+    execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".30 漢直." . s:kankbd_dicmenuname . " <Plug>(KEVimap_HJKL)"
 endfunction
 
 "「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
@@ -442,10 +443,10 @@ function! KEVexit()
         execute "aunmenu  <silent> " . "漢直"
     :endif
     unlet! s:kankbd_irohamenuname
-    unlet! s:kankbd_alphamenuname
     unlet! s:kankbd_findFmenuname
     unlet! s:kankbd_alphamenuname
     unlet! s:kankbd_kanamenuname
+    unlet! s:kankbd_dicmenuname
     unlet! s:kankbd_dakuonmenuname
 endfunction
 
