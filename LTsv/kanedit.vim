@@ -148,10 +148,8 @@ function! KEVimap(kankbd_kbdchar)
         let s:kankbd_kbdchar = get(s:kankbd_choicemap,a:kankbd_kbdchar,'ぬ')
         :if count(s:kankbd_dictype,s:kankbd_kbdchar)
             if s:kankbd_kbddic != s:kankbd_kbdchar
-"                let s:kankbd_kbddic = s:kankbd_kbdchar
                 call KEVdicmenu(s:kankbd_kbdchar)
             :else
-"                let s:kankbd_kbddic = ""
                 call KEVdicmenu(' ')
             :endif
         :else
@@ -369,7 +367,7 @@ function! KEVdakuonmenu(kankbd_menuoption)
         let s:kankbd_kanmapNX['ぬ'] = s:kankbd_kanmapNX_NU
         let s:kankbd_kanmapNX['゜'] = s:kankbd_kanmapNX_PU
     :endif
-    let s:kankbd_dakuonmenuname = "[Shift]で濁音モード(ゔ)" . (s:kankbd_dakuonAF > 0 ? "✓" : "")
+    let s:kankbd_dakuonmenuname = "濁音モード(ヌ→ゔ)" . (s:kankbd_dakuonAF > 0 ? "✓" : "")
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".40 漢直." . s:kankbd_dakuonmenuname . " <Plug>(KEVimap_NUPU)"
 endfunction
 
