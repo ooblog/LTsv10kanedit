@@ -33,7 +33,7 @@
   <h1>「LTsv10kanedit(tsvtool10)」は「L:Tsv」の読み書きを中心としたモジュール群です。</h1>
   <p>
 
-   version(branch):20170119R141608	modify:20170126R165858<br />
+   version(branch):20170119R141608	modify:20170128S130712<br />
   
 </p>
   <h2>目次</h2>
@@ -91,9 +91,11 @@
 <section>
  <h3 id="License-1">⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ</h3>
 <p>
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a>」も参考)。<br />
- ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「<a href="#LTsv10_faq-0" title="⑩-0．「L:Tsv」のＦＡＱ">⑩-0．「L:Tsv」のＦＡＱ</a>」を参考)。<br />
 </p><p>
+ ※Vimも別途インストールされているものとします(Vimの導入分からない人は「<a href="KEV.html#KEV_usage-0" title="①-0．「KEV(kanedit.vim)」をVimへセットアップ"><img src="KEV_logo.png" width="48" height="48" alt="KEV" title="KEV">①-0．「KEV(kanedit.vim)」をVimへセットアップ</a>」を参考)。<br />
+</p><p>
+ ダウンロードは「<a href="https://github.com/ooblog/LTsv10kanedit" title="ooblog/LTsv10kanedit: 「L:Tsv」の読み書きを中心としたモジュール群と漢字入力「kanedit」のPythonによる実装です(準備中)。">https://github.com/ooblog/LTsv10kanedit</a>」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。<br />
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。<br />
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh" title="https://github.com/ooblog/LTsv10kanedit/blob/master/wine_sh">wine_sh</a>」フォルダ内の「*.sh」のWineパスを適宜修正。<br />
  最初に「<a href="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py" title="https://github.com/ooblog/LTsv10kanedit/blob/master/kanmap.py">kanmap.py</a>」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。<br />
@@ -113,7 +115,7 @@
 <section>
  <h3 id="License-2">⓪-2．その他現在わかっている不具合や今後の課題</h3>
 <p>
- Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。<br />
+ 「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52(vim-gtk)」および「Wine1.7.18,Python3.4.4,gvim8.0.134(KaoriYa)」で開発しています。Windows,cygwin,darwin,MacOSなどでの動作は確認しておりません。<br />
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。<br />
  「kan5x5comic.ttf」と「kan5x5.ttf」を同時に入れると麻雀牌が表示されない(「kan5x5.ttf」の絵文字代替4x5文字が優先される)場合があります。<br />
  私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。<br />

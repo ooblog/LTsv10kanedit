@@ -1,5 +1,5 @@
 「kanmap」は「LTsv10kanedit(tsvtool10)」を用いたグリフ進捗ビュアーです。
-version(branch):20170119R141608	modify:20170126R165858
+version(branch):20170119R141608	modify:20170128S130712
 
 目次
 
@@ -32,9 +32,11 @@ version(branch):20170119R141608	modify:20170126R165858
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
- ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」を参考)。
 
+ ※Vimも別途インストールされているものとします(Vimの導入分からない人は「「KEV.txt」の②-0．「kanedit.vim」の関数一覧」を参考)。
+
+ ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  最初に「kanmap.py」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。
@@ -51,7 +53,7 @@ version(branch):20170119R141608	modify:20170126R165858
 
 ⓪-2．その他現在わかっている不具合や今後の課題
 
- Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
+ 「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52(vim-gtk)」および「Wine1.7.18,Python3.4.4,gvim8.0.134(KaoriYa)」で開発しています。Windows,cygwin,darwin,MacOSなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  「kan5x5comic.ttf」と「kan5x5.ttf」を同時に入れると麻雀牌が表示されない(「kan5x5.ttf」の絵文字代替4x5文字が優先される)場合があります。
  私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。

@@ -1,5 +1,5 @@
 「KEV」はVimスクリプトでできてる漢字直接入力です。
-version(branch):20170119R141608	modify:20170126R165858
+version(branch):20170119R141608	modify:20170128S130712
 
 目次
 
@@ -40,9 +40,11 @@ version(branch):20170119R141608	modify:20170126R165858
 
 ⓪-1．インストール(ダウンロード・アンインストール)＆セットアップ
 
- ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」も参考)。
- ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
+ ※Pythonは別途インストールされているものとします(Pythonの導入分からない人は「「LTsv10.txt」の⑩-0．「L:Tsv」のＦＡＱ」を参考)。
 
+ ※Vimも別途インストールされているものとします(Vimの導入分からない人は「①-0．「KEV(kanedit.vim)」をVimへセットアップ」を参考)。
+
+ ダウンロードは「https://github.com/ooblog/LTsv10kanedit」にある「Clone or download」ボタンを押すと出る「Download ZIP」メニューをクリック。
  インストールは任意(なるだけユーザーディレクトリ内)のフォルダに「LTsv10kanedit-master.zip」を解凍するだけです(「LTsv10kanedit-master」フォルダが作成されるはずです)。
  「*.py」のパーミッションがOFFになってたら実行可能に変更、Wineで使う場合は「wine_sh」フォルダ内の「*.sh」のWineパスを適宜修正。
  最初に「kanmap.py」を起動(前バージョンの「LTsv/kanpickle.bin」ある場合は一旦削除してから)。「LTsv/kanpickle.bin」を新規作成してください。
@@ -59,7 +61,7 @@ version(branch):20170119R141608	modify:20170126R165858
 
 ⓪-2．その他現在わかっている不具合や今後の課題
 
- Python 2.7.6(Tahrpup6.0.5)およびPython3.4.4(Wine1.7.18)で開発しています。Windows,cygwin,darwinなどでの動作は確認しておりません。
+ 「Tahrpup6.0.5,Python2.7.6,vim.gtk7.4.52(vim-gtk)」および「Wine1.7.18,Python3.4.4,gvim8.0.134(KaoriYa)」で開発しています。Windows,cygwin,darwin,MacOSなどでの動作は確認しておりません。
  フォント(グリフ)「kan5x5comic」は半角と全角の幅の比率が約5:3(1024:624)なのでアスキーアートで問題になる場合があります。グリフ不足で表示できない文字などあります。
  「kan5x5comic.ttf」と「kan5x5.ttf」を同時に入れると麻雀牌が表示されない(「kan5x5.ttf」の絵文字代替4x5文字が優先される)場合があります。
  私用領域と呼ばれる環境に左右される文字コードを漢直鍵盤の制御に用いてます。「kan5x5comic.ttf」を用意しないとソースが見辛い可能性があります。
@@ -89,10 +91,22 @@ Vim再起動すると「:KEV」コマンドが入力できるようになるは�
 [Space]キー2回でモード切替、[Shift]キー押しながら[Space]キー2回で半角スペース入力になります。
 漢直を停止するには「:call KEVexit()」、再度有効にするには「:call KEVexit()」。
 
-Vim自体の使い方は日本語ドキュメント等で確認してください&#40;英語版はVimのメニューから「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」のいずれか&#41;。
+Vim自体のインストールや使い方は別途確認してください&#40;Vimのメニューにも「ヘルプ」→「概略」「ユーザーマニュアル」「How-toリンク」ドキュメントがあると思います&#41;。
 
    help - Vim日本語ドキュメント
    http://vim-jp.org/vimdoc-ja/
+
+   Vim — KaoriYa(VimのWindows向けコンパイル済みバイナリ)
+   https://www.kaoriya.net/software/vim/
+
+   Ubuntu – trusty の vim-gtk パッケージに関する詳細
+   http://packages.ubuntu.com/ja/trusty/vim-gtk
+
+   Vim - ArchWiki
+   https://wiki.archlinuxjp.org/index.php/Vim
+
+   なぜVimのカーソル移動キーは「h・j・k・l」なのか？ - DNA
+   http://dailynewsagency.com/2012/03/11/here-is-why-vim-uses-the-hjkl-keys-as-arrow-keys/
 
 あと漢直と直接関係けどVimの設定についで追加として、
 「matchpairs」オプションに全角括弧を設定、全角空白のハイライト指定など。
@@ -146,8 +160,10 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
   [Space],[Space]                             ノーマルモードと挿入モードを切り替えます。通常は[i(に)]で挿入モード移行、[Esc]か[Ctrl]+[[(゜)]でノーマルモード移行。
   [Space]…                                   [Space]キー入力後のコマンド入力が遅れると普通に半角スペースが入力されます。
   [Space],[1(ぬ)〜&#92;(ろ)]                  入力鍵盤を切り替え、もしくは字引入力辞書の変更をします。同じ鍵盤を2回選択するとひらがなカタカナの入れ替えです。
-  [Space],[Enter]                             「/前方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Enter]。
-  [Space],[Tab]                               「?後方1文字検索」モードです。漢直検索できます。解除は再度[Space],[Tab]。
+  [Space],[Enter]                             一文字検索モード(/前方)。前方に漢直検索できます。解除は再度[Space],[Enter]。
+  [Space],[Tab]                               一文字検索モード(?後方)。後方に漢直検索できます。解除は再度[Space],[Tab]。
+  [Space],[BS]                                辞書前衛モード。「鍵盤」と「辞書(α鍵盤含む)」を入れ替え。
+                                              ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[1(ヌ):名〜,(ネ):照]およびα鍵盤等との交換です。
   [Space],[Del]                              「σ」鍵盤に切り替えます。1文字検索モード、辞書メニュー、字引入力、カタカナ鍵盤も解除されます。
  「σ」鍵盤で [h(く)][j(ま)][k(の)][l(り)]     hjklカーソル移動です。移動後即座に挿入モードに戻るので、挿入モードでカーソル移動してる錯覚を味わえます。
                                               (元々Vim以外のエディタでhjkl移動可能にする機能が操作の互換性でVim版にも搭載というか、
@@ -163,7 +179,6 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
  「σ」鍵盤で [z(つ)]                          一手前に戻します。
  「σ」鍵盤で [o(ら)]                          ファイル履歴などからファイルを開きます。マウスが使えるかのようなメッセージがでますが、番号がズレる場合があり危険なので数値入力してください。
  「σ」鍵盤で [s(て)]                          ファイルを保存します。
-  [Space],[BS]                                「鍵盤」と「辞書」を入れ替え。ひらがなカタカナの入れ替えではなく[1(ぬ)〜&#92;(ろ)]と[1(ヌ):名〜,(ネ):照]およびα鍵盤等との交換です。辞書の解除は再度同じ辞書の選択。
 
 
 ①-2．「KEV」の[Shift]使用によるショートカット
@@ -190,12 +205,14 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
  鍵盤変更もしくは辞書項目変更です。[Space],[1(ぬ)〜&#92;(ろ)]もしくは[Shift]+[Space],[Shift]+[1(ヌ)〜&#92;(ロ)]に対応。
 
  「漢直」メニュー
-  ヘルプ(KEV.txt)             「KEV.txt」をVimの新規バッファに読み込みます。
-  一文字検索モード(/)             
-  一文字検索モード(?)             
-  カナ前衛モード([Shift]使わずにカナ)             
-  辞書前衛モード([Shift]で鍵盤)             
-  [Shift]で濁音モード(ゔ)             
+  ヘルプ(KEV.txt)                             「docs/KEV.txt」をVimの新規バッファに読み込みます。
+  一文字検索モード(/前方)                     前方検索を用いた一文字検索。[Space],[Enter]と同じ効果。
+  一文字検索モード(?後方)                     後方検索を用いた一文字検索。[Space],[Tab]と同じ効果。
+  カナ前衛モード([Shift]使わずにカナ)         ひらがなカタカナの入れ替え。[Space],[1(ぬ)〜\(ろ)]等でも代用可能。
+  辞書前衛モード([Shift]で鍵盤)               「鍵盤」と「辞書」を入れ替え。[Space],[BS]と同じ効果。
+  「σ」鍵盤選択＆検索モード前衛モード解除     濁音モードを除くモード類を解除して「σ」鍵盤に切り替えます。[Space],[Del]と同じ効果。
+  濁音モード(ゔ)                              「[1(ヌ)]」鍵盤と「[[(ぷ)]」鍵盤を入れ替え。[Shift]+[Space],[Shift]+[BS]と同じ効果。
+  履歴からファイルを開く                      ファイル履歴などからファイルを開きます。「σ」鍵盤で [o(ら)]と同じ効果。
   中断(「call KEVsetup()」で再開)             追加したメニューを解除して漢直入力も停止します。
 
 
@@ -256,14 +273,14 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
  【KEVkanamenu(kankbd_menuoption)】
   「カナ前衛モード」の設定。「ひらがな」と「カタカナ」を並び替える。
 
+ 【KEValphamenu(kankbd_menuoption)】
+  
+
  【KEVdicmenu(kankbd_menuoption)】
   「辞書前衛モード」の設定。「鍵盤」と「辞書」を並び替える。
 
  【KEVdakuonmenu(kankbd_menuoption)】
   「[Shift]で濁音モード」の設定。「ヌ」鍵盤と「ぷ」鍵盤を入れ替える。
-
- 【KEVplanemenu(kankbd_menuoption)】
-  
 
  【KEVfiler()】
   「σ」鍵盤で [o(ら)]が押された時に履歴などからファイルを開く簡易ファイラー。
@@ -275,7 +292,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
 ③-0．「KEV」のＦＡＱ
 
  Ｑ．「鍵盤」なのに辞書変更やα鍵盤変更など逆の動きをする。
- Ａ．[CapsLock]がON状態になってると[Shift]が押されっぱなしのような動きになると思います。
+ Ａ．[CapsLock]がON状態になってると[Shift]が押されっぱなしのような動作になると思います。
 
  Ｑ．汎用辞書「kanword.tsv」が認識されない。
  Ａ．Vim版では汎用辞書「kanword.tsv」は未サポートです。汎用辞書は漢直の対象外だからです。
@@ -325,7 +342,7 @@ command KEVtsf  :source /mnt/sda2/github/TSF1KEV/kanedit.vim            "漢直(
   「[{(プ)]」   濁音カタカナ。濁音(゛)半濁音(゜)を相席。中黒(・)と『二重かぎ括弧』と長音符(〜)を相席。を相席。
   「[D(し)]」   短剣符(†)と段落記号(¶)を相席。
   「[D(シ)]」   二重短剣符(‡)と節記号(§)を相席。(練鍊煉)を相席。
-  「[H(ク)]」   "くぬぎ"と読む漢字(椚橡栩椢椪椡檪櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
+  「[H(ク)]」   "くぬぎ"と読む漢字(椚橡栩椢椪椡櫟櫪桾檞㓛)を相席。「檪」は「櫟」で字引。㓛は「㓛刀」と書いて"くぬぎ"。
   「[K(ノ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。華氏ファーレンハイト度(℉)を相席。
   「[L(リ)]」   [F(は)]に入り切らなかった「は」読みの漢字を相席。
   「[;(れ)]」   記号(∠∟⊥⌒∫∬∴∵∽∝∞∨∧∀￤)を相席。「令岭玲怜伶鈴」を固める感覚で「亨惇淳諄享」も相席。

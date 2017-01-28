@@ -253,8 +253,8 @@ function! KEVfindmenu(kankbd_menuoption)
         let s:kankbd_findAF = !s:kankbd_findAF
     :endif
     let s:kankbd_findBF = s:kankbd_findAF
-    let s:kankbd_findFmenuname = "一文字検索モード(/)" . (s:kankbd_findAF > 0 ? "✓" : "")
-    let s:kankbd_findBmenuname = "一文字検索モード(?)" . (s:kankbd_findAF < 0 ? "✓" : "")
+    let s:kankbd_findFmenuname = "一文字検索モード(/前方)" . (s:kankbd_findAF > 0 ? "✓" : "")
+    let s:kankbd_findBmenuname = "一文字検索モード(?後方)" . (s:kankbd_findAF < 0 ? "✓" : "")
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".10 漢直." . s:kankbd_findFmenuname . " <Plug>(KEVimap_findF)"
     execute "amenu  <silent> " . (s:kankbd_menuid+2) . ".11 漢直." . s:kankbd_findBmenuname . " <Plug>(KEVimap_findB)"
 endfunction
